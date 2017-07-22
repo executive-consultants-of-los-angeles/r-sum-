@@ -7,7 +7,9 @@ services:
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install ansible
-  - ansible -m apt_repository -a 'repo="deb http://cz.archive.ubuntu.com/ubuntu yakkety main universe" state=present' -s localhost
+  - ansible -m apt_repository -a 
+      'repo="deb http://cz.archive.ubuntu.com/ubuntu yakkety main universe" state=present'
+     -s localhost
   - ansible -m apt -a 'update_cache=yes' -s localhost
   - sudo apt-get install docker.io
 install:
