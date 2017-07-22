@@ -1,9 +1,6 @@
-import os
+#!/usr/bin/env python
 
-import testinfra.utils.ansible_runner
-
-testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
-    os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
+testinfra_hosts = ["docker://rsum"]
 
 
 def test_hosts_file(host):

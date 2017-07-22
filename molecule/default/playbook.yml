@@ -2,6 +2,7 @@
 - name: "converge"
   hosts: all
   roles:
-    - role: "r-sum-"
+    - role:
+        "executive-consultants-of-los-angeles.rsum"
 ...
 # vim: ft=ansible:
