@@ -1,2 +1,5 @@
 ---
-# tasks file for r-sum-
+- debug:
+    msg: "Tasks go here." 
+...
+# vim: ft=ansible: 

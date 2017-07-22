@@ -5,10 +5,10 @@ services:
   - docker
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
+  - sudo apt-get install docker.io 
 install:
   - pip install molecule --pre
-  - pip install docker-py 
+  - pip install docker-py
 script:
   - molecule test
 notifications:
