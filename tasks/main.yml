@@ -1,5 +1,5 @@
 ---
 - debug:
-    msg: "Tasks go here." 
+    msg: "Tasks go here."
 ...
-# vim: ft=ansible: 
+# vim: ft=ansible:

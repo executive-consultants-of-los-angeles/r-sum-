@@ -5,7 +5,7 @@ services:
   - docker
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install docker.io 
+  - sudo apt-get install docker.io
 install:
   - pip install molecule --pre
   - pip install docker-py
