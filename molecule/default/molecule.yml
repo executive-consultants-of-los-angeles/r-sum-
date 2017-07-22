@@ -6,8 +6,8 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: instance
-    image: centos:7
+  - name: "rsum" 
+    image: eclacfo/ansible:latest 
 provisioner:
   name: ansible
   lint:
@@ -18,3 +18,5 @@ verifier:
   name: testinfra
   lint:
     name: flake8
+...
+# vim: ft=ansible:
