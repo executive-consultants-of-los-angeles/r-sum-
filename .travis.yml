@@ -9,6 +9,7 @@ before_install:
 install:
   - pip install molecule --pre
   - pip install docker-py
+  - pip install ansible-container
 script:
   - molecule test
 notifications:
