@@ -1,6 +1,8 @@
 Curiculum Vitae
 ===============
 
+[![Build Status](https://travis-ci.org/executive-consultants-of-los-angeles/rsum.svg?branch=master)](https://travis-ci.org/executive-consultants-of-los-angeles/rsum)
+
 The point of this is to demonstrate for potential clients that this company is not completely lacking competence.  A truncated version in yaml is below.
 
 ```yaml
