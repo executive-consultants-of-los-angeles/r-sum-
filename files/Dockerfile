@@ -1,6 +1,5 @@
 FROM ansible:latest 
 
-RUN pip install http://archive.ubuntu.com/ubuntu/pool/universe/p/python-distutils-extra/python-distutils-extra_2.39.orig.tar.gz
-RUN wget http://archive.ubuntu.com/ubuntu/pool/main/p/python-apt/python-apt_1.1.0~beta1build1.tar.xz
+RUN apt-get -y install libapt-pkg-dev
 RUN tar xvf python-apt_1.1.0~beta1build1.tar.xz
-RUN pip install python-apt_1.1.0-beta1build1
+RUN cd python-apt-1.1.0~beta1; python setup.py build; python setup.py install 
