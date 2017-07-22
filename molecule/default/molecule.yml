@@ -6,8 +6,8 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: instance
-    image: centos:7
+  - name: "r-sum-" 
+    image: eclacfo/ansible:latest 
 provisioner:
   name: ansible
   lint:
