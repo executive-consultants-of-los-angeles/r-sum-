@@ -7,6 +7,9 @@ Requirements
 ------------
 
 A willingness to learn.
+```bash
+ansible-galaxy install eclacfo.r-sum-
+```
 
 Role Variables
 --------------
