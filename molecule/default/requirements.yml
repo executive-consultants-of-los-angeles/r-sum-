@@ -1,5 +1,5 @@
 ---
-- src: git+ssh://git@github.com:executive-consultants-of-los-angeles/r-sum-.git
+- src: executive-consultants-of-los-angeles.rsum
   version: iss3
 ...
 # vim: ft=ansible:

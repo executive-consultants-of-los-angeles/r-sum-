@@ -6,7 +6,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: "r-sum-" 
+  - name: "rsum" 
     image: eclacfo/ansible:latest 
 provisioner:
   name: ansible
