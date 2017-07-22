@@ -1,5 +1,5 @@
 ---
 - src: executive-consultants-of-los-angeles.rsum
-  version: iss5
+  version: master 
 ...
 # vim: ft=ansible:
