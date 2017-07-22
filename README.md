@@ -28,7 +28,7 @@ Example Playbook
 - hosts: all 
   roles:
      - { 
-          role: username.rolename, 
+          role: executive-consultants-of-los-angeles/r-sum-, 
           what_is_six_times_seven: 42 
         }
 ```
