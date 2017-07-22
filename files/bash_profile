@@ -1,0 +1,14 @@
+#!/bin/bash
+alias ls='ls --color=auto'
+
+export CI=''
+export CLICOLOR=1
+export INFOPATH=$INFOPATH:/opt/local/share/info 
+export LSCOLORS="Ea"
+export MANPATH=$MANPATH:/opt/local/share/man
+export PATH=$HOME/bin:/opt/ansible/bin:/opt/python/bin:/opt/postgres/bin:$PATH
+export TERM=xterm
+
+umask 002
+export PS1="\[$(tput bold)\][\[$(tput setaf 1)\]\u@\[$(tput setaf 4)\]\h:\[$(tput setaf 7)\]\W\[$(tput sgr0)\]] "
+source $HOME/.git-completion.bash
