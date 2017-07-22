@@ -7,7 +7,7 @@ lint:
   name: yamllint
 platforms:
   - name: "rsum"
-    image: eclacfo/ansible:latest
+    image: ecla/ansible:latest
 provisioner:
   name: ansible
   lint:

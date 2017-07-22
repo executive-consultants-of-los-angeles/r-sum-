@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-testinfra_hosts = ["rsum"]
+testinfra_hosts = ["docker://rsum"]
 
 
 def test_hosts_file(host):
