@@ -8,7 +8,7 @@ Requirements
 
 A willingness to learn.
 ```bash
-ansible-galaxy install eclacfo.r-sum-
+ansible-galaxy install executive-consultants-of-los-angeles.r-sum-
 ```
 
 Role Variables
@@ -28,7 +28,7 @@ Example Playbook
 - hosts: all 
   roles:
      - { 
-          role: executive-consultants-of-los-angeles/r-sum-, 
+          role: executive-consultants-of-los-angeles.r-sum-,
           what_is_six_times_seven: 42 
         }
 ```
