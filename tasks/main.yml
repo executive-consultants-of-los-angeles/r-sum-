@@ -42,13 +42,19 @@
   copy:
     src: "supervisord.conf"
     dest: "/etc/supervisor/supervisord.conf"
-- name: "Update gunicorn state."
+- name: "Update services state."
   supervisorctl:
-    name: "gunicorn"
+    name: "{{ item }}" 
     state: "present"
-- name: "Start gunicorn."
+  with_items:
+    - gunicorn
+    - rsyslogd
+- name: "Start services."
   supervisorctl:
-    name: "gunicorn"
+    name: "{{ item }}"
     state: "started"
+  with_items:
+    - gunicorn
+    - rsyslogd
 ...
 # vim: ft=ansible:
