@@ -11,5 +11,6 @@
     state: present
   with_items:
     - gunicorn
+    - vim
 ...
 # vim: ft=ansible:
