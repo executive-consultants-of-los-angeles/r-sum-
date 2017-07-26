@@ -46,7 +46,7 @@
   supervisorctl:
     name: "gunicorn"
     config: "/etc/supervisor/supervisord.conf"
-    state: "stopped"
+    state: "present"
 - name: "Start gunicorn."
   supervisorctl:
     name: "gunicorn"
