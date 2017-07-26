@@ -47,5 +47,24 @@ cv:
         networking:
           - "transfered my-ubox.com to Amazon's Route 53 service"
           - "transfered abiogenix.com to Amazon's Route 53 service"
+    caa:
+      name: "Consultant at Creative Artists Agency"
+      location: "Los Angeles, California"
+      duration: "September 2015  -  March 2016 (7 months)"
+      projects:
+        jupyterhub:
+          - "automated deployment of JupyterHub with Ansible"
+          - "instructed analysts on the use of Python and JupyterHub"
+          - "enabled the quants to transfer data from Excel to WorkDay" 
+        ansible_tower:
+          - "refactored existing Ansible playbooks for improved security"
+          - "implemented best practices in all Ansible playbooks"
+          - "managed more than one upgrade of Ansible Tower server"
+          - "enabled logging and monitoring with New Relic and Splunk"
+        continuous_integration:
+          - "project was a year late on delivery upon my assignment"
+          - "walked into an unfamiliar stack and uncooperative team"
+          - "within one quarter the project was delivering new features daily"
+          - "enabled Behave testing and eliminated failures due to process"
 ...
 # vim: ft=ansible:
