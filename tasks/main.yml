@@ -44,7 +44,7 @@
     dest: "/etc/supervisor/supervisord.conf"
 - name: "Update services state."
   supervisorctl:
-    name: "{{ item }}" 
+    name: "{{ item }}"
     state: "present"
   with_items:
     - gunicorn
