@@ -1,5 +1,7 @@
 ---
-- debug:
-    msg: "Tasks go here."
+- name: "Install virtualenv."
+  pip:
+    name: virtualenv
+    state: present
 ...
 # vim: ft=ansible:
