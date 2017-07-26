@@ -44,7 +44,6 @@
 - name: "Restart supervisord."
   service:
     name: "supervisor"
-    state: restarted
     enabled: "yes"
 ...
 # vim: ft=ansible:
