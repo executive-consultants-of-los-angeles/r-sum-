@@ -16,5 +16,9 @@
   with_items:
     - gunicorn
     - vim
+- name: "Start a django project."
+  command: "/usr/local/bin/django-admin /srv/rsum/"
+  args:
+    creates: "/srv/rsum/rsum"
 ...
 # vim: ft=ansible:
