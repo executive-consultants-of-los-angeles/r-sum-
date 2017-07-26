@@ -42,10 +42,15 @@
   copy:
     src: "supervisord.conf"
     dest: "/etc/supervisor/supervisord.conf"
-- name: "Restart gunicorn."
+- name: "Stop gunicorn."
   supervisorctl:
     name: "gunicorn"
     config: "/etc/supervisor/supervisord.conf"
-    state: "restarted"
+    state: "stopped"
+- name: "Start gunicorn."
+  supervisorctl:
+    name: "gunicorn"
+    config: "/etc/supervisor/supervisord.conf"
+    state: "started"
 ...
 # vim: ft=ansible:
