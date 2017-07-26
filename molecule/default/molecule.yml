@@ -8,6 +8,10 @@ lint:
 platforms:
   - name: "rsum"
     image: ecla/ansible:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - "/srv/rsum:/srv/rsum:rw"
 provisioner:
   name: ansible
   lint:
