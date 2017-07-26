@@ -7,8 +7,6 @@ services:
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install ansible
-  - sudo apt-get install gcc 
-  - sudo apt-get install build-essential
   - ansible -m apt_repository -a
       'repo="
         deb http://cz.archive.ubuntu.com/ubuntu xenial main universe
@@ -17,6 +15,8 @@ before_install:
     -s localhost
   - ansible -m apt -a 'update_cache=yes' -s localhost
   - sudo apt-get install docker.io
+  - sudo apt-get install gcc 
+  - sudo apt-get install build-essential
 install:
   - pip install molecule --pre
   - pip install git+https://github.com/docker/docker-py.git
