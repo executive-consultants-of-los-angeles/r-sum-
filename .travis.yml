@@ -9,7 +9,7 @@ before_install:
   - sudo apt-get install ansible
   - ansible -m apt_repository -a
       'repo="
-        deb http://cz.archive.ubuntu.com/ubuntu yakkety main universe
+        deb http://cz.archive.ubuntu.com/ubuntu xenial main universe
       "
       state=present'
     -s localhost
