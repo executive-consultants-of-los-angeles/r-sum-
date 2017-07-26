@@ -1,7 +1,7 @@
 ---
 - name: "Install git-completion.bash."
   get_url:
-    url: "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash"
+    url: "http://bit.ly/2tB6adK"
     dest: "/root/.git-completion.bash"
 - name: "Install some packages with pip."
   pip:
