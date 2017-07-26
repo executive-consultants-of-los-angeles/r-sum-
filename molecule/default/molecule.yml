@@ -9,7 +9,7 @@ platforms:
   - name: "rsum"
     image: ecla/ansible:latest
     ports:
-      - "8000:8000"
+      - "8192:8192"
     volumes:
       - "/srv/rsum:/srv/rsum:rw"
 provisioner:
