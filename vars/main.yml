@@ -1,9 +1,31 @@
 ---
 cv:
-  name: "Edward Harris"
-  current_company: "E C L A"
-  current_position: "Chief Financial Officer"
-  email: "cfo@ecla.solutions"
+  introduction:
+    name: "Edward Harris"
+    current_company: "E C L A"
+    current_position: "Chief Financial Officer"
+    email: "cfo@ecla.solutions"
   summary: "Straight shooter with upper management written all over me."
+  experience:
+    position: "Chief Financial Officer at Gahan Corporation"
+      location: "Los Angeles, California"
+      duration: "May 2016 - Present"
+      projects:
+        technology:
+          - "maintain multiple cloud services"
+          - "total cost of ownership < $100/mo"
+          - "pretty good uptime"
+          - "at least not terrible security"
+        legal:
+          - "converted from an LLC started May 2016"
+          - "wrote the filed Articles of Incorporation"
+          - "also have an author credit on the bylaws"
+          - "have written every agreement executed by the corporation so far"
+          - "keep the corporation in good standing with the State of California"
+        finance:
+          - "aiming at issuing registered stock by 2020"
+          - "pretty depressing at the moment"
+          - "maintain books to GAAP standards"
+          - "keep us up to date with taxes and reporting"
 ...
 # vim: ft=ansible:
