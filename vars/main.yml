@@ -28,5 +28,24 @@ cv:
           - "pretty depressing at the moment"
           - "maintain books to GAAP standards"
           - "keep us up to date with taxes and reporting"
+    abiogenix_incorporated:
+      name: "Lead Python Developer / Cloud Architect at Abiogenix Incorporated"
+      location: "Los Angeles, California"
+      duration: "August 2014 - May 2017"
+      projects:
+        enterprise_resource_planning:
+          - "automated deployment and maintenance of the Odoo ERP system"
+          - "installed Google SSO for better auditing"
+        buy_my_ubox_com:
+          - "designed and implemented the my-ubox.com web store"
+          - "makes use of the Django web framework"
+          - "some custom code that integrates the order system with Odoo"
+        atlassian:
+          - "deployed Atlassian suite to Abiogenix cloud assets"
+          - "maintain those same tools for uptime and performance"
+          - "very limited budget"
+        networking:
+          - "transfered my-ubox.com to Amazon's Route 53 service"
+          - "transfered abiogenix.com to Amazon's Route 53 service"
 ...
 # vim: ft=ansible:
