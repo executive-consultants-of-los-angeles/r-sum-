@@ -40,7 +40,7 @@
 - name: "Copy settings for supervisord."
   copy:
     src: "supervisord.conf"
-    dest: "/etc/supervisord.conf"
+    dest: "/etc/supervisor/supervisord.conf"
 - name: "Start supervisord."
   service:
     name: "supervisor"
