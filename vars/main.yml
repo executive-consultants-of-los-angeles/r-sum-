@@ -1,3 +1,9 @@
 ---
+cv:
+  name: "Edward Harris"
+  current_company: "E C L A"
+  current_position: "Chief Financial Officer"
+  email: "cfo@ecla.solutions"
+  summary: "Straight shooter with upper management written all over me."
 ...
 # vim: ft=ansible:
