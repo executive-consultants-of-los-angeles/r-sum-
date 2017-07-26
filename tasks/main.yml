@@ -20,6 +20,6 @@
   command: "/usr/local/bin/django-admin startproject rsum"
   args:
     creates: "/srv/rsum/rsum"
-    chdir: "/srv"
+    chdir: "/srv/rsum"
 ...
 # vim: ft=ansible:
