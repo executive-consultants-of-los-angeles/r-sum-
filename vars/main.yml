@@ -7,7 +7,8 @@ cv:
     email: "cfo@ecla.solutions"
   summary: "Straight shooter with upper management written all over me."
   experience:
-    position: "Chief Financial Officer at Gahan Corporation"
+    cfo_at_gahan_corporation: 
+      name: "Chief Financial Officer at Gahan Corporation"
       location: "Los Angeles, California"
       duration: "May 2016 - Present"
       projects:
