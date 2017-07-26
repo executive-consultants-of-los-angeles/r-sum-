@@ -66,5 +66,50 @@ cv:
           - "walked into an unfamiliar stack and uncooperative team"
           - "within one quarter the project was delivering new features daily"
           - "enabled Behave testing and eliminated failures due to process"
+          - "used Ansible Tower and Jenkins server for deployment"
+    build_manager_toyota_motor_sales:
+      name: "Build Manager at Toyota Motor Sales Research and Development"
+      location: "Los Angeles, California"
+      duration: "April 2015  -  July 2015 (4 months)"
+      projects:
+        atlassian:
+          - "maintained project git repository"
+          - "managed branches, pull requests, and releases"
+          - "trained 22 developers on git flow branching model"
+          - "created process for documentation of development"
+          - "guided developers in resolution of merge conflicts"
+        continuous_delivery: 
+          - "deployed spark and hadoop cluster for distributed processing"
+          - "automated builds of all projects within the git repository"
+          - "dployed and administered Jenkins server with Ansible"  
+      cloud_architect_toyota_motor_sales:
+        name: "Cloud Architect at Toyota Motor Sales Research and Development"
+        location: "Los Angeles, California"
+        duration: "January 2015  -  July 2015 (7 months)"
+        projects:
+          ansible:
+            - "reduced deployment time by a factor of 15 with Ansible"
+            - "automated deployment of all resources required by project" 
+            - "managed Red Hat Enterprise Linux 7 servers" 
+          amazon_web_services:
+            - "configured and deployed all infrastructure"
+            - "administered same"
+            - "managed budget for aws monthly spend"
+    lead_python_developer_toyota_motor_sales:
+      name: "Lead Python Developer at Toyota Motor Sales Research and Development"
+      location: "Los Angeles, California"
+      duration: "December 2014  -  July 2015 (8 months)"
+      projects:
+        training:
+          - "wrote Python style guide"
+          - "implemented smart commits for JIRA issues"
+          - "trained offshore developers in the use of gitflow"
+        scraping:
+          - "used Python, Scrapy, MongoDB, and BASH for project"
+          - "scraped web for information relevant to project"
+          - "identified and removed redundancies within the project"
+          - "ran daily scrum meetings and maintained a storyboard" 
+        proposal:
+          - "authored A3 to streamline build process"
 ...
 # vim: ft=ansible:
