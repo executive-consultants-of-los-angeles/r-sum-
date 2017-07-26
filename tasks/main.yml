@@ -26,5 +26,10 @@
   args:
     creates: "/srv/rsum/rsum/home"
     chdir: "/srv/rsum/rsum/"
+- name: "Migrate the database."
+  command: "/srv/rsum/rsum/manage.py migrate"
+  args:
+    creates: "/srv/rsum/rsum/db.sqlite3"
+    chdir: "/srv/rsum/rsum/"
 ...
 # vim: ft=ansible:
