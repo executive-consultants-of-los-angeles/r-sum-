@@ -31,5 +31,9 @@
   args:
     creates: "/srv/rsum/rsum/db.sqlite3"
     chdir: "/srv/rsum/rsum/"
+- name: "Copy settings.py to the correct location."
+  copy:
+    src: "settings.py"
+    dest: "/srv/rsum/rsum/rsum/settings.py"
 ...
 # vim: ft=ansible:
