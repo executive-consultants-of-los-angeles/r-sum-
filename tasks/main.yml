@@ -21,5 +21,9 @@
   args:
     creates: "/srv/rsum/rsum"
     chdir: "/srv/rsum"
+- name: "Create an app in the new project."
+  django_manage:
+    app_path: "/srv/rsum/rsum"
+    command: "startapp home" 
 ...
 # vim: ft=ansible:
