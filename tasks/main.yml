@@ -1,7 +1,7 @@
 ---
 - name: "Install some packages with pip."
   pip:
-    name: "{{ item }}" 
+    name: "{{ item }}"
     state: present
   with_items:
     - django
