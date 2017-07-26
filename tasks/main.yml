@@ -15,6 +15,7 @@
     name: "{{ item }}"
     state: present
   with_items:
+    - supervisor
     - vim
 - name: "Start a django project."
   command: "/usr/local/bin/django-admin startproject rsum"
