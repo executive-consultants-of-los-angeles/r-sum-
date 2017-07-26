@@ -54,7 +54,6 @@
     name: "{{ item }}"
     state: "started"
   with_items:
-    - gunicorn
     - rsyslogd
 ...
 # vim: ft=ansible:
