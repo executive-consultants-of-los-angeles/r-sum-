@@ -55,7 +55,7 @@ cv:
         jupyterhub:
           - "automated deployment of JupyterHub with Ansible"
           - "instructed analysts on the use of Python and JupyterHub"
-          - "enabled the quants to transfer data from Excel to WorkDay" 
+          - "enabled the quants to transfer data from Excel to WorkDay"
         ansible_tower:
           - "refactored existing Ansible playbooks for improved security"
           - "implemented best practices in all Ansible playbooks"
@@ -68,7 +68,7 @@ cv:
           - "enabled Behave testing and eliminated failures due to process"
           - "used Ansible Tower and Jenkins server for deployment"
     build_manager_toyota_motor_sales:
-      name: "Build Manager at Toyota Motor Sales Research and Development"
+      name: "Build Manager at Toyota R&D"
       location: "Los Angeles, California"
       duration: "April 2015  -  July 2015 (4 months)"
       projects:
@@ -78,25 +78,25 @@ cv:
           - "trained 22 developers on git flow branching model"
           - "created process for documentation of development"
           - "guided developers in resolution of merge conflicts"
-        continuous_delivery: 
+        continuous_delivery:
           - "deployed spark and hadoop cluster for distributed processing"
           - "automated builds of all projects within the git repository"
-          - "dployed and administered Jenkins server with Ansible"  
+          - "dployed and administered Jenkins server with Ansible"
       cloud_architect_toyota_motor_sales:
-        name: "Cloud Architect at Toyota Motor Sales Research and Development"
+        name: "Cloud Architect at Toyota R&D"
         location: "Los Angeles, California"
         duration: "January 2015  -  July 2015 (7 months)"
         projects:
           ansible:
             - "reduced deployment time by a factor of 15 with Ansible"
-            - "automated deployment of all resources required by project" 
+            - "automated deployment of all resources required by project"
             - "managed Red Hat Enterprise Linux 7 servers" 
           amazon_web_services:
             - "configured and deployed all infrastructure"
             - "administered same"
             - "managed budget for aws monthly spend"
     lead_python_developer_toyota_motor_sales:
-      name: "Lead Python Developer at Toyota Motor Sales Research and Development"
+      name: "Lead Python Developer at Toyota R&D"
       location: "Los Angeles, California"
       duration: "December 2014  -  July 2015 (8 months)"
       projects:
