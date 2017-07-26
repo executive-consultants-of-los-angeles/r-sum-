@@ -36,5 +36,14 @@
   copy:
     src: "settings.py"
     dest: "/srv/rsum/rsum/rsum/settings.py"
+- name: "Copy settings for supervisord."
+  copy:
+    src: "supervisord.conf"
+    dest: "/etc/supervisord.conf"
+- name: "Start supervisord."
+  service:
+    name: "supervisor"
+    state: started
+    enabled: yes
 ...
 # vim: ft=ansible:
