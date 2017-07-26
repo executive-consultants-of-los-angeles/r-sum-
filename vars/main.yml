@@ -90,7 +90,7 @@ cv:
           ansible:
             - "reduced deployment time by a factor of 15 with Ansible"
             - "automated deployment of all resources required by project"
-            - "managed Red Hat Enterprise Linux 7 servers" 
+            - "managed Red Hat Enterprise Linux 7 servers"
           amazon_web_services:
             - "configured and deployed all infrastructure"
             - "administered same"
