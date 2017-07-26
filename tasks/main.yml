@@ -22,8 +22,13 @@
     creates: "/srv/rsum/rsum"
     chdir: "/srv/rsum"
 - name: "Create an app in the new project."
+  command: "/srv/rsum/rsum/manage.py startapp home"
+  args:
+    creates: "/srv/rsum/rsum/home"
+    chdir: "/srv/rsum/rsum/"
+- name: "Run migrations."
   django_manage:
     app_path: "/srv/rsum/rsum"
-    command: "startapp showsum"
+    command: "syncdb"
 ...
 # vim: ft=ansible:
