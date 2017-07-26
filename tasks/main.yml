@@ -9,12 +9,12 @@
     state: present
   with_items:
     - django
+    - gunicorn
 - name: "Install some packages with apt."
   apt:
     name: "{{ item }}"
     state: present
   with_items:
-    - gunicorn
     - vim
 - name: "Start a django project."
   command: "/usr/local/bin/django-admin startproject rsum"
