@@ -24,6 +24,6 @@
 - name: "Create an app in the new project."
   django_manage:
     app_path: "/srv/rsum/rsum"
-    command: "startapp home" 
+    command: "startapp showsum"
 ...
 # vim: ft=ansible:
