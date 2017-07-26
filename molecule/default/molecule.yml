@@ -7,7 +7,7 @@ lint:
   name: yamllint
 platforms:
   - name: "rsum"
-    command: ["/usr/bin/supervisord","-n","-c","/etc/supervisor/supervisord.conf"]
+    command: /usr/bin/supervisord -n 
     image: ecla/ansible:latest
     ports:
       - "8192:8192"
