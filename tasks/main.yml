@@ -44,6 +44,6 @@
   service:
     name: "supervisor"
     state: started
-    enabled: yes
+    enabled: "yes"
 ...
 # vim: ft=ansible:
