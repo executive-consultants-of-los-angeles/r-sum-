@@ -15,7 +15,7 @@ before_install:
     -s localhost
   - ansible -m apt -a 'update_cache=yes' -s localhost
   - sudo apt-get install docker.io
-  - sudo apt-get install gcc 
+  - sudo apt-get install gcc
   - sudo apt-get install build-essential
 install:
   - pip install molecule --pre
