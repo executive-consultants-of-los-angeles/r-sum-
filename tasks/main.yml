@@ -26,9 +26,5 @@
   args:
     creates: "/srv/rsum/rsum/home"
     chdir: "/srv/rsum/rsum/"
-- name: "Run migrations."
-  django_manage:
-    app_path: "/srv/rsum/rsum"
-    command: "syncdb"
 ...
 # vim: ft=ansible:
