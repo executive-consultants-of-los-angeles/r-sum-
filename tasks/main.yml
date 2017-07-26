@@ -42,7 +42,7 @@
   copy:
     src: "supervisord.conf"
     dest: "/etc/supervisor/supervisord.conf"
-- name: "Restart supervisord."
+- name: "Restart gunicorn."
   supervisorctl:
     name: "gunicorn"
     config: "/etc/supervisor/supervisord.conf"
