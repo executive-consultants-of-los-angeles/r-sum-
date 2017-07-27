@@ -197,7 +197,7 @@ experience:
     projects:
       business_development:
         - "made 300 cold calls a week"
-        - "created and shared a basic crm using Google Calendar" 
+        - "created and shared a basic crm using Google Calendar"
         - "clearly and concisely explained Aflac products"
   wishb:
     name: "Web Developer / System Administrator at WishB LLC"
@@ -205,7 +205,7 @@ experience:
     duration: "July 2010  -  September 2010 (3 months)"
     projects:
       web_developer:
-        - "used a homebrew MVC to program a website" 
+        - "used a homebrew MVC to program a website"
         - "dynamically loaded images with css and jquery"
         - "used Subversion for version control of code"
         - "coded user profiles for application"
