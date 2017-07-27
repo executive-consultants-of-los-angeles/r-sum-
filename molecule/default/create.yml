@@ -45,9 +45,9 @@
         image: "molecule_local/{{ item.image }}"
         state: started
         recreate: "False"
-        log_driver: syslog
-        command: "{{ item.command | default('sleep infinity') }}"
+        command: "{{ item.command | default('/usr/bin/supervisord -n') }}"
         privileged: "{{ item.privileged | default(omit) }}"
+        ports: "{{ item.ports | default(omit) }}"
         volumes: "{{ item.volumes | default(omit) }}"
         capabilities: "{{ item.capabilities | default(omit) }}"
       with_items: "{{ molecule_yml.platforms }}"

@@ -31,6 +31,9 @@ galaxy_info:
   galaxy_tags:
     - ecla
     - demonstration
+    - django
+    - gunicorn
+    - cv
 dependencies: []
 ...
 # vim: ft=ansible:

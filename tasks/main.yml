@@ -1,5 +1,57 @@
 ---
-- debug:
-    msg: "Tasks go here."
+- name: "Install git-completion.bash."
+  get_url:
+    url: "http://bit.ly/2tB6adK"
+    dest: "/root/.git-completion.bash"
+- name: "Install some packages with pip."
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - django
+    - gunicorn
+- name: "Install some packages with apt."
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - net-tools
+    - rsyslog
+    - supervisor
+    - vim
+- name: "Start a django project."
+  command: "/usr/local/bin/django-admin startproject rsum"
+  args:
+    creates: "/srv/rsum/rsum"
+    chdir: "/srv/rsum"
+- name: "Create an app in the new project."
+  command: "/srv/rsum/rsum/manage.py startapp home"
+  args:
+    creates: "/srv/rsum/rsum/home"
+    chdir: "/srv/rsum/rsum/"
+- name: "Migrate the database."
+  command: "/srv/rsum/rsum/manage.py migrate"
+  args:
+    creates: "/srv/rsum/rsum/db.sqlite3"
+    chdir: "/srv/rsum/rsum/"
+- name: "Copy settings.py to the correct location."
+  copy:
+    src: "settings.py"
+    dest: "/srv/rsum/rsum/rsum/settings.py"
+- name: "Copy settings for supervisord."
+  copy:
+    src: "supervisord.conf"
+    dest: "/etc/supervisor/supervisord.conf"
+- name: "Update services state."
+  supervisorctl:
+    name: "{{ item }}"
+    state: "present"
+  with_items:
+    - gunicorn
+    - rsyslogd
+- name: "Start gunicorn."
+  supervisorctl:
+    name: "gunicorn"
+    state: "started"
 ...
 # vim: ft=ansible:
