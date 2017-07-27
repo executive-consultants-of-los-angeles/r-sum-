@@ -137,7 +137,7 @@ experience:
         - "sent roughly 150,000 emails a day"
       email_administrator:
         - "implemented new elements of the email system"
-        - "created such as a centralized template store" 
+        - "created such as a centralized template store"
   thrive_marketing:
     name: "Web Developer / Systems Administrator at Thrive Marketing"
     location: "Nashville, Tennessee"
@@ -165,16 +165,16 @@ experience:
         - "served limited bottled beer, wine, and mixed drinks"
         - "mixed classic cocktails for the enjoyment of club patrons"
   rodizio_brazilian_grill:
-    name: "Bartender at Rodizio Brazilian Grill" 
+    name: "Bartender at Rodizio Brazilian Grill"
     location: "Nashville, Tennessee"
     duration: "September 2012  -  January 2013 (5 months)"
     projects:
       bartender:
         - "tended bar in a full-service restaurant setting"
         - "served bottled beer, draught beer, wine, champagne"
-        - "learned menu of specialty cocktails" 
+        - "learned menu of specialty cocktails"
   lipstick_lounge:
-    name: "Barback / Cook at Lipstick Lounge" 
+    name: "Barback / Cook at Lipstick Lounge"
     location: "Nashville, Tennessee"
     duration: "July 2012  -  September 2012 (3 months)"
     projects:
@@ -187,8 +187,8 @@ experience:
     duration: "September 2011  -  September 2012 (1 year 1 month)"
     projects:
       account_manager:
-        - "met with merchants to explain rate structures" 
-        - "managed accounts from beginning to end of service" 
+        - "met with merchants to explain rate structures"
+        - "managed accounts from beginning to end of service"
         - "made 900 calls a week to potential clients"
   aflac:
     name: "Business Development at AFLAC"
