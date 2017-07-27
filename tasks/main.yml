@@ -49,10 +49,6 @@
   with_items:
     - gunicorn
     - rsyslogd
-- name: "Stop gunicorn."
-  supervisorctl:
-    name: "gunicorn"
-    state: "stopped"
 - name: "Start gunicorn."
   supervisorctl:
     name: "gunicorn"
