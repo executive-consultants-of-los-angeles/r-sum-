@@ -49,11 +49,13 @@
   with_items:
     - gunicorn
     - rsyslogd
+- name: "Stop gunicorn."
+  supervisorctl:
+    name: "gunicorn"
+    state: "stopped"
 - name: "Start services."
   supervisorctl:
-    name: "{{ item }}"
     state: "started"
-  with_items:
-    - gunicorn 
+    name: "gunicorn" 
 ...
 # vim: ft=ansible:
