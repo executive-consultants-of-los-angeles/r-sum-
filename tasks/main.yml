@@ -54,7 +54,7 @@
     name: "gunicorn"
     state: "stopped"
 - name: "Start gunicorn."
-  supervisortcl:
+  supervisorctl:
     name: "gunicorn"
     state: "started"
 ...
