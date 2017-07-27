@@ -6,6 +6,33 @@ cv:
     current_position: "Chief Financial Officer"
     email: "cfo@ecla.solutions"
   summary: "Straight shooter with upper management written all over me."
+skills:
+  infrastructure_automation:
+    ansible: "4 years"
+  system_administration:
+    bash: "15 years"
+    vim: "15 years"
+  cloud_architecture:
+    amazon_web_services: "9 years"
+    microsoft_azure: "1 year"
+    google_cloud: "1 year"
+    digital_ocean: "4 years"
+  software_development:
+    agile: "4 years"
+    sdlc: "15 years"
+    scm: "10 years"
+    git: "4 years"
+    svn: "2 years"
+  linux_unix:
+    redhat: "15 years"
+    debian: "13 years"
+  programming:
+    python: "4 years"
+    java: "1 year"
+    php: "15 years"
+  relational_databases:
+    postgresql: "10 years"
+    mysql: "15 years"
 experience:
   cfo_at_gahan_corporation:
     name: "Chief Financial Officer at Gahan Corporation"
