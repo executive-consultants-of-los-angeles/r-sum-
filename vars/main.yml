@@ -210,39 +210,39 @@ experience:
         - "used Subversion for version control of code"
         - "coded user profiles for application"
       system_administrator:
-        - "maintained and configured the webserver" 
+        - "maintained and configured the webserver"
         - "designed database schemas in MySQL"
         - "contributed to daily SCRUM meetings"
   logitech:
-    name: "Systems Administrator / Software Engineer at Logitech" 
+    name: "Systems Administrator / Software Engineer at Logitech"
     location: "San Francisco, California"
     duration: "April 2008 - April 2010 (2 years 1 month)"
     projects:
       web_developer:
-        - "used Dojo.js JavaScript to develop video chat application" 
+        - "used Dojo.js JavaScript to develop video chat application"
         - "translated management requirements into new features"
         - "used Object Oriented Programming (OOP) with JavaScript"
         - "conducted extensive testing of enterprise software"
       systems_administrator:
         - "designed a custom Gentoo image for use with EC2"
-        - "supported deployment of Gentoo Linux servers" 
+        - "supported deployment of Gentoo Linux servers"
         - "moved more than twenty servers to a new data center"
-        - "deployed servers during launch Logitech Vid" 
+        - "deployed servers during launch Logitech Vid"
       software_engineer:
         - "developed a multi-process media server"
         - "polled content servers for new content"
         - "pulled new content then transcoded the content"
         - "upload transcoded content to S3"
-        - "used SOAP to make content available to end users" 
+        - "used SOAP to make content available to end users"
   blowtorch:
     name: "Web Developer / Systems Administrator at Blowtorch Entertainment"
     location: "Sausalito, California"
     duration: "November 2007  -  March 2008 (5 months)"
     projects:
       web_developer:
-        - "created custom Drupal modules" 
+        - "created custom Drupal modules"
         - "designed new tables in PostgreSQL database"
-        - "participated in design meetings" 
+        - "participated in design meetings"
       systems_administrator:
         - "configured Apache on CentOS development server"
         - "deployed server for use of other members of the team"
@@ -256,18 +256,18 @@ experience:
         - "used Linux command line tools and BASH scripting"
         - "automated daily database imports"
         - "administered MSSQL and MySQL database servers"
-        - "administered a Storage Area Network" 
+        - "administered a Storage Area Network"
     fordela:
       name: "Web Developer at Fordela"
       location: "San Francisco, California"
       duration: "October 2006  -  May 2007 (8 months)"
       projects:
         web_developer:
-          - "designed new database tables" 
-          - "programmed new features with PHP and JavaScript" 
-          - "ported existing code base to CakePHP" 
+          - "designed new database tables"
+          - "programmed new features with PHP and JavaScript"
+          - "ported existing code base to CakePHP"
         systems_administrator:
-          - "deployed subversion version control" 
+          - "deployed subversion version control"
           - "administered servers running CentOS"
           - "configured and maintained Apache https and MySQL"
   radical_fusion:
@@ -290,9 +290,9 @@ experience:
       system_administrator:
         - "created images with various distributions of linux"
         - "used an imaging tool to deploy new images"
-        - "used FreeBSD, CentOS, Debian, Fedora, and Ubuntu Linux" 
+        - "used FreeBSD, CentOS, Debian, Fedora, and Ubuntu Linux"
         - "moved more than sixty web servers to new data center"
-        - "configured switches in the new datacenter" 
+        - "configured switches in the new datacenter"
     payne_media:
       name: "Webmaster / Junior Systems Administrator at Payne Media"
       location: "Seattle, Washington"
