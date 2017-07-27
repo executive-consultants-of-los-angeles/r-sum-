@@ -111,5 +111,93 @@ cv:
           - "ran daily scrum meetings and maintained a storyboard"
         proposal:
           - "authored A3 to streamline build process"
+    chief_technical_officer_mintspare:
+      name: "Chief Technical Officer at Minstpare Incorporated"
+      location: "Alameda, California"
+      duration: "February 2014  -  January 2015 (1 year)"
+      projects:
+        webmaster:
+          - "developmed all Mintspare websites"
+          - "used CakePHP as well as jQuery"
+        systems_administrator:
+          - "administrated Mintspare databases"
+          - "prevented data loss and developed schemas"
+          - "responsible for all Mintspare IT infrastructure"
+          - "used Ansible to automate infrastructure deployment"
+          - "managed load balancing using HAProxy"
+    vs_media:
+      name: "Analyst / Email Administrator at VS Media"
+      location: "Los Angeles, California"
+      duration: "August 2013  -  December 2013 (5 months)"
+      projects:
+        analyst:
+          - "collected and analyzed data on email marketing"
+          - "improved performance of email servers and content"
+          - "documented control flow of complex scripts"
+          - "sent roughly 150,000 emails a day"
+        email_administrator:
+          - "implemented new elements of the email system"
+          - "created such as a centralized template store" 
+    thrive_marketing:
+      name: "Web Developer / Systems Administrator at Thrive Marketing"
+      location: "Nashville, Tennessee"
+      duration: "April 2013  -  July 2013 (4 months)"
+      projects:
+        systems_administrator:
+          - "installed and configured several different Linux servers"
+          - "used distributions such as Ubuntu, CentOS, and Gentoo"
+          - "also maintained a number of Windows 7 workstations"
+        web_developer:
+          - "developed internal products for sales operations"
+          - "made use of PHP, JavaScript, jQuery, JSON, REST, and SOAP"
+          - "created data models for two internal software projects"
+          - "documented existing and new code"
+        source_code_management:
+          - "implemented git and gitflow for source code control"
+          - "provided training to other employees on their use"
+    club_cirok:
+      name: "Bartender at Club Cirok"
+      location: "Nashville, Tennessee"
+      duration: "December 2012  -  July 2013 (8 months)"
+      projects:
+        bartender:
+          - "tended bar in a high volume nightclub setting"
+          - "served limited bottled beer, wine, and mixed drinks"
+          - "mixed classic cocktails for the enjoyment of club patrons"
+    rodizio_brazilian_grill:
+      name: "Bartender at Rodizio Brazilian Grill" 
+      location: "Nashville, Tennessee"
+      duration: "September 2012  -  January 2013 (5 months)"
+      projects:
+        bartender:
+          - "tended bar in a full-service restaurant setting"
+          - "served bottled beer, draught beer, wine, champagne"
+          - "learned menu of specialty cocktails" 
+    lipstick_lounge:
+      name: "Barback / Cook at Lipstick Lounge" 
+      location: "Nashville, Tennessee"
+      duration: "July 2012  -  September 2012 (3 months)"
+      projects:
+        barback:
+          - "stocked beer, wine, and liquor for high volume bar"
+          - "cooked, and delivered food orders from bar"
+    atlas_payment_processing:
+      name: "Account Manager at Atlas Payment Processing"
+      location: "San Francisco, California"
+      duration: "September 2011  -  September 2012 (1 year 1 month)"
+      projects:
+        account_manager:
+          - "met with merchants to explain rate structures" 
+          - "managed accounts from beginning to end of service" 
+          - "made 900 calls a week to potential clients"
+    aflac:
+      name: "Business Development at AFLAC"
+      location: "San Francisco, California"
+      duration: "December 2010  -  May 2011 (6 months)"
+      projects:
+        business_development:
+          - "made 300 cold calls a week"
+          - "created and shared a basic crm using Google Calendar" 
+          - "clearly and concisely explained Aflac products"
 ...
 # vim: ft=ansible:
