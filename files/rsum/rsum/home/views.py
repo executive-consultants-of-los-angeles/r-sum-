@@ -42,8 +42,7 @@ def index(request):
                         else:
                             pe = models.ProjectEntry()
                             p_entries = pe.get_entry(p_value.get('id')) 
-                        print(json.dumps(p_items,indent=1))
-        
+                            print(p_entries) 
 
     context = {
         'sections': models.Section.objects.all().__dict__,
