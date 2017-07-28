@@ -99,16 +99,17 @@ class SubSection(models.Model):
                 section = section
             ).values() 
         ):
-            p = Project() 
-            subsection.update({
-                'value': p.get_projects(
-                    SubSection.objects.filter(
-                        id = subsection.get('id')
+            if subsection.get('value') == u"<type 'dict'>":
+                p = Project() 
+                subsection.update({
+                    'value': p.get_projects(
+                        SubSection.objects.filter(
+                            id = subsection.get('id')
+                        )
                     )
-                )
-            })
+                })
             subsections.append(subsection)
-                
+                    
     
     def save_sub_sections(self, sub_section, section):
         if type(sub_section) == type(dict()):
