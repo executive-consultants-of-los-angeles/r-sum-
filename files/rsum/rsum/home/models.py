@@ -34,7 +34,7 @@ class CV(models.Model):
 class Section(models.Model):
     cv = models.ForeignKey(CV, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
-    
+    value = models.CharField(max_length=200, default="dict")    
     
     def save_sub_sections(self, cv, section):
         print(cv.section_name)
@@ -42,6 +42,8 @@ class Section(models.Model):
         section_i = Section()
         section_i.cv = cv
         section_i.name = cv.section_name 
+        if type(section) == type(''):
+            section_i.value = section
         section_i.save()
         print(Section.objects.all())
     
