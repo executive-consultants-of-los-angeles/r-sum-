@@ -12,6 +12,7 @@ from .models import CV
 def index(request):
 
     print(CV.objects.all()) 
-    CV.check_sections()
+    cv_i = CV()
+    cv_i.check_sections()
 
     return render(request, 'home/index.html', {})
