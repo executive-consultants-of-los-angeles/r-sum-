@@ -30,6 +30,9 @@ class CV(models.Model):
             current = CV()
             current.section_name = k 
             current.save()
+
+            s = Section()
+            s.save_sub_sections(current, v)
         return None
 
 
@@ -37,8 +40,13 @@ class Section(models.Model):
     cv = models.ForeignKey(CV, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     
+    
+    def save_sub_sections(self, cv, sub_sections):
+        print(sub_sections)
+    
 class SubSection(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
+    value = 
     
 
 class Projects(models.Model):
