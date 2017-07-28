@@ -11,12 +11,15 @@ import models
 # Create your views here.
 
 def index(request):
+
+    sections = []
     
     cv_i = models.CV()
     cv_i.check_sections()
 
-    sections = cv_i.get_cv(1)
-
+    cv = cv_i.get_cv(1)
+    
+    print(cv) 
 
     for i in range(0,len(sections)):
         ss = models.SubSection()
