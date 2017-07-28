@@ -84,7 +84,7 @@ class SubSection(models.Model):
         print("execute!")
         print(section)
         subsections = []
-        print(SubSection.objects.values_list())
+        print(SubSection.objects.values())
         for subsection in list(
             SubSection.objects.filter(
                 section = section
