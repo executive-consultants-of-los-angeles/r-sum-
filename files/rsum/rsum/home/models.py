@@ -26,7 +26,11 @@ class CV(models.Model):
 
     def get_cv(self):
         s = Section(cv = self)
-        return s.get_sections(self)
+        return s.get_sections(
+            CV.objects.filter(
+                id = 1
+            )
+        )
 
     def save_cv(self, cv):
         cv_i = CV()
@@ -51,6 +55,7 @@ class Section(models.Model):
             Section.objects.filter(
                 cv = cv
             ).values()):
+            print(json.dumps(section,indent=1))
             if section.get('value') == u"<type 'list'>":
                 ss = SubSection( section = self )  
                 section.update({
