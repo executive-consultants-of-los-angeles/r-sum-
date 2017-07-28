@@ -4,8 +4,8 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.shortcuts import render
-from django.forms.models import model_to_dict
 
+import json
 import models
 
 # Create your views here.
@@ -23,15 +23,15 @@ def index(request):
 
 
     for i in range(0,len(sections)):
-        print(sections[i])
         try: 
-            subsection = models.SubSection.objects.filter(
-                section = sections[i].get('id')
-            ).values()[0] 
+            ss = models.SubSection()
+            subsection = ss.get_sub_section(sections[i].get('id')) 
             sections[i].update({'subsection': subsection})
+            if type(subsection) == list(): 
+                print(json.dumps(subsection, indent=2))
+                pass
         except:
             pass
-        print(sections)
 
     context = {
         'sections': models.Section.objects.all().__dict__,
