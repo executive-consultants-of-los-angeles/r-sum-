@@ -42,17 +42,17 @@ class Section(models.Model):
     value = models.CharField(max_length=200, null=True) 
     
     def save_section(self, cv, name, section):
-        section_i = Section()
-        section_i.cv = cv
-        section_i.name = name 
+        s_i = Section()
+        s_i.cv = cv
+        s_i.name = name 
         if type(section) == type(str()):
-            section_i.value = section
-            section_i.save()
+            s_i.value = section
+            s_i.save()
         else:
-            section_i.value = type(section)
-            section_i.save()
+            s_i.value = type(section)
+            s_i.save()
             ss = SubSection()
-            ss.save_projects(section, section_i)
+            ss.save_sub_sections(section, s_i)
 
         return Section.objects.values_list()
     
@@ -61,99 +61,98 @@ class SubSection(models.Model):
     name = models.CharField(max_length=200, null=True)
     value_type = models.CharField(max_length=200, null=True)
     
-    def save_projects(self, sub_section, section):
+    def save_sub_sections(self, sub_section, section):
         if type(sub_section) == type(dict()):
             for k, v in sub_section.iteritems():
-                sub_section_i = SubSection()
-                sub_section_i.section = section
-                sub_section_i.value_type = type(sub_section)
-                sub_section_i.name = k
-                sub_section_i.save()
-                print(SubSection.objects.values_list())
+                ss_i = SubSection()
+                ss_i.section = section
+                ss_i.value_type = type(sub_section)
+                ss_i.name = k
+                ss_i.save()
                 p = Projects() 
-                p.save_project_items_dict(v, sub_section_i)
+                p.save_project_dict(v, ss_i)
         elif type(sub_section) == type(list()):
             for c,i in enumerate(sub_section):
-                sub_section_i = SubSection()
-                sub_section_i.section = section
-                sub_section_i.value_type = type(sub_section)
-                sub_section_i.name = str(c) 
-                sub_section_i.save()
+                ss_i = SubSection()
+                ss_i.section = section
+                ss_i.value_type = type(sub_section)
+                ss_i.name = str(c) 
+                ss_i.save()
                 p = Projects()
-                p.save_project_items_list(i, sub_section_i)
+                p.save_project_list(i, ss_i)
         return SubSection.objects.values_list()
 
-class Projects(models.Model):
+class Project(models.Model):
     sub_section = models.ForeignKey(SubSection, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     value = models.CharField(max_length=200, null=True)
 
-    def save_project_items_dict(self, projects, sub_section):
+    def save_project_dict(self, projects, sub_section):
         for k, v in projects.iteritems():
-            p_i = Projects()
+            p_i = Project()
             p_i.sub_section = sub_section
             p_i.name = k 
             p_i.value = v
             p_i.save()
         return Projects.objects.values_list() 
 
-    def save_project_items_list(self, projects, sub_section):
+    def save_project_list(self, projects, sub_section):
         for k,v in projects.iteritems():
             p_i = Projects()
             p_i.sub_section = sub_section
             p_i.name = k
             p_i.value = type(v)
             p_i.save()
-            pil = ProjectItemsList()
-            pil.save_project_dict(v, p_i)
-        return Projects.objects.values_list()
+            pi = ProjectItems()
+            pi.save_project_items(v, p_i)
+        return Project.objects.values_list()
 
-class ProjectItemsList(models.Model):
+class ProjectItems(models.Model):
     project = models.ForeignKey(Projects, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     value = models.CharField(max_length=200, null = True) 
 
-    def save_project_dict(self, project_item, project):
-        for key,p_item in project_item.iteritems():
-            pil_i = ProjectItemsList()
-            pil_i.project = project
-            pil_i.name = key
-            if type(p_item) == type(dict()):
-                pil_i.value = type(p_item)
-                pil_i.save()
-                projectitem = ProjectItem()
-                projectitem.save_project_item(p_item, pil_i)
+    def save_project_items(self, project_item, project):
+        for key,p_entry in project_item.iteritems():
+            pi_i = ProjectItemsList()
+            pi_i.project = project
+            pi_i.name = key
+            if type(p_entry) == type(dict()):
+                pi_i.value = type(p_entry)
+                pi_i.save()
+                pe = ProjectEntry()
+                pe.save_entry(p_entry, pi_i)
             else:
-                pil_i.value = p_item
-                pil_i.save()
-        return ProjectItemsList.objects.values_list() 
+                pi_i.value = p_entry
+                pi_i.save()
+        return ProjectItems.objects.values_list() 
 
 
-class ProjectItem(models.Model):
-    project_item_list = models.ForeignKey(ProjectItemsList, on_delete=models.CASCADE)
+class ProjectEntry(models.Model):
+    project_item_list = models.ForeignKey(ProjectItems, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null = True)
     value = models.CharField(max_length=200, null = True) 
 
-    def save_project_item(self, project_item, pil):
-        for k, v in project_item.iteritems():
-            pi = ProjectItem()
-            pi.project_item_list = pil
-            pi.name = k
-            pi.value = type(v)
-            pi.save()
-            projectlistitem = ProjectListItem()
-            projectlistitem.save_list_item(v, pi)
-        return ProjectItem.objects.values_list()
+    def save_entry(self, entry, pi_l):
+        for k, v in entry.iteritems():
+            pe_i = ProjectEntry()
+            pe_i.project_item_list = pi_l
+            pe_i.name = k
+            pe_i.value = type(v)
+            pe_i.save()
+            eli = EntryListItem()
+            eli.save_list_item(v, pe_i)
+        return ProjectEntry.objects.values_list()
 
 
-class ProjectListItem(models.Model):
-    project_item = models.ForeignKey(ProjectItem, on_delete=models.CASCADE)
+class EntryListItem(models.Model):
+    project_entry = models.ForeignKey(ProjectEntry, on_delete=models.CASCADE)
     value = models.CharField(max_length=200, null=True)
 
-    def save_list_item(self, list_item, pi):
+    def save_list_item(self, list_item, pe):
         for i in list_item:
-            pli = ProjectListItem()
-            pli.project_item = pi
-            pli.value = i
-            pli.save()
-        return ProjectListItem.objects.values_list() 
+            eli = EntryListItem()
+            eli.project_item = pe
+            eli.value = i
+            eli.save()
+        return EntryListItem.objects.values_list() 
