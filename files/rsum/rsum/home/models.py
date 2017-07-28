@@ -66,7 +66,7 @@ class SubSection(models.Model):
                 print(k)
                 print(v)
                 p = Projects() 
-                p.save_projects_items_list(v, sub_section_i)
+                p.save_project_items_list(v, sub_section_i)
                 sub_section_i.name = k
                 sub_section_i.save()
             print(SubSection.objects.values_list())
