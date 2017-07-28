@@ -263,7 +263,7 @@ class EntryListItem(models.Model):
                 project_entry = entry
             ).values()
         ):
-            items.append(item))
+            items.append(item)
         return items
             
 
