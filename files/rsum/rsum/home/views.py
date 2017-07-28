@@ -34,7 +34,7 @@ def index(request):
                     sections[i].get('subsections')[index].update({'value':projects})
                 else:
                     pi = models.ProjectItems()
-                    p_items = list(pi.get_project_items(projects.get('id')))[0]  
+                    p_items = list(pi.get_project_items(projects.get('id')))
                     print(json.dumps(p_items,indent=1))
         
 
