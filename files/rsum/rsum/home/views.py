@@ -27,7 +27,7 @@ def index(request):
         subsections = list(ss.get_sub_section(sections[i].get('id')))
         if len(subsections) > 0:
             sections[i].update({'subsections': subsections})
-        print(subsections)
+        print(sections)
         
 
     context = {
