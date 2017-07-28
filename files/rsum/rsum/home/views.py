@@ -31,7 +31,7 @@ def index(request):
                 p = models.Project()
                 projects = list(p.get_projects(value.get('id')))[0]
                 print(projects.get('value'))
-                if projects.get('value') != u'type<dict>':
+                if projects.get('value') != u"<type 'dict'>":
                     sections[i].get('subsections')[index].update({'value':projects})
                 else:
                     pi = models.ProjectItems()
