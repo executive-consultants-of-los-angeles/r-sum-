@@ -117,11 +117,11 @@ class ProjectItemsList(models.Model):
             if type(p_item) == type(dict()):
                 pil_i.value = type(p_item)
                 pil_i.save()
+                projectitem = ProjectItem()
+                projectitem.save_project_item(p_item, pil_i)
             else:
                 pil_i.value = p_item
                 pil_i.save()
-                projectitem = ProjectItem()
-                projectitem.save_project_item(p_item, pil_i)
         return None
 
 
