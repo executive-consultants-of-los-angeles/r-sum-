@@ -131,5 +131,27 @@ class ProjectItem(models.Model):
     value = models.CharField(max_length=200, null = True) 
 
     def save_project_item(self, project_item, pil):
+        for k, v in project_item.iteritems():
+            pi = ProjectItem()
+            pi.project_item_list = pil
+            pi.name = k
+            pi.value = type(v)
+            pi.save()
+            projectlistitem = ProjectListItem()
+            projectlistitem.save_list_item(v, pi)
         print(json.dumps(project_item, indent=2))
         return None
+
+
+class ProjectListItem(models.Model):
+    project_item = models.ForeignKey(ProjectItemList, on_delete=models.CASCADE)
+    value = models.CharField(max_length=200, null=True)
+
+    def save_list_item(self, list_item, pi):
+        for i in list_item:
+            pli = ProjectListItem()
+            pli.project_item = pi
+            pli.value = i
+            pli.save()
+        print(ProjectListItem.objects.values_list()) 
+        return ProjectListItem.objects.values_list() 
