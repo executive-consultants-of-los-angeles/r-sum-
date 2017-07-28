@@ -66,10 +66,10 @@ class SubSection(models.Model):
             for k, v in sub_section.iteritems():
                 print(k)
                 print(v)
-                p = Projects() 
-                p.save_project_items_list(v, sub_section_i)
                 sub_section_i.name = k
                 sub_section_i.save()
+                p = Projects() 
+                p.save_project_items_list(v, sub_section_i)
             print(SubSection.objects.values_list())
         elif type(sub_section) == type(list()):
             print(type(sub_section))
@@ -78,8 +78,11 @@ class SubSection(models.Model):
 
 class Projects(models.Model):
     sub_section = models.ForeignKey(SubSection, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200, null=True)
+    value = models.CharField(max_legnth=200, null=True)
 
     def save_project_items_list(self, projects, sub_section):
+        print(projects)
         return None
     
 
