@@ -46,7 +46,9 @@ class Section(models.Model):
     value = models.CharField(max_length=200, null=True) 
 
     def get_sections(self, cv_id):
-        print(self)
+        print(Section.objects.filter(
+            id = self.id
+        ).values())
 
     def get_section(self, s_id):
         return Section.objects.filter(id=s_id).values()[0]
