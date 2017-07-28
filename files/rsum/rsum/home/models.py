@@ -24,8 +24,8 @@ class CV(models.Model):
         else:
             return cv_i
 
-    def get_cv(self, cv_id):
-        s = Section(cv = cv_id)
+    def get_cv(self):
+        s = Section(cv = self)
         return s.get_sections(cv_id)
 
     def save_cv(self, cv):
