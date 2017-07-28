@@ -22,4 +22,4 @@ def index(request):
         'cv': cv 
     }
 
-    return render(request, 'home/index.html', {})
+    return render(request, 'home/index.html', context)
