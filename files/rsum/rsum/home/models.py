@@ -66,9 +66,9 @@ class SubSection(models.Model):
     value_type = models.CharField(max_length=200, null=True)
 
     def get_sub_section(self, ss_id):
-        SubSection.objects.filter(
+        return SubSection.objects.filter(
             section = ss_id 
-        ).values()[0] 
+        ).values_list() 
     
     def save_sub_sections(self, sub_section, section):
         if type(sub_section) == type(dict()):
