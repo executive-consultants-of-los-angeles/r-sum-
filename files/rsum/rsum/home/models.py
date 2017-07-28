@@ -82,7 +82,7 @@ class SubSection(models.Model):
 
     def get_sub_section(self, section):
         print("execute!")
-        print(section.values().get('id'))
+        print(section.__dict__)
         subsections = []
         print(SubSection.objects.values())
         for subsection in list(
