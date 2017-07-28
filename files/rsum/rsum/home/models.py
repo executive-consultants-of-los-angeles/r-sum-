@@ -18,21 +18,22 @@ class CV(models.Model):
         if not cv_i.exists():
             cv_f = open('/srv/rsum/cv.yml')
             cv_d = yaml.load(cv_f.read())        
-            self.save_sections(cv_d.get('cv'))
+            self.save_cv(cv_d)
             cv_i = CV.objects.all() 
             return cv_i
         else:
             return cv_i
 
-    def save_sections(self, cv_d):
-        for k, v in cv_d.iteritems():
-            current = CV()
-            current.section_name = k 
-            current.save()
+    def save_cv(self, cv):
+        current = CV()
+        current.cv_name = 'abridged' 
+        current.save()
 
-            s = Section()
-            s.save_sub_sections(current, v)
-        return None
+        for name, section in cv.get('cv').iteritems():
+        s = Section()
+        s.save_section(current, name, section)
+
+        return CV.objects.values_list() 
 
 
 class Section(models.Model):
@@ -40,11 +41,10 @@ class Section(models.Model):
     name = models.CharField(max_length=200, default='section')
     value = models.CharField(max_length=200, null=True) 
     
-    def save_sub_sections(self, cv, section):
+    def save_section(self, cv, name, section):
         section_i = Section()
         section_i.cv = cv
-        section_i.name = cv.section_name
-        section_i.value_type = type(section)
+        section_i.name = name 
         if type(section) == type(str()):
             section_i.value = section
             section_i.save()
