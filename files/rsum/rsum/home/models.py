@@ -29,7 +29,8 @@ class CV(models.Model):
         current.cv_name = 'abridged' 
         current.save()
 
-        for name, section in cv.get('cv').iteritems():
+        for name, section in cv.iteritems():
+            print(name)
             print(section)
             s = Section()
             s.save_section(current, name, section)
