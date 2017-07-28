@@ -152,6 +152,11 @@ class ProjectEntry(models.Model):
     name = models.CharField(max_length=200, null = True)
     value = models.CharField(max_length=200, null = True) 
 
+    def get_entry(self, pil):
+        return ProjectEntry.objects.filter(
+            project_item_list = pil
+        ).values()
+
     def save_entry(self, entry, pi_l):
         for k, v in entry.iteritems():
             pe_i = ProjectEntry()
