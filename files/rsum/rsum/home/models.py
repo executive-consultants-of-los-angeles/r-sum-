@@ -69,7 +69,7 @@ class SubSection(models.Model):
                 ss_i.value_type = type(sub_section)
                 ss_i.name = k
                 ss_i.save()
-                p = Projects() 
+                p = Project() 
                 p.save_project_dict(v, ss_i)
         elif type(sub_section) == type(list()):
             for c,i in enumerate(sub_section):
