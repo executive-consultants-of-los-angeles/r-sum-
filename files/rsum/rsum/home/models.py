@@ -99,7 +99,6 @@ class SubSection(models.Model):
                 section = section
             ).values() 
         ):
-            print(subsection)
             p = Project() 
             subsection.update({
                 'value': p.get_projects(
@@ -108,7 +107,7 @@ class SubSection(models.Model):
                     )
                 )
             })
-            print(subsection)
+            subsections.append(subsection)
                 
     
     def save_sub_sections(self, sub_section, section):
@@ -137,7 +136,14 @@ class Project(models.Model):
     name = models.CharField(max_length=200, null=True)
     value = models.CharField(max_length=200, null=True)
 
-    def get_projects(self, ss_id):
+    def get_projects(self, subsection):
+        projects = []
+        for project in list(
+            Project.objects.filter(
+                sub_section = subsection
+            ).values()
+        ):
+            print(project)
         return Project.objects.filter(
             sub_section = ss_id
         ).values()
