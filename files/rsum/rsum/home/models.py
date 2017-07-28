@@ -109,6 +109,7 @@ class SubSection(models.Model):
                     )
                 })
             subsections.append(subsection)
+        return subsections
                     
     
     def save_sub_sections(self, sub_section, section):
