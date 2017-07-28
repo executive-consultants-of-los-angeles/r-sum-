@@ -30,6 +30,7 @@ def index(request):
             for index, value in enumerate(subsections):
                 p = models.Project()
                 projects = list(p.get_projects(value.get('id')))[0]
+                print(projects.get('value'))
                 if type(projects.get('value')) == type(str()):
                     sections[i].get('subsections')[index].update({'value':projects})
                 else:
