@@ -91,7 +91,6 @@ class Projects(models.Model):
             p_i.name = k 
             p_i.value = v
             p_i.save()
-            print(Projects.objects.values_list())
         return Projects.objects.values_list() 
 
     def save_project_items_list(self, projects, sub_section):
@@ -104,8 +103,7 @@ class Projects(models.Model):
             p_i.save()
             pil = ProjectItemsList()
             pil.save_project_dict(v, p_i)
-            print(Projects.objects.values_list())
-        return None
+        return Projects.objects.values_list()
 
 class ProjectItemsList(models.Model):
     project = models.ForeignKey(Projects, on_delete=models.CASCADE)
