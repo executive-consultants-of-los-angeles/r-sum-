@@ -30,6 +30,7 @@ class CV(models.Model):
         current.save()
 
         for name, section in cv.get('cv').iteritems():
+            print(section)
             s = Section()
             s.save_section(current, name, section)
 
