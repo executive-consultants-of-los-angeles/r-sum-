@@ -20,5 +20,9 @@ def index(request):
 
     pli = models.ProjectListItem.objects.values_list()
     print(pli)
+    context = {
+        'sections': models.Section.objects.all().__dict__,
+        'sub_sections': models.SubSection.objects.all().__dict__,
+    }
 
     return render(request, 'home/index.html', {})
