@@ -23,16 +23,12 @@ def index(request):
 
 
     for i in range(0,len(sections)):
-        try: 
-            ss = models.SubSection()
-            subsection = ss.get_sub_section(sections[i].get('id')) 
-            sections[i].update({'subsection': subsection})
-            print(subsection)
-            if type(subsection) == type(list()): 
-                print(json.dumps(subsection, indent=2))
-                pass
-        except:
-            pass
+        ss = models.SubSection()
+        subsections = ss.get_sub_section(sections[i].get('id')) 
+        if subsections.exists():
+            sections[i].update({'subsections': dict(subsections)})
+        print(subsections)
+        
 
     context = {
         'sections': models.Section.objects.all().__dict__,
