@@ -52,14 +52,13 @@ class Section(models.Model):
                 cv = cv
             ).values()):
             if section.get('value') == u"<type 'list'>":
-                print(section) 
+                ss = Subsection( section = self )  
+                section.update({'value': ss.get_sub_section(self)})
             if section.get('value') == u"<type 'dict'>":
-                print(section)
+                ss = Subsection( section = self )  
+                section.update({'value': ss.get_sub_section(self)})
             sections.append(section)
         return sections
-
-    def get_section(self, s_id):
-        return Section.objects.filter(id=s_id).values()[0]
     
     def save_section(self, cv, name, section):
         s_i = Section()
@@ -81,10 +80,14 @@ class SubSection(models.Model):
     name = models.CharField(max_length=200, null=True)
     value_type = models.CharField(max_length=200, null=True)
 
-    def get_sub_section(self, ss_id):
-        return SubSection.objects.filter(
-            section = ss_id 
-        ).values() 
+    def get_sub_section(self, section):
+        subsections = []
+        for subsection in list(
+            SubSection.objects.filter(
+                section = section 
+            ).values() 
+        ):
+            print(subsection)
     
     def save_sub_sections(self, sub_section, section):
         if type(sub_section) == type(dict()):
