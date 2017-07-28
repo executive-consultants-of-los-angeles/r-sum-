@@ -54,7 +54,8 @@ class Section(models.Model):
             s_i.value = type(section)
             s_i.save()
             ss = SubSection()
-            ss.save_sub_sections(section, s_i)
+            print(section)
+            #ss.save_sub_sections(section, s_i)
 
         return Section.objects.values_list()
     
