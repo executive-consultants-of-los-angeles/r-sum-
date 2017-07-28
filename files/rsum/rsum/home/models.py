@@ -42,7 +42,9 @@ class Section(models.Model):
         section_i.cv = cv
         section_i.name = cv.section_name
         section_i.value_type = type(section)
-        if type(section) == type('string'):
+        print(type(section))
+        print(type(str()))
+        if type(section) == type(str()):
             section_i.value = section
         else:
             ss = SubSection()
