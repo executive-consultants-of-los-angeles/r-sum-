@@ -17,8 +17,13 @@ class CV(models.Model):
         cv_i = CV.objects.all()
         if not cv_i.exists():
             print('load it up!')
-        # cv_f = open('/srv/rsum/cv.yml')
-        # cv_j = yaml.load(cv_f.read())        
+            cv_f = open('/srv/rsum/cv.yml')
+            cv_d = yaml.load(cv_f.read())        
+            self.save_sections(cv_d)
+
+    def save_sections(self, cv_d):
+        for item in cv_d:
+            print(item)
 
 
 class Section(models.Model):
