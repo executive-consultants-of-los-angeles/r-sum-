@@ -68,7 +68,7 @@ class SubSection(models.Model):
     def get_sub_section(self, ss_id):
         return SubSection.objects.filter(
             section = ss_id 
-        ).values_list() 
+        ).values() 
     
     def save_sub_sections(self, sub_section, section):
         if type(sub_section) == type(dict()):
