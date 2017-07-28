@@ -120,6 +120,7 @@ class SubSection(models.Model):
                         )
                     )[0]
                 })
+            print(subsection)
             subsections.append(subsection)
         return subsections
                     
