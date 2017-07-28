@@ -99,6 +99,7 @@ class SubSection(models.Model):
                 section = section
             ).values() 
         ):
+            print(subsection)
             if subsection.get('value') == u"<type 'dict'>":
                 p = Project() 
                 subsection.update({
