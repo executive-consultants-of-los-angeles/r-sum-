@@ -16,6 +16,8 @@ def index(request):
     cv_i = models.CV()
     cv_i.check_sections()
     for i in range(1,len(models.CV.objects.all())):
+        print(i)
+        print(models.Section.objects.filter(id=i).values())))))))))
         sections.append(
             models.Section.objects.filter(id=i).values()
         )
@@ -28,7 +30,5 @@ def index(request):
         'projects': models.Projects.objects.all().__dict__,
         'project_items_list': models.ProjectItemsList.objects.all().__dict__,
     }
-
-    print(context)
 
     return render(request, 'home/index.html', {})
