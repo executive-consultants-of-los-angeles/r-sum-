@@ -5,14 +5,21 @@ from __future__ import print_function
 
 from django.shortcuts import render
 
-from .models import CV
+import json
+import models
 
 # Create your views here.
 
 def index(request):
-
-    print(CV.objects.all()) 
-    cv_i = CV()
+    cv_i = models.CV(id=1)
     cv_i.check_sections()
 
-    return render(request, 'home/index.html', {})
+    cv = cv_i.get_cv()
+    
+    print(json.dumps(cv, indent=1)) 
+
+    context = {
+        'cv': cv 
+    }
+
+    return render(request, 'home/index.html', context)
