@@ -10,12 +10,15 @@ import models
 # Create your views here.
 
 def index(request):
-
+    sections = []
+    
     cv_i = models.CV()
     cv_i.check_sections()
+    for i in range(1,len(models.CV.objects.all()):
+        sections.append(models.Section.filter(id=i).__dict__)
+    print(sections)
 
 
-    pli = models.ProjectListItem.objects.values_list()
     context = {
         'sections': models.Section.objects.all().__dict__,
         'sub_sections': models.SubSection.objects.all().__dict__,
