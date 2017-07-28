@@ -117,7 +117,7 @@ class SubSection(models.Model):
             for k, v in sub_section.iteritems():
                 ss_i = SubSection()
                 ss_i.section = section
-                ss_i.value_type = type(sub_section)
+                ss_i.value = type(sub_section)
                 ss_i.name = k
                 ss_i.save()
                 p = Project() 
@@ -126,7 +126,7 @@ class SubSection(models.Model):
             for c,i in enumerate(sub_section):
                 ss_i = SubSection()
                 ss_i.section = section
-                ss_i.value_type = type(sub_section)
+                ss_i.value = type(sub_section)
                 ss_i.name = str(c) 
                 ss_i.save()
                 p = Project()
