@@ -78,7 +78,7 @@ class SubSection(models.Model):
                 ss_i.value_type = type(sub_section)
                 ss_i.name = str(c) 
                 ss_i.save()
-                p = Projects()
+                p = Project()
                 p.save_project_list(i, ss_i)
         return SubSection.objects.values_list()
 
