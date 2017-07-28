@@ -126,6 +126,11 @@ class ProjectItems(models.Model):
     name = models.CharField(max_length=200)
     value = models.CharField(max_length=200, null = True) 
 
+    def get_project_items(self, p_id):
+        return ProjectItems.objects.filter(
+            project = p_id
+        ).values()
+
     def save_project_items(self, project_item, project):
         for key,p_entry in project_item.iteritems():
             pi_i = ProjectItems()
