@@ -117,8 +117,8 @@ class SubSection(models.Model):
                     'value': list(
                         Project.objects.filter(
                             sub_section = subsection.get('id')  
-                        )
-                    ).values()[0]
+                        ).values()
+                    )[0]
                 })
             print(json.dumps(subsection, indent=1))
             subsections.append(subsection)
