@@ -59,10 +59,10 @@ class SubSection(models.Model):
     
     def save_projects(self, sub_section, section):
         if type(sub_section) == type(dict()):
-            sub_section_i = SubSection()
-            sub_section_i.section = section
-            sub_section_i.value_type = type(sub_section)
             for k, v in sub_section.iteritems():
+                sub_section_i = SubSection()
+                sub_section_i.section = section
+                sub_section_i.value_type = type(sub_section)
                 print(k)
                 print(v)
                 sub_section_i.name = k
