@@ -86,7 +86,7 @@ class SubSection(models.Model):
         subsections = []
         for subsection in list(
             SubSection.objects.filter(
-                section = section
+                section = self.section
             ).values() 
         ):
             print(subsection)
