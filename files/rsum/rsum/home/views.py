@@ -14,7 +14,7 @@ def index(request):
     print(models.ProjectListItem.objects.values_list())
     cv_i = models.CV()
     cv_i.check_sections()
-    print(cv_i.values_list())
+    print(cv_i.objects.values_list())
 
     pli = models.ProjectListItem.objects.values_list()
     print(pli)
