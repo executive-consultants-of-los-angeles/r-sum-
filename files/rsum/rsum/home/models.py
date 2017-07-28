@@ -188,7 +188,11 @@ class ProjectItems(models.Model):
                 project = project
             ).values()
         ):
-            print(project_item)
+            if project_item.get('value') == u"<type 'dict'>":
+                print(project_item)
+            else:
+                project_items.append(project_item)
+        return project_items
 
     def save_project_items(self, project_item, project):
         for key,p_entry in project_item.iteritems():
