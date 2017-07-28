@@ -15,7 +15,7 @@ class CV(models.Model):
 
     def check_sections(self):
         try: 
-            print(self.objects[0].entry)
+            print(self[0]) 
         except Exception as e:
             print(e)
         # cv_f = open('/srv/rsum/cv.yml')
