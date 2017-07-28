@@ -23,7 +23,9 @@ class CV(models.Model):
 
     def save_sections(self, cv_d):
         for item in cv_d:
-            print(item)
+            current = CV()
+            current.section_name = item 
+            current.save()
 
 
 class Section(models.Model):
