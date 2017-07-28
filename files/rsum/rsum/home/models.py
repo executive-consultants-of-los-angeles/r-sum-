@@ -94,11 +94,11 @@ class Project(models.Model):
             p_i.name = k 
             p_i.value = v
             p_i.save()
-        return Projects.objects.values_list() 
+        return Project.objects.values_list() 
 
     def save_project_list(self, projects, sub_section):
         for k,v in projects.iteritems():
-            p_i = Projects()
+            p_i = Project()
             p_i.sub_section = sub_section
             p_i.name = k
             p_i.value = type(v)
@@ -108,7 +108,7 @@ class Project(models.Model):
         return Project.objects.values_list()
 
 class ProjectItems(models.Model):
-    project = models.ForeignKey(Projects, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     value = models.CharField(max_length=200, null = True) 
 
