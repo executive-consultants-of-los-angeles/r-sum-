@@ -55,7 +55,6 @@ class Section(models.Model):
             Section.objects.filter(
                 cv = cv
             ).values()):
-            print(json.dumps(section,indent=1))
             if section.get('value') == u"<type 'list'>":
                 ss = SubSection( section = self )  
                 section.update({
@@ -74,6 +73,7 @@ class Section(models.Model):
                         )
                     )
                 })
+            print(json.dumps(section,indent=1))
             sections.append(section)
         return sections
     
