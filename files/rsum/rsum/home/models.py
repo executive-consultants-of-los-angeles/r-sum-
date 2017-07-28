@@ -238,7 +238,8 @@ class ProjectEntry(models.Model):
                     )
                 ) 
             })
-            print(entry)
+            entries.append(entry)
+        return entries
 
     def save_entry(self, entry, pi_l):
         for k, v in entry.iteritems():
