@@ -37,7 +37,7 @@ class Section(models.Model):
     
     
     def save_sub_sections(self, cv, section):
-        print(cv)
+        print(cv.section_name)
         print(json.dumps(section, indent=2))
         section_i = Section()
         section_i.cv = cv
