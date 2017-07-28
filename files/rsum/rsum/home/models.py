@@ -40,7 +40,7 @@ class Section(models.Model):
     def save_sub_sections(self, cv, section):
         section_i = Section()
         section_i.cv = cv
-        section_i.name = cv.section_name 
+        section_i.name = cv.section_name
         section_i.value_type = type(section)
         if type(section) == type(''):
             section_i.value = section
