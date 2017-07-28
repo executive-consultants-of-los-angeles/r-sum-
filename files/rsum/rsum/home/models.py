@@ -14,7 +14,8 @@ class CV(models.Model):
     section_name = models.CharField(max_length=200)
 
     def check_sections(self):
-        if not self.exists():
+        cv_i = CV.objects.all()
+        if not cv_i.exists():
             print('load it up!')
         # cv_f = open('/srv/rsum/cv.yml')
         # cv_j = yaml.load(cv_f.read())        
