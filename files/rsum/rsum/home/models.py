@@ -25,9 +25,8 @@ class CV(models.Model):
             return cv_i
 
     def get_cv(self, cv_id):
-        return list(Section.objects.filter(
-            cv = cv_id 
-        ).values())
+        s = Section(cv = cv_id)
+        return s.get_sections(cv_id)
 
     def save_cv(self, cv):
         cv_i = CV()
@@ -46,9 +45,11 @@ class Section(models.Model):
     name = models.CharField(max_length=200, default='section')
     value = models.CharField(max_length=200, null=True) 
 
+    def get_sections(self, cv_id):
+        print(self)
+
     def get_section(self, s_id):
         return Section.objects.filter(id=s_id).values()[0]
-        
     
     def save_section(self, cv, name, section):
         s_i = Section()
