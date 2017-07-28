@@ -37,8 +37,6 @@ class Section(models.Model):
     value = models.CharField(max_length=200, default="dict")    
     
     def save_sub_sections(self, cv, section):
-        print(cv.section_name)
-        print(json.dumps(section, indent=2))
         section_i = Section()
         section_i.cv = cv
         section_i.name = cv.section_name 
