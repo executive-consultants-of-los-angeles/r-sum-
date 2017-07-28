@@ -21,9 +21,9 @@ def index(request):
         )
 
 
-    for i in sections:
+    for k,i in enumerate(sections):
         subsection = models.SubSection.objects.filter(section_id=i.get('id')).values()[0]     
-        sections[i].update({'subsection': subsection})
+        sections[k].update({'subsection': subsection})
         print(sections)
 
     context = {
