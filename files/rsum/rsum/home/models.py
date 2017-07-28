@@ -46,11 +46,17 @@ class Section(models.Model):
     value = models.CharField(max_length=200, null=True) 
 
     def get_sections(self, cv):
+        sections = []
         for section in list(
             Section.objects.filter(
                 cv = cv
             ).values()):
-            print(section) 
+            if section.get('value') == u"<type 'list'>":
+                print(section) 
+            if section.get('value') == u"<type 'dict'>":
+                print(section)
+            sections.append(section)
+        return sections
 
     def get_section(self, s_id):
         return Section.objects.filter(id=s_id).values()[0]
