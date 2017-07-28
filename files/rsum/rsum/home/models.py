@@ -62,15 +62,14 @@ class SubSection(models.Model):
             sub_section_i = SubSection()
             sub_section_i.section = section
             sub_section_i.value_type = type(sub_section)
-            print(sub_section_i)
             for k, v in sub_section.iteritems():
                 print(k)
                 print(v)
                 sub_section_i.name = k
                 sub_section_i.save()
+                print(SubSection.objects.values_list())
                 p = Projects() 
                 p.save_project_items_list(v, sub_section_i)
-            print(SubSection.objects.values_list())
         elif type(sub_section) == type(list()):
             print(type(sub_section))
             print(json.dumps(sub_section, indent=2))
