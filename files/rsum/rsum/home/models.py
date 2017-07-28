@@ -19,6 +19,10 @@ class CV(models.Model):
             cv_f = open('/srv/rsum/cv.yml')
             cv_d = yaml.load(cv_f.read())        
             self.save_sections(cv_d.get('cv'))
+            cv_i = CV.objects.all() 
+            return cv_i
+        else:
+            return cv_i
 
     def save_sections(self, cv_d):
         for k, v in cv_d.iteritems():
