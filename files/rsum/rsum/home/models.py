@@ -30,8 +30,8 @@ class CV(models.Model):
         current.save()
 
         for name, section in cv.get('cv').iteritems():
-        s = Section()
-        s.save_section(current, name, section)
+            s = Section()
+            s.save_section(current, name, section)
 
         return CV.objects.values_list() 
 
