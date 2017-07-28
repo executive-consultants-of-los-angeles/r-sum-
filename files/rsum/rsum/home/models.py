@@ -1,5 +1,10 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from __future__ import print_function
+
+import json
+import yaml
 
 from django.db import models
 
@@ -7,6 +12,10 @@ from django.db import models
 # Create your models here.
 class CV(models.Model):
     section_name = models.CharField(max_length=200)
+
+    def check_sections(self):
+        cv_f = open('/srv/rsum/cv.yml')
+        
 
 
 class Section(models.Model):
