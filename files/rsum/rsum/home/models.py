@@ -102,14 +102,22 @@ class Projects(models.Model):
             p_i.name = k
             p_i.value = type(v)
             p_i.save()
-            print(k)
-            print(v)
+            pil = ProjectItemsList()
+            pil.save_project_dict(v, p_i)
             print(Projects.objects.values_list())
         return None
 
 class ProjectItemsList(models.Model):
-    projects = models.ForeignKey(Projects, on_delete=models.CASCADE)
+    project = models.ForeignKey(Projects, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
+    value = models.CharField(max_length=200, null = True) 
+
+    def save_project_dict(self, project_item, project):
+        pil_i = ProjectItemsList()
+        pil_i.project = project
+        print(json.dumps(project_item, indent=2))
+        
+        return None
 
 
 class ProjectItem(models.Model):
