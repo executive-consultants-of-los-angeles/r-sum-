@@ -25,9 +25,10 @@ class CV(models.Model):
     def save_sections(self, cv_d):
         print(json.dumps(cv_d, indent=2))
         for k, v in cv_d.iteritems():
+            print(k)
             print(json.dumps(v, indent=2))
             current = CV()
-            current.section_name = item 
+            current.section_name = k 
             current.save()
         return None
 
