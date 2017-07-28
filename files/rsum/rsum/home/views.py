@@ -22,9 +22,10 @@ def index(request):
 
 
     for i in range(0,len(sections)):
+        print(sections[i])
         subsection = models.SubSection.objects.filter(
             section = sections[i].get('id')
-        ).values()[0]     
+        ).values()     
         sections[i].update({'subsection': subsection})
         print(sections)
 
