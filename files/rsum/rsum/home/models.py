@@ -53,7 +53,13 @@ class Section(models.Model):
             ).values()):
             if section.get('value') == u"<type 'list'>":
                 ss = SubSection( section = self )  
-                section.update({'value': ss.get_sub_section(self)})
+                section.update({
+                    'value': ss.get_sub_section(
+                        Section.objects.filter(
+                            id = section.get('id')
+                        )
+                    )
+                })
             if section.get('value') == u"<type 'dict'>":
                 ss = SubSection( section = self )  
                 section.update({'value': ss.get_sub_section(self)})
