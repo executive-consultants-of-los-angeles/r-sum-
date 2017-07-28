@@ -52,10 +52,10 @@ class Section(models.Model):
                 cv = cv
             ).values()):
             if section.get('value') == u"<type 'list'>":
-                ss = Subsection( section = self )  
+                ss = SubSection( section = self )  
                 section.update({'value': ss.get_sub_section(self)})
             if section.get('value') == u"<type 'dict'>":
-                ss = Subsection( section = self )  
+                ss = SubSection( section = self )  
                 section.update({'value': ss.get_sub_section(self)})
             sections.append(section)
         return sections
