@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.shortcuts import render
+from django.forms.models import model_to_dict
 
 import models
 
@@ -15,7 +16,11 @@ def index(request):
     cv_i = models.CV()
     cv_i.check_sections()
     for i in range(1,len(models.CV.objects.all())):
-        sections.append(models.Section.objects.filter(id=i).__dict__)
+        sections.append(
+            model_to_dict(
+                models.Section.objects.filter(id=i)
+            )
+        )
     print(sections)
 
 
