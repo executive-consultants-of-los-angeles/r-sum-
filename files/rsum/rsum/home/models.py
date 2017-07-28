@@ -78,7 +78,7 @@ class SubSection(models.Model):
 class Projects(models.Model):
     sub_section = models.ForeignKey(SubSection, on_delete=models.CASCADE)
 
-    def save_project_items_list(self, projects):
+    def save_project_items_list(self, projects, sub_section):
         return None
     
 
