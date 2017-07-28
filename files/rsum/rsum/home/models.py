@@ -122,7 +122,7 @@ class ProjectItemsList(models.Model):
             else:
                 pil_i.value = p_item
                 pil_i.save()
-        return None
+        return ProjectItemsList.objects.values_list() 
 
 
 class ProjectItem(models.Model):
@@ -139,8 +139,7 @@ class ProjectItem(models.Model):
             pi.save()
             projectlistitem = ProjectListItem()
             projectlistitem.save_list_item(v, pi)
-        print(json.dumps(project_item, indent=2))
-        return None
+        return ProjectItem.objects.values_list()
 
 
 class ProjectListItem(models.Model):
@@ -153,5 +152,4 @@ class ProjectListItem(models.Model):
             pli.project_item = pi
             pli.value = i
             pli.save()
-        print(ProjectListItem.objects.values_list()) 
         return ProjectListItem.objects.values_list() 
