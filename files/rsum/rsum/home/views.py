@@ -16,7 +16,7 @@ def index(request):
 
     cv = cv_i.get_cv()
     
-    #print(json.dumps(cv, indent=1)) 
+    print(json.dumps(cv, indent=1)) 
 
     context = {
         'cv': cv 

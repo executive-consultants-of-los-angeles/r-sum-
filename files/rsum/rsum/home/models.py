@@ -120,7 +120,6 @@ class SubSection(models.Model):
                         ).values()
                     )[0]
                 })
-            print(json.dumps(subsection, indent=1))
             subsections.append(subsection)
         return subsections
                     
