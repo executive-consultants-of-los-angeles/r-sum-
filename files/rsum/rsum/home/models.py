@@ -145,7 +145,7 @@ class Project(models.Model):
         ):
             print(project)
         return Project.objects.filter(
-            sub_section = ss_id
+            sub_section = subsection 
         ).values()
 
     def save_project_dict(self, projects, sub_section):
