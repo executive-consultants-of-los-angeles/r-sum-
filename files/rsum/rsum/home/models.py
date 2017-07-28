@@ -93,10 +93,7 @@ class SubSection(models.Model):
     value_type = models.CharField(max_length=200, null=True)
 
     def get_sub_section(self, section):
-        print("execute!")
-        print(section.__dict__)
         subsections = []
-        print(SubSection.objects.values())
         for subsection in list(
             SubSection.objects.filter(
                 section = section
