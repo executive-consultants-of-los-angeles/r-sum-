@@ -35,8 +35,6 @@ def index(request):
     context = {
         'sections': models.Section.objects.all().__dict__,
         'sub_sections': models.SubSection.objects.all().__dict__,
-        'projects': models.Projects.objects.all().__dict__,
-        'project_items_list': models.ProjectItemsList.objects.all().__dict__,
     }
 
     return render(request, 'home/index.html', {})
