@@ -197,7 +197,7 @@ class ProjectItems(models.Model):
                         )
                     )
                 })        
-                print(project_item)
+                project_items.append(project_item)
             else:
                 project_items.append(project_item)
         return project_items
