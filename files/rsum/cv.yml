@@ -47,7 +47,7 @@ cv:
             - "Was handed a project that was a year late."
             - "Also running a stack I was unfamiliar with."
             - "Team of 6 devs delivering on time in 2/mo."
-            - "Enabled continous delivery and automated testing of new features."
+            - "Automated testing of new features."
     - contract:
         duration: "9 months"
         location: "Los Angeles, California"
@@ -62,7 +62,7 @@ cv:
             - "Instructed more than 20 devs on git and gitflow."
             - "Implemented cont. delivery with Jenkins and Ansible."
           cloud_architect:
-            - "Responsible for automation of client infrastructure with Ansible."
+            - "Automated client infrastructure with Ansible."
             - "Reduced deployment time for key resources from weeks to hours."
             - "Managed Amazon Web Services budget for client project."
     - contract:
