@@ -12,5 +12,6 @@ from .models import CV
 def index(request):
 
     print(CV.objects.all()) 
+    CV.check_sections()
 
     return render(request, 'home/index.html', {})
