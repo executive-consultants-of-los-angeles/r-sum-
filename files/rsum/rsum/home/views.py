@@ -24,9 +24,8 @@ def index(request):
 
     for i in range(0,len(sections)):
         ss = models.SubSection()
-        subsections = ss.get_sub_section(sections[i].get('id'))
-        if subsections.exists():
-            subsections = list(subsections)
+        subsections = list(ss.get_sub_section(sections[i].get('id')))
+        if len(subsections) > 0:
             sections[i].update({'subsections': subsections})
         print(subsections)
         
