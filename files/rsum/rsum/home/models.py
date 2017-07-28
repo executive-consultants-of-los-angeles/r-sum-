@@ -114,7 +114,7 @@ class ProjectItems(models.Model):
 
     def save_project_items(self, project_item, project):
         for key,p_entry in project_item.iteritems():
-            pi_i = ProjectItemsList()
+            pi_i = ProjectItems()
             pi_i.project = project
             pi_i.name = key
             if type(p_entry) == type(dict()):
