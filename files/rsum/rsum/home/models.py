@@ -80,12 +80,12 @@ class SubSection(models.Model):
     name = models.CharField(max_length=200, null=True)
     value_type = models.CharField(max_length=200, null=True)
 
-    def get_sub_section(self, section):
+    def get_sub_section(self, s_i):
         print("execute!")
         subsections = []
         for subsection in list(
             SubSection.objects.filter(
-                section = section 
+                section = s_i 
             ).values() 
         ):
             print(subsection)
