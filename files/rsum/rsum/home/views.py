@@ -30,7 +30,8 @@ def index(request):
             for index, value in enumerate(subsections):
                 p = models.Project()
                 projects = list(p.get_projects(value.get('id')))[0]
-                if isinstance(projects.get('value'), unicode):
+                print(projects.get('value'))
+                if projects.get('value') != u'type<dict>':
                     sections[i].get('subsections')[index].update({'value':projects})
                 else:
                     pi = models.ProjectItems()
