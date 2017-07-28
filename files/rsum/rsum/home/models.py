@@ -19,7 +19,7 @@ class CV(models.Model):
             print('load it up!')
             cv_f = open('/srv/rsum/cv.yml')
             cv_d = yaml.load(cv_f.read())        
-            self.save_sections(cv_d)
+            self.save_sections(cv_d.get('cv'))
 
     def save_sections(self, cv_d):
         for item in cv_d:
