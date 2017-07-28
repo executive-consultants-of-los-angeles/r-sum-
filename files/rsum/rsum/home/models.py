@@ -152,7 +152,7 @@ class EntryListItem(models.Model):
     def save_list_item(self, list_item, pe):
         for i in list_item:
             eli = EntryListItem()
-            eli.project_item = pe
+            eli.project_entry = pe
             eli.value = i
             eli.save()
         return EntryListItem.objects.values_list() 
