@@ -35,7 +35,6 @@ class Section(models.Model):
     cv = models.ForeignKey(CV, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
     value = models.CharField(max_length=200, null=True) 
-    value_type = models.CharField(max_length=200, null=True) 
     
     def save_sub_sections(self, cv, section):
         section_i = Section()
@@ -44,10 +43,12 @@ class Section(models.Model):
         section_i.value_type = type(section)
         if type(section) == type(str()):
             section_i.value = section
+            section_i.save()
         else:
+            section_i.value = type(section)
+            section_i.save()
             ss = SubSection()
             ss.save_projects(section, section_i)
-        section_i.save()
 
         return Section.objects.values_list()
     
