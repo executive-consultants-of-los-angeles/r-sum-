@@ -145,10 +145,16 @@ class Project(models.Model):
                 sub_section = subsection
             ).values()
         ):
-            print(project)
-        return Project.objects.filter(
-            sub_section = subsection 
-        ).values()
+            pli = ProjectItems()
+            project.update({
+                'value': pli.get_project_items(
+                    Project.objects.filter(
+                        id = project.get('id')
+                    )
+                ) 
+            })
+            projects.append(project) 
+        return projects
 
     def save_project_dict(self, projects, sub_section):
         for k, v in projects.iteritems():
@@ -175,10 +181,8 @@ class ProjectItems(models.Model):
     name = models.CharField(max_length=200)
     value = models.CharField(max_length=200, null = True) 
 
-    def get_project_items(self, p_id):
-        return ProjectItems.objects.filter(
-            project = p_id
-        ).values()
+    def get_project_items(self, project):
+        print(project)
 
     def save_project_items(self, project_item, project):
         for key,p_entry in project_item.iteritems():
