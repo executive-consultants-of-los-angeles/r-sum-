@@ -230,6 +230,14 @@ class ProjectEntry(models.Model):
                 project_item_list = project_item
             ).values()
         ):
+            eli = EntryListItem()
+            entry.update({
+                'value': eli.get_list_item(
+                    ProjectEntry.objects.filter(
+                        project_entry = project_item
+                    )
+                ) 
+            })
             print(entry)
 
     def save_entry(self, entry, pi_l):
@@ -248,7 +256,15 @@ class EntryListItem(models.Model):
     project_entry = models.ForeignKey(ProjectEntry, on_delete=models.CASCADE)
     value = models.CharField(max_length=200, null=True)
     
-    def get_list_item(self, pe_id):
+    def get_list_item(self, entry):
+        items = []
+        for item in list(
+            EntryListItem.objects.filter(
+                project_entry = entry
+            ).values()
+        ):
+            print(item)
+            
         return EntryListItem.objects.filter(
             project_entry = pe_id
         ).values()
