@@ -19,17 +19,17 @@ class CV(models.Model):
             cv_f = open('/srv/rsum/cv.yml')
             cv_d = yaml.load(cv_f.read())        
             self.save_cv(cv_d)
-            cv_i = CV.objects.all() 
+            cv_i = CV.objects.all()
             return cv_i
         else:
             return cv_i
 
     def save_cv(self, cv):
-        current = CV()
-        current.cv_name = 'abridged' 
-        current.save()
+        cv_i = CV()
+        cv_i.cv_name = 'abridged' 
+        cv_i.save()
 
-        for name, section in cv.iteritems():
+        for name, section in cv.get('cv').iteritems():
             print(name)
             print(section)
             s = Section()
