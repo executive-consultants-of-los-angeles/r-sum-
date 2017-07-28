@@ -19,7 +19,7 @@ def index(request):
 
     cv = cv_i.get_cv()
     
-    print(cv) 
+    print(json.dumps(cv, indent=1)) 
 
     for i in range(0,len(sections)):
         ss = models.SubSection()
