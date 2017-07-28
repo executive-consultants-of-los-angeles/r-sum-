@@ -33,7 +33,7 @@ class CV(models.Model):
             print(name)
             print(section)
             s = Section()
-            s.save_section(current, name, section)
+            s.save_section(cv_i, name, section)
 
         return CV.objects.values_list() 
 
