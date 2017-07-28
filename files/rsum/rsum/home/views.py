@@ -31,6 +31,7 @@ def index(request):
                 print(json.dumps(value, indent=1))
                 p = models.Project()
                 projects = list(p.get_projects(value.get('id')))
+                print(projects)
                 
         
 
