@@ -46,17 +46,17 @@ class Section(models.Model):
             section_i.value = section
         else:
             ss = SubSection()
-            ss.save_projects(
+            ss.save_projects(section)
         section_i.save()
 
-        print(Section.objects.all())
+        print(Section.objects.values_list())
     
 class SubSection(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
     value = models.CharField(max_length=200, default='list')
     
-    def save_projects(self, sub_section, project):
+    def save_projects(self, sub_section):
         print(json.dumps(project, indent=2))
 
 
