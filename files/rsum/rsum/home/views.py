@@ -15,13 +15,13 @@ def index(request):
     
     cv_i = models.CV()
     cv_i.check_sections()
-    for i in range(1,len(models.CV.objects.all())):
+    for i in range(1,len(models.CV.objects.all()+1)):
         print(i)
         print(list(models.Section.objects.filter(id=i).values()))
         sections.append(
             models.Section.objects.filter(id=i).values()
         )
-    print(sections)
+        print(sections)
 
 
     context = {
