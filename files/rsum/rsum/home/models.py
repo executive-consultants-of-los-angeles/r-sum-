@@ -113,10 +113,16 @@ class ProjectItemsList(models.Model):
     value = models.CharField(max_length=200, null = True) 
 
     def save_project_dict(self, project_item, project):
-        pil_i = ProjectItemsList()
-        pil_i.project = project
-        print(json.dumps(project_item, indent=2))
-        
+        for key,p_item in project_item.iteritems():
+            pil_i = ProjectItemsList()
+            pil_i.project = project
+            pil_i.name = key
+            if type(p_item) == type(dict()):
+                pil_i.value = type(p_item)
+            else:
+                pil_i.value = p_item
+            pil_i.save()
+        print(ProjectItemsList.objects.values_list()) 
         return None
 
 
