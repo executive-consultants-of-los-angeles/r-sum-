@@ -5,14 +5,18 @@ from __future__ import print_function
 
 from django.shortcuts import render
 
-from .models import CV
+import models
 
 # Create your views here.
 
 def index(request):
 
-    print(CV.objects.all()) 
+    print(models.ProjectListItem.values_list())
     cv_i = CV()
     cv_i.check_sections()
+    print(cv_i.values_list())
+
+    pli = models.ProjectListItem.objects.values_list()
+    print(pli)
 
     return render(request, 'home/index.html', {})
