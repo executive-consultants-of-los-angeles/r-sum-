@@ -29,9 +29,8 @@ def index(request):
             sections[i].update({'subsections': subsections})
             for index, value in enumerate(subsections):
                 p = models.Project()
-                projects = p.get_projects(value.get('id'))
+                projects = list(p.get_projects(value.get('id')))[0]
                 print(json.dumps(projects,indent=1))
-                
         
 
     context = {
