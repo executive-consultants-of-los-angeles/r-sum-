@@ -42,6 +42,11 @@ def index(request):
                         else:
                             pe = models.ProjectEntry()
                             p_entries = list(pe.get_entry(p_value.get('id'))) 
+                            sections[i].get('subsections')[index].get('value')[p_index].update({'value': p_entries})
+                            for pe_index, pe_value in enumerate(p_entries):
+                                el = models.EntryListItem()
+                                el_items = list(el.get_list_item(pe_value.get('id')))                              
+                                print(el_items)
                             print(p_entries) 
 
     context = {

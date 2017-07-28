@@ -172,6 +172,11 @@ class ProjectEntry(models.Model):
 class EntryListItem(models.Model):
     project_entry = models.ForeignKey(ProjectEntry, on_delete=models.CASCADE)
     value = models.CharField(max_length=200, null=True)
+    
+    def get_list_item(self, pe_id):
+        return EntryListItem.objects.filter(
+            project_entry = pe_id
+        ).values()
 
     def save_list_item(self, list_item, pe):
         for i in list_item:
