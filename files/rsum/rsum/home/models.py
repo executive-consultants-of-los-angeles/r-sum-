@@ -14,7 +14,10 @@ class CV(models.Model):
     section_name = models.CharField(max_length=200)
 
     def check_sections(self):
-        print(CV()[0])
+        try:
+            print(self.objects[0].entry)
+        except Exception as e:
+            print(e)
         # cv_f = open('/srv/rsum/cv.yml')
         # cv_j = yaml.load(cv_f.read())        
 
