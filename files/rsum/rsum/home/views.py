@@ -14,10 +14,10 @@ def index(request):
 
     sections = []
     
-    cv_i = models.CV()
+    cv_i = models.CV(id=1)
     cv_i.check_sections()
 
-    cv = cv_i.get_cv(1)
+    cv = cv_i.get_cv()
     
     print(cv) 
 
