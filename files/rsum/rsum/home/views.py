@@ -46,12 +46,13 @@ def index(request):
                             for pe_index, pe_value in enumerate(p_entries):
                                 el = models.EntryListItem()
                                 el_items = list(el.get_list_item(pe_value.get('id')))                              
+                                sections[i].get('subsections')[index].get('value')[p_index].get('value')[pe_index].update({'value': el_items})
                                 print(el_items)
-                            print(p_entries) 
+
+        print(json.dumps(sections,indent=1))
 
     context = {
-        'sections': models.Section.objects.all().__dict__,
-        'sub_sections': models.SubSection.objects.all().__dict__,
+        'sections': sections 
     }
 
     return render(request, 'home/index.html', {})
