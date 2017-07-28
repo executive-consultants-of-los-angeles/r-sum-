@@ -234,7 +234,7 @@ class ProjectEntry(models.Model):
             entry.update({
                 'value': eli.get_list_item(
                     ProjectEntry.objects.filter(
-                        project_entry = project_item
+                        id = entry.get('id') 
                     )
                 ) 
             })
