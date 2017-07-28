@@ -27,7 +27,8 @@ def index(request):
             ss = models.SubSection()
             subsection = ss.get_sub_section(sections[i].get('id')) 
             sections[i].update({'subsection': subsection})
-            if type(subsection) == list(): 
+            print(subsection)
+            if type(subsection) == type(list()): 
                 print(json.dumps(subsection, indent=2))
                 pass
         except:
