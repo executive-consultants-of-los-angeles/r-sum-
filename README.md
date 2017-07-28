@@ -125,7 +125,7 @@ Example Playbook
 License
 -------
 
-GPLv3
+Unlicensed.
 
 Author Information
 ------------------
