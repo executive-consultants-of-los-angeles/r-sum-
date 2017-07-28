@@ -27,8 +27,11 @@ def index(request):
         subsections = list(ss.get_sub_section(sections[i].get('id')))
         if len(subsections) > 0:
             sections[i].update({'subsections': subsections})
-            for i in subsections:
-                print(json.dumps(i, indent=1))
+            for index, value in enumerate(subsections):
+                print(json.dumps(value, indent=1))
+                p = models.Project()
+                projects = list(p.get_projects(value.get('id')))
+                
         
 
     context = {

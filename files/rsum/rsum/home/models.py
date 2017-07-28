@@ -96,6 +96,11 @@ class Project(models.Model):
     name = models.CharField(max_length=200, null=True)
     value = models.CharField(max_length=200, null=True)
 
+    def get_projects(self, ss_id):
+        return Project.objects.filter(
+            sub_section = ss_id
+        ).values()
+
     def save_project_dict(self, projects, sub_section):
         for k, v in projects.iteritems():
             p_i = Project()
