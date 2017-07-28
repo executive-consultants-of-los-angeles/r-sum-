@@ -62,7 +62,13 @@ class Section(models.Model):
                 })
             if section.get('value') == u"<type 'dict'>":
                 ss = SubSection( section = self )  
-                section.update({'value': ss.get_sub_section(self)})
+                section.update({
+                    'value': ss.get_sub_section(
+                        Section.objects.filter(
+                            id = section.get('id')
+                        )
+                    )
+                })
             sections.append(section)
         return sections
     
