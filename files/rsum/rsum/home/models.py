@@ -100,6 +100,16 @@ class SubSection(models.Model):
             ).values() 
         ):
             print(subsection)
+            p = Project() 
+            subsection.update({
+                'value': p.get_projects(
+                    SubSection.objects.filter(
+                        id = subsection.get('id')
+                    )
+                )
+            })
+            print(subsection)
+                
     
     def save_sub_sections(self, sub_section, section):
         if type(sub_section) == type(dict()):
