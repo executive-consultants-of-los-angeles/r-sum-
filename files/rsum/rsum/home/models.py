@@ -89,7 +89,7 @@ class SubSection(models.Model):
                 ss_i.save()
                 p = Project()
                 p.save_project_list(i, ss_i)
-        return SubSection.objects.values_list()
+        return SubSection.objects.values()
 
 class Project(models.Model):
     sub_section = models.ForeignKey(SubSection, on_delete=models.CASCADE)
