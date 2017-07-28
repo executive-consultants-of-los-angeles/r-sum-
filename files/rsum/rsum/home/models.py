@@ -77,9 +77,7 @@ class SubSection(models.Model):
                 sub_section_i.save()
                 p = Projects()
                 p.save_project_items_list(i, sub_section_i)
-                print(type(sub_section))
-                print(json.dumps(sub_section, indent=2))
-
+        return SubSection.objects.values_list()
 
 class Projects(models.Model):
     sub_section = models.ForeignKey(SubSection, on_delete=models.CASCADE)
@@ -98,6 +96,15 @@ class Projects(models.Model):
 
     def save_project_items_list(self, projects, sub_section):
         print(projects)
+        for k,v in projects.iteritems():
+            p_i = Projects()
+            p_i.sub_section = sub_section
+            p_i.name = k
+            p_i.value = type(v)
+            p_i.save()
+            print(k)
+            print(v)
+            print(Projects.objects.values_list())
         return None
 
 class ProjectItemsList(models.Model):
