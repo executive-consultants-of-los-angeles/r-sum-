@@ -63,13 +63,11 @@ class SubSection(models.Model):
                 sub_section_i = SubSection()
                 sub_section_i.section = section
                 sub_section_i.value_type = type(sub_section)
-                print(k)
-                print(v)
                 sub_section_i.name = k
                 sub_section_i.save()
                 print(SubSection.objects.values_list())
                 p = Projects() 
-                p.save_project_items_list(v, sub_section_i)
+                p.save_project_items_dict(v, sub_section_i)
         elif type(sub_section) == type(list()):
             print(type(sub_section))
             print(json.dumps(sub_section, indent=2))
@@ -80,10 +78,14 @@ class Projects(models.Model):
     name = models.CharField(max_length=200, null=True)
     value = models.CharField(max_length=200, null=True)
 
-    def save_project_items_list(self, projects, sub_section):
-        print(projects)
-        return None
-    
+    def save_project_items_dict(self, projects, sub_section):
+        for k, v in projects.iteritems():
+            p_i = Projects()
+            p_i.name = k 
+            p_i.value = v
+            p_i.save()
+            print(Projects.objects.values_list())
+        return Projects.objects.values_list() 
 
 class ProjectItemsList(models.Model):
     projects = models.ForeignKey(Projects, on_delete=models.CASCADE)
