@@ -28,10 +28,9 @@ def index(request):
         if len(subsections) > 0:
             sections[i].update({'subsections': subsections})
             for index, value in enumerate(subsections):
-                print(json.dumps(value, indent=1))
                 p = models.Project()
                 projects = list(p.get_projects(value.get('id')))
-                print(projects)
+                print(json.dumps(projects,indent=1))
                 
         
 
