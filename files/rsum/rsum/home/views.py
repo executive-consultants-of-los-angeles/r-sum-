@@ -22,8 +22,9 @@ def index(request):
 
 
     for i in sections:
-        print(i)
-        print(i[0].get('id'))
+        subsection = models.SubSection.objects.filter(section_id=i.get('id')).values()[0]     
+        sections[i].update({'subsection': subsection})
+        print(sections)
 
     context = {
         'sections': models.Section.objects.all().__dict__,
