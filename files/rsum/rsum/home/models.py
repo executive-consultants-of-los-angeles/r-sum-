@@ -263,7 +263,8 @@ class EntryListItem(models.Model):
                 project_entry = entry
             ).values()
         ):
-            print(item)
+            items.append(item))
+        return items
             
 
     def save_list_item(self, list_item, pe):
