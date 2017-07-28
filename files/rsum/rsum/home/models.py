@@ -44,6 +44,9 @@ class Section(models.Model):
         section_i.name = cv.section_name 
         if type(section) == type(''):
             section_i.value = section
+        else:
+            ss = SubSection()
+            ss.save_projects(
         section_i.save()
 
         print(Section.objects.all())
@@ -51,7 +54,11 @@ class Section(models.Model):
 class SubSection(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
+    value = models.CharField(max_length=200, default='list')
     
+    def save_projects(self, sub_section, project):
+        print(json.dumps(project, indent=2))
+
 
 class Projects(models.Model):
     sub_section = models.ForeignKey(SubSection, on_delete=models.CASCADE)
