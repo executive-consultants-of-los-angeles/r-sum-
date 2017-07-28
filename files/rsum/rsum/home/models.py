@@ -23,6 +23,7 @@ class CV(models.Model):
             self.save_sections(cv_d.get('cv'))
 
     def save_sections(self, cv_d):
+        print(json.dumps(cv_d, indent=2))
         for item in cv_d:
             print(json.dumps(item, indent=2))
             current = CV()
