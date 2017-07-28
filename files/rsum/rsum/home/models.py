@@ -42,30 +42,37 @@ class Section(models.Model):
         section_i.cv = cv
         section_i.name = cv.section_name
         section_i.value_type = type(section)
-        print(type(section))
-        print(type(str()))
         if type(section) == type(str()):
             section_i.value = section
         else:
             ss = SubSection()
-            ss.save_projects(section)
+            ss.save_projects(section, section_i)
         section_i.save()
 
-        print(Section.objects.values_list())
+        return Section.objects.values_list()
     
 class SubSection(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200, default='section')
-    value = models.CharField(max_length=200, default='list')
+    name = models.CharField(max_length=200, null=True)
+    value = models.CharField(max_length=200, null=True)
     
-    def save_projects(self, sub_section):
-        print(type(sub_section))
-        print(json.dumps(sub_section, indent=2))
+    def save_projects(self, sub_section, section):
+        if type(sub_section)) == type(dict()):
+            sub_section_i = SubSection()
+            sub_section_i.section = section
+            print(sub_section)
+            p = Projects() 
+        elif type(sub_section)) == type(list()):
+            print(type(sub_section))
+            print(json.dumps(sub_section, indent=2))
 
 
 class Projects(models.Model):
     sub_section = models.ForeignKey(SubSection, on_delete=models.CASCADE)
 
+    def save_project_items_list(self):
+        return None
+    
 
 class ProjectItemsList(models.Model):
     projects = models.ForeignKey(Projects, on_delete=models.CASCADE)
