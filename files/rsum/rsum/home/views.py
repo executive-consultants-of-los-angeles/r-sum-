@@ -12,7 +12,7 @@ import models
 def index(request):
 
     print(models.ProjectListItem.objects.values_list())
-    cv_i = CV()
+    cv_i = models.CV()
     cv_i.check_sections()
     print(cv_i.values_list())
 
