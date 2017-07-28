@@ -81,6 +81,7 @@ class Projects(models.Model):
     def save_project_items_dict(self, projects, sub_section):
         for k, v in projects.iteritems():
             p_i = Projects()
+            p_i.sub_section = sub_section
             p_i.name = k 
             p_i.value = v
             p_i.save()
