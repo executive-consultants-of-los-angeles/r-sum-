@@ -30,8 +30,6 @@ class CV(models.Model):
         cv_i.save()
 
         for name, section in cv.get('cv').iteritems():
-            print(name)
-            print(section)
             s = Section()
             s.save_section(cv_i, name, section)
 
@@ -54,8 +52,7 @@ class Section(models.Model):
             s_i.value = type(section)
             s_i.save()
             ss = SubSection()
-            print(section)
-            #ss.save_sub_sections(section, s_i)
+            ss.save_sub_sections(section, s_i)
 
         return Section.objects.values_list()
     
