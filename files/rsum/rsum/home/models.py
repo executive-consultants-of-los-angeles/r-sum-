@@ -41,7 +41,8 @@ class Section(models.Model):
         print(json.dumps(section, indent=2))
         section_i = Section()
         section_i.cv = cv
-        section_i.name = ''
+        section_i.name = cv.section_name 
+        section_i.save()
     
 class SubSection(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
