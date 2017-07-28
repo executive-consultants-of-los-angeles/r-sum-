@@ -69,7 +69,12 @@ class SubSection(models.Model):
                 p = Projects() 
                 p.save_project_items_dict(v, sub_section_i)
         elif type(sub_section) == type(list()):
-            for i in sub_section:
+            for c,i in enumerate(sub_section):
+                sub_section_i = SubSection()
+                sub_section_i.section = section
+                sub_section_i.value_type = type(sub_section)
+                sub_section_i.name = str(c) 
+                sub_section_i.save()
                 p = Projects()
                 p.save_project_items_list(i, sub_section_i)
                 print(type(sub_section))
