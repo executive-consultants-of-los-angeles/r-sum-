@@ -34,12 +34,14 @@ class CV(models.Model):
 class Section(models.Model):
     cv = models.ForeignKey(CV, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
-    value = models.CharField(max_length=200, default="dict")    
+    value = models.CharField(max_length=200, null=True) 
+    value_type = models.CharField(max_length=200, null=True) 
     
     def save_sub_sections(self, cv, section):
         section_i = Section()
         section_i.cv = cv
         section_i.name = cv.section_name 
+        section_i.value_type = type(section)
         if type(section) == type(''):
             section_i.value = section
         else:
