@@ -11,15 +11,11 @@ import models
 # Create your views here.
 
 def index(request):
-    sections = []
     
     cv_i = models.CV()
     cv_i.check_sections()
-    for i in range(1,len(models.Section.objects.all())+1):
-        s = models.Section()
-        sections.append(
-            s.get_section(i)
-        )
+
+    sections = cv_i.get_cv(1)
 
 
     for i in range(0,len(sections)):
@@ -47,9 +43,7 @@ def index(request):
                                 el = models.EntryListItem()
                                 el_items = list(el.get_list_item(pe_value.get('id')))                              
                                 sections[i].get('subsections')[index].get('value')[p_index].get('value')[pe_index].update({'value': el_items})
-                                print(el_items)
 
-        print(json.dumps(sections,indent=1))
 
     context = {
         'sections': sections 
