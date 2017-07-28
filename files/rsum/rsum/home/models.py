@@ -45,6 +45,7 @@ class Section(models.Model):
         if type(section) == type(''):
             section_i.value = section
         section_i.save()
+
         print(Section.objects.all())
     
 class SubSection(models.Model):
