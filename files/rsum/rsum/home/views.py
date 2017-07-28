@@ -19,7 +19,7 @@ def index(request):
         print(i)
         print(list(models.Section.objects.filter(id=i).values()))
         sections.append(
-            models.Section.objects.filter(id=i).values()
+            models.Section.objects.filter(id=i).values()[0]
         )
         print(sections)
 
