@@ -144,7 +144,7 @@ class ProjectItem(models.Model):
 
 
 class ProjectListItem(models.Model):
-    project_item = models.ForeignKey(ProjectItemList, on_delete=models.CASCADE)
+    project_item = models.ForeignKey(ProjectItem, on_delete=models.CASCADE)
     value = models.CharField(max_length=200, null=True)
 
     def save_list_item(self, list_item, pi):
