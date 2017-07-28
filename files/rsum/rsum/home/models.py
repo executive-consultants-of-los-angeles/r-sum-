@@ -57,12 +57,12 @@ class SubSection(models.Model):
     value = models.CharField(max_length=200, null=True)
     
     def save_projects(self, sub_section, section):
-        if type(sub_section)) == type(dict()):
+        if type(sub_section) == type(dict()):
             sub_section_i = SubSection()
             sub_section_i.section = section
             print(sub_section)
             p = Projects() 
-        elif type(sub_section)) == type(list()):
+        elif type(sub_section) == type(list()):
             print(type(sub_section))
             print(json.dumps(sub_section, indent=2))
 
