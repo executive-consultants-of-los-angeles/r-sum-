@@ -43,6 +43,7 @@ class Section(models.Model):
         section_i.cv = cv
         section_i.name = cv.section_name 
         section_i.save()
+        print(Section.objects.all())
     
 class SubSection(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
