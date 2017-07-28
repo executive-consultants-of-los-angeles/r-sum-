@@ -25,10 +25,9 @@ class CV(models.Model):
             return cv_i
 
     def get_cv(self, cv_id):
-        for i in range(1,len(models.Section.objects.all())+1):
-            return Section.objects.filter(
-                cv = cv_id 
-            )
+        return list(Section.objects.filter(
+            cv = cv_id 
+        ).values())
 
     def save_cv(self, cv):
         cv_i = CV()
