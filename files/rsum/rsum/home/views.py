@@ -17,7 +17,7 @@ def index(request):
     cv_i.check_sections()
     for i in range(1,len(models.CV.objects.all())):
         print(i)
-        print(models.Section.objects.filter(id=i).values())))))))))
+        print(models.Section.objects.filter(id=i).values())
         sections.append(
             models.Section.objects.filter(id=i).values()
         )
