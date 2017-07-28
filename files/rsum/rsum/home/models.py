@@ -182,7 +182,13 @@ class ProjectItems(models.Model):
     value = models.CharField(max_length=200, null = True) 
 
     def get_project_items(self, project):
-        print(project)
+        project_items = []
+        for project_item in list(
+            ProjectItems.objects.filter(
+                project = project
+            ).values()
+        ):
+            print(project_item)
 
     def save_project_items(self, project_item, project):
         for key,p_entry in project_item.iteritems():
