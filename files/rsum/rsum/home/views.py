@@ -30,12 +30,16 @@ def index(request):
             for index, value in enumerate(subsections):
                 p = models.Project()
                 projects = list(p.get_projects(value.get('id')))[0]
-                print(projects.get('value'))
                 if projects.get('value') != u"<type 'dict'>":
                     sections[i].get('subsections')[index].update({'value':projects})
                 else:
                     pi = models.ProjectItems()
                     p_items = list(pi.get_project_items(projects.get('id')))
+                    sections[i].get('subsections')[index].update({'value':p_items})
+                    print(json.dumps(sections,indent=1))
+                    #for p_index, p_value in enumerate(p_items):
+                    #    if p_value.get('value') != u"<type 'dict'>":
+                    #        sections[i].get('subsections')[index].get('value').update({'value': 
                     print(json.dumps(p_items,indent=1))
         
 
