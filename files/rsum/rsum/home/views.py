@@ -41,7 +41,7 @@ def index(request):
                             sections[i].get('subsections')[index].get('value')[p_index].update({'value': p_value}) 
                         else:
                             pe = models.ProjectEntry()
-                            p_entries = pe.get_entry(p_value.get('id')) 
+                            p_entries = list(pe.get_entry(p_value.get('id'))) 
                             print(p_entries) 
 
     context = {
