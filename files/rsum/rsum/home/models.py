@@ -73,7 +73,6 @@ class Section(models.Model):
                         )
                     )
                 })
-            print(json.dumps(section,indent=1))
             sections.append(section)
         return sections
     
@@ -104,14 +103,22 @@ class SubSection(models.Model):
                 section = section
             ).values() 
         ):
+            p = Project() 
             if subsection.get('value') == u"<type 'list'>":
-                p = Project() 
                 subsection.update({
                     'value': p.get_projects(
                         SubSection.objects.filter(
                             id = subsection.get('id')
                         )
                     )
+                })
+            else:
+                subsection.update({
+                    'value': list(
+                        Project.objects.filter(
+                            sub_section = subsection.get('id')  
+                        )
+                    )[0]
                 })
             subsections.append(subsection)
         return subsections
