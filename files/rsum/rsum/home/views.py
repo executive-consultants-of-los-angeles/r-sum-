@@ -11,18 +11,18 @@ import models
 
 def index(request):
 
-    print(models.ProjectListItem.objects.values_list())
     cv_i = models.CV()
     cv_i.check_sections()
-    print(models.CV.objects.values_list())
 
-    print(models.Section.objects.values_list())
 
     pli = models.ProjectListItem.objects.values_list()
-    print(pli)
     context = {
         'sections': models.Section.objects.all().__dict__,
         'sub_sections': models.SubSection.objects.all().__dict__,
+        'projects': models.Projects.objects.all().__dict__,
+        'project_items_list': models.ProjectItemsList.objects.all().__dict__,
     }
+
+    print(context)
 
     return render(request, 'home/index.html', {})
