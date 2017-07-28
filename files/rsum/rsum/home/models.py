@@ -57,7 +57,7 @@ class SubSection(models.Model):
     value = models.CharField(max_length=200, default='list')
     
     def save_projects(self, sub_section):
-        print(json.dumps(project, indent=2))
+        print(json.dumps(sub_section, indent=2))
 
 
 class Projects(models.Model):
