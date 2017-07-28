@@ -36,9 +36,12 @@ class Section(models.Model):
     name = models.CharField(max_length=200)
     
     
-    def save_sub_sections(self, section, sub_sections):
-        print(section)
-        print(sub_sections)
+    def save_sub_sections(self, cv, section):
+        print(cv)
+        print(json.dumps(section, indent=2))
+        section_i = Section()
+        section_i.cv = cv
+        section_i.name = ''
     
 class SubSection(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
