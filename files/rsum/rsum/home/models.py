@@ -6,4 +6,4 @@ from django.db import models
 
 # Create your models here.
 class CV(models.Model):
-    section = models.CharField(maxlength=200)
+    section = models.CharField(max_length=200)
