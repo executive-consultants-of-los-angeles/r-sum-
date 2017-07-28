@@ -79,7 +79,7 @@ class SubSection(models.Model):
 class Projects(models.Model):
     sub_section = models.ForeignKey(SubSection, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
-    value = models.CharField(max_legnth=200, null=True)
+    value = models.CharField(max_length=200, null=True)
 
     def save_project_items_list(self, projects, sub_section):
         print(projects)
