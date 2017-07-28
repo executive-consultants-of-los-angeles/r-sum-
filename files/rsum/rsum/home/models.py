@@ -189,6 +189,14 @@ class ProjectItems(models.Model):
             ).values()
         ):
             if project_item.get('value') == u"<type 'dict'>":
+                pe = ProjectEntry()
+                project_item.update({
+                    'value': pe.get_entry(
+                        ProjectItems.objects.filter(
+                            id = project_item.get('id')
+                        )
+                    )
+                })        
                 print(project_item)
             else:
                 project_items.append(project_item)
@@ -215,10 +223,14 @@ class ProjectEntry(models.Model):
     name = models.CharField(max_length=200, null = True)
     value = models.CharField(max_length=200, null = True) 
 
-    def get_entry(self, pil):
-        return ProjectEntry.objects.filter(
-            project_item_list = pil
-        ).values()
+    def get_entry(self, project_item):
+        entries = []
+        for entry in list(
+            ProjectEntry.objects.filter(
+                project_item_list = project_item
+            ).values()
+        ):
+            print(entry)
 
     def save_entry(self, entry, pi_l):
         for k, v in entry.iteritems():
