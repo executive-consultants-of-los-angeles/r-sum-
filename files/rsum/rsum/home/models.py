@@ -33,7 +33,7 @@ class CV(models.Model):
 
 class Section(models.Model):
     cv = models.ForeignKey(CV, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, default='section')
     
     
     def save_sub_sections(self, cv, section):
@@ -46,7 +46,7 @@ class Section(models.Model):
     
 class SubSection(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, default='section')
     
 
 class Projects(models.Model):
