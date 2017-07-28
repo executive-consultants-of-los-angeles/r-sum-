@@ -90,7 +90,7 @@ class Section(models.Model):
 class SubSection(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
-    value_type = models.CharField(max_length=200, null=True)
+    value = models.CharField(max_length=200, null=True)
 
     def get_sub_section(self, section):
         subsections = []
