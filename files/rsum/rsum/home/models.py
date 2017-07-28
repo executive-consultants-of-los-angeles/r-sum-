@@ -265,9 +265,6 @@ class EntryListItem(models.Model):
         ):
             print(item)
             
-        return EntryListItem.objects.filter(
-            project_entry = pe_id
-        ).values()
 
     def save_list_item(self, list_item, pe):
         for i in list_item:
