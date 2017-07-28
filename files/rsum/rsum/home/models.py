@@ -40,6 +40,10 @@ class Section(models.Model):
     cv = models.ForeignKey(CV, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
     value = models.CharField(max_length=200, null=True) 
+
+    def get_section(self, s_id):
+        return Section.objects.filter(id=s_id).values()[0]
+        
     
     def save_section(self, cv, name, section):
         s_i = Section()
