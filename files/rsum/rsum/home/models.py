@@ -99,8 +99,7 @@ class SubSection(models.Model):
                 section = section
             ).values() 
         ):
-            print(subsection)
-            if subsection.get('value') == u"<type 'dict'>":
+            if subsection.get('value') == u"<type 'list'>":
                 p = Project() 
                 subsection.update({
                     'value': p.get_projects(
