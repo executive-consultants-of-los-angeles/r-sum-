@@ -27,7 +27,7 @@ class CV(models.Model):
     def get_cv(self):
         cv = {
             'cv_name': 'abridged',
-            'sections': s.get_sections(
+            'sections': Section.get_sections(
                 CV.objects.filter(
                     id = 1
                 )
