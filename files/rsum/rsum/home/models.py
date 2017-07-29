@@ -124,7 +124,7 @@ class SubSection(models.Model):
                         Project.objects.filter(
                             sub_section = subsection.get('id')  
                         ).values()
-                    )[0]
+                    )
                 })
             subsections.append(subsection)
         return subsections
