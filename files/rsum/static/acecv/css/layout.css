@@ -316,19 +316,19 @@ fieldset[disabled] .btn-theme {
   	[Promo Banner]
 ------------------------------------------------------------------*/
 .promo-banner {
-  text-align: center;
 }
 
 .promo-banner .promo-banner-title {
+  text-align: center;
   font-size: 50px;
   color: #fff;
 }
 
 .promo-banner .promo-banner-text {
+  text-align: justify;
   font-size: 20px;
   color: #fff;
   opacity: .8;
-  text-align: justify;
 }
 
 /*------------------------------------------------------------------
