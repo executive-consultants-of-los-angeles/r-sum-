@@ -21,7 +21,7 @@ order = [
 # Create your models here.
 class CV(models.Model):
     cv_name = models.CharField(max_length=200)
-    cv_order = models.CharField(max_length=200)
+    cv_order = models.CharField(max_length=200, null=True)
 
     def check_sections(self):
         cv_i = CV.objects.all()
