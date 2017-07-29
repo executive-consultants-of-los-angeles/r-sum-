@@ -34,6 +34,7 @@ cv:
     - contract:
         duration: "6 months"
         location: "Los Angeles, California"
+        company: "Creative Artists Agency"
         position: "Cloud Architect and Software Engineer"
         projects:
           jupyterhub:
@@ -51,6 +52,7 @@ cv:
     - contract:
         duration: "9 months"
         location: "Los Angeles, California"
+        company: "Toyota"
         position: "Lead Python Developer / Cloud Architect / Build Manager"
         projects:
           lead_python_developer:
@@ -62,12 +64,13 @@ cv:
             - "Instructed more than 20 devs on git and gitflow."
             - "Implemented cont. delivery with Jenkins and Ansible."
           cloud_architect:
-            - "Automated client infrastructure with Ansible."
+            - "Automated tclient infrastructure with Ansible."
             - "Reduced deployment time for key resources from weeks to hours."
             - "Managed Amazon Web Services budget for client project."
     - contract:
         duration: "1 year"
         location: "Oakland, California"
+        company: "Mintspare Incorporated"
         position: "Chief Technical Officer"
         projects:
           webmaster:

@@ -1,7 +1,19 @@
-
-        {% for sub in section.value %}
-          <h2>{{ sub.name }}</h2>
-          {% for v in sub.value %}
-            <p>{{ v.name }} {{ v.value }}<p>
-          {% endfor %}
-        {% endfor %}
+<h1>{{ section.name }}</h1>
+  <table>
+    <th>
+      <tr>
+        <td>Group</td>
+        <td>Skill</td>
+        <td>Experience</td>
+      </tr>
+    </th>
+    {% for sub in section.value %}
+      {% for v in sub.value %}
+      <tr>
+        <td>{{ sub.name }}</td>
+        <td>{{ v.name }}</td>
+        <td>{{ v.value }}</td>
+      {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>

@@ -8,16 +8,26 @@ import yaml
 
 from django.db import models
 
+sections_list = [
+    'name',
+    'position',
+    'summary',
+    'skills',
+    'experience',
+    'education',
+]
+
 
 # Create your models here.
 class CV(models.Model):
     cv_name = models.CharField(max_length=200)
+    cv_order = models.CharField(max_length=200, null=True)
 
     def check_sections(self):
         cv_i = CV.objects.all()
         if not cv_i.exists():
             cv_f = open('/srv/rsum/cv.yml')
-            cv_d = yaml.load(cv_f.read())        
+            cv_d = yaml.load(cv_f.read())
             self.save_cv(cv_d)
             cv_i = CV.objects.all()
             return cv_i
@@ -39,11 +49,12 @@ class CV(models.Model):
     def save_cv(self, cv):
         cv_i = CV()
         cv_i.cv_name = 'abridged' 
+        cv_i.cv_order = sections_list 
         cv_i.save()
 
-        for name, section in cv.get('cv').iteritems():
+        for section in sections_list:
             s = Section()
-            s.save_section(cv_i, name, section)
+            s.save_section(cv_i, section, cv.get('cv').get(section))
 
         return CV.objects.values_list() 
 
@@ -59,7 +70,8 @@ class Section(models.Model):
         for section in list(
             Section.objects.filter(
                 cv = cv
-            ).values()):
+            ).order_by('id').values()
+        ):
             if section.get('value') == u"<type 'list'>":
                 ss = SubSection( section = self )  
                 section.update({
@@ -82,9 +94,12 @@ class Section(models.Model):
         return sections
     
     def save_section(self, cv, name, section):
+        if section == None:
+            return None
         s_i = Section()
         s_i.cv = cv
         s_i.name = name 
+
         if type(section) == type(str()):
             s_i.value = section
             s_i.save()
