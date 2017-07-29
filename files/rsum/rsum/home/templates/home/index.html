@@ -16,6 +16,7 @@
   </head>
   <body>
     <p>{{ cv.sections }}</p>
+    <p>{{ cv.sections|length }}</p>
     {% for section in cv.sections.0 %}
       {{ forloop.counter0 }}
       {{ section }}
