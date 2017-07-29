@@ -56,7 +56,7 @@ class CV(models.Model):
             print(section)
             print(cv.get(section))
             s = Section()
-            s.save_section(cv_i, section, cv.get(section))
+            s.save_section(cv_i, section, cv.get('cv').get(section))
 
         return CV.objects.values_list() 
 
