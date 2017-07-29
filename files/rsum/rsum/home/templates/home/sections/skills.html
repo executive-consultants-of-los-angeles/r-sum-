@@ -1,5 +1,4 @@
 <h1>{{ section.name }}</h1>
-{% for sub in section.value %}
   <table>
     <th>
       <tr>
@@ -8,12 +7,13 @@
         <td>Experience</td>
       </tr>
     </th>
+    {% for sub in section.value %}
     <tr>
       {% for v in sub.value %}
         <td>{{ sub.name }}</td>
         <td>{{ v.name }}</td>
         <td>{{ v.value }}</td>
       {% endfor %}
+    {% endfor %}
     </tr>
   </table>
-{% endfor %}
