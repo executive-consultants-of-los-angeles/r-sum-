@@ -19,7 +19,7 @@
       <h1>{{ section.name }}</h1>
       <p>{{ forloop.counter0 }}</p>
       {% if section.name == 'skills' %}
-        {% include 'templates/home/sections/skills.html' %}
+        {% include 'home/sections/skills.html' %}
       {% endif %}
     {% endfor %}
   </body>
