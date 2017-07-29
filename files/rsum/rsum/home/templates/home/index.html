@@ -12,8 +12,12 @@
 ================================== -->
 <html lang="en">
   <head>
+    <meta value="{{ cv.name }}" />
   </head>
   <body>
-      <h1>{{ cv }}</h1>
+    {% for section in cv.sections %}
+      {{ forloop.counter0 }}
+      {{ section.value }}
+    {% endfor %}
   </body>
 </html>
