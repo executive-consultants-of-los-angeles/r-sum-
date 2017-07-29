@@ -18,7 +18,7 @@
     <p>{{ cv.sections }}</p>
     <p>{{ cv.sections|length }}</p>
     {% for section in cv.sections %}
-      <h1>section.name</h1>
+      <h1>{{ section.name }}</h1>
       <p>{{ forloop.counter0 }}</p>
       <p>{{ section }}</p>
     {% endfor %}
