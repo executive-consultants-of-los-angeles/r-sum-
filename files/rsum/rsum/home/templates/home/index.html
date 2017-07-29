@@ -16,15 +16,9 @@
   </head>
   <body>
     {% for section in cv.sections %}
-      <h1>{{ section.name }}</h1>
-      <p>{{ forloop.counter0 }}</p>
-      {% if section.name == 'skills' %}
-        {% include 'home/sections/skills.html' %}
-      {% elif section.name == 'experience' %}
-        {% include 'home/sections/experience.html' %}
-      {% else %}
-        {{ section.value }}
-      {% endif %}
+      {% with template_name=section.name|stringformat:"s"|add:".html" %}
+        {% include 'home/sections/'|add:template_name %}
+      {% endwith %}
     {% endfor %}
   </body>
 </html>
