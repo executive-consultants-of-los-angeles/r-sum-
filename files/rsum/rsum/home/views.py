@@ -15,9 +15,11 @@ def index(request):
     cv_i.check_sections()
 
     cv = cv_i.get_cv()
+
+    print(len(cv))
     
     context = {
-        'cv': json.loads(json.dumps(cv[0])) 
+        'cv': json.loads(json.dumps(cv)) 
     }
 
     return render(request, 'home/index.html', context)
