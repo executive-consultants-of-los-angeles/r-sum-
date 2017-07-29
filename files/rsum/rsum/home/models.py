@@ -8,7 +8,7 @@ import yaml
 
 from django.db import models
 
-order = [
+sections_list = [
     'name',
     'position',
     'summary',
@@ -38,7 +38,6 @@ class CV(models.Model):
         s = Section()
         cv = {
             'cv_name': 'abridged',
-            'cv_order': order,
             'sections': s.get_sections(
                 CV.objects.filter(
                     id = 1
@@ -50,12 +49,12 @@ class CV(models.Model):
     def save_cv(self, cv):
         cv_i = CV()
         cv_i.cv_name = 'abridged' 
-        cv_i.cv_order = order
+        cv_i.cv_order = sections_list 
         cv_i.save()
 
-        for name, section in cv.get('cv').iteritems():
+        for section in sections_list:
             s = Section()
-            s.save_section(cv_i, name, section)
+            s.save_section(cv_i, section, cv.get(section))
 
         return CV.objects.values_list() 
 
