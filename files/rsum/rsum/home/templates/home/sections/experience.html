@@ -1,5 +1,5 @@
+<h1>{{ section.name }}</h1>
 {% for sub in section.value %}
-  <h2>{{ sub.name }}</h2>
   {% for i in sub.value %}
     {% for j in i.value %}
       {% if j.name == 'projects' %}
