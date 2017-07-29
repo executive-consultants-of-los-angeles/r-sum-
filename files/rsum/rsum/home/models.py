@@ -53,8 +53,6 @@ class CV(models.Model):
         cv_i.save()
 
         for section in sections_list:
-            print(section)
-            print(json.dumps(cv.get('cv').get(section), indent=1))
             s = Section()
             s.save_section(cv_i, section, cv.get('cv').get(section))
 
@@ -65,7 +63,6 @@ class Section(models.Model):
     cv = models.ForeignKey(CV, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
     value = models.CharField(max_length=200, null=True) 
-    order = models.IntegerField(default=0)
     iterable = models.BooleanField(default=False)
 
     def get_sections(self, cv):
