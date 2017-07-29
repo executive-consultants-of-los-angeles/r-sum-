@@ -20,6 +20,8 @@
       <p>{{ forloop.counter0 }}</p>
       {% if section.name == 'skills' %}
         {% include 'home/sections/skills.html' %}
+      {% elif section.name == 'experience' %}
+        {% include 'home/sections/experience.html' %}
       {% endif %}
     {% endfor %}
   </body>
