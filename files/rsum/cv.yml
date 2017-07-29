@@ -30,6 +30,9 @@ cv:
     relational_databases:
       postgresql: "10 years"
       mysql: "15 years"
+  work:
+    - link:
+        githubrepo: "http://wat"
   experience:
     - contract:
         duration: "6 months"
