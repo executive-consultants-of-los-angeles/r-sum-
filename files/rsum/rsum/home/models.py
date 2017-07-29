@@ -70,7 +70,8 @@ class Section(models.Model):
         for section in list(
             Section.objects.filter(
                 cv = cv
-            ).values().order_by('id')):
+            ).order_by('id').values()
+        ):
             if section.get('value') == u"<type 'list'>":
                 ss = SubSection( section = self )  
                 section.update({
