@@ -13,6 +13,7 @@ sections_list = [
     'position',
     'summary',
     'skills',
+    'work',
     'experience',
     'education',
 ]
