@@ -25,12 +25,15 @@ class CV(models.Model):
             return cv_i
 
     def get_cv(self):
-        s = Section(cv = self)
-        return s.get_sections(
-            CV.objects.filter(
-                id = 1
+        cv = {
+            'cv_name': 'abridged'
+            'sections': s.get_sections(
+                CV.objects.filter(
+                    id = 1
+                )
             )
-        )
+        }
+        return cv
 
     def save_cv(self, cv):
         cv_i = CV()
