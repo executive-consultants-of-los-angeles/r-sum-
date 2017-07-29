@@ -54,7 +54,7 @@ class CV(models.Model):
 
         for section in sections_list:
             print(section)
-            print(cv.get(section))
+            print(json.dumps(cv.get('cv').get(section), indent=1))
             s = Section()
             s.save_section(cv_i, section, cv.get('cv').get(section))
 
