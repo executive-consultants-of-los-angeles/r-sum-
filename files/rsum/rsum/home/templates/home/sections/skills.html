@@ -8,12 +8,12 @@
       </tr>
     </th>
     {% for sub in section.value %}
-    <tr>
       {% for v in sub.value %}
+      <tr>
         <td>{{ sub.name }}</td>
         <td>{{ v.name }}</td>
         <td>{{ v.value }}</td>
       {% endfor %}
+      </tr>
     {% endfor %}
-    </tr>
   </table>
