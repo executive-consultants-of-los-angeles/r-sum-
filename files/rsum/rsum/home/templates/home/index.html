@@ -22,6 +22,8 @@
         {% include 'home/sections/skills.html' %}
       {% elif section.name == 'experience' %}
         {% include 'home/sections/experience.html' %}
+      {% else %}
+        {{ section.value }}
       {% endif %}
     {% endfor %}
   </body>
