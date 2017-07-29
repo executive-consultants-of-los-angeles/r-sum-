@@ -15,7 +15,7 @@
     <title>{{ cv.name }}</title>
   </head>
   <body>
-    {% for item in cv.order %}
+    {% for section in cv.sections %}
       <h1>{{ section.name }}</h1>
       <p>{{ forloop.counter0 }}</p>
       {% if section.name == 'skills' %}
