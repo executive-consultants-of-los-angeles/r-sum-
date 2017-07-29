@@ -53,6 +53,8 @@ class CV(models.Model):
         cv_i.save()
 
         for section in sections_list:
+            print(section)
+            print(cv.get(section))
             s = Section()
             s.save_section(cv_i, section, cv.get(section))
 
