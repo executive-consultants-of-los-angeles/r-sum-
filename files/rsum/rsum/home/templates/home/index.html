@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <!-- ==============================
-    Project:        Metronic "Aironepage" Frontend Freebie - Responsive HTML Template Based On Twitter Bootstrap 3.3.4
+    Project:        CV for Edward A. Harris of ECLA 
     Version:        1.0
-    Author:         KeenThemes
-    Primary use:    Corporate, Business Themes.
-    Email:          support@keenthemes.com
-    Follow:         http://www.twitter.com/keenthemes
-    Like:           http://www.facebook.com/keenthemes
-    Website:        http://www.keenthemes.com
-    Premium:        Premium Metronic Admin Theme: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+    Author:         ECLA 
+    Primary use:    Corporate, Marketing 
+    Email:          info@ecla.solutions
+    Follow:         http://www.twitter.com/eclacfo
+    Like:           http://www.facebook.com/eclacfo
+    Website:        http://ecla.solutions
 ================================== -->
 <html lang="en">
   <head>
@@ -21,7 +20,7 @@
       <h1>{{ section.name }}</h1>
       <p>{{ forloop.counter0 }}</p>
       <p>{{ section }}</p>
-      {% if section.name == 'skills' %}
+      {% if section.iterable == True %}
         {% for skill in section.value %}
           <h2>{{ skill.name }}</h2>
           <p>{{ skill }}<p>
