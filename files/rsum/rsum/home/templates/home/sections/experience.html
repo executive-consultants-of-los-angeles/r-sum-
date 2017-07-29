@@ -2,8 +2,10 @@
   <p>{{ sub }}</p>
   {% for i in sub.value %}
     {% for j in i.value %}
-      <h2>{{ j.name }}</h2>
-      <p>{{ j }}</p>
+      {% if j.name == 'projects' %}
+      {% else %}
+        <h3>{{ j.name }}: {{ j.value }}</h2>
+      {% endif %}
     {% endfor %}
   {% endfor %}
 {% endfor %}
