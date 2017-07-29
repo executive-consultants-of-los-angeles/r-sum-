@@ -15,9 +15,10 @@
     <meta value="{{ cv.name }}" />
   </head>
   <body>
+    {{ cv.sections }}
     {% for section in cv.sections.0 %}
       {{ forloop.counter0 }}
-      {{ section.value }}
+      {{ section }}
     {% endfor %}
   </body>
 </html>
