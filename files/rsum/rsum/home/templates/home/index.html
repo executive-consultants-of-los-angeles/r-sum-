@@ -17,6 +17,12 @@
     {% for section in cv %}
       <p>{{ section.name }}</p>
       <p>{{ section.value}}</p>
+      {% if section.value is iterable %}
+        {% for sub in section.value %}
+          <p>{{ sub.name }}</p>
+          <p>{{ sub.value }}</p>
+        {% endfor %}
+      {% endif %}
     {% endfor %}
   </body>
 </html>
