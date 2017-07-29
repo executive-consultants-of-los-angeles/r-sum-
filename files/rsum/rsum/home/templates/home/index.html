@@ -21,9 +21,9 @@
       <p>{{ forloop.counter0 }}</p>
       <p>{{ section }}</p>
       {% if section.iterable == True %}
-        {% for skill in section.value %}
-          <h2>{{ skill.name }}</h2>
-          <p>{{ skill }}<p>
+        {% for sub in section.value %}
+          <h2>{{ sub.name }}</h2>
+          <p>{{ sub }}<p>
         {% endfor %}
       {% endif %}
     {% endfor %}

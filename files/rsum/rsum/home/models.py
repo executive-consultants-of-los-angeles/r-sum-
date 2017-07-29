@@ -68,7 +68,6 @@ class Section(models.Model):
                             id = section.get('id')
                         )
                     ),
-                    'iterable': True,
                 })
             if section.get('value') == u"<type 'dict'>":
                 ss = SubSection( section = self )  
@@ -78,7 +77,6 @@ class Section(models.Model):
                             id = section.get('id')
                         )
                     ),
-                    'iterable': True,
                 })
             sections.append(section)
         return sections
@@ -92,6 +90,7 @@ class Section(models.Model):
             s_i.save()
         else:
             s_i.value = type(section)
+            s_i.iterable = True
             s_i.save()
             ss = SubSection()
             ss.save_sub_sections(section, s_i)
@@ -199,6 +198,7 @@ class ProjectItems(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     value = models.CharField(max_length=200, null = True) 
+    iterable = models.Boolean(default=False)
 
     def get_project_items(self, project):
         project_items = []
@@ -228,6 +228,7 @@ class ProjectItems(models.Model):
             pi_i.name = key
             if type(p_entry) == type(dict()):
                 pi_i.value = type(p_entry)
+                pi_i.iterable = True
                 pi_i.save()
                 pe = ProjectEntry()
                 pe.save_entry(p_entry, pi_i)
