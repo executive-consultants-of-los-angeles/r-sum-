@@ -52,6 +52,7 @@ class Section(models.Model):
     cv = models.ForeignKey(CV, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
     value = models.CharField(max_length=200, null=True) 
+    iterable = models.BooleanField(default=False)
 
     def get_sections(self, cv):
         sections = []
@@ -66,7 +67,8 @@ class Section(models.Model):
                         Section.objects.filter(
                             id = section.get('id')
                         )
-                    )
+                    ),
+                    'iterable': True,
                 })
             if section.get('value') == u"<type 'dict'>":
                 ss = SubSection( section = self )  
@@ -75,7 +77,8 @@ class Section(models.Model):
                         Section.objects.filter(
                             id = section.get('id')
                         )
-                    )
+                    ),
+                    'iterable': True,
                 })
             sections.append(section)
         return sections
