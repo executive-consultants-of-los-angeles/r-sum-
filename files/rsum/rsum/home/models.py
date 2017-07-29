@@ -38,6 +38,7 @@ class CV(models.Model):
         s = Section()
         cv = {
             'cv_name': 'abridged',
+            'cv_order': order,
             'sections': s.get_sections(
                 CV.objects.filter(
                     id = 1
