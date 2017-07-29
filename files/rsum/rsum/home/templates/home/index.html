@@ -23,6 +23,9 @@
       {% if section.iterable == True %}
         {% for sub in section.value %}
           <h2>{{ sub.name }}</h2>
+          {% for i in sub.value %}
+            <p>{{ i.value }}</p>
+          {% endfor %}
           <p>{{ sub }}<p>
         {% endfor %}
       {% endif %}
