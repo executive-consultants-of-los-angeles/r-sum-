@@ -16,8 +16,6 @@
   </head>
   <body>
     {% for section in cv.sections %}
-      <h1>{{ section.name }}</h1>
-      <p>{{ forloop.counter0 }}</p>
       {% with template_name=section.name|stringformat:"s"|add:".html" %}
         {% include 'home/sections/'|add:template_name %}
       {% endwith %}
