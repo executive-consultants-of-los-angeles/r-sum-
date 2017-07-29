@@ -1,4 +1,0 @@
-{% extends 'home/index.html' %}
-
-{% block skills %}
-{% endblock %}
