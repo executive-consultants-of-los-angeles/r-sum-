@@ -316,6 +316,7 @@ fieldset[disabled] .btn-theme {
   	[Promo Banner]
 ------------------------------------------------------------------*/
 .promo-banner {
+  color: #fff;
 }
 
 .promo-banner .promo-banner-title {
@@ -324,10 +325,10 @@ fieldset[disabled] .btn-theme {
   color: #fff;
 }
 
-.promo-banner .promo-banner-text {
+.promo-banner p.promo-banner-text {
+  color: #fff;
   text-align: justify;
   font-size: 20px;
-  color: #fff;
   opacity: .8;
 }
 
