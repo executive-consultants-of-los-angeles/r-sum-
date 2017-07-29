@@ -1,0 +1,7 @@
+
+        {% for sub in section.value %}
+          <h2>{{ sub.name }}</h2>
+          {% for v in sub.value %}
+            <p>{{ v.name }} {{ v.value }}<p>
+          {% endfor %}
+        {% endfor %}

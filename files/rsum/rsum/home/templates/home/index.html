@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <!-- ==============================
-    Project:        Metronic "Aironepage" Frontend Freebie - Responsive HTML Template Based On Twitter Bootstrap 3.3.4
+    Project:        CV for Edward A. Harris of ECLA 
     Version:        1.0
-    Author:         KeenThemes
-    Primary use:    Corporate, Business Themes.
-    Email:          support@keenthemes.com
-    Follow:         http://www.twitter.com/keenthemes
-    Like:           http://www.facebook.com/keenthemes
-    Website:        http://www.keenthemes.com
-    Premium:        Premium Metronic Admin Theme: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+    Author:         ECLA 
+    Primary use:    Corporate, Marketing 
+    Email:          info@ecla.solutions
+    Follow:         http://www.twitter.com/eclacfo
+    Like:           http://www.facebook.com/eclacfo
+    Website:        http://ecla.solutions
 ================================== -->
 <html lang="en">
   <head>
+    <meta value="{{ cv.name }}" />
+    <title>{{ cv.name }}</title>
   </head>
   <body>
-    {% for section in cv %}
-      <p>{{ section.name }}</p>
-      <p>{{ section.value}}</p>
+    {% for section in cv.sections %}
+      <h1>{{ section.name }}</h1>
+      <p>{{ forloop.counter0 }}</p>
+      {% if section.name == 'skills' %}
+        {% include 'home/sections/skills.html' %}
+      {% elif section.name == 'experience' %}
+        {% include 'home/sections/experience.html' %}
+      {% endif %}
     {% endfor %}
   </body>
 </html>

@@ -1,0 +1,12 @@
+{% for sub in section.value %}
+  <p>{{ sub }}</p>
+  {% for i in sub.value %}
+    {% for j in i.value %}
+      {% if j.name == 'projects' %}
+        {% include 'home/sections/projects/project.html' %}
+      {% else %}
+        <h3>{{ j.name }}: {{ j.value }}</h2>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endfor %}

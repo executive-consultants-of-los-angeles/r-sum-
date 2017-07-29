@@ -15,8 +15,6 @@ def index(request):
     cv_i.check_sections()
 
     cv = cv_i.get_cv()
-    
-    print(json.dumps(cv, indent=1)) 
 
     context = {
         'cv': cv 

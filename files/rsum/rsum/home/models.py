@@ -11,7 +11,7 @@ from django.db import models
 
 # Create your models here.
 class CV(models.Model):
-    section_name = models.CharField(max_length=200)
+    cv_name = models.CharField(max_length=200)
 
     def check_sections(self):
         cv_i = CV.objects.all()
@@ -25,12 +25,16 @@ class CV(models.Model):
             return cv_i
 
     def get_cv(self):
-        s = Section(cv = self)
-        return s.get_sections(
-            CV.objects.filter(
-                id = 1
-            )
-        )
+        s = Section()
+        cv = {
+            'cv_name': 'abridged',
+            'sections': s.get_sections(
+                CV.objects.filter(
+                    id = 1
+                )
+            ),
+        }
+        return cv
 
     def save_cv(self, cv):
         cv_i = CV()
@@ -48,6 +52,7 @@ class Section(models.Model):
     cv = models.ForeignKey(CV, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
     value = models.CharField(max_length=200, null=True) 
+    iterable = models.BooleanField(default=False)
 
     def get_sections(self, cv):
         sections = []
@@ -62,7 +67,7 @@ class Section(models.Model):
                         Section.objects.filter(
                             id = section.get('id')
                         )
-                    )
+                    ),
                 })
             if section.get('value') == u"<type 'dict'>":
                 ss = SubSection( section = self )  
@@ -71,7 +76,7 @@ class Section(models.Model):
                         Section.objects.filter(
                             id = section.get('id')
                         )
-                    )
+                    ),
                 })
             sections.append(section)
         return sections
@@ -85,6 +90,7 @@ class Section(models.Model):
             s_i.save()
         else:
             s_i.value = type(section)
+            s_i.iterable = True
             s_i.save()
             ss = SubSection()
             ss.save_sub_sections(section, s_i)
@@ -118,7 +124,7 @@ class SubSection(models.Model):
                         Project.objects.filter(
                             sub_section = subsection.get('id')  
                         ).values()
-                    )[0]
+                    )
                 })
             subsections.append(subsection)
         return subsections
@@ -192,6 +198,7 @@ class ProjectItems(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     value = models.CharField(max_length=200, null = True) 
+    iterable = models.BooleanField(default=False)
 
     def get_project_items(self, project):
         project_items = []
@@ -221,6 +228,7 @@ class ProjectItems(models.Model):
             pi_i.name = key
             if type(p_entry) == type(dict()):
                 pi_i.value = type(p_entry)
+                pi_i.iterable = True
                 pi_i.save()
                 pe = ProjectEntry()
                 pe.save_entry(p_entry, pi_i)
