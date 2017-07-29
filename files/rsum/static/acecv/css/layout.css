@@ -328,6 +328,7 @@ fieldset[disabled] .btn-theme {
   font-size: 20px;
   color: #fff;
   opacity: .8;
+  text-align: justify;
 }
 
 /*------------------------------------------------------------------
