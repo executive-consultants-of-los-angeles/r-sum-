@@ -11,7 +11,7 @@ from django.db import models
 
 # Create your models here.
 class CV(models.Model):
-    section_name = models.CharField(max_length=200)
+    cv_name = models.CharField(max_length=200)
 
     def check_sections(self):
         cv_i = CV.objects.all()
