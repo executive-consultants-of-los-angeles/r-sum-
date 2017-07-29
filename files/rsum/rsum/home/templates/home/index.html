@@ -21,6 +21,11 @@
       <h1>{{ section.name }}</h1>
       <p>{{ forloop.counter0 }}</p>
       <p>{{ section }}</p>
+      {% if section.name == 'skills' %}
+        {% for skill in section.value %}
+          <h2>{{ skill.name }}</h2>
+        {% endfor %}
+      {% endif %}
     {% endfor %}
   </body>
 </html>
