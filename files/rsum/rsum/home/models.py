@@ -94,7 +94,7 @@ class Section(models.Model):
         return sections
     
     def save_section(self, cv, name, section):
-        if section = None:
+        if section == None:
             return None
         s_i = Section()
         s_i.cv = cv
