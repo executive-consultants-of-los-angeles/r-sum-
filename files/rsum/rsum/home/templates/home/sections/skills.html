@@ -1,4 +1,3 @@
-<h1>{{ section.name }}</h1>
   <table>
     <th>
       <tr>
@@ -17,3 +16,21 @@
       </tr>
     {% endfor %}
   </table>
+
+                        <h2>{{ section.name }}</h2>
+                        <!-- Progress Box -->
+                      {% for sub in section.value %}
+                        <div class="progress-box">
+                            <h5>{{ sub.name }} <span class="color-heading pull-right">87%</span></h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-color-base" role="progressbar" data-width="87"></div>
+                            </div>
+                        </div>
+                        <!-- End Progress Box -->
+                      {% endfor %}
+                    </div>
+                </div>
+                <!--// end row -->
+            </div>
+        </div>
+        <!-- End About -->
