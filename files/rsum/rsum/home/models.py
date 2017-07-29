@@ -198,7 +198,7 @@ class ProjectItems(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     value = models.CharField(max_length=200, null = True) 
-    iterable = models.Boolean(default=False)
+    iterable = models.BooleanField(default=False)
 
     def get_project_items(self, project):
         project_items = []
