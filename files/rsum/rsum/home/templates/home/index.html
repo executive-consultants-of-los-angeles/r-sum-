@@ -23,6 +23,9 @@
       {% if section.iterable == True %}
         {% for sub in section.value %}
           <h2>{{ sub.name }}</h2>
+          {% if sub.value.iterable == True %}
+            This is broken.
+          {% endif %}
           {% for i in sub.value %}
             <p>{{ i.value }}</p>
             <b>{{ i }}</b>
