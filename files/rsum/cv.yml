@@ -34,6 +34,7 @@ cv:
     - contract:
         duration: "6 months"
         location: "Los Angeles, California"
+        company: "Creative Artists Agency"
         position: "Cloud Architect and Software Engineer"
         projects:
           jupyterhub:
@@ -51,6 +52,7 @@ cv:
     - contract:
         duration: "9 months"
         location: "Los Angeles, California"
+        company: "Toyota"
         position: "Lead Python Developer / Cloud Architect / Build Manager"
         projects:
           lead_python_developer:
@@ -68,6 +70,7 @@ cv:
     - contract:
         duration: "1 year"
         location: "Oakland, California"
+        company: "Mintspare Incorporated"
         position: "Chief Technical Officer"
         projects:
           webmaster:
