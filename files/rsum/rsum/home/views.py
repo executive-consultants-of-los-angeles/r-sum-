@@ -19,7 +19,7 @@ def index(request):
     print(json.dumps(cv, indent=1)) 
 
     context = {
-        'cv': cv 
+        'cv': json.loads(json.dumps(cv)) 
     }
 
     return render(request, 'home/index.html', context)
