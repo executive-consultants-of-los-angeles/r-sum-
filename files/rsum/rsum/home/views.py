@@ -17,7 +17,7 @@ def index(request):
     cv = cv_i.get_cv()
     
     context = {
-        'cv': json.loads(json.dumps(cv)) 
+        'cv': json.loads(json.dumps(cv.get('cv'))) 
     }
-    print(json.dumps(context, indent=1))
+
     return render(request, 'home/index.html', context)
