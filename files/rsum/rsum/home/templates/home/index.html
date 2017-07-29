@@ -16,13 +16,9 @@
   <body>
     {% for section in cv %}
       <p>{{ section.name }}</p>
-      {% if iterable(section.value) %}
-        {% for sub in section.value %}
-          <p>{{ sub.name }}</p>
-          <p>{{ sub.value }}</p>
-        {% endfor %}
-      {% else %}
-        <p>{{ section.value}}</p>
+      <p>{{ section.value}}</p>
+      {% if iterable section.value %}
+        {{ section.value.0 }}
       {% endif %}
     {% endfor %}
   </body>
