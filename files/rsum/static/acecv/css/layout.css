@@ -274,9 +274,13 @@ fieldset[disabled] .btn-theme {
 /*------------------------------------------------------------------
     [Progress Bar]
 ------------------------------------------------------------------*/
-.progress-box .progress {
+.progress-sub .progress-box .progress {
   box-shadow: none;
   height: 3px;
+}
+
+.progress-sub {
+  padding-left: 20px;
 }
 
 .progress-box .progress-bar {
