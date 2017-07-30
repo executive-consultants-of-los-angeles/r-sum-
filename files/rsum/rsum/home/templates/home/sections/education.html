@@ -3,11 +3,11 @@
         <div class="promo-banner parallax-window" data-parallax="scroll" data-image-src="{% static 'img/1920x1080/01.jpg' %}">
             <div 
               style="
-                opacity: 0.7;
-                background-color: #969696;
+                opacity: 0.65;
+                background-color: white;
               "
               class="container-sm content-lg">
-                <h2 class="promo-banner-title">{{ section.name|title }}</h2>
+                <h2 style="opacity: 1;" class="promo-banner-title">{{ section.name|title }}</h2>
                 <p class="promo-banner-text">
                   {% for sub in section.value %}
                     {% for i in sub.value %}
@@ -15,7 +15,7 @@
                         {% if j.name == 'projects' %}
                           {% include 'home/sections/projects/project.html' %}
                         {% else %}
-                          <h3 style="color: MidnightBlue;" class="promo-banner-text">{{ j.value }}</h3>
+                          <h3 style="color: black;" class="promo-banner-text">{{ j.value }}</h3>
                         {% endif %}
                       {% endfor %}
                     {% endfor %}
