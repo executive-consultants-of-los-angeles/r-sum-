@@ -47,8 +47,11 @@ cv:
       postgresql: "10 years"
       mysql: "15 years"
   work:
-    - link:
-        githubrepo: "http://wat"
+    name: "Links to Work"
+    value: 
+        some_repository:
+          name: "Project"
+          value: "I did stuff."
   experience:
     - contract:
         duration: "6 months"
