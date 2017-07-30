@@ -147,6 +147,7 @@ class SubSection(models.Model):
                     
     
     def save_sub_sections(self, sub_section, section):
+        print(sub_section)
         if type(sub_section) == type(dict()):
             for k, v in sub_section.iteritems():
                 ss_i = SubSection()
@@ -155,7 +156,7 @@ class SubSection(models.Model):
                 ss_i.name = k
                 ss_i.save()
                 p = Project() 
-                p.save_project_dict(v, ss_i)
+                #p.save_project_dict(v, ss_i)
         elif type(sub_section) == type(list()):
             for c,i in enumerate(sub_section):
                 ss_i = SubSection()
