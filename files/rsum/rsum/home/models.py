@@ -9,13 +9,13 @@ import yaml
 from django.db import models
 
 sections_list = [
-    'name',
-    'position',
+    'intro',
     'summary',
     'skills',
     'work',
     'experience',
     'education',
+    'contact',
 ]
 
 
@@ -28,7 +28,7 @@ class CV(models.Model):
     def check_sections(self):
         cv_i = CV.objects.all()
         if not cv_i.exists():
-            cv_f = open('/srv/rsum/cv.yml')
+            cv_f = open('/srv/rsum/cvs/abridged.yml')
             cv_d = yaml.load(cv_f.read())
             self.save_cv(cv_d)
             cv_i = CV.objects.all()
@@ -127,7 +127,10 @@ class SubSection(models.Model):
             ).values() 
         ):
             p = Project() 
-            if subsection.get('value') == u"<type 'list'>":
+            if (
+                subsection.get('value') == u"<type 'list'>" or
+                subsection.get('value') == u"<type 'dict'>"
+            ):
                 subsection.update({
                     'value': p.get_projects(
                         SubSection.objects.filter(
@@ -148,6 +151,7 @@ class SubSection(models.Model):
                     
     
     def save_sub_sections(self, sub_section, section):
+        projects = []
         if type(sub_section) == type(dict()):
             for k, v in sub_section.iteritems():
                 ss_i = SubSection()
@@ -156,8 +160,11 @@ class SubSection(models.Model):
                 ss_i.name = k
                 ss_i.save()
                 p = Project() 
-                p.save_project_dict(v, ss_i)
-        elif type(sub_section) == type(list()):
+                projects.append(p.save_project_dict(v, ss_i))
+            return projects
+
+
+        if type(sub_section) == type(list()):
             for c,i in enumerate(sub_section):
                 ss_i = SubSection()
                 ss_i.section = section
@@ -165,8 +172,8 @@ class SubSection(models.Model):
                 ss_i.name = str(c) 
                 ss_i.save()
                 p = Project()
-                p.save_project_list(i, ss_i)
-        return SubSection.objects.values()
+                projects.append(p.save_project_list(i, ss_i))
+            return projects 
 
 class Project(models.Model):
     sub_section = models.ForeignKey(SubSection, on_delete=models.CASCADE)
@@ -181,24 +188,33 @@ class Project(models.Model):
             ).values()
         ):
             pli = ProjectItems()
-            project.update({
-                'value': pli.get_project_items(
-                    Project.objects.filter(
-                        id = project.get('id')
-                    )
-                ) 
-            })
+            if project.get('value') == u"<type 'dict'>":
+                project.update({
+                    'value': pli.get_project_items(
+                        Project.objects.filter(
+                            id = project.get('id')
+                        )
+                    ) 
+                })
+                
             projects.append(project) 
         return projects
 
     def save_project_dict(self, projects, sub_section):
-        for k, v in projects.iteritems():
-            p_i = Project()
-            p_i.sub_section = sub_section
-            p_i.name = k 
-            p_i.value = v
-            p_i.save()
-        return Project.objects.values_list() 
+        if type(projects) == type(dict()):
+            for k, v in projects.iteritems():
+                p_i = Project()
+                p_i.sub_section = sub_section
+                p_i.name = k 
+                if type(v) == type(dict()):
+                    p_i.value = type(v)
+                    p_i.save()
+                    pi = ProjectItems()
+                    pi.save_project_items(v, p_i)
+                else:
+                    p_i.value = v
+                    p_i.save()
+            return Project.objects.values_list() 
 
     def save_project_list(self, projects, sub_section):
         for k,v in projects.iteritems():

@@ -1,7 +1,14 @@
 ---
 cv:
-  name: "Edward Harris"
-  position: "Cloud Architect and / or Software Engineer"
+  intro:
+    name_position:
+      name: "Edward Harris"
+      position: "Site Reliability Engineer / Software Engineer"
+    social_media_links:
+      facebook: "https://www.facebook.com/eclacfo"
+      twitter: "https://twitter.com/eclacfo"
+      linkedin: "https://www.linkedin.com/in/eclacfo/"
+      github: "https://github.com/eclacfo"
   summary: "Straight shooter with upper management written all over me."
   skills:
     infrastructure_automation:
@@ -31,8 +38,10 @@ cv:
       postgresql: "10 years"
       mysql: "15 years"
   work:
-    - link:
-        githubrepo: "http://wat"
+    links:
+      some_repository:
+        project: "Fancy Project"
+        stuff: "I did stuff."
   experience:
     - contract:
         duration: "6 months"
@@ -83,5 +92,29 @@ cv:
             - "Responsible for monitoring, backups, and database maintenance."
             - "Used HAProxy for High Availability applications."
             - "Automated infrastructure tasks with Ansible."
+  education:
+    - school:
+        name: "Broadmoor Elementary School"
+        location: "Lafayette, Louisiana"
+        studies: "Kindergarten Diploma, General Studies, Kindergarten"
+        duration: "1988 – 1989 (1 year)"
+        projects:
+          tests:
+            - "I have always tested well"
+            - "that is how I graduated with a GPA in the 1.7 range"
+            - "it was a very prestigious kindergarten"
+  contact:
+    - title:
+        title: "Contact Mr. Harris"
+        message:
+          "Mr. Harris is available most weekdays after noon Pacific Time."
+    - location:
+        location: "Los Angeles, California, United States of America"
+    - phone:
+        number: "(424) 209-2976"
+    - email:
+        address: "alex@ecla.solutions"
+    - web:
+        website: "https://ecla.solutions/"
 ...
 # vim: ft=ansible:
