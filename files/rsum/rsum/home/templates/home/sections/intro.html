@@ -4,10 +4,21 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 sm-margin-b-60">
+                      {% for s in section.value %}
+                        {% if s.name == 'name_position' %}
+                        {{ s.name }}
                         <div class="margin-b-30">
-                            <h1 class="promo-block-title">{{ section.value.name.value }}</h1>
-                            <p class="promo-block-text">{{ section.value.position.value }}</p>
+                          {% for np in s.value %}
+                            {% if np.name == 'name' %}
+                            <h1 class="promo-block-title">{{ np.value }}</h1>
+                            {% endif %}
+                            {% if np.name == 'position' %}
+                            <p class="promo-block-text">{{ np.value }}</p>
+                            {% endif %}
+                            <pre>{{ section }}</pre>
+                          {% endfor %}
                         </div>
+                        {% endif %}
                         <ul class="list-inline">
                             <li><a href="#" class="social-icons"><i class="icon-social-facebook"></i></a></li>
                             <li><a href="#" class="social-icons"><i class="icon-social-twitter"></i></a></li>
@@ -15,6 +26,7 @@
                             <li><a href="#" class="social-icons"><i class="icon-social-behance"></i></a></li>
                             <li><a href="#" class="social-icons"><i class="icon-social-linkedin"></i></a></li>
                         </ul>
+                      {% endfor %}
                     </div>
                     <div class="col-sm-6">
                         <div class="promo-block-img-wrap">
