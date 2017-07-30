@@ -112,7 +112,7 @@ cv:
     - phone:
         number: "(424) 209-2976"
     - email:
-        address: "alex@ecla.solutins"
+        address: "alex@ecla.solutions"
     - web:
         website: "https://ecla.solutions/"
 ...
