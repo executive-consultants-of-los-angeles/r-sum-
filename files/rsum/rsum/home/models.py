@@ -195,7 +195,7 @@ class Project(models.Model):
         return projects
 
     def save_project_dict(self, projects, sub_section):
-        try: 
+        if type(projects) == type(dict()):
             for k, v in projects.iteritems():
                 p_i = Project()
                 p_i.sub_section = sub_section
@@ -203,9 +203,13 @@ class Project(models.Model):
                 p_i.value = v
                 p_i.save()
             return Project.objects.values_list() 
-        except Exception as e:
-            print(e)
-            return e
+        else:
+            print(projects)
+            p_i = Project()
+            p_i.sub_section = sub_section
+            p_i.name = "project string"
+            p_i.value = projects
+            return p_i.save()
 
     def save_project_list(self, projects, sub_section):
         for k,v in projects.iteritems():
