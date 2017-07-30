@@ -15,6 +15,7 @@ sections_list = [
     'work',
     'experience',
     'education',
+    'contact',
 ]
 
 
@@ -27,7 +28,7 @@ class CV(models.Model):
     def check_sections(self):
         cv_i = CV.objects.all()
         if not cv_i.exists():
-            cv_f = open('/srv/rsum/cv.yml')
+            cv_f = open('/srv/rsum/cvs/abridged.yml')
             cv_d = yaml.load(cv_f.read())
             self.save_cv(cv_d)
             cv_i = CV.objects.all()
@@ -186,7 +187,6 @@ class Project(models.Model):
                 sub_section = subsection
             ).values()
         ):
-            print(project)
             pli = ProjectItems()
             if project.get('value') == u"<type 'dict'>":
                 project.update({

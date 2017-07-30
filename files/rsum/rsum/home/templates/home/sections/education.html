@@ -1,0 +1,21 @@
+{% load static %}
+        <!-- Promo Banner -->
+        <div class="promo-banner parallax-window" data-parallax="scroll" data-image-src="{% static 'img/1920x1080/01.jpg' %}">
+            <div class="container-sm content-lg">
+                <h2 class="promo-banner-title">{{ section.name|title }}</h2>
+                <p class="promo-banner-text">
+                  {% for sub in section.value %}
+                    {% for i in sub.value %}
+                      {% for j in i.value %}
+                        {% if j.name == 'projects' %}
+                          {% include 'home/sections/projects/project.html' %}
+                        {% else %}
+                          <h3 style="color: white;" class="promo-banner-text">{{ j.value }}</h3>
+                        {% endif %}
+                      {% endfor %}
+                    {% endfor %}
+                  {% endfor %}
+                </p>
+            </div>
+        </div>
+        <!-- End Promo Banner -->

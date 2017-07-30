@@ -1,0 +1,46 @@
+{% load static %}
+        <!-- Contact -->
+        <div id="contact">
+            <div class="bg-color-sky-light">
+                <div class="container content-lg">
+                    <div class="row margin-b-40">
+                        <div class="col-sm-6">
+                           <h2>{{ section.value.0.value.0.value.1.value|title }}</h2>
+                            <p>{{ section.value.0.value.0.value.0.value }}</p>
+                        </div>
+                    </div>
+                    <!--// end row -->
+
+                <div class="row">
+                  {% for s in section.value %}
+                    {% if s.value.0.name != 'title' %}
+                      {% if s.value.0.name == 'location' %}
+                        <div class="col-md-3 col-xs-6 md-margin-b-30">
+                            <h4>{{ s.value.0.name|title }}</h4>
+                            <a href="https://maps.google.com">{{ s.value.0.value.0.value }}</a>
+                        </div>
+                      {% elif s.value.0.name == 'phone' %}
+                        <div class="col-md-3 col-xs-6 md-margin-b-30">
+                            <h4>{{ s.value.0.name|title }}</h4>
+                            <a href="#">{{ s.value.0.value.0.value }}</a>
+                        </div>
+                      {% elif s.value.0.name == 'email' %}
+                        <div class="col-md-3 col-xs-6">
+                            <h4>{{ s.value.0.name|title }}</h4>
+                            <a href="mailto:{{ s.value.0.value.0.value }}">{{ s.value.0.value.0.value }}</a>
+                        </div>
+                      {% elif s.value.0.name == 'web' %}
+                        <div class="col-md-3 col-xs-6">
+                            <h4>{{ s.value.0.name|title }}</h4>
+                            <a href="{{ s.value.0.value.0.value }}">{{ s.value.0.value.0.value }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                </div>
+                    <!--// end row -->
+                </div>
+            </div>
+        </div>
+        <!-- End Contact -->
+        <!--========== END PAGE LAYOUT ==========-->
