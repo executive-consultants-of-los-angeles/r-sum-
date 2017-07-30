@@ -126,7 +126,10 @@ class SubSection(models.Model):
             ).values() 
         ):
             p = Project() 
-            if subsection.get('value') == u"<type 'list'>":
+            if (
+                subsection.get('value') == u"<type 'list'>" or
+                subsection.get('value') == u"<type 'dict'>"
+            ):
                 subsection.update({
                     'value': p.get_projects(
                         SubSection.objects.filter(
@@ -200,16 +203,15 @@ class Project(models.Model):
                 p_i = Project()
                 p_i.sub_section = sub_section
                 p_i.name = k 
-                p_i.value = v
-                p_i.save()
+                if type(v) == type(dict()):
+                    p_i.value = type(v)
+                    p_i.save()
+                    pi = ProjectItems()
+                    pi.save_project_items(v, p_i)
+                else:
+                    p_i.value = v
+                    p_i.save()
             return Project.objects.values_list() 
-        else:
-            print(projects)
-            p_i = Project()
-            p_i.sub_section = sub_section
-            p_i.name = "project string"
-            p_i.value = projects
-            return p_i.save()
 
     def save_project_list(self, projects, sub_section):
         for k,v in projects.iteritems():
