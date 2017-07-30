@@ -187,7 +187,6 @@ class Project(models.Model):
                 sub_section = subsection
             ).values()
         ):
-            print(project)
             pli = ProjectItems()
             if project.get('value') == u"<type 'dict'>":
                 project.update({
