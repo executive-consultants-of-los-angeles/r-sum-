@@ -103,5 +103,17 @@ cv:
             - "I have always tested well"
             - "that is how I graduated with a GPA in the 1.7 range"
             - "it was a very prestigious kindergarten"
+  contact:
+    - title:
+        title: "Contact Mr. Harris"
+        message: "Mr. Harris is available most weekdays after noon Pacific Time."
+    - location:
+        location: "Los Angeles, California, United States of America"
+    - phone:
+        number: "(424) 209-2976"
+    - email:
+        address: "alex@ecla.solutins"
+    - web:
+        website: "https://ecla.solutions/"
 ...
 # vim: ft=ansible:
