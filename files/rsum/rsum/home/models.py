@@ -15,6 +15,7 @@ sections_list = [
     'work',
     'experience',
     'education',
+    'contact',
 ]
 
 
