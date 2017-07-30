@@ -1,2 +1,19 @@
-<h1>{{ section.name }}</h1>
-<h2>{{ section.value }}</h2>
+{% load static %}        
+        <!--========== PAGE LAYOUT ==========-->
+        <!-- About -->
+        <div id="about">
+            <div class="container content-lg">
+                <div class="row">
+                    <div class="col-sm-5 sm-margin-b-60">
+                        <img class="full-width img-responsive" src="{% static 'img/500x700/01.jpg' %}" alt="Image">
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="section-seperator margin-b-50">
+                            <div class="margin-b-50">
+                                <div class="margin-b-30">
+                                    <h2>{{ section.name }}</h2>
+                                    <p>{{ section.value }}</p>
+                                </div>
+                                <a href="#" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Download my CV</a>
+                            </div>
+                        </div>

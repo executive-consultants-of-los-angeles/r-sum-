@@ -13,6 +13,7 @@ sections_list = [
     'position',
     'summary',
     'skills',
+    'work',
     'experience',
     'education',
 ]
@@ -22,6 +23,7 @@ sections_list = [
 class CV(models.Model):
     cv_name = models.CharField(max_length=200)
     cv_order = models.CharField(max_length=200, null=True)
+    cv_template = models.CharField(max_length=200, null=True)
 
     def check_sections(self):
         cv_i = CV.objects.all()
