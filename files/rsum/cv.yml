@@ -1,8 +1,12 @@
 ---
 cv:
   intro: 
-    name: "Edward Harris"
-    position: "Site Reliability Engineer / Software Engineer"
+    name: 
+      name: "Name"
+      value: "Edward Harris"
+    position: 
+      name: "Desired Position"
+      value: "Site Reliability Engineer / Software Engineer"
     social_media_links:
       name: "Social Media"
       value: 

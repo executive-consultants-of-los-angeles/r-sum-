@@ -147,13 +147,7 @@ class SubSection(models.Model):
                     
     
     def save_sub_sections(self, sub_section, section):
-        if type(sub_section) == type(str()):
-            ss_i = SubSection()
-            ss_i.section = section
-            ss_i.value = sub_section
-            ss_i.name = "<type 'str'>"
-            ss_i.save()
-
+        projects = []
         if type(sub_section) == type(dict()):
             for k, v in sub_section.iteritems():
                 ss_i = SubSection()
@@ -162,8 +156,11 @@ class SubSection(models.Model):
                 ss_i.name = k
                 ss_i.save()
                 p = Project() 
-                p.save_project_dict(v, ss_i)
-        elif type(sub_section) == type(list()):
+                projects.append(p.save_project_dict(v, ss_i))
+            return projects
+
+
+        if type(sub_section) == type(list()):
             for c,i in enumerate(sub_section):
                 ss_i = SubSection()
                 ss_i.section = section
@@ -171,8 +168,8 @@ class SubSection(models.Model):
                 ss_i.name = str(c) 
                 ss_i.save()
                 p = Project()
-                p.save_project_list(i, ss_i)
-        return SubSection.objects.values()
+                projects.append(p.save_project_list(i, ss_i))
+            return projects 
 
 class Project(models.Model):
     sub_section = models.ForeignKey(SubSection, on_delete=models.CASCADE)
@@ -198,13 +195,17 @@ class Project(models.Model):
         return projects
 
     def save_project_dict(self, projects, sub_section):
-        for k, v in projects.iteritems():
-            p_i = Project()
-            p_i.sub_section = sub_section
-            p_i.name = k 
-            p_i.value = v
-            p_i.save()
-        return Project.objects.values_list() 
+        try: 
+            for k, v in projects.iteritems():
+                p_i = Project()
+                p_i.sub_section = sub_section
+                p_i.name = k 
+                p_i.value = v
+                p_i.save()
+            return Project.objects.values_list() 
+        except Exception as e:
+            print(e)
+            return e
 
     def save_project_list(self, projects, sub_section):
         for k,v in projects.iteritems():

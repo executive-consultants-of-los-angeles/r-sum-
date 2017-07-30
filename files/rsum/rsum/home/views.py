@@ -20,4 +20,6 @@ def index(request):
         'cv': cv 
     }
 
+    print(json.dumps(cv, indent=2))
+
     return render(request, 'home/index.html', context)
