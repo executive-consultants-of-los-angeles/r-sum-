@@ -1,7 +1,12 @@
 {% load static %}
         <!-- Promo Banner -->
         <div class="promo-banner parallax-window" data-parallax="scroll" data-image-src="{% static 'img/1920x1080/01.jpg' %}">
-            <div class="container-sm content-lg">
+            <div 
+              style="
+                opacity: 0.7;
+                background-color: #969696;
+              "
+              class="container-sm content-lg">
                 <h2 class="promo-banner-title">{{ section.name|title }}</h2>
                 <p class="promo-banner-text">
                   {% for sub in section.value %}
