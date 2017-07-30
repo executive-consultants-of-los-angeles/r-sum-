@@ -147,6 +147,7 @@ class SubSection(models.Model):
                     
     
     def save_sub_sections(self, sub_section, section):
+        print(type(sub_section))
         print(sub_section)
         if type(sub_section) == type(dict()):
             for k, v in sub_section.iteritems():

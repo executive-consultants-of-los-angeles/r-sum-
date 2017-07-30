@@ -4,18 +4,20 @@ cv:
     name: "Edward Harris"
     position: "Site Reliability Engineer / Software Engineer"
     social_media_links:
-      facebook:
-        name: "Facebook"
-        url: "https://www.facebook.com/eclacfo"
-      twitter:
-        name: "Twitter"
-        url: "https://twitter.com/eclacfo"
-      linkedin:
-        name: "LinkedIn"
-        url: "https://www.linkedin.com/in/eclacfo/"
-      github:
-        name: "GitHub"
-        url: "https://github.com/eclacfo"
+      name: "Social Media"
+      value: 
+        facebook:
+          name: "Facebook"
+          url: "https://www.facebook.com/eclacfo"
+        twitter:
+          name: "Twitter"
+          url: "https://twitter.com/eclacfo"
+        linkedin:
+          name: "LinkedIn"
+          url: "https://www.linkedin.com/in/eclacfo/"
+        github:
+          name: "GitHub"
+          url: "https://github.com/eclacfo"
   summary: "Straight shooter with upper management written all over me."
   skills:
     infrastructure_automation:
