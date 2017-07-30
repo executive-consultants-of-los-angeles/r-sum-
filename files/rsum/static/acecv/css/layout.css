@@ -322,17 +322,17 @@ fieldset[disabled] .btn-theme {
   	[Promo Banner]
 ------------------------------------------------------------------*/
 .promo-banner {
-  color: #fff;
+  color: MidnightBlue;
 }
 
 .promo-banner .promo-banner-title {
   text-align: center;
   font-size: 50px;
-  color: #fff;
+  color: MidnightBlue;
 }
 
 .promo-banner p.promo-banner-text {
-  color: #fff;
+  color: MidnightBlue;
   text-align: justify;
   font-size: 20px;
   opacity: .8;
