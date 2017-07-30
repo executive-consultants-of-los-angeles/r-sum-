@@ -8,7 +8,6 @@
                     {% for i in sub.value %}
                       {% for j in i.value %}
                         {% if j.name == 'projects' %}
-                          <h3 style="color: white;" class="promo-banner-text">{{ j.name|title }}</h3>
                           {% include 'home/sections/projects/project.html' %}
                         {% else %}
                           <h3 style="color: white;" class="promo-banner-text">{{ j.value }}</h3>
