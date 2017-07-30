@@ -83,7 +83,6 @@
 
         {% for section in cv.sections %}
           {% with template_name=section.name|stringformat:"s"|add:".html" %}
-            {{ section.value }}
             {% include 'home/sections/'|add:template_name %}
           {% endwith %}
         {% endfor %}
