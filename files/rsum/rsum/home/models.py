@@ -9,8 +9,7 @@ import yaml
 from django.db import models
 
 sections_list = [
-    'name',
-    'position',
+    'intro',
     'summary',
     'skills',
     'work',
