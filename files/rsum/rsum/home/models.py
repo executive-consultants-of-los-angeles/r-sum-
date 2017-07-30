@@ -186,14 +186,17 @@ class Project(models.Model):
                 sub_section = subsection
             ).values()
         ):
+            print(project)
             pli = ProjectItems()
-            project.update({
-                'value': pli.get_project_items(
-                    Project.objects.filter(
-                        id = project.get('id')
-                    )
-                ) 
-            })
+            if project.get('value') == u"<type 'dict'>":
+                project.update({
+                    'value': pli.get_project_items(
+                        Project.objects.filter(
+                            id = project.get('id')
+                        )
+                    ) 
+                })
+                
             projects.append(project) 
         return projects
 
