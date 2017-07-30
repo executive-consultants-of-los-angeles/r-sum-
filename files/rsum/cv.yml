@@ -1,6 +1,6 @@
 ---
 cv:
-  intro: 
+  intro:
     name_position:
       name: "Edward Harris"
       position: "Site Reliability Engineer / Software Engineer"
@@ -38,9 +38,9 @@ cv:
       postgresql: "10 years"
       mysql: "15 years"
   work:
-    links: 
+    links:
       some_repository:
-        project: "Fancy Project" 
+        project: "Fancy Project"
         stuff: "I did stuff."
   experience:
     - contract:
