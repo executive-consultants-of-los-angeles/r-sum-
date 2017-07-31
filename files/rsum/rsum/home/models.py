@@ -262,11 +262,8 @@ class ProjectItems(models.Model):
         return project_items
 
     def save_project_items(self, project_item, project):
-        print(project_item)
-        print(type(project_item))
         if type(project_item) == type(dict()):
             for key, p_entry in project_item.iteritems():
-                print(p_entry)
                 pi_i = ProjectItems()
                 pi_i.project = project
                 pi_i.name = key
@@ -313,15 +310,22 @@ class ProjectEntry(models.Model):
         return entries
 
     def save_entry(self, entry, pi_l):
-        for k, v in entry.iteritems():
+        print(entry)
+        print(type(entry))
+        if type(entry) == type(dict()):
+            for k, v in entry.iteritems():
+                pe_i = ProjectEntry()
+                pe_i.project_item_list = pi_l
+                pe_i.name = k
+                pe_i.value = type(v)
+                pe_i.save()
+                eli = EntryListItem()
+                eli.save_list_item(v, pe_i)
+            return pe_i 
+        
+        if type(entry) == type(str()):
             pe_i = ProjectEntry()
-            pe_i.project_item_list = pi_l
-            pe_i.name = k
-            pe_i.value = type(v)
-            pe_i.save()
-            eli = EntryListItem()
-            eli.save_list_item(v, pe_i)
-        return ProjectEntry.objects.values_list()
+            pe_i.project_item_list = pi_L
 
 
 class EntryListItem(models.Model):
