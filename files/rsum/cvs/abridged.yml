@@ -38,32 +38,28 @@ cv:
       postgresql: "10 years"
       mysql: "15 years"
   values:
-    introduction: >
-      A clearly defined system of ethics is vital to a happy
-      and productive life, so I have defined my values as
-      the following.  These are listed in order or precedence
-      from left to right.
+    introduction: 'A clearly defined system of ethics is vital to a\
+      happy and productive life, so I have defined my values as\
+      the following.  These are listed in order or precedence\
+      from left to right.'
     values: 
-      loyalty:
-        title: "Loyalty"
-        value: >
-          One good turn deserves another, and really this
-          comes down to the Golden Rule: do unto others
-          as you would have them do unto you.
-      - industry: >
-          You know what they say about Idle Hands. . . Seth
-          Green would be homeless if not for Seth McFarlane.
-          But seriously, I find I can't properly enjoy leisure
-          unless it's leisure that's been earned.
-      - efficiency: >
-          With that said, working hard but dumb is not going
-          to get you very far, so I like things that are
-          speedy and free of waste.
-      - wealth: >
-          Finally, this requires some clarity.  I do not mean
-          money when I say wealth as the two are not synonymous.
-          Wealth in this context refers to a richness of resources
-          such as endurance, information, health, and kindness.
+      - loyalty: 'One good turn deserves another, and really this\
+          comes down to the Golden Rule: do unto others\
+          and then run. But seriously, I do what I can to help\
+          people that have helped me and I don''t ask people for\
+          action that I haven''t done myself in the past. 
+      - industry: 'You know what they say about Idle Hands. . . Seth\
+          Green would be homeless if not for Seth McFarlane.\
+          But seriously, I find I can't properly enjoy leisure\
+          unless it''s leisure that''s been earned.'
+      - efficiency: ''With that said, working hard but dumb is not\
+          going to get you very far, so I like things that are\
+          speedy and free of waste.'
+      - wealth: 'Finally, this requires some clarity.&nbsp;&nbsp;I do not mean\
+          money when I say wealth because the two are not synonymous.\
+          Wealth in this context refers to a richness of resources\
+          such as endurance, information, health, and kindness.&nbsp;&nbsp;\
+          Essentially, an ability to get things done.'
   experience:
     - contract:
         duration: "6 months"
