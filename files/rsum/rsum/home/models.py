@@ -218,12 +218,6 @@ class Project(models.Model):
                     p_i.save()
             return Project.objects.values_list() 
 
-        if type(projects) == type(str()):
-            p_i = Project()
-            p_i.sub_section = sub_section
-            p_i.value = projects
-            p_i.save()
-
         if type(projects) == type(list()):
             for k,v in enumerate(projects):
                 p_i = Project()
@@ -234,6 +228,13 @@ class Project(models.Model):
                 pi = ProjectItems()
                 pi.save_project_items(v, p_i)
             return Project.objects.values_list()
+
+        if type(projects) == type(str()):
+            p_i = Project()
+            p_i.sub_section = sub_section
+            p_i.value = projects
+            p_i.save()
+
 
 class ProjectItems(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
