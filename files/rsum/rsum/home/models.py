@@ -265,7 +265,8 @@ class ProjectItems(models.Model):
         print(project_item)
         print(type(project_item))
         if type(project_item) == type(dict()):
-            for key,p_entry in project_item.iteritems():
+            for key, p_entry in project_item.iteritems():
+                print(p_entry)
                 pi_i = ProjectItems()
                 pi_i.project = project
                 pi_i.name = key
