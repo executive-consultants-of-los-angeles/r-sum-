@@ -160,9 +160,8 @@ class SubSection(models.Model):
                 ss_i.name = k
                 ss_i.save()
                 p = Project() 
-                projects.append(p.save_project_dict(v, ss_i))
+                projects.append(p.save_projects(v, ss_i))
             return projects
-
 
         if type(sub_section) == type(list()):
             for c,i in enumerate(sub_section):
@@ -172,7 +171,7 @@ class SubSection(models.Model):
                 ss_i.name = str(c) 
                 ss_i.save()
                 p = Project()
-                projects.append(p.save_project_list(i, ss_i))
+                projects.append(p.save_projects(i, ss_i))
             return projects 
             
 
@@ -201,7 +200,7 @@ class Project(models.Model):
             projects.append(project) 
         return projects
 
-    def save_project_dict(self, projects, sub_section):
+    def save_projects(self, projects, sub_section):
         print(json.dumps(projects, indent=1))
         if type(projects) == type(dict()):
             for k, v in projects.iteritems():
@@ -218,16 +217,22 @@ class Project(models.Model):
                     p_i.save()
             return Project.objects.values_list() 
 
-    def save_project_list(self, projects, sub_section):
-        for k,v in projects.iteritems():
+        if type(projects) == type(str()):
             p_i = Project()
             p_i.sub_section = sub_section
-            p_i.name = k
-            p_i.value = type(v)
+            p_i.value = projects
             p_i.save()
-            pi = ProjectItems()
-            pi.save_project_items(v, p_i)
-        return Project.objects.values_list()
+
+        if type(projects) == type(list()):
+            for k,v in projects.iteritems():
+                p_i = Project()
+                p_i.sub_section = sub_section
+                p_i.name = k
+                p_i.value = type(v)
+                p_i.save()
+                pi = ProjectItems()
+                pi.save_project_items(v, p_i)
+            return Project.objects.values_list()
 
 class ProjectItems(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
