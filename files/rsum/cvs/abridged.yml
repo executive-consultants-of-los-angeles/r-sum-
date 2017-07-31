@@ -44,7 +44,9 @@ cv:
       the following.  These are listed in order or precedence
       from left to right.
     values: 
-      - loyalty: > 
+      loyalty:
+        title: "Loyalty"
+        value: >
           One good turn deserves another, and really this
           comes down to the Golden Rule: do unto others
           as you would have them do unto you.
