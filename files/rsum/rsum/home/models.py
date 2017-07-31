@@ -338,8 +338,6 @@ class EntryListItem(models.Model):
             
 
     def save_list_item(self, list_item, pe):
-        print(list_item)
-        print(type(list_item))
         if type(list_item) == type(list()):
             for i in list_item:
                 eli = EntryListItem()
