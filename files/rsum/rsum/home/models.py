@@ -261,20 +261,28 @@ class ProjectItems(models.Model):
         return project_items
 
     def save_project_items(self, project_item, project):
-        for key,p_entry in project_item.iteritems():
+        if type(project_item) == type(dict()):
+            for key,p_entry in project_item.iteritems():
+                pi_i = ProjectItems()
+                pi_i.project = project
+                pi_i.name = key
+                if type(p_entry) == type(dict()):
+                    pi_i.value = type(p_entry)
+                    pi_i.iterable = True
+                    pi_i.save()
+                    pe = ProjectEntry()
+                    pe.save_entry(p_entry, pi_i)
+                else:
+                    pi_i.value = p_entry
+                    pi_i.save()
+            return ProjectItems.objects.values_list() 
+
+        if type(project_item) == type(str()):
             pi_i = ProjectItems()
             pi_i.project = project
-            pi_i.name = key
-            if type(p_entry) == type(dict()):
-                pi_i.value = type(p_entry)
-                pi_i.iterable = True
-                pi_i.save()
-                pe = ProjectEntry()
-                pe.save_entry(p_entry, pi_i)
-            else:
-                pi_i.value = p_entry
-                pi_i.save()
-        return ProjectItems.objects.values_list() 
+            pi_i.name = "<type 'str'>"
+            pi_i.save()
+        return pi_i
 
 
 class ProjectEntry(models.Model):
