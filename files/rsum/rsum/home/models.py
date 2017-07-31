@@ -152,7 +152,6 @@ class SubSection(models.Model):
     
     def save_sub_sections(self, sub_section, section):
         projects = []
-        print(json.dumps(sub_section, indent=1))
         if type(sub_section) == type(dict()):
             for k, v in sub_section.iteritems():
                 ss_i = SubSection()
@@ -203,6 +202,7 @@ class Project(models.Model):
         return projects
 
     def save_project_dict(self, projects, sub_section):
+        print(json.dumps(projects, indent=1))
         if type(projects) == type(dict()):
             for k, v in projects.iteritems():
                 p_i = Project()
