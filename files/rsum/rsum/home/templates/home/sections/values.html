@@ -11,18 +11,16 @@
                   </div>
                   <div class="row row-space-2 margin-b-4">
                     {% for row in section.value.1.value %}
-                      <div class="row row-space-2 margin-b-4">
-                        <div class="col-md-3 col-sm-6 md-margin-b-4">
-                            <div class="service" data-height="height">
-                              <div class="service-element">
-                                  <i class="service-icon icon-{{ row.value.0.value.1.value.0.value }}"></i>
-                              </div>
-                              <div class="service-info">
-                                  <h3>{{ row.value.0.name|title }}</h3>
-                              <p class="margin-b-5">{{ row.value.0.value.0.value.0.value }}</p>
-                            </div>
-                            <a href="#" class="content-wrapper-link"></a>    
+                      <div {{ row.value.0.value.1.value.0.value }}>
+                        <div {{ row.value.0.value.1.value.1.value }}> 
+                          <div class="service-element">
+                            <i {{ row.value.0.value.1.value.2.value }}></i>
                           </div>
+                          <div class="service-info">
+                            <h3>{{ row.value.0.name|title }}</h3>
+                            <p class="margin-b-5">{{ row.value.0.value.0.value.0.value }}</p>
+                          </div>
+                          <a href="#" class="content-wrapper-link"></a>    
                         </div>
                       </div>
                     {% endfor %}
