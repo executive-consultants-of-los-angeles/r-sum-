@@ -113,6 +113,7 @@ class Section(models.Model):
             ss.save_sub_sections(section, s_i)
 
         return Section.objects.values_list()
+
     
 class SubSection(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
