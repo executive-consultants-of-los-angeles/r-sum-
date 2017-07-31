@@ -11,7 +11,6 @@
                   </div>
                   <div class="row row-space-2 margin-b-4">
                     {% for row in section.value.1 %}
-                      {{ row.value }}
                       <div class="row row-space-2 margin-b-4">
                         <div class="col-md-3 col-sm-6 md-margin-b-4">
                             <div class="service" data-height="height">
@@ -20,7 +19,7 @@
                                 </div>
                                 <div class="service-info">
                                     <h3>Illustrator</h3>
-                              <p class="margin-b-5">{{ row.value.0.value }}</p>
+                              <p class="margin-b-5">{{ row.value }}</p>
                             </div>
                             <a href="#" class="content-wrapper-link"></a>    
                           </div>
