@@ -201,8 +201,6 @@ class Project(models.Model):
         return projects
 
     def save_projects(self, projects, sub_section):
-        print(projects)
-        print(type(projects))
         if type(projects) == type(dict()):
             for k, v in projects.iteritems():
                 p_i = Project()
@@ -264,6 +262,8 @@ class ProjectItems(models.Model):
         return project_items
 
     def save_project_items(self, project_item, project):
+        print(project_item)
+        print(type(project_item))
         if type(project_item) == type(dict()):
             for key,p_entry in project_item.iteritems():
                 pi_i = ProjectItems()
