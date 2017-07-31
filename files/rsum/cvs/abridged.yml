@@ -37,11 +37,11 @@ cv:
     relational_databases:
       postgresql: "10 years"
       mysql: "15 years"
-  work:
-    links:
-      some_repository:
-        project: "Fancy Project"
-        stuff: "I did stuff."
+  values:
+    - loyalty:
+    - efficiency:
+    - industry:
+    - wealth:
   experience:
     - contract:
         duration: "6 months"
