@@ -152,7 +152,7 @@ class SubSection(models.Model):
     
     def save_sub_sections(self, sub_section, section):
         projects = []
-        print(sub_section)
+        print(json.dumps(sub_section, indent=1))
         if type(sub_section) == type(dict()):
             for k, v in sub_section.iteritems():
                 ss_i = SubSection()
@@ -175,6 +175,7 @@ class SubSection(models.Model):
                 p = Project()
                 projects.append(p.save_project_list(i, ss_i))
             return projects 
+            
 
 class Project(models.Model):
     sub_section = models.ForeignKey(SubSection, on_delete=models.CASCADE)
