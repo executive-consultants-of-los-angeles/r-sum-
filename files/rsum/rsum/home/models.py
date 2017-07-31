@@ -12,7 +12,7 @@ sections_list = [
     'intro',
     'summary',
     'skills',
-    'work',
+    'values',
     'experience',
     'education',
     'contact',
