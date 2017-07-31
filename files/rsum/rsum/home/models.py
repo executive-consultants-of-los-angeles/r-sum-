@@ -224,7 +224,7 @@ class Project(models.Model):
             p_i.save()
 
         if type(projects) == type(list()):
-            for k,v in projects.iteritems():
+            for k,v in enumerate(projects):
                 p_i = Project()
                 p_i.sub_section = sub_section
                 p_i.name = k
