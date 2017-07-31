@@ -201,7 +201,6 @@ class Project(models.Model):
         return projects
 
     def save_projects(self, projects, sub_section):
-        print(json.dumps(projects, indent=1))
         if type(projects) == type(dict()):
             for k, v in projects.iteritems():
                 p_i = Project()
