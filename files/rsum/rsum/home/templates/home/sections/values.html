@@ -1,5 +1,4 @@
 {% load static %}
-{{ section.values.content }}
         <!-- Values -->
         <div id="values">
             <div class="bg-color-sky-light" data-auto-height="true">
@@ -12,59 +11,21 @@
                   </div>
                   <div class="row row-space-2 margin-b-4">
                     {% for row in section.values.content.1.content %}
-                      <div {{ row.value.0.value.0.value.1.value }}>
-                        <div {{ row.value.0.value.0.value.2.value }}> 
+                      <div {{ row.1.col|safe }}>
+                        <div {{ row.1.service|safe }}> 
                           <div class="service-element">
-                            <i {{ row.value.0.value.0.value.3.value }}></i>
+                            <i {{ row.1.icon|safe }}></i>
                           </div>
                           <div class="service-info">
-                            <h3>{{ row }}{{ row.name|title }}</h3>
-                            <p class="margin-b-5">{{ row.value.0.value.0.value.0.value }}</p>
+                            <h3>{{ row.0 }}</h3>
+                            <p class="margin-b-5">{{ row.1.text }}</p>
                           </div>
                           <a href="#" class="content-wrapper-link"></a>    
                         </div>
                       </div>
                     {% endfor %}
                   </div>    
-                  <div class="row row-space-2 margin-b-4">
-                        <div class="col-md-3 col-sm-6 md-margin-b-4">
-                            <div class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
-                                <div class="service-element">
-                                    <i class="service-icon color-white icon-chemistry"></i>
-                                </div>
-                                <div class="service-info">
-                                    <h3 class="color-white">Graphic Design</h3>
-                                    <p class="color-white margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>    
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 sm-margin-b-4">
-                            <div class="service" data-height="height">
-                                <div class="service-element">
-                                    <i class="service-icon icon-screen-tablet"></i>
-                                </div>
-                                <div class="service-info">
-                                    <h3>Photoshop</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>    
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service" data-height="height">
-                                <div class="service-element">
-                                    <i class="service-icon  icon-mustache"></i>
-                                </div>
-                                <div class="service-info">
-                                    <h3>Sketch</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>    
-                            </div>
-                        </div>
-                  </div>
-                    <!--// end row -->
+                  <!--// end row -->
                 </div>
             </div>
         </div>
