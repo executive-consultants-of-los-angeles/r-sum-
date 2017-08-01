@@ -1,154 +1,153 @@
 ---
-cv:
-  intro:
-    name_position:
-      name: "Edward Harris"
-      position: "Site Reliability Engineer / Software Engineer"
-    social_media_links:
-      facebook: "https://www.facebook.com/eclacfo"
-      twitter: "https://twitter.com/eclacfo"
-      linkedin: "https://www.linkedin.com/in/eclacfo/"
-      github: "https://github.com/eclacfo"
-  summary: "Straight shooter with upper management written all over me."
-  skills:
-    infrastructure_automation:
-      ansible: "4 years"
-    system_administration:
-      bash: "15 years"
-      vim: "15 years"
-    cloud_architecture:
-      amazon_web_services: "9 years"
-      microsoft_azure: "1 year"
-      google_cloud: "1 year"
-      digital_ocean: "4 years"
-    software_development:
-      agile: "4 years"
-      sdlc: "15 years"
-      scm: "10 years"
-      git: "4 years"
-      svn: "2 years"
-    linux_unix:
-      redhat: "15 years"
-      debian: "13 years"
-    programming:
-      python: "4 years"
-      java: "1 year"
-      php: "15 years"
-    relational_databases:
-      postgresql: "10 years"
-      mysql: "15 years"
-  values:
-    introduction: 'A clearly defined system of ethics is vital to a
-      happy and productive life, so I have defined my values as
-      the following.  These are listed in order or precedence
-      from left to right.'
-    values: 
-      - loyalty: 
-          col: 'class="col-md-3 col-sm-6 md-margin-b-4"' 
-          service: 'class="service" data-height="height"'
-          icon: 'class="service-icon icon-badge"'
-          text: 'One good turn deserves another, and really this
-            comes down to the Golden Rule: do unto others
-            and then run. But seriously, I do what I can to help
-            people that have helped me and I don''t ask people for
-            action that I haven''t done myself in the past.'
-      - industry: 
-          col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
-          service: 'class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s"'
-          icon: ' class="service-icon color-white icon-chemistry"'
-          text: 'You know what they say about Idle Hands. . . Seth
-          Green would be homeless if not for Seth McFarlane.
-          But seriously, I find I can''t properly enjoy leisure
-          unless it''s leisure that''s been earned.'
-      - efficiency: 
-          col: 'class="col-md-3 col-sm-6 sm-margin-b-4"' 
-          service: 'class="service" data-height="height"' 
-          icon: 'class="service-icon icon-screen-tablet"'
-          text: 'With that said, working hard but dumb is not
-          going to get you very far, so I like things that are
-          speedy and free of waste.'
-      - wealth: 
-          col: 'class="col-md-3 col-sm-6"'
-          service: 'class="service" data-height="height"'
-          icon: 'class="service-icon  icon-mustache"'
-          text: 'Finally, this requires some clarity.&nbsp;&nbsp;I do not mean
-          money when I say wealth because the two are not synonymous.
-          Wealth in this context refers to a richness of resources
-          such as endurance, information, health, and kindness.&nbsp;&nbsp;
-          Essentially, an ability to get things done.'
-  experience:
-    - contract:
-        duration: "6 months"
-        location: "Los Angeles, California"
-        company: "Creative Artists Agency"
-        position: "Cloud Architect and Software Engineer"
-        projects:
-          jupyterhub:
-            - "Automated deployment via Ansible."
-            - "Instructed analysts on programming Python."
-          ansible_tower:
-            - "Refactored code to increase stability and security."
-            - "Upgraded Ansible Tower more than once."
-            - "Added logging with New Relic and Splunk to Tower."
-          continuous_integration:
-            - "Was handed a project that was a year late."
-            - "Also running a stack I was unfamiliar with."
-            - "Team of 6 devs delivering on time in 2/mo."
-            - "Automated testing of new features."
-    - contract:
-        duration: "9 months"
-        location: "Los Angeles, California"
-        company: "Toyota"
-        position: "Lead Python Developer / Cloud Architect / Build Manager"
-        projects:
-          lead_python_developer:
-            - "Wrote and enforced a reasonable Python style guide."
-            - "Created web scraping tool to collect client information."
-            - "Ran daily scrum meetings with other developers."
-          build_manager:
-            - "Deployed Atlassian services to client owned hardware."
-            - "Instructed more than 20 devs on git and gitflow."
-            - "Implemented cont. delivery with Jenkins and Ansible."
-          cloud_architect:
-            - "Automated tclient infrastructure with Ansible."
-            - "Reduced deployment time for key resources from weeks to hours."
-            - "Managed Amazon Web Services budget for client project."
-    - contract:
-        duration: "1 year"
-        location: "Oakland, California"
-        company: "Mintspare Incorporated"
-        position: "Chief Technical Officer"
-        projects:
-          webmaster:
-            - "Ran all of the company's websites."
-            - "Mostly written in PHP, sadly."
-          systems_administrator:
-            - "Responsible for monitoring, backups, and database maintenance."
-            - "Used HAProxy for High Availability applications."
-            - "Automated infrastructure tasks with Ansible."
-  education:
-    - school:
-        name: "Broadmoor Elementary School"
-        location: "Lafayette, Louisiana"
-        studies: "Kindergarten Diploma, General Studies, Kindergarten"
-        duration: "1988 – 1989 (1 year)"
-        projects:
-          tests:
-            - "I have always tested well"
-            - "that is how I graduated with a GPA in the 1.7 range"
-            - "it was a very prestigious kindergarten"
-  contact:
-    - title:
-        title: "Contact Mr. Harris"
-        message:
-          "Mr. Harris is available most weekdays after noon Pacific Time."
-    - location:
-        location: "Los Angeles, California, United States of America"
-    - phone:
-        number: "(424) 209-2976"
-    - email:
-        address: "alex@ecla.solutions"
-    - web:
-        website: "https://ecla.solutions/"
+intro:
+  name_position:
+    name: "Edward Harris"
+    position: "Site Reliability Engineer / Software Engineer"
+  social_media_links:
+    facebook: "https://www.facebook.com/eclacfo"
+    twitter: "https://twitter.com/eclacfo"
+    linkedin: "https://www.linkedin.com/in/eclacfo/"
+    github: "https://github.com/eclacfo"
+summary: "Straight shooter with upper management written all over me."
+skills:
+  infrastructure_automation:
+    ansible: "4 years"
+  system_administration:
+    bash: "15 years"
+    vim: "15 years"
+  cloud_architecture:
+    amazon_web_services: "9 years"
+    microsoft_azure: "1 year"
+    google_cloud: "1 year"
+    digital_ocean: "4 years"
+  software_development:
+    agile: "4 years"
+    sdlc: "15 years"
+    scm: "10 years"
+    git: "4 years"
+    svn: "2 years"
+  linux_unix:
+    redhat: "15 years"
+    debian: "13 years"
+  programming:
+    python: "4 years"
+    java: "1 year"
+    php: "15 years"
+  relational_databases:
+    postgresql: "10 years"
+    mysql: "15 years"
+values:
+  introduction: 'A clearly defined system of ethics is vital to a
+    happy and productive life, so I have defined my values as
+    the following.  These are listed in order or precedence
+    from left to right.'
+  values: 
+    - loyalty: 
+        col: 'class="col-md-3 col-sm-6 md-margin-b-4"' 
+        service: 'class="service" data-height="height"'
+        icon: 'class="service-icon icon-badge"'
+        text: 'One good turn deserves another, and really this
+          comes down to the Golden Rule: do unto others
+          and then run. But seriously, I do what I can to help
+          people that have helped me and I don''t ask people for
+          action that I haven''t done myself in the past.'
+    - industry: 
+        col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+        service: 'class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s"'
+        icon: ' class="service-icon color-white icon-chemistry"'
+        text: 'You know what they say about Idle Hands. . . Seth
+        Green would be homeless if not for Seth McFarlane.
+        But seriously, I find I can''t properly enjoy leisure
+        unless it''s leisure that''s been earned.'
+    - efficiency: 
+        col: 'class="col-md-3 col-sm-6 sm-margin-b-4"' 
+        service: 'class="service" data-height="height"' 
+        icon: 'class="service-icon icon-screen-tablet"'
+        text: 'With that said, working hard but dumb is not
+        going to get you very far, so I like things that are
+        speedy and free of waste.'
+    - wealth: 
+        col: 'class="col-md-3 col-sm-6"'
+        service: 'class="service" data-height="height"'
+        icon: 'class="service-icon  icon-mustache"'
+        text: 'Finally, this requires some clarity.&nbsp;&nbsp;I do not mean
+        money when I say wealth because the two are not synonymous.
+        Wealth in this context refers to a richness of resources
+        such as endurance, information, health, and kindness.&nbsp;&nbsp;
+        Essentially, an ability to get things done.'
+experience:
+  - contract:
+      duration: "6 months"
+      location: "Los Angeles, California"
+      company: "Creative Artists Agency"
+      position: "Cloud Architect and Software Engineer"
+      projects:
+        jupyterhub:
+          - "Automated deployment via Ansible."
+          - "Instructed analysts on programming Python."
+        ansible_tower:
+          - "Refactored code to increase stability and security."
+          - "Upgraded Ansible Tower more than once."
+          - "Added logging with New Relic and Splunk to Tower."
+        continuous_integration:
+          - "Was handed a project that was a year late."
+          - "Also running a stack I was unfamiliar with."
+          - "Team of 6 devs delivering on time in 2/mo."
+          - "Automated testing of new features."
+  - contract:
+      duration: "9 months"
+      location: "Los Angeles, California"
+      company: "Toyota"
+      position: "Lead Python Developer / Cloud Architect / Build Manager"
+      projects:
+        lead_python_developer:
+          - "Wrote and enforced a reasonable Python style guide."
+          - "Created web scraping tool to collect client information."
+          - "Ran daily scrum meetings with other developers."
+        build_manager:
+          - "Deployed Atlassian services to client owned hardware."
+          - "Instructed more than 20 devs on git and gitflow."
+          - "Implemented cont. delivery with Jenkins and Ansible."
+        cloud_architect:
+          - "Automated tclient infrastructure with Ansible."
+          - "Reduced deployment time for key resources from weeks to hours."
+          - "Managed Amazon Web Services budget for client project."
+  - contract:
+      duration: "1 year"
+      location: "Oakland, California"
+      company: "Mintspare Incorporated"
+      position: "Chief Technical Officer"
+      projects:
+        webmaster:
+          - "Ran all of the company's websites."
+          - "Mostly written in PHP, sadly."
+        systems_administrator:
+          - "Responsible for monitoring, backups, and database maintenance."
+          - "Used HAProxy for High Availability applications."
+          - "Automated infrastructure tasks with Ansible."
+education:
+  - school:
+      name: "Broadmoor Elementary School"
+      location: "Lafayette, Louisiana"
+      studies: "Kindergarten Diploma, General Studies, Kindergarten"
+      duration: "1988 – 1989 (1 year)"
+      projects:
+        tests:
+          - "I have always tested well"
+          - "that is how I graduated with a GPA in the 1.7 range"
+          - "it was a very prestigious kindergarten"
+contact:
+  - title:
+      title: "Contact Mr. Harris"
+      message:
+        "Mr. Harris is available most weekdays after noon Pacific Time."
+  - location:
+      location: "Los Angeles, California, United States of America"
+  - phone:
+      number: "(424) 209-2976"
+  - email:
+      address: "alex@ecla.solutions"
+  - web:
+      website: "https://ecla.solutions/"
 ...
 # vim: ft=ansible:
