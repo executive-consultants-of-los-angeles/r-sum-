@@ -5,6 +5,7 @@ from __future__ import print_function
 
 from django.db import models
 from home.schema.cv import CV
+from home.schema.subsection import SubSection
 
 class Section(models.Model):
     cv = models.ForeignKey(CV, on_delete=models.CASCADE)
