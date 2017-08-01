@@ -17,8 +17,13 @@
                             <i {{ row.1.icon|safe }}></i>
                           </div>
                           <div class="service-info">
-                            <h3>{{ row.0 }}</h3>
-                            <p class="margin-b-5">{{ row.1.text }}</p>
+                            {% if row.1.id == '2' %}
+                            <h3 style="color: white;">{{ row.0|title }}</h3>
+                            <p style="color: white;" class="margin-b-5">{{ row.1.text|safe }}</p>
+                            {% else %}
+                            <h3>{{ row.0|title }}</h3>
+                            <p class="margin-b-5">{{ row.1.text|safe }}</p>
+                            {% endif %}
                           </div>
                           <a href="#" class="content-wrapper-link"></a>    
                         </div>
