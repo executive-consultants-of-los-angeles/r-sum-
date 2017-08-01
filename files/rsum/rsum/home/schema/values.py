@@ -9,6 +9,6 @@ import yaml
 from django.db import models
 from home.models.models import Section
 
-class Values(models.Model):
+class Value(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
