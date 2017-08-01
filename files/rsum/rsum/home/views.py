@@ -20,12 +20,14 @@ def index(request):
     cv_i.check_sections()
     cv = cv_i.get_cv()
 
-    for section in cv.get('sections'):
-        print(section)
+    sections = []
+    for section in sorted(cv.get('sections').items(), key = lambda t: t[1].get('id')):
+        sections.append({section[0]: section[1]})
 
-    
     context = {
-        'cv': cv
+        'cv': sections
     }
+
+    print(json.dumps(context.get('cv')[0].items()[0][0],indent=1))
 
     return render(request, 'home/index.html', context)

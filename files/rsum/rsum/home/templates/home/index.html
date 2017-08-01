@@ -80,8 +80,9 @@
             <!-- Navbar -->
         </header>
         <!--========== END HEADER ==========-->
-        {% for name, section in cv.sections.items %}
-          {% with template_name=name|stringformat:"s"|add:".html" %}
+
+        {% for section in cv %}
+          {% with template_name=section.items.0.0|stringformat:"s"|add:".html" %}
             {% include 'home/sections/'|add:template_name %}
           {% endwith %}
         {% endfor %}
