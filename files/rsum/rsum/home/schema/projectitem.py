@@ -9,20 +9,22 @@ from entry import Entry
 class ProjectItem(models.Model):
     project = models.ForeignKey('home.Project', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
-    value = models.CharField(max_length=200, null = True) 
+    content = models.CharField(max_length=200, null = True) 
     iterable = models.BooleanField(default=False)
 
     def get_project_item(self, project):
+        print(project)
         project_items = []
         for project_item in list(
             ProjectItem.objects.filter(
                 project = project
             ).values()
         ):
-            if project_item.get('value') == u"<type 'dict'>":
+            print(project_item)
+            if project_item.get('content') == u"<type 'dict'>":
                 pe = Entry()
                 project_item.update({
-                    'value': pe.get_entry(
+                    'content': pe.get_entry(
                         ProjectItem.objects.filter(
                             id = project_item.get('id')
                         )
@@ -40,13 +42,13 @@ class ProjectItem(models.Model):
                 pi_i.project = project
                 pi_i.name = key
                 if type(p_entry) == type(dict()):
-                    pi_i.value = type(p_entry)
+                    pi_i.content = type(p_entry)
                     pi_i.iterable = True
                     pi_i.save()
                     pe = Entry()
                     pe.save_entry(p_entry, pi_i)
                 else:
-                    pi_i.value = p_entry
+                    pi_i.content = p_entry
                     pi_i.save()
             return ProjectItem.objects.values_list() 
 

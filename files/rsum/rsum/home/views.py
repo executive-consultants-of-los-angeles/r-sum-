@@ -7,6 +7,7 @@ from django.shortcuts import render
 from django.db import models
 
 from schema.cv import CV 
+from schema.projectitem import ProjectItem
 
 import json
 
@@ -28,6 +29,9 @@ def index(request):
         'cv': sections
     }
 
-    print(json.dumps(context.get('cv')[1],indent=1))
+    #print(json.dumps(context.get('cv')[3],indent=1))
+
+    for item in context.get('cv')[3].get('values').items()[1]:
+        print(item)
 
     return render(request, 'home/index.html', context)

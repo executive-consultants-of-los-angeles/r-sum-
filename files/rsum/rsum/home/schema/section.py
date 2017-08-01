@@ -6,6 +6,8 @@ from __future__ import print_function
 from django.db import models
 from subsection import SubSection
 
+import json
+
 class Section(models.Model):
     cv = models.ForeignKey('home.CV', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
