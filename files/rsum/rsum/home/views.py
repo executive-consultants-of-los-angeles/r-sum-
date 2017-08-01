@@ -30,8 +30,21 @@ def index(request):
     }
 
     #print(json.dumps(context.get('cv')[3],indent=1))
+    values = {}
+    values_list = context.get('cv')[3].get('values').get('content')[1].get('content')
+    for i in values_list:
+        name = i.get('content').items()[0][0]
+        content = i.get('content').items()[0][1]
+        values.update({name:content}) 
 
-    for item in context.get('cv')[3].get('values').items()[1]:
-        print(item)
+    values_list = []
+    for value in sorted(values.items(), key = lambda t: t[1].get('id')):
+        values_list.append(value)
+    values = values_list
+    context.get('cv')[3].get('values').get('content')[1].update({
+        'content': values
+    })
+    #print(json.dumps(context.get('cv')[3].get('values').get('content')[1], indent=1))
+    #print(type(values))
 
     return render(request, 'home/index.html', context)
