@@ -60,7 +60,7 @@ values:
     industry:
       id: 2
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
-      service: 
+      service:
         'class="service bg-color-base wow zoomIn"
           data-height="height"
           data-wow-duration=".3"
@@ -72,13 +72,13 @@ values:
         unless it''s leisure that''s been earned.'
     efficiency:
       id: 3
-      col: 'class="col-md-3 col-sm-6 sm-margin-b-4"' 
-      service: 'class="service" data-height="height"' 
+      col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
+      service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-screen-tablet"'
       text: 'With that said, working hard but dumb is not
         going to get you very far, so I like things that are
         speedy and free of waste.'
-    wealth: 
+    wealth:
       id: 4
       col: 'class="col-md-3 col-sm-6"'
       service: 'class="service" data-height="height"'
