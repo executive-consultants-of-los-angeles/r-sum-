@@ -34,7 +34,7 @@ class EntryItem(models.Model):
             eli.entry = pe
             eli.value = list_item
             eli.save()
-        return eli
+            return eli
 
     class Meta:
         app_label = "home"

@@ -9,21 +9,10 @@ import yaml
 from django.db import models
 from section import Section
 
-sections_list = [
-    'intro',
-    'summary',
-    'skills',
-    'work',
-    'experience',
-    'education',
-    'contact',
-]
-
 
 class CV(models.Model):
-    cv_name = models.CharField(max_length=200)
-    cv_order = models.CharField(max_length=200, null=True)
-    cv_template = models.CharField(max_length=200, null=True)
+    name = models.CharField(max_length=200)
+    template = models.CharField(max_length=200, null=True)
 
     def check_sections(self):
         cv_i = CV.objects.all()
@@ -48,15 +37,14 @@ class CV(models.Model):
         }
         return cv
 
-    def save_cv(self, cv):
+    def save_cv(self, cv_d):
         cv_i = CV()
-        cv_i.cv_name = 'abridged' 
-        cv_i.cv_order = sections_list 
+        cv_i.name = 'abridged' 
         cv_i.save()
 
-        for section in sections_list:
+        for name, section in cv_d.iteritems():
             s = Section()
-            s.save_section(cv_i, section, cv.get('cv').get(section))
+            s.save_section(cv_i, section, name)
 
         return CV.objects.values_list() 
 

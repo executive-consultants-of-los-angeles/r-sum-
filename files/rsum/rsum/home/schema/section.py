@@ -13,7 +13,7 @@ class Section(models.Model):
     iterable = models.BooleanField(default=False)
 
     def get_sections(self, cv):
-        sections = []
+        sections = {}
         for section in list(
             Section.objects.filter(
                 cv = cv
@@ -37,10 +37,10 @@ class Section(models.Model):
                         )
                     ),
                 })
-            sections.append(section)
+            sections.update({section.get('name'): section})
         return sections
     
-    def save_section(self, cv, name, section):
+    def save_section(self, cv, section, name):
         if section == None:
             return None
         s_i = Section()
