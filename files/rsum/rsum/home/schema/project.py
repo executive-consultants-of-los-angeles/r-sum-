@@ -21,7 +21,7 @@ class Project(models.Model):
             pli = ProjectItem()
             if project.get('value') == u"<type 'dict'>":
                 project.update({
-                    'value': pli.get_project_items(
+                    'value': pli.get_project_item(
                         Project.objects.filter(
                             id = project.get('id')
                         )

@@ -13,7 +13,7 @@ class ProjectItem(models.Model):
     iterable = models.BooleanField(default=False)
 
     def get_project_item(self, project):
-        project_item = []
+        project_items = []
         for project_item in list(
             ProjectItem.objects.filter(
                 project = project
@@ -28,10 +28,10 @@ class ProjectItem(models.Model):
                         )
                     )
                 })        
-                project_item.append(project_item)
+                project_items.append(project_item)
             else:
-                project_item.append(project_item)
-        return project_item
+                project_items.append(project_item)
+        return project_items
 
     def save_project_item(self, project_item, project):
         if type(project_item) == type(dict()):
