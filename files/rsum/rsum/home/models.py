@@ -7,6 +7,7 @@ import json
 import yaml
 
 from django.db import models
+from home.db.values import Values
 
 sections_list = [
     'intro',
