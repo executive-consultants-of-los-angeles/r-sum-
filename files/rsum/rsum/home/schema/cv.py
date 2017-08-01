@@ -19,7 +19,7 @@ class CV(models.Model):
         if not cv_i.exists():
             cv_f = open('/srv/rsum/cvs/abridged.yml')
             cv_d = yaml.load(cv_f.read())
-            self.save_cv(cv_d)
+            self.save_cv(cv_d.get('cv'))
             cv_i = CV.objects.all()
             return cv_i
         else:

@@ -19,8 +19,13 @@ def index(request):
 
     cv_i.check_sections()
     cv = cv_i.get_cv()
-    print(json.dumps(cv,indent = 1))
+
+    for section in cv.get('sections'):
+        print(section)
+
     
-    context = {}
+    context = {
+        'cv': cv
+    }
 
     return render(request, 'home/index.html', context)
