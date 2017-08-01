@@ -28,6 +28,6 @@ def index(request):
         'cv': sections
     }
 
-    print(json.dumps(context.get('cv')[0].items()[0][0],indent=1))
+    print(json.dumps(context.get('cv')[1],indent=1))
 
     return render(request, 'home/index.html', context)

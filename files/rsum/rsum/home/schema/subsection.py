@@ -9,14 +9,14 @@ from project import Project
 class SubSection(models.Model):
     section = models.ForeignKey('home.Section', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
-    value = models.CharField(max_length=200, null=True)
+    content = models.CharField(max_length=200, null=True)
 
     def get_sub_section(self, section):
         subsections = []
         for subsection in list(
             SubSection.objects.filter(
                 section = section
-            ).values() 
+            ).order_by('id').values() 
         ):
             p = Project() 
             if (
@@ -24,7 +24,7 @@ class SubSection(models.Model):
                 subsection.get('value') == u"<type 'dict'>"
             ):
                 subsection.update({
-                    'value': p.get_projects(
+                    'content': p.get_projects(
                         SubSection.objects.filter(
                             id = subsection.get('id')
                         )
@@ -32,7 +32,7 @@ class SubSection(models.Model):
                 })
             else:
                 subsection.update({
-                    'value': list(
+                    'content': list(
                         Project.objects.filter(
                             sub_section = subsection.get('id')  
                         ).values()
