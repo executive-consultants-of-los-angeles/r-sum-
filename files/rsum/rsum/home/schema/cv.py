@@ -3,14 +3,13 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 
-from ruamel.yaml import YAML
+from collections import OrderedDict
 
+import yaml
 import json
 
 from django.db import models
 from section import Section
-
-yaml = YAML(typ='rt')
 
 
 class CV(models.Model):
@@ -22,7 +21,7 @@ class CV(models.Model):
         if not cv_i.exists():
             cv_f = open('/srv/rsum/cvs/abridged.yml')
             cv_d = yaml.load(cv_f.read())
-            self.save_cv(cv_d.get('cv'))
+            self.save_cv(cv_d)
             cv_i = CV.objects.all()
             return cv_i
         else:
@@ -45,7 +44,8 @@ class CV(models.Model):
         cv_i.name = 'abridged' 
         cv_i.save()
 
-        for name, section in cv_d.iteritems():
+
+        for name, section in sorted(cv_d.items(), key = lambda t:t[1].get('id')):
             s = Section()
             s.save_section(cv_i, section, name)
 
