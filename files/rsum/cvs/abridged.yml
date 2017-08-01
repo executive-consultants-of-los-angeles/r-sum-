@@ -9,7 +9,7 @@ intro:
     twitter: "https://twitter.com/eclacfo"
     linkedin: "https://www.linkedin.com/in/eclacfo/"
     github: "https://github.com/eclacfo"
-summary: 
+summary:
   id: 2
   content: "Straight shooter with upper management written all over me."
 skills:
@@ -46,10 +46,10 @@ values:
     happy and productive life, so I have defined my values as
     the following.  These are listed in order or precedence
     from left to right.'
-  content: 
-    loyalty: 
+  content:
+    loyalty:
       id: 1
-      col: 'class="col-md-3 col-sm-6 md-margin-b-4"' 
+      col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-badge"'
       text: 'One good turn deserves another, and really this
@@ -57,16 +57,20 @@ values:
         and then run. But seriously, I do what I can to help
         people that have helped me and I don''t ask people for
         action that I haven''t done myself in the past.'
-    industry: 
+    industry:
       id: 2
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
-      service: 'class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s"'
+      service: 
+        'class="service bg-color-base wow zoomIn"
+          data-height="height"
+          data-wow-duration=".3"
+          data-wow-delay=".1s"'
       icon: ' class="service-icon color-white icon-chemistry"'
       text: 'You know what they say about Idle Hands. . . Seth
         Green would be homeless if not for Seth McFarlane.
         But seriously, I find I can''t properly enjoy leisure
         unless it''s leisure that''s been earned.'
-    efficiency: 
+    efficiency:
       id: 3
       col: 'class="col-md-3 col-sm-6 sm-margin-b-4"' 
       service: 'class="service" data-height="height"' 
