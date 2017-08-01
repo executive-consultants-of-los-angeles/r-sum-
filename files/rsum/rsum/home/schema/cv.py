@@ -3,11 +3,14 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 
+from ruamel.yaml import YAML
+
 import json
-import yaml
 
 from django.db import models
 from section import Section
+
+yaml = YAML(typ='rt')
 
 
 class CV(models.Model):
