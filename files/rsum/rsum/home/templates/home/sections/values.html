@@ -1,0 +1,37 @@
+{% load static %}
+        <!-- Values -->
+        <div id="values">
+            <div class="bg-color-sky-light" data-auto-height="true">
+                <div class="container content-lg">
+                  <div class="row margin-b-40">
+                      <div class="col-sm-6">
+                          <h2>{{ section.values.name|title }}</h2>
+                          <p style="text-align: justify">{{ section.values.content.0.content.0.content }}</p>
+                      </div>
+                  </div>
+                  <div class="row row-space-2 margin-b-4">
+                    {% for row in section.values.content.1.content %}
+                      <div {{ row.1.col|safe }}>
+                        <div {{ row.1.service|safe }}> 
+                          <div class="service-element">
+                            <i {{ row.1.icon|safe }}></i>
+                          </div>
+                          <div class="service-info">
+                            {% if row.1.id == '2' %}
+                            <h3 style="color: white;">{{ row.0|title }}</h3>
+                            <p style="color: white;" class="margin-b-5">{{ row.1.text|safe }}</p>
+                            {% else %}
+                            <h3>{{ row.0|title }}</h3>
+                            <p class="margin-b-5">{{ row.1.text|safe }}</p>
+                            {% endif %}
+                          </div>
+                          <a href="#" class="content-wrapper-link"></a>    
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>    
+                  <!--// end row -->
+                </div>
+            </div>
+        </div>
+        <!-- End Values -->

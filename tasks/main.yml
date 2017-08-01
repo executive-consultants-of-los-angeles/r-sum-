@@ -10,6 +10,7 @@
   with_items:
     - django
     - gunicorn
+    - ruamel.yaml
 - name: "Install some packages with apt."
   apt:
     name: "{{ item }}"
