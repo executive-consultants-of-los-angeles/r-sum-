@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.db import models
+from home.schema.cv import CV
 
 class Section(models.Model):
     cv = models.ForeignKey(CV, on_delete=models.CASCADE)

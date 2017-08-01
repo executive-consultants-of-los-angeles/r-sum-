@@ -7,7 +7,7 @@ import json
 import yaml
 
 from django.db import models
-from home.models.models import Section
+from home.schema.section import Section
 
 class Value(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
