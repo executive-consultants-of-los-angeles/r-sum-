@@ -1,5 +1,6 @@
 ---
 intro:
+  id: 1
   name_position:
     name: "Edward Harris"
     position: "Site Reliability Engineer / Software Engineer"
@@ -8,8 +9,11 @@ intro:
     twitter: "https://twitter.com/eclacfo"
     linkedin: "https://www.linkedin.com/in/eclacfo/"
     github: "https://github.com/eclacfo"
-summary: "Straight shooter with upper management written all over me."
+summary: 
+  id: 2
+  content: "Straight shooter with upper management written all over me."
 skills:
+  id: 3
   infrastructure_automation:
     ansible: "4 years"
   system_administration:
@@ -37,11 +41,12 @@ skills:
     postgresql: "10 years"
     mysql: "15 years"
 values:
+  id: 4
   introduction: 'A clearly defined system of ethics is vital to a
     happy and productive life, so I have defined my values as
     the following.  These are listed in order or precedence
     from left to right.'
-  values: 
+  content: 
     - loyalty: 
         col: 'class="col-md-3 col-sm-6 md-margin-b-4"' 
         service: 'class="service" data-height="height"'
@@ -76,78 +81,84 @@ values:
         such as endurance, information, health, and kindness.&nbsp;&nbsp;
         Essentially, an ability to get things done.'
 experience:
-  - contract:
-      duration: "6 months"
-      location: "Los Angeles, California"
-      company: "Creative Artists Agency"
-      position: "Cloud Architect and Software Engineer"
-      projects:
-        jupyterhub:
-          - "Automated deployment via Ansible."
-          - "Instructed analysts on programming Python."
-        ansible_tower:
-          - "Refactored code to increase stability and security."
-          - "Upgraded Ansible Tower more than once."
-          - "Added logging with New Relic and Splunk to Tower."
-        continuous_integration:
-          - "Was handed a project that was a year late."
-          - "Also running a stack I was unfamiliar with."
-          - "Team of 6 devs delivering on time in 2/mo."
-          - "Automated testing of new features."
-  - contract:
-      duration: "9 months"
-      location: "Los Angeles, California"
-      company: "Toyota"
-      position: "Lead Python Developer / Cloud Architect / Build Manager"
-      projects:
-        lead_python_developer:
-          - "Wrote and enforced a reasonable Python style guide."
-          - "Created web scraping tool to collect client information."
-          - "Ran daily scrum meetings with other developers."
-        build_manager:
-          - "Deployed Atlassian services to client owned hardware."
-          - "Instructed more than 20 devs on git and gitflow."
-          - "Implemented cont. delivery with Jenkins and Ansible."
-        cloud_architect:
-          - "Automated tclient infrastructure with Ansible."
-          - "Reduced deployment time for key resources from weeks to hours."
-          - "Managed Amazon Web Services budget for client project."
-  - contract:
-      duration: "1 year"
-      location: "Oakland, California"
-      company: "Mintspare Incorporated"
-      position: "Chief Technical Officer"
-      projects:
-        webmaster:
-          - "Ran all of the company's websites."
-          - "Mostly written in PHP, sadly."
-        systems_administrator:
-          - "Responsible for monitoring, backups, and database maintenance."
-          - "Used HAProxy for High Availability applications."
-          - "Automated infrastructure tasks with Ansible."
+  id: 5
+  content:
+    - contract:
+        duration: "6 months"
+        location: "Los Angeles, California"
+        company: "Creative Artists Agency"
+        position: "Cloud Architect and Software Engineer"
+        projects:
+          jupyterhub:
+            - "Automated deployment via Ansible."
+            - "Instructed analysts on programming Python."
+          ansible_tower:
+            - "Refactored code to increase stability and security."
+            - "Upgraded Ansible Tower more than once."
+            - "Added logging with New Relic and Splunk to Tower."
+          continuous_integration:
+            - "Was handed a project that was a year late."
+            - "Also running a stack I was unfamiliar with."
+            - "Team of 6 devs delivering on time in 2/mo."
+            - "Automated testing of new features."
+    - contract:
+        duration: "9 months"
+        location: "Los Angeles, California"
+        company: "Toyota"
+        position: "Lead Python Developer / Cloud Architect / Build Manager"
+        projects:
+          lead_python_developer:
+            - "Wrote and enforced a reasonable Python style guide."
+            - "Created web scraping tool to collect client information."
+            - "Ran daily scrum meetings with other developers."
+          build_manager:
+            - "Deployed Atlassian services to client owned hardware."
+            - "Instructed more than 20 devs on git and gitflow."
+            - "Implemented cont. delivery with Jenkins and Ansible."
+          cloud_architect:
+            - "Automated tclient infrastructure with Ansible."
+            - "Reduced deployment time for key resources from weeks to hours."
+            - "Managed Amazon Web Services budget for client project."
+    - contract:
+        duration: "1 year"
+        location: "Oakland, California"
+        company: "Mintspare Incorporated"
+        position: "Chief Technical Officer"
+        projects:
+          webmaster:
+            - "Ran all of the company's websites."
+            - "Mostly written in PHP, sadly."
+          systems_administrator:
+            - "Responsible for monitoring, backups, and database maintenance."
+            - "Used HAProxy for High Availability applications."
+            - "Automated infrastructure tasks with Ansible."
 education:
-  - school:
-      name: "Broadmoor Elementary School"
-      location: "Lafayette, Louisiana"
-      studies: "Kindergarten Diploma, General Studies, Kindergarten"
-      duration: "1988 – 1989 (1 year)"
-      projects:
-        tests:
-          - "I have always tested well"
-          - "that is how I graduated with a GPA in the 1.7 range"
-          - "it was a very prestigious kindergarten"
+  id: 6
+  content:
+    - school:
+        name: "Broadmoor Elementary School"
+        location: "Lafayette, Louisiana"
+        studies: "Kindergarten Diploma, General Studies, Kindergarten"
+        duration: "1988 – 1989 (1 year)"
+        projects:
+          tests:
+            - "I have always tested well"
+            - "that is how I graduated with a GPA in the 1.7 range"
+            - "it was a very prestigious kindergarten"
 contact:
-  - title:
-      title: "Contact Mr. Harris"
-      message:
-        "Mr. Harris is available most weekdays after noon Pacific Time."
-  - location:
-      location: "Los Angeles, California, United States of America"
-  - phone:
-      number: "(424) 209-2976"
-  - email:
-      address: "alex@ecla.solutions"
-  - web:
-      website: "https://ecla.solutions/"
+  id: 7
+  content:
+    - title:
+        title: "Contact Mr. Harris"
+        message:
+          "Mr. Harris is available most weekdays after noon Pacific Time."
+    - location:
+        location: "Los Angeles, California, United States of America"
+    - phone:
+        number: "(424) 209-2976"
+    - email:
+        address: "alex@ecla.solutions"
+    - web:
+        website: "https://ecla.solutions/"
 ...
 # vim: ft=ansible:
