@@ -4,10 +4,9 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.db import models
-from cv import CV
 
 class Section(models.Model):
-    cv = models.ForeignKey(CV, on_delete=models.CASCADE)
+    cv = models.ForeignKey('home.CV', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
     content = models.CharField(max_length=200, null=True) 
     iterable = models.BooleanField(default=False)
