@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.db import models
+from home.schema.subsection import SubSection
 
 class Project(models.Model):
     sub_section = models.ForeignKey(SubSection, on_delete=models.CASCADE)

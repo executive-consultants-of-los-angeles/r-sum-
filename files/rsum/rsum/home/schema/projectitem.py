@@ -4,17 +4,18 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.db import models
+from home.schema.project import Project
 
-class ProjectList(models.Model):
+class ProjectItem(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     value = models.CharField(max_length=200, null = True) 
     iterable = models.BooleanField(default=False)
 
-    def get_project_items(self, project):
-        project_items = []
+    def get_project_item(self, project):
+        project_item = []
         for project_item in list(
-            ProjectItems.objects.filter(
+            ProjectItem.objects.filter(
                 project = project
             ).values()
         ):
@@ -22,20 +23,20 @@ class ProjectList(models.Model):
                 pe = ProjectEntry()
                 project_item.update({
                     'value': pe.get_entry(
-                        ProjectItems.objects.filter(
+                        ProjectItem.objects.filter(
                             id = project_item.get('id')
                         )
                     )
                 })        
-                project_items.append(project_item)
+                project_item.append(project_item)
             else:
-                project_items.append(project_item)
-        return project_items
+                project_item.append(project_item)
+        return project_item
 
-    def save_project_items(self, project_item, project):
+    def save_project_item(self, project_item, project):
         if type(project_item) == type(dict()):
             for key, p_entry in project_item.iteritems():
-                pi_i = ProjectItems()
+                pi_i = ProjectItem()
                 pi_i.project = project
                 pi_i.name = key
                 if type(p_entry) == type(dict()):
@@ -47,10 +48,10 @@ class ProjectList(models.Model):
                 else:
                     pi_i.value = p_entry
                     pi_i.save()
-            return ProjectItems.objects.values_list() 
+            return ProjectItem.objects.values_list() 
 
         if type(project_item) == type(str()):
-            pi_i = ProjectItems()
+            pi_i = ProjectItem()
             pi_i.project = project
             pi_i.name = "<type 'str'>"
             pi_i.save()

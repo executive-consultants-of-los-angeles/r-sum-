@@ -5,7 +5,6 @@ from __future__ import print_function
 
 from django.db import models
 from home.schema.section import Section
-from home.schema.project import Project
 
 class SubSection(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)

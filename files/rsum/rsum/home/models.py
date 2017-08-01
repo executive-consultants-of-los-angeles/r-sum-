@@ -7,7 +7,8 @@ import json
 import yaml
 
 from django.db import models
-from home.schema.entryitem import EntryItem
+
+import home.schema
 
 sections_list = [
     'intro',
@@ -18,5 +19,3 @@ sections_list = [
     'education',
     'contact',
 ]
-
-

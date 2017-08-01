@@ -45,3 +45,7 @@ class CV(models.Model):
             s.save_section(cv_i, section, cv.get('cv').get(section))
 
         return CV.objects.values_list() 
+
+    class Meta:
+        app_label = "home"
+        managed = True
