@@ -4,10 +4,10 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.db import models
-from home.schema.subsection import SubSection
+from projectitem import ProjectItem
 
 class Project(models.Model):
-    sub_section = models.ForeignKey(SubSection, on_delete=models.CASCADE)
+    sub_section = models.ForeignKey('home.SubSection', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     value = models.CharField(max_length=200, null=True)
 
@@ -18,7 +18,7 @@ class Project(models.Model):
                 sub_section = subsection
             ).values()
         ):
-            pli = ProjectItems()
+            pli = ProjectItem()
             if project.get('value') == u"<type 'dict'>":
                 project.update({
                     'value': pli.get_project_items(
@@ -40,8 +40,8 @@ class Project(models.Model):
                 if type(v) == type(dict()):
                     p_i.value = type(v)
                     p_i.save()
-                    pi = ProjectItems()
-                    pi.save_project_items(v, p_i)
+                    pi = ProjectItem()
+                    pi.save_project_item(v, p_i)
                 else:
                     p_i.value = v
                     p_i.save()
@@ -54,8 +54,8 @@ class Project(models.Model):
                 p_i.name = k
                 p_i.value = type(v)
                 p_i.save()
-                pi = ProjectItems()
-                pi.save_project_items(v, p_i)
+                pi = ProjectItem()
+                pi.save_project_item(v, p_i)
             return Project.objects.values_list()
 
         if type(projects) == type(str()):
@@ -64,3 +64,6 @@ class Project(models.Model):
             p_i.value = projects
             p_i.save()
 
+
+    class Meta:
+        app_label = "home"

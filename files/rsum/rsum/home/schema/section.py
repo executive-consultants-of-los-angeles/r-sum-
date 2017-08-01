@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.db import models
+from subsection import SubSection
 
 class Section(models.Model):
     cv = models.ForeignKey('home.CV', on_delete=models.CASCADE)
@@ -57,3 +58,6 @@ class Section(models.Model):
             ss.save_sub_sections(section, s_i)
 
         return Section.objects.values_list()
+
+    class Meta:
+        app_label = "home"

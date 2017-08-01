@@ -4,10 +4,9 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.db import models
-from home.schema.entry import Entry
 
 class EntryItem(models.Model):
-    entry = models.ForeignKey(Entry, on_delete=models.CASCADE)
+    entry = models.ForeignKey('home.Entry', on_delete=models.CASCADE)
     value = models.CharField(max_length=200, null=True)
     
     def get_list_item(self, entry):
@@ -36,3 +35,6 @@ class EntryItem(models.Model):
             eli.value = list_item
             eli.save()
         return eli
+
+    class Meta:
+        app_label = "home"

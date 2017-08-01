@@ -4,10 +4,10 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.db import models
-from home.schema.section import Section
+from project import Project
 
 class SubSection(models.Model):
-    section = models.ForeignKey(Section, on_delete=models.CASCADE)
+    section = models.ForeignKey('home.Section', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     value = models.CharField(max_length=200, null=True)
 

@@ -4,10 +4,10 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.db import models
-from home.schema.project import Project
+from entry import Entry
 
 class ProjectItem(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    project = models.ForeignKey('home.Project', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     value = models.CharField(max_length=200, null = True) 
     iterable = models.BooleanField(default=False)
@@ -20,7 +20,7 @@ class ProjectItem(models.Model):
             ).values()
         ):
             if project_item.get('value') == u"<type 'dict'>":
-                pe = ProjectEntry()
+                pe = Entry()
                 project_item.update({
                     'value': pe.get_entry(
                         ProjectItem.objects.filter(
@@ -43,7 +43,7 @@ class ProjectItem(models.Model):
                     pi_i.value = type(p_entry)
                     pi_i.iterable = True
                     pi_i.save()
-                    pe = ProjectEntry()
+                    pe = Entry()
                     pe.save_entry(p_entry, pi_i)
                 else:
                     pi_i.value = p_entry
