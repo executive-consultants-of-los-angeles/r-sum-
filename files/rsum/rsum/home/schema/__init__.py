@@ -1,1 +1,1 @@
-from home.schema.cv import CV
+from entryitem import EntryItem

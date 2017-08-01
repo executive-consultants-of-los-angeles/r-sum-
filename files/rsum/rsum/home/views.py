@@ -4,22 +4,13 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.shortcuts import render
+from django.db import models
 
 import json
-import models
 
 # Create your views here.
 
 def index(request):
-    cv_i = models.CV(id=1)
-    cv_i.check_sections()
-
-    cv = cv_i.get_cv()
-
-    context = {
-        'cv': cv 
-    }
-
-    print(json.dumps(cv.get('sections')[3].get('value')[1].get('value')[0].get('value')[0].get('value')[1], indent=2))
+    context = {}
 
     return render(request, 'home/index.html', context)

@@ -4,12 +4,12 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.db import models
-from home.schema.cv import CV
+from cv import CV
 
 class Section(models.Model):
     cv = models.ForeignKey(CV, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
-    value = models.CharField(max_length=200, null=True) 
+    content = models.CharField(max_length=200, null=True) 
     iterable = models.BooleanField(default=False)
 
     def get_sections(self, cv):
@@ -19,19 +19,19 @@ class Section(models.Model):
                 cv = cv
             ).order_by('id').values()
         ):
-            if section.get('value') == u"<type 'list'>":
+            if section.get('content') == u"<type 'list'>":
                 ss = SubSection( section = self )  
                 section.update({
-                    'value': ss.get_sub_section(
+                    'content': ss.get_sub_section(
                         Section.objects.filter(
                             id = section.get('id')
                         )
                     ),
                 })
-            if section.get('value') == u"<type 'dict'>":
+            if section.get('content') == u"<type 'dict'>":
                 ss = SubSection( section = self )  
                 section.update({
-                    'value': ss.get_sub_section(
+                    'content': ss.get_sub_section(
                         Section.objects.filter(
                             id = section.get('id')
                         )
@@ -48,10 +48,10 @@ class Section(models.Model):
         s_i.name = name 
 
         if type(section) == type(str()):
-            s_i.value = section
+            s_i.content= section
             s_i.save()
         else:
-            s_i.value = type(section)
+            s_i.content = type(section)
             s_i.iterable = True
             s_i.save()
             ss = SubSection()
