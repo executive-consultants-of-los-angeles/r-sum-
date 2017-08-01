@@ -61,3 +61,4 @@ class Section(models.Model):
 
     class Meta:
         app_label = "home"
+        managed = True

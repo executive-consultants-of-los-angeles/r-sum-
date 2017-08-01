@@ -1,1 +1,0 @@
-from entryitem import EntryItem

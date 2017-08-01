@@ -56,3 +56,7 @@ class ProjectItem(models.Model):
             pi_i.name = "<type 'str'>"
             pi_i.save()
         return pi_i
+
+    class Meta:
+        app_label = 'home'
+        managed = True

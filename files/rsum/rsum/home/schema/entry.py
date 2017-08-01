@@ -4,9 +4,10 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.db import models
+from entryitem import EntryItem
 
 class Entry(models.Model):
-    project_item = models.ForeignKey('home.ProjectItem', on_delete=models.CASCADE)
+    projectitem = models.ForeignKey('home.ProjectItem', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null = True)
     value = models.CharField(max_length=200, null = True) 
 
@@ -14,10 +15,10 @@ class Entry(models.Model):
         entries = []
         for entry in list(
             Entry.objects.filter(
-                project_item_list = project_item
+                projectitem = project_item
             ).values()
         ):
-            eli = EntryListItem()
+            eli = EntryItem()
             entry.update({
                 'value': eli.get_list_item(
                     Entry.objects.filter(
@@ -32,13 +33,14 @@ class Entry(models.Model):
         if type(entry) == type(dict()):
             for k, v in entry.iteritems():
                 pe_i = Entry()
-                pe_i.project_item_list = pi_l
+                pe_i.projectitem = pi_l
                 pe_i.name = k
                 pe_i.value = type(v)
                 pe_i.save()
-                eli = EntryListItem()
+                eli = EntryItem()
                 eli.save_list_item(v, pe_i)
             return pe_i 
 
     class Meta:
         app_label = "home"
+        managed = True

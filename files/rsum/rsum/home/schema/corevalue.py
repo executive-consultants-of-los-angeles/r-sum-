@@ -7,9 +7,12 @@ import json
 import yaml
 
 from django.db import models
-from home.schema.section import Section
 
 class CoreValue(models.Model):
-    section = models.ForeignKey(Section, on_delete=models.CASCADE)
+    section = models.ForeignKey('home.Section', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     content = models.CharField(max_length=200, null=True)
+
+    class Meta:
+        app_label = 'home'
+        managed = True

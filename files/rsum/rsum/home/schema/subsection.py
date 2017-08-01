@@ -65,3 +65,7 @@ class SubSection(models.Model):
                 p = Project()
                 projects.append(p.save_projects(i, ss_i))
             return projects 
+
+    class Meta:
+        app_label = "home"
+        managed = True
