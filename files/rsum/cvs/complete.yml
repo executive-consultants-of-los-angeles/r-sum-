@@ -89,11 +89,17 @@ values:
         Essentially, an ability to get things done.'
 experience:
   id: 5
+  introduction: 'Counting from the first time I installed
+    linux onto a pc I have been actively doing some kind
+    of programming or computer administration type of
+    effort for more than twenty years.  I have been getting
+    paid for it about fifteen of those years.'
   cfo_at_gahan_corporation:
     id: 1
-    name: "Chief Financial Officer at Gahan Corporation"
-    location: "Los Angeles, California"
     duration: "May 2016 - Present"
+    location: "Los Angeles, California"
+    company: "Gahan Corporation"
+    position: "Chief Financial Officer"
     projects:
       technology:
         - "maintain multiple cloud services"
@@ -113,9 +119,10 @@ experience:
         - "keep us up to date with taxes and reporting"
   abiogenix_incorporated:
     id: 2
-    name: "Lead Python Developer / Cloud Architect at Abiogenix Incorporated"
-    location: "Los Angeles, California"
     duration: "August 2014 - May 2017"
+    location: "Los Angeles, California"
+    company: "Abiogenix Incorporated"
+    position: "Python Developer / Site Reliability Engineer"
     projects:
       enterprise_resource_planning:
         - "automated deployment and maintenance of the Odoo ERP system"
@@ -133,9 +140,10 @@ experience:
         - "transfered abiogenix.com to Amazon's Route 53 service"
   caa:
     id: 3
-    name: "Consultant at Creative Artists Agency"
-    location: "Los Angeles, California"
     duration: "September 2015  -  March 2016 (7 months)"
+    location: "Los Angeles, California"
+    company: "Creative Artists Agency"
+    position: "Python Developer / Site Reliability Engineer"
     projects:
       jupyterhub:
         - "automated deployment of JupyterHub with Ansible"
@@ -154,9 +162,10 @@ experience:
         - "used Ansible Tower and Jenkins server for deployment"
   build_manager_toyota_motor_sales:
     id: 4
-    name: "Build Manager at Toyota R&D"
-    location: "Los Angeles, California"
     duration: "April 2015  -  July 2015 (4 months)"
+    location: "Los Angeles, California"
+    company: "Toyota Motor Sales"
+    position: "Build Manager"
     projects:
       atlassian:
         - "maintained project git repository"
@@ -170,9 +179,10 @@ experience:
         - "dployed and administered Jenkins server with Ansible"
   cloud_architect_toyota_motor_sales:
     id: 5
-    name: "Cloud Architect at Toyota R&D"
-    location: "Los Angeles, California"
     duration: "January 2015  -  July 2015 (7 months)"
+    location: "Los Angeles, California"
+    company: "Toyota Motor Sales"
+    position: "Site Reliability Engineer"
     projects:
       ansible:
         - "reduced deployment time by a factor of 15 with Ansible"
@@ -184,9 +194,10 @@ experience:
         - "managed budget for aws monthly spend"
   lead_python_developer_toyota_motor_sales:
     id: 6
-    name: "Lead Python Developer at Toyota R&D"
-    location: "Los Angeles, California"
     duration: "December 2014  -  July 2015 (8 months)"
+    location: "Los Angeles, California"
+    company: "Toyota Motor Sales"
+    position: "Lead Python Developer"
     projects:
       training:
         - "wrote Python style guide"
@@ -201,9 +212,10 @@ experience:
         - "authored A3 to streamline build process"
   chief_technical_officer_mintspare:
     id: 7
-    name: "Chief Technical Officer at Minstpare Incorporated"
-    location: "Alameda, California"
     duration: "February 2014  -  January 2015 (1 year)"
+    location: "Alameda, California"
+    company: "Mintspare Incorporated"
+    position: "Chief Technical Officer"
     projects:
       webmaster:
         - "developmed all Mintspare websites"
@@ -216,9 +228,10 @@ experience:
         - "managed load balancing using HAProxy"
   vs_media:
     id: 8
-    name: "Analyst / Email Administrator at VS Media"
-    location: "Los Angeles, California"
     duration: "August 2013  -  December 2013 (5 months)"
+    location: "Los Angeles, California"
+    company: "VS Media"
+    position: "PHP Developer / Analyst"
     projects:
       analyst:
         - "collected and analyzed data on email marketing"
@@ -230,9 +243,10 @@ experience:
         - "created such as a centralized template store"
   thrive_marketing:
     id: 9
-    name: "Web Developer / Systems Administrator at Thrive Marketing"
-    location: "Nashville, Tennessee"
     duration: "April 2013  -  July 2013 (4 months)"
+    location: "Nashville, Tennessee"
+    company: "Thrive Marketing"
+    position: "PHP Developer / Systems Administrator"
     projects:
       systems_administrator:
         - "installed and configured several different Linux servers"
@@ -248,9 +262,10 @@ experience:
         - "provided training to other employees on their use"
   club_cirok:
     id: 10
-    name: "Bartender at Club Cirok"
-    location: "Nashville, Tennessee"
     duration: "December 2012  -  July 2013 (8 months)"
+    location: "Nashville, Tennessee"
+    company: "Club Cirok"
+    position: "Bartender"
     projects:
       bartender:
         - "tended bar in a high volume nightclub setting"
@@ -258,9 +273,10 @@ experience:
         - "mixed classic cocktails for the enjoyment of club patrons"
   rodizio_brazilian_grill:
     id: 11
-    name: "Bartender at Rodizio Brazilian Grill"
-    location: "Nashville, Tennessee"
     duration: "September 2012  -  January 2013 (5 months)"
+    location: "Nashville, Tennessee"
+    company: "Rodizio Brazilian Grill"
+    position: "Bartender"
     projects:
       bartender:
         - "tended bar in a full-service restaurant setting"
@@ -268,18 +284,20 @@ experience:
         - "learned menu of specialty cocktails"
   lipstick_lounge:
     id: 12
-    name: "Barback / Cook at Lipstick Lounge"
-    location: "Nashville, Tennessee"
     duration: "July 2012  -  September 2012 (3 months)"
+    location: "Nashville, Tennessee"
+    company: "Lipstick Lounge"
+    position: "Barback / Cook"
     projects:
       barback:
         - "stocked beer, wine, and liquor for high volume bar"
         - "cooked, and delivered food orders from bar"
   atlas_payment_processing:
     id: 13
-    name: "Account Manager at Atlas Payment Processing"
-    location: "San Francisco, California"
     duration: "September 2011  -  September 2012 (1 year 1 month)"
+    location: "San Francisco, California"
+    company: "Atlass Payment Processing"
+    position: "Account Executive"
     projects:
       account_manager:
         - "met with merchants to explain rate structures"
@@ -287,9 +305,10 @@ experience:
         - "made 900 calls a week to potential clients"
   aflac:
     id: 14
-    name: "Business Development at AFLAC"
-    location: "San Francisco, California"
     duration: "December 2010  -  May 2011 (6 months)"
+    location: "San Francisco, California"
+    company: "AFLAC"
+    position: "Business Development"
     projects:
       business_development:
         - "made 300 cold calls a week"
@@ -297,9 +316,10 @@ experience:
         - "clearly and concisely explained Aflac products"
   wishb:
     id: 15
-    name: "Web Developer / System Administrator at WishB LLC"
-    location: "San Francisco, California"
     duration: "July 2010  -  September 2010 (3 months)"
+    location: "San Francisco, California"
+    company: "WishB LLC"
+    position: "PHP Developer / Systems Administrator"
     projects:
       web_developer:
         - "used a homebrew MVC to program a website"
@@ -312,9 +332,10 @@ experience:
         - "contributed to daily SCRUM meetings"
   logitech:
     id: 16
-    name: "Systems Administrator / Software Engineer at Logitech"
-    location: "San Francisco, California"
     duration: "April 2008 - April 2010 (2 years 1 month)"
+    location: "San Francisco, California"
+    company: "Logitech"
+    position: "PHP Developer / Systems Administrator"
     projects:
       web_developer:
         - "used Dojo.js JavaScript to develop video chat application"
@@ -334,9 +355,10 @@ experience:
         - "used SOAP to make content available to end users"
   blowtorch:
     id: 17
-    name: "Web Developer / Systems Administrator at Blowtorch Entertainment"
-    location: "Sausalito, California"
     duration: "November 2007  -  March 2008 (5 months)"
+    location: "Sausalito, California"
+    company: "Blowtorch Entertainment"
+    position: "Web Developer / Systems Administrator"
     projects:
       web_developer:
         - "created custom Drupal modules"
@@ -348,9 +370,10 @@ experience:
         - "ensured proper quality of data"
   vinyl:
     id: 18 
-    name: "Database Administrator at Vinyl Interactive"
-    location: "San Francisco, California"
     duration: "June 2007  -  November 2007 (6 months)"
+    location: "San Francisco, California"
+    company: "Vinyl Interactive"
+    position: "Database Administrator"
     projects:
       database_administrator:
         - "used Linux command line tools and BASH scripting"
@@ -359,9 +382,10 @@ experience:
         - "administered a Storage Area Network"
   fordela:
     id: 19
-    name: "Web Developer at Fordela"
-    location: "San Francisco, California"
     duration: "October 2006  -  May 2007 (8 months)"
+    location: "San Francisco, California"
+    company: "Fordela"
+    position: "PHP Developer"
     projects:
       web_developer:
         - "designed new database tables"
@@ -373,18 +397,20 @@ experience:
         - "configured and maintained Apache https and MySQL"
   radical_fusion:
     id: 20
-    name: "Web Developer at Radical Fusion"
-    location: "San Francisco, California"
     duration: "September 2006  -  October 2006 (2 months)"
+    location: "San Francisco, California"
+    company: "Radical Fusion"
+    position: "JavaScript Developer"
     projects:
       web_developer:
         - "added new features using PHP, MSSQL, and AJAX"
         - "used design documents to update user interface"
   optyweb:
     id: 21
-    name: "Systems Admin at Optyweb"
-    location: "San Francisco, California"
     duration: "November 2005  -  May 2006 (7 months)"
+    location: "San Francisco, California"
+    company: "Optyweb"
+    position: "Webmaster"
     projects:
       webmaster:
         - "coded Optyweb website with HTML and CSS"
@@ -398,9 +424,10 @@ experience:
         - "configured switches in the new datacenter"
   payne_media:
     id: 22
-    name: "Webmaster / Junior Systems Administrator at Payne Media"
-    location: "Seattle, Washington"
     duration: "March 2005  -  November 2005 (9 months)"
+    location: "Seattle, Washington"
+    company: "Payne Media"
+    position: "PHP Developer / Database Administrator"
     projects:
       webmaster:
         - "developed web sites using XHTML, CSS, PHP, and MySQL"
@@ -408,9 +435,10 @@ experience:
         - "administered Gentoo Linux on mail, web, and database servers"
   forest_service:
     id: 23
-    name: "Webmaster at United States Forest Service AirFIRE Team"
-    location: "Seattle, Washington"
     duration: "April 2004  -  March 2005 (1 year)"
+    location: "Seattle, Washington"
+    company: "United States Forest Service AirFIRE Team"
+    position: "Webmaster"
     projects:
       webmaster:
         - "developed websites with PHP, CSS, and XHTML"
@@ -418,9 +446,10 @@ experience:
         - "upgraded web server from Apache 1.3 to Apache 2"
   saxotech:
     id: 24
-    name: "Customer Fulfillment Specialist at SaxoTECH, AS"
-    location: "Washington, District of Columbia"
     duration: "March 2003  -  January 2004 (11 months)"
+    location: "Washington, District of Columbia"
+    company: "SaXOTECH AS"
+    position: "Customer Fulfillment Specialist" 
     projects:
       customer_fulfillment_specialist:
         - "provided customers with emergency technical support"
