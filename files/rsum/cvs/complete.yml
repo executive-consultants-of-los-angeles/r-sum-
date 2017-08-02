@@ -369,7 +369,7 @@ experience:
         - "deployed server for use of other members of the team"
         - "ensured proper quality of data"
   vinyl:
-    id: 18 
+    id: 18
     duration: "June 2007  -  November 2007 (6 months)"
     location: "San Francisco, California"
     company: "Vinyl Interactive"
@@ -449,7 +449,7 @@ experience:
     duration: "March 2003  -  January 2004 (11 months)"
     location: "Washington, District of Columbia"
     company: "SaXOTECH AS"
-    position: "Customer Fulfillment Specialist" 
+    position: "Customer Fulfillment Specialist"
     projects:
       customer_fulfillment_specialist:
         - "provided customers with emergency technical support"
