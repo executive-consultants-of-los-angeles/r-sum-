@@ -23,7 +23,7 @@ skills:
       experience: "4 years"
     molecule:
       name: "Molecule"
-      compteence: 70
+      competence: 70
       experience: "3 months" 
     bash:
       name: "Bourne Again SHell"
