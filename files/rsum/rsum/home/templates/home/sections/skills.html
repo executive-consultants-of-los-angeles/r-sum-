@@ -1,26 +1,25 @@
-{{ section.skills.content.0.content }}
+{{ section.skills }}
 
-    <h2>{{ section.skills.name|title }}</h2>
-                        <!-- Progress Box -->
-                      {% for sub in section.skills.content %}
-                        <div class="progress-box">
-                            <h5>{{ sub.content.0.content }} <span class="color-heading pull-right">87%</span></h5>
-                            <div class="progress">
-                                <div class="progress-bar bg-color-base" role="progressbar" data-width="87"></div>
-                            </div>
-                            {% for v in sub.content %}
-                              <h6 style="padding-left: 20px;">{{ v.name }} <span class="color-heading pull-right">{{ v.value }}</span></h6>
-                              <div class="progress progress-sub">
-                                  <div class="progress-bar bg-color-base" role="progressbar" data-width="87"></div>
-                              </div>
-                            {% endfor %}
-                        </div>
-                        <!-- End Progress Box -->
-                      {% endfor %}
-                    </div>
-                </div>
-                <!--// end row -->
-            </div>
+    <h2>Skills</h2>
+    <!-- Progress Box -->
+    {% for skill,data in section.skills.iteritems %}
+      <div class="progress-box">
+        <h5>{{ skill }} <span class="color-heading pull-right">{{ data.competence }}%</span></h5>
+        <div class="progress">
+          <div class="progress-bar bg-color-base" role="progressbar" data-width="{{ data.competence }}"></div>
         </div>
-        <!-- End About -->
-
+        {% for related,skills in data.iteritems %}
+          <h6 style="padding-left: 20px;">{{ skills.name }} <span class="color-heading pull-right">{{ skills.competence}}%</span></h6>
+          <div class="progress progress-sub">
+            <div class="progress-bar bg-color-base" role="progressbar" data-width="{{ skills.competence }}"></div>
+          </div>
+        {% endfor %}
+        </div>
+        <!-- End Progress Box -->
+      {% endfor %}
+      </div>
+    </div>
+    <!--// end row -->
+  </div>
+</div>
+<!-- End About -->
