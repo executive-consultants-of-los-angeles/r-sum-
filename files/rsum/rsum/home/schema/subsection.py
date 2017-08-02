@@ -48,9 +48,33 @@ class SubSection(models.Model):
     
     def save_sub_sections(self, sub_section, section):
         projects = []
-        #print(json.dumps(sub_section, indent=1))
+        if getattr(section, 'name') == 'experience':
+            #print("\n\n\nsubsection\n\n\n")
+            for k, v in sub_section.items():
+                if k == 'introduction':
+                    ss_i = SubSection()
+                    ss_i.section = section
+                    ss_i.content = v
+                    ss_i.name = k
+                    ss_i.save()
+                    del sub_section[k]
+                elif k == 'id':
+                    del sub_section[k]
+
+            for item in sorted(sub_section.items(), key = lambda t: t[1].get('id')):
+                ss_i = SubSection()
+                ss_i.section = section
+                ss_i.content = type(item[1]) 
+                ss_i.name = item[0] 
+                ss_i.save()
+                p = Project() 
+                projects.append(p.save_projects(item[1], ss_i, item[0]))
+                #print(json.dumps(item, indent=1))
+                #print(type(item[1]))
+            return projects
+        
         if type(sub_section) == type(dict()):
-            #for k, v in sorted(
+            #for k, v in sorted(subsection.items(), key = lambda t: t[1].get('id')):
             #    cv_d.items(), 
             #    key = lambda t:t[1].get('id')
             #):
@@ -59,9 +83,10 @@ class SubSection(models.Model):
                 ss_i.section = section
                 ss_i.content = type(sub_section)
                 ss_i.name = k
-                ss_i.save()
-                p = Project() 
-                projects.append(p.save_projects(v, ss_i, v))
+                if k != 'id':
+                    ss_i.save()
+                    p = Project() 
+                    projects.append(p.save_projects(v, ss_i, k))
             return projects
 
         if type(sub_section) == type(list()):

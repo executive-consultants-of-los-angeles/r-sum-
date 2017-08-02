@@ -36,6 +36,11 @@ class Project(models.Model):
         return projects
 
     def save_projects(self, projects, sub_section, name):
+        #print(json.dumps(projects, indent=1))
+        #print(name)
+        if name == 'id':
+            return None
+
         if type(projects) == type(dict()):
             for k, v in projects.iteritems():
                 p_i = Project()

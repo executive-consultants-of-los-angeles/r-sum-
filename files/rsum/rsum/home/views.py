@@ -29,7 +29,6 @@ def index(request):
         'cv': sections
     }
 
-    #print(json.dumps(context.get('cv')[3],indent=1))
     values = {}
     values_list = context.get('cv')[3].get('values').get('content')[1].get('content')
     for i in values_list:
@@ -43,6 +42,21 @@ def index(request):
     values = values_list
     context.get('cv')[3].get('values').get('content')[1].update({
         'content': values
+    })
+
+    experience = {}
+    experience_list = context.get('cv')[4].get('experience').get('content')[1:]
+    for k,v in enumerate(experience_list):
+        #print(json.dumps(v,indent=1))
+        for p, i in v.get('content')[5].get('content').get('projects').iteritems():
+            j = i.strip('[').strip(']').split("', '")
+            experience_list[k].get('content')[5].get('content').get('projects').update({p:[]})
+            for l in j:
+                l = l.replace("'", '')
+                experience_list[k].get('content')[5].get('content').get('projects').get(p).append(l)
+        #print(json.dumps(v.get('content')[5].get('content').get('projects'), indent=1))
+    context.get('cv')[4].get('experience').update({
+        'experience': experience_list
     })
     #print(json.dumps(context.get('cv')[3].get('values').get('content')[1], indent=1))
     #print(type(values))
