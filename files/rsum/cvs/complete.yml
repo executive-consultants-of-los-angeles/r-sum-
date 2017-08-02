@@ -18,15 +18,19 @@ skills:
     name: "Infrastructure Automation and Administration"
     competence: 85
     ansible:
+      name: "Ansible"
       competence: 90
       experience: "4 years"
     molecule:
+      name: "Molecule"
       compteence: 70
       experience: "3 months" 
     bash:
+      name: "Bourne Again SHell"
       competence: 75 
       experience: "15 years"
     vim:
+      name: "Very IMproved Text Editor"
       competence: 70
       experience: "15 years"
   cloud_architecture:
@@ -34,15 +38,19 @@ skills:
     name: "Cloud Computing Services"
     competence: 80
     amazon_web_services:
+      name: "Amazon Web Services"
       competence: 85
       experience: "9 years"
     microsoft_azure:
+      name: "Microsoft Azure" 
       competence: 70
       experience: "1 year"
     google_cloud:
+      name: "Google Cloud"
       competence: 75
       experience: "1 year"
     digital_ocean:
+      name: "Digital Ocean"
       competence: 85
       experience: "4 years"
   software_development:
@@ -50,18 +58,23 @@ skills:
     name: "Software Engineering"
     competence: 75
     agile:
+      name: "Agile Development"
       competence: 80
       experience: "4 years"
     sdlc:
+      name: "Software Development Life Cycle"
       competence: 82 
       experience: "15 years"
     scm:
+      name: "Source Code Management"
       comptence: 85
       experience: "10 years"
     git:
+      name: "git"
       competence: 85
       experience: "4 years"
     svn:
+      name: "SubVersion"
       competence: 70
       experience: "2 years"
   linux_unix:
@@ -69,33 +82,45 @@ skills:
     name: "Linux Administration"
     competence: 90
     redhat:
+      name: "RedHat Enterprise Linux"
       competence: 70
       experience: "15 years"
     debian:
+      name: "Debian Linux / Ubuntu Linux"
       competence: 85
       experience: "13 years"
   programming:
     id: 5
     name: "Programming Languages"
     python:
+      name: "Python"
       competence: 80
       experience: "4 years"
     java:
+      name: "Java"
       competence: 60
       experience: "1 year"
     php:
+      name: "Personal Home Page"
+      competence: 70
+      experience: "15 years"
+    javascript:
+      name: "JavaScript"
       competence: 70
       experience: "15 years"
   databases:
     id: 6
     name: "Relational and Other Databases"
     postgresql:
+      name: "PostgreSQL"
       competence: 75
       experience: "10 years"
     mysql:
+      name: "MySQL"
       competence: 70
       experience: "15 years"
     mongodb:
+      name: "MongoDB"
       competence: 70
       experience: "3 years"
 values:
