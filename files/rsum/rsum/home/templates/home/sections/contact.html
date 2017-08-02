@@ -30,7 +30,7 @@
                             <h4>{{ s.content.0.name|title }}</h4>
                             <a href="mailto:{{ s.content.0.content }}">{{ s.content.0.content }}</a>
                         </div>
-                      {% elif s.value.0.name == 'web' %}
+                      {% elif s.content.0.name == 'web' %}
                         <div class="col-md-3 col-xs-6">
                             <h4>{{ s.content.0.name|title }}</h4>
                             <a href="{{ s.content.0.content }}">{{ s.content.0.content }}</a>
