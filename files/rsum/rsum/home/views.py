@@ -61,4 +61,10 @@ def index(request):
     #print(json.dumps(context.get('cv')[3].get('values').get('content')[1], indent=1))
     #print(type(values))
 
+    education = context.get('cv')[5].get('education').get('content')[3].get('content')[0]
+    projects = education.get('content').replace("'",'').replace("[",'').replace("]",'').split(", ")
+    context.get('cv')[5].get('education').update({
+        'projects': projects
+    })
+    
     return render(request, 'home/index.html', context)
