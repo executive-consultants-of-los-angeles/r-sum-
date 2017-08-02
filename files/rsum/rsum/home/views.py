@@ -47,6 +47,7 @@ def index(request):
     experience = {}
     experience_list = context.get('cv')[4].get('experience').get('content')[1:]
     for k,v in enumerate(experience_list):
+        #print(json.dumps(v,indent=1))
         for p, i in v.get('content')[5].get('content').get('projects').iteritems():
             j = i.strip('[').strip(']').split("', '")
             experience_list[k].get('content')[5].get('content').get('projects').update({p:[]})

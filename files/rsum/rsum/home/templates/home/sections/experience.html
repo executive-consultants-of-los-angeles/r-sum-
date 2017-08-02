@@ -1,5 +1,5 @@
 {% load static %}
-{# section.experience.experience #}
+{{ section.experience.experience }}
 
         <!-- Experience -->
         <div id="experience">
@@ -12,8 +12,10 @@
                 </div>
                 <!--// end row -->
 
-                <div class="row">
-                  {% for e in section.experience.experience %}
+                {% for e in section.experience.experience %}
+                  {% if forloop.counter|divisibleby:3 %}
+                    <div class="row">
+                  {% endif %}
                     {# e.content.5 #}
                     <div class="col-sm-4 sm-margin-b-50">
                         <div class="margin-b-20">
@@ -41,8 +43,10 @@
                         </p>
                         <h6 style="color: #969696; font-size: 14pt; font-variant: small-caps;">{{ e.content.0.content }}, {{ e.content.1.content }}</h6>
                     </div>
-                  {% endfor %}
-                </div>
+                  {% if forloop.counter|divisibleby:3 %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
                 <div class="row">
                     <div class="col-sm-4 sm-margin-b-50">
                         <div class="margin-b-20">
