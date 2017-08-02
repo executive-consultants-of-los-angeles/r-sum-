@@ -1,5 +1,5 @@
 {% load static %}
-{{ section.contact.content.5.content }}
+{# section.contact.content.5.content #}
         <!-- Contact -->
         <div id="contact">
             <div class="bg-color-sky-light">
@@ -32,8 +32,8 @@
                         </div>
                       {% elif s.value.0.name == 'web' %}
                         <div class="col-md-3 col-xs-6">
-                            <h4>{{ s..0.name|title }}</h4>
-                            <a href="{{ s.value.0.value.0.value }}">{{ s.value.0.value.0.value }}</a>
+                            <h4>{{ s.content.0.name|title }}</h4>
+                            <a href="{{ s.content.0.content }}">{{ s.content.0.content }}</a>
                         </div>
                       {% endif %}
                     {% endif %}
