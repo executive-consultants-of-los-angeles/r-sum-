@@ -13,16 +13,36 @@ summary:
   content: "Straight shooter with upper management written all over me."
 skills:
   id: 3
-  infrastructure_automation:
-    ansible: "4 years"
-  system_administration:
-    bash: "15 years"
-    vim: "15 years"
+  automation_administration:
+    name: "Infrastructure Automation and Administration"
+    competence: 85
+    ansible:
+      competence: 90
+      experience: "4 years"
+    molecule:
+      compteence: 70
+      experience: "3 months" 
+    bash:
+      competence: 75 
+      experience: "15 years"
+    vim:
+      competence: 70
+      experience: "15 years"
   cloud_architecture:
-    amazon_web_services: "9 years"
-    microsoft_azure: "1 year"
-    google_cloud: "1 year"
-    digital_ocean: "4 years"
+    name: "Cloud Computing Services"
+    competence: 80
+    amazon_web_services:
+      competence: 85
+      experience: "9 years"
+    microsoft_azure:
+      competence: 70
+      experience: "1 year"
+    google_cloud:
+      competence: 75
+      experience: "1 year"
+    digital_ocean:
+      competence: 85
+      experience: "4 years"
   software_development:
     agile: "4 years"
     sdlc: "15 years"
