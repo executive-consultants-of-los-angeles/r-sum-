@@ -1,10 +1,10 @@
-{# section.skills.content #}                      
+{{ section.skills.content.0.content }}
 
     <h2>{{ section.skills.name|title }}</h2>
                         <!-- Progress Box -->
                       {% for sub in section.skills.content %}
                         <div class="progress-box">
-                            <h5>{{ sub.name }} <span class="color-heading pull-right">87%</span></h5>
+                            <h5>{{ sub.content.0.content }} <span class="color-heading pull-right">87%</span></h5>
                             <div class="progress">
                                 <div class="progress-bar bg-color-base" role="progressbar" data-width="87"></div>
                             </div>
