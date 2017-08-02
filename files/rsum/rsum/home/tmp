@@ -1,4 +1,0 @@
-
-          {% with template_name=section.0.name|stringformat:"s"|add:".html" %}
-            {% include 'home/sections/'|add:template_name %}
-          {% endwith %}
