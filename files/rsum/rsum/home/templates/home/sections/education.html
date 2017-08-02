@@ -1,0 +1,29 @@
+{% load static %}
+{# section.education.content.0.content #}
+        <!-- Promo Banner -->
+        <div class="promo-banner parallax-window" data-parallax="scroll" data-image-src="{% static 'img/1920x1080/01.jpg' %}">
+            <div 
+              style="
+                opacity: 0.65;
+                background-color: white;
+              "
+              class="container-sm content-lg">
+                <h2 style="color: black;" class="promo-banner-title">{{ section.education.name|title }}</h2>
+                <p class="promo-banner-text">
+                  {% for sub in section.education.content %}
+                    {% for i in sub.content %}
+                      {{ i.content }}
+                      {% for j in i.content %}
+                        {{ j.0 }}
+                        {% if j.0.name == 'projects' %}
+                          {% include 'home/sections/projects/project.html' %}
+                        {% else %}
+                          <h3 style="color: black;" class="promo-banner-text">{{ j.0.content }}</h3>
+                        {% endif %}
+                      {% endfor %}
+                    {% endfor %}
+                  {% endfor %}
+                </p>
+            </div>
+        </div>
+        <!-- End Promo Banner -->
