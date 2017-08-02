@@ -24,10 +24,10 @@ skills:
     molecule:
       name: "Molecule"
       competence: 70
-      experience: "3 months" 
+      experience: "3 months"
     bash:
       name: "Bourne Again SHell"
-      competence: 75 
+      competence: 75
       experience: "15 years"
     vim:
       name: "Very IMproved Text Editor"
@@ -42,7 +42,7 @@ skills:
       competence: 85
       experience: "9 years"
     microsoft_azure:
-      name: "Microsoft Azure" 
+      name: "Microsoft Azure"
       competence: 70
       experience: "1 year"
     google_cloud:
@@ -63,7 +63,7 @@ skills:
       experience: "4 years"
     sdlc:
       name: "Software Development Life Cycle"
-      competence: 82 
+      competence: 82
       experience: "15 years"
     scm:
       name: "Source Code Management"
