@@ -467,14 +467,12 @@ education:
       - "it was a very prestigious kindergarten"
 contact:
   id: 7
-  content:
-    title:
-      name: "Contact Mr. Harris"
-      message:
-        "Mr. Harris is available most weekdays after noon Pacific Time."
-    location: "Los Angeles, California, United States of America"
-    phone: "(424) 209-2976"
-    email: "alex@ecla.solutions"
-    web: "https://ecla.solutions/"
+  title: "Contact Mr. Harris"
+  message:
+    "Mr. Harris is available most weekdays after noon Pacific Time."
+  location: "Los Angeles, California, United States of America"
+  phone: "(424) 209-2976"
+  email: "alex@ecla.solutions"
+  web: "https://ecla.solutions/"
 ...
 # vim: ft=ansible:
