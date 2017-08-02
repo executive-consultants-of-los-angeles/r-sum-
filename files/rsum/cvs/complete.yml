@@ -14,6 +14,7 @@ summary:
 skills:
   id: 3
   automation_administration:
+    id: 1
     name: "Infrastructure Automation and Administration"
     competence: 85
     ansible:
@@ -29,6 +30,7 @@ skills:
       competence: 70
       experience: "15 years"
   cloud_architecture:
+    id: 2
     name: "Cloud Computing Services"
     competence: 80
     amazon_web_services:
@@ -44,6 +46,7 @@ skills:
       competence: 85
       experience: "4 years"
   software_development:
+    id: 3
     name: "Software Engineering"
     competence: 75
     agile:
@@ -62,6 +65,7 @@ skills:
       competence: 70
       experience: "2 years"
   linux_unix:
+    id: 4
     name: "Linux Administration"
     competence: 90
     redhat:
@@ -71,6 +75,7 @@ skills:
       competence: 85
       experience: "13 years"
   programming:
+    id: 5
     name: "Programming Languages"
     python:
       competence: 80
@@ -82,6 +87,7 @@ skills:
       competence: 70
       experience: "15 years"
   databases:
+    id: 6
     name: "Relational and Other Databases"
     postgresql:
       competence: 75
