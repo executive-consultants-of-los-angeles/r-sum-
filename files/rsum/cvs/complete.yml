@@ -1,360 +1,451 @@
 ---
-cv:
-  introduction:
-    name: "Edward Harris"
-    current_company: "E C L A"
-    current_position: "Chief Financial Officer"
-    email: "cfo@ecla.solutions"
-  summary: "Straight shooter with upper management written all over me."
-  skills:
-    infrastructure_automation:
-      ansible: "4 years"
-    system_administration:
-      bash: "15 years"
-      vim: "15 years"
-    cloud_architecture:
-      amazon_web_services: "9 years"
-      microsoft_azure: "1 year"
-      google_cloud: "1 year"
-      digital_ocean: "4 years"
-    software_development:
-      agile: "4 years"
-      sdlc: "15 years"
-      scm: "10 years"
-      git: "4 years"
-      svn: "2 years"
-    linux_unix:
-      redhat: "15 years"
-      debian: "13 years"
-    programming:
-      python: "4 years"
-      java: "1 year"
-      php: "15 years"
-    relational_databases:
-      postgresql: "10 years"
-      mysql: "15 years"
-  experience:
-    cfo_at_gahan_corporation:
-      name: "Chief Financial Officer at Gahan Corporation"
-      location: "Los Angeles, California"
-      duration: "May 2016 - Present"
-      projects:
-        technology:
-          - "maintain multiple cloud services"
-          - "total cost of ownership < $100/mo"
-          - "pretty good uptime"
-          - "at least not terrible security"
-        legal:
-          - "converted from an LLC started May 2016"
-          - "wrote the filed Articles of Incorporation"
-          - "also have an author credit on the bylaws"
-          - "have written every agreement executed by the corporation so far"
-          - "keep the corporation in good standing with the State of California"
-        finance:
-          - "aiming at issuing registered stock by 2020"
-          - "pretty depressing at the moment"
-          - "maintain books to GAAP standards"
-          - "keep us up to date with taxes and reporting"
-    abiogenix_incorporated:
-      name: "Lead Python Developer / Cloud Architect at Abiogenix Incorporated"
-      location: "Los Angeles, California"
-      duration: "August 2014 - May 2017"
-      projects:
-        enterprise_resource_planning:
-          - "automated deployment and maintenance of the Odoo ERP system"
-          - "installed Google SSO for better auditing"
-        buy_my_ubox_com:
-          - "designed and implemented the my-ubox.com web store"
-          - "makes use of the Django web framework"
-          - "some custom code that integrates the order system with Odoo"
-        atlassian:
-          - "deployed Atlassian suite to Abiogenix cloud assets"
-          - "maintain those same tools for uptime and performance"
-          - "very limited budget"
-        networking:
-          - "transfered my-ubox.com to Amazon's Route 53 service"
-          - "transfered abiogenix.com to Amazon's Route 53 service"
-    caa:
-      name: "Consultant at Creative Artists Agency"
-      location: "Los Angeles, California"
-      duration: "September 2015  -  March 2016 (7 months)"
-      projects:
-        jupyterhub:
-          - "automated deployment of JupyterHub with Ansible"
-          - "instructed analysts on the use of Python and JupyterHub"
-          - "enabled the quants to transfer data from Excel to WorkDay"
-        ansible_tower:
-          - "refactored existing Ansible playbooks for improved security"
-          - "implemented best practices in all Ansible playbooks"
-          - "managed more than one upgrade of Ansible Tower server"
-          - "enabled logging and monitoring with New Relic and Splunk"
-        continuous_integration:
-          - "project was a year late on delivery upon my assignment"
-          - "walked into an unfamiliar stack and uncooperative team"
-          - "within one quarter the project was delivering new features daily"
-          - "enabled Behave testing and eliminated failures due to process"
-          - "used Ansible Tower and Jenkins server for deployment"
-    build_manager_toyota_motor_sales:
-      name: "Build Manager at Toyota R&D"
-      location: "Los Angeles, California"
-      duration: "April 2015  -  July 2015 (4 months)"
-      projects:
-        atlassian:
-          - "maintained project git repository"
-          - "managed branches, pull requests, and releases"
-          - "trained 22 developers on git flow branching model"
-          - "created process for documentation of development"
-          - "guided developers in resolution of merge conflicts"
-        continuous_delivery:
-          - "deployed spark and hadoop cluster for distributed processing"
-          - "automated builds of all projects within the git repository"
-          - "dployed and administered Jenkins server with Ansible"
-      cloud_architect_toyota_motor_sales:
-        name: "Cloud Architect at Toyota R&D"
-        location: "Los Angeles, California"
-        duration: "January 2015  -  July 2015 (7 months)"
-        projects:
-          ansible:
-            - "reduced deployment time by a factor of 15 with Ansible"
-            - "automated deployment of all resources required by project"
-            - "managed Red Hat Enterprise Linux 7 servers"
-          amazon_web_services:
-            - "configured and deployed all infrastructure"
-            - "administered same"
-            - "managed budget for aws monthly spend"
-    lead_python_developer_toyota_motor_sales:
-      name: "Lead Python Developer at Toyota R&D"
-      location: "Los Angeles, California"
-      duration: "December 2014  -  July 2015 (8 months)"
-      projects:
-        training:
-          - "wrote Python style guide"
-          - "implemented smart commits for JIRA issues"
-          - "trained offshore developers in the use of gitflow"
-        scraping:
-          - "used Python, Scrapy, MongoDB, and BASH for project"
-          - "scraped web for information relevant to project"
-          - "identified and removed redundancies within the project"
-          - "ran daily scrum meetings and maintained a storyboard"
-        proposal:
-          - "authored A3 to streamline build process"
-    chief_technical_officer_mintspare:
-      name: "Chief Technical Officer at Minstpare Incorporated"
-      location: "Alameda, California"
-      duration: "February 2014  -  January 2015 (1 year)"
-      projects:
-        webmaster:
-          - "developmed all Mintspare websites"
-          - "used CakePHP as well as jQuery"
-        systems_administrator:
-          - "administrated Mintspare databases"
-          - "prevented data loss and developed schemas"
-          - "responsible for all Mintspare IT infrastructure"
-          - "used Ansible to automate infrastructure deployment"
-          - "managed load balancing using HAProxy"
-    vs_media:
-      name: "Analyst / Email Administrator at VS Media"
-      location: "Los Angeles, California"
-      duration: "August 2013  -  December 2013 (5 months)"
-      projects:
-        analyst:
-          - "collected and analyzed data on email marketing"
-          - "improved performance of email servers and content"
-          - "documented control flow of complex scripts"
-          - "sent roughly 150,000 emails a day"
-        email_administrator:
-          - "implemented new elements of the email system"
-          - "created such as a centralized template store"
-    thrive_marketing:
-      name: "Web Developer / Systems Administrator at Thrive Marketing"
-      location: "Nashville, Tennessee"
-      duration: "April 2013  -  July 2013 (4 months)"
-      projects:
-        systems_administrator:
-          - "installed and configured several different Linux servers"
-          - "used distributions such as Ubuntu, CentOS, and Gentoo"
-          - "also maintained a number of Windows 7 workstations"
-        web_developer:
-          - "developed internal products for sales operations"
-          - "made use of PHP, JavaScript, jQuery, JSON, REST, and SOAP"
-          - "created data models for two internal software projects"
-          - "documented existing and new code"
-        source_code_management:
-          - "implemented git and gitflow for source code control"
-          - "provided training to other employees on their use"
-    club_cirok:
-      name: "Bartender at Club Cirok"
-      location: "Nashville, Tennessee"
-      duration: "December 2012  -  July 2013 (8 months)"
-      projects:
-        bartender:
-          - "tended bar in a high volume nightclub setting"
-          - "served limited bottled beer, wine, and mixed drinks"
-          - "mixed classic cocktails for the enjoyment of club patrons"
-    rodizio_brazilian_grill:
-      name: "Bartender at Rodizio Brazilian Grill"
-      location: "Nashville, Tennessee"
-      duration: "September 2012  -  January 2013 (5 months)"
-      projects:
-        bartender:
-          - "tended bar in a full-service restaurant setting"
-          - "served bottled beer, draught beer, wine, champagne"
-          - "learned menu of specialty cocktails"
-    lipstick_lounge:
-      name: "Barback / Cook at Lipstick Lounge"
-      location: "Nashville, Tennessee"
-      duration: "July 2012  -  September 2012 (3 months)"
-      projects:
-        barback:
-          - "stocked beer, wine, and liquor for high volume bar"
-          - "cooked, and delivered food orders from bar"
-    atlas_payment_processing:
-      name: "Account Manager at Atlas Payment Processing"
-      location: "San Francisco, California"
-      duration: "September 2011  -  September 2012 (1 year 1 month)"
-      projects:
-        account_manager:
-          - "met with merchants to explain rate structures"
-          - "managed accounts from beginning to end of service"
-          - "made 900 calls a week to potential clients"
-    aflac:
-      name: "Business Development at AFLAC"
-      location: "San Francisco, California"
-      duration: "December 2010  -  May 2011 (6 months)"
-      projects:
-        business_development:
-          - "made 300 cold calls a week"
-          - "created and shared a basic crm using Google Calendar"
-          - "clearly and concisely explained Aflac products"
-    wishb:
-      name: "Web Developer / System Administrator at WishB LLC"
-      location: "San Francisco, California"
-      duration: "July 2010  -  September 2010 (3 months)"
-      projects:
-        web_developer:
-          - "used a homebrew MVC to program a website"
-          - "dynamically loaded images with css and jquery"
-          - "used Subversion for version control of code"
-          - "coded user profiles for application"
-        system_administrator:
-          - "maintained and configured the webserver"
-          - "designed database schemas in MySQL"
-          - "contributed to daily SCRUM meetings"
-    logitech:
-      name: "Systems Administrator / Software Engineer at Logitech"
-      location: "San Francisco, California"
-      duration: "April 2008 - April 2010 (2 years 1 month)"
-      projects:
-        web_developer:
-          - "used Dojo.js JavaScript to develop video chat application"
-          - "translated management requirements into new features"
-          - "used Object Oriented Programming (OOP) with JavaScript"
-          - "conducted extensive testing of enterprise software"
-        systems_administrator:
-          - "designed a custom Gentoo image for use with EC2"
-          - "supported deployment of Gentoo Linux servers"
-          - "moved more than twenty servers to a new data center"
-          - "deployed servers during launch Logitech Vid"
-        software_engineer:
-          - "developed a multi-process media server"
-          - "polled content servers for new content"
-          - "pulled new content then transcoded the content"
-          - "upload transcoded content to S3"
-          - "used SOAP to make content available to end users"
-    blowtorch:
-      name: "Web Developer / Systems Administrator at Blowtorch Entertainment"
-      location: "Sausalito, California"
-      duration: "November 2007  -  March 2008 (5 months)"
-      projects:
-        web_developer:
-          - "created custom Drupal modules"
-          - "designed new tables in PostgreSQL database"
-          - "participated in design meetings"
-        systems_administrator:
-          - "configured Apache on CentOS development server"
-          - "deployed server for use of other members of the team"
-          - "ensured proper quality of data"
-    vinyl:
-      name: "Database Administrator at Vinyl Interactive"
-      location: "San Francisco, California"
-      duration: "June 2007  -  November 2007 (6 months)"
-      projects:
-        database_administrator:
-          - "used Linux command line tools and BASH scripting"
-          - "automated daily database imports"
-          - "administered MSSQL and MySQL database servers"
-          - "administered a Storage Area Network"
-      fordela:
-        name: "Web Developer at Fordela"
-        location: "San Francisco, California"
-        duration: "October 2006  -  May 2007 (8 months)"
-        projects:
-          web_developer:
-            - "designed new database tables"
-            - "programmed new features with PHP and JavaScript"
-            - "ported existing code base to CakePHP"
-          systems_administrator:
-            - "deployed subversion version control"
-            - "administered servers running CentOS"
-            - "configured and maintained Apache https and MySQL"
-    radical_fusion:
-      name: "Web Developer at Radical Fusion"
-      location: "San Francisco, California"
-      duration: "September 2006  -  October 2006 (2 months)"
-      projects:
-        web_developer:
-          - "added new features using PHP, MSSQL, and AJAX"
-          - "used design documents to update user interface"
-    optyweb:
-      name: "Systems Admin at Optyweb"
-      location: "San Francisco, California"
-      duration: "November 2005  -  May 2006 (7 months)"
-      projects:
-        webmaster:
-          - "coded Optyweb website with HTML and CSS"
-          - "addressed client technical support issues"
-          - "configured servers to run Apache with MySQL and PHP"
-        system_administrator:
-          - "created images with various distributions of linux"
-          - "used an imaging tool to deploy new images"
-          - "used FreeBSD, CentOS, Debian, Fedora, and Ubuntu Linux"
-          - "moved more than sixty web servers to new data center"
-          - "configured switches in the new datacenter"
-      payne_media:
-        name: "Webmaster / Junior Systems Administrator at Payne Media"
-        location: "Seattle, Washington"
-        duration: "March 2005  -  November 2005 (9 months)"
-        projects:
-          webmaster:
-            - "developed web sites using XHTML, CSS, PHP, and MySQL"
-          junior_systems_administrator:
-            - "administered Gentoo Linux on mail, web, and database servers"
-      forest_service:
-        name: "Webmaster at United States Forest Service AirFIRE Team"
-        location: "Seattle, Washington"
-        duration: "April 2004  -  March 2005 (1 year)"
-        projects:
-          webmaster:
-            - "developed websites with PHP, CSS, and XHTML"
-            - "administered the AirFIRE Team web server"
-            - "upgraded web server from Apache 1.3 to Apache 2"
-    saxotech:
-      name: "Customer Fulfillment Specialist at SaxoTECH, AS"
-      location: "Washington, District of Columbia"
-      duration: "March 2003  -  January 2004 (11 months)"
-      projects:
-        customer_fulfillment_specialist:
-          - "provided customers with emergency technical support"
-          - "given charge of the entire support department"
-  education:
-    name: "Broadmoor Elementary School"
-    location: "Lafayette, Louisiana"
-    studies: "Kindergarten Diploma, General Studies, Kindergarten"
-    duration: "1988 – 1989 (1 year)"
+intro:
+  id: 1
+  name: "Edward Harris"
+  position: "Python Developer / Cloud Engineer"
+  social_media_links:
+    facebook: 'https://www.facebook.com/eclacfo'
+    twitter: 'https://twitter.com/eclacfo'
+    linkedin: 'https://www.linkedin.cim/in/eclacfo'
+    github: 'https://github.com/eclacfo'
+summary:
+  id: 2
+  content: "Straight shooter with upper management written all over me."
+skills:
+  id: 3
+  infrastructure_automation:
+    ansible: "4 years"
+  system_administration:
+    bash: "15 years"
+    vim: "15 years"
+  cloud_architecture:
+    amazon_web_services: "9 years"
+    microsoft_azure: "1 year"
+    google_cloud: "1 year"
+    digital_ocean: "4 years"
+  software_development:
+    agile: "4 years"
+    sdlc: "15 years"
+    scm: "10 years"
+    git: "4 years"
+    svn: "2 years"
+  linux_unix:
+    redhat: "15 years"
+    debian: "13 years"
+  programming:
+    python: "4 years"
+    java: "1 year"
+    php: "15 years"
+  relational_databases:
+    postgresql: "10 years"
+    mysql: "15 years"
+values:
+  id: 4
+  introduction: 'A clearly defined system of ethics is vital to a
+    happy and productive life, so I have defined my values as
+    the following.  These are listed in order or precedence
+    from left to right.'
+  content:
+    loyalty:
+      id: 1
+      col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+      service: 'class="service" data-height="height"'
+      icon: 'class="service-icon icon-badge"'
+      text: 'One good turn deserves another, and really this
+        comes down to the Golden Rule: do unto others
+        and then run. But seriously, I do what I can to help
+        people that have helped me and I don''t ask people for
+        action that I haven''t done myself in the past.'
+    industry:
+      id: 2
+      col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+      service:
+        'class="service bg-color-base wow zoomIn"
+          data-height="height"
+          data-wow-duration=".3"
+          data-wow-delay=".1s"'
+      icon: ' class="service-icon color-white icon-chemistry"'
+      text: 'You know what they say about Idle Hands. . . Seth
+        Green would be homeless if not for Seth McFarlane.
+        But seriously, I find I can''t properly enjoy leisure
+        unless it''s leisure that''s been earned.'
+    efficiency:
+      id: 3
+      col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
+      service: 'class="service" data-height="height"'
+      icon: 'class="service-icon icon-screen-tablet"'
+      text: 'With that said, working hard but dumb is not
+        going to get you very far, so I like things that are
+        speedy and free of waste.'
+    wealth:
+      id: 4
+      col: 'class="col-md-3 col-sm-6"'
+      service: 'class="service" data-height="height"'
+      icon: 'class="service-icon  icon-mustache"'
+      text: 'Finally, this requires some clarity.&nbsp;&nbsp;I do not mean
+        money when I say wealth because the two are not synonymous.
+        Wealth in this context refers to a richness of resources
+        such as endurance, information, health, and kindness.
+        Essentially, an ability to get things done.'
+experience:
+  id: 5
+  cfo_at_gahan_corporation:
+    id: 1
+    name: "Chief Financial Officer at Gahan Corporation"
+    location: "Los Angeles, California"
+    duration: "May 2016 - Present"
     projects:
-      tests:
-        - "I have always tested well"
-        - "that is how I graduated with a GPA in the 1.7 range"
-        - "it was a very prestigious kindergarten"
+      technology:
+        - "maintain multiple cloud services"
+        - "total cost of ownership < $100/mo"
+        - "pretty good uptime"
+        - "at least not terrible security"
+      legal:
+        - "converted from an LLC started May 2016"
+        - "wrote the filed Articles of Incorporation"
+        - "also have an author credit on the bylaws"
+        - "have written every agreement executed by the corporation so far"
+        - "keep the corporation in good standing with the State of California"
+      finance:
+        - "aiming at issuing registered stock by 2020"
+        - "pretty depressing at the moment"
+        - "maintain books to GAAP standards"
+        - "keep us up to date with taxes and reporting"
+  abiogenix_incorporated:
+    id: 2
+    name: "Lead Python Developer / Cloud Architect at Abiogenix Incorporated"
+    location: "Los Angeles, California"
+    duration: "August 2014 - May 2017"
+    projects:
+      enterprise_resource_planning:
+        - "automated deployment and maintenance of the Odoo ERP system"
+        - "installed Google SSO for better auditing"
+      buy_my_ubox_com:
+        - "designed and implemented the my-ubox.com web store"
+        - "makes use of the Django web framework"
+        - "some custom code that integrates the order system with Odoo"
+      atlassian:
+        - "deployed Atlassian suite to Abiogenix cloud assets"
+        - "maintain those same tools for uptime and performance"
+        - "very limited budget"
+      networking:
+        - "transfered my-ubox.com to Amazon's Route 53 service"
+        - "transfered abiogenix.com to Amazon's Route 53 service"
+  caa:
+    id: 3
+    name: "Consultant at Creative Artists Agency"
+    location: "Los Angeles, California"
+    duration: "September 2015  -  March 2016 (7 months)"
+    projects:
+      jupyterhub:
+        - "automated deployment of JupyterHub with Ansible"
+        - "instructed analysts on the use of Python and JupyterHub"
+        - "enabled the quants to transfer data from Excel to WorkDay"
+      ansible_tower:
+        - "refactored existing Ansible playbooks for improved security"
+        - "implemented best practices in all Ansible playbooks"
+        - "managed more than one upgrade of Ansible Tower server"
+        - "enabled logging and monitoring with New Relic and Splunk"
+      continuous_integration:
+        - "project was a year late on delivery upon my assignment"
+        - "walked into an unfamiliar stack and uncooperative team"
+        - "within one quarter the project was delivering new features daily"
+        - "enabled Behave testing and eliminated failures due to process"
+        - "used Ansible Tower and Jenkins server for deployment"
+  build_manager_toyota_motor_sales:
+    id: 4
+    name: "Build Manager at Toyota R&D"
+    location: "Los Angeles, California"
+    duration: "April 2015  -  July 2015 (4 months)"
+    projects:
+      atlassian:
+        - "maintained project git repository"
+        - "managed branches, pull requests, and releases"
+        - "trained 22 developers on git flow branching model"
+        - "created process for documentation of development"
+        - "guided developers in resolution of merge conflicts"
+      continuous_delivery:
+        - "deployed spark and hadoop cluster for distributed processing"
+        - "automated builds of all projects within the git repository"
+        - "dployed and administered Jenkins server with Ansible"
+  cloud_architect_toyota_motor_sales:
+    id: 5
+    name: "Cloud Architect at Toyota R&D"
+    location: "Los Angeles, California"
+    duration: "January 2015  -  July 2015 (7 months)"
+    projects:
+      ansible:
+        - "reduced deployment time by a factor of 15 with Ansible"
+        - "automated deployment of all resources required by project"
+        - "managed Red Hat Enterprise Linux 7 servers"
+      amazon_web_services:
+        - "configured and deployed all infrastructure"
+        - "administered same"
+        - "managed budget for aws monthly spend"
+  lead_python_developer_toyota_motor_sales:
+    id: 6
+    name: "Lead Python Developer at Toyota R&D"
+    location: "Los Angeles, California"
+    duration: "December 2014  -  July 2015 (8 months)"
+    projects:
+      training:
+        - "wrote Python style guide"
+        - "implemented smart commits for JIRA issues"
+        - "trained offshore developers in the use of gitflow"
+      scraping:
+        - "used Python, Scrapy, MongoDB, and BASH for project"
+        - "scraped web for information relevant to project"
+        - "identified and removed redundancies within the project"
+        - "ran daily scrum meetings and maintained a storyboard"
+      proposal:
+        - "authored A3 to streamline build process"
+  chief_technical_officer_mintspare:
+    id: 7
+    name: "Chief Technical Officer at Minstpare Incorporated"
+    location: "Alameda, California"
+    duration: "February 2014  -  January 2015 (1 year)"
+    projects:
+      webmaster:
+        - "developmed all Mintspare websites"
+        - "used CakePHP as well as jQuery"
+      systems_administrator:
+        - "administrated Mintspare databases"
+        - "prevented data loss and developed schemas"
+        - "responsible for all Mintspare IT infrastructure"
+        - "used Ansible to automate infrastructure deployment"
+        - "managed load balancing using HAProxy"
+  vs_media:
+    id: 8
+    name: "Analyst / Email Administrator at VS Media"
+    location: "Los Angeles, California"
+    duration: "August 2013  -  December 2013 (5 months)"
+    projects:
+      analyst:
+        - "collected and analyzed data on email marketing"
+        - "improved performance of email servers and content"
+        - "documented control flow of complex scripts"
+        - "sent roughly 150,000 emails a day"
+      email_administrator:
+        - "implemented new elements of the email system"
+        - "created such as a centralized template store"
+  thrive_marketing:
+    id: 9
+    name: "Web Developer / Systems Administrator at Thrive Marketing"
+    location: "Nashville, Tennessee"
+    duration: "April 2013  -  July 2013 (4 months)"
+    projects:
+      systems_administrator:
+        - "installed and configured several different Linux servers"
+        - "used distributions such as Ubuntu, CentOS, and Gentoo"
+        - "also maintained a number of Windows 7 workstations"
+      web_developer:
+        - "developed internal products for sales operations"
+        - "made use of PHP, JavaScript, jQuery, JSON, REST, and SOAP"
+        - "created data models for two internal software projects"
+        - "documented existing and new code"
+      source_code_management:
+        - "implemented git and gitflow for source code control"
+        - "provided training to other employees on their use"
+  club_cirok:
+    id: 10
+    name: "Bartender at Club Cirok"
+    location: "Nashville, Tennessee"
+    duration: "December 2012  -  July 2013 (8 months)"
+    projects:
+      bartender:
+        - "tended bar in a high volume nightclub setting"
+        - "served limited bottled beer, wine, and mixed drinks"
+        - "mixed classic cocktails for the enjoyment of club patrons"
+  rodizio_brazilian_grill:
+    id: 11
+    name: "Bartender at Rodizio Brazilian Grill"
+    location: "Nashville, Tennessee"
+    duration: "September 2012  -  January 2013 (5 months)"
+    projects:
+      bartender:
+        - "tended bar in a full-service restaurant setting"
+        - "served bottled beer, draught beer, wine, champagne"
+        - "learned menu of specialty cocktails"
+  lipstick_lounge:
+    id: 12
+    name: "Barback / Cook at Lipstick Lounge"
+    location: "Nashville, Tennessee"
+    duration: "July 2012  -  September 2012 (3 months)"
+    projects:
+      barback:
+        - "stocked beer, wine, and liquor for high volume bar"
+        - "cooked, and delivered food orders from bar"
+  atlas_payment_processing:
+    id: 13
+    name: "Account Manager at Atlas Payment Processing"
+    location: "San Francisco, California"
+    duration: "September 2011  -  September 2012 (1 year 1 month)"
+    projects:
+      account_manager:
+        - "met with merchants to explain rate structures"
+        - "managed accounts from beginning to end of service"
+        - "made 900 calls a week to potential clients"
+  aflac:
+    id: 14
+    name: "Business Development at AFLAC"
+    location: "San Francisco, California"
+    duration: "December 2010  -  May 2011 (6 months)"
+    projects:
+      business_development:
+        - "made 300 cold calls a week"
+        - "created and shared a basic crm using Google Calendar"
+        - "clearly and concisely explained Aflac products"
+  wishb:
+    id: 15
+    name: "Web Developer / System Administrator at WishB LLC"
+    location: "San Francisco, California"
+    duration: "July 2010  -  September 2010 (3 months)"
+    projects:
+      web_developer:
+        - "used a homebrew MVC to program a website"
+        - "dynamically loaded images with css and jquery"
+        - "used Subversion for version control of code"
+        - "coded user profiles for application"
+      system_administrator:
+        - "maintained and configured the webserver"
+        - "designed database schemas in MySQL"
+        - "contributed to daily SCRUM meetings"
+  logitech:
+    id: 16
+    name: "Systems Administrator / Software Engineer at Logitech"
+    location: "San Francisco, California"
+    duration: "April 2008 - April 2010 (2 years 1 month)"
+    projects:
+      web_developer:
+        - "used Dojo.js JavaScript to develop video chat application"
+        - "translated management requirements into new features"
+        - "used Object Oriented Programming (OOP) with JavaScript"
+        - "conducted extensive testing of enterprise software"
+      systems_administrator:
+        - "designed a custom Gentoo image for use with EC2"
+        - "supported deployment of Gentoo Linux servers"
+        - "moved more than twenty servers to a new data center"
+        - "deployed servers during launch Logitech Vid"
+      software_engineer:
+        - "developed a multi-process media server"
+        - "polled content servers for new content"
+        - "pulled new content then transcoded the content"
+        - "upload transcoded content to S3"
+        - "used SOAP to make content available to end users"
+  blowtorch:
+    id: 17
+    name: "Web Developer / Systems Administrator at Blowtorch Entertainment"
+    location: "Sausalito, California"
+    duration: "November 2007  -  March 2008 (5 months)"
+    projects:
+      web_developer:
+        - "created custom Drupal modules"
+        - "designed new tables in PostgreSQL database"
+        - "participated in design meetings"
+      systems_administrator:
+        - "configured Apache on CentOS development server"
+        - "deployed server for use of other members of the team"
+        - "ensured proper quality of data"
+  vinyl:
+    id: 18 
+    name: "Database Administrator at Vinyl Interactive"
+    location: "San Francisco, California"
+    duration: "June 2007  -  November 2007 (6 months)"
+    projects:
+      database_administrator:
+        - "used Linux command line tools and BASH scripting"
+        - "automated daily database imports"
+        - "administered MSSQL and MySQL database servers"
+        - "administered a Storage Area Network"
+  fordela:
+    id: 19
+    name: "Web Developer at Fordela"
+    location: "San Francisco, California"
+    duration: "October 2006  -  May 2007 (8 months)"
+    projects:
+      web_developer:
+        - "designed new database tables"
+        - "programmed new features with PHP and JavaScript"
+        - "ported existing code base to CakePHP"
+      systems_administrator:
+        - "deployed subversion version control"
+        - "administered servers running CentOS"
+        - "configured and maintained Apache https and MySQL"
+  radical_fusion:
+    id: 20
+    name: "Web Developer at Radical Fusion"
+    location: "San Francisco, California"
+    duration: "September 2006  -  October 2006 (2 months)"
+    projects:
+      web_developer:
+        - "added new features using PHP, MSSQL, and AJAX"
+        - "used design documents to update user interface"
+  optyweb:
+    id: 21
+    name: "Systems Admin at Optyweb"
+    location: "San Francisco, California"
+    duration: "November 2005  -  May 2006 (7 months)"
+    projects:
+      webmaster:
+        - "coded Optyweb website with HTML and CSS"
+        - "addressed client technical support issues"
+        - "configured servers to run Apache with MySQL and PHP"
+      system_administrator:
+        - "created images with various distributions of linux"
+        - "used an imaging tool to deploy new images"
+        - "used FreeBSD, CentOS, Debian, Fedora, and Ubuntu Linux"
+        - "moved more than sixty web servers to new data center"
+        - "configured switches in the new datacenter"
+  payne_media:
+    id: 22
+    name: "Webmaster / Junior Systems Administrator at Payne Media"
+    location: "Seattle, Washington"
+    duration: "March 2005  -  November 2005 (9 months)"
+    projects:
+      webmaster:
+        - "developed web sites using XHTML, CSS, PHP, and MySQL"
+      junior_systems_administrator:
+        - "administered Gentoo Linux on mail, web, and database servers"
+  forest_service:
+    id: 23
+    name: "Webmaster at United States Forest Service AirFIRE Team"
+    location: "Seattle, Washington"
+    duration: "April 2004  -  March 2005 (1 year)"
+    projects:
+      webmaster:
+        - "developed websites with PHP, CSS, and XHTML"
+        - "administered the AirFIRE Team web server"
+        - "upgraded web server from Apache 1.3 to Apache 2"
+  saxotech:
+    id: 24
+    name: "Customer Fulfillment Specialist at SaxoTECH, AS"
+    location: "Washington, District of Columbia"
+    duration: "March 2003  -  January 2004 (11 months)"
+    projects:
+      customer_fulfillment_specialist:
+        - "provided customers with emergency technical support"
+        - "given charge of the entire support department"
+education:
+  id: 6
+  name: "Broadmoor Elementary School"
+  location: "Lafayette, Louisiana"
+  studies: "Kindergarten Diploma, General Studies, Kindergarten"
+  duration: "1988 – 1989 (1 year)"
+  projects:
+    tests:
+      - "I have always tested well"
+      - "that is how I graduated with a GPA in the 1.7 range"
+      - "it was a very prestigious kindergarten"
+contact:
+  id: 7
+  content:
+    title:
+      name: "Contact Mr. Harris"
+      message:
+        "Mr. Harris is available most weekdays after noon Pacific Time."
+    location: "Los Angeles, California, United States of America"
+    phone: "(424) 209-2976"
+    email: "alex@ecla.solutions"
+    web: "https://ecla.solutions/"
 ...
 # vim: ft=ansible:

@@ -1,9 +1,8 @@
 ---
 intro:
   id: 1
-  name_position:
-    name: "Edward Harris"
-    position: "Site Reliability Engineer / Software Engineer"
+  name: "Edward Harris"
+  position: "Site Reliability Engineer / Software Engineer"
   social_media_links:
     facebook: "https://www.facebook.com/eclacfo"
     twitter: "https://twitter.com/eclacfo"
@@ -86,7 +85,7 @@ values:
       text: 'Finally, this requires some clarity.&nbsp;&nbsp;I do not mean
         money when I say wealth because the two are not synonymous.
         Wealth in this context refers to a richness of resources
-        such as endurance, information, health, and kindness.&nbsp;&nbsp;
+        such as endurance, information, health, and kindness.
         Essentially, an ability to get things done.'
 experience:
   id: 5
