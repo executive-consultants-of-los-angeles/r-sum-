@@ -13,32 +13,85 @@ summary:
   content: "Straight shooter with upper management written all over me."
 skills:
   id: 3
-  infrastructure_automation:
-    ansible: "4 years"
-  system_administration:
-    bash: "15 years"
-    vim: "15 years"
+  automation_administration:
+    name: "Infrastructure Automation and Administration"
+    competence: 85
+    ansible:
+      competence: 90
+      experience: "4 years"
+    molecule:
+      compteence: 70
+      experience: "3 months" 
+    bash:
+      competence: 75 
+      experience: "15 years"
+    vim:
+      competence: 70
+      experience: "15 years"
   cloud_architecture:
-    amazon_web_services: "9 years"
-    microsoft_azure: "1 year"
-    google_cloud: "1 year"
-    digital_ocean: "4 years"
+    name: "Cloud Computing Services"
+    competence: 80
+    amazon_web_services:
+      competence: 85
+      experience: "9 years"
+    microsoft_azure:
+      competence: 70
+      experience: "1 year"
+    google_cloud:
+      competence: 75
+      experience: "1 year"
+    digital_ocean:
+      competence: 85
+      experience: "4 years"
   software_development:
-    agile: "4 years"
-    sdlc: "15 years"
-    scm: "10 years"
-    git: "4 years"
-    svn: "2 years"
+    name: "Software Engineering"
+    competence: 75
+    agile:
+      competence: 80
+      experience: "4 years"
+    sdlc:
+      competence: 82 
+      experience: "15 years"
+    scm:
+      comptence: 85
+      experience: "10 years"
+    git:
+      competence: 85
+      experience: "4 years"
+    svn:
+      competence: 70
+      experience: "2 years"
   linux_unix:
-    redhat: "15 years"
-    debian: "13 years"
+    name: "Linux Administration"
+    competence: 90
+    redhat:
+      competence: 70
+      experience: "15 years"
+    debian:
+      competence: 85
+      experience: "13 years"
   programming:
-    python: "4 years"
-    java: "1 year"
-    php: "15 years"
-  relational_databases:
-    postgresql: "10 years"
-    mysql: "15 years"
+    name: "Programming Languages"
+    python:
+      competence: 80
+      experience: "4 years"
+    java:
+      competence: 60
+      experience: "1 year"
+    php:
+      competence: 70
+      experience: "15 years"
+  databases:
+    name: "Relational and Other Databases"
+    postgresql:
+      competence: 75
+      experience: "10 years"
+    mysql:
+      competence: 70
+      experience: "15 years"
+    mongodb:
+      competence: 70
+      experience: "3 years"
 values:
   id: 4
   introduction: 'A clearly defined system of ethics is vital to a
