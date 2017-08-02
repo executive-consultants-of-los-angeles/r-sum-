@@ -50,7 +50,7 @@ class Section(models.Model):
         s_i.name = name 
 
         if type(section) == type(str()):
-            s_i.content= section
+            s_i.content = section
             s_i.save()
         else:
             s_i.content = type(section)
