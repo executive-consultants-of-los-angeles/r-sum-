@@ -21,15 +21,11 @@
   command: "ansible-galaxy install -r /tmp/r.yml"
   args:
     creates: "/root/.ansible/roles/rsum"
-- name: "Create rsum directory."
-  file:
-    state: directory
-    dest: /srv/rsum
 - name: "Link rsum app to correct path."
   file:
     state: link
-    src: /root/.ansible/roles/rsum/files/rsum/rsum
-    dest: /srv/rsum/rsum
+    src: /root/.ansible/roles/rsum/files/rsum
+    dest: /srv/rsum
 - name: "Copy settings for supervisord."
   copy:
     src: "supervisord.conf"
