@@ -1,4 +1,8 @@
 ---
 name: alex
+pip_install_list:
+  - gunicorn
+  - django
+  - psycopg2
 ...
 # vim: ft=ansible:

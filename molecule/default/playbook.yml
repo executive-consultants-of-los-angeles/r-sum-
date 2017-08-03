@@ -3,6 +3,6 @@
   hosts: rsum
   roles:
     - role:
-        "executive-consultants-of-los-angeles.rsum"
+        "rsum"
 ...
 # vim: ft=ansible:

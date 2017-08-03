@@ -7,10 +7,7 @@
   pip:
     name: "{{ item }}"
     state: present
-  with_items:
-    - django
-    - gunicorn
-    - psycopg2
+  with_items: "{{ pip_items }}"
 - name: "Install some packages with apt."
   apt:
     name: "{{ item }}"
