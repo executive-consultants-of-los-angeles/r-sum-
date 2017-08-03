@@ -3,6 +3,7 @@ version: '2'
 services:
   alex:
     build: .
+    command: ["/usr/bin/supervisord","-n"]
     image: ecla/ansible:latest
     ports:
       - "0.0.0.0:2049:2049"
