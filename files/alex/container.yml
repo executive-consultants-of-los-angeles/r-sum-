@@ -6,12 +6,12 @@ defaults:
   POSTGRES_PORT: 5432
   DJANGO_PORT: 8192
 settings:
-  conductor_base: ecla/ansible:latest
+  conductor_base: "ecla/ansible:latest"
   # The deployment_output_path is mounted to
   # the Conductor container, and the
   # `run` and `deployment` commands then
   # write generated Ansible playbooks to it.
-  deployment_output_path: ./ansible-deployment
+  deployment_output_path: /srv/alex 
   # When using the k8s or openshift engines,
   # use the following to authorize with the API.
   # Values set here will be passed to the Ansible
@@ -48,9 +48,9 @@ services:
   alex:
     from: ecla/ansible:latest
     roles:
-      - executive-consultants-of-los-angeles.rsum
-    environment:
-      DATABASE_URL: "pgsql://psql@172.17.0.1:5432/alex"
+      - rsum
+    # environment:
+    #  DATABASE_URL: "pgsql://psql@172.17.0.1:5432/alex"
     ports:
       - "8192:8192"
     command: ["/usr/bin/supervisord", "-n"]

@@ -1,3 +1,6 @@
 ---
+- name: "rsum"
+  src: executive-consultants-of-los-angeles.rsum 
+  version: v0.0.5
 ...
 # vim: ft=ansible:
