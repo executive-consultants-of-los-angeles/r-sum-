@@ -19,7 +19,7 @@ class CV(models.Model):
     def check_sections(self):
         cv_i = CV.objects.all()
         if not cv_i.exists():
-            #cv_f = open('/srv/rsum/cvs/abridged.yml')
+            # cv_f = open('/srv/rsum/cvs/abridged.yml')
             cv_f = open('/srv/rsum/cvs/complete.yml')
             cv_d = yaml.load(cv_f.read())
             self.save_cv(cv_d)
@@ -34,23 +34,25 @@ class CV(models.Model):
             'cv_name': 'complete',
             'sections': s.get_sections(
                 CV.objects.filter(
-                    id = 1
+                    id=1
                 )
             ),
         }
         return cv
 
     def save_cv(self, cv_d):
-        cv_i = CV()
-        cv_i.name = 'abridged' 
-        cv_i.save()
+        cv = CV()
+        cv.name = 'abridged'
+        cv.save()
 
-
-        for name, section in sorted(cv_d.items(), key = lambda t:t[1].get('id')):
+        for name, section in sorted(
+            cv_d.items(),
+            key=lambda t: t[1].get('id')
+        ):
             s = Section()
-            s.save_section(cv_i, section, name)
+            s.save_section(cv, section, name)
 
-        return CV.objects.values_list() 
+        return cv
 
     class Meta:
         app_label = "home"
