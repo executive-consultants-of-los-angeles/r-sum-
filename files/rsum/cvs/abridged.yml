@@ -13,32 +13,118 @@ summary:
   content: "Straight shooter with upper management written all over me."
 skills:
   id: 3
-  infrastructure_automation:
-    ansible: "4 years"
-  system_administration:
-    bash: "15 years"
-    vim: "15 years"
+  automation_administration:
+    id: 1
+    name: "Infrastructure Automation and Administration"
+    competence: 85
+    ansible:
+      name: "Ansible"
+      competence: 90
+      experience: "4 years"
+    molecule:
+      name: "Molecule"
+      competence: 70
+      experience: "3 months"
+    bash:
+      name: "Bourne Again SHell"
+      competence: 75
+      experience: "15 years"
+    vim:
+      name: "Very IMproved Text Editor"
+      competence: 70
+      experience: "15 years"
   cloud_architecture:
-    amazon_web_services: "9 years"
-    microsoft_azure: "1 year"
-    google_cloud: "1 year"
-    digital_ocean: "4 years"
+    id: 2
+    name: "Cloud Computing Services"
+    competence: 80
+    amazon_web_services:
+      name: "Amazon Web Services"
+      competence: 85
+      experience: "9 years"
+    microsoft_azure:
+      name: "Microsoft Azure"
+      competence: 70
+      experience: "1 year"
+    google_cloud:
+      name: "Google Cloud"
+      competence: 75
+      experience: "1 year"
+    digital_ocean:
+      name: "Digital Ocean"
+      competence: 85
+      experience: "4 years"
   software_development:
-    agile: "4 years"
-    sdlc: "15 years"
-    scm: "10 years"
-    git: "4 years"
-    svn: "2 years"
+    id: 3
+    name: "Software Engineering"
+    competence: 75
+    agile:
+      name: "Agile Development"
+      competence: 80
+      experience: "4 years"
+    sdlc:
+      name: "Software Development Life Cycle"
+      competence: 82
+      experience: "15 years"
+    scm:
+      name: "Source Code Management"
+      competence: 85
+      experience: "10 years"
+    git:
+      name: "git"
+      competence: 85
+      experience: "4 years"
+    svn:
+      name: "SubVersion"
+      competence: 70
+      experience: "2 years"
   linux_unix:
-    redhat: "15 years"
-    debian: "13 years"
+    id: 4
+    name: "Linux Administration"
+    competence: 90
+    redhat:
+      name: "RedHat Enterprise Linux"
+      competence: 70
+      experience: "15 years"
+    debian:
+      name: "Debian Linux / Ubuntu Linux"
+      competence: 85
+      experience: "13 years"
   programming:
-    python: "4 years"
-    java: "1 year"
-    php: "15 years"
-  relational_databases:
-    postgresql: "10 years"
-    mysql: "15 years"
+    id: 5
+    name: "Programming Languages"
+    competence: 75
+    python:
+      name: "Python"
+      competence: 80
+      experience: "4 years"
+    java:
+      name: "Java"
+      competence: 60
+      experience: "1 year"
+    php:
+      name: "Personal Home Page"
+      competence: 70
+      experience: "15 years"
+    javascript:
+      name: "JavaScript"
+      competence: 70
+      experience: "15 years"
+  databases:
+    id: 6
+    name: "Relational and Other Databases"
+    competence: 75
+    postgresql:
+      name: "PostgreSQL"
+      competence: 75
+      experience: "10 years"
+    mysql:
+      name: "MySQL"
+      competence: 70
+      experience: "15 years"
+    mongodb:
+      name: "MongoDB"
+      competence: 70
+      experience: "3 years"
 values:
   id: 4
   introduction: 'A clearly defined system of ethics is vital to a
@@ -148,27 +234,23 @@ experience:
         - "Automated infrastructure tasks with Ansible."
 education:
   id: 6
-  content:
-    - school:
-        name: "Broadmoor Elementary School"
-        location: "Lafayette, Louisiana"
-        studies: "Kindergarten Diploma, General Studies, Kindergarten"
-        duration: "1988 – 1989 (1 year)"
-        projects:
-          tests:
-            - "I have always tested well"
-            - "that is how I graduated with a GPA in the 1.7 range"
-            - "it was a very prestigious kindergarten"
+  name: "Broadmoor Elementary School"
+  location: "Lafayette, Louisiana"
+  studies: "Kindergarten Diploma, General Studies, Kindergarten"
+  duration: "1988 – 1989 (1 year)"
+  projects:
+    tests:
+      - "I have always tested well"
+      - "that is how I graduated with a GPA in the 1.7 range"
+      - "it was a very prestigious kindergarten"
 contact:
   id: 7
-  content:
-    title:
-      name: "Contact Mr. Harris"
-      message:
-        "Mr. Harris is available most weekdays after noon Pacific Time."
-    location: "Los Angeles, California, United States of America"
-    phone: "(424) 209-2976"
-    email: "alex@ecla.solutions"
-    web: "https://ecla.solutions/"
+  title: "Get in Touch with Ed"
+  message:
+    "Ed is available most weekdays after noon Pacific Time."
+  location: "Los Angeles, California, United States of America"
+  phone: "(424) 209-2976"
+  email: "alex@ecla.solutions"
+  web: "https://ecla.solutions/"
 ...
 # vim: ft=ansible:

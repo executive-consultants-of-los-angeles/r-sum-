@@ -1,40 +1,28 @@
 {% load static %}
+{# section.contact.content.5.content #}
         <!-- Contact -->
         <div id="contact">
             <div class="bg-color-sky-light">
                 <div class="container content-lg">
                     <div class="row margin-b-40">
                         <div class="col-sm-6">
-                           <h2>{{ section.value.0.value.0.value.1.value|title }}</h2>
-                            <p>{{ section.value.0.value.0.value.0.value }}</p>
+                           <h2>{{ section.contact.content.2.content.0.content|title }}</h2>
+                            <p>{{ section.contact.content.3.content.0.content }}</p>
                         </div>
                     </div>
                     <!--// end row -->
 
                 <div class="row">
-                  {% for s in section.value %}
-                    {% if s.value.0.name != 'title' %}
-                      {% if s.value.0.name == 'location' %}
+                  {% for s in section.contact.content %}
+                    {% if s.content.0.name != 'title' and s.content.0.name != 'message' %}
+                      {% if forloop.counter < 3 %}
                         <div class="col-md-3 col-xs-6 md-margin-b-30">
-                            <h4>{{ s.value.0.name|title }}</h4>
-                            <a href="https://maps.google.com">{{ s.value.0.value.0.value }}</a>
-                        </div>
-                      {% elif s.value.0.name == 'phone' %}
-                        <div class="col-md-3 col-xs-6 md-margin-b-30">
-                            <h4>{{ s.value.0.name|title }}</h4>
-                            <a href="#">{{ s.value.0.value.0.value }}</a>
-                        </div>
-                      {% elif s.value.0.name == 'email' %}
+                      {% else %}
                         <div class="col-md-3 col-xs-6">
-                            <h4>{{ s.value.0.name|title }}</h4>
-                            <a href="mailto:{{ s.value.0.value.0.value }}">{{ s.value.0.value.0.value }}</a>
-                        </div>
-                      {% elif s.value.0.name == 'web' %}
-                        <div class="col-md-3 col-xs-6">
-                            <h4>{{ s.value.0.name|title }}</h4>
-                            <a href="{{ s.value.0.value.0.value }}">{{ s.value.0.value.0.value }}</a>
-                        </div>
                       {% endif %}
+                            <h4>{{ s.content.0.name|title }}</h4>
+                            <a href="https://maps.google.com">{{ s.content.0.content }}</a>
+                        </div>
                     {% endif %}
                   {% endfor %}
                 </div>
