@@ -76,7 +76,7 @@ class SubSection(models.Model):
                 # print(type(item[1]))
             return projects
 
-        if isinstance(subsection, dict):
+        if isinstance(sub_section, dict):
             # for k, v in sorted(
             #   subsection.items(),
             #   key = lambda t: t[1].get('id')
