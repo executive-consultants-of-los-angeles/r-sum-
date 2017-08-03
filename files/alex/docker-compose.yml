@@ -4,7 +4,7 @@ services:
   alex:
     container_name: alex
     command: /usr/bin/supervisord -n
-    image: ecla/ansible:latest
+    image: ecla/alex:latest
     ports:
       - "0.0.0.0:8192:8192"
 ...
