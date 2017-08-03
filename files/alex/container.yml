@@ -1,63 +1,11 @@
 ---
 version: "2"
-defaults:
-  POSTGRES_USER: psql
-  POSTGRES_HOST: 172.17.0.1
-  POSTGRES_PORT: 5432
-  DJANGO_PORT: 8192
 settings:
   conductor_base: "ecla/ansible:latest"
-  # The deployment_output_path is mounted to
-  # the Conductor container, and the
-  # `run` and `deployment` commands then
-  # write generated Ansible playbooks to it.
   deployment_output_path: /srv/alex 
-  # When using the k8s or openshift engines,
-  # use the following to authorize with the API.
-  # Values set here will be passed to the Ansible
-  # modules. Any file paths will be mounted
-  # to the conductor container, allowing the `run`
-  # command to access the API.
-  # k8s_auth:
-  # path to a K8s config file
-  # config_file:
-  # name of a context found within the config.json file
-  # context:
-  # URL for accessing the K8s API
-  # host:
-  # An API authentication token
-  # api_key:
-  # Path to a ca cert file
-  # ssl_ca_cert:
-  # Path to a cert file
-  # cert_file:
-  # Path to a key file
-  # key_file:
-  # boolean, indicating if SSL certs should be validated
-  # verify_ssl:
-  # When using the k8s or openshift engines,
-  # use the following to set the namespace.
-  # If not set, the project name will be used.
-  # For openshift, the namespace maps to a project,
-  # and description and display_name are supported.
-  # k8s_namespace:
-  #  name:
-  #  description:
-  #  display_name:
 services:
   alex:
     from: ecla/ansible:latest
-    roles:
-      - "rsum"
-    # environment:
-    #  DATABASE_URL: "pgsql://psql@172.17.0.1:5432/alex"
-    ports:
-      - "8192:8192"
-    command: ["/usr/bin/supervisord", "-n"]
 registries: {}
-# Add optional registries used for deployment. For example:
-#  google:
-#    url: https://gcr.io
-#    namespace: my-cool-project-xxxxxx
 ...
 # vim: ft=ansible:
