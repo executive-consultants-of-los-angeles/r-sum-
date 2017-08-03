@@ -1,6 +1,6 @@
 ---
 - name: "Install rsum."
-  hosts: "localhost"
+  hosts: "alex"
   roles:
     - rsum
 ...
