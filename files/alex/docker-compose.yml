@@ -2,6 +2,7 @@
 version: '2'
 services:
   alex:
+    build: .
     image: ecla/ansible:latest
     ports:
      - "8192:8192"
