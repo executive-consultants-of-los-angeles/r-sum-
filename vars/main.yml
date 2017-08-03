@@ -1,4 +1,10 @@
 ---
+apt_install_list:
+    - net-tools
+    - postgresql-client
+    - rsyslog
+    - supervisor
+    - vim
 name: alex
 pip_install_list:
   - gunicorn

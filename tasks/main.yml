@@ -7,17 +7,12 @@
   pip:
     name: "{{ item }}"
     state: present
-  with_items: "{{ pip_items }}"
+  with_items: "{{ pip_install_list }}"
 - name: "Install some packages with apt."
   apt:
     name: "{{ item }}"
     state: present
-  with_items:
-    - net-tools
-    - postgresql-client
-    - rsyslog
-    - supervisor
-    - vim
+  with_items: "{{ apt_install_list }}"
 - name: "Create rsum directory."
   file:
     state: directory
