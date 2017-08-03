@@ -15,11 +15,9 @@ platforms:
       - "/srv/rsum:/srv/rsum:rw"
   - name: "psql-alex"
     command: "/usr/bin/supervisord -n"
-    image: ecla/ansible:latest
+    image: ecla/psql:latest
     ports:
       - "5432:5432"
-    volumes:
-      - "/srv/psql-alex:/srv/psql-alex:rw"
 provisioner:
   name: ansible
   lint:
