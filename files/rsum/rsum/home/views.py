@@ -54,6 +54,7 @@ def index(request):
                         'competence': content.get('content').get(content.get('name')).get('competence'),
                     }
                 })
+    print(json.dumps(skillset, indent=2))
     context.get('cv')[2].update({
         'skills': skillset,
     })            

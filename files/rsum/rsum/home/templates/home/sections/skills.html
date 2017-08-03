@@ -1,4 +1,4 @@
-{{ section.skills }}
+{# section.skills #}
 
     <h2>Skills</h2>
     <!-- Progress Box -->
@@ -9,10 +9,12 @@
           <div class="progress-bar bg-color-base" role="progressbar" data-width="{{ data.competence }}"></div>
         </div>
         {% for related,skills in data.iteritems %}
-          <h6 style="padding-left: 20px;">{{ skills.name }} <span class="color-heading pull-right">{{ skills.competence}}%</span></h6>
+          {% if related != 'competence'  and related != 'index' %}
+          <h6 style="padding-left: 20px;">{{ skills.name }} <span style="font-size: 8pt;">({{ skills.experience }})</span><span class="color-heading pull-right">{{ skills.competence}}%</span></h6>
           <div class="progress progress-sub">
             <div class="progress-bar bg-color-base" role="progressbar" data-width="{{ skills.competence }}"></div>
           </div>
+          {% endif %}
         {% endfor %}
         </div>
         <!-- End Progress Box -->
