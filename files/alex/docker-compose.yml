@@ -1,0 +1,8 @@
+---
+version: '2'
+services:
+  alex:
+    ports:
+     - "8192:8192"
+...
+# vim: ft=ansible:
