@@ -232,16 +232,15 @@ experience:
         - "Automated infrastructure tasks with Ansible."
 education:
   id: 6
-  broadmoor:
-    name: "Broadmoor Elementary School"
-    location: "Lafayette, Louisiana"
-    studies: "Kindergarten Diploma, General Studies, Kindergarten"
-    duration: "1988 – 1989 (1 year)"
-    projects:
-      tests:
-        - "I have always tested well"
-        - "that is how I graduated with a GPA in the 1.7 range"
-        - "it was a very prestigious kindergarten"
+  name: "Broadmoor Elementary School"
+  location: "Lafayette, Louisiana"
+  studies: "Kindergarten Diploma, General Studies, Kindergarten"
+  duration: "1988 – 1989 (1 year)"
+  projects:
+    tests:
+      - "I have always tested well"
+      - "that is how I graduated with a GPA in the 1.7 range"
+      - "it was a very prestigious kindergarten"
 contact:
   id: 7
   title: "Contact Mr. Harris"
