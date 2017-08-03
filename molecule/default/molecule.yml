@@ -13,6 +13,11 @@ platforms:
       - "8192:8192"
     volumes:
       - "/srv/rsum:/srv/rsum:rw"
+  - name: "psql"
+    command: "/usr/bin/supervisord -n"
+    image: ecla/psql:latest
+    ports:
+      - "5433:5432"
 provisioner:
   name: ansible
   lint:
