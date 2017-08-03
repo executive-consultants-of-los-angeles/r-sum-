@@ -25,25 +25,11 @@
   file:
     state: directory
     dest: /srv/rsum
-- name: "Start a django project."
-  command: "/usr/local/bin/django-admin startproject rsum"
-  args:
-    creates: "/srv/rsum/rsum"
-    chdir: "/srv/rsum"
-- name: "Create an app in the new project."
-  command: "/srv/rsum/rsum/manage.py startapp home"
-  args:
-    creates: "/srv/rsum/rsum/home"
-    chdir: "/srv/rsum/rsum/"
-- name: "Migrate the database."
-  command: "/srv/rsum/rsum/manage.py migrate"
-  args:
-    creates: "/srv/rsum/rsum/db.sqlite3"
-    chdir: "/srv/rsum/rsum/"
-- name: "Copy settings.py to the correct location."
-  copy:
-    src: "files/rsum/rsum/rsum/settings.py"
-    dest: "/srv/rsum/rsum/rsum/settings.py"
+- name: "Link rsum app to correct path."
+  file:
+    state: link
+    src: /root/.ansible/roles/rsum
+    dest: /srv/rsum/rsum
 - name: "Copy settings for supervisord."
   copy:
     src: "supervisord.conf"
