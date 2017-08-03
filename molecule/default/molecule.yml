@@ -11,8 +11,6 @@ platforms:
     image: ecla/ansible:latest
     ports:
       - "8192:8192"
-    volumes:
-      - "/srv/rsum:/srv/rsum:rw"
 provisioner:
   name: ansible
   lint:
