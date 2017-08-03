@@ -19,8 +19,8 @@ class CV(models.Model):
     def check_sections(self):
         cv_i = CV.objects.all()
         if not cv_i.exists():
-            cv_f = open('/srv/rsum/cvs/abridged.yml')
-            #cv_f = open('/srv/rsum/cvs/complete.yml')
+            #cv_f = open('/srv/rsum/cvs/abridged.yml')
+            cv_f = open('/srv/rsum/cvs/complete.yml')
             cv_d = yaml.load(cv_f.read())
             self.save_cv(cv_d)
             cv_i = CV.objects.all()
