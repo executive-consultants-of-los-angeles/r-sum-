@@ -17,7 +17,6 @@
   copy:
     src: "files/r.yml"
     dest: "/tmp/r.yml"
-    creates: "/tmp/r.yml" 
 - name: "Install role."
   command: "ansible-galaxy install -r /tmp/r.yml"
   args:
@@ -29,7 +28,7 @@
 - name: "Link rsum app to correct path."
   file:
     state: link
-    src: /root/.ansible/roles/rsum
+    src: /root/.ansible/roles/rsum/files/rsum/rsum
     dest: /srv/rsum/rsum
 - name: "Copy settings for supervisord."
   copy:
