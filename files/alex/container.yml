@@ -48,7 +48,7 @@ services:
   alex:
     from: ecla/ansible:latest
     roles:
-      - rsum
+      - "rsum"
     # environment:
     #  DATABASE_URL: "pgsql://psql@172.17.0.1:5432/alex"
     ports:
