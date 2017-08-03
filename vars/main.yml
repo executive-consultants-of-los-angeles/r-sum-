@@ -5,7 +5,7 @@ apt_install_list:
     - rsyslog
     - supervisor
     - vim
-name: alex
+cv_name: alex
 pip_install_list:
   - gunicorn
   - django
