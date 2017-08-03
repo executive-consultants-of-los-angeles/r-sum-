@@ -1,3 +1,4 @@
+---
 version: "2"
 settings:
   # The Conductor container does the heavy lifting, and provides a portable
@@ -56,3 +57,5 @@ registries: {}
   #  google:
   #    url: https://gcr.io
   #    namespace: my-cool-project-xxxxxx   
+...
+# vim: ft=ansible:
