@@ -5,6 +5,6 @@ services:
     build: .
     image: ecla/ansible:latest
     ports:
-      - "0.0.0.0:8192:8192"
+      - "0.0.0.0:2049:2049"
 ...
 # vim: ft=ansible:
