@@ -17,7 +17,7 @@ platforms:
     command: "/usr/bin/supervisord -n"
     image: ecla/psql:latest
     ports:
-      - "5432:5432"
+      - "5433:5432"
 provisioner:
   name: ansible
   lint:
