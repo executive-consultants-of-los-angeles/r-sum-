@@ -67,7 +67,7 @@ skills:
       experience: "15 years"
     scm:
       name: "Source Code Management"
-      comptence: 85
+      competence: 85
       experience: "10 years"
     git:
       name: "git"
@@ -92,6 +92,7 @@ skills:
   programming:
     id: 5
     name: "Programming Languages"
+    competence: 75
     python:
       name: "Python"
       competence: 80
@@ -111,6 +112,7 @@ skills:
   databases:
     id: 6
     name: "Relational and Other Databases"
+    competence: 75
     postgresql:
       name: "PostgreSQL"
       competence: 75
