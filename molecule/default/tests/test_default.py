@@ -12,6 +12,6 @@ def test_hosts_file(host):
 
 
 def test_tcp_connection(host):
-    s = host.socket('tcp://0.0.0.0:8192')
+    s = host.socket('tcp://0.0.0.0:8193')
 
     assert s.is_listening
