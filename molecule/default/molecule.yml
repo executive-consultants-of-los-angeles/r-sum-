@@ -6,13 +6,20 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: "rsum"
+  - name: "rsum-alex"
     command: "/usr/bin/supervisord -n"
     image: ecla/ansible:latest
     ports:
       - "8192:8192"
     volumes:
       - "/srv/rsum:/srv/rsum:rw"
+  - name: "psql-alex"
+    command: "/usr/bin/supervisord -n"
+    image: ecla/ansible:latest
+    ports:
+      - "5432:5432"
+    volumes:
+      - "/srv/psql-alex:/srv/psql-alex:rw"
 provisioner:
   name: ansible
   lint:
