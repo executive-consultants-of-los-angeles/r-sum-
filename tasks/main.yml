@@ -20,24 +20,24 @@
     - supervisor
     - vim
 - name: "Start a django project."
-  command: "/usr/local/bin/django-admin startproject rsum"
+  command: "/usr/local/bin/django-admin startproject rsum-{{ name }}"
   args:
-    creates: "/srv/rsum/rsum"
-    chdir: "/srv/rsum"
+    creates: "/srv/rsum-{{ name }}/rsum"
+    chdir: "/srv/rsum-{{ name }}"
 - name: "Create an app in the new project."
-  command: "/srv/rsum/rsum/manage.py startapp home"
+  command: "/srv/rsum-{{ name }}/rsum/manage.py startapp home"
   args:
-    creates: "/srv/rsum/rsum/home"
-    chdir: "/srv/rsum/rsum/"
+    creates: "/srv/rsum-{{ name }}/rsum/home"
+    chdir: "/srv/rsum-{{ name }}/rsum/"
 - name: "Migrate the database."
-  command: "/srv/rsum/rsum/manage.py migrate"
+  command: "/srv/rsum-{{ name }}/rsum/manage.py migrate"
   args:
-    creates: "/srv/rsum/rsum/db.sqlite3"
-    chdir: "/srv/rsum/rsum/"
+    creates: "/srv/rsum-{{ name }}/rsum/db.sqlite3"
+    chdir: "/srv/rsum-{{ name }}/rsum/"
 - name: "Copy settings.py to the correct location."
   copy:
     src: "files/rsum/rsum/rsum/settings.py"
-    dest: "/srv/rsum/rsum/rsum/settings.py"
+    dest: "/srv/rsum-{{ name }}/rsum/rsum/settings.py"
 - name: "Copy settings for supervisord."
   copy:
     src: "supervisord.conf"
