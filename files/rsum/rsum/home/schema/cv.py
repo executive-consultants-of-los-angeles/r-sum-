@@ -22,7 +22,8 @@ class CV(models.Model):
             #cv_f = open('/srv/rsum/cvs/abridged.yml')
             cv_f = open('/srv/rsum/cvs/complete.yml')
             cv_d = yaml.load(cv_f.read())
-            self.save_cv(cv_d)
+            cv_f.close()
+            self.save_cv(cv_d, 'complete', 'acecv')
             cv_i = CV.objects.all()
             return cv_i
         else:
@@ -40,17 +41,16 @@ class CV(models.Model):
         }
         return cv
 
-    def save_cv(self, cv_d):
-        cv_i = CV()
-        cv_i.name = 'abridged' 
-        cv_i.save()
-
+    def save_cv(self, cv_d, name, template):
+        cv = CV()
+        cv.name = name 
+        cv.template = template
+        cv.save()
 
         for name, section in sorted(cv_d.items(), key = lambda t:t[1].get('id')):
             s = Section()
-            s.save_section(cv_i, section, name)
-
-        return CV.objects.values_list() 
+            s.save_section(cv, section, name)
+        return cv 
 
     class Meta:
         app_label = "home"
