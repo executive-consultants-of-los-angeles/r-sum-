@@ -1,6 +1,6 @@
 ---
 - name: "converge"
-  hosts: rsum-{{ name }} 
+  hosts: rsum
   roles:
     - role:
         "executive-consultants-of-los-angeles.rsum"
