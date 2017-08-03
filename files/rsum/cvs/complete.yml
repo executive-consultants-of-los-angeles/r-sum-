@@ -553,9 +553,9 @@ education:
       - "it was a very prestigious kindergarten"
 contact:
   id: 7
-  title: "Contact Mr. Harris"
+  title: "Get in Touch with Ed"
   message:
-    "Mr. Harris is available most weekdays after noon Pacific Time."
+    "Ed is available most weekdays after noon Pacific Time."
   location: "Los Angeles, California, United States of America"
   phone: "(424) 209-2976"
   email: "alex@ecla.solutions"
