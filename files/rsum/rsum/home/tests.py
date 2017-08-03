@@ -12,6 +12,7 @@ from home.schema.entryitem import EntryItem
 from home.schema.entry import Entry
 
 import home
+import yaml
 
 home.CV = CV()
 home.Section = Section()
@@ -20,6 +21,14 @@ home.Project = Project()
 home.ProjectItem = ProjectItem()
 home.EntryItem = EntryItem()
 home.Entry = Entry()
+
+class CVTestCase(TestCase):
+    def setUp(self):
+        f = open('/srv/rsum/rsum/cvs/abridged.yml')
+        cvd = yaml.load(f.read())
+
+    def test_save_cv(self):
+        print(cvd)        
 
 class EntryItemTestCase(TestCase):
     def setUp(self):
