@@ -6,8 +6,8 @@ services:
   alex:
     ports:
       - "8192:8192"
-    roles:
-      - rsum
+    # roles:
+    #  - 'executive-consultants-of-los-angeles.rsum'
 registries: {}
 ...
 # vim: ft=ansible:
