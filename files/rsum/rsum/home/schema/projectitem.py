@@ -1,4 +1,4 @@
-#/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from __future__ import print_function
@@ -8,10 +8,11 @@ from entry import Entry
 
 import json
 
+
 class ProjectItem(models.Model):
     project = models.ForeignKey('home.Project', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
-    content = models.CharField(max_length=200, null = True) 
+    content = models.CharField(max_length=200, null=True)
     iterable = models.BooleanField(default=False)
 
     def get_project_item(self, project):
@@ -23,13 +24,13 @@ class ProjectItem(models.Model):
 
             for pi in list(
                 ProjectItem.objects.filter(
-                    project = project
+                    project=project
                 ).order_by('id').values()
             ):
                 pid.get(name).update({
                     pi.get('name'): pi.get('content')
                 })
-            return pid 
+            return pid
         except Exception as e:
             print(e)
             pass
@@ -37,7 +38,7 @@ class ProjectItem(models.Model):
         project_items = []
         for project_item in list(
             ProjectItem.objects.filter(
-                project = project
+                project=project
             ).order_by('id').values()
         ):
             if project_item.get('content') == u"<type 'dict'>":
@@ -45,23 +46,25 @@ class ProjectItem(models.Model):
                 project_item.update({
                     'content': pe.get_entry(
                         ProjectItem.objects.filter(
-                            id = project_item.get('id')
+                            id=project_item.get('id')
                         )
                     )
-                })        
+                })
                 project_items.append(project_item)
             else:
-                project_items.append({project_item.get('name'): project_item.get('content')})
-        #print(json.dumps(project_items, indent=1))
+                project_items.append({
+                    project_item.get('name'): project_item.get('content')
+                })
+        # print(json.dumps(project_items, indent=1))
         return project_items
 
     def save_project_item(self, project_item, project):
-        if type(project_item) == type(dict()):
+        if isinstance(project_item, dict):
             for key, p_entry in project_item.iteritems():
                 pi_i = ProjectItem()
                 pi_i.project = project
                 pi_i.name = key
-                if type(p_entry) == type(dict()):
+                if isinstance(p_entry, dict):
                     pi_i.content = type(p_entry)
                     pi_i.iterable = True
                     pi_i.save()
@@ -70,9 +73,9 @@ class ProjectItem(models.Model):
                 else:
                     pi_i.content = p_entry
                     pi_i.save()
-            return ProjectItem.objects.values_list() 
+            return ProjectItem.objects.values_list()
 
-        if type(project_item) == type(str()):
+        if isinstance(project_item, str):
             pi_i = ProjectItem()
             pi_i.project = project
             pi_i.name = "<type 'str'>"
