@@ -29,6 +29,36 @@ def index(request):
         'cv': sections
     }
 
+    skills = context.get('cv')[2].get('skills').get('content')
+    skillset = {} 
+    for index,skill in enumerate(skills):
+        for content in skill.get('content'):
+            if content.get('name') == 'name':
+                skillset.update({
+                    content.get('content'): {
+                        'index': index,
+                    }
+                })
+
+    for name,value in skillset.iteritems():
+        for content in skills[value.get('index')].get('content'):
+            if content.get('name') == 'competence':
+                skillset.get(name).update({
+                    'competence': content.get('content'),
+                })
+            elif content.get('name') != 'id' and content.get('name') != 'name':
+                skillset.get(name).update({
+                    content.get('name'): {
+                        'experience': content.get('content').get(content.get('name')).get('experience'),
+                        'name': content.get('content').get(content.get('name')).get('name'),
+                        'competence': content.get('content').get(content.get('name')).get('competence'),
+                    }
+                })
+    print(json.dumps(skillset, indent=2))
+    context.get('cv')[2].update({
+        'skills': skillset,
+    })            
+
     values = {}
     values_list = context.get('cv')[3].get('values').get('content')[1].get('content')
     for i in values_list:
@@ -61,4 +91,10 @@ def index(request):
     #print(json.dumps(context.get('cv')[3].get('values').get('content')[1], indent=1))
     #print(type(values))
 
+    education = context.get('cv')[5].get('education').get('content')[3].get('content')[0]
+    projects = education.get('content').replace("'",'').replace("[",'').replace("]",'').split(", ")
+    context.get('cv')[5].get('education').update({
+        'projects': projects
+    })
+    
     return render(request, 'home/index.html', context)

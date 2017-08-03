@@ -1,5 +1,5 @@
 {% load static %}
-{# section.education.content.0.content #}
+{# section.education.projects #}
         <!-- Promo Banner -->
         <div class="promo-banner parallax-window" data-parallax="scroll" data-image-src="{% static 'img/1920x1080/01.jpg' %}">
             <div 
@@ -10,19 +10,15 @@
               class="container-sm content-lg">
                 <h2 style="color: black;" class="promo-banner-title">{{ section.education.name|title }}</h2>
                 <p class="promo-banner-text">
-                  {% for sub in section.education.content %}
-                    {% for i in sub.content %}
-                      {{ i.content }}
-                      {% for j in i.content %}
-                        {{ j.0 }}
-                        {% if j.0.name == 'projects' %}
-                          {% include 'home/sections/projects/project.html' %}
-                        {% else %}
-                          <h3 style="color: black;" class="promo-banner-text">{{ j.0.content }}</h3>
-                        {% endif %}
-                      {% endfor %}
-                    {% endfor %}
+                  <h3 style="font-size: 20pt; font-variant: small-caps; color: black;" class="promo-banner-text">{{ section.education.content.0.content.0.content }}</h3>
+                  <h4 style="font-size: 16pt; color: black;" class="promo-banner-text">{{ section.education.content.4.content.0.content }}</h4>
+                  <h4 style="font-size: 16pt; color: black;" class="promo-banner-text">{{ section.education.content.2.content.0.content }}</h4>
+                  <h4 style="font-size: 16pt; color: black;" class="promo-banner-text">Tests</h4>
+                  <ul>
+                  {% for project in section.education.projects %}
+                      <li style="font-size: 14pt; color: black;">{{ project }}</li>
                   {% endfor %}
+                  </ul>
                 </p>
             </div>
         </div>
