@@ -10,7 +10,7 @@
   hosts: mrsum
   tasks:
     - name: "add mpsql to hosts file"
-      command: "echo '{{ hostvars['mpsql']['ansible_default_ipv4']['address'] mpsql }}' >> /etc/hosts; touch /tmp/done"
+      command: "echo '{{ hostvars['mpsql']['ansible_default_ipv4']['address'] }} mpsql' >> /etc/hosts; touch /tmp/done"
       args:
         creates: /tmp/done
 - name: "converge"
