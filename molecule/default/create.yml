@@ -44,10 +44,10 @@
         image: "molecule_local/{{ item.image }}"
         state: started
         recreate: "False"
-        networks:
-          - name: bridge
-            links:
-              - "mpsql:db"
+        etc_hosts: >
+          {
+            "mpsql": {{ hostvars['mpsql']['ansible_default_ipv4']['address'] }},
+          }
         command: "{{ item.command | default('/usr/bin/supervisord -n') }}"
         privileged: "{{ item.privileged | default(omit) }}"
         ports: "{{ item.ports | default(omit) }}"
