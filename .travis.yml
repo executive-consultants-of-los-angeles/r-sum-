@@ -1,15 +1,20 @@
+---
 sudo: required
 language: python
 dist: xenial
 before_install:
-- sudo apt-get -qq update
-- sudo apt-get install ansible
-- ansible -m apt_repository -a 'repo=" deb http://cz.archive.ubuntu.com/ubuntu xenial
-  main universe " state=present' -s localhost
-- ansible -m apt -a 'update_cache=yes' -s localhost
-- ansible -m apt -a 'name=docker.io state=latest' -s localhost
-- sudo apt-get install gcc
-- sudo apt-get install build-essential
+  - sudo apt-get -qq update
+  - sudo apt-get install ansible
+  - ansible -m apt_repository -a
+      'repo="
+        deb http://cz.archive.ubuntu.com/ubuntu xenial main universe
+      "
+      state=present'
+    -s localhost
+  - ansible -m apt -a 'update_cache=yes' -s localhost
+  - ansible -m apt -a 'name=docker.io state=latest' -s localhost
+  - sudo apt-get install gcc
+  - sudo apt-get install build-essential
 install:
 - pip install git+https://github.com/metacloud/molecule.git
 - pip install git+https://github.com/docker/docker-py.git
@@ -27,3 +32,5 @@ deploy:
   local-dir: rsum
   on:
     repo: executive-consultants-of-los-angeles/rsum
+...
+# vim: ft=ansible:
