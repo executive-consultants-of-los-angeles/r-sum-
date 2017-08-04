@@ -1,8 +1,8 @@
 ---
-- name: "Install git-completion.bash."
-  get_url:
-    url: "http://bit.ly/2tB6adK"
-    dest: "/root/.git-completion.bash"
+- name: "add mpsql to hosts file"
+  command: "echo '{{ hostvars['mpsql']['ansible_default_ipv4']['address'] }} mpsql' >> /etc/hosts; touch /tmp/done"
+  args:
+    creates: /tmp/done
 - name: "Install some packages with pip."
   pip:
     name: "{{ item }}"
