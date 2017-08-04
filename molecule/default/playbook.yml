@@ -1,8 +1,8 @@
 ---
 - name: "converge"
-  hosts: rsum
+  hosts: mrsum
   roles:
     - role:
-        "executive-consultants-of-los-angeles.rsum"
+        "rsum"
 ...
 # vim: ft=ansible:

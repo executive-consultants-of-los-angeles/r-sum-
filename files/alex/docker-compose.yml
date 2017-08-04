@@ -1,0 +1,11 @@
+---
+version: '2'
+services:
+  alex:
+    container_name: alex
+    command: /usr/bin/supervisord -n
+    image: ecla/alex:latest
+    ports:
+      - "0.0.0.0:8192:8192"
+...
+# vim: ft=ansible:
