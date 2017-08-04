@@ -2,8 +2,6 @@
 sudo: required
 language: python
 dist: xenial
-services:
-  - docker
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install ansible
@@ -14,7 +12,7 @@ before_install:
       state=present'
     -s localhost
   - ansible -m apt -a 'update_cache=yes' -s localhost
-  - sudo apt-get install docker.io
+  - ansible -m apt -a 'name=docker.io state=latest' -s localhost
   - sudo apt-get install gcc
   - sudo apt-get install build-essential
 install:
