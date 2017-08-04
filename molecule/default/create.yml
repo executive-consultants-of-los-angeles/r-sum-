@@ -49,13 +49,23 @@
         ports: "{{ item.ports | default(omit) }}"
         volumes: "{{ item.volumes | default(omit) }}"
         capabilities: "{{ item.capabilities | default(omit) }}"
+        etc_hosts:
+          mpsql: "{{ item.mpsql }}"
+          mrsum: "{{ item.mrsum }}"
       with_items: "{{ molecule_yml.platforms }}"
-    - name: "Set hosts."
-      docker_container:
+
+    - name: "Create mrsum network."
+      docker_network:
         name: "mrsum"
-        etc_hosts: >
-          {
-            "mpsql": {{ hostvars['mpsql']['ansible_default_ipv4']['address'] }},
-          }
+        state: "present"
+        driver_options:
+          com.docker.network.bridge.name: mrsum 
+        ipam_options:
+          subnet: '172.3.26.0/16'
+          gateway: 172.3.26.1
+          iprange: '192.168.1.0/24'
+        appends: "yes"
+        connected: "{{ item.name }}"
+      with_items: "{{ molecule_yml.platforms }}"
 ...
 # vim: ft=ansible:
