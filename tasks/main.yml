@@ -27,8 +27,8 @@
   args:
     creates: /srv/rsum/rsum/home/migrations
 - django_manage:
-  command: migrate
-  app_path: /srv/rsum/rsum
+    command: migrate
+    app_path: /srv/rsum/rsum
 #- name: "Migrate database."
 #  shell: "/srv/rsum/rsum/manage.py migrate >> /tmp/migrated 2>&1"
 #  args:
