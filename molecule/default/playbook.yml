@@ -10,7 +10,7 @@
   hosts: mrsum
   tasks:
     - debug:
-        var: hostvars[mpsql]
+        var: hostvars['mpsql']
 - name: "converge"
   hosts: mrsum
   roles:
