@@ -14,9 +14,9 @@
     src: "files/r.yml"
     dest: "/tmp/r.yml"
 - name: "Install role."
-  command: "ansible-galaxy install -r /tmp/r.yml"
+  command: "ansible-galaxy install -r /tmp/r.yml --force"
   args:
-    creates: "/root/.ansible/roles/rsum"
+    creates: "/root/.ansible/roles/rsum/files"
 - name: "Link rsum app to correct path."
   file:
     state: link

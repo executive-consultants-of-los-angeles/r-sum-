@@ -16,6 +16,8 @@ platforms:
     image: ecla/ansible:latest
     ports:
       - "8193:8193"
+    volumes:
+      - "/srv:/root/.ansible/roles:rw"
 provisioner:
   name: ansible
   lint:
