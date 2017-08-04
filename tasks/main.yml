@@ -28,8 +28,14 @@
     dest: /srv/rsum
 - name: "Copy settings for supervisord."
   copy:
+    src: "supervisord-m.conf"
+    dest: "/etc/supervisor/supervisord.conf"
+  when: inventory_hostname == 'mrsum'
+- name: "Copy settings for supervisord."
+  copy:
     src: "supervisord.conf"
     dest: "/etc/supervisor/supervisord.conf"
+  when: inventory_hostname != 'mrsum'
 - name: "Update services state."
   supervisorctl:
     name: "{{ item }}"

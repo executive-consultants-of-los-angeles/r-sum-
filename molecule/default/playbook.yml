@@ -1,6 +1,6 @@
 ---
 - name: "converge"
-  hosts: rsum
+  hosts: mrsum
   roles:
     - role:
         "rsum"

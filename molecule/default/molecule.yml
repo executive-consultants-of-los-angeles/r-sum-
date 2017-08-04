@@ -6,8 +6,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: "rsum"
-    hostname: "molecule"
+  - name: "mrsum"
     command: "/usr/bin/supervisord -n"
     image: ecla/ansible:latest
     ports:
