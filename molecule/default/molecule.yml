@@ -11,6 +11,11 @@ platforms:
     image: ecla/ansible:latest
     ports:
       - "8193:8193"
+  - name: "mpsql"
+    command: "/usr/bin/supervisord -n"
+    image: ecla/psql:latest
+    ports:
+      - "5433:5432"
 provisioner:
   name: ansible
   lint:
