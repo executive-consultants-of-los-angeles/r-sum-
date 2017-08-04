@@ -44,15 +44,18 @@
         image: "molecule_local/{{ item.image }}"
         state: started
         recreate: "False"
-        etc_hosts: >
-          {
-            "mpsql": {{ hostvars['mpsql']['ansible_default_ipv4']['address'] }},
-          }
         command: "{{ item.command | default('/usr/bin/supervisord -n') }}"
         privileged: "{{ item.privileged | default(omit) }}"
         ports: "{{ item.ports | default(omit) }}"
         volumes: "{{ item.volumes | default(omit) }}"
         capabilities: "{{ item.capabilities | default(omit) }}"
       with_items: "{{ molecule_yml.platforms }}"
+    - name: "Set hosts."
+      docker_container:
+        name: "mrsum"
+        etc_hosts: >
+          {
+            "mpsql": {{ hostvars['mpsql']['ansible_default_ipv4']['address'] }},
+          }
 ...
 # vim: ft=ansible:
