@@ -6,6 +6,11 @@
       supervisorctl:
         state: "present"
         name: "psql"
+- name: "add host"
+  hosts: mrsum
+  tasks:
+    - debug:
+        var: hostvars
 - name: "converge"
   hosts: mrsum
   roles:
