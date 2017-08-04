@@ -9,6 +9,8 @@ platforms:
   - name: "mrsum"
     command: "/usr/bin/supervisord -n"
     image: ecla/ansible:latest
+    links:
+      - "mpsql:mpsql"
     ports:
       - "8193:8193"
   - name: "mpsql"
