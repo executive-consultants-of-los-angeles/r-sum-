@@ -1,8 +1,15 @@
 ---
+- name: "psql"
+  hosts: mpsql
+  tasks:
+    - name: "start psql"
+      supervisorctl:
+        state: "present"
+        name: "psql"
 - name: "converge"
-  hosts: all
+  hosts: mrsum
   roles:
     - role:
-        "executive-consultants-of-los-angeles.rsum"
+        "rsum"
 ...
 # vim: ft=ansible:

@@ -1,7 +1,5 @@
 ---
 - name: "rsum"
   src: executive-consultants-of-los-angeles.rsum
-- name: "psql"
-  src: executive-consultants-of-los-angeles.psql
 ...
 # vim: ft=ansible:
