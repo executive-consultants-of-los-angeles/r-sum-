@@ -17,7 +17,7 @@ platforms:
     ports:
       - "8193:8193"
     volumes:
-      - "/root/.ansible/roles/rsum:/srv/rsum:rw"
+      - "/srv:/root/.ansible/roles:rw"
 provisioner:
   name: ansible
   lint:
