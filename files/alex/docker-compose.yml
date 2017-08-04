@@ -7,5 +7,7 @@ services:
     image: ecla/alex:latest
     ports:
       - "0.0.0.0:8192:8192"
+    volumes:
+      - "/srv/alex:/root/.ansible/roles/rsum:rw"
 ...
 # vim: ft=ansible:
