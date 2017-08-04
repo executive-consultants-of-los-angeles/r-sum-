@@ -4,5 +4,18 @@
   roles:
     - role:
         "rsum"
+- name: "supervisor"
+  hosts: rsum
+  tasks:
+    - file:
+        dest: /etc/supervisor/supervisord.conf
+        state: absent
+    - copy:
+        src: tests/supervisord.conf
+        dest: /etc/supervisor/supervisord.conf
+        force: no
+    - supervisorctl:
+        name: gunicorn
+        state: present
 ...
 # vim: ft=ansible:
