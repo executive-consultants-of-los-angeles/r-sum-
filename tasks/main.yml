@@ -27,7 +27,9 @@
   args:
     creates: /srv/rsum/rsum/home/migrations
 - name: "Migrate database."
-  command: "/srv/rsum/rsum/manage.py migrate"
+  command: "/srv/rsum/rsum/manage.py migrate > /tmp/migrated"
+  args:
+    creates: /tmp/migrated
 - name: "Copy settings for supervisord."
   copy:
     src: "supervisord-m.conf"
