@@ -26,6 +26,12 @@
     state: link
     src: /root/.ansible/roles/rsum/files/rsum
     dest: /srv/rsum
+- name: "Make migrations."
+  command: "/srv/rsum/rsum/manage.py makemigrations home"
+  args:
+    creates: /srv/rsum/rsum/home/migrations
+- name: "Migrate database."
+  command: "/srv/rsum/rsum/manage.py migrate"
 - name: "Copy settings for supervisord."
   copy:
     src: "supervisord-m.conf"
