@@ -16,11 +16,11 @@ before_install:
   - sudo apt-get install gcc
   - sudo apt-get install build-essential
 install:
-- pip install git+https://github.com/metacloud/molecule.git
-- pip install git+https://github.com/docker/docker-py.git
-- pip install ansible-container
+  - pip install git+https://github.com/metacloud/molecule.git
+  - pip install git+https://github.com/docker/docker-py.git
+  - pip install ansible-container
 script:
-- molecule test
+  - molecule test
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
 deploy:
@@ -31,6 +31,6 @@ deploy:
   bucket: travis-assets
   local-dir: rsum
   on:
-    repo: executive-consultants-of-los-angeles/rsum
+    repo: "executive-consultants-of-los-angeles/rsum"
 ...
 # vim: ft=ansible:
