@@ -9,5 +9,11 @@ services:
       - "0.0.0.0:8192:8192"
     volumes:
       - "/srv/alex:/root/.ansible/roles/rsum:rw"
+  alex_pg:
+    container_name: alex_pg
+    command: /usr/bin/supervisord -n
+    image: ecla/psql:latest
+    ports:
+      - "0.0.0.0:5432:5432"
 ...
 # vim: ft=ansible:
