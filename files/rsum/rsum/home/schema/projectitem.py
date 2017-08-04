@@ -12,7 +12,7 @@ import json
 class ProjectItem(models.Model):
     project = models.ForeignKey('home.Project', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
-    content = models.CharField(max_length=200, null=True)
+    content = models.TextField(null=True)
     iterable = models.BooleanField(default=False)
 
     def get_project_item(self, project):

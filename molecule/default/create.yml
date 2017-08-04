@@ -45,6 +45,10 @@
         image: "molecule_local/{{ item.image }}"
         state: started
         recreate: "False"
+        networks:
+          - name: mrsum_test
+            links:
+              - "mpsql:db"
         command: "{{ item.command | default('/usr/bin/supervisord -n') }}"
         privileged: "{{ item.privileged | default(omit) }}"
         ports: "{{ item.ports | default(omit) }}"

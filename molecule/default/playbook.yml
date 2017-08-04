@@ -1,4 +1,11 @@
 ---
+- name: "psql"
+  hosts: mpsql
+  tasks:
+    - name: "start psql"
+      supervisorctl:
+        state: "present"
+        name: "psql"
 - name: "converge"
   hosts: mrsum
   roles:
