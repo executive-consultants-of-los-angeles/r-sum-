@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'rsum.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-if socket.get('hostname') == 'mrsum': 
+if socket.gethostname() == 'mrsum': 
     db_host = 'mpsql'
     db_port = '5433'
 else:

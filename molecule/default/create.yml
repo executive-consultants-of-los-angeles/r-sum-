@@ -2,7 +2,6 @@
 - name: Setup
   hosts: localhost
   connection: local
-  gather_facts: "False"
   vars:
     molecule_file: "{{ lookup('env', 'MOLECULE_FILE') }}"
     molecule_ephemeral_directory:
@@ -36,9 +35,9 @@
           }}"
         force: "{{ item.item.force | default(True) }}"
       with_items: "{{ platforms.results }}"
-      when: platforms.changed
+      # when: platforms.changed
 
-    - name: Create molecule instance(s)
+    - name: "Create molecule instance(s)"
       docker_container:
         name: "{{ item.name }}"
         hostname: "{{ item.name }}"
@@ -46,7 +45,7 @@
         state: started
         recreate: "False"
         networks:
-          - name: mrsum_test
+          - name: bridge
             links:
               - "mpsql:db"
         command: "{{ item.command | default('/usr/bin/supervisord -n') }}"
