@@ -6,6 +6,11 @@ driver:
 lint:
   name: yamllint
 platforms:
+  - name: "mpsql"
+    command: "/usr/bin/supervisord -n"
+    image: ecla/psql:latest
+    ports:
+      - "5433:5432"
   - name: "mrsum"
     command: "/usr/bin/supervisord -n"
     image: ecla/ansible:latest

@@ -1,6 +1,8 @@
 ---
 apt_install_list:
+    - iputils-ping
     - net-tools
+    - nmap
     - postgresql-client
     - rsyslog
     - supervisor
