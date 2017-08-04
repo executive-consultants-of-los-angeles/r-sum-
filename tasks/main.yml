@@ -26,13 +26,10 @@
   command: "/srv/rsum/rsum/manage.py makemigrations home"
   args:
     creates: /srv/rsum/rsum/home/migrations
-- django_manage:
+- name: "Migrate db."
+  django_manage:
     command: migrate
     app_path: /srv/rsum/rsum
-#- name: "Migrate database."
-#  shell: "/srv/rsum/rsum/manage.py migrate >> /tmp/migrated 2>&1"
-#  args:
-#    creates: /tmp/migrated
 - name: "Copy settings for supervisord."
   copy:
     src: "supervisord-m.conf"
