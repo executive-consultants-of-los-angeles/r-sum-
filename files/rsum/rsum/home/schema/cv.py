@@ -37,12 +37,10 @@ class CV(models.Model):
                 )
             ),
         }
-        print(json.dumps(cv.get('sections'), indent=1))
         return cv
 
     def get_experience(self, context):
         experience_list = context.get('cv')[4].get('content')[1:]
-        # print(json.dumps(experience_list[0].get('content')[-1],indent=1))
         for k, v in enumerate(experience_list):
             for p, i in v.get(
                 'content'

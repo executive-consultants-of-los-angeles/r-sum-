@@ -18,7 +18,7 @@ def index(request):
     cv = cv_instance.get_cv(cv_id=cv_id)
 
     context = {
-        'cv': cv 
+        'cv': cv.get('sections') 
     }
 
     skills = cv_instance.get_skills(context)
@@ -27,22 +27,22 @@ def index(request):
     })
 
     values = cv_instance.get_values(context) 
-    context.get('cv')[3].get('values').get('content')[1].update({
+    context.get('cv')[3].get('content')[1].update({
         'content': values
     })
 
     experience = cv_instance.get_experience(context) 
-    context.get('cv')[4].get('experience').update({
+    context.get('cv')[4].update({
         'experience': experience
     })
 
     education = context.get(
         'cv'
-    )[5].get('education').get('content')[3].get('content')[0]
+    )[5].get('content')[3].get('content')[0]
     projects = education.get(
         'content'
     ).replace("'", '').replace("[", '').replace("]", '').split(", ")
-    context.get('cv')[5].get('education').update({
+    context.get('cv')[5].update({
         'projects': projects
     })
 
