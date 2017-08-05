@@ -25,3 +25,7 @@ def test_pgsql_connection(host):
     s = h.socket('tcp://0.0.0.0:5433')
 
     assert s.is_listening
+
+def test_pgsql_create(host):
+    h = host.get_host('docker://mpsql')
+    h.run_test('sudo -u psql /opt/psql/bin/createdb testinfra')
