@@ -14,6 +14,8 @@ from home.schema.entry import Entry
 import home
 import yaml
 from exam.cv import CVTestCase
+from exam.section import SectionTestCase
+from exam.subsection import SubSectionTestCase
 from exam.views import ViewsTestCase
 
 home.CV = CV()
@@ -23,69 +25,6 @@ home.Project = Project()
 home.ProjectItem = ProjectItem()
 home.EntryItem = EntryItem()
 home.Entry = Entry()
-
-class SectionTestCase(TestCase):
-    def setUp(self):
-        f = open('/srv/rsum/cvs/abridged.yml')
-        self.abridged = yaml.load(f.read())
-        f.close()
-
-    def test_save_section(self):
-        abridged = self.abridged
-        cv = CV()
-        cv.name = 'abridged'
-        cv.template = 'acecv'
-        cv.save()
-
-        for name, section in sorted(
-            abridged.items(),
-            key=lambda t: t[1].get('id')
-        ):
-            section_instance = Section()
-            section_result = section_instance.save_section(
-                cv,
-                section,
-                name
-            )
-            self.assertEqual(
-                list(Section.objects.values()),
-                list(section_result)
-            )
-
-
-class SubSectionTestCase(TestCase):
-    def setUp(self):
-        f = open('/srv/rsum/cvs/abridged.yml')
-        self.abridged = yaml.load(f.read())
-        f.close()
-        abridged = self.abridged
-        cv = CV()
-        cv.name = 'abridged'
-        cv.save()
-
-        s = Section()
-        s.cv = cv
-        s.name = "test-subs"
-        s.content = type(dict())
-        s.save()
-        self.s = s
-
-    def test_save_sub_section(self):
-        ss = SubSection()
-        section = self.abridged.items()[3]
-
-        ss_result = ss.save_sub_sections(section[1], self.s)
-        for item in ss_result:
-            try:
-                self.assertEqual(
-                    list(Project.objects.values()),
-                    list(item)
-                ) 
-            except:
-                self.assertEqual(
-                    None,
-                    item 
-                ) 
 
 
 class ProjectTestCase(TestCase):
