@@ -24,28 +24,25 @@ home.Entry = Entry()
 
 class CVTestCase(TestCase):
     def setUp(self):
-        CV.objects.create(name='abridged', template='acecv')
-        CV.objects.create(name='complete', template='acecv')
-
-    def test_complete(self):
-        complete = open('/srv/rsum/cvs/complete.yml')
-        complete_dict = yaml.load(complete.read())
-        cv = CV.objects.get(name='complete')
-        self.assertEqual(cv.id,2)
-
-    def test_abridged(self):
-        cv = CV.objects.get(name='abridged')
-        self.assertEqual(cv.id,1)
+        f = open('/srv/rsum/cvs/abridged.yml')
+        self.abridged = yaml.load(f.read())
+        f.close()
+        f = open('/srv/rsum/cvs/complete.yml')
+        self.complete = yaml.load(f.read())
+        f.close
 
     def test_save_abridged_cv(self):
-        abridged = open('/srv/rsum/cvs/abridged.yml')
-        abridged_dict = yaml.load(abridged.read())
-        abridged.close()
-        abridged = abridged_dict
+        abridged = self.abridged
         cv = CV()
-        cv_return = cv.save_cv(abridged, 'abridged', 'acecv')
-        print(cv_return)
-        cv = CV.objects.filter(
-            name = 'abridged'
-        )
-        self.assertEqual(len(cv),2)
+        result = cv.save_cv(abridged, 'abridged', template='acecv')
+
+        self.assertEqual(result.name, 'abridged')
+        self.assertEqual(result.template, 'acecv')
+
+    def test_save_complete_cv(self):
+        complete = self.complete
+        cv = CV()
+        result = cv.save_cv(complete, 'complete', template='acecv')
+    
+        self.assertEqual(result.name, 'complete')
+        self.assertEqual(result.template, 'acecv')
