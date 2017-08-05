@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 
-testinfra_hosts = ["docker://mrsum"]
+testinfra_hosts = [
+    "docker://mrsum",
+    "docker://mpsql",
+]
 
 
 def test_hosts_file(host):
@@ -11,7 +14,14 @@ def test_hosts_file(host):
     assert f.group == 'root'
 
 
-def test_tcp_connection(host):
-    s = host.socket('tcp://0.0.0.0:8193')
+def test_http_connection(host):
+    h = host.get_host('docker://mrsum')
+    s = h.socket('tcp://0.0.0.0:8193')
+
+    assert s.is_listening
+
+def test_pgsql_connection(host):
+    h = host.get_host('docker://mpsql')
+    s = h.socket('tcp://0.0.0.0:5433')
 
     assert s.is_listening
