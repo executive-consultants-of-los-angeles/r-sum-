@@ -58,7 +58,7 @@ class Project(models.Model):
                 else:
                     p_i.content = v
                     p_i.save()
-            return Project.objects.values_list()
+            return Project.objects.values()
 
         if isinstance(projects, list):
             for k, v in enumerate(projects):
@@ -69,14 +69,18 @@ class Project(models.Model):
                 p_i.save()
                 pi = ProjectItem()
                 pi.save_project_item(v, p_i)
-            return Project.objects.values_list()
+            return Project.objects.values()
 
-        if isinstance(projects, str):
+        if (
+            isinstance(projects, str) or
+            isinstance(projects, unicode)
+        ):
             p_i = Project()
             p_i.sub_section = sub_section
-            p_i.name = name
+            p_i.name = getattr(sub_section, 'name') 
             p_i.content = projects
             p_i.save()
+            return Project.objects.values()
 
     class Meta:
         app_label = "home"

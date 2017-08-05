@@ -73,14 +73,18 @@ class ProjectItem(models.Model):
                 else:
                     pi_i.content = p_entry
                     pi_i.save()
-            return ProjectItem.objects.values_list()
+            return ProjectItem.objects.values()
 
-        if isinstance(project_item, str):
+        if (
+            isinstance(project_item, str) or
+            isinstance(project_item, unicode)
+        ):
             pi_i = ProjectItem()
             pi_i.project = project
-            pi_i.name = "<type 'str'>"
+            pi_i.content = project_item
+            pi_i.name = project.name 
             pi_i.save()
-        return pi_i
+        return ProjectItem.objects.values() 
 
     class Meta:
         app_label = 'home'

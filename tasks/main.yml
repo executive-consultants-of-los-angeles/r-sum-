@@ -30,6 +30,10 @@
   django_manage:
     command: migrate
     app_path: /srv/rsum/rsum
+- name: "Run sanity tests."
+  django_manage:
+    command: test
+    app_path: /srv/rsum/rsum
 - name: "Copy settings for supervisord."
   copy:
     src: "supervisord-m.conf"
