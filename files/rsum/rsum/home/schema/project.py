@@ -71,7 +71,10 @@ class Project(models.Model):
                 pi.save_project_item(v, p_i)
             return Project.objects.values()
 
-        if isinstance(projects, str):
+        if (
+            isinstance(projects, str) or
+            isinstance(projects, unicode)
+        ):
             p_i = Project()
             p_i.sub_section = sub_section
             p_i.name = name

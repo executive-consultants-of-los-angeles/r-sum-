@@ -167,6 +167,33 @@ class ProjectTestCase(TestCase):
                 list(Project.objects.values())
             )
 
+        projects = [
+            'project',
+            'list',
+            'values'
+        ]
+        for item in projects:
+            p_result = p.save_projects(item, ss, 'list')
+            self.assertEqual(
+                list(p_result),
+                list(Project.objects.values())
+            )
+
+        projects = unicode('Unicode value.')
+        p_result = p.save_projects(projects, ss, 'unicode')
+        self.assertEqual(
+            list(p_result),
+            list(Project.objects.values())
+        )
+
+        projects = str('String value.')
+        p_result = p.save_projects(projects, ss, 'string')
+        self.assertEqual(
+            list(p_result),
+            list(Project.objects.values())
+        )
+
+
 
 class ProjectItemTestCase(TestCase):
     def setUp(self):
@@ -210,12 +237,22 @@ class ProjectItemTestCase(TestCase):
             }
         })
 
-        project_item.update({
-            'string': 'this is a string'
-        })
-
         pi = ProjectItem()
         pi_result = pi.save_project_item(project_item, self.p) 
+        self.assertEqual(
+            list(pi_result),
+            list(ProjectItem.objects.values())
+        )
+
+        project_item = str('this is a string')
+        pi_result = pi.save_project_item(project_item, self.p)
+        self.assertEqual(
+            list(pi_result),
+            list(ProjectItem.objects.values())
+        )        
+        
+        project_item = unicode('this is a unicode')
+        pi_result = pi.save_project_item(project_item, self.p)
         self.assertEqual(
             list(pi_result),
             list(ProjectItem.objects.values())
