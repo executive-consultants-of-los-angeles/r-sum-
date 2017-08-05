@@ -20,15 +20,28 @@ class CVTestCase(TestCase):
     def test_save_abridged_cv(self):
         abridged = self.abridged
         cv = CV()
-        result = cv.save_cv(abridged, 'abridged', template='acecv')
+        cv_id = cv.save_cv(abridged, 'abridged', template='acecv')
+        self.assertEqual(
+            cv_id,
+            list(CV.objects.filter(
+                id=cv_id
+            ).values_list(
+                'id',
+                flat=True
+            ))[0]
+        )
 
-        self.assertEqual(result.name, 'abridged')
-        self.assertEqual(result.template, 'acecv')
 
     def test_save_complete_cv(self):
         complete = self.complete
         cv = CV()
-        result = cv.save_cv(complete, 'complete', template='acecv')
-    
-        self.assertEqual(result.name, 'complete')
-        self.assertEqual(result.template, 'acecv')
+        cv_id = cv.save_cv(complete, 'complete', template='acecv')
+        self.assertEqual(
+            cv_id,
+            list(CV.objects.filter(
+                id=cv_id
+            ).values_list(
+                'id',
+                flat=True
+            ))[0]
+        ) 

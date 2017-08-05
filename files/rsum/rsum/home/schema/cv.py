@@ -20,7 +20,7 @@ class CV(models.Model):
         # cv_f = open('/srv/rsum/cvs/abridged.yml')
         cv_f = open('/srv/rsum/cvs/complete.yml')
         cv_d = yaml.load(cv_f.read())
-        self.save_cv(cv_d, 'complete', template='acecv')
+        self.id = self.save_cv(cv_d, 'complete', template='acecv')
         return CV.objects.values() 
 
     def get_cv(self):
@@ -29,7 +29,7 @@ class CV(models.Model):
             'name': 'complete',
             'sections': s.get_sections(
                 CV.objects.filter(
-                    id=9 
+                    id=self.id
                 )
             ),
         }
@@ -126,7 +126,7 @@ class CV(models.Model):
             s = Section()
             s.save_section(cv, section, name)
 
-        return cv
+        return getattr(cv, 'id')
 
     def sort_sections(self, cv):
         sections = []
