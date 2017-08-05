@@ -30,10 +30,6 @@
   django_manage:
     command: migrate
     app_path: /srv/rsum/rsum
-- name: "Run sanity tests."
-  django_manage:
-    command: test
-    app_path: /srv/rsum/rsum
 - name: "Copy settings for supervisord."
   copy:
     src: "supervisord-m.conf"
@@ -55,5 +51,13 @@
   supervisorctl:
     name: "gunicorn"
     state: "started"
+- name: "Get the index."
+  get_url:
+    url: 'http://127.0.0.1:8193'
+    dest: /tmp/index.html
+- name: "Run sanity tests."
+  django_manage:
+    command: test
+    app_path: /srv/rsum/rsum
 ...
 # vim: ft=ansible:
