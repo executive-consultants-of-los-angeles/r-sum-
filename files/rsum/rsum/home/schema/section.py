@@ -60,7 +60,7 @@ class Section(models.Model):
             ss = SubSection()
             ss.save_sub_sections(section, s_i)
 
-        return Section.objects.values_list()
+        return Section.objects.values()
 
     class Meta:
         app_label = "home"
