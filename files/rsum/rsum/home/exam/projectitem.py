@@ -82,7 +82,6 @@ class GetProjectItemTestCase(TestCase):
     def setUp(self):
         cv_instance = CV()
         cv_id = cv_instance.check_sections(cvname='abridged', template='acecv')
-        self.cv_id = cv_id
         sections = Section.objects.filter(cv=cv_instance)
         subsections = [list(SubSection.objects.filter(section=section)) for section in sections] 
         self.projects = []

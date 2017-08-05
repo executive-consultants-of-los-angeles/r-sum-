@@ -11,6 +11,7 @@ from exam.cv import CVGetsTestCase
 from exam.section import SectionTestCase
 from exam.subsection import SubSectionTestCase
 from exam.project import ProjectTestCase
+from exam.project import GetProjectTestCase
 from exam.projectitem import ProjectItemTestCase
 from exam.projectitem import GetProjectItemTestCase
 from exam.entry import EntryTestCase
