@@ -79,6 +79,7 @@ class CVGetsTestCase(TestCase):
         self.complete_sections = cv.get_cv(cv_id=cv_id, cvname='complete')
         self.complete_sorted = cv.sort_sections(self.complete_sections)
         self.skills = cv.get_skills({'cv':self.complete_sorted})
+        self.values = cv.get_values({'cv':self.complete_sorted})
         self.cv_id = cv_id 
 
     def test_get_cv(self):
@@ -104,7 +105,15 @@ class CVGetsTestCase(TestCase):
         )
     
     def test_get_values(self):
-        return None
+        cv_instance = CV()
+        context = {
+            'cv': self.complete_sorted
+        }
+        values = cv_instance.get_values(context)
+        self.assertEqual(
+            values,
+            self.values
+        )
 
     def test_sort_sections(self): 
         cv_instance = CV()
