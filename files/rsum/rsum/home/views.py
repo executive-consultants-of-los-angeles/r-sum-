@@ -12,40 +12,37 @@ import json
 
 
 def index(request):
-    cv_i = CV()
+    cv_instance = CV()
 
-    cv_check_sections = cv_i.check_sections()
-    cv = cv_i.get_cv()
-
-    sections = cv_i.sort_sections(cv) 
+    cv_id = cv_instance.check_sections(cvname='complete')
+    cv = cv_instance.get_cv(cv_id=cv_id)
 
     context = {
-        'cv': sections
+        'cv': cv.get('sections') 
     }
 
-    skills = cv_i.get_skills(context)
-
+    skills = cv_instance.get_skills(context)
     context.get('cv')[2].update({
         'skills': skills,
     })
 
-    values = cv_i.get_values(context) 
-    context.get('cv')[3].get('values').get('content')[1].update({
+    values = cv_instance.get_values(context) 
+    context.get('cv')[3].get('content')[1].update({
         'content': values
     })
 
-    experience = cv_i.get_experience(context) 
-    context.get('cv')[4].get('experience').update({
+    experience = cv_instance.get_experience(context) 
+    context.get('cv')[4].update({
         'experience': experience
     })
 
     education = context.get(
         'cv'
-    )[5].get('education').get('content')[3].get('content')[0]
+    )[5].get('content')[3].get('content')[0]
     projects = education.get(
         'content'
     ).replace("'", '').replace("[", '').replace("]", '').split(", ")
-    context.get('cv')[5].get('education').update({
+    context.get('cv')[5].update({
         'projects': projects
     })
 

@@ -16,45 +16,52 @@ class CV(models.Model):
     name = models.CharField(max_length=200)
     template = models.CharField(max_length=200, null=True)
 
-    def check_sections(self):
-        # cv_f = open('/srv/rsum/cvs/abridged.yml')
-        cv_f = open('/srv/rsum/cvs/complete.yml')
+    def check_sections(self, *args, **kwargs):
+        prefix = '/srv/rsum/cvs/'
+        cv_f = open(prefix+kwargs.get('cvname')+'.yml')
         cv_d = yaml.load(cv_f.read())
-        self.id = self.save_cv(cv_d, 'complete', template='acecv')
-        return CV.objects.values() 
+        self.id = self.save_cv(
+            cv_d, 
+            name=kwargs.get('cvname'), 
+            template=kwargs.get('template'),
+        )
+        return self.id 
 
-    def get_cv(self):
+    def get_cv(self, cv_id=1, *args, **kwargs):
         s = Section()
         cv = {
-            'name': 'complete',
+            'name': kwargs.get('cvname'),
             'sections': s.get_sections(
                 CV.objects.filter(
-                    id=self.id
+                    id=cv_id
                 )
             ),
         }
         return cv
 
     def get_experience(self, context):
-        experience_list = context.get('cv')[4].get('experience').get('content')[1:]
+        experience_list = context.get('cv')[4].get('content')[1:]
         for k, v in enumerate(experience_list):
-            # print(json.dumps(v,indent=1))
             for p, i in v.get(
                 'content'
-            )[5].get('content').get('projects').iteritems():
-                j = i.strip('[').strip(']').split("', '")
-                experience_list[k].get(
-                    'content'
-                )[5].get('content').get('projects').update({p: []})
-                for l in j:
-                    l = l.replace("'", '')
+            )[-1].get('content').get('projects').iteritems():
+                if (
+                    isinstance(i, str) or
+                    isinstance(i, unicode)
+                ):
+                    j = i.strip("[").strip("]").split(", ")
                     experience_list[k].get(
                         'content'
-                    )[5].get('content').get('projects').get(p).append(l)
+                    )[5].get('content').get('projects').update({p: []})
+                    for l in j:
+                        l = l.replace("'", '')
+                        experience_list[k].get(
+                            'content'
+                        )[5].get('content').get('projects').get(p).append(l)
         return experience_list
 
     def get_skills(self, context):
-        skills = context.get('cv')[2].get('skills').get('content')
+        skills = context.get('cv')[2].get('content')
         skillset = {}
 
         # I failed algorithms in college. 
@@ -99,7 +106,7 @@ class CV(models.Model):
         values = {}
         values_list = context.get(
             'cv'
-        )[3].get('values').get('content')[1].get('content')
+        )[3].get('content')[1].get('content')
         for i in values_list:
             name = i.get('content').items()[0][0]
             content = i.get('content').items()[0][1]
@@ -128,6 +135,7 @@ class CV(models.Model):
 
         return getattr(cv, 'id')
 
+    """
     def sort_sections(self, cv):
         sections = []
         for section in sorted(
@@ -136,6 +144,7 @@ class CV(models.Model):
         ):
             sections.append({section[0]: section[1]})
         return sections
+    """
 
     class Meta:
         app_label = "home"

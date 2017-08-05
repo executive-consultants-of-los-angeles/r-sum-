@@ -23,7 +23,7 @@ class Project(models.Model):
         for project in list(
             Project.objects.filter(
                 sub_section=subsection
-            ).values()
+            ).order_by('id').values()
         ):
             pli = ProjectItem()
             if project.get('content') == u"<type 'dict'>":

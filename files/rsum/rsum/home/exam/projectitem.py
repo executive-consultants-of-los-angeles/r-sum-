@@ -10,6 +10,7 @@ from home.schema.project import Project
 from home.schema.projectitem import ProjectItem
 
 import home
+import json
 import yaml
 
 
@@ -74,4 +75,37 @@ class ProjectItemTestCase(TestCase):
         self.assertEqual(
             list(pi_result),
             list(ProjectItem.objects.values())
+        )
+
+
+class GetProjectItemTestCase(TestCase):
+    def setUp(self):
+        cv_instance = CV()
+        cv_id = cv_instance.check_sections(cvname='abridged', template='acecv')
+        sections = Section.objects.filter(cv=cv_instance)
+        subsections = [list(SubSection.objects.filter(section=section)) for section in sections] 
+        self.projects = []
+        for subsection in subsections:
+            for subsection_object in subsection:
+                project = list(Project.objects.filter(
+                    sub_section=subsection_object
+                ))
+                self.projects.append(project)
+        self.projectitems = []
+        for project in self.projects:
+            for project_object in project:
+                projectitem_instance = ProjectItem()
+                projectitem = projectitem_instance.get_project_item(project_object)
+                self.projectitems.append(projectitem)
+
+    def test_get_project_item(self):
+        projectitems = []
+        for project in self.projects:
+            for project_object in project:
+                projectitem_instance = ProjectItem()
+                projectitem = projectitem_instance.get_project_item(project_object)
+                projectitems.append(projectitem)
+        self.assertEqual(
+            self.projectitems,
+            projectitems
         )

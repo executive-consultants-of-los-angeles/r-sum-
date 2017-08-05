@@ -37,3 +37,24 @@ class SectionTestCase(TestCase):
                 list(Section.objects.values()),
                 list(section_result)
             )
+
+
+class GetSectionTestCase(TestCase):
+    def setUp(self):
+        cv_instance = CV()
+        cv_id = cv_instance.check_sections(cvname='abridged', template='acecv')
+        self.cv_id = cv_id
+        section_instance = Section()
+        self.sections = section_instance.get_sections(
+            CV.objects.filter(id=cv_id)
+        )
+
+    def test_get_section(self):
+        section_instance = Section()
+        sections = section_instance.get_sections(
+            CV.objects.filter(id=self.cv_id)
+        )
+        self.assertEqual(
+            self.sections,
+            sections
+        )

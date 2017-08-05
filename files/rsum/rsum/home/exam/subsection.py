@@ -44,3 +44,26 @@ class SubSectionTestCase(TestCase):
                     None,
                     item 
                 ) 
+
+
+class GetSubSectionTestCase(TestCase):
+    def setUp(self):
+        cv_instance = CV()
+        cv_id = cv_instance.check_sections(cvname='abridged', template='acecv')
+        sections = Section.objects.filter(
+            cv = CV.objects.filter(
+                id=cv_id
+            )
+        )
+        subsection_instance = SubSection()
+        subsections = [subsection_instance.get_sub_section(section) for section in sections]
+        self.subsections = subsections
+        self.sections = sections
+    
+    def test_get_subsection(self):
+        subsection_instance = SubSection()
+        subsections = [subsection_instance.get_sub_section(section) for section in self.sections]
+        self.assertEqual(
+            self.subsections,
+            subsections
+        )

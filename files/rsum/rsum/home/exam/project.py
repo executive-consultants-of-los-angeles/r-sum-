@@ -88,3 +88,32 @@ class ProjectTestCase(TestCase):
             list(p_result),
             list(Project.objects.values())
         )
+
+
+class GetProjectTestCase(TestCase):
+    def setUp(self):
+        cv_instance = CV()
+        cv_id = cv_instance.check_sections(cvname='abridged', template='acecv')
+        sections = Section.objects.filter(
+            cv = CV.objects.filter(
+                id=cv_id
+            )
+        )
+        self.subsections = [list(SubSection.objects.filter(
+            section=section
+        )) for section in sections]
+        self.projects = []
+        project_instance = Project()
+        for subsection in self.subsections:
+            for subsection_object in subsection:
+                self.projects.append(
+                    project_instance.get_projects(subsection_object)
+                )
+
+    def test_get_project(self):
+        project_instance = Project()
+        projects = []
+        for subsection in self.subsections:
+            for subsection_object in subsection:
+                projects.append(project_instance.get_projects(subsection_object))
+        self.assertEqual(projects,self.projects) 
