@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-import requests
-
 testinfra_hosts = [
     "docker://mrsum",
     "docker://mpsql",
