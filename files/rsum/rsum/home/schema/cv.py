@@ -17,30 +17,25 @@ class CV(models.Model):
     template = models.CharField(max_length=200, null=True)
 
     def check_sections(self):
-        cv_i = CV.objects.all()
-        if not cv_i.exists():
-            # cv_f = open('/srv/rsum/cvs/abridged.yml')
-            cv_f = open('/srv/rsum/cvs/complete.yml')
-            cv_d = yaml.load(cv_f.read())
-            self.save_cv(cv_d, 'complete', template='acecv')
-            cv_i = CV.objects.all()
-            return cv_i
-        else:
-            return cv_i
+        # cv_f = open('/srv/rsum/cvs/abridged.yml')
+        cv_f = open('/srv/rsum/cvs/complete.yml')
+        cv_d = yaml.load(cv_f.read())
+        self.save_cv(cv_d, 'complete', template='acecv')
+        return CV.objects.values() 
 
     def get_cv(self):
         s = Section()
         cv = {
-            'cv_name': 'complete',
+            'name': 'complete',
             'sections': s.get_sections(
                 CV.objects.filter(
-                    id=1
+                    id=9 
                 )
             ),
         }
         return cv
 
-    def get_experience(context):
+    def get_experience(self, context):
         experience_list = context.get('cv')[4].get('experience').get('content')[1:]
         for k, v in enumerate(experience_list):
             # print(json.dumps(v,indent=1))
@@ -58,14 +53,8 @@ class CV(models.Model):
                     )[5].get('content').get('projects').get(p).append(l)
         return experience_list
 
-    def get_sections(self, cv):
-        for section in sorted(
-            cv.get('sections').items(),
-            key=lambda t: t[1].get('id')
-        ):
-            sections.append({section[0]: section[1]})
-
     def get_skills(self, context):
+        print(context)
         skills = context.get('cv')[2].get('skills').get('content')
         skillset = {}
 
@@ -107,7 +96,8 @@ class CV(models.Model):
                     })
         return skillset
 
-    def get_values(context):
+    def get_values(self, context):
+        values = {}
         values_list = context.get(
             'cv'
         )[3].get('values').get('content')[1].get('content')
@@ -138,6 +128,15 @@ class CV(models.Model):
             s.save_section(cv, section, name)
 
         return cv
+
+    def sort_sections(self, cv):
+        sections = []
+        for section in sorted(
+            cv.get('sections').items(),
+            key=lambda t: t[1].get('id')
+        ):
+            sections.append({section[0]: section[1]})
+        return sections
 
     class Meta:
         app_label = "home"

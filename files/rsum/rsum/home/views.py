@@ -12,31 +12,31 @@ import json
 
 
 def index(request):
-    cv_i = CV(
-        id=1
-    )
+    cv_i = CV()
 
-    cv_i.check_sections()
+    cv_check_sections = cv_i.check_sections()
+    print(cv_check_sections)
     cv = cv_i.get_cv()
 
-    sections = cv.get_sections(cv) 
+    sections = cv_i.sort_sections(cv) 
+    print(sections)
 
     context = {
         'cv': sections
     }
 
-    skills = cv.get_skills(context)
+    skills = cv_i.get_skills(context)
 
     context.get('cv')[2].update({
         'skills': skills,
     })
 
-    values = cv.get_values(context) 
+    values = cv_i.get_values(context) 
     context.get('cv')[3].get('values').get('content')[1].update({
         'content': values
     })
 
-    experience = cv.get_experience(context) 
+    experience = cv_i.get_experience(context) 
     context.get('cv')[4].get('experience').update({
         'experience': experience
     })

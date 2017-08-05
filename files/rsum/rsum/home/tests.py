@@ -13,6 +13,7 @@ from home.schema.entry import Entry
 
 import home
 import yaml
+from exam.views import ViewsTestCase
 
 home.CV = CV()
 home.Section = Section()
