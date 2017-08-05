@@ -114,3 +114,177 @@ class SubSectionTestCase(TestCase):
                             None,
                             item 
                         ) 
+
+
+class ProjectTestCase(TestCase):
+    def setUp(self):
+        f = open('/srv/rsum/cvs/abridged.yml')
+        abridged = yaml.load(f.read())
+        f.close()
+
+        cv = CV()
+        cv.name = 'abridged'
+        cv.save()
+
+        for name, section in sorted(
+            abridged.items(),
+            key=lambda t: t[1].get('id')
+        ): 
+            if isinstance(section, str):
+                pass
+            else:
+                s = Section()
+                s.cv = cv
+                s.name = name
+                s.content = type(section)
+                s.save()
+                ss = SubSection()
+                ss.name = 'ptest'
+                ss.section = s
+                ss.save()
+                self.ss = ss
+
+    def test_save_projects(self):
+        ss = self.ss
+        projects = {}
+        projects.update({
+            'projectthefirst': {
+                'thisproject': 'values!',
+            }
+        })
+        projects.update({
+            'projectthesecond': {
+                'dict': 'indeed',
+            }
+        })
+
+        p = Project()
+        
+        for name, item in projects.iteritems():
+            p_result = p.save_projects(item, ss, name)
+            self.assertEqual(
+                list(p_result),
+                list(Project.objects.values())
+            )
+
+
+class ProjectItemTestCase(TestCase):
+    def setUp(self):
+        f = open('/srv/rsum/cvs/abridged.yml')
+        abridged = yaml.load(f.read())
+        f.close()
+
+        cv = CV()
+        cv.name = 'abridged'
+        cv.save()
+
+        for name, section in sorted(
+            abridged.items(),
+            key=lambda t: t[1].get('id')
+        ): 
+            if isinstance(section, str):
+                pass
+            else:
+                s = Section()
+                s.cv = cv
+                s.name = name
+                s.content = type(section)
+                s.save()
+                ss = SubSection()
+                ss.name = 'ptest'
+                ss.section = s
+                ss.save()
+                p = Project()
+                p.name = "pitest"
+                p.content = type(dict())
+                p.sub_section = ss
+                p.save()
+                self.p = p
+
+    def test_save_project_items(self):
+        project_item = {}
+        project_item.update({
+            'dictionary': {
+                'this': 'is',
+                'a': 'dictionary',
+            }
+        })
+
+        project_item.update({
+            'string': 'this is a string'
+        })
+
+        pi = ProjectItem()
+        pi_result = pi.save_project_item(project_item, self.p) 
+        self.assertEqual(
+            list(pi_result),
+            list(ProjectItem.objects.values())
+        )
+
+
+class EntryTestCase(TestCase):
+    def setUp(self):
+        f = open('/srv/rsum/cvs/abridged.yml')
+        abridged = yaml.load(f.read())
+        f.close()
+
+        cv = CV()
+        cv.name = 'abridged'
+        cv.save()
+
+        for name, section in sorted(
+            abridged.items(),
+            key=lambda t: t[1].get('id')
+        ): 
+            if isinstance(section, str):
+                pass
+            else:
+                s = Section()
+                s.cv = cv
+                s.name = name
+                s.content = type(section)
+                s.save()
+                ss = SubSection()
+                ss.name = 'ptest'
+                ss.section = s
+                ss.save()
+                p = Project()
+                p.name = "pitest"
+                p.content = type(dict())
+                p.sub_section = ss
+                p.save()
+                pi = ProjectItem()
+                pi.content = type(dict())
+                pi.project = p
+                pi.save()
+                self.pi = pi
+
+
+    def test_save_entry(self):
+        entry = {}
+        entry.update({
+            'dictionary!': {
+                'pictionary!': 'is',
+                'a': 'game',
+            },
+            'that_i': {
+                'never': 'played',
+            }
+        })
+
+        e = Entry()
+        e_result = e.save_entry(entry, self.pi)
+        self.assertEqual(
+            list(e_result),
+            list(Entry.objects.values())
+        )
+
+
+class EntryItemTestCase(TestCase):
+    def setUp(self):
+        f = open('/srv/rsum/cvs/abridged.yml')
+        self.abridged = yaml.load(f.read())
+        f.close()
+
+    def test_save_entry_item(TestCase):
+        return None

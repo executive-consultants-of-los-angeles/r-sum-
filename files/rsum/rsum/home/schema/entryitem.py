@@ -21,7 +21,7 @@ class EntryItem(models.Model):
         return items
 
     def save_list_item(self, list_item, pe):
-        if isinstance(list_itemi, list):
+        if isinstance(list_item, list):
             for i in list_item:
                 eli = EntryItem()
                 eli.entry = pe

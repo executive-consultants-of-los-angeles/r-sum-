@@ -43,7 +43,7 @@ class Entry(models.Model):
                 pe_i.save()
                 eli = EntryItem()
                 eli.save_list_item(v, pe_i)
-            return pe_i
+            return Entry.objects.values() 
 
     class Meta:
         app_label = "home"
