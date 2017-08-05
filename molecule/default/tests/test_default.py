@@ -29,3 +29,7 @@ def test_pgsql_connection(host):
 def test_pgsql_create(host):
     h = host.get_host('docker://mpsql')
     h.run_test('sudo -u psql /opt/psql/bin/createdb testinfra')
+
+def test_pgsql_drop(host):
+    h = host.get_host('docker://mpsql')
+    h.run_test('sudo -u psql /opt/psql/bin/dropdb testinfra')
