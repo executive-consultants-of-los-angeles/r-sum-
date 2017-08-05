@@ -77,13 +77,6 @@ class SubSection(models.Model):
             return projects
 
         if isinstance(sub_section, dict):
-            # for k, v in sorted(
-            #   subsection.items(),
-            #   key = lambda t: t[1].get('id')
-            # ):
-            #    cv_d.items(),
-            #    key = lambda t:t[1].get('id')
-            # ):
             for k, v in sub_section.iteritems():
                 ss_i = SubSection()
                 ss_i.section = section
@@ -93,17 +86,6 @@ class SubSection(models.Model):
                     ss_i.save()
                     p = Project()
                     projects.append(p.save_projects(v, ss_i, k))
-            return projects
-
-        if isinstance(sub_section, list):
-            for c, i in enumerate(sub_section):
-                ss_i = SubSection()
-                ss_i.section = section
-                ss_i.content = type(sub_section)
-                ss_i.name = str(c)
-                ss_i.save()
-                p = Project()
-                projects.append(p.save_projects(i, ss_i, c))
             return projects
 
     class Meta:

@@ -82,38 +82,34 @@ class SubSectionTestCase(TestCase):
         f = open('/srv/rsum/cvs/abridged.yml')
         self.abridged = yaml.load(f.read())
         f.close()
-
-    def test_save_sub_section(self):
         abridged = self.abridged
         cv = CV()
         cv.name = 'abridged'
         cv.save()
 
-        for name, section in sorted(
-            abridged.items(),
-            key=lambda t: t[1].get('id')
-        ):
-            if isinstance(section, str):
-                pass
-            else:
-                s = Section()
-                s.cv = cv
-                s.name = name
-                s.content = type(section)
-                s.save()
-                ss = SubSection()
-                ss_result = ss.save_sub_sections(section, s)
-                for item in ss_result:
-                    try:
-                        self.assertEqual(
-                            list(Project.objects.values()),
-                            list(item)
-                        ) 
-                    except:
-                        self.assertEqual(
-                            None,
-                            item 
-                        ) 
+        s = Section()
+        s.cv = cv
+        s.name = "test-subs"
+        s.content = type(dict())
+        s.save()
+        self.s = s
+
+    def test_save_sub_section(self):
+        ss = SubSection()
+        section = self.abridged.items()[3]
+
+        ss_result = ss.save_sub_sections(section[1], self.s)
+        for item in ss_result:
+            try:
+                self.assertEqual(
+                    list(Project.objects.values()),
+                    list(item)
+                ) 
+            except:
+                self.assertEqual(
+                    None,
+                    item 
+                ) 
 
 
 class ProjectTestCase(TestCase):

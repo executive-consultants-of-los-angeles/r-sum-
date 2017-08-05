@@ -77,7 +77,7 @@ class Project(models.Model):
         ):
             p_i = Project()
             p_i.sub_section = sub_section
-            p_i.name = name
+            p_i.name = getattr(sub_section, 'name') 
             p_i.content = projects
             p_i.save()
             return Project.objects.values()
