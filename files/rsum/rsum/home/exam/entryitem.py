@@ -84,3 +84,53 @@ class EntryItemTestCase(TestCase):
             list(ei_result),
             list(EntryItem.objects.values())
         )
+
+
+class GetEntryItemTestCase(TestCase):
+    def setUp(self):
+        cv_instance = CV()
+        cv_id = cv_instance.check_sections(cvname='abridged', template='acecv')
+        sections = Section.objects.filter(cv=cv_instance)
+        subsections = [list(SubSection.objects.filter(section=section)) for section in sections]
+        projects = []
+        for subsection in subsections:
+            for subsection_object in subsection:
+                project = list(Project.objects.filter(
+                    sub_section=subsection_object
+                ))
+                projects.append(project)
+        projectitems = []
+        for project in projects:
+            for project_object in project:
+                projectitem = list(ProjectItem.objects.filter(
+                    project=project_object
+                )) 
+                projectitems.append(projectitem)
+        entries = []
+        for projectitem in projectitems:
+            for projectitem_object in projectitem:
+                entry = list(Entry.objects.filter(
+                    projectitem=projectitem_object
+                ))
+                entries.append(entry)
+        entryitems = []
+        for index,entry in enumerate(entries):
+            entryitem = list(EntryItem.objects.filter(
+                entry=index
+            ))
+            entryitems.append(entryitem)
+        self.entryitems = entryitems
+        self.entries = entries
+
+    def test_get_entry_item(self):
+        entries = self.entries
+        entryitems = []
+        for index, entry in enumerate(entries):
+            entryitem = list(EntryItem.objects.filter(
+                entry=index
+            ))
+            entryitems.append(entryitem)
+        self.assertEqual(
+            self.entryitems,
+            entryitems
+        )

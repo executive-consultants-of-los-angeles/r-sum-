@@ -16,4 +16,5 @@ from exam.projectitem import ProjectItemTestCase
 from exam.projectitem import GetProjectItemTestCase
 from exam.entry import EntryTestCase
 from exam.entryitem import EntryItemTestCase
+from exam.entryitem import GetEntryItemTestCase
 from exam.views import ViewsTestCase
