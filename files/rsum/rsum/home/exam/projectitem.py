@@ -10,6 +10,7 @@ from home.schema.project import Project
 from home.schema.projectitem import ProjectItem
 
 import home
+import json
 import yaml
 
 
@@ -75,3 +76,14 @@ class ProjectItemTestCase(TestCase):
             list(pi_result),
             list(ProjectItem.objects.values())
         )
+
+
+class GetProjectItemTestCase(TestCase):
+    def setUp(self):
+        cv_instance = CV()
+        cv_id = cv_instance.check_sections(cvname='abridged', template='acecv')
+        self.cv_id = cv_id
+        print(json.dumps(list(CV.objects.filter(id=cv_id).values())))
+
+    def test_get_project_item(self):
+        return

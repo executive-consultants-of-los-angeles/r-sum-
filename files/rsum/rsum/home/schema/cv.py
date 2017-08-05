@@ -37,28 +37,33 @@ class CV(models.Model):
                 )
             ),
         }
+        print(json.dumps(cv.get('sections'), indent=1))
         return cv
 
     def get_experience(self, context):
-        experience_list = context.get('cv')[4].get('experience').get('content')[1:]
+        experience_list = context.get('cv')[4].get('content')[1:]
+        # print(json.dumps(experience_list[0].get('content')[-1],indent=1))
         for k, v in enumerate(experience_list):
-            # print(json.dumps(v,indent=1))
             for p, i in v.get(
                 'content'
-            )[5].get('content').get('projects').iteritems():
-                j = i.strip('[').strip(']').split("', '")
-                experience_list[k].get(
-                    'content'
-                )[5].get('content').get('projects').update({p: []})
-                for l in j:
-                    l = l.replace("'", '')
+            )[-1].get('content').get('projects').iteritems():
+                if (
+                    isinstance(i, str) or
+                    isinstance(i, unicode)
+                ):
+                    j = i.strip("[").strip("]").split(", ")
                     experience_list[k].get(
                         'content'
-                    )[5].get('content').get('projects').get(p).append(l)
+                    )[5].get('content').get('projects').update({p: []})
+                    for l in j:
+                        l = l.replace("'", '')
+                        experience_list[k].get(
+                            'content'
+                        )[5].get('content').get('projects').get(p).append(l)
         return experience_list
 
     def get_skills(self, context):
-        skills = context.get('cv')[2].get('skills').get('content')
+        skills = context.get('cv')[2].get('content')
         skillset = {}
 
         # I failed algorithms in college. 
@@ -103,7 +108,7 @@ class CV(models.Model):
         values = {}
         values_list = context.get(
             'cv'
-        )[3].get('values').get('content')[1].get('content')
+        )[3].get('content')[1].get('content')
         for i in values_list:
             name = i.get('content').items()[0][0]
             content = i.get('content').items()[0][1]
@@ -132,6 +137,7 @@ class CV(models.Model):
 
         return getattr(cv, 'id')
 
+    """
     def sort_sections(self, cv):
         sections = []
         for section in sorted(
@@ -140,6 +146,7 @@ class CV(models.Model):
         ):
             sections.append({section[0]: section[1]})
         return sections
+    """
 
     class Meta:
         app_label = "home"

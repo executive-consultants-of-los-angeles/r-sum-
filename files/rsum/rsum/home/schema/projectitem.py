@@ -59,6 +59,9 @@ class ProjectItem(models.Model):
         return project_items
 
     def save_project_item(self, project_item, project):
+        if isinstance(project_item, list):
+            print('save the list you dolt!')
+
         if isinstance(project_item, dict):
             for key, p_entry in project_item.iteritems():
                 pi_i = ProjectItem()

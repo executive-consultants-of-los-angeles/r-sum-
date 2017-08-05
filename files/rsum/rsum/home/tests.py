@@ -12,6 +12,7 @@ from exam.section import SectionTestCase
 from exam.subsection import SubSectionTestCase
 from exam.project import ProjectTestCase
 from exam.projectitem import ProjectItemTestCase
+from exam.projectitem import GetProjectItemTestCase
 from exam.entry import EntryTestCase
 from exam.entryitem import EntryItemTestCase
 from exam.views import ViewsTestCase

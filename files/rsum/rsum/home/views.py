@@ -17,14 +17,11 @@ def index(request):
     cv_id = cv_instance.check_sections(cvname='complete')
     cv = cv_instance.get_cv(cv_id=cv_id)
 
-    sections = cv_instance.sort_sections(cv) 
-
     context = {
-        'cv': sections
+        'cv': cv 
     }
 
     skills = cv_instance.get_skills(context)
-
     context.get('cv')[2].update({
         'skills': skills,
     })

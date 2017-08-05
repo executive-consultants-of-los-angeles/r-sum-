@@ -65,49 +65,62 @@ class CVTestCase(TestCase):
 
 class CVGetsTestCase(TestCase):
     def setUp(self):
-        f = open('/srv/rsum/cvs/complete.yml')
-        self.complete = yaml.load(f.read())
-        f.close()
-        f = open('/srv/rsum/cvs/abridged.yml')
-        self.abridged = yaml.load(f.read())
-        f.close()
         cv = CV()
         cv_id = cv.check_sections(
             cvname='complete',
             template='acecv'
         )
-        self.complete_sections = cv.get_cv(cv_id=cv_id, cvname='complete')
-        self.complete_sorted = cv.sort_sections(self.complete_sections)
-        self.skills = cv.get_skills({'cv':self.complete_sorted})
-        self.values = cv.get_values({'cv':self.complete_sorted})
+        self.complete_sections = cv.get_cv(cv_id=cv_id, cvname='complete').get('sections')
+        self.skills = cv.get_skills({'cv':self.complete_sections})
+        self.values = cv.get_values({'cv':self.complete_sections})
+        self.experience = cv.get_experience({'cv':self.complete_sections})
         self.cv_id = cv_id 
+
+        self.cv_abridged_id = cv.check_sections(
+            cvname='abridged',
+            template='acecv'
+        )
+        self.ab_sections = cv.get_cv(cv_id=cv_id, cvname='abridged').get('sections')
 
     def test_get_cv(self):
         cv_instance = CV()
-        complete_sections = cv_instance.get_cv(cv_id=self.cv_id, cvname='complete')
+        complete_sections = cv_instance.get_cv(cv_id=self.cv_id, cvname='complete').get('sections')
+        ab_sections = cv_instance.get_cv(cv_id=self.cv_abridged_id, cvname='abridged').get('sections')
         self.assertEqual(
-            complete_sections,
-            self.complete_sections
+            len(ab_sections),
+            len(self.ab_sections)
+        )
+        self.assertEqual(
+            len(complete_sections),
+            len(self.complete_sections)
         )
 
     def test_get_experience(self):
-        return None
+        cv_instance = CV()
+        context = {
+            'cv': self.complete_sections
+        }
+        experience = cv_instance.get_experience(context)
+        self.assertEqual(
+            experience,
+            self.experience
+        )
 
     def test_get_skills(self):
         cv_instance = CV()
         context = {
-            'cv': self.complete_sorted
+            'cv': self.complete_sections
         }
         skills = cv_instance.get_skills(context)
         self.assertEqual(
-            skills,
-            self.skills
+           skills,
+           self.skills
         )
     
     def test_get_values(self):
         cv_instance = CV()
         context = {
-            'cv': self.complete_sorted
+            'cv': self.complete_sections
         }
         values = cv_instance.get_values(context)
         self.assertEqual(
@@ -115,6 +128,7 @@ class CVGetsTestCase(TestCase):
             self.values
         )
 
+    """
     def test_sort_sections(self): 
         cv_instance = CV()
         cv = cv_instance.get_cv(cv_id=self.cv_id)
@@ -123,3 +137,4 @@ class CVGetsTestCase(TestCase):
             sections,
             self.complete_sorted
         )
+    """
