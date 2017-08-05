@@ -41,3 +41,8 @@ def test_psql(host):
     h = host.get_host("docker://mpsql")
     psql = h.supervisor('psql')
     assert psql.is_running
+
+def test_gunicorn(host):
+    h = host.get_host("docker://mrsum")
+    gunicorn = h.supervisor('gunicorn')
+    assert gunicorn.is_running
