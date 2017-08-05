@@ -53,7 +53,7 @@
     state: "started"
 - name: "Get the index."
   get_url:
-    url: 'http://rsum.ecla.solutions'
+    url: 'http://127.0.0.1:8193'
     dest: /tmp/index.html
 - name: "Run sanity tests."
   django_manage:
