@@ -25,15 +25,15 @@ class CV(models.Model):
             name=kwargs.get('cvname'), 
             template=kwargs.get('template'),
         )
-        return CV.objects.values() 
+        return self.id 
 
-    def get_cv(self):
+    def get_cv(self, cv_id=1, *args, **kwargs):
         s = Section()
         cv = {
-            'name': 'complete',
+            'name': kwargs.get('cvname'),
             'sections': s.get_sections(
                 CV.objects.filter(
-                    id=self.id
+                    id=cv_id
                 )
             ),
         }

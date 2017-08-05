@@ -7,6 +7,7 @@ from django.test import TestCase
 import home
 import yaml
 from exam.cv import CVTestCase
+from exam.cv import CVGetsTestCase
 from exam.section import SectionTestCase
 from exam.subsection import SubSectionTestCase
 from exam.project import ProjectTestCase

@@ -19,13 +19,18 @@ class CVTestCase(TestCase):
 
     def test_check_sections(self):
         cv = CV()
-        cv_result = cv.check_sections(
+        self.cv_id = cv.check_sections(
             cvname='complete', 
             template='acecb'
         )
         self.assertEqual(
-            list(cv_result),
-            list(CV.objects.values())
+            self.cv_id,
+            list(CV.objects.filter(
+                id=self.cv_id
+            ).values_list(
+                'id',
+                flat=True
+            ))[0] 
         )
 
     def test_save_abridged_cv(self):
@@ -57,18 +62,31 @@ class CVTestCase(TestCase):
             ))[0]
         ) 
 
-    def test_sort_sections(self): 
-        return None
-
 
 class CVGetsTestCase(TestCase):
     def setUp(self):
         f = open('/srv/rsum/cvs/complete.yml')
         self.complete = yaml.load(f.read())
-        f.close
+        f.close()
+        f = open('/srv/rsum/cvs/abridged.yml')
+        self.abridged = yaml.load(f.read())
+        f.close()
+        cv = CV()
+        cv_id = cv.check_sections(
+            cvname='complete',
+            template='acecv'
+        )
+        self.complete_sections = cv.get_cv(cv_id=cv_id, cvname='complete')
+        self.complete_sorted = cv.sort_sections(self.complete_sections)
+        self.cv_id = cv_id 
 
     def test_get_cv(self):
-        return None
+        cv_instance = CV()
+        complete_sections = cv_instance.get_cv(cv_id=self.cv_id, cvname='complete')
+        self.assertEqual(
+            complete_sections,
+            self.complete_sections
+        )
 
     def test_get_experience(self):
         return None
@@ -78,3 +96,12 @@ class CVGetsTestCase(TestCase):
     
     def test_get_values(self):
         return None
+
+    def test_sort_sections(self): 
+        cv_instance = CV()
+        cv = cv_instance.get_cv(cv_id=self.cv_id)
+        sections = cv_instance.sort_sections(cv) 
+        self.assertEqual(
+            sections,
+            self.complete_sorted
+        )
