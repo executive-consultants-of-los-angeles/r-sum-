@@ -38,10 +38,10 @@ def test_pgsql_drop(host):
     assert h.run_test('sudo -u psql /opt/psql/bin/dropdb testinfra')
 
 
-def test_rsyslog(host):
-    rsyslog = host.supervisor('rsyslogd')
-    print(host.supervisor.get_services())
-    assert rsyslog.is_running
+# def test_rsyslog(host):
+#    rsyslog = host.supervisor('rsyslogd')
+#    print(rsyslog)
+#    assert rsyslog.is_running
 
 
 def test_psql(host):
