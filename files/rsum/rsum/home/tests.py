@@ -9,6 +9,7 @@ import yaml
 from exam.cv import CVTestCase
 from exam.cv import CVGetsTestCase
 from exam.section import SectionTestCase
+from exam.section import GetSectionTestCase
 from exam.subsection import SubSectionTestCase
 from exam.subsection import GetSubSectionTestCase
 from exam.project import ProjectTestCase
