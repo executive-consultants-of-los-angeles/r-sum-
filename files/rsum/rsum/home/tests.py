@@ -283,8 +283,70 @@ class EntryTestCase(TestCase):
 class EntryItemTestCase(TestCase):
     def setUp(self):
         f = open('/srv/rsum/cvs/abridged.yml')
-        self.abridged = yaml.load(f.read())
+        abridged = yaml.load(f.read())
         f.close()
 
-    def test_save_entry_item(TestCase):
-        return None
+        cv = CV()
+        cv.name = 'abridged'
+        cv.save()
+
+        for name, section in sorted(
+            abridged.items(),
+            key=lambda t: t[1].get('id')
+        ): 
+            if isinstance(section, str):
+                pass
+            else:
+                s = Section()
+                s.cv = cv
+                s.name = name
+                s.content = type(section)
+                s.save()
+                ss = SubSection()
+                ss.name = 'ptest'
+                ss.section = s
+                ss.save()
+                p = Project()
+                p.name = "pitest"
+                p.content = type(dict())
+                p.sub_section = ss
+                p.save()
+                pi = ProjectItem()
+                pi.content = type(dict())
+                pi.project = p
+                pi.save()
+                e = Entry()
+                e.content = type(list()) 
+                e.projectitem = pi
+                e.save()
+                self.e = e
+
+    def test_save_entry_item(self):
+        e = self.e
+        entry_item_string = str("this is a string")
+        entry_item_list = [
+            'this',
+            'is',
+            'a',
+            'list',
+            'of',
+            'strings'
+        ]
+
+        ei = EntryItem()
+        ei.entry = e
+        ei.value = 'this is a different string'
+        ei.save()
+
+        ei = EntryItem()
+        ei_result = ei.save_list_item(entry_item_string, e)
+        self.assertEqual(
+            list(ei_result),
+            list(EntryItem.objects.values())
+        )
+
+        ei_result = ei.save_list_item(entry_item_list, e)
+        self.assertEqual(
+            list(ei_result),
+            list(EntryItem.objects.values())
+        )

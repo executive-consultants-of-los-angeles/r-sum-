@@ -21,20 +21,22 @@ class EntryItem(models.Model):
         return items
 
     def save_list_item(self, list_item, pe):
-        if isinstance(list_item, list):
-            for i in list_item:
-                eli = EntryItem()
-                eli.entry = pe
-                eli.value = i
-                eli.save()
-            return eli
-
-        if isinstance(list_item, str):
+        if (
+            isinstance(list_item, str) or
+            isinstance(list_item, unicode)
+        ):
             eli = EntryItem()
             eli.entry = pe
             eli.value = list_item
             eli.save()
-            return eli
+
+        if isinstance(list_item, list):
+            for i in list_item:
+                eli = EntryItem()
+                eli.entry = pe
+                eli.value = str(i)
+                eli.save()
+        return EntryItem.objects.values() 
 
     class Meta:
         app_label = "home"
