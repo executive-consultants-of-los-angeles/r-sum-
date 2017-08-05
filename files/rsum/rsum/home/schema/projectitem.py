@@ -32,7 +32,7 @@ class ProjectItem(models.Model):
                 })
             return pid
         except Exception as e:
-            print(e)
+            # print(e)
             pass
 
         project_items = []

@@ -127,14 +127,3 @@ class CVGetsTestCase(TestCase):
             values,
             self.values
         )
-
-    """
-    def test_sort_sections(self): 
-        cv_instance = CV()
-        cv = cv_instance.get_cv(cv_id=self.cv_id)
-        sections = cv_instance.sort_sections(cv) 
-        self.assertEqual(
-            sections,
-            self.complete_sorted
-        )
-    """
