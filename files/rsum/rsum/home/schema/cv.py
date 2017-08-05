@@ -20,7 +20,11 @@ class CV(models.Model):
         prefix = '/srv/rsum/cvs/'
         cv_f = open(prefix+kwargs.get('cvname')+'.yml')
         cv_d = yaml.load(cv_f.read())
-        self.id = self.save_cv(cv_d, 'complete', template='acecv')
+        self.id = self.save_cv(
+            cv_d, 
+            name=kwargs.get('cvname'), 
+            template=kwargs.get('template'),
+        )
         return CV.objects.values() 
 
     def get_cv(self):

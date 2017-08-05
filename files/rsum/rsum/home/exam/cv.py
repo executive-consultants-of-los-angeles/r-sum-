@@ -18,7 +18,15 @@ class CVTestCase(TestCase):
         f.close()
 
     def test_check_sections(self):
-        return None
+        cv = CV()
+        cv_result = cv.check_sections(
+            cvname='complete', 
+            template='acecb'
+        )
+        self.assertEqual(
+            list(cv_result),
+            list(CV.objects.values())
+        )
 
     def test_save_abridged_cv(self):
         abridged = self.abridged
