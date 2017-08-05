@@ -12,6 +12,7 @@ from home.schema.entryitem import EntryItem
 from home.schema.entry import Entry
 
 import home
+import exam.views 
 import yaml
 
 home.CV = CV()

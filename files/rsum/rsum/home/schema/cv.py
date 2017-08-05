@@ -40,6 +40,90 @@ class CV(models.Model):
         }
         return cv
 
+    def get_experience(context):
+        experience_list = context.get('cv')[4].get('experience').get('content')[1:]
+        for k, v in enumerate(experience_list):
+            # print(json.dumps(v,indent=1))
+            for p, i in v.get(
+                'content'
+            )[5].get('content').get('projects').iteritems():
+                j = i.strip('[').strip(']').split("', '")
+                experience_list[k].get(
+                    'content'
+                )[5].get('content').get('projects').update({p: []})
+                for l in j:
+                    l = l.replace("'", '')
+                    experience_list[k].get(
+                        'content'
+                    )[5].get('content').get('projects').get(p).append(l)
+        return experience_list
+
+    def get_sections(self, cv):
+        for section in sorted(
+            cv.get('sections').items(),
+            key=lambda t: t[1].get('id')
+        ):
+            sections.append({section[0]: section[1]})
+
+    def get_skills(self, context):
+        skills = context.get('cv')[2].get('skills').get('content')
+        skillset = {}
+
+        # I failed algorithms in college. 
+        for index, skill in enumerate(skills):
+            for content in skill.get('content'):
+                if content.get('name') == 'name':
+                    skillset.update({
+                        content.get('content'): {
+                            'index': index,
+                        }
+                    })
+
+        for name, value in skillset.iteritems():
+            for content in skills[value.get('index')].get('content'):
+                if content.get('name') == 'competence':
+                    skillset.get(name).update({
+                        'competence': content.get('content'),
+                    })
+                elif content.get('name') != 'id' and content.get('name') != 'name':
+                    skillset.get(name).update({
+                        content.get('name'): {
+                            'experience': content.get(
+                                'content'
+                            ).get(
+                                content.get('name')
+                            ).get('experience'),
+                            'name': content.get(
+                                'content'
+                            ).get(
+                                content.get('name')
+                            ).get('name'),
+                            'competence': content.get(
+                                'content'
+                            ).get(
+                                content.get('name')
+                            ).get('competence'),
+                        }
+                    })
+        return skillset
+
+    def get_values(context):
+        values_list = context.get(
+            'cv'
+        )[3].get('values').get('content')[1].get('content')
+        for i in values_list:
+            name = i.get('content').items()[0][0]
+            content = i.get('content').items()[0][1]
+            values.update({name: content})
+
+        values_list = []
+        for value in sorted(
+            values.items(),
+            key=lambda t: t[1].get('id')
+        ):
+            values_list.append(value)
+        return values_list
+
     def save_cv(self, cv_d, name='default', *args, **kwargs):
         cv = CV()
         cv.name = name 
