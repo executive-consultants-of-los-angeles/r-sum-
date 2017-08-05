@@ -13,7 +13,6 @@ def test_hosts_file(host):
     assert f.user == 'root'
     assert f.group == 'root'
 
-
 def test_http_connection(host):
     h = host.get_host('docker://mrsum')
     s = h.socket('tcp://0.0.0.0:8193')
@@ -28,8 +27,17 @@ def test_pgsql_connection(host):
 
 def test_pgsql_create(host):
     h = host.get_host('docker://mpsql')
-    h.run_test('sudo -u psql /opt/psql/bin/createdb testinfra')
+    assert h.run_test('sudo -u psql /opt/psql/bin/createdb testinfra')
 
 def test_pgsql_drop(host):
     h = host.get_host('docker://mpsql')
-    h.run_test('sudo -u psql /opt/psql/bin/dropdb testinfra')
+    assert h.run_test('sudo -u psql /opt/psql/bin/dropdb testinfra')
+
+def test_rsyslog(host):
+    rsyslog = host.supervisor('rsyslogd')
+    assert rsyslog.is_running
+
+def test_psql(host):
+    h = host.get_host("docker://mpsql")
+    psql = h.supervisor('psql')
+    assert psql.is_running
