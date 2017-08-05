@@ -15,4 +15,7 @@ class ViewsTestCase(TestCase):
         client = self.client 
 
         response = client.get(reverse('index'))
-        print(response.status_code)
+        self.assertEqual(
+            response.status_code,
+            200
+        )

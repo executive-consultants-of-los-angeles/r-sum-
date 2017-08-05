@@ -54,7 +54,6 @@ class CV(models.Model):
         return experience_list
 
     def get_skills(self, context):
-        print(context)
         skills = context.get('cv')[2].get('skills').get('content')
         skillset = {}
 

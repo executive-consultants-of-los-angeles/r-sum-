@@ -15,11 +15,9 @@ def index(request):
     cv_i = CV()
 
     cv_check_sections = cv_i.check_sections()
-    print(cv_check_sections)
     cv = cv_i.get_cv()
 
     sections = cv_i.sort_sections(cv) 
-    print(sections)
 
     context = {
         'cv': sections
