@@ -10,9 +10,13 @@ import json
 
 
 class SubSection(models.Model):
-    section = models.ForeignKey('home.Section', on_delete=models.CASCADE)
-    name = models.CharField(max_length=200, null=True)
-    content = models.TextField(null=True)
+    section = models.ForeignKey(
+        'home.Section', 
+        on_delete=models.CASCADE,
+        related_name='section'
+    )
+    name = models.CharField(max_length=200)
+    content = models.TextField()
 
     def get_sub_section(self, section):
         # print(SubSection.objects.filter(section=section).values())

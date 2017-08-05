@@ -32,6 +32,11 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
 ]
 
+ADMINS = []
+
+TEMPLATE_DEBUG = []
+
+MANAGERS = []
 
 # Application definition
 
@@ -53,6 +58,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+MIDDLEWARE_CLASSES = [
 ]
 
 ROOT_URLCONF = 'rsum.urls'
@@ -80,11 +88,11 @@ WSGI_APPLICATION = 'rsum.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 if socket.gethostname() == 'mrsum': 
-    db_host = 'mpsql'
-    db_port = '5433'
+    DB_HOST = 'mpsql'
+    DB_PORT = '5433'
 else:
-    db_host = 'pg'
-    db_port = '5432'
+    DB_HOST = 'pg'
+    DB_PORT = '5432'
 
 DATABASES = {
     'default': {
@@ -92,8 +100,8 @@ DATABASES = {
         'NAME': 'alex',
         'USER': 'psql',
         'PASSWORD': '',
-        'HOST': db_host, 
-        'PORT': db_port,
+        'HOST': DB_HOST, 
+        'PORT': DB_PORT,
     }
     # 'default': {
     #    'ENGINE': 'django.db.backends.sqlite3',
@@ -105,18 +113,26 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+AUTH_PASSWORD_VALIDATORS = [{
+    'NAME': 
+        ('django.contrib.auth'
+        '.password_validation'
+        '.UserAttributeSimilarityValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': ('django.contrib'
+            '.auth.password_validation'
+            '.MinimumLengthValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': ('django.contrib.auth'
+                '.password_validation'
+                '.CommonPasswordValidator'),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': ('django.contrib.auth'
+                '.password_validation'
+                '.NumericPasswordValidator'),
     },
 ]
 
