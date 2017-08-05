@@ -1,5 +1,5 @@
 {% load static %}
-{# section.education.projects #}
+{# section.projects #}
         <!-- Promo Banner -->
         <div id="education" class="promo-banner parallax-window" data-parallax="scroll" data-image-src="{% static 'img/1920x1080/01.jpg' %}">
             <div 
@@ -8,14 +8,14 @@
                 background-color: white;
               "
               class="container-sm content-lg">
-                <h2 style="color: black;" class="promo-banner-title">{{ section.education.name|title }}</h2>
+                <h2 style="color: black;" class="promo-banner-title">{{ section.name|title }}</h2>
                 <p class="promo-banner-text">
-                  <h3 style="font-size: 20pt; font-variant: small-caps; color: black;" class="promo-banner-text">{{ section.education.content.0.content.0.content }}</h3>
-                  <h4 style="font-size: 16pt; color: black;" class="promo-banner-text">{{ section.education.content.4.content.0.content }}</h4>
-                  <h4 style="font-size: 16pt; color: black;" class="promo-banner-text">{{ section.education.content.2.content.0.content }}</h4>
+                  <h3 style="font-size: 20pt; font-variant: small-caps; color: black;" class="promo-banner-text">{{ section.content.0.content.0.content }}</h3>
+                  <h4 style="font-size: 16pt; color: black;" class="promo-banner-text">{{ section.content.4.content.0.content }}</h4>
+                  <h4 style="font-size: 16pt; color: black;" class="promo-banner-text">{{ section.content.2.content.0.content }}</h4>
                   <h4 style="font-size: 16pt; color: black;" class="promo-banner-text">Tests</h4>
                   <ul>
-                  {% for project in section.education.projects %}
+                  {% for project in section.projects %}
                       <li style="font-size: 14pt; color: black;">{{ project }}</li>
                   {% endfor %}
                   </ul>
