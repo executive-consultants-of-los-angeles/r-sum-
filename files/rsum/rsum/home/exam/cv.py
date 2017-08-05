@@ -15,7 +15,10 @@ class CVTestCase(TestCase):
         f.close()
         f = open('/srv/rsum/cvs/complete.yml')
         self.complete = yaml.load(f.read())
-        f.close
+        f.close()
+
+    def test_check_sections(self):
+        return None
 
     def test_save_abridged_cv(self):
         abridged = self.abridged
@@ -45,3 +48,25 @@ class CVTestCase(TestCase):
                 flat=True
             ))[0]
         ) 
+
+    def test_sort_sections(self): 
+        return None
+
+
+class CVGetsTestCase(TestCase):
+    def setUp(self):
+        f = open('/srv/rsum/cvs/complete.yml')
+        self.complete = yaml.load(f.read())
+        f.close
+
+    def test_get_cv(self):
+        return None
+
+    def test_get_experience(self):
+        return None
+
+    def test_get_skills(self):
+        return None
+    
+    def test_get_values(self):
+        return None

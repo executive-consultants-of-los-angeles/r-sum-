@@ -14,7 +14,7 @@ import json
 def index(request):
     cv_i = CV()
 
-    cv_check_sections = cv_i.check_sections()
+    cv_check_sections = cv_i.check_sections(cvname='complete')
     cv = cv_i.get_cv()
 
     sections = cv_i.sort_sections(cv) 

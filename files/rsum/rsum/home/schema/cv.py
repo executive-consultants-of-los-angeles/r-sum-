@@ -16,9 +16,9 @@ class CV(models.Model):
     name = models.CharField(max_length=200)
     template = models.CharField(max_length=200, null=True)
 
-    def check_sections(self):
-        # cv_f = open('/srv/rsum/cvs/abridged.yml')
-        cv_f = open('/srv/rsum/cvs/complete.yml')
+    def check_sections(self, *args, **kwargs):
+        prefix = '/srv/rsum/cvs/'
+        cv_f = open(prefix+kwargs.get('cvname')+'.yml')
         cv_d = yaml.load(cv_f.read())
         self.id = self.save_cv(cv_d, 'complete', template='acecv')
         return CV.objects.values() 
