@@ -69,3 +69,43 @@ class EntryTestCase(TestCase):
             list(e_result),
             list(Entry.objects.values())
         )
+
+
+class GetEntryTestCase(TestCase):
+    def setUp(self):
+        cv_instance = CV()
+        cv_id = cv_instance.check_sections(cvname='abridged', template='acecv')
+        sections = Section.objects.filter(cv=cv_instance)
+        subsections = [list(SubSection.objects.filter(section=section)) for section in sections]
+        projects = []
+        for subsection in subsections:
+            for subsection_object in subsection:
+                project = list(Project.objects.filter(
+                    sub_section=subsection_object
+                ))
+                projects.append(project)
+        projectitems = []
+        for project in projects:
+            for project_object in project:
+                projectitem = list(ProjectItem.objects.filter(
+                    project=project_object
+                ))
+                projectitems.append(projectitem)
+        entry_instance = Entry()
+        entries = []
+        for projectitem in projectitems:
+            for projectitem_object in projectitem:
+                entries.append(entry_instance.get_entry(projectitem_object))
+        self.entries = entries
+        self.projectitems = projectitems
+    
+    def test_get_entry(self):
+        entries = []
+        entry_instance = Entry()
+        for projectitem in self.projectitems:
+            for projectitem_object in projectitem:
+                entries.append(entry_instance.get_entry(projectitem_object))
+        self.assertEqual(
+            entries,
+            self.entries
+        )
