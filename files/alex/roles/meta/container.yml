@@ -1,0 +1,3 @@
+from: ecla/ansible:latest
+volumes:
+  - /srv:/etc/ansible/roles/
