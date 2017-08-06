@@ -3,10 +3,9 @@ sudo: required
 language: python
 dist: xenial
 before_install:
-  - openssl aes-256-cbc -K
-      $encrypted_356f2db0507c_key -iv
-      $encrypted_356f2db0507c_iv -in
-      files/deploy.enc -out files/deploy -d
+  - openssl aes-256-cbc -K $encrypted_88341752b148_key
+      -iv $encrypted_88341752b148_iv
+      -in files/deploy.enc -out files/deploy -d
   - sudo apt-get -qq update
   - sudo apt-get install ansible
   - ansible -m apt_repository -a 'repo="
