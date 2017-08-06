@@ -6,11 +6,3 @@
     src: r.yml
     dest: /tmp/r.yml
 - shell: ansible-galaxy install -r /tmp/r.yml
-- name: Ensure /tmp exists
-  file:
-    path: /tmp
-    state: directory
-- copy:
-    src: p.yml
-    dest: /tmp/p.yml
-- shell: ansible-playbook /tmp/p.yml
