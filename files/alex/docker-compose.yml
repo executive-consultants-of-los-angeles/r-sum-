@@ -15,5 +15,11 @@ services:
     image: ecla/psql:latest
     ports:
       - "0.0.0.0:5432:5432"
+  alex_ng:
+    container_name: alex_ng
+    command: /usr/bin/supervisord -n
+    image: ecla/ansible:latest
+    ports:
+      - "0.0.0.0:3072:80"
 ...
 # vim: ft=ansible:

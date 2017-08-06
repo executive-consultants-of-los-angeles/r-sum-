@@ -1,17 +1,12 @@
 ---
 apt_install_list:
     - iputils-ping
-    - nagios-nrpe-server
-    - nagios-plugins-*
     - net-tools
     - nmap
     - postgresql-client
-    - rsyslog
-    - supervisor
     - vim
 cv_name: alex
 pip_install_list:
-    - gunicorn
     - django
     - psycopg2
 ...
