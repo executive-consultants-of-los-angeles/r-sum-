@@ -1,6 +1,9 @@
+---
 settings:
   conductor_base: ecla/ansible:latest
 services:
   ? ''
   : roles:
     - ''
+...
+# vim: ft=ansible:
