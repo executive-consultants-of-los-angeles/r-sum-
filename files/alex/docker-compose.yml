@@ -1,24 +1,24 @@
 ---
 version: '2'
 services:
-  alex:
-    container_name: alex
+  arsum:
+    container_name: arsum 
     command: /usr/bin/supervisord -n
-    build: build/alex
+    build: arsum 
     ports:
       - "0.0.0.0:8192:8192"
     volumes:
       - "/srv/alex:/root/.ansible/roles/rsum:rw"
-  alex_pg:
+  apsql:
     container_name: apsql 
     command: /usr/bin/supervisord -n
-    build: build/psql 
+    build: apsql 
     ports:
       - "0.0.0.0:5432:5432"
-  alex_ng:
+  angos:
     container_name: angos 
     command: /usr/bin/supervisord -n
-    build: build/ngos
+    build: angos 
     ports:
       - "0.0.0.0:3072:80"
 ...
