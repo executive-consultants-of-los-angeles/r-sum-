@@ -1,12 +1,19 @@
 ---
-version: "unix:///var/run/docker.sock" 
+version: '2'
 settings:
-  conductor_base: ecla/ansible:latest
+  conductor:
+    base: ecla/ansible:latest
+    volumes:
+      - "/srv:/srv:rw"
+  project_name: alex
 services:
   arsum:
-    name: "arsum"
+    command: /usr/bin/supervisord -n
     from: ecla/ansible:latest
     ports:
       - "8193:8193"
+    volumes:
+      - "/tmp/srv:/srv:rw"
+      - "/tmp/var:/var:rw"
 ...
 # vim: ft=ansible:
