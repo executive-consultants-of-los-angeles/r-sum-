@@ -1,0 +1,2 @@
+FROM ecla/ansible:latest
+
