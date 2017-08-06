@@ -1,5 +1,5 @@
 ---
-version: '2'
+version: "unix:///var/run/docker.sock" 
 settings:
   conductor_base: ecla/ansible:latest
 services:
