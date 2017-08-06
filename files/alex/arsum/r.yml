@@ -1,0 +1,5 @@
+---
+- name: "arsum"
+  src: "executive-consultants-of-los-angeles"
+...
+# vim: ft=ansible:
