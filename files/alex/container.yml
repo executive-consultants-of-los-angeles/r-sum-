@@ -1,13 +1,11 @@
 ---
-version: "2"
 settings:
   conductor_base: ecla/ansible:latest
 services:
   arsum:
+    name: "arsum"
     image: ecla/ansible:latest
-    command: /usr/bin/supervisord -n
     ports:
       - "8193:8193"
-registries: {}    
 ...
 # vim: ft=ansible:
