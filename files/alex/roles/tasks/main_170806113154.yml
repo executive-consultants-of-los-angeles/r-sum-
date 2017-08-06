@@ -1,8 +1,0 @@
-- name: Ensure /tmp exists
-  file:
-    path: /tmp
-    state: directory
-- copy:
-    src: r.yml
-    dest: /tmp/r.yml
-- shell: ansible-galaxy install -r /tmp/r.yml
