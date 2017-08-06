@@ -3,6 +3,7 @@ docker rm -f apsql
 docker rm -f arsum
 docker rm -f angos
 docker build -t apsql:latest /src/rsum/files/alex/apsql
+/opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/alex/apsql/r.yml
 docker run -d --name apsql -p 5432:5432 -h apsql apsql /usr/bin/supervisord -n
 /opt/py/bin/ansible-playbook /src/rsum/files/alex/apsql/p.yml
 docker build -t arsum:latest /src/rsum/files/alex/arsum
