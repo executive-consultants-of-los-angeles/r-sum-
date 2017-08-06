@@ -1,7 +1,0 @@
----
-- name: "Install Nagios"
-  hosts: angos
-  roles:
-    - role: angos
-...
-# vim: ft=ansible:

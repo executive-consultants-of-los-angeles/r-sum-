@@ -1,7 +1,0 @@
----
-- name: "Install CV"
-  hosts: localhost 
-  roles:
-    - role: arsum 
-...
-# vim: ft=ansible:
