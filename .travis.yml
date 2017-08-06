@@ -1,3 +1,4 @@
+---
 sudo: required
 language: python
 dist: xenial
@@ -20,3 +21,5 @@ script:
 - molecule test
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
+...
+# vim: ft=ansible:
