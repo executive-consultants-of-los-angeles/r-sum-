@@ -1,3 +1,7 @@
 ---
+- name: "Install arsum."
+  hosts: localhost
+  roles:
+    - role: arsum
 ...
 # vim: ft=ansible:
