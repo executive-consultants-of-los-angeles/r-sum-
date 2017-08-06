@@ -1,0 +1,7 @@
+---
+- name: "Install CV"
+  hosts: alex
+  roles:
+    - role: alex
+...
+# vim: ft=ansible:
