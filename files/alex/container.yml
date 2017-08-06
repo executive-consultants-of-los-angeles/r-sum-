@@ -1,8 +1,8 @@
 ---
 version: '2'
 settings:
+  conductor_base: ecla/ansible:latest
   conductor:
-    base: ecla/ansible:latest
     volumes:
       - "/srv:/srv:rw"
       - "/src:/src:rw"
@@ -13,6 +13,8 @@ services:
     from: ecla/ansible:latest
     ports:
       - "8193:8193"
+    roles:
+      - "executive-consultants-of-los-angeles.rsum"
     volumes:
       - "/tmp/srv:/srv:rw"
       - "/tmp/var:/var:rw"
