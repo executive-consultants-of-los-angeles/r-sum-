@@ -1,16 +1,8 @@
 ---
 - name: "psql"
   hosts: mpsql
-  tasks:
-    - name: "start psql"
-      supervisorctl:
-        state: "present"
-        name: "psql"
-    - name: "Install Nagios."
-      apt:
-        name: "nagios-nrpe-server"
-        state: "present"
-        update_cache: "yes"
+  roles:
+    - role: "psql"
 - name: "converge"
   hosts: mrsum
   roles:
