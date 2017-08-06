@@ -18,6 +18,11 @@ platforms:
       - "8193:8193"
     volumes:
       - "/srv:/root/.ansible/roles:rw"
+  - name: "mngos"
+    command: "/usr/bin/supervisord -n"
+    image: ecla/ansible:latest
+    ports:
+      - "2050:80"
 provisioner:
   name: ansible
   lint:

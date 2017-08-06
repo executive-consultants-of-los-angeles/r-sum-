@@ -6,6 +6,11 @@
       supervisorctl:
         state: "present"
         name: "psql"
+    - name: "Install Nagios."
+      apt:
+        name: "nagios-nrpe-server"
+        state: "present"
+        update_cache: "yes"
 - name: "converge"
   hosts: mrsum
   roles:
