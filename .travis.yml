@@ -29,7 +29,7 @@ deploy:
   skip_cleanup: true
   script: chmod 600 files/deploy &&
     ssh -o StrictHostKeyChecking=no -i files/deploy
-    duchess@ecla.solutions files/deploy.bash
+    duchess@ecla.solutions /src/rsum/files/deploy.bash
   "on":
     branch: iss53
 ...
