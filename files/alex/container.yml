@@ -1,10 +1,11 @@
 ---
+version: '2'
 settings:
   conductor_base: ecla/ansible:latest
 services:
   arsum:
     name: "arsum"
-    image: ecla/ansible:latest
+    from: ecla/ansible:latest
     ports:
       - "8193:8193"
 ...
