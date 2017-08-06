@@ -16,5 +16,9 @@
   roles:
     - role:
         "rsum"
+- name: "nagios"
+  hosts: mngos
+  roles:
+    - role: "ngos"
 ...
 # vim: ft=ansible:
