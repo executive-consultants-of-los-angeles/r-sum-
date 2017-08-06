@@ -1,4 +1,8 @@
 ---
+- name: "Copy fixed environment."
+  copy:
+    src: environment
+    dest: /etc/environment
 - name: "Install some packages with pip."
   pip:
     name: "{{ item }}"
@@ -8,6 +12,7 @@
   apt:
     name: "{{ item }}"
     state: present
+    update_cache: "yes"
   with_items: "{{ apt_install_list }}"
 - name: "Copy requirements file."
   copy:

@@ -3,14 +3,15 @@ sudo: required
 language: python
 dist: xenial
 before_install:
+  - openssl aes-256-cbc -K
+      $encrypted_fc6f8a53daff_key -iv
+      $encrypted_fc6f8a53daff_iv -in
+      files/alex/deploy.enc -out files/alex/deploy -d
   - sudo apt-get -qq update
   - sudo apt-get install ansible
-  - ansible -m apt_repository -a
-      'repo="
-        deb http://cz.archive.ubuntu.com/ubuntu xenial main universe
-      "
-      state=present'
-    -s localhost
+  - ansible -m apt_repository -a 'repo="
+      deb http://cz.archive.ubuntu.com/ubuntu xenial main universe
+    " state=present' -s localhost
   - ansible -m apt -a 'update_cache=yes' -s localhost
   - ansible -m apt -a 'name=docker.io state=latest' -s localhost
   - sudo apt-get install gcc
@@ -23,26 +24,5 @@ script:
   - molecule test
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
-# deploy:
-#  provider: gcs
-#  access_key_id: GOOGEWUDJEOO43VE5V2M
-#  secret_access_key:
-#    secure: CrxP/60AwkK5vG86uhb69ihSxEBndIoPk8q8+Qc1JzR/Q\
-#      FOpnCQKUW1+HbwxtV0IFfxDyzsZwemCcDO3N8eUnnUDvXsrfGBJak\
-#      mMyEJ8fyf3LZzorkwK+7YcOPOqpAwnWXsQmD8uhEoptITzIHvu15Z\
-#      ZfRZTxSMcPcI9P7uJPsAZ79gr50I6hmAUC6tLOvdjoU13RcvSxj3E\
-#      u5goqYRtCryTGjYmzbf1wvumsmL4U1ZCgPo2fk2RT6Ji313k8h44C\
-#      uaNLSnoyul81Y3GKSIUNZ7UJim4Rmu+FhH+IHjBUID6dwLXvJOqvO\
-#      JuPwpt19dE6TJk8uFiBUsqNXafL8kHOnohfeiwsAi8jGTkarVPeh0\
-#      1aCwXXzUB4qhRVq5kbARES8KUdo9pJRONzXvC3cI9C+jYpP9klX+0\
-#      G+6DJF+zmWMqixWEslORN1OgrChhB9cNm0zBe42f0ox2/KqSnLMvi\
-#      3f12jWbr9eUdzSYjD8TNT3kbDvlJSe/aOX9Z/bEdHjAtY3xRnOcG5\
-#      LoJmCJ+WRUHSY8MqdoiKyrXeo2AKqLHB1evb2OSJdOKDTKSZd15xo\
-#      IdnBJ+vM96oQqQ+maGV9DMbKlaQupyrpKBTk2fAu0C5qaRWRjuP2S\
-#      B1+8Ckcudxt5zaAoddzdrD/MfL4SS+Htk4AR3b7QhjrWr4as4NeVX5M=
-#  bucket: travis-assets
-#  local-dir: rsum
-#  "on":
-#    repo: "executive-consultants-of-los-angeles/rsum"
 ...
 # vim: ft=ansible:

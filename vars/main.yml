@@ -4,12 +4,9 @@ apt_install_list:
     - net-tools
     - nmap
     - postgresql-client
-    - rsyslog
-    - supervisor
     - vim
 cv_name: alex
 pip_install_list:
-    - gunicorn
     - django
     - psycopg2
 ...
