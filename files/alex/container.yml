@@ -5,6 +5,7 @@ settings:
     base: ecla/ansible:latest
     volumes:
       - "/srv:/srv:rw"
+      - "/src:/src:rw"
   project_name: alex
 services:
   arsum:
