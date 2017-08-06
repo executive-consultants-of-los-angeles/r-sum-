@@ -27,7 +27,7 @@ notifications:
 deploy:
   provider: script
   skip_cleanup: true
-  script: chmod 600 deploy && ssh -o StrictHostKeyChecking=no -i ./deploy
+  script: chmod 600 files/deploy && ssh -o StrictHostKeyChecking=no -i files/deploy
     duchess@ecla.solutions '/src/rsum/files/deploy.bash'
   "on":
     branch: iss53
