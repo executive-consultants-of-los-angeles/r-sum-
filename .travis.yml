@@ -24,5 +24,12 @@ script:
   - molecule test
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
+deploy:
+ provider: script
+ skip_cleanup: true
+ script: chmod 600 deploy && ssh -o StrictHostKeyChecking=no -i ./deploy
+   duchess@ecla.solutions '/src/rsum/files/deploy.bash'
+ on:
+   branch: iss53 
 ...
 # vim: ft=ansible:
