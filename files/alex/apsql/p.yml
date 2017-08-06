@@ -1,0 +1,7 @@
+---
+- name: "Install PostgreSQL"
+  hosts: localhost
+  roles: 
+    - role: apsql
+...
+# vim: ft=ansible:
