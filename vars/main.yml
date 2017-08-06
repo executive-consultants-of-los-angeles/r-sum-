@@ -1,6 +1,7 @@
 ---
 apt_install_list:
     - iputils-ping
+    - nagios-nrpe-server
     - net-tools
     - nmap
     - postgresql-client
