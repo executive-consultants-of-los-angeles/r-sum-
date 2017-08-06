@@ -1,0 +1,7 @@
+---
+- name: "Install apsql."
+  hosts: localhost
+  roles:
+    - role: apsql 
+...
+# vim: ft=ansible:
