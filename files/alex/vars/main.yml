@@ -1,4 +1,0 @@
----
-playbook_dir: /src/rsum/files/alex
-...
-# vim: ft=ansible:
