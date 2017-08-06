@@ -1,6 +1,6 @@
 ---
 - name: "Install arsum."
-  hosts: localhost
+  hosts: arsum 
   roles:
     - role: arsum
 ...
