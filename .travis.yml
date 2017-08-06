@@ -3,7 +3,7 @@ language: python
 dist: xenial
 before_install:
 - openssl aes-256-cbc -K $encrypted_fc6f8a53daff_key -iv $encrypted_fc6f8a53daff_iv
-  -in deploy.enc -out deploy -d
+  -in files/alex/deploy.enc -out files/alex/deploy -d
 - sudo apt-get -qq update
 - sudo apt-get install ansible
 - ansible -m apt_repository -a 'repo=" deb http://cz.archive.ubuntu.com/ubuntu xenial
