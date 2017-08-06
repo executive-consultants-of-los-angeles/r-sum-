@@ -4,21 +4,21 @@ services:
   alex:
     container_name: alex
     command: /usr/bin/supervisord -n
-    image: ecla/alex:latest
+    build: build/alex
     ports:
       - "0.0.0.0:8192:8192"
     volumes:
       - "/srv/alex:/root/.ansible/roles/rsum:rw"
   alex_pg:
-    container_name: alex_pg
+    container_name: apsql 
     command: /usr/bin/supervisord -n
-    image: ecla/psql:latest
+    build: build/psql 
     ports:
       - "0.0.0.0:5432:5432"
   alex_ng:
-    container_name: alex_ng
+    container_name: angos 
     command: /usr/bin/supervisord -n
-    image: ecla/ansible:latest
+    build: build/ngos
     ports:
       - "0.0.0.0:3072:80"
 ...
