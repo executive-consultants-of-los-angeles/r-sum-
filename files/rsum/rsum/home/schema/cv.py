@@ -18,11 +18,17 @@ class CV(models.Model):
 
     def check_sections(self, *args, **kwargs):
         prefix = '/srv/rsum/cvs/'
-        cv_f = open(prefix+kwargs.get('cvname')+'.yml')
+        cv_f = open(
+            prefix+kwargs.get(
+                'name_of_owner'
+            )+kwargs.get(
+                'name_of_cv'
+            )+'.yml'
+        )
         cv_d = yaml.load(cv_f.read())
         self.id = self.save_cv(
             cv_d, 
-            name=kwargs.get('cvname'), 
+            name=kwargs.get('name_of_cv'), 
             template=kwargs.get('template'),
         )
         return self.id 
@@ -30,7 +36,7 @@ class CV(models.Model):
     def get_cv(self, cv_id=1, *args, **kwargs):
         s = Section()
         cv = {
-            'name': kwargs.get('cvname'),
+            'name': kwargs.get('name_of_cv'),
             'sections': s.get_sections(
                 CV.objects.filter(
                     id=cv_id
