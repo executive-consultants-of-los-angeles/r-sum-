@@ -49,7 +49,7 @@ class SubSectionTestCase(TestCase):
 class GetSubSectionTestCase(TestCase):
     def setUp(self):
         cv_instance = CV()
-        cv_id = cv_instance.check_sections(name_of_owner='jess', name_of_cv='abridged', template='acecv')
+        cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='abridged', template='acecv')
         sections = Section.objects.filter(
             cv = CV.objects.filter(
                 id=cv_id
