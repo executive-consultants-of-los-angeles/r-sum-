@@ -67,7 +67,8 @@ class CVGetsTestCase(TestCase):
     def setUp(self):
         cv = CV()
         cv_id = cv.check_sections(
-            cvname='complete',
+            name_of_owner='alex'
+            name_of_cv='complete',
             template='acecv'
         )
         self.complete_sections = cv.get_cv(cv_id=cv_id, cvname='complete').get('sections')
