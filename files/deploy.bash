@@ -18,5 +18,5 @@ docker run -v /root/.ansible/roles/rsum/files/rsum:/srv/alex -d --name arsum -p 
 # angos
 docker build -t angos:latest /src/rsum/files/alex/angos
 /opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/alex/angos/r.yml
-docker run -d --name angos -p 3072:80 -h angos --link apsql --link arsum angos /usr/bin/supervisord -n
+docker run -d --link apsql --link arsum --name angos -p 3072:80 -h angos --link apsql --link arsum angos /usr/bin/supervisord -n
 /opt/py/bin/ansible-playbook /src/rsum/files/alex/angos/p.yml
