@@ -8,48 +8,49 @@ from subsection import SubSection
 
 import json
 
+
 class Section(models.Model):
     cv = models.ForeignKey('home.CV', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
-    content = models.CharField(max_length=200, null=True) 
+    content = models.CharField(max_length=200, null=True)
     iterable = models.BooleanField(default=False)
 
     def get_sections(self, cv):
-        sections = {}
+        sections = [] 
         for section in list(
             Section.objects.filter(
-                cv = cv
+                cv=cv
             ).order_by('id').values()
         ):
             if section.get('content') == u"<type 'list'>":
-                ss = SubSection( section = self )  
+                ss = SubSection(section=self)
                 section.update({
                     'content': ss.get_sub_section(
                         Section.objects.filter(
-                            id = section.get('id')
+                            id=section.get('id')
                         )
                     ),
                 })
             if section.get('content') == u"<type 'dict'>":
-                ss = SubSection( section = self )  
+                ss = SubSection(section=self)
                 section.update({
                     'content': ss.get_sub_section(
                         Section.objects.filter(
-                            id = section.get('id')
+                            id=section.get('id')
                         )
                     ),
                 })
-            sections.update({section.get('name'): section})
+            sections.append(section)
         return sections
-    
+
     def save_section(self, cv, section, name):
-        if section == None:
+        if section is None:
             return None
         s_i = Section()
         s_i.cv = cv
-        s_i.name = name 
+        s_i.name = name
 
-        if type(section) == type(str()):
+        if isinstance(section, str):
             s_i.content = section
             s_i.save()
         else:
@@ -59,7 +60,7 @@ class Section(models.Model):
             ss = SubSection()
             ss.save_sub_sections(section, s_i)
 
-        return Section.objects.values_list()
+        return Section.objects.values()
 
     class Meta:
         app_label = "home"

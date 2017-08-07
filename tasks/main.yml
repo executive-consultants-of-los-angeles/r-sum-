@@ -1,48 +1,50 @@
 ---
-- name: "Install git-completion.bash."
-  get_url:
-    url: "http://bit.ly/2tB6adK"
-    dest: "/root/.git-completion.bash"
+- name: "Copy fixed environment."
+  copy:
+    src: environment
+    dest: /etc/environment
 - name: "Install some packages with pip."
   pip:
     name: "{{ item }}"
     state: present
-  with_items:
-    - django
-    - gunicorn
-    - ruamel.yaml
+  with_items: "{{ pip_install_list }}"
 - name: "Install some packages with apt."
   apt:
     name: "{{ item }}"
     state: present
-  with_items:
-    - net-tools
-    - rsyslog
-    - supervisor
-    - vim
-- name: "Start a django project."
-  command: "/usr/local/bin/django-admin startproject rsum"
-  args:
-    creates: "/srv/rsum/rsum"
-    chdir: "/srv/rsum"
-- name: "Create an app in the new project."
-  command: "/srv/rsum/rsum/manage.py startapp home"
-  args:
-    creates: "/srv/rsum/rsum/home"
-    chdir: "/srv/rsum/rsum/"
-- name: "Migrate the database."
-  command: "/srv/rsum/rsum/manage.py migrate"
-  args:
-    creates: "/srv/rsum/rsum/db.sqlite3"
-    chdir: "/srv/rsum/rsum/"
-- name: "Copy settings.py to the correct location."
+    update_cache: "yes"
+  with_items: "{{ apt_install_list }}"
+- name: "Copy requirements file."
   copy:
-    src: "files/rsum/rsum/rsum/settings.py"
-    dest: "/srv/rsum/rsum/rsum/settings.py"
+    src: "files/r.yml"
+    dest: "/tmp/r.yml"
+- name: "Install role."
+  command: "ansible-galaxy install -r /tmp/r.yml --force"
+  args:
+    creates: "/root/.ansible/roles/rsum/files"
+- name: "Link rsum app to correct path."
+  file:
+    state: link
+    src: /root/.ansible/roles/rsum/files/rsum
+    dest: /srv/rsum
+- name: "Make migrations."
+  command: "/srv/rsum/rsum/manage.py makemigrations home"
+  args:
+    creates: /srv/rsum/rsum/home/migrations
+- name: "Migrate db."
+  django_manage:
+    command: migrate
+    app_path: /srv/rsum/rsum
+- name: "Copy settings for supervisord."
+  copy:
+    src: "supervisord-m.conf"
+    dest: "/etc/supervisor/supervisord.conf"
+  when: inventory_hostname == 'mrsum'
 - name: "Copy settings for supervisord."
   copy:
     src: "supervisord.conf"
     dest: "/etc/supervisor/supervisord.conf"
+  when: inventory_hostname != 'mrsum'
 - name: "Update services state."
   supervisorctl:
     name: "{{ item }}"
@@ -54,5 +56,19 @@
   supervisorctl:
     name: "gunicorn"
     state: "started"
+- name: "Get the index."
+  get_url:
+    url: 'http://127.0.0.1:8193'
+    dest: /tmp/index.html
+  when: inventory_hostname == 'mrsum'
+- name: "Get the index."
+  get_url:
+    url: 'http://alex.ecla.solutions/'
+    dest: /tmp/index.html
+  when: inventory_hostname == 'arsum'
+- name: "Run sanity tests."
+  django_manage:
+    command: test
+    app_path: /srv/rsum/rsum
 ...
 # vim: ft=ansible:

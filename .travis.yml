@@ -2,19 +2,17 @@
 sudo: required
 language: python
 dist: xenial
-services:
-  - docker
 before_install:
+  - openssl aes-256-cbc -K $encrypted_88341752b148_key
+      -iv $encrypted_88341752b148_iv
+      -in files/deploy.enc -out files/deploy -d
   - sudo apt-get -qq update
   - sudo apt-get install ansible
-  - ansible -m apt_repository -a
-      'repo="
-        deb http://cz.archive.ubuntu.com/ubuntu xenial main universe
-      "
-      state=present'
-    -s localhost
+  - ansible -m apt_repository -a 'repo="
+      deb http://cz.archive.ubuntu.com/ubuntu xenial main universe
+    " state=present' -s localhost
   - ansible -m apt -a 'update_cache=yes' -s localhost
-  - sudo apt-get install docker.io
+  - ansible -m apt -a 'name=docker.io state=latest' -s localhost
   - sudo apt-get install gcc
   - sudo apt-get install build-essential
 install:
@@ -25,5 +23,13 @@ script:
   - molecule test
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: chmod 600 files/deploy &&
+    ssh -o StrictHostKeyChecking=no -i files/deploy
+    duchess@ecla.solutions /src/rsum/files/deploy.bash
+  "on":
+    branch: master
 ...
 # vim: ft=ansible:

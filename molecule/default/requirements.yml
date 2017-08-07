@@ -1,5 +1,9 @@
 ---
-- src: executive-consultants-of-los-angeles.rsum
-  version: v0.0.2
+- name: "rsum"
+  src: executive-consultants-of-los-angeles.rsum
+- name: "psql"
+  src: executive-consultants-of-los-angeles.psql
+- name: "ngos"
+  src: executive-consultants-of-los-angeles.nagios
 ...
 # vim: ft=ansible:

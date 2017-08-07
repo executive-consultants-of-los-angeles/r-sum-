@@ -8,56 +8,60 @@ from projectitem import ProjectItem
 
 import json
 
+
 class Project(models.Model):
-    sub_section = models.ForeignKey('home.SubSection', on_delete=models.CASCADE)
+    sub_section = models.ForeignKey(
+        'home.SubSection',
+        on_delete=models.CASCADE
+    )
     name = models.CharField(max_length=200, null=True)
     content = models.CharField(max_length=200, null=True)
 
     def get_projects(self, subsection):
-        #print(subsection)
+        # print(subsection)
         projects = []
         for project in list(
             Project.objects.filter(
-                sub_section = subsection
-            ).values()
+                sub_section=subsection
+            ).order_by('id').values()
         ):
             pli = ProjectItem()
             if project.get('content') == u"<type 'dict'>":
                 project.update({
                     'content': pli.get_project_item(
                         Project.objects.filter(
-                            id = project.get('id')
+                            id=project.get('id')
                         )
-                    ) 
+                    )
                 })
-                
-            projects.append(project) 
-            #print(json.dumps(projects,indent=1))
+
+            projects.append(project)
+            # print(json.dumps(projects,indent=1))
         return projects
 
     def save_projects(self, projects, sub_section, name):
-        #print(json.dumps(projects, indent=1))
-        #print(name)
+        # print(json.dumps(projects, indent=1))
+        # print(name)
         if name == 'id':
             return None
 
-        if type(projects) == type(dict()):
+        if isinstance(projects, dict):
             for k, v in projects.iteritems():
                 p_i = Project()
                 p_i.sub_section = sub_section
-                p_i.name = k 
-                if type(v) == type(dict()):
-                    p_i.content= type(v)
+                p_i.name = k
+                if isinstance(v, dict):
+                    p_i.content = type(v)
                     p_i.save()
                     pi = ProjectItem()
                     pi.save_project_item(v, p_i)
                 else:
                     p_i.content = v
                     p_i.save()
-            return Project.objects.values_list() 
+            return Project.objects.values()
 
-        if type(projects) == type(list()):
-            for k,v in enumerate(projects):
+        if isinstance(projects, list):
+            for k, v in enumerate(projects):
                 p_i = Project()
                 p_i.sub_section = sub_section
                 p_i.name = name
@@ -65,15 +69,18 @@ class Project(models.Model):
                 p_i.save()
                 pi = ProjectItem()
                 pi.save_project_item(v, p_i)
-            return Project.objects.values_list()
+            return Project.objects.values()
 
-        if type(projects) == type(str()):
+        if (
+            isinstance(projects, str) or
+            isinstance(projects, unicode)
+        ):
             p_i = Project()
             p_i.sub_section = sub_section
-            p_i.name = name
+            p_i.name = getattr(sub_section, 'name') 
             p_i.content = projects
             p_i.save()
-
+            return Project.objects.values()
 
     class Meta:
         app_label = "home"

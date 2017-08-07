@@ -3,6 +3,8 @@ Résumé
 
 [![Build Status](https://travis-ci.org/executive-consultants-of-los-angeles/rsum.svg?branch=master)](https://travis-ci.org/executive-consultants-of-los-angeles/rsum)
 
+Would like to have a functional CI for this thing.  I think we do, now to get monitoring automagic. 
+
 The point of this is to demonstrate for potential clients that this company is not completely lacking competence and so running this role will eventually a small container that will run a webserver on which you can see my résumé.  Further instruction is provided below.
 
 

@@ -5,12 +5,12 @@
                 <div class="container content-lg">
                   <div class="row margin-b-40">
                       <div class="col-sm-6">
-                          <h2>{{ section.values.name|title }}</h2>
-                          <p style="text-align: justify">{{ section.values.content.0.content.0.content }}</p>
+                          <h2>{{ section.name|title }}</h2>
+                          <p style="text-align: justify">{{ section.content.0.content.0.content }}</p>
                       </div>
                   </div>
                   <div class="row row-space-2 margin-b-4">
-                    {% for row in section.values.content.1.content %}
+                    {% for row in section.content.1.content %}
                       <div {{ row.1.col|safe }}>
                         <div {{ row.1.service|safe }}> 
                           <div class="service-element">

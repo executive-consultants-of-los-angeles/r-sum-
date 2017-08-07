@@ -1,8 +1,16 @@
 ---
+- name: "psql"
+  hosts: mpsql
+  roles:
+    - role: "psql"
 - name: "converge"
-  hosts: all
+  hosts: mrsum
   roles:
     - role:
-        "executive-consultants-of-los-angeles.rsum"
+        "rsum"
+- name: "nagios"
+  hosts: mngos
+  roles:
+    - role: "ngos"
 ...
 # vim: ft=ansible:
