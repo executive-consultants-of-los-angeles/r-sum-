@@ -1,5 +1,5 @@
 {% load static %}
-{# section #}
+{{ section }}
         <!--========== SLIDER ==========-->
         <div class="promo-block">
             <div class="container">
@@ -11,7 +11,7 @@
                         </div>
                         <ul class="list-inline">
                           {% for s in section.content.0.content %}
-                            <li><a href="{{ s.value }}" class="social-icons" target="_blank"><i class="icon-social-{{ s.name }}"></i></a></li>
+                            <li><a href="{{ s }}" class="social-icons" target="_blank"><i class="icon-social-{{ s.name }}"></i></a></li>
                           {% endfor %}
                         </ul>
                     </div>
