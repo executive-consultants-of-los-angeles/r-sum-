@@ -1,7 +1,14 @@
 #!/bin/bash
+
+# Remove exiting containers.
 docker rm -f apsql
 docker rm -f arsum
 docker rm -f angos
+
+# Remove existing images.
+docker rmi -f apsql
+docker rmi -f arsum
+docker rmi -f angos
 
 # apsql
 docker build -t apsql:latest /src/rsum/files/alex/apsql
