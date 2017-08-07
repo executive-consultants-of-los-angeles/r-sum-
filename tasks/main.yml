@@ -60,6 +60,12 @@
   get_url:
     url: 'http://127.0.0.1:8193'
     dest: /tmp/index.html
+  when: inventory_hostname == 'mrsum'
+- name: "Get the index."
+  get_url:
+    url: 'http://alex.ecla.solutions/'
+    dest: /tmp/index.html
+  when: inventory_hostname == 'arsum'
 - name: "Run sanity tests."
   django_manage:
     command: test
