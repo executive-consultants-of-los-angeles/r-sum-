@@ -1,13 +1,12 @@
 ---
-- name: "psql"
+- name: "mpsql"
   hosts: mpsql
   roles:
     - role: "mpsql"
 - name: "converge"
   hosts: mrsum
   roles:
-    - role:
-        "mrsum"
+    - role: "mrsum"
 - name: "nagios"
   hosts: mngos
   roles:

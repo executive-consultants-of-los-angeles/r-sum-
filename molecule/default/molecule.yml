@@ -16,6 +16,8 @@ platforms:
     image: ecla/ansible:latest
     ports:
       - "8193:8193"
+    links:
+      - "mpsql:mpsql"
   - name: "mngos"
     command: "/usr/bin/supervisord -n"
     image: ecla/ansible:latest
