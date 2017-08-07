@@ -21,7 +21,7 @@ class CV(models.Model):
         cv_f = open(
             prefix+kwargs.get(
                 'name_of_owner'
-            )+kwargs.get(
+            )+'/'+kwargs.get(
                 'name_of_cv'
             )+'.yml'
         )
