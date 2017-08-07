@@ -1,6 +1,7 @@
 ---
 - name: "mrsum"
   src: executive-consultants-of-los-angeles.rsum
+  version: "iss57"
 - name: "mpsql"
   src: executive-consultants-of-los-angeles.psql
 - name: "mngos"
