@@ -1,6 +1,6 @@
 ---
 - name: "Install apsql."
-  hosts: apsql 
+  hosts: apsql
   roles:
     - role: apsql
 ...

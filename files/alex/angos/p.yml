@@ -1,6 +1,6 @@
 ---
 - name: "Install angos."
-  hosts: angos 
+  hosts: angos
   roles:
     - role: angos
 ...
