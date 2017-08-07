@@ -13,6 +13,19 @@ summary:
   content: "Straight shooter with upper management written all over me."
 skills:
   id: 3
+  build_status:
+    rsum:
+      name: "CV"
+      image:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/rsum.svg?branch=master"
+    ngos:
+      name: "Nagios"
+      image:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/nagios.svg?branch=master"
+    psql:
+      name: "PostgreSQL"
+      image:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/psql.svg?branch=master"
   automation_administration:
     id: 1
     name: "Infrastructure Automation and Administration"
