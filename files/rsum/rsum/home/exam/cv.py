@@ -20,7 +20,8 @@ class CVTestCase(TestCase):
     def test_check_sections(self):
         cv = CV()
         self.cv_id = cv.check_sections(
-            cvname='complete', 
+            name_of_owner='alex',
+            name_of_cv='complete', 
             template='acecb'
         )
         self.assertEqual(
@@ -78,7 +79,8 @@ class CVGetsTestCase(TestCase):
         self.cv_id = cv_id 
 
         self.cv_abridged_id = cv.check_sections(
-            cvname='abridged',
+            name_of_owner='alex',
+            name_of_cv='abridged',
             template='acecv'
         )
         self.ab_sections = cv.get_cv(cv_id=cv_id, cvname='abridged').get('sections')
