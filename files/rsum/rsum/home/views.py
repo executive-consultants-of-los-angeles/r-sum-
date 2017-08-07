@@ -14,7 +14,7 @@ import json
 def index(request):
     cv_instance = CV()
 
-    cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='complete')
+    cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='engineer')
     cv = cv_instance.get_cv(cv_id=cv_id)
 
     context = {
