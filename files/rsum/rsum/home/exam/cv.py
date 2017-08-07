@@ -10,10 +10,10 @@ import yaml
 
 class CVTestCase(TestCase):
     def setUp(self):
-        f = open('/srv/rsum/cvs/abridged.yml')
+        f = open('/srv/rsum/cvs/alex/abridged.yml')
         self.abridged = yaml.load(f.read())
         f.close()
-        f = open('/srv/rsum/cvs/complete.yml')
+        f = open('/srv/rsum/cvs/alex/complete.yml')
         self.complete = yaml.load(f.read())
         f.close()
 
