@@ -11,8 +11,6 @@ intro:
 summary:
   id: 2
   content: "Straight shooter with upper management written all over me."
-skills:
-  id: 3
   build_status:
     name: "Build Status"
     rsum:
@@ -27,6 +25,8 @@ skills:
       name: "PostgreSQL"
       image:
         "https://travis-ci.org/executive-consultants-of-los-angeles/psql.svg?branch=master"
+skills:
+  id: 3
   automation_administration:
     id: 1
     name: "Infrastructure Automation and Administration"
