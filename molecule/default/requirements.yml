@@ -1,9 +1,9 @@
 ---
-- name: "rsum"
+- name: "mrsum"
   src: executive-consultants-of-los-angeles.rsum
-- name: "psql"
+- name: "mpsql"
   src: executive-consultants-of-los-angeles.psql
-- name: "ngos"
+- name: "mngos"
   src: executive-consultants-of-los-angeles.nagios
 ...
 # vim: ft=ansible:
