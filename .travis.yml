@@ -3,10 +3,9 @@ sudo: required
 language: python
 dist: xenial
 before_install:
-  - openssl aes-256-cbc -K
-      $encrypted_fc6f8a53daff_key -iv
-      $encrypted_fc6f8a53daff_iv -in
-      files/alex/deploy.enc -out files/alex/deploy -d
+  - openssl aes-256-cbc -K $encrypted_88341752b148_key
+      -iv $encrypted_88341752b148_iv
+      -in files/deploy.enc -out files/deploy -d
   - sudo apt-get -qq update
   - sudo apt-get install ansible
   - ansible -m apt_repository -a 'repo="
@@ -24,5 +23,13 @@ script:
   - molecule test
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: chmod 600 files/deploy &&
+    ssh -o StrictHostKeyChecking=no -i files/deploy
+    duchess@ecla.solutions /src/rsum/files/deploy.bash
+  "on":
+    branch: master
 ...
 # vim: ft=ansible:

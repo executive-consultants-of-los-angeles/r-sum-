@@ -1,0 +1,7 @@
+---
+- name: "Install angos."
+  hosts: angos
+  roles:
+    - role: angos
+...
+# vim: ft=ansible:

@@ -1,7 +1,0 @@
----
-- name: "Install rsum."
-  hosts: "alex"
-  roles:
-    - rsum
-...
-# vim: ft=ansible:

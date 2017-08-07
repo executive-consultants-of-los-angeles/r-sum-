@@ -1,0 +1,5 @@
+---
+- name: "apsql"
+  src: "executive-consultants-of-los-angeles.psql"
+...
+# vim: ft=ansible:

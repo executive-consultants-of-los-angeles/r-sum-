@@ -60,9 +60,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-MIDDLEWARE_CLASSES = [
-]
-
 ROOT_URLCONF = 'rsum.urls'
 
 TEMPLATES = [
@@ -90,8 +87,8 @@ WSGI_APPLICATION = 'rsum.wsgi.application'
 if socket.gethostname() == 'mrsum': 
     DB_HOST = 'mpsql'
     DB_PORT = '5433'
-else:
-    DB_HOST = 'pg'
+elif socket.gethostname() == 'arsum':
+    DB_HOST = 'apsql'
     DB_PORT = '5432'
 
 DATABASES = {
