@@ -10,10 +10,10 @@ import yaml
 
 class CVTestCase(TestCase):
     def setUp(self):
-        f = open('/srv/rsum/cvs/abridged.yml')
+        f = open('/srv/rsum/cvs/alex/abridged.yml')
         self.abridged = yaml.load(f.read())
         f.close()
-        f = open('/srv/rsum/cvs/complete.yml')
+        f = open('/srv/rsum/cvs/alex/complete.yml')
         self.complete = yaml.load(f.read())
         f.close()
 
@@ -67,7 +67,8 @@ class CVGetsTestCase(TestCase):
     def setUp(self):
         cv = CV()
         cv_id = cv.check_sections(
-            cvname='complete',
+            name_of_owner='alex',
+            name_of_cv='complete',
             template='acecv'
         )
         self.complete_sections = cv.get_cv(cv_id=cv_id, cvname='complete').get('sections')
