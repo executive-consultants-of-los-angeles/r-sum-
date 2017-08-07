@@ -12,7 +12,7 @@ docker run -d --name apsql -p 5432:5432 -h apsql apsql /usr/bin/supervisord -n
 # arsum
 docker build -t arsum:latest /src/rsum/files/alex/arsum
 /opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/alex/arsum/r.yml
-docker run -v /srv/alex:/root/.ansible/roles/rsum/files/rsum:rw -d --name arsum -p 8192:8192 -h arsum --link apsql arsum /usr/bin/supervisord -n
+docker run -d --name arsum -p 8192:8192 -h arsum --link apsql arsum /usr/bin/supervisord -n
 /opt/py/bin/ansible-playbook /src/rsum/files/alex/arsum/p.yml
 
 # angos
