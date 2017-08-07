@@ -79,7 +79,7 @@ class CVGetsTestCase(TestCase):
         self.cv_id = cv_id 
 
         self.cv_abridged_id = cv.check_sections(
-            name_of_oaner='alex',
+            name_of_owner='alex',
             name_of_cv='abridged',
             template='acecv'
         )
