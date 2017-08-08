@@ -5,15 +5,15 @@
     state: "present"
     login_host: "mpsql"
     login_user: "psql"
-    login_port: "5433"
+    port: "5433"
   when: inventory_hostname == 'mrsum'
 - name: "Create Production DB."
   postgresql_db:
-    name: "mrsum"
+    name: "arsum"
     state: "present"
-    login_host: "mpsql"
+    login_host: "apsql"
     login_user: "psql"
-    login_port: "5433"
+    port: "5432"
   when: inventory_hostname == 'arsum'
 - name: "Copy fixed environment."
   copy:
