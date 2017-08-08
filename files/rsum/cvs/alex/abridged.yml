@@ -33,14 +33,14 @@ summary:
         "https://travis-ci.org/executive-consultants-of-los-angeles/psql"
 skills:
   id: 3
-  start: 2000 
-  infrastructure_automation: 
+  start: 2000
+  infrastructure_automation:
     id: 1
     name: "Infrastructure Automation and Administration"
-    start: 2000 
+    start: 2000
     ansible:
       name: "Ansible"
-      start: 2013 
+      start: 2013
     molecule:
       name: "Molecule"
       start: 2016
@@ -91,7 +91,7 @@ skills:
     start: 2000
     redhat:
       name: "RedHat Enterprise Linux"
-      start: 2000 
+      start: 2000
     debian:
       name: "Debian Linux"
       start: 2000
@@ -113,7 +113,7 @@ skills:
       start: 2016
     php:
       name: "Personal Home Page"
-      start: 2000 
+      start: 2000
     javascript:
       name: "JavaScript"
       start: 2000
@@ -127,10 +127,10 @@ skills:
     mysql:
       name: "MySQL"
       competence: 70
-      start: 2000 
+      start: 2000
     mongodb:
       name: "MongoDB"
-      start: 2014 
+      start: 2014
 values:
   id: 4
   introduction: 'A clearly defined system of ethics is vital to a
