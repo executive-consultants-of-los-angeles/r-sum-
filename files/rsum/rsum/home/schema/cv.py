@@ -86,7 +86,11 @@ class CV(models.Model):
                     skillset.get(name).update({
                         'competence': content.get('content'),
                     })
-                elif content.get('name') != 'id' and content.get('name') != 'name':
+                elif (
+                    content.get('name') != 'id' and 
+                    content.get('name') != 'experience' and 
+                    content.get('name') != 'name'
+                ):
                     skillset.get(name).update({
                         content.get('name'): {
                             'experience': content.get(
