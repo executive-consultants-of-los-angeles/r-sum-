@@ -102,10 +102,6 @@ DATABASES = {
         'HOST': DB_HOST, 
         'PORT': DB_PORT,
     }
-    # 'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': '/tmp/db.sqlite3',
-    # }
 }
 
 
