@@ -52,10 +52,16 @@ class SubSection(models.Model):
 
     def save_sub_sections(self, sub_section, section):
         projects = []
-        if getattr(section, 'name') == 'experience':
+        if (
+            getattr(section, 'name') == 'experience' or
+            getattr(section, 'name') == 'skills'
+        ):
             # print("\n\n\nsubsection\n\n\n")
             for k, v in sub_section.items():
-                if k == 'introduction':
+                if (
+                    k == 'introduction' or
+                    k == 'start'
+                ):
                     ss_i = SubSection()
                     ss_i.section = section
                     ss_i.content = v
@@ -64,7 +70,7 @@ class SubSection(models.Model):
                     del sub_section[k]
                 elif k == 'id':
                     del sub_section[k]
-
+        
             for item in sorted(
                 sub_section.items(),
                 key=lambda t: t[1].get('id')

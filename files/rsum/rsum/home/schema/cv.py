@@ -5,11 +5,13 @@ from __future__ import print_function
 
 from collections import OrderedDict
 
-import yaml
+import datetime
 import json
+import yaml
 
 from django.db import models
 from section import Section
+from subsection import SubSection
 
 
 class CV(models.Model):
@@ -88,26 +90,44 @@ class CV(models.Model):
                     })
                 elif (
                     content.get('name') != 'id' and 
-                    content.get('name') != 'experience' and 
+                    content.get('name') != 'start' and 
                     content.get('name') != 'name'
                 ):
+                    sub_name = content.get(
+                        'content'
+                    ).get(
+                        content.get('name')
+                    ).get(
+                        'name'
+                    )
+
+                    start_career = SubSection.objects.filter(
+                        section_id=3
+                    ).filter(
+                        name='start'
+                    ).values()[0].get('content')
+
+                    start_skill = int(content.get(
+                        'content'
+                    ).get(
+                        content.get('name')
+                    ).get(
+                        'start'
+                    ))
+
+                    current_year = int(datetime.date.today().strftime("%Y"))
+                    years_career = float(current_year) - float(start_career)
+                    years_skill = float(current_year) - float(start_skill)
+
+                    experience_value = years_skill / years_career * 100
+                    experience_string = "{0} year(s)".format(int(years_skill))
+
+                    # Assemble the skill set to be returned.
                     skillset.get(name).update({
                         content.get('name'): {
-                            'experience': content.get(
-                                'content'
-                            ).get(
-                                content.get('name')
-                            ).get('experience'),
-                            'name': content.get(
-                                'content'
-                            ).get(
-                                content.get('name')
-                            ).get('name'),
-                            'competence': content.get(
-                                'content'
-                            ).get(
-                                content.get('name')
-                            ).get('competence'),
+                            'experience_string': experience_string,
+                            'name': sub_name,
+                            'experience_value': experience_value, 
                         }
                     })
         return skillset

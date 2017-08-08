@@ -9,10 +9,10 @@
           <div class="progress-bar bg-color-base" role="progressbar" data-width="{{ data.competence }}"></div>
         </div>
         {% for related,skills in data.iteritems %}
-          {% if related != 'competence'  and related != 'index' %}
-          <h6 style="padding-left: 20px;">{{ skills.name }} <span style="font-size: 8pt;">({{ skills.experience }})</span><span class="color-heading pull-right">{{ skills.competence}}%</span></h6>
+          {% if related != 'experience_value'  and related != 'index' %}
+          <h6 style="padding-left: 20px;">{{ skills.name }} <span class="color-heading pull-right">{{ skills.experience_string }}</span></h6>
           <div class="progress progress-sub">
-            <div class="progress-bar bg-color-base" role="progressbar" data-width="{{ skills.competence }}"></div>
+            <div class="progress-bar bg-color-base" role="progressbar" data-width="{{ skills.experience_value }}"></div>
           </div>
           {% endif %}
         {% endfor %}
