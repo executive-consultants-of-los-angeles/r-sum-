@@ -33,10 +33,11 @@ summary:
         "https://travis-ci.org/executive-consultants-of-los-angeles/psql"
 skills:
   id: 3
-  automation_administration:
+  max: 15
+  "Infrastructure Automation and Administration":
     id: 1
     name: "Infrastructure Automation and Administration"
-    competence: 85
+    experience: "15 years"
     ansible:
       name: "Ansible"
       competence: 90
