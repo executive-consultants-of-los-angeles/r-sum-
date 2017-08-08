@@ -31,5 +31,7 @@ deploy:
     duchess@ecla.solutions /src/rsum/files/deploy.bash
   "on":
     branch: master
+on_success: never
+on_failure: never
 ...
 # vim: ft=ansible:
