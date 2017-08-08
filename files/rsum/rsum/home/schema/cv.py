@@ -20,16 +20,16 @@ class CV(models.Model):
 
     def check_sections(self, *args, **kwargs):
         prefix = '/srv/rsum/cvs/'
-        cv_f = open(
+        with open(
             prefix+kwargs.get(
                 'name_of_owner'
             )+'/'+kwargs.get(
                 'name_of_cv'
             )+'.yml'
-        )
-        cv_d = yaml.load(cv_f.read())
+        , 'r') as cv_file:
+            cv_dict = yaml.load(cv_file.read())
         self.id = self.save_cv(
-            cv_d, 
+            cv_dict, 
             name=kwargs.get('name_of_cv'), 
             template=kwargs.get('template'),
         )
@@ -170,17 +170,6 @@ class CV(models.Model):
             s.save_section(cv, section, name)
 
         return getattr(cv, 'id')
-
-    """
-    def sort_sections(self, cv):
-        sections = []
-        for section in sorted(
-            cv.get('sections').items(),
-            key=lambda t: t[1].get('id')
-        ):
-            sections.append({section[0]: section[1]})
-        return sections
-    """
 
     class Meta:
         app_label = "home"

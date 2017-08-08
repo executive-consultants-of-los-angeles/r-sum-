@@ -97,15 +97,18 @@ experience:
 Requirements
 ------------
 
-A willingness to learn.
+Docker Engine, or *nix, or access to a cloud provider that supports *nix.
+
 ```bash
 ansible-galaxy install executive-consultants-of-los-angeles.r-sum-
 ```
 
+
+
 Role Variables
 --------------
 
-None yet.
+![network graph](files/continuous-integration.png)
 
 Dependencies
 ------------
