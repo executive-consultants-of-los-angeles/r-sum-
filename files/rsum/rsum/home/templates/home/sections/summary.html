@@ -14,13 +14,20 @@
                             <div class="margin-b-50">
                                 <div class="margin-b-30">
                                     <h2>{{ section.name|title }}</h2>
-                                    <p>{{ section.content.0.content.0.content }}</p>
+                                    <p style="font-size: 16pt;">{{ section.content.0.content.0.content }}</p>
                                     <p>
-                                      <table>
-                                        {% for sub in section.content %} 
-                                          {% if forloop.counter > 1 %}
+                                      <table style="width: 100%; text-align: center;">
+                                        <tr>
+                                          <th>
+                                            <td colspan="3">Build Status</td>
+                                          </th>
+                                        </tr>
+                                        {% for sub in section.content.1.content %} 
+                                          {% if sub.content != 'Build Status' %}
                                           <tr>
-                                            <td>{{ sub }}</td>
+                                            {% for item in sub.content.items %}
+                                              <td style="font-size: 13pt; font-weight: bold;">{{ item.1.name }}</td><td><img src="{{ item.1.image }}" /></td>
+                                            {% endfor %}
                                           </tr>
                                           {% endif %}
                                         {% endfor %}
