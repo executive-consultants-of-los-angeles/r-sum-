@@ -34,7 +34,7 @@ summary:
 skills:
   id: 3
   max: 15
-  "Infrastructure Automation and Administration":
+  infrastructure_automation: 
     id: 1
     name: "Infrastructure Automation and Administration"
     experience: "15 years"
