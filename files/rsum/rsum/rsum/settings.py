@@ -87,23 +87,21 @@ WSGI_APPLICATION = 'rsum.wsgi.application'
 if socket.gethostname() == 'mrsum': 
     DB_HOST = 'mpsql'
     DB_PORT = '5433'
+    DB_NAME = 'mrsum'
 elif socket.gethostname() == 'arsum':
     DB_HOST = 'apsql'
     DB_PORT = '5432'
+    DB_NAME = 'arsum'
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'alex',
+        'NAME': DB_NAME,
         'USER': 'psql',
         'PASSWORD': '',
         'HOST': DB_HOST, 
         'PORT': DB_PORT,
     }
-    # 'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': '/tmp/db.sqlite3',
-    # }
 }
 
 
