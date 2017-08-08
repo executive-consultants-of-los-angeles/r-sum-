@@ -72,6 +72,14 @@ class CV(models.Model):
         skills = context.get('cv')[2].get('content')
         skillset = {}
 
+        start_career = SubSection.objects.filter(
+            section_id=3
+        ).filter(
+            name='start'
+        ).values()[0].get('content')
+        current_year = float(datetime.date.today().strftime("%Y"))
+        years_career = float(current_year) - float(start_career)
+
         # I failed algorithms in college. 
         for index, skill in enumerate(skills):
             for content in skill.get('content'):
@@ -84,9 +92,15 @@ class CV(models.Model):
 
         for name, value in skillset.iteritems():
             for content in skills[value.get('index')].get('content'):
-                if content.get('name') == 'competence':
+                if content.get('name') == 'start':
+                    start_skill = float(content.get('content'))
+                    years_skill = current_year - start_skill
+                    experience_value = years_skill / years_career * 100
+                    experience_string = "{0} year(s)".format(int(years_skill))
+
                     skillset.get(name).update({
-                        'competence': content.get('content'),
+                        'experience_value': experience_value,
+                        'experience_string': experience_string,
                     })
                 elif (
                     content.get('name') != 'id' and 
@@ -101,12 +115,6 @@ class CV(models.Model):
                         'name'
                     )
 
-                    start_career = SubSection.objects.filter(
-                        section_id=3
-                    ).filter(
-                        name='start'
-                    ).values()[0].get('content')
-
                     start_skill = int(content.get(
                         'content'
                     ).get(
@@ -115,8 +123,6 @@ class CV(models.Model):
                         'start'
                     ))
 
-                    current_year = int(datetime.date.today().strftime("%Y"))
-                    years_career = float(current_year) - float(start_career)
                     years_skill = float(current_year) - float(start_skill)
 
                     experience_value = years_skill / years_career * 100
