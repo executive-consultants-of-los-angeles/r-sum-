@@ -33,118 +33,104 @@ summary:
         "https://travis-ci.org/executive-consultants-of-los-angeles/psql"
 skills:
   id: 3
-  automation_administration:
+  start: 2000 
+  infrastructure_automation: 
     id: 1
     name: "Infrastructure Automation and Administration"
-    competence: 85
+    start: 2000 
     ansible:
       name: "Ansible"
-      competence: 90
-      experience: "4 years"
+      start: 2013 
     molecule:
       name: "Molecule"
-      competence: 70
-      experience: "3 months"
+      start: 2016
     bash:
       name: "Bourne Again SHell"
-      competence: 75
-      experience: "15 years"
+      start: 2000
     vim:
       name: "Very IMproved Text Editor"
-      competence: 70
-      experience: "15 years"
+      start: 2000
   cloud_architecture:
     id: 2
     name: "Cloud Computing Services"
-    competence: 80
+    start: 2008
     amazon_web_services:
       name: "Amazon Web Services"
-      competence: 85
-      experience: "9 years"
+      start: 2008
     microsoft_azure:
       name: "Microsoft Azure"
-      competence: 70
-      experience: "1 year"
+      start: 2016
     google_cloud:
       name: "Google Cloud"
-      competence: 75
-      experience: "1 year"
+      start: 2016
     digital_ocean:
       name: "Digital Ocean"
-      competence: 85
-      experience: "4 years"
+      start: 2014
   software_development:
     id: 3
     name: "Software Engineering"
-    competence: 75
+    start: 2004
     agile:
       name: "Agile Development"
-      competence: 80
-      experience: "4 years"
+      start: 2014
     sdlc:
       name: "Software Development Life Cycle"
-      competence: 82
-      experience: "15 years"
+      start: 2000
     scm:
       name: "Source Code Management"
-      competence: 85
-      experience: "10 years"
+      start: 2006
     git:
       name: "git"
-      competence: 85
-      experience: "4 years"
+      start: 2013
     svn:
       name: "SubVersion"
-      competence: 70
-      experience: "2 years"
+      start: 2006
   linux_unix:
     id: 4
     name: "Linux Administration"
-    competence: 90
+    start: 2000
     redhat:
       name: "RedHat Enterprise Linux"
-      competence: 70
-      experience: "15 years"
+      start: 2000 
     debian:
-      name: "Debian Linux / Ubuntu Linux"
-      competence: 85
-      experience: "13 years"
+      name: "Debian Linux"
+      start: 2000
+    ubuntu:
+      name: "Ubuntu Linux"
+      start: 2005
+    gentoo:
+      name: "Gentoo Linux"
+      start: 2004
   programming:
     id: 5
     name: "Programming Languages"
-    competence: 75
+    start: 2000
     python:
       name: "Python"
-      competence: 80
-      experience: "4 years"
+      start: 2014
     java:
       name: "Java"
-      competence: 60
-      experience: "1 year"
+      start: 2016
     php:
       name: "Personal Home Page"
-      competence: 70
-      experience: "15 years"
+      start: 2000 
     javascript:
       name: "JavaScript"
-      competence: 70
-      experience: "15 years"
+      start: 2000
   databases:
     id: 6
     name: "Relational and Other Databases"
-    competence: 75
+    start: 2000
     postgresql:
       name: "PostgreSQL"
-      competence: 75
-      experience: "10 years"
+      start: 2007
     mysql:
       name: "MySQL"
       competence: 70
-      experience: "15 years"
+      start: 2000 
     mongodb:
       name: "MongoDB"
-      competence: 70
-      experience: "3 years"
+      start: 2014 
 values:
   id: 4
   introduction: 'A clearly defined system of ethics is vital to a
