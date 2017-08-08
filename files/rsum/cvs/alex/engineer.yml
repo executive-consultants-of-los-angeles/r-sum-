@@ -17,14 +17,20 @@ summary:
       name: "CV"
       image:
         "https://travis-ci.org/executive-consultants-of-los-angeles/rsum.svg?branch=master"
+      link:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/rsum"
     ngos:
       name: "Nagios"
       image:
         "https://travis-ci.org/executive-consultants-of-los-angeles/nagios.svg?branch=master"
+      link:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/nagios"
     psql:
       name: "PostgreSQL"
       image:
         "https://travis-ci.org/executive-consultants-of-los-angeles/psql.svg?branch=master"
+      link:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/psql"
 skills:
   id: 3
   automation_administration:

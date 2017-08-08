@@ -6,7 +6,7 @@ intro:
   social_media_links:
     facebook: 'https://www.facebook.com/eclacfo'
     twitter: 'https://twitter.com/eclacfo'
-    linkedin: 'https://www.linkedin.cim/in/eclacfo'
+    linkedin: 'https://www.linkedin.com/in/eclacfo'
     github: 'https://github.com/eclacfo'
 summary:
   id: 2
@@ -17,14 +17,20 @@ summary:
       name: "CV"
       image:
         "https://travis-ci.org/executive-consultants-of-los-angeles/rsum.svg?branch=master"
+      link:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/rsum"
     ngos:
       name: "Nagios"
       image:
         "https://travis-ci.org/executive-consultants-of-los-angeles/nagios.svg?branch=master"
+      link:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/nagios"
     psql:
       name: "PostgreSQL"
       image:
         "https://travis-ci.org/executive-consultants-of-los-angeles/psql.svg?branch=master"
+      link:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/psql"
 skills:
   id: 3
   automation_administration:
