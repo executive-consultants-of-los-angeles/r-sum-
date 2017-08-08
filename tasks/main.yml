@@ -4,7 +4,7 @@
     name: "{{ item }}"
     state: present
   with_items: "{{ pip_install_list }}"
-- name: "Create Production DB."
+- name: "Create Development DB."
   postgresql_db:
     name: "mrsum"
     state: "present"
