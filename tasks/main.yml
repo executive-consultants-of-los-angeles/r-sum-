@@ -1,4 +1,20 @@
 ---
+- name: "Create Production DB."
+  postgresql_db:
+    name: "mrsum"
+    state: "present"
+    login_host: "mpsql"
+    login_user: "psql"
+    login_port: "5433"
+  when: inventory_hostname == 'mrsum'
+- name: "Create Production DB."
+  postgresql_db:
+    name: "mrsum"
+    state: "present"
+    login_host: "mpsql"
+    login_user: "psql"
+    login_port: "5433"
+  when: inventory_hostname == 'arsum'
 - name: "Copy fixed environment."
   copy:
     src: environment
