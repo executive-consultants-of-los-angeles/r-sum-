@@ -1,6 +1,6 @@
 {% load static %}        
 
-{# section.content #}
+{{ section.content }}
         <!--========== PAGE LAYOUT ==========-->
         <!-- About -->
         <div id="summary">
@@ -15,6 +15,17 @@
                                 <div class="margin-b-30">
                                     <h2>{{ section.name|title }}</h2>
                                     <p>{{ section.content.0.content.0.content }}</p>
+                                    <p>
+                                      <table>
+                                        {% for sub in section.content %} 
+                                          {% if forloop.counter > 1 %}
+                                          <tr>
+                                            <td>{{ sub }}</td>
+                                          </tr>
+                                          {% endif %}
+                                        {% endfor %}
+                                      </table>
+                                    </p>
                                 </div>
                                 <a href="https://galaxy.ansible.com/executive-consultants-of-los-angeles/rsum/" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Download my CV</a>
                             </div>
