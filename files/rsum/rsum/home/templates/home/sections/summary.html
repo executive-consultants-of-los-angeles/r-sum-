@@ -1,6 +1,6 @@
 {% load static %}        
 
-{{ section.content }}
+{# section.content #}
         <!--========== PAGE LAYOUT ==========-->
         <!-- About -->
         <div id="summary">
@@ -18,7 +18,7 @@
                                     <p>
                                       <table style="width: 100%; text-align: center;">
                                         <tr>
-                                          <td colspan="2"><h3>Build Status</h3></td>
+                                          <td colspan="3"><h3>Build Status</h3></td>
                                         </tr>
                                         {% for sub in section.content.1.content %} 
                                           {% if sub.content != 'Build Status' %}
