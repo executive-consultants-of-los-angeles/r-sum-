@@ -14,8 +14,25 @@
                             <div class="margin-b-50">
                                 <div class="margin-b-30">
                                     <h2>{{ section.name|title }}</h2>
-                                    <p>{{ section.content.0.content.0.content }}</p>
+                                    <p style="font-size: 16pt;">{{ section.content.0.content.0.content }}</p>
+                                    <p>
+                                      <table style="width: 100%; text-align: center;">
+                                        <tr>
+                                          <td colspan="3"><h3>Build Status</h3></td>
+                                        </tr>
+                                        {% for sub in section.content.1.content %} 
+                                          {% if sub.content != 'Build Status' %}
+                                          <tr>
+                                            {% for item in sub.content.items %}
+                                              <td><h5>{{ item.1.name }}</h5></td>
+                                              <td><a href="{{ item.1.link }}"><img src="{{ item.1.image }}" /></a></td>
+                                              <td><a class="github-button" href="https://github.com/ecla/{{ item.0 }}/archive/master.zip" aria-label="Download ecla/{{ item.0 }} on GitHub">{{ item.0 }}</a></td>
+                                            {% endfor %}
+                                          </tr>
+                                          {% endif %}
+                                        {% endfor %}
+                                      </table>
+                                    </p>
                                 </div>
-                                <a href="https://galaxy.ansible.com/executive-consultants-of-los-angeles/rsum/" class="btn-theme btn-theme-md btn-default-bg text-uppercase">Download my CV</a>
                             </div>
                         </div>

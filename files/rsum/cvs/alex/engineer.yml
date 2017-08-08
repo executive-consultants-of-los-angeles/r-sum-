@@ -17,14 +17,20 @@ summary:
       name: "CV"
       image:
         "https://travis-ci.org/executive-consultants-of-los-angeles/rsum.svg?branch=master"
+      link:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/rsum"
     ngos:
       name: "Nagios"
       image:
         "https://travis-ci.org/executive-consultants-of-los-angeles/nagios.svg?branch=master"
+      link:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/nagios"
     psql:
       name: "PostgreSQL"
       image:
         "https://travis-ci.org/executive-consultants-of-los-angeles/psql.svg?branch=master"
+      link:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/psql"
 skills:
   id: 3
   automation_administration:
@@ -360,200 +366,6 @@ experience:
       source_code_management:
         - "implemented git and gitflow for source code control"
         - "provided training to other employees on their use"
-  club_cirok:
-    id: 10
-    duration: "December 2012  -  July 2013 (8 months)"
-    location: "Nashville, Tennessee"
-    company: "Club Cirok"
-    position: "Bartender"
-    projects:
-      bartender:
-        - "tended bar in a high volume nightclub setting"
-        - "served limited bottled beer, wine, and mixed drinks"
-        - "mixed classic cocktails for the enjoyment of club patrons"
-  rodizio_brazilian_grill:
-    id: 11
-    duration: "September 2012  -  January 2013 (5 months)"
-    location: "Nashville, Tennessee"
-    company: "Rodizio Brazilian Grill"
-    position: "Bartender"
-    projects:
-      bartender:
-        - "tended bar in a full-service restaurant setting"
-        - "served bottled beer, draught beer, wine, champagne"
-        - "learned menu of specialty cocktails"
-  lipstick_lounge:
-    id: 12
-    duration: "July 2012  -  September 2012 (3 months)"
-    location: "Nashville, Tennessee"
-    company: "Lipstick Lounge"
-    position: "Barback / Cook"
-    projects:
-      barback:
-        - "stocked beer, wine, and liquor for high volume bar"
-        - "cooked, and delivered food orders from bar"
-  atlas_payment_processing:
-    id: 13
-    duration: "September 2011  -  September 2012 (1 year 1 month)"
-    location: "San Francisco, California"
-    company: "Atlass Payment Processing"
-    position: "Account Executive"
-    projects:
-      account_manager:
-        - "met with merchants to explain rate structures"
-        - "managed accounts from beginning to end of service"
-        - "made 900 calls a week to potential clients"
-  aflac:
-    id: 14
-    duration: "December 2010  -  May 2011 (6 months)"
-    location: "San Francisco, California"
-    company: "AFLAC"
-    position: "Business Development"
-    projects:
-      business_development:
-        - "made 300 cold calls a week"
-        - "created and shared a basic crm using Google Calendar"
-        - "clearly and concisely explained Aflac products"
-  wishb:
-    id: 15
-    duration: "July 2010  -  September 2010 (3 months)"
-    location: "San Francisco, California"
-    company: "WishB LLC"
-    position: "PHP Developer / Systems Administrator"
-    projects:
-      web_developer:
-        - "used a homebrew MVC to program a website"
-        - "dynamically loaded images with css and jquery"
-        - "used Subversion for version control of code"
-        - "coded user profiles for application"
-      system_administrator:
-        - "maintained and configured the webserver"
-        - "designed database schemas in MySQL"
-        - "contributed to daily SCRUM meetings"
-  logitech:
-    id: 16
-    duration: "April 2008 - April 2010 (2 years 1 month)"
-    location: "San Francisco, California"
-    company: "Logitech"
-    position: "PHP Developer / Systems Administrator"
-    projects:
-      web_developer:
-        - "used Dojo.js JavaScript to develop video chat application"
-        - "translated management requirements into new features"
-        - "used Object Oriented Programming (OOP) with JavaScript"
-        - "conducted extensive testing of enterprise software"
-      systems_administrator:
-        - "designed a custom Gentoo image for use with EC2"
-        - "supported deployment of Gentoo Linux servers"
-        - "moved more than twenty servers to a new data center"
-        - "deployed servers during launch Logitech Vid"
-      software_engineer:
-        - "developed a multi-process media server"
-        - "polled content servers for new content"
-        - "pulled new content then transcoded the content"
-        - "upload transcoded content to S3"
-        - "used SOAP to make content available to end users"
-  blowtorch:
-    id: 17
-    duration: "November 2007  -  March 2008 (5 months)"
-    location: "Sausalito, California"
-    company: "Blowtorch Entertainment"
-    position: "Web Developer / Systems Administrator"
-    projects:
-      web_developer:
-        - "created custom Drupal modules"
-        - "designed new tables in PostgreSQL database"
-        - "participated in design meetings"
-      systems_administrator:
-        - "configured Apache on CentOS development server"
-        - "deployed server for use of other members of the team"
-        - "ensured proper quality of data"
-  vinyl:
-    id: 18
-    duration: "June 2007  -  November 2007 (6 months)"
-    location: "San Francisco, California"
-    company: "Vinyl Interactive"
-    position: "Database Administrator"
-    projects:
-      database_administrator:
-        - "used Linux command line tools and BASH scripting"
-        - "automated daily database imports"
-        - "administered MSSQL and MySQL database servers"
-        - "administered a Storage Area Network"
-  fordela:
-    id: 19
-    duration: "October 2006  -  May 2007 (8 months)"
-    location: "San Francisco, California"
-    company: "Fordela"
-    position: "PHP Developer"
-    projects:
-      web_developer:
-        - "designed new database tables"
-        - "programmed new features with PHP and JavaScript"
-        - "ported existing code base to CakePHP"
-      systems_administrator:
-        - "deployed subversion version control"
-        - "administered servers running CentOS"
-        - "configured and maintained Apache https and MySQL"
-  radical_fusion:
-    id: 20
-    duration: "September 2006  -  October 2006 (2 months)"
-    location: "San Francisco, California"
-    company: "Radical Fusion"
-    position: "JavaScript Developer"
-    projects:
-      web_developer:
-        - "added new features using PHP, MSSQL, and AJAX"
-        - "used design documents to update user interface"
-  optyweb:
-    id: 21
-    duration: "November 2005  -  May 2006 (7 months)"
-    location: "San Francisco, California"
-    company: "Optyweb"
-    position: "Webmaster"
-    projects:
-      webmaster:
-        - "coded Optyweb website with HTML and CSS"
-        - "addressed client technical support issues"
-        - "configured servers to run Apache with MySQL and PHP"
-      system_administrator:
-        - "created images with various distributions of linux"
-        - "used an imaging tool to deploy new images"
-        - "used FreeBSD, CentOS, Debian, Fedora, and Ubuntu Linux"
-        - "moved more than sixty web servers to new data center"
-        - "configured switches in the new datacenter"
-  payne_media:
-    id: 22
-    duration: "March 2005  -  November 2005 (9 months)"
-    location: "Seattle, Washington"
-    company: "Payne Media"
-    position: "PHP Developer / Database Administrator"
-    projects:
-      webmaster:
-        - "developed web sites using XHTML, CSS, PHP, and MySQL"
-      junior_systems_administrator:
-        - "administered Gentoo Linux on mail, web, and database servers"
-  forest_service:
-    id: 23
-    duration: "April 2004  -  March 2005 (1 year)"
-    location: "Seattle, Washington"
-    company: "United States Forest Service AirFIRE Team"
-    position: "Webmaster"
-    projects:
-      webmaster:
-        - "developed websites with PHP, CSS, and XHTML"
-        - "administered the AirFIRE Team web server"
-        - "upgraded web server from Apache 1.3 to Apache 2"
-  saxotech:
-    id: 24
-    duration: "March 2003  -  January 2004 (11 months)"
-    location: "Washington, District of Columbia"
-    company: "SaXOTECH AS"
-    position: "Customer Fulfillment Specialist"
-    projects:
-      customer_fulfillment_specialist:
-        - "provided customers with emergency technical support"
-        - "given charge of the entire support department"
 education:
   id: 6
   name: "Broadmoor Elementary School"
