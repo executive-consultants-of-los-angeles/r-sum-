@@ -1,7 +1,7 @@
 ---
-- name: "Install arsum."
-  hosts: arsum
+- name: "Install jrsum."
+  hosts: jrsum
   roles:
-    - role: arsum
+    - role: jrsum
 ...
 # vim: ft=ansible:
