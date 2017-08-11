@@ -1,0 +1,11 @@
+---
+- name: "Create Development DB."
+  postgresql_db:
+    name: "mrsum"
+    state: "present"
+    login_host: "mpsql"
+    login_user: "psql"
+    port: "5433"
+  when: inventory_hostname == 'mrsum'
+...
+# vim: ft=ansible:
