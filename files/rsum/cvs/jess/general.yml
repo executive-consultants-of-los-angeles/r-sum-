@@ -9,7 +9,10 @@ intro:
     linkedin: "https://www.linkedin.com/in/"
 summary:
   id: 2
-  content: "A driven leader with over 12 years experience in biotech manufacturing and research with a proven track record of outstanding performance."
+  content: 'A driven leader with over 12 years
+    experience in biotech manufacturing and research
+    with a proven track record of outstanding
+    performance.'
 skills:
   id: 3
   start: 2001
@@ -83,7 +86,7 @@ experience:
     of programming or computer administration type of
     effort for more than twenty years.  I have been getting
     paid for it about fifteen of those years.'
-  thermo_fisher:
+  thermo_fisher_supervisor:
     id: 1
     duration: "August 2012 – November 2014 (2 years)"
     location: "Pleasonton, California"
@@ -93,13 +96,18 @@ experience:
     projects:
       management:
         - "Managed workload and performance of up to 40 staff"
-        - "Hired and coordinated the training of 50 individuals for a short term project"
-        - "Remedied manufacturing delays with root cause analysis and corrective action"
+        - 'Hired and coordinated the training of 50
+            individuals for a short term project'
+        - 'Remedied manufacturing delays with root cause
+             analysis and corrective action'
       bonsues_awarded:
         - "Early delivery of Ion AmpliSeq™ Exome Kits to market"
-        - "Effectively preparing personnel for a voluntary evaluation by Cal/OSHA culminating in the recognition of Pleasanton as a Cal/VPP Star site in January 2013"
-        - "On time delivery of a high revenue order for the Saudi Genome Project"
-  thermo_fisher:
+        - 'Effectively preparing personnel for a voluntary evaluation
+            by Cal/OSHA culminating in the recognition of Pleasanton
+            as a Cal/VPP Star site in January 2013'
+        - 'On time delivery of a high revenue order for the Saudi
+            Genome Project'
+  thermo_fisher_scientist:
     id: 2
     duration: "April 2012 – August 2012 (4 months)"
     location: "Pleasonton, California"
@@ -108,10 +116,12 @@ experience:
     position: "Scientist II, Production"
     projects:
       scientist_two_production:
-        - "Achieved maximum daily on-time delivery metrics via targeted product release"
+        - 'Achieved maximum daily on-time delivery
+            metrics via targeted product release'
         - "Championed Custom Primers Safety Committee"
-        - "Led Pleasanton VPP Prep Team and assisted with Cal/OSHA on-site evaluation"
-  thermo_fisher:
+        - 'Led Pleasanton VPP Prep Team and assisted
+            with Cal/OSHA on-site evaluation'
+  thermo_fisher_senior:
     id: 3
     duration: "April 2010 – April 2012 (2 years)"
     location: "Pleasonton, California"
@@ -120,16 +130,20 @@ experience:
     position: "Senior Associate Manufacturing Specialist"
     projects:
       senior_associate_manufacturing_specialist:
-        - "Re-engineered workflow to reduce turn around time from 10 days to 4 days"
+        - 'Re-engineered workflow to reduce turn around
+            time from 10 days to 4 days'
         - "Directed daily operations and managed workload for a team of 8"
         - "Improved communication with implementation of daily team meetings"
         - "Updated monthly scorecard and weekly metrics"
       bonsues_awarded:
         - "Dedication in preparing team for ISO 13485 audit"
-        - "Efforts in planning and executing 2011 site-wide Earth Day Celebration"
-        - "Serving as the process subject matter expert during external customer audits"
-        - "Collaborating with Finance to submit a high-dollar capital asset request (CAR)"
-  thermo_fisher:
+        - 'Efforts in planning and executing 2011 site-wide
+            Earth Day Celebration'
+        - 'Serving as the process subject matter expert
+            during external customer audits'
+        - 'Collaborating with Finance to submit a high-dollar
+             capital asset request (CAR)'
+  thermo_fisher_senior_production_chemist:
     id: 4
     duration: "July 2008 – April 2010 (2 years)"
     location: "Pleasonton, California"
@@ -143,10 +157,11 @@ experience:
         - "Revised SOPs and process control documents using a CRO system"
         - "Interfaced with vendors to bring in new equipment"
       bonsues_awarded:
-        - "Expediting delivery of HIN1 identification kits during the 2009 swine flu pandemic"
+        - 'Expediting delivery of HIN1 identification kits during
+            the 2009 swine flu pandemic'
         - "Commitment to laboratory safety"
         - "Providing leadership to team while supervisor was on leave"
-  thermo_fisher:
+  thermo_fisher_production_chemist:
     id: 5
     duration: "November 2007 – July 2008 (1 year)"
     location: "Pleasonton, California"
@@ -155,10 +170,13 @@ experience:
     position: "Production Chemist"
     projects:
       production_chemist:
-        - "Created standard work model that reduced turn around time from 5 days to 3 days"
-        - "Maintained production metrics and led daily status meeting with upper management"
+        - 'Created standard work model that reduced turn
+            around time from 5 days to 3 days'
+        - 'Maintained production metrics and led daily
+            status meeting with upper management'
         - "Used LEAN manufacturing theory to reduce motion waste"
-        - "Awarded bonuses for using process expertise to add value to Black & Green Belt projects"
+        - 'Awarded bonuses for using process expertise
+            to add value to Black & Green Belt projects'
   kelly_services:
     id: 6
     duration: "May 2006 – November 2007 (1 year)"
@@ -167,38 +185,45 @@ experience:
     position: "Production Operator"
     projects:
       production_operator:
-        - "Analyzed HPLC and DNA quantification results for quality control assurance"
+        - 'Analyzed HPLC and DNA quantification
+            results for quality control assurance'
         - "Troubleshot HPLC instruments and difficult to purify oligos"
-        - "Compiled failure mode histories and evaluated the data to authorize remakes"
+        - 'Compiled failure mode histories and
+            evaluated the data to authorize remakes'
         - "Reviewed and edited bill of materials (BOM) for 13 products"
         - "Updated daily shipping logs using SAP, Access and Oracle databases"
         - "Awarded bonus for attentiveness to work and lab"
   saic_frederick_incorporated:
     id: 7
-    duration: "June 2004 – July 2005 (1 year)" 
+    duration: "June 2004 – July 2005 (1 year)"
     location: "Gaithersburg, Maryland"
     company: 'SAIC-Frederick, Incorporated
       (Contract with National Cancer Institute)'
     position: "Senior Research Technician"
     projects:
       senior_research_technician:
-        - "Developed applications for the HP Multiprobe II EX liquid handling system" 
+        - 'Developed applications for the HP
+            Multiprobe II EX liquid handling system'
         - "Optimized SNPlex assay for use in a high-throughput setting"
         - "Trained team members in sample handling protocols"
-        - "Designed a streamlined system for inventorying and repairing 25 Bio-Rad thermal cyclers"
-        - "Awarded bonus in appreciation of contributions made towards company’s success"
-  saic_frederick_incorporated:
+        - 'Designed a streamlined system for
+            inventorying and repairing 25 Bio-Rad thermal cyclers'
+        - 'Awarded bonus in appreciation of
+            contributions made towards company’s success'
+  saic_frederick_incorporated_research:
     id: 8
-    duration: "July 2001 – June 2004 (3 years)" 
+    duration: "July 2001 – June 2004 (3 years)"
     location: "Gaithersburg, Maryland"
     company: 'SAIC-Frederick, Incorporated
       (Contract with National Cancer Institute)'
     position: "Research Technician"
     projects:
       research_technician:
-        - "Generated reports to inform investigators of the quality and quantity of DNA available for genotyping projects"
+        - 'Generated reports to inform investigators of the quality
+            and quantity of DNA available for genotyping projects'
         - "Documented DNA quantification assay protocols"
-        - "Awarded bonus for working at a higher level than that of a Research Technician"
+        - 'Awarded bonus for working at a higher level than
+            that of a Research Technician'
 education:
   id: 6
   name: "Gettysburg College"
