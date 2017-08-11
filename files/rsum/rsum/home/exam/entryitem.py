@@ -16,7 +16,7 @@ import yaml
 
 class EntryItemTestCase(TestCase):
     def setUp(self):
-        f = open('/srv/rsum/cvs/abridged.yml')
+        f = open('/srv/rsum/cvs/alex/abridged.yml')
         abridged = yaml.load(f.read())
         f.close()
 
@@ -89,7 +89,7 @@ class EntryItemTestCase(TestCase):
 class GetEntryItemTestCase(TestCase):
     def setUp(self):
         cv_instance = CV()
-        cv_id = cv_instance.check_sections(cvname='abridged', template='acecv')
+        cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='abridged', template='acecv')
         sections = Section.objects.filter(cv=cv_instance)
         subsections = [list(SubSection.objects.filter(section=section)) for section in sections]
         projects = []

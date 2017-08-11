@@ -1,13 +1,29 @@
 ---
-- name: "Copy fixed environment."
-  copy:
-    src: environment
-    dest: /etc/environment
 - name: "Install some packages with pip."
   pip:
     name: "{{ item }}"
     state: present
   with_items: "{{ pip_install_list }}"
+- name: "Create Development DB."
+  postgresql_db:
+    name: "mrsum"
+    state: "present"
+    login_host: "mpsql"
+    login_user: "psql"
+    port: "5433"
+  when: inventory_hostname == 'mrsum'
+- name: "Create Production DB."
+  postgresql_db:
+    name: "arsum"
+    state: "present"
+    login_host: "apsql"
+    login_user: "psql"
+    port: "5432"
+  when: inventory_hostname == 'arsum'
+- name: "Copy fixed environment."
+  copy:
+    src: environment
+    dest: /etc/environment
 - name: "Install some packages with apt."
   apt:
     name: "{{ item }}"

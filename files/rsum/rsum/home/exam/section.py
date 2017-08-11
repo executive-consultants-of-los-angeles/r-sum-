@@ -11,7 +11,7 @@ import yaml
 
 class SectionTestCase(TestCase):
     def setUp(self):
-        f = open('/srv/rsum/cvs/abridged.yml')
+        f = open('/srv/rsum/cvs/alex/abridged.yml')
         self.abridged = yaml.load(f.read())
         f.close()
         cv = CV()
@@ -42,7 +42,7 @@ class SectionTestCase(TestCase):
 class GetSectionTestCase(TestCase):
     def setUp(self):
         cv_instance = CV()
-        cv_id = cv_instance.check_sections(cvname='abridged', template='acecv')
+        cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='abridged', template='acecv')
         self.cv_id = cv_id
         section_instance = Section()
         self.sections = section_instance.get_sections(

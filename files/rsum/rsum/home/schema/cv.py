@@ -5,11 +5,13 @@ from __future__ import print_function
 
 from collections import OrderedDict
 
-import yaml
+import datetime
 import json
+import yaml
 
 from django.db import models
 from section import Section
+from subsection import SubSection
 
 
 class CV(models.Model):
@@ -18,11 +20,17 @@ class CV(models.Model):
 
     def check_sections(self, *args, **kwargs):
         prefix = '/srv/rsum/cvs/'
-        cv_f = open(prefix+kwargs.get('cvname')+'.yml')
-        cv_d = yaml.load(cv_f.read())
+        with open(
+            prefix+kwargs.get(
+                'name_of_owner'
+            )+'/'+kwargs.get(
+                'name_of_cv'
+            )+'.yml'
+        , 'r') as cv_file:
+            cv_dict = yaml.load(cv_file.read())
         self.id = self.save_cv(
-            cv_d, 
-            name=kwargs.get('cvname'), 
+            cv_dict, 
+            name=kwargs.get('name_of_cv'), 
             template=kwargs.get('template'),
         )
         return self.id 
@@ -30,7 +38,7 @@ class CV(models.Model):
     def get_cv(self, cv_id=1, *args, **kwargs):
         s = Section()
         cv = {
-            'name': kwargs.get('cvname'),
+            'name': kwargs.get('name_of_cv'),
             'sections': s.get_sections(
                 CV.objects.filter(
                     id=cv_id
@@ -64,6 +72,14 @@ class CV(models.Model):
         skills = context.get('cv')[2].get('content')
         skillset = {}
 
+        start_career = SubSection.objects.filter(
+            section_id=3
+        ).filter(
+            name='start'
+        ).values()[0].get('content')
+        current_year = float(datetime.date.today().strftime("%Y"))
+        years_career = float(current_year) - float(start_career)
+
         # I failed algorithms in college. 
         for index, skill in enumerate(skills):
             for content in skill.get('content'):
@@ -76,28 +92,48 @@ class CV(models.Model):
 
         for name, value in skillset.iteritems():
             for content in skills[value.get('index')].get('content'):
-                if content.get('name') == 'competence':
+                if content.get('name') == 'start':
+                    start_skill = float(content.get('content'))
+                    years_skill = current_year - start_skill
+                    experience_value = years_skill / years_career * 100
+                    experience_string = "{0} year(s)".format(int(years_skill))
+
                     skillset.get(name).update({
-                        'competence': content.get('content'),
+                        'experience_value': experience_value,
+                        'experience_string': experience_string,
                     })
-                elif content.get('name') != 'id' and content.get('name') != 'name':
+                elif (
+                    content.get('name') != 'id' and 
+                    content.get('name') != 'start' and 
+                    content.get('name') != 'name'
+                ):
+                    sub_name = content.get(
+                        'content'
+                    ).get(
+                        content.get('name')
+                    ).get(
+                        'name'
+                    )
+
+                    start_skill = int(content.get(
+                        'content'
+                    ).get(
+                        content.get('name')
+                    ).get(
+                        'start'
+                    ))
+
+                    years_skill = float(current_year) - float(start_skill)
+
+                    experience_value = years_skill / years_career * 100
+                    experience_string = "{0} year(s)".format(int(years_skill))
+
+                    # Assemble the skill set to be returned.
                     skillset.get(name).update({
                         content.get('name'): {
-                            'experience': content.get(
-                                'content'
-                            ).get(
-                                content.get('name')
-                            ).get('experience'),
-                            'name': content.get(
-                                'content'
-                            ).get(
-                                content.get('name')
-                            ).get('name'),
-                            'competence': content.get(
-                                'content'
-                            ).get(
-                                content.get('name')
-                            ).get('competence'),
+                            'experience_string': experience_string,
+                            'name': sub_name,
+                            'experience_value': experience_value, 
                         }
                     })
         return skillset
@@ -134,17 +170,6 @@ class CV(models.Model):
             s.save_section(cv, section, name)
 
         return getattr(cv, 'id')
-
-    """
-    def sort_sections(self, cv):
-        sections = []
-        for section in sorted(
-            cv.get('sections').items(),
-            key=lambda t: t[1].get('id')
-        ):
-            sections.append({section[0]: section[1]})
-        return sections
-    """
 
     class Meta:
         app_label = "home"
