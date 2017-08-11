@@ -20,7 +20,8 @@
         provider_memory: "{{ item.memory | default(omit) }}"
         provider_cpus: "{{ item.cpus | default(omit) }}"
         provider_raw_config_args: "{{ item.raw_config_args | default(omit) }}"
-
+        instance_raw_config_args:
+          - 'config.vm.provision "shell", inline: "sudo apt-get -y install python"'
         state: up
       register: server
       with_items: "{{ molecule_yml.platforms }}"
