@@ -1,11 +1,10 @@
 ---
 - name: Converge
-  hosts: all
-  gather_facts: False
+  hosts: mrsums 
   tasks:
     - name: Install python for Ansible
       raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
-      become: True
+      become: 'yes' 
       changed_when: False
     - name: 'Download get-pip.'
       get_url:
@@ -13,10 +12,10 @@
         dest: '/tmp/get-pip.py'
     - name: 'Install pip.'
       command: '/usr/bin/python /tmp/get-pip.py'
-      become: yes
+      become: 'yes'
 
 - name: Converge
-  hosts: all
+  hosts: mrsums 
   roles:
     - role: rsum
 ...
