@@ -2,5 +2,5 @@
 
 ---
 converged: false
-created: false
-driver: null
+created: true
+driver: vagrant

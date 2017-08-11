@@ -7,8 +7,16 @@
       raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
       become: True
       changed_when: False
+    - name: 'Download get-pip.'
+      get_url:
+        url: 'https://bootstrap.pypa.io/get-pip.py'
+        dest: '/tmp/get-pip.py'
+    - name: 'Install pip.'
+      command: '/usr/bin/python /tmp/get-pip.py'
 
 - name: Converge
   hosts: all
   roles:
     - role: rsum
+...
+# vim: ft=ansible:
