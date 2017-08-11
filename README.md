@@ -1,12 +1,9 @@
 Résumé
 ======
 
+Currently this will install and run a small stack that includes a gunicorn server, a postgresql server, and a nagios monitoring server, all of them deployed as microservices inside Docker containers.  Vagrant support is planned, but not yet implemented.
+
 [![Build Status](https://travis-ci.org/executive-consultants-of-los-angeles/rsum.svg?branch=master)](https://travis-ci.org/executive-consultants-of-los-angeles/rsum)
-
-Would like to have a functional CI for this thing.  I think we do, now to get monitoring automagic. 
-
-The point of this is to demonstrate for potential clients that this company is not completely lacking competence and so running this role will eventually a small container that will run a webserver on which you can see my résumé.  Further instruction is provided below.
-
 
 Below is the Engineering version of my CV, which highlights my skills as a Site Reliability Engineer and Python Developer.
 
@@ -393,16 +390,16 @@ contact:
 Requirements
 ------------
 
-Docker Engine, or *nix, or access to a cloud provider that supports *nix.  I do plan to add vagrant driven version for ease of use as Docker Engine is kind of a lot of overhead. 
+Docker Engine, or *nix, or access to a cloud provider that supports *nix.  You will also need [Ansible](https://www.ansible.com/) and Molecule for the automated deployment. 
+
+### Installation
 
 ```bash
 ansible-galaxy install executive-consultants-of-los-angeles.r-sum-
 ```
 
-
-
-Role Variables
---------------
+Network Graph
+-------------
 
 ![network graph](files/continuous-integration.png)
 
