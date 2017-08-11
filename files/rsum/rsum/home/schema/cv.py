@@ -7,12 +7,24 @@ from collections import OrderedDict
 
 import datetime
 import json
-import settings
+import socket
 import yaml
 
 from django.db import models
 from section import Section
 from subsection import SubSection
+
+if socket.gethostname() == 'jrsum':
+    CV_OWNER = 'jess' 
+    CV_TEMPLATE = 'jcv' 
+
+if socket.gethostname() == 'mrsum':
+    CV_OWNER = 'jess' 
+    CV_TEMPLATE = 'jcv' 
+
+if socket.gethostname() == 'arsum':
+    CV_OWNER = 'alex' 
+    CV_TEMPLATE = 'acv' 
 
 
 class CV(models.Model):
