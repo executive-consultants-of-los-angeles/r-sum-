@@ -1,7 +1,7 @@
 ---
 intro:
   id: 1
-  name: "Edward Harris"
+  name: "Alex Harris"
   position: "Python Developer / Site Reliablity Engineer"
   social_media_links:
     facebook: 'https://www.facebook.com/eclacfo'
@@ -48,7 +48,7 @@ skills:
       name: "Bourne Again SHell"
       start: 2000
     vim:
-      name: "Very IMproved Text Editor"
+      name: "Very IMproved Text Alexitor"
       start: 2000
   cloud_architecture:
     id: 2
@@ -559,9 +559,9 @@ education:
       - "it was a very prestigious kindergarten"
 contact:
   id: 7
-  title: "Get in Touch with Ed"
+  title: "Get in Touch with Alex"
   message:
-    "Ed is available most weekdays after noon Pacific Time."
+    "Alex is available most weekdays after noon Pacific Time."
   location: "Los Angeles, California, United States of America"
   phone: "(424) 209-2976"
   email: "alex@ecla.solutions"
