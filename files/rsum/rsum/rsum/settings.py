@@ -29,12 +29,13 @@ DEBUG = True
 if socket.gethostname() == 'jrsum':
     CV_OWNER = 'jess'
     CV_TEMPLATE = 'jcv'
-elif socket.gethostname() == 'arsum':
+
+if socket.gethostname() == 'mrsum':
+    CV_OWNER = 'mrsum'
+    CV_TEMPLATE = 'jcv'
+else:
     CV_OWNER = 'alex'
     CV_TEMPLATE = 'acv'
-elif socket.gethostname() == 'mrsum':
-    CV_OWNER = 'jess'
-    CV_TEMPLATE = 'mcv'
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -159,5 +160,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/acecv/'
-STATIC_ROOT = '/srv/rsum/static/acecv/'
+STATIC_URL = '/static/'+CV_TEMPLATE+'/'
+STATIC_ROOT = '/srv/'+CV_OWNER+'/rsum/static/'+CV_TEMPLATE+'/'
