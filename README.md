@@ -1,12 +1,9 @@
 Résumé
 ======
 
+Currently this will install and run a small stack that includes a gunicorn server, a postgresql server, and a nagios monitoring server, all of them deployed as microservices inside Docker containers.  Vagrant support is planned, but not yet implemented.
+
 [![Build Status](https://travis-ci.org/executive-consultants-of-los-angeles/rsum.svg?branch=master)](https://travis-ci.org/executive-consultants-of-los-angeles/rsum)
-
-Would like to have a functional CI for this thing.  I think we do, now to get monitoring automagic. 
-
-The point of this is to demonstrate for potential clients that this company is not completely lacking competence and so running this role will eventually a small container that will run a webserver on which you can see my résumé.  Further instruction is provided below.
-
 
 Below is the Engineering version of my CV, which highlights my skills as a Site Reliability Engineer and Python Developer.
 
@@ -393,42 +390,63 @@ contact:
 Requirements
 ------------
 
-Docker Engine, or *nix, or access to a cloud provider that supports *nix.  I do plan to add vagrant driven version for ease of use as Docker Engine is kind of a lot of overhead. 
+Docker Engine, or *nix, or access to a cloud provider that supports *nix.  You will also need [Ansible](https://www.ansible.com/) and Molecule for the automated deployment. 
+
+### Installation
 
 ```bash
 ansible-galaxy install executive-consultants-of-los-angeles.r-sum-
 ```
 
+## Integration Graph
 
+This is a very rough sketch of the integration system that makes sure the site stays up while updates are continuously deployed.
 
-Role Variables
---------------
-
-![network graph](files/continuous-integration.png)
+![Integration Graph](files/continuous-integration.png)
 
 Dependencies
 ------------
 
-None.
+All dependencies are handled within the role itelf. 
 
 Example Playbook
 ----------------
 
+The development machine is named `mrsum`, so you'll want to update your Ansible hosts file to reflect the following:
+
 ```yaml
-- hosts: all 
-  roles:
-     - { 
-          role: executive-consultants-of-los-angeles.r-sum-,
-          what_is_six_times_seven: 42 
-        }
+[mrsums]
+mrsum ansible_connection=docker
+mpsql ansible_connection=docker
+mngos ansible_connection=docker
 ```
+
+This will allow the [Ansible Galaxy Role](https://galaxy.ansible.com/executive-consultants-of-los-angeles/rsum/)  install all of the required microservices.
+
+The easiest way to deploy this locally is with [Molecule](https://github.com/metacloud/molecule).  You can install the latest version of [Molecule](https://github.com/metacloud/molecule) with `pip install molecule --pre`.  Once that is done, you can run the tests with `molecule test` from a BASH cli.  I only use BASH, so that's all I'm testing it on.  If you're using some other kind of shell, well, you know, good luck to you.
+
+You oughtn't need to write your own playbook for this because the required playbooks are located in the `molecule/default/` directory, but just for the sake of discussion, it would look something like this:
+
+```yaml
+---
+- name: 'converge'
+  hosts: 'mrsum'
+  roles:
+    - role: executive-consultants-of-los-angeles.rsum
+...
+# vim: ft=ansible:
+```
+
+But really, if you want to see the thing running locally for whatever reason, you can run `molecule converge` to create and deploy the required Docker containers.  On occasion `molecule converge` won't actually run the required Ansible scripts and will instead only create the required Docker containers.  If you find yourself in such a situation take heed: `ansible-galaxy install -r molecule/default/requirements.yml` will install the required roles to your machine and `ansible-playbook molecule/default/playbook.yml` will execute the automated deployment. 
+
+You'll then need to wait a bit for the deployments to finish, but when they do you should be able to see the site at `http://127.0.0.1:8192`.  The Nagios monitoring software will be up at 'http://127.0.0.1:2050/nagios3/`.  Unless it didn't start Apache, which will happen from time to time, in which case you can amend the situation by running `docker exec mngos service apache2 start` at which point you should see all of the services in the Nagios console.  The username is nagiosadmin and the password, well, you should be able to find where that is set.  If you can't, I probably don't want to be working with or for you.  So, good luck!
 
 License
 -------
 
-Unlicensed.
+Unlicense
 
 Author Information
 ------------------
 
-Written by Edward Harris for ECLA.
+Written by Alex Harris for the Executive Consultants of Los Angeles. 
