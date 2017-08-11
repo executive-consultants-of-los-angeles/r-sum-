@@ -6,7 +6,7 @@ intro:
   social_media_links:
     facebook: 'https://www.facebook.com/eclacfo'
     twitter: 'https://twitter.com/eclacfo'
-    linkedin: 'https://www.linkedin.cim/in/eclacfo'
+    linkedin: 'https://www.linkedin.com/in/eclacfo'
     github: 'https://github.com/eclacfo'
 summary:
   id: 2
@@ -185,7 +185,8 @@ experience:
     linux onto a pc I have been actively doing some kind
     of programming or computer administration type of
     effort for more than twenty years.  I have been getting
-    paid for it about fifteen of those years.'
+    paid for it about fifteen of those years, not counting
+    this year.'
   cfo_at_gahan_corporation:
     id: 1
     duration: "May 2016 - Present"
