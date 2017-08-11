@@ -27,7 +27,7 @@ docker run -d --name arsum -p 8192:8192 -h arsum --link apsql arsum /usr/bin/sup
 # jrsum
 docker build -t jrsum:latest /src/rsum/files/jess/jrsum
 /opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/jess/jrsum/r.yml
-docker run -d --name jrsum -p 8704:8704 -h jrsum --link apsql --link arsum -- link angos jrsum /usr/bin/supervisord -n
+docker run -d --name jrsum -p 8704:8704 -h jrsum --link apsql --link arsum --link angos jrsum /usr/bin/supervisord -n
 /opt/py/bin/ansible-playbook /src/rsum/files/jess/jrsum/p.yml
 
 # angos
