@@ -161,3 +161,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'+CV_TEMPLATE+'/'
 STATIC_ROOT = '/srv/rsum/static/'+CV_TEMPLATE+'/'
+
+print(STATIC_URL)
