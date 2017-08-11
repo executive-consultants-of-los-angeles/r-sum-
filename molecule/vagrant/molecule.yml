@@ -8,8 +8,6 @@ lint:
 platforms:
   - name: mrsum
     box: ubuntu/xenial64
-    interfaces: 
-      eth_0: 192.168.0.10
 provisioner:
   name: ansible
   lint:
