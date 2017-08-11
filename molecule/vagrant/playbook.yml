@@ -11,10 +11,15 @@
       get_url:
         url: 'https://bootstrap.pypa.io/get-pip.py'
         dest: '/tmp/get-pip.py'
+    - name: 'Register pip presence.'
+      command: 'pip list'
+      register: pip_presence
+    - name: 'Output results.'
+      debug:
+        var: pip_presence
     - name: 'Install pip.'
       command: '/usr/bin/python /tmp/get-pip.py'
       become: 'yes'
-
 - name: Converge
   hosts: mrsums
   roles:
