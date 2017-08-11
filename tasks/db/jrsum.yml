@@ -1,11 +1,10 @@
 ---
-- name: "Create Production DB."
+- name: "Create jrsum DB."
   postgresql_db:
-    name: "arsum"
+    name: "jrsum"
     state: "present"
     login_host: "apsql"
     login_user: "psql"
     port: "5432"
-  when: inventory_hostname == 'arsum'
 ...
 # vim: ft=ansible:
