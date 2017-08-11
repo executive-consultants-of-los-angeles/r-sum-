@@ -31,7 +31,7 @@ if socket.gethostname() == 'jrsum':
     CV_TEMPLATE = 'jcv'
 
 if socket.gethostname() == 'mrsum':
-    CV_OWNER = 'jess'
+    CV_OWNER = 'mrsum'
     CV_TEMPLATE = 'jcv'
 else:
     CV_OWNER = 'alex'
@@ -161,6 +161,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'+CV_TEMPLATE+'/'
-STATIC_ROOT = '/srv/rsum/static/'+CV_TEMPLATE+'/'
-
-print(STATIC_URL)
+STATIC_ROOT = '/srv/'+CV_OWNER+'/rsum/static/'+CV_TEMPLATE+'/'
