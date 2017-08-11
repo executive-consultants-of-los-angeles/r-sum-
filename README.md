@@ -439,7 +439,7 @@ You oughtn't need to write your own playbook for this because the required playb
 
 But really, if you want to see the thing running locally for whatever reason, you can run `molecule converge` to create and deploy the required Docker containers.  On occasion `molecule converge` won't actually run the required Ansible scripts and will instead only create the required Docker containers.  If you find yourself in such a situation take heed: `ansible-galaxy install -r molecule/default/requirements.yml` will install the required roles to your machine and `ansible-playbook molecule/default/playbook.yml` will execute the automated deployment. 
 
-You'll then need to wait a bit for the deployments to finish, but when they do you should be able to see the site at `http://127.0.0.1:8192`.  The Nagios monitoring software will be up at 'http://127.0.0.1:2050/nagios3/`.  Unless it didn't start Apache, which will happen from time to time, in which case you can amend the situation by running `docker exec mngos service apache2 start` at which point you should see all of the services in the Nagios console.`
+You'll then need to wait a bit for the deployments to finish, but when they do you should be able to see the site at `http://127.0.0.1:8192`.  The Nagios monitoring software will be up at 'http://127.0.0.1:2050/nagios3/`.  Unless it didn't start Apache, which will happen from time to time, in which case you can amend the situation by running `docker exec mngos service apache2 start` at which point you should see all of the services in the Nagios console.  The username is nagiosadmin and the password, well, you should be able to find where that is set.  If you can't, I probably don't want to be working with or for you.  So, good luck!
 
 License
 -------
