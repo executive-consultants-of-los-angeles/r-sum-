@@ -4,11 +4,13 @@
 docker rm -f apsql
 docker rm -f arsum
 docker rm -f angos
+docker rm -f jrsum
 
 # Remove existing images.
 docker rmi -f apsql
 docker rmi -f arsum
 docker rmi -f angos
+docker rmi -f jrsum
 
 # apsql
 docker build -t apsql:latest /src/rsum/files/alex/apsql
@@ -21,6 +23,12 @@ docker build -t arsum:latest /src/rsum/files/alex/arsum
 /opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/alex/arsum/r.yml
 docker run -d --name arsum -p 8192:8192 -h arsum --link apsql arsum /usr/bin/supervisord -n
 /opt/py/bin/ansible-playbook /src/rsum/files/alex/arsum/p.yml
+
+# jrsum
+docker build -t jrsum:latest /src/rsum/files/jess/jrsum
+/opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/jess/jrsum/r.yml
+docker run -d --name jrsum -p 8704:8704 -h jrsum --link apsql --link arsum -- link angos jrsum /usr/bin/supervisord -n
+/opt/py/bin/ansible-playbook /src/rsum/files/jess/jrsum/p.yml
 
 # angos
 docker build -t angos:latest /src/rsum/files/alex/angos
