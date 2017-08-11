@@ -449,4 +449,4 @@ Unlicense
 Author Information
 ------------------
 
-Written by Edward Harris for ECLA.
+Written by Alex Harris for the Executive Consultants of Los Angeles. 
