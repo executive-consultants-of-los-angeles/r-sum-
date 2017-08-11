@@ -26,6 +26,16 @@ SECRET_KEY = 'b@@ifd5u2=wktjinidhajaucaqsgo4nbm++!8hjc%1m0bzuxg_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+if socket.gethostname() == 'jrsum':
+    CV_OWNER = 'jess'
+    CV_TEMPLATE = 'jcv'
+elif socket.gethostname() == 'arsum':
+    CV_OWNER = 'alex'
+    CV_TEMPLATE = 'acv'
+elif socket.gethostname() == 'mrsum':
+    CV_OWNER = 'jess'
+    CV_TEMPLATE = 'mcv'
+
 ALLOWED_HOSTS = [
     'localhost',
     'ecla.solutions',
