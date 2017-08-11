@@ -1,5 +1,4 @@
 ---
-
 - name: Teardown
   hosts: localhost
   connection: local
