@@ -6,7 +6,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: mrsum 
+  - name: mrsum
     box: ubuntu/xenial64
 provisioner:
   name: ansible
