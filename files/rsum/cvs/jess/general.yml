@@ -2,34 +2,26 @@
 intro:
   id: 1
   name: "Jessica Hartwell"
-  position: "Management Consultant"
+  position: "Consultant"
   social_media_links:
     facebook: "https://www.facebook.com/jessica.hartwell.92"
     twitter: "https://twitter.com/GahanCorpCEO"
     linkedin: "https://www.linkedin.com/in/jessicahartwell"
 summary:
   id: 2
-  content: 'A driven leader with over 12 years
-    experience in biotech manufacturing and research
-    with a proven track record of outstanding
-    performance.'
+  content: 'A driven leader with experience in biotech 
+            manufacturing and research with a proven track record 
+            of outstanding performance.'
 skills:
   id: 3
-  start: 2001
+  People management:
+  name: "People Management"
+  start: 2008
   oligo_and_array_manufacturing:
     name: "Oligo and Array Manufacturing"
-    start: 2001
-  manufacturing_quality_control:
-    name: "Manufacturing Quality Control"
-    start: 2001
+    start: 2006
   snp_genotyping:
     name: "SNP Genotyping"
-    start: 2001
-  dna_sequencing:
-    name: "DNA Sequencing"
-    start: 2001
-  protein_expression:
-    name: "Protein Expression"
     start: 2001
 values:
   id: 4
