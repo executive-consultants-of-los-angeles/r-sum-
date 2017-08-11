@@ -398,32 +398,47 @@ Docker Engine, or *nix, or access to a cloud provider that supports *nix.  You w
 ansible-galaxy install executive-consultants-of-los-angeles.r-sum-
 ```
 
-Network Graph
--------------
+## Integration Graph
 
-![network graph](files/continuous-integration.png)
+This is a very rough sketch of the integration system that makes sure the site stays up while updates are continuously deployed.
+
+![Integration Graph](files/continuous-integration.png)
 
 Dependencies
 ------------
 
-None.
+All dependencies are handled within the role itelf. 
 
 Example Playbook
 ----------------
 
+The development machine is named `mrsum`, so you'll want to update your Ansible hosts file to reflect the following:
+
 ```yaml
-- hosts: all 
+[mrsums]
+mrsum ansible_connection=docker
+mpsql ansible_connection=docker
+mngos ansible_connection=docker
+```
+
+This will allow the [Ansible Galaxy Role](https://galaxy.ansible.com/executive-consultants-of-los-angeles/rsum/)  install all of the required microservices.
+
+The easiest way to deploy this locally is with [Molecule](https://github.com/metacloud/molecule).  You can install the latest version of [Molecule](https://github.com/metacloud/molecule) with `pip install molecule --pre`.  Once that is done, you can run the tests with `molecule test` from a BASH cli.  I only use BASH, so that's all I'm testing it on.  If you're using some other kind of shell, well, you know, good luck to you.
+
+```yaml
+---
+- name: 'converge'
+  hosts: 'mrsum'
   roles:
-     - { 
-          role: executive-consultants-of-los-angeles.r-sum-,
-          what_is_six_times_seven: 42 
-        }
+    - role: executive-consultants-of-los-angeles.rsum
+...
+# vim: ft=ansible:
 ```
 
 License
 -------
 
-Unlicensed.
+Unlicense
 
 Author Information
 ------------------
