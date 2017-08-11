@@ -7,6 +7,7 @@ from collections import OrderedDict
 
 import datetime
 import json
+import settings
 import yaml
 
 from django.db import models
