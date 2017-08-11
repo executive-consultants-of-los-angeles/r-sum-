@@ -1,0 +1,7 @@
+---
+- name: "Install jrsum."
+  hosts: jrsum
+  roles:
+    - role: jrsum
+...
+# vim: ft=ansible:

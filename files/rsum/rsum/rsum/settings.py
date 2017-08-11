@@ -26,6 +26,17 @@ SECRET_KEY = 'b@@ifd5u2=wktjinidhajaucaqsgo4nbm++!8hjc%1m0bzuxg_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+if socket.gethostname() == 'jrsum':
+    CV_OWNER = 'jess'
+    CV_TEMPLATE = 'jcv'
+
+if socket.gethostname() == 'mrsum':
+    CV_OWNER = 'mrsum'
+    CV_TEMPLATE = 'jcv'
+else:
+    CV_OWNER = 'alex'
+    CV_TEMPLATE = 'acv'
+
 ALLOWED_HOSTS = [
     'localhost',
     'ecla.solutions',
@@ -92,6 +103,10 @@ elif socket.gethostname() == 'arsum':
     DB_HOST = 'apsql'
     DB_PORT = '5432'
     DB_NAME = 'arsum'
+elif socket.gethostname() == 'jrsum':
+    DB_HOST = 'apsql'
+    DB_PORT = '5432'
+    DB_NAME = 'jrsum'
 
 DATABASES = {
     'default': {
@@ -149,5 +164,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/acecv/'
-STATIC_ROOT = '/srv/rsum/static/acecv/'
+STATIC_URL = '/static/'+CV_TEMPLATE+'/'
+STATIC_ROOT = '/srv/'+CV_OWNER+'/rsum/static/'+CV_TEMPLATE+'/'
