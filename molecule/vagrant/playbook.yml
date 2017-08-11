@@ -1,6 +1,6 @@
 ---
-- name: Converge
-  hosts: mrsums
+- name: 'converge prep' 
+  hosts: 'mrsum'
   tasks:
     - name: Install python for Ansible
       raw: 'test -e /usr/bin/python ||
@@ -21,7 +21,7 @@
       command: '/usr/bin/python /tmp/get-pip.py'
       become: 'yes'
 - name: Converge
-  hosts: mrsums
+  hosts: 'mrsum' 
   roles:
     - role: rsum
 ...
