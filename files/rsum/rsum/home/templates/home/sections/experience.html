@@ -18,7 +18,6 @@
                   {% endif %}
                     {# e.content.5 #}
                     <div class="col-sm-4 sm-margin-b-50">
-                        <h4><a href="#"></a>{{ e.content.2.content }}</h4>
                         <div class="margin-b-20">
                             <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
                               {% with 'img/970x647/'|add:e.content.4.content|add:'.jpg' as image_static %}
@@ -26,6 +25,7 @@
                               {% endwith %}
                             </div>
                         </div>
+                        <h4><a href="#"></a>{{ e.content.2.content }}</h4>
                         <p>
                           <h5 style="font-variant: small-caps; color: #969696; font-size: 16pt;">{{ e.content.3.content }}, {{ e.content.1.content }} </h5>
                           <ul>
