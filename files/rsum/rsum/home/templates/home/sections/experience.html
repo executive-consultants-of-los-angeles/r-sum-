@@ -25,9 +25,14 @@
                               {% endwith %}
                             </div>
                         </div>
-                        <h4><a href="#"></a>{{ e.content.2.content }}</h4>
+                        <h3><a href="#"></a>{{ e.content.2.content }}</h3>
                         <p>
-                          <h5 style="font-variant: small-caps; color: #969696; font-size: 16pt;">{{ e.content.3.content }}</h5>
+                          <h5 style="color: #969696; font-variant: small-caps;">{{ e.content.3.content }}</h5>
+                        </p>
+                        <p>
+                          <h6>{{ e.content.0.content }}, {{ e.content.1.content }}</h6>
+                        </p>
+                        <p>
                           <ul>
                           {% for project  in e.content.5.content.projects.items %}
                             <li>
@@ -41,7 +46,6 @@
                           {% endfor %} 
                           </ul>
                         </p>
-                        <h6 style="color: #969696; font-size: 14pt; font-variant: small-caps;">{{ e.content.0.content }}, {{ e.content.1.content }}</h6>
                     </div>
                   {% if forloop.counter|divisibleby:3 %}
                     </div>
