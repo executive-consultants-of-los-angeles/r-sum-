@@ -42,7 +42,7 @@
     dest: "/etc/supervisor/supervisord.conf"
 - name: "Update services state."
   supervisorctl:
-    name: 'gunicorn' 
+    name: 'gunicorn'
     state: "present"
 - name: "Start gunicorn."
   supervisorctl:
