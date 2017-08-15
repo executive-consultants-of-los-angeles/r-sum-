@@ -1,7 +1,7 @@
 ---
 - name: "Install angnx."
-  hosts: angnx 
+  hosts: angnx
   roles:
-    - role: angnx 
+    - role: angnx
 ...
 # vim: ft=ansible:
