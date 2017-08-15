@@ -1,9 +1,13 @@
 #!/bin/bash
 
 
+export DD=`date +%Y%m%d-%H%M%s`
+
 # apsql
 docker rmi -f apsql:archive
-docker commit -m "Archive apsql for deploy." apsql apsql:archive
+docker commit -m "Archive apsql for deploy." apsql ecla/psql:$DD
+docker push ecla/psql:$DD
+docker rmi ecla/psql:$DD
 docker rm -f apsql
 docker rmi -f apsql:latest
 docker build -t apsql:latest /src/rsum/files/alex/apsql
@@ -14,7 +18,8 @@ docker run -d --network arsum --name apsql -p 5432:5432 -h apsql apsql /usr/bin/
 
 # arsum
 docker rmi -f arsum:archive
-docker commit -m "Archive arsum for deploy." arsum arsum:archive
+docker commit -m "Archive arsum for deploy." arsum ecla/rsum:$DD
+docker rmi ecla/rsum:$DD
 docker rm -f arsum
 docker rmi -f arsum:latest
 docker build -t arsum:latest /src/rsum/files/alex/arsum
