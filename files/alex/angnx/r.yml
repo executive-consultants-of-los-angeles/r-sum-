@@ -1,0 +1,5 @@
+---
+- name: "angnx"
+  src: "executive-consultants-of-los-angeles.ngnx"
+...
+# vim: ft=ansible:

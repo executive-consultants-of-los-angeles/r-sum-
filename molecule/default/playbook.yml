@@ -3,6 +3,10 @@
   hosts: mpsql
   roles:
     - role: "mpsql"
+- name: "mngnx"
+  hosts: mngnx
+  roles:
+    - role: "mngnx"
 - name: "converge"
   hosts: mrsum
   roles:

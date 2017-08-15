@@ -37,6 +37,7 @@ else:
     CV_TEMPLATE = 'acv'
 
 ALLOWED_HOSTS = [
+    'mrsum',
     'localhost',
     'ecla.solutions',
     '127.0.0.1',
