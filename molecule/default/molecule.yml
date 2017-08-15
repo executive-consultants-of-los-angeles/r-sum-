@@ -11,6 +11,13 @@ platforms:
     image: ecla/psql:latest
     ports:
       - "5433:5433"
+  - name: "mngnx" 
+    command: "/usr/bin/supervisord -n"
+    image: ecla/ansible:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - "/srv:/srv:rw"
   - name: "mrsum"
     command: "/usr/bin/supervisord -n"
     image: ecla/ansible:latest
