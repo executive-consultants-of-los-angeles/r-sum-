@@ -4,7 +4,6 @@
 export DD=`date +%Y%m%d-%H%M%s`
 
 # apsql
-docker rmi -f apsql:archive
 docker commit -m "Archive apsql for deploy." apsql ecla/psql:$DD
 docker push ecla/psql:$DD
 docker rmi ecla/psql:$DD
@@ -17,9 +16,9 @@ docker run -d --network arsum --name apsql -p 5432:5432 -h apsql apsql /usr/bin/
 /opt/py/bin/ansible-playbook /src/rsum/files/alex/apsql/p.yml
 
 # arsum
-docker rmi -f arsum:archive
-docker commit -m "Archive arsum for deploy." arsum ecla/rsum:$DD
-docker rmi ecla/rsum:$DD
+docker commit -m "Archive arsum for deploy." arsum ecla/arsum:$DD
+docker push ecla/arsum:$DD
+docker rmi ecla/arsum:$DD
 docker rm -f arsum
 docker rmi -f arsum:latest
 docker build -t arsum:latest /src/rsum/files/alex/arsum
@@ -29,8 +28,9 @@ docker run -d --network arsum --name arsum -p 8192:8192 -h arsum arsum /usr/bin/
 /opt/py/bin/ansible-playbook /src/rsum/files/alex/arsum/p.yml
 
 # jrsum
-docker rmi -f jrsum:archive
-docker commit -m "Archive jrsum for deploy." jrsum jrsum:archive
+docker commit -m "Archive jrsum for deploy." jrsum ecla/jrsum:$DD
+docker push ecla/jrsum:$DD
+docker rmi ecla/jrsum:$DD
 docker rm -f jrsum
 docker build -t jrsum:latest /src/rsum/files/jess/jrsum
 /opt/py/bin/ansible-galaxy remove jrsum 
@@ -39,8 +39,9 @@ docker run -d --network arsum --name jrsum -p 8704:8704 -h jrsum jrsum /usr/bin/
 /opt/py/bin/ansible-playbook /src/rsum/files/jess/jrsum/p.yml
 
 # angos
-docker rmi -f angos:archive
-docker commit -m "Archive angos for deploy." angos angos:archive
+docker commit -m "Archive angos for deploy." angos ecla/angos:$DD
+docker push ecla/angos:$DD
+docker rmi ecla/angos:$DD
 docker rm -f angos
 docker rmi -f angos:latest
 docker build -t angos:latest /src/rsum/files/alex/angos
