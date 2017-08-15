@@ -5,6 +5,6 @@
     state: "present"
     login_host: "mpsql"
     login_user: "psql"
-    port: "5432"
+    port: "5433"
 ...
 # vim: ft=ansible:
