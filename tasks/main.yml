@@ -42,11 +42,8 @@
     dest: "/etc/supervisor/supervisord.conf"
 - name: "Update services state."
   supervisorctl:
-    name: "{{ item }}"
+    name: 'gunicorn' 
     state: "present"
-  with_items:
-    - gunicorn
-    - rsyslogd
 - name: "Start gunicorn."
   supervisorctl:
     name: "gunicorn"
