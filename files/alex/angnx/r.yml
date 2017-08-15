@@ -1,5 +1,5 @@
 ---
-- name: "arsum"
-  src: "executive-consultants-of-los-angeles.rsum"
+- name: "angnx"
+  src: "executive-consultants-of-los-angeles.ngnx"
 ...
 # vim: ft=ansible:
