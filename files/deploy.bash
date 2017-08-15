@@ -3,6 +3,17 @@
 
 export DD=`date +%Y%m%d-%H%M%s`
 
+# angnx
+docker rmi -f angnx:archive
+docker commit -m "Archive angnx for deploy." angnx angnx:archive
+docker rm -f angnx 
+docker rmi -f angnx:latest
+docker build -t angnx:latest /src/rsum/files/alex/angnx
+/opt/py/bin/ansible-galaxy remove angnx 
+/opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/alex/angnx/r.yml
+docker run -d --network arsum --name angnx -p 80:80 -p 443:443 -h angnx angnx /usr/bin/supervisord -n
+/opt/py/bin/ansible-playbook /src/rsum/files/alex/angnx/p.yml
+
 # apsql
 docker commit -m "Archive apsql for deploy." apsql ecla/psql:$DD
 docker push ecla/psql:$DD
@@ -49,14 +60,3 @@ docker build -t angos:latest /src/rsum/files/alex/angos
 /opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/alex/angos/r.yml
 docker run -d --network arsum --name angos -p 3072:80 -h angos angos /usr/bin/supervisord -n
 /opt/py/bin/ansible-playbook /src/rsum/files/alex/angos/p.yml
-
-# angnx
-docker rmi -f angnx:archive
-docker commit -m "Archive angnx for deploy." angnx angnx:archive
-docker rm -f angnx 
-docker rmi -f angnx:latest
-docker build -t angnx:latest /src/rsum/files/alex/angnx
-/opt/py/bin/ansible-galaxy remove angnx 
-/opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/alex/angnx/r.yml
-docker run -d --network arsum --name angnx -p 80:80 -p 443:443 -h angnx angnx /usr/bin/supervisord -n
-/opt/py/bin/ansible-playbook /src/rsum/files/alex/angnx/p.yml
