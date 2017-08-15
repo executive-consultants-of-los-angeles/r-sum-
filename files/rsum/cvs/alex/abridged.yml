@@ -13,6 +13,12 @@ summary:
   content: "Straight shooter with upper management written all over me."
   build_status:
     name: "Build Status"
+    ngnx:
+      name: "NGINX"
+      image:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/ngnx.svg?branch=master"
+      link:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/ngnx"
     rsum:
       name: "CV"
       image:
@@ -22,9 +28,9 @@ summary:
     ngos:
       name: "Nagios"
       image:
-        "https://travis-ci.org/executive-consultants-of-los-angeles/nagios.svg?branch=master"
+        "https://travis-ci.org/executive-consultants-of-los-angeles/ngos.svg?branch=master"
       link:
-        "https://travis-ci.org/executive-consultants-of-los-angeles/nagios"
+        "https://travis-ci.org/executive-consultants-of-los-angeles/ngos"
     psql:
       name: "PostgreSQL"
       image:
