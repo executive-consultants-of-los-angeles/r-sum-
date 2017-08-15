@@ -1,4 +1,6 @@
 ---
+- name: "mngnx"
+  src: executive-consultants-of-los-angeles.ngnx
 - name: "mrsum"
   src: executive-consultants-of-los-angeles.rsum
 - name: "mpsql"
