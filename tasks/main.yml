@@ -17,7 +17,7 @@
   with_items: "{{ apt_install_list }}"
 - name: "Copy requirements file."
   copy:
-    src: "files/r.yml"
+    src: "roles/arsum.yml"
     dest: "/tmp/r.yml"
 - name: "Install role."
   command: "ansible-galaxy install -r /tmp/r.yml --force"
