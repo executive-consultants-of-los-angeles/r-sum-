@@ -11,7 +11,7 @@
         line: 'angnx ansible_connection=docker'
         state: 'present'
         dest: '/etc/ansible/hosts'
-        creates: 'yes'
+        create: 'yes'
 - name: "Install requirements on angnx."
   hosts: angnx
   tasks:
