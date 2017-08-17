@@ -26,6 +26,9 @@ class SubSection(models.Model):
                 section=section
             ).order_by('id').values()
         ):
+            if subsection.get('name') == 'build_status':
+                subsection.update({'name': 'Build Status'})                
+
             # print(json.dumps(subsection, indent=1))
             p = Project()
             if (
