@@ -1,9 +1,11 @@
 ---
+- name: "mngnx"
+  src: executive-consultants-of-los-angeles.ngnx
 - name: "mrsum"
   src: executive-consultants-of-los-angeles.rsum
 - name: "mpsql"
   src: executive-consultants-of-los-angeles.psql
 - name: "mngos"
-  src: executive-consultants-of-los-angeles.nagios
+  src: executive-consultants-of-los-angeles.ngos
 ...
 # vim: ft=ansible:

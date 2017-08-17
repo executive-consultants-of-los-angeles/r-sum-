@@ -402,7 +402,7 @@ ansible-galaxy install executive-consultants-of-los-angeles.r-sum-
 
 This is a very rough sketch of the integration system that makes sure the site stays up while updates are continuously deployed.
 
-![Integration Graph](files/continuous-integration.png)
+![Integration Graph](files/docs/continuous-integration.png)
 
 Dependencies
 ------------
