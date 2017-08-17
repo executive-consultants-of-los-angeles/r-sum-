@@ -24,3 +24,5 @@ docker build -t jrsum:latest /src/rsum/files/jess/jrsum
 /opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/jess/jrsum/r.yml
 docker run -d --network arsum --name jrsum -p 8704:8704 -h jrsum jrsum /usr/bin/supervisord -n
 /opt/py/bin/ansible-playbook /src/rsum/files/jess/jrsum/p.yml
+
+
