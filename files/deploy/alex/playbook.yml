@@ -3,7 +3,7 @@
   hosts: arsum
   roles:
     - role: arsum
-- name: "Add angnx to hosts file.'
+- name: "Add angnx to hosts file."
   hosts: arsum
   tasks:
     - name: "That's what we're doing."
