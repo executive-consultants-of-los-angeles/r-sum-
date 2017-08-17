@@ -10,9 +10,9 @@ docker rm -f arsum
 docker rmi -f arsum:latest
 docker build -t arsum:latest /src/rsum/files/alex/arsum
 /opt/py/bin/ansible-galaxy remove arsum 
-/opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/alex/arsum/requirements.yml
+/opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/deploy/alex/requirements.yml
 docker run -d --network arsum --name arsum -p 8192:8192 -h arsum arsum /usr/bin/supervisord -n
-/opt/py/bin/ansible-playbook /src/rsum/files/alex/arsum/playbook.yml
+/opt/py/bin/ansible-playbook /src/rsum/files/deploy/alex/playbook.yml
 
 # jrsum
 docker commit -m "Archive jrsum for deploy." jrsum ecla/jrsum:$DD
