@@ -1,0 +1,21 @@
+---
+- name: "Install arsum."
+  hosts: arsum
+  roles:
+    - role: arsum
+- name: "Add angnx to hosts file.'
+  hosts: arsum
+  tasks:
+    - name: "That's what we're doing."
+      lineinfile:
+        line: 'angnx ansible_connection=docker'
+        state: 'present'
+        dest: '/etc/ansible/hosts'
+        creates: 'yes'
+- name: "Install requirements on angnx."
+  hosts: angnx
+  tasks:
+    - name: "Install requirements."
+      command: "ansible-galaxy install -r /tmp/requirements.yml --force"
+...
+# vim: ft=ansible:
