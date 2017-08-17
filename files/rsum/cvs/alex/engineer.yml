@@ -349,11 +349,11 @@ experience:
     projects:
       systems_administrator:
         - "installed and configured several different Linux servers"
-        - "used Ubuntu Gentoo and CentOS Linux distributions" 
+        - "used Ubuntu Gentoo and CentOS Linux distributions"
         - "also maintained a number of Windows 7 workstations"
       web_developer:
         - "developed internal products for sales operations"
-        - "used PHP and jQuery along with other front end tools" 
+        - "used PHP and jQuery along with other front end tools"
         - "created data models for two internal software projects"
         - "documented existing and new code"
       source_code_management:
