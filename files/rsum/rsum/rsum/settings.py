@@ -99,7 +99,7 @@ WSGI_APPLICATION = 'rsum.wsgi.application'
 
 if socket.gethostname() == 'mrsum': 
     DB_HOST = 'mpsql'
-    DB_PORT = '5433'
+    DB_PORT = '5432'
     DB_NAME = 'mrsum'
 elif socket.gethostname() == 'arsum':
     DB_HOST = 'apsql'
