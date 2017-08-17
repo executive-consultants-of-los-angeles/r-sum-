@@ -22,7 +22,7 @@
                         <div class="col-md-3 col-xs-6">
                       {% endif %}
                             <h4>{{ s.content.0.name|title }}</h4>
-                          {% if s.content.0.name == 'web' %}
+                          {% if s.content.0.name == 'web' || s.content.0.name == 'location' %}
                             <a href="{{ s.content.0.content }}">{{ s.content.0.content }}</a>
                           {% endif %}
                           {% if s.content.0.name == 'email' %}
