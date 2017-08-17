@@ -28,6 +28,9 @@
                           {% if s.content.0.name == 'email' %}
                             <a href="mailto:{{ s.content.0.content }}">{{ s.content.0.content }}</a>
                           {% endif %}
+                          {% if s.content.0.name != 'email' || s.content.0.name != 'web' %}
+                            <p>{{ s.content.0.content }}</p> 
+                          {% endif %}
                         </div>
                     {% endif %}
                   {% endfor %}
