@@ -16,10 +16,10 @@
                                     <h2>{{ section.name|title }}</h2>
                                     <p style="font-size: 16pt;">{{ section.content.0.content.0.content }}</p>
                                     <p>
-                                      {% if sub.content == 'Build Status' %}
+                                      {% if section.content.1.name == 'Build Status' %}
                                       <table style="width: 100%; text-align: center;">
                                         <tr>
-                                          <td colspan="3"><h3>{{ sub.content }}</h3></td>
+                                          <td colspan="3"><h3>{{ section.content.1.name.split|join:' '|title }}</h3></td>
                                         </tr>
                                         {% for sub in section.content.1.content %} 
                                           {% if sub.content != 'Build Status' %}
