@@ -31,7 +31,7 @@ if socket.gethostname() == 'jrsum':
     CV_TEMPLATE = 'jcv'
 elif socket.gethostname() == 'mrsum':
     CV_OWNER = 'mrsum'
-    CV_TEMPLATE = 'jcv'
+    CV_TEMPLATE = 'acv'
 else:
     CV_OWNER = 'alex'
     CV_TEMPLATE = 'acv'
