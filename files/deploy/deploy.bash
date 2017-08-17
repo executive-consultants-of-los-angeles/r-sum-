@@ -17,10 +17,8 @@ docker commit -m "Archive jrsum for deploy." jrsum ecla/jrsum:$DD
 docker push ecla/jrsum:$DD
 docker rmi ecla/jrsum:$DD
 docker rm -f jrsum
-docker build -t jrsum:latest /src/rsum/files/jess/jrsum
+docker build -t jrsum:latest /src/rsum/files/deploy/jess
 /opt/py/bin/ansible-galaxy remove jrsum 
-/opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/jess/jrsum/requirements.yml
+/opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/deploy/jess/requirements.yml
 docker run -d --network arsum --name jrsum -p 8704:8704 -h jrsum jrsum /usr/bin/supervisord -n
-/opt/py/bin/ansible-playbook /src/rsum/files/jess/jrsum/playbook.yml
-
-
+/opt/py/bin/ansible-playbook /src/rsum/files/deploy/jess/playbook.yml
