@@ -33,7 +33,7 @@
                           <h6>{{ e.content.0.content }}, {{ e.content.1.content }}</h6>
                         </p>
                         <p>
-                          <ul>
+                          <ul style="list-style-image: url('{% static 'img/bigdot.png' %}');">
                           {% for project  in e.content.5.content.projects.items %}
                             <li>
                               <h5>{{ project.0|title }}</h5>
