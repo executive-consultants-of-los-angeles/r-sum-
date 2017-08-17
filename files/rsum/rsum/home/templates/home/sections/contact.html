@@ -1,5 +1,5 @@
 {% load static %}
-{{ section.content }}
+{# section.content #}
         <!-- Contact -->
         <div id="contact">
             <div class="bg-color-sky-light">
@@ -14,7 +14,7 @@
 
                 <div class="row">
                   {% for s in section.content %}
-                    {{ s }}
+                    {# s #}
                     {% if s.content.0.name != 'title' and s.content.0.name != 'message' %}
                       {% if forloop.counter < 3 %}
                         <div class="col-md-3 col-xs-6 md-margin-b-30">
@@ -22,7 +22,7 @@
                         <div class="col-md-3 col-xs-6">
                       {% endif %}
                             <h4>{{ s.content.0.name|title }}</h4>
-                            <a href="https://maps.google.com">{{ s.content.0.content }}</a>
+                            <a href="{{ s.content.0.content }}">{{ s.content.0.content }}</a>
                         </div>
                     {% endif %}
                   {% endfor %}
