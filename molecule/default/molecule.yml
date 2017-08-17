@@ -25,7 +25,7 @@ platforms:
     command: "/usr/bin/supervisord -n"
     image: ecla/ansible:latest
     ports:
-      - "2050:80"
+      - "2052:80"
 provisioner:
   name: ansible
   lint:
