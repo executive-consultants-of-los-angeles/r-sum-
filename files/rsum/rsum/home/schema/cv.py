@@ -20,8 +20,8 @@ if socket.gethostname() == 'jrsum':
     CV_NAME = 'general' 
 
 if socket.gethostname() == 'mrsum':
-    CV_OWNER = 'jess' 
-    CV_TEMPLATE = 'jcv' 
+    CV_OWNER = 'alex' 
+    CV_TEMPLATE = 'acv' 
     CV_NAME = 'general'
 
 if socket.gethostname() == 'arsum':
