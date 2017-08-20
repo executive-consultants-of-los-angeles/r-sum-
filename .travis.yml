@@ -7,7 +7,7 @@ cache:
 addons:
   apt:
     sources:
-      - sourceline: 
+      - sourceline:
           'deb http://cz.archive.ubuntu.com/ubuntu xenial main universe'
     packages:
       - build-essential
