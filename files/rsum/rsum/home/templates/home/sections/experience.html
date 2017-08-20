@@ -33,11 +33,11 @@
                           <h6>{{ e.content.0.content }}, {{ e.content.1.content }}</h6>
                         </p>
                         <p>
-                          <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{{ static 'img/bigdot.png' }}');">
+                          <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{% static 'img/bigdot.png' %}');">
                           {% for project  in e.content.5.content.projects.items %}
                             <li>
                               <h5>{{ project.0|title }}</h5>
-                              <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{{ static 'img/littledot.png' }}');">
+                              <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{% static 'img/littledot.png' %}');">
                                 {% for i in project.1 %}
                                   <li><h6>{{ i }}</h6></li>
                                 {% endfor %}
