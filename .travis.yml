@@ -1,20 +1,20 @@
 ---
-sudo: required
 language: python
-dist: xenial
+sudo: required
+cache:
+  pip: 'yes'
+  yarn: 'yes'
+addons:
+  apt:
+    sources:
+      - sourceline:
+          'deb http://cz.archive.ubuntu.com/ubuntu xenial main universe'
+    packages:
+      - build-essential
 before_install:
   - openssl aes-256-cbc -K $encrypted_88341752b148_key
       -iv $encrypted_88341752b148_iv
       -in files/deploy/deploy.enc -out files/deploy/deploy -d
-  - sudo apt-get -qq update
-  - sudo apt-get install ansible
-  - ansible -m apt_repository -a 'repo="
-      deb http://cz.archive.ubuntu.com/ubuntu xenial main universe
-    " state=present' -s localhost
-  - ansible -m apt -a 'update_cache=yes' -s localhost
-  - ansible -m apt -a 'name=docker.io state=latest' -s localhost
-  - sudo apt-get install gcc
-  - sudo apt-get install build-essential
 install:
   - pip install git+https://github.com/metacloud/molecule.git
   - pip install git+https://github.com/docker/docker-py.git
@@ -33,5 +33,7 @@ deploy:
     branch: master
 on_success: never
 on_failure: never
+services:
+  docker
 ...
 # vim: ft=ansible:

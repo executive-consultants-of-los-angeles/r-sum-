@@ -15,6 +15,8 @@
 - name: "Install requirements on angnx."
   hosts: angnx
   tasks:
+    - name: "Remove role."
+      command: "ansible-galaxy remove arsum"
     - name: "Install requirements."
       command: "ansible-galaxy install -r /tmp/requirements.yml --force"
 ...
