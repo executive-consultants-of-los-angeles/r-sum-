@@ -7,7 +7,8 @@ cache:
 addons:
   apt:
     sources:
-      - sourceline: 'deb http://cz.archive.ubuntu.com/ubuntu xenial main universe'
+      - sourceline: 
+          'deb http://cz.archive.ubuntu.com/ubuntu xenial main universe'
     packages:
       - docker.io
       - gcc
