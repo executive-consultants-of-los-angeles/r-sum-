@@ -10,8 +10,6 @@ addons:
       - sourceline: 
           'deb http://cz.archive.ubuntu.com/ubuntu xenial main universe'
     packages:
-      - docker.io
-      - gcc
       - build-essential
 before_install:
   - openssl aes-256-cbc -K $encrypted_88341752b148_key
@@ -35,5 +33,7 @@ deploy:
     branch: master
 on_success: never
 on_failure: never
+services:
+  docker
 ...
 # vim: ft=ansible:
