@@ -54,7 +54,7 @@ skills:
       name: "Bourne Again SHell"
       start: 2000
     vim:
-      name: "Very IMproved Text Alexitor"
+      name: "Very IMproved Text Editor"
       start: 2000
   cloud_architecture:
     id: 2
