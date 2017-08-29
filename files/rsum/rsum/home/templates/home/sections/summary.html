@@ -16,6 +16,9 @@
                                     <h2>{{ section.name|title }}</h2>
                                     <p style="font-size: 16pt;">{{ section.content.0.content.0.content }}</p>
                                     <p>
+                                      <a href="{% url 'docx' %}" class="btn-theme btn-theme-md btn-default-bg" style="font-variant: small-caps;">Export to Word Document</a>
+                                    </p>
+                                    <p>
                                       {% if section.content.1.name == 'Build Status' %}
                                       <table style="width: 100%; text-align: center;">
                                         <tr>
