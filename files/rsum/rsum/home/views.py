@@ -9,10 +9,7 @@ from django.http import HttpResponse
 
 from schema.cv import CV
 
-from docx import Document
-from docx.shared import Inches
-
-from StringIO import StringIO
+from export.word import ExportDocument
 
 import json
 
@@ -55,17 +52,7 @@ def index(request):
     return render(request, 'home/index.html', context)
 
 def export_docx(request, cv_id=1):
-    cv_instance = CV()
-    cv = cv_instance.get_cv(cv_id=cv_id)
-    document = Document()
-    stream = StringIO()
-
-    for section in cv.get('sections'):
-        print(section.get('name'))
-        document.add_heading(section.get('name'))
-        #document.add_section(section.get('content'))
-
-    document.save(stream)
+    stream = ExportDocument().export(cv_id)
 
     # Special thanks to: https://stackoverflow.com/a/24122313 
 
