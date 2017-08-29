@@ -3,13 +3,13 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 
-from docx import Document
-from docx.shared import Inches
-
 from django.shortcuts import render
 from django.db import models
 
 from schema.cv import CV
+
+from docx import Document
+from docx.shared import Inches
 
 import json
 
@@ -49,4 +49,17 @@ def index(request):
         'projects': projects
     })
 
+    context.get('cv').update({
+        'document': make_docx(context.get('cv')),
+    })
+
     return render(request, 'home/index.html', context)
+
+def make_docx(cv):
+    document = Document()
+
+    for section in cv:
+        print(section)
+        document.add_heading(section)
+
+    return document
