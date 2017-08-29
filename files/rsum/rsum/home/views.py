@@ -3,6 +3,9 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 
+from docx import Document
+from docx.shared import Inches
+
 from django.shortcuts import render
 from django.db import models
 
