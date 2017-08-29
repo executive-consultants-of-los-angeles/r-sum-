@@ -9,7 +9,6 @@ from docx.shared import Inches
 import home.schema
 
 CV = home.schema.cv.CV
-print(CV)
 
 
 class ExportDocument(object):
@@ -22,14 +21,36 @@ class ExportDocument(object):
         stream = StringIO()
         document = Document()
 
-        for section in cv.get('sections'):
-            print(section.get('name'))
+        for current,section in enumerate(cv.get('sections')):
             document.add_heading(section.get('name'))
-            document.add_section(self.get_section(section))
+            #self.add_section(section.get('content'), document)
+
+            if section.get('name') == u'intro':
+                self.add_intro(section.get('content'), document)
 
         document.save(stream)
 
         return stream 
 
-    def get_section(self, section):
-        print(section) 
+    def add_section(self, section, document):
+        for subsection in section:
+            document.add_heading(subsection.get('name').replace('_',' '), level=2)
+            if (
+                isinstance(subsection.get('content'), list) and
+                len(subsection.get('content')) > 0
+            ):
+                content = subsection.get('content')[0].get('content')
+                print(type(content))
+                document.add_paragraph(content)
+
+    def add_intro(self, intro, document):
+        for item in intro:
+            print(item.get('content'))
+            document.add_heading(str(type(item)))
+            if (
+                isinstance(item.get('content'), unicode) or
+                isinstance(item.get('content'), str)
+            ):
+                item_string = item.get('content')
+                document.add_heading(item_string)
+        return None
