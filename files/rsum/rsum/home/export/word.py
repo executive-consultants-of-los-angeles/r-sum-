@@ -44,9 +44,10 @@ class ExportDocument(object):
                 document.add_paragraph(content)
 
     def add_intro(self, intro, document):
-        for item in intro:
+        for index, item in intro:
             print(item.get('content'))
-            document.add_heading(str(type(item)))
+            document.add_heading(str(type(item.get('content')[0])))
+            document.add_heading(str(item.get('content')[0]))
             if (
                 isinstance(item.get('content'), unicode) or
                 isinstance(item.get('content'), str)
