@@ -54,13 +54,16 @@ def index(request):
 
     return render(request, 'home/index.html', context)
 
-def export_docx(cv):
+def export_docx(request, cv_id=1):
+    cv_instance = CV()
+    cv = cv_instance.get_cv(cv_id=cv_id)
     document = Document()
     stream = StringIO()
 
-    for section in cv:
-        print(section)
-        document.add_heading(section)
+    for section in cv.get('sections'):
+        print(section.get('name'))
+        document.add_heading(section.get('name'))
+        #document.add_section(section.get('content'))
 
     document.save(stream)
 
