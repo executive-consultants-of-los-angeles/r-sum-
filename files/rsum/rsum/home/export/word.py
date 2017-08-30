@@ -5,6 +5,9 @@ from StringIO import StringIO
 
 from docx import Document
 from docx.shared import Inches
+from docx.shared import Pt 
+from docx.shared import RGBColor
+from docx.enum.style import WD_STYLE_TYPE
 
 import home.schema
 
@@ -20,9 +23,11 @@ class ExportDocument(object):
         cv = cv_instance.get_cv(cv_id)
         stream = StringIO()
         document = Document()
+        document = self.set_styles(document)
+        
 
         for current,section in enumerate(cv.get('sections')):
-            document.add_heading(section.get('name'))
+            #document.add_heading(section.get('name'))
             #self.add_section(section.get('content'), document)
 
             if section.get('name') == u'intro':
@@ -44,14 +49,32 @@ class ExportDocument(object):
                 document.add_paragraph(content)
 
     def add_intro(self, intro, document):
-        for index, item in intro:
-            print(item.get('content'))
-            document.add_heading(str(type(item.get('content')[0])))
-            document.add_heading(str(item.get('content')[0]))
+        for index, item in enumerate(sorted(intro)):
+            item_content = item.get('content')[0].get('content')
+            print(item_content)
             if (
-                isinstance(item.get('content'), unicode) or
-                isinstance(item.get('content'), str)
+                isinstance(item_content, unicode) or
+                isinstance(item_content, str)
             ):
-                item_string = item.get('content')
-                document.add_heading(item_string)
+                document.add_heading(item_content, level=index+1)
         return None
+
+    def set_styles(self, document):
+        document.styles['Heading 1'].delete()
+        document.styles.add_style('Heading 1', WD_STYLE_TYPE.PARAGRAPH, builtin=True) 
+        style = document.styles['Heading 1'] 
+        font = style.font
+        font.color.rgb = RGBColor(0x51, 0x57, 0x6A) 
+        font.name = 'Hind'
+        font.size = Pt(24) 
+        font.bold = True
+
+        document.styles['Heading 2'].delete()
+        document.styles.add_style('Heading 2', WD_STYLE_TYPE.PARAGRAPH, builtin=True)
+        style = document.styles['Heading 2']
+        font = style.font
+        font.name = 'Hind'
+        font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
+        font.size = Pt(16)
+
+        return document
