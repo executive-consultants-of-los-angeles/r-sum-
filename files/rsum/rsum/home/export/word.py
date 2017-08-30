@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import docx
+
 from StringIO import StringIO
 
 from docx import Document
-from docx.shared import Inches
+from docx.shared import Cm 
 from docx.shared import Pt 
 from docx.shared import RGBColor
 from docx.enum.style import WD_STYLE_TYPE
@@ -24,7 +26,7 @@ class ExportDocument(object):
         stream = StringIO()
         document = Document()
         document = self.set_styles(document)
-        
+        document = self.set_layout(document)
 
         for current,section in enumerate(cv.get('sections')):
             #document.add_heading(section.get('name'))
@@ -76,5 +78,17 @@ class ExportDocument(object):
         font.name = 'Hind'
         font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
         font.size = Pt(16)
+
+        return document
+
+    def set_layout(self, document):
+        sections = document.sections 
+        section = sections[0] 
+        section.page_height = Cm(29.7)
+        section.page_width = Cm(21)
+        section.left_margin = Cm(0.5)
+        section.top_margin = Cm(0.5)
+        section.right_margin = Cm(0.5)
+        section.bottom_margin = Cm(0.5)
 
         return document
