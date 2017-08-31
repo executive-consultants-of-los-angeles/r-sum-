@@ -10,6 +10,7 @@ from docx.shared import Cm
 from docx.shared import Pt 
 from docx.shared import RGBColor
 from docx.enum.style import WD_STYLE_TYPE
+from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 import home.schema
 
@@ -51,6 +52,7 @@ class ExportDocument(object):
                 document.add_paragraph(content)
 
     def add_intro(self, intro, document):
+        table = document.add_table(rows=1, cols=2)
         for index, item in enumerate(sorted(intro)):
             item_content = item.get('content')[0].get('content')
             print(item_content)
@@ -58,7 +60,10 @@ class ExportDocument(object):
                 isinstance(item_content, unicode) or
                 isinstance(item_content, str)
             ):
-                document.add_heading(item_content, level=index+1)
+                table.cell(0,0).add_paragraph(item_content, style='Heading '+str(index+1))
+        table.cell(0,1).add_picture('/srv/rsum/static/acv/img/mockup/avatar-01.png', width=Cm(4))
+        table.cell(0,0).width = Cm(15)
+        table.cell(0,1).paragraphs[0].paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
         return None
 
     def set_styles(self, document):
