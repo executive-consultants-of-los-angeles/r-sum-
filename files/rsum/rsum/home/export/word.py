@@ -54,13 +54,14 @@ class ExportDocument(object):
     def add_intro(self, intro, document):
         table = document.add_table(rows=1, cols=2)
         for index, item in enumerate(sorted(intro)):
-            item_content = item.get('content')[0].get('content')
-            print(item_content)
-            if (
-                isinstance(item_content, unicode) or
-                isinstance(item_content, str)
-            ):
-                table.cell(0,0).add_paragraph(item_content, style='Heading '+str(index+1))
+            print(item.get('content'))
+            if len(item.get('content')) == 1:
+                content = item.get('content')[0].get('content')
+                table.cell(0,0).add_paragraph(content, style='Heading '+str(index+1))
+            else:
+                print(item.get('content'))
+
+                
         table.cell(0,0).width = Cm(14)
         table.cell(0,1).add_picture('/srv/rsum/static/acv/img/mockup/avatar-01.png', width=Cm(4))
         table.cell(0,1).width = Cm(4)
