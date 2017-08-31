@@ -11,6 +11,7 @@ intro:
 summary:
   id: 2
   content: "Straight shooter with upper management written all over me."
+  calendly: 'https://calendly.com/xander-ecla'
   build_status:
     name: "Build Status"
     ngnx:
