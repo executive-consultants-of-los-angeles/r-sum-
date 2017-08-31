@@ -61,8 +61,9 @@ class ExportDocument(object):
                 isinstance(item_content, str)
             ):
                 table.cell(0,0).add_paragraph(item_content, style='Heading '+str(index+1))
+        table.cell(0,0).width = Cm(14)
         table.cell(0,1).add_picture('/srv/rsum/static/acv/img/mockup/avatar-01.png', width=Cm(4))
-        table.cell(0,0).width = Cm(15)
+        table.cell(0,1).width = Cm(4)
         table.cell(0,1).paragraphs[0].paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
         return None
 
