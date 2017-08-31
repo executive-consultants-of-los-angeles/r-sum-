@@ -12,6 +12,7 @@ from docx.shared import RGBColor
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
+from docx.enum.style import WD_BUILTIN_STYLE
 
 import home.schema
 
@@ -45,6 +46,12 @@ class ExportDocument(object):
                 p = document.add_paragraph('')
                 p.paragraph_format.line_spacing = 0.0
                 document = self.add_skills(section.get('content'), document)
+        
+            if section.get('name') == u'experience':
+                p = document.add_paragraph('')
+                p.paragraph_format.line_spacing = 0.0
+                p.paragraph_format.page_break_before = True
+                document = self.add_experience(section.get('content'), document)
 
         document.save(stream)
 
@@ -156,9 +163,59 @@ class ExportDocument(object):
             p.paragraph_format.space_after = 0
         return ts 
 
+    def add_experience(self, experience, document):
+        del experience[0]
+        p = document.add_paragraph('Experience', style='Heading 3')
+        t = document.add_table(rows=1, cols=3)
+        for index, value in enumerate(experience):
+            if index < 3:
+                pass
+            else:
+                t.add_row()
+            for item in value.get('content'):
+                if item.get('name') == 'location':
+                    location = item.get('content')
+                if item.get('name') == 'duration':
+                    duration = item.get('content')
+                if item.get('name') == 'position':
+                    position = item.get('content')
+                if item.get('name') == 'projects':
+                    projects = item.get('content').get('projects')
+                if item.get('name') == 'id':
+                    photo = item.get('content')
+                if item.get('name') == 'company':
+                    company = item.get('content')
+            col = index % 3
+            row = index / 3
+            p = t.cell(row,col).paragraphs[0]
+            p.paragraph_format.line_spacing = 0.0
+            t.cell(row,col).add_picture('/srv/rsum/static/acv/img/970x647/{0}.jpg'.format(photo), width=Cm(4))
+            p = t.cell(row,col).add_paragraph(position, style='Heading 4')
+            p.paragraph_format.line_spacing = 1.0
+            p.paragraph_format.space_after = 0
+            p = t.cell(row,col).add_paragraph(company, style='Heading 5')
+            p.paragraph_format.line_spacing = 1.0
+            p.paragraph_format.space_before = 0
+            p = t.cell(row,col).add_paragraph("{0}, {1}".format(location, duration), style='Heading 6')
+            p.paragraph_format.line_spacing = 1.0
+            p.paragraph_format.space_before = 0
+            t = self.add_projects(projects, t, row, col)
+        
+        return document
+
+    def add_projects(self, projects, table, row, col):
+        for project in projects.items():
+            p = table.cell(row,col).add_paragraph(project[0], style='List Bullet')
+            p.paragraph_format.line_spacing = 1.0
+            p.paragraph_format.space_after = 0
+            actions = project[1].replace('[','').replace(']','').split("', '") 
+            for action in actions:
+                p = table.cell(row,col).add_paragraph(action.replace("'",""), style = 'List Bullet 2')
+                p.paragraph_format.line_spacing = 1.0
+                p.paragraph_format.space_after = 0
+        return table
+
     def set_styles(self, document):
-        document.styles['Heading 1'].delete()
-        document.styles.add_style('Heading 1', WD_STYLE_TYPE.PARAGRAPH, builtin=True) 
         style = document.styles['Heading 1'] 
         font = style.font
         font.color.rgb = RGBColor(0x51, 0x57, 0x6A) 
@@ -166,22 +223,53 @@ class ExportDocument(object):
         font.size = Pt(24) 
         font.bold = True
 
-        document.styles['Heading 2'].delete()
-        document.styles.add_style('Heading 2', WD_STYLE_TYPE.PARAGRAPH, builtin=True)
         style = document.styles['Heading 2']
         font = style.font
         font.name = 'Hind'
+        font.italic = False
         font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
         font.size = Pt(16)
 
-        document.styles['Heading 3'].delete()
-        document.styles.add_style('Heading 3', WD_STYLE_TYPE.PARAGRAPH, builtin=True)
         style = document.styles['Heading 3']
         font = style.font
         font.name = 'Hind'
         font.color.rgb = RGBColor(0x51, 0x57, 0x6A) 
         font.size = Pt(14)
         font.bold = True
+
+        style = document.styles['Heading 4']
+        font = style.font
+        font.name = 'Hind'
+        font.color.rgb = RGBColor(0x51, 0x57, 0x6A) 
+        font.size = Pt(8)
+        font.bold = True
+        
+        style = document.styles['Heading 5']
+        font = style.font
+        font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
+        font.small_caps = True
+        font.name = 'Hind'
+        font.size = Pt(7)
+        
+        style = document.styles['Heading 6']
+        font = style.font
+        font.color.rgb = RGBColor(0x51, 0x57, 0x6A) 
+        font.name = 'Hind'
+        font.size = Pt(6)
+        font.bold = True
+        
+        style = document.styles['List Bullet']
+        font = style.font
+        font.color.rgb = RGBColor(0x51, 0x57, 0x6A) 
+        font.name = 'Hind'
+        font.size = Pt(5)
+        font.bold = True
+
+        style = document.styles['List Bullet 2']
+        font = style.font
+        font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
+        font.size = Pt(5)
+        font.name = 'Hind'
 
         document.styles.add_style('Skill', WD_STYLE_TYPE.PARAGRAPH)
         style = document.styles['Skill']
@@ -198,8 +286,6 @@ class ExportDocument(object):
         font.color.rgb = RGBColor(0x51, 0x57, 0x6A) 
         font.size = Pt(7)
 
-        document.styles['Normal'].delete()
-        document.styles.add_style('Normal', WD_STYLE_TYPE.PARAGRAPH, builtin=True)
         style = document.styles['Normal']
         font = style.font
         font.name = 'Hind'
