@@ -5,8 +5,11 @@ from __future__ import print_function
 
 from django.shortcuts import render
 from django.db import models
+from django.http import HttpResponse
 
 from schema.cv import CV
+
+from export.word import ExportDocument
 
 import json
 
@@ -47,3 +50,19 @@ def index(request):
     })
 
     return render(request, 'home/index.html', context)
+
+def export_docx(request, cv_id=1):
+    stream = ExportDocument().export(cv_id)
+
+    # Special thanks to: https://stackoverflow.com/a/24122313 
+
+    length = stream.tell()
+    stream.seek(0)
+    response = HttpResponse(
+        stream.getvalue(),
+        content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    )
+    response['Content-Disposition'] = 'attachment; filename=alex-harris-cv.docx'
+    response['Content-Length'] = length
+
+    return response 
