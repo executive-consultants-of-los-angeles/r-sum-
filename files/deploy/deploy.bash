@@ -21,4 +21,4 @@ docker build -t jrsum:latest /src/rsum/files/deploy/jess
 /opt/py/bin/ansible-playbook /src/rsum/files/deploy/jess/playbook.yml
 
 # angnx
-ansible -m shell -a 'ansible-galaxy install -r /tmp/arsum.yml --force' angnx
+/opt/py/bin/ansible -m shell -a 'ansible-galaxy install -r /tmp/arsum.yml --force' angnx
