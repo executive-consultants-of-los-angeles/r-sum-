@@ -150,8 +150,8 @@ values:
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-badge"'
-      text: 'Success is the result of perfection, 
-        hard work, learning from failure, 
+      text: 'Success is the result of perfection,
+        hard work, learning from failure,
         loyalty, and persistence. - Colin Powell'
     industry:
       id: 2
