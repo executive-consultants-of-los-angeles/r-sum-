@@ -162,10 +162,9 @@ values:
           data-wow-duration=".3"
           data-wow-delay=".1s"'
       icon: ' class="service-icon color-white icon-chemistry"'
-      text: 'You know what they say about Idle Hands. . . Seth
-        Green would be homeless if not for Seth McFarlane.
-        But seriously, I find I can''t properly enjoy leisure
-        unless it''s leisure that''s been earned.'
+      text: 'Concentration is my motto - first
+        honesty, then industry,
+        then concentration. - Andrew Carnegie'
     efficiency:
       id: 3
       col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
