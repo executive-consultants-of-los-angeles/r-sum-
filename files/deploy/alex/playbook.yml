@@ -2,7 +2,7 @@
 - name: "Install arsum."
   hosts: arsum
   roles:
-    - role: arsum
+    - role: rsum
 - name: "Add angnx to hosts file."
   hosts: arsum
   tasks:
