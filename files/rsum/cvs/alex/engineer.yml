@@ -170,9 +170,8 @@ values:
       col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-screen-tablet"'
-      text: 'With that said, working hard but dumb is not
-        going to get you very far, so I like things that are
-        speedy and free of waste.'
+      text: 'There can be economy only where there is
+        efficiency. - Benjamin Disraeli'
     wealth:
       id: 4
       col: 'class="col-md-3 col-sm-6"'
