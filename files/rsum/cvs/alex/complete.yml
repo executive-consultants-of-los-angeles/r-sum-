@@ -150,11 +150,9 @@ values:
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-badge"'
-      text: 'One good turn deserves another, and really this
-        comes down to the Golden Rule: do unto others
-        and then run. But seriously, I do what I can to help
-        people that have helped me and I don''t ask people for
-        action that I haven''t done myself in the past.'
+      text: 'Success is the result of perfection, 
+        hard work, learning from failure, 
+        loyalty, and persistence. - Colin Powell'
     industry:
       id: 2
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
