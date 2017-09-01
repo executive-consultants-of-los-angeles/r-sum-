@@ -20,17 +20,17 @@ import datetime
 import socket
 
 if socket.gethostname() == 'jrsum':
-    CV_OWNER = 'jess' 
+    CV_OWNER = 'jess-hartwell' 
     CV_TEMPLATE = 'jcv' 
     CV_NAME = 'general' 
 
 if socket.gethostname() == 'mrsum':
-    CV_OWNER = 'alex' 
-    CV_TEMPLATE = 'acv' 
+    CV_OWNER = 'jess-hartwell' 
+    CV_TEMPLATE = 'jcv' 
     CV_NAME = 'engineer'
 
 if socket.gethostname() == 'arsum':
-    CV_OWNER = 'alex' 
+    CV_OWNER = 'alex-harris' 
     CV_TEMPLATE = 'acv' 
     CV_NAME = 'engineer'
 
@@ -39,7 +39,7 @@ CV = home.schema.cv.CV
 
 class ExportDocument(object):
     def __init__(self):
-        self.name = 'alex-harris-cv.docx'
+        self.name = '{0}-cv.docx'.format(CV_OWNER)
 
     def export(self, cv_id):
         cv_instance = CV()
@@ -107,7 +107,7 @@ class ExportDocument(object):
         t.alignment = WD_TABLE_ALIGNMENT.CENTER
         for index, item in enumerate(sorted(summary)):
             if len(item.get('content')) == 1:
-                t.cell(0,0).add_picture('/srv/rsum/static/'+CV_TEMPLATE+'/img/500x700/01.jpg', width=Cm(6))
+                t.cell(0,0).add_picture('/srv/rsum/static/{0}/img/500x700/01.jpg'.format(CV_TEMPLATE), width=Cm(6))
                 t.cell(0,0).width = Cm(6)
                 t.cell(0,1).add_paragraph('Summary', style='Heading 3')
                 t.cell(0,1).add_paragraph(item.get('content')[0].get('content'), style='Normal')
@@ -251,7 +251,7 @@ class ExportDocument(object):
         p.paragraph_format.line_spacing = 1.0
         p.paragraph_format.space_after = 0
         p.paragraph_format.page_break_before = True
-        document.add_picture('/srv/rsum/static/acv/img/1920x1080/01.jpg', width=Cm(4))
+        document.add_picture('/srv/rsum/static/{0}/img/1920x1080/01.jpg'.format(CV_TEMPLATE), width=Cm(4))
         for item in education:
             if item.get('content')[0].get('name') == u'name':
                 name = item.get('content')[0].get('content')
