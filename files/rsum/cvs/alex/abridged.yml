@@ -177,11 +177,8 @@ values:
       col: 'class="col-md-3 col-sm-6"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon  icon-mustache"'
-      text: 'Finally, this requires some clarity.&nbsp;&nbsp;I do not mean
-        money when I say wealth because the two are not synonymous.
-        Wealth in this context refers to a richness of resources
-        such as endurance, information, health, and kindness.
-        Essentially, an ability to get things done.'
+      text: 'Wealth is the ability to fully experience
+        life. - Henry David Thoreau'
 experience:
   id: 5
   introduction: 'Counting from the first time I installed

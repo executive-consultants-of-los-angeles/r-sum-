@@ -177,7 +177,7 @@ values:
       col: 'class="col-md-3 col-sm-6"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon  icon-mustache"'
-      text: 'Wealth is the ability to fully experience 
+      text: 'Wealth is the ability to fully experience
         life. - Henry David Thoreau'
 experience:
   id: 5
