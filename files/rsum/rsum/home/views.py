@@ -78,7 +78,7 @@ def export_docx(request, cv_id='1'):
         stream.getvalue(),
         content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     )
-    response['Content-Disposition'] = 'attachment; filename={0}-cv.docx'
+    response['Content-Disposition'] = 'attachment; filename={0}-cv.docx'.format(CV_OWNER)
     response['Content-Length'] = length
 
     return response 
