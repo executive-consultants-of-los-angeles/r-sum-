@@ -88,7 +88,7 @@ experience:
     paid for it about fifteen of those years.'
   thermo_fisher_supervisor:
     id: 1
-    duration: "August 2012 – November 2014 (2 years)"
+    duration: "August 2012 - November 2014 (2 years)"
     location: "Pleasonton, California"
     company: 'Thermo Fischer Scientific
     (Formerly Life Technologies and previously Applied Biosystems)'
@@ -101,7 +101,7 @@ experience:
         - 'Remedied manufacturing delays with root cause
              analysis and corrective action'
       bonsues_awarded:
-        - "Early delivery of Ion AmpliSeq™ Exome Kits to market"
+        - "Early delivery of Ion AmpliSeq(tm) Exome Kits to market"
         - 'Effectively preparing personnel for a voluntary evaluation
             by Cal/OSHA culminating in the recognition of Pleasanton
             as a Cal/VPP Star site in January 2013'
@@ -109,7 +109,7 @@ experience:
             Genome Project'
   thermo_fisher_scientist:
     id: 2
-    duration: "April 2012 – August 2012 (4 months)"
+    duration: "April 2012 - August 2012 (4 months)"
     location: "Pleasonton, California"
     company: 'Thermo Fischer Scientific
     (Formerly Life Technologies and previously Applied Biosystems)'
@@ -123,7 +123,7 @@ experience:
             with Cal/OSHA on-site evaluation'
   thermo_fisher_senior:
     id: 3
-    duration: "April 2010 – April 2012 (2 years)"
+    duration: "April 2010 - April 2012 (2 years)"
     location: "Pleasonton, California"
     company: 'Thermo Fischer Scientific
     (Formerly Life Technologies and previously Applied Biosystems)'
@@ -145,7 +145,7 @@ experience:
              capital asset request (CAR)'
   thermo_fisher_senior_production_chemist:
     id: 4
-    duration: "July 2008 – April 2010 (2 years)"
+    duration: "July 2008 - April 2010 (2 years)"
     location: "Pleasonton, California"
     company: 'Thermo Fischer Scientific
     (Formerly Life Technologies and previously Applied Biosystems)'
@@ -163,7 +163,7 @@ experience:
         - "Providing leadership to team while supervisor was on leave"
   thermo_fisher_production_chemist:
     id: 5
-    duration: "November 2007 – July 2008 (1 year)"
+    duration: "November 2007 - July 2008 (1 year)"
     location: "Pleasonton, California"
     company: 'Thermo Fischer Scientific
     (Formerly Life Technologies and previously Applied Biosystems)'
@@ -179,7 +179,7 @@ experience:
             to add value to Black & Green Belt projects'
   kelly_services:
     id: 6
-    duration: "May 2006 – November 2007 (1 year)"
+    duration: "May 2006 - November 2007 (1 year)"
     location: "Pleasonton, California"
     company: 'Kelly Services'
     position: "Production Operator"
@@ -195,7 +195,7 @@ experience:
         - "Awarded bonus for attentiveness to work and lab"
   saic_frederick_incorporated:
     id: 7
-    duration: "June 2004 – July 2005 (1 year)"
+    duration: "June 2004 - July 2005 (1 year)"
     location: "Gaithersburg, Maryland"
     company: 'SAIC-Frederick, Incorporated
       (Contract with National Cancer Institute)'
@@ -208,11 +208,11 @@ experience:
         - "Trained team members in sample handling protocols"
         - 'Designed a streamlined system for
             inventorying and repairing 25 Bio-Rad thermal cyclers'
-        - 'Awarded bonus in appreciation of
-            contributions made towards company’s success'
+        - "Awarded bonus in appreciation of
+            contributions made towards company's success"
   saic_frederick_incorporated_research:
     id: 8
-    duration: "July 2001 – June 2004 (3 years)"
+    duration: "July 2001 - June 2004 (3 years)"
     location: "Gaithersburg, Maryland"
     company: 'SAIC-Frederick, Incorporated
       (Contract with National Cancer Institute)'

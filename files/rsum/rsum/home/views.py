@@ -12,6 +12,22 @@ from schema.cv import CV
 from export.word import ExportDocument
 
 import json
+import socket
+
+if socket.gethostname() == 'jrsum':
+    CV_OWNER = 'jess-hartwell'
+    CV_TEMPLATE = 'jcv'
+    CV_NAME = 'general'
+
+if socket.gethostname() == 'mrsum':
+    CV_OWNER = 'jess-hartwell'
+    CV_TEMPLATE = 'jcv'
+    CV_NAME = 'general'
+
+if socket.gethostname() == 'arsum':
+    CV_OWNER = 'alex-harris'
+    CV_TEMPLATE = 'acv'
+    CV_NAME = 'engineer'
 
 
 def index(request):
@@ -51,7 +67,7 @@ def index(request):
 
     return render(request, 'home/index.html', context)
 
-def export_docx(request, cv_id=1):
+def export_docx(request, cv_id='1'):
     stream = ExportDocument().export(cv_id)
 
     # Special thanks to: https://stackoverflow.com/a/24122313 
@@ -62,7 +78,7 @@ def export_docx(request, cv_id=1):
         stream.getvalue(),
         content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     )
-    response['Content-Disposition'] = 'attachment; filename=alex-harris-cv.docx'
+    response['Content-Disposition'] = 'attachment; filename={0}-cv.docx'.format(CV_OWNER)
     response['Content-Length'] = length
 
     return response 
