@@ -51,7 +51,7 @@ def index(request):
 
     return render(request, 'home/index.html', context)
 
-def export_docx(request, cv_id=1):
+def export_docx(request, cv_id='1'):
     stream = ExportDocument().export(cv_id)
 
     # Special thanks to: https://stackoverflow.com/a/24122313 
