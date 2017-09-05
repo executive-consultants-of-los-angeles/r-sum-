@@ -17,9 +17,15 @@ skills:
   oligo_and_array_manufacturing:
     name: "Oligo and Array Manufacturing"
     start: 2009
+    subskill:
+      name: "Sub Skill"
+      start: 2010
   snp_genotyping:
     name: "SNP Genotyping"
     start: 2013
+    subskill:
+      name: "Sub Skill"
+      start: 2013
 values:
   id: 4
   introduction: 'A clearly defined system of ethics is vital to a
