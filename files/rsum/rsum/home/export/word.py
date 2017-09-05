@@ -14,32 +14,19 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.enum.style import WD_BUILTIN_STYLE
 
+from django.conf import settings
+
 import home.schema
 
 import datetime
 import socket
-
-if socket.gethostname() == 'jrsum':
-    CV_OWNER = 'jess-hartwell' 
-    CV_TEMPLATE = 'jcv' 
-    CV_NAME = 'general' 
-
-if socket.gethostname() == 'mrsum':
-    CV_OWNER = 'jess-hartwell' 
-    CV_TEMPLATE = 'jcv' 
-    CV_NAME = 'general'
-
-if socket.gethostname() == 'arsum':
-    CV_OWNER = 'alex-harris' 
-    CV_TEMPLATE = 'acv' 
-    CV_NAME = 'engineer'
 
 CV = home.schema.cv.CV
 
 
 class ExportDocument(object):
     def __init__(self):
-        self.name = '{0}-cv.docx'.format(CV_OWNER)
+        self.name = '{0}-cv.docx'.format(settings.CV_OWNER)
 
     def export(self, cv_id):
         cv_instance = CV()
@@ -97,7 +84,7 @@ class ExportDocument(object):
                 pass
 
         table.cell(0,0).width = Cm(12)
-        table.cell(0,1).add_picture('/srv/rsum/static/{0}/img/mockup/avatar-01.png'.format(CV_TEMPLATE), width=Cm(4))
+        table.cell(0,1).add_picture('/srv/rsum/static/{0}/img/mockup/avatar-01.png'.format(settings.CV_TEMPLATE), width=Cm(4))
         table.cell(0,1).width = Cm(4)
         table.cell(0,1).paragraphs[0].paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
         return document 
@@ -107,7 +94,7 @@ class ExportDocument(object):
         t.alignment = WD_TABLE_ALIGNMENT.CENTER
         for index, item in enumerate(sorted(summary)):
             if len(item.get('content')) == 1:
-                t.cell(0,0).add_picture('/srv/rsum/static/{0}/img/500x700/01.jpg'.format(CV_TEMPLATE), width=Cm(6))
+                t.cell(0,0).add_picture('/srv/rsum/static/{0}/img/500x700/01.jpg'.format(settings.CV_TEMPLATE), width=Cm(6))
                 t.cell(0,0).width = Cm(6)
                 t.cell(0,1).add_paragraph('Summary', style='Heading 3')
                 t.cell(0,1).add_paragraph(item.get('content')[0].get('content'), style='Normal')
@@ -217,7 +204,7 @@ class ExportDocument(object):
             row = index / 3
             p = t.cell(row,col).paragraphs[0]
             p.paragraph_format.line_spacing = 0.0
-            t.cell(row,col).add_picture('/srv/rsum/static/{0}/img/970x647/{1}.jpg'.format(CV_TEMPLATE,photo), width=Cm(4.8))
+            t.cell(row,col).add_picture('/srv/rsum/static/{0}/img/970x647/{1}.jpg'.format(settings.CV_TEMPLATE,photo), width=Cm(4.8))
             p = t.cell(row,col).paragraphs[1]
             p.paragraph_format.space_after = 0
             p = t.cell(row,col).add_paragraph(position, style='Heading 4')
@@ -251,7 +238,7 @@ class ExportDocument(object):
         p.paragraph_format.line_spacing = 1.0
         p.paragraph_format.space_after = 0
         p.paragraph_format.page_break_before = True
-        document.add_picture('/srv/rsum/static/{0}/img/1920x1080/01.jpg'.format(CV_TEMPLATE), width=Cm(4))
+        document.add_picture('/srv/rsum/static/{0}/img/1920x1080/01.jpg'.format(settings.CV_TEMPLATE), width=Cm(4))
         for item in education:
             if item.get('content')[0].get('name') == u'name':
                 name = item.get('content')[0].get('content')
