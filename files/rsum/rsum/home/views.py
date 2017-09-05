@@ -6,6 +6,7 @@ from __future__ import print_function
 from django.shortcuts import render
 from django.db import models
 from django.http import HttpResponse
+from django.conf import settings
 
 from schema.cv import CV
 
@@ -14,7 +15,7 @@ from export.word import ExportDocument
 import json
 import socket
 
-print(CV_NAME)
+print(settings.CV_NAME)
 
 if socket.gethostname() == 'jrsum':
     CV_OWNER = 'jess-hartwell'
