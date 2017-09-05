@@ -12,7 +12,6 @@ summary:
   content: 'A driven leader with over 13 years of experience and a proven track record of outstanding performance.'
 skills:
   id: 3
-  People management:
   name: "People Management"
   start: 2015
   oligo_and_array_manufacturing:
@@ -81,7 +80,7 @@ experience:
     duration: "August 2012 - November 2014 (2 years)"
     location: "Pleasonton, California"
     company: 'Thermo Fischer Scientific
-    (Formerly Life Technologies and previously Applied Biosystems)'
+      (Formerly Life Technologies and previously Applied Biosystems)'
     position: "Supervisor, Manufacturing"
     projects:
       management:
@@ -102,7 +101,7 @@ experience:
     duration: "April 2012 - August 2012 (4 months)"
     location: "Pleasonton, California"
     company: 'Thermo Fischer Scientific
-    (Formerly Life Technologies and previously Applied Biosystems)'
+      (Formerly Life Technologies and previously Applied Biosystems)'
     position: "Scientist II, Production"
     projects:
       scientist_two_production:
@@ -116,7 +115,7 @@ experience:
     duration: "April 2010 - April 2012 (2 years)"
     location: "Pleasonton, California"
     company: 'Thermo Fischer Scientific
-    (Formerly Life Technologies and previously Applied Biosystems)'
+      (Formerly Life Technologies and previously Applied Biosystems)'
     position: "Senior Associate Manufacturing Specialist"
     projects:
       senior_associate_manufacturing_specialist:
