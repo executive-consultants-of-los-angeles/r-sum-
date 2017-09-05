@@ -29,12 +29,15 @@ DEBUG = True
 if socket.gethostname() == 'jrsum':
     CV_OWNER = 'jess'
     CV_TEMPLATE = 'jcv'
+    CV_NAME = 'general'
 elif socket.gethostname() == 'mrsum':
     CV_OWNER = 'mrsum'
     CV_TEMPLATE = 'jcv'
+    CV_NAME = 'general'
 else:
     CV_OWNER = 'alex'
     CV_TEMPLATE = 'acv'
+    CV_NAME = 'engineer'
 
 ALLOWED_HOSTS = [
     'arsum',
