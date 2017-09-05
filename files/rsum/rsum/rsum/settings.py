@@ -27,15 +27,18 @@ SECRET_KEY = 'b@@ifd5u2=wktjinidhajaucaqsgo4nbm++!8hjc%1m0bzuxg_'
 DEBUG = True
 
 if socket.gethostname() == 'jrsum':
-    CV_OWNER = 'jess'
+    CV_DIR = 'jess'
+    CV_OWNER = 'jess-hartwell'
     CV_TEMPLATE = 'jcv'
     CV_NAME = 'general'
 elif socket.gethostname() == 'mrsum':
-    CV_OWNER = 'mrsum'
+    CV_DIR = 'jess'
+    CV_OWNER = 'jess-hartwell'
     CV_TEMPLATE = 'jcv'
     CV_NAME = 'general'
 else:
-    CV_OWNER = 'alex'
+    CV_DIR = 'alex'
+    CV_OWNER = 'xander-harris'
     CV_TEMPLATE = 'acv'
     CV_NAME = 'engineer'
 
