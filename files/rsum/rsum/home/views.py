@@ -14,6 +14,8 @@ from export.word import ExportDocument
 import json
 import socket
 
+print(CV_NAME)
+
 if socket.gethostname() == 'jrsum':
     CV_OWNER = 'jess-hartwell'
     CV_TEMPLATE = 'jcv'
@@ -33,7 +35,7 @@ if socket.gethostname() == 'arsum':
 def index(request):
     cv_instance = CV()
 
-    cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='engineer')
+    cv_id = cv_instance.check_sections(name_of_owner=CV_OWNER, name_of_cv=CV_NAME)
     cv = cv_instance.get_cv(cv_id=cv_id)
 
     context = {
