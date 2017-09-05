@@ -21,7 +21,7 @@ class CV(models.Model):
     def check_sections(self, *args, **kwargs):
         prefix = '/srv/rsum/cvs/'
         with open(
-            prefix+settings.CV_OWNER+'/'+settings.CV_NAME+'.yml',
+            prefix+settings.CV_DIR+'/'+settings.CV_NAME+'.yml',
             'r'
         ) as cv_file:
             cv_dict = yaml.load(cv_file.read())
