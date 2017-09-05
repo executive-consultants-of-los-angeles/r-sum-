@@ -20,5 +20,6 @@ from home import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'), 
+    url(r'^export_docx/(?P<cv_id>[0-9]+)/$', views.export_docx, name='docx'),
     url(r'^admin/', admin.site.urls),
 ]

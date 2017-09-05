@@ -2,7 +2,7 @@
 intro:
   id: 1
   name: "Alex Harris"
-  position: "Python Developer / Site Reliablity Engineer"
+  position: "Python Developer / Site Reliability Engineer"
   social_media_links:
     facebook: 'https://www.facebook.com/eclacfo'
     twitter: 'https://twitter.com/eclacfo'
@@ -11,6 +11,7 @@ intro:
 summary:
   id: 2
   content: "Straight shooter with upper management written all over me."
+  calendly: 'https://calendly.com/xander-ecla'
   build_status:
     name: "Build Status"
     ngnx:
@@ -54,7 +55,7 @@ skills:
       name: "Bourne Again SHell"
       start: 2000
     vim:
-      name: "Very IMproved Text Alexitor"
+      name: "Very IMproved Text Editor"
       start: 2000
   cloud_architecture:
     id: 2
@@ -149,11 +150,9 @@ values:
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-badge"'
-      text: 'One good turn deserves another, and really this
-        comes down to the Golden Rule: do unto others
-        and then run. But seriously, I do what I can to help
-        people that have helped me and I don''t ask people for
-        action that I haven''t done myself in the past.'
+      text: 'Success is the result of perfection,
+        hard work, learning from failure,
+        loyalty, and persistence. - Colin Powell'
     industry:
       id: 2
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
@@ -163,28 +162,23 @@ values:
           data-wow-duration=".3"
           data-wow-delay=".1s"'
       icon: ' class="service-icon color-white icon-chemistry"'
-      text: 'You know what they say about Idle Hands. . . Seth
-        Green would be homeless if not for Seth McFarlane.
-        But seriously, I find I can''t properly enjoy leisure
-        unless it''s leisure that''s been earned.'
+      text: 'Concentration is my motto - first
+        honesty, then industry,
+        then concentration. - Andrew Carnegie'
     efficiency:
       id: 3
       col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-screen-tablet"'
-      text: 'With that said, working hard but dumb is not
-        going to get you very far, so I like things that are
-        speedy and free of waste.'
+      text: 'There can be economy only where there is
+        efficiency. - Benjamin Disraeli'
     wealth:
       id: 4
       col: 'class="col-md-3 col-sm-6"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon  icon-mustache"'
-      text: 'Finally, this requires some clarity.&nbsp;&nbsp;I do not mean
-        money when I say wealth because the two are not synonymous.
-        Wealth in this context refers to a richness of resources
-        such as endurance, information, health, and kindness.
-        Essentially, an ability to get things done.'
+      text: 'Wealth is the ability to fully experience
+        life. - Henry David Thoreau'
 experience:
   id: 5
   introduction: 'Counting from the first time I installed
@@ -235,8 +229,8 @@ experience:
         - "maintain those same tools for uptime and performance"
         - "very limited budget"
       networking:
-        - "transfered my-ubox.com to Amazon's Route 53 service"
-        - "transfered abiogenix.com to Amazon's Route 53 service"
+        - "transfered my-ubox.com to AWS Route 53"
+        - "transfered abiogenix.com to AWS Route 53"
   caa:
     id: 3
     duration: "September 2015  -  March 2016 (7 months)"
@@ -268,7 +262,7 @@ experience:
     projects:
       atlassian:
         - "maintained project git repository"
-        - "managed branches, pull requests, and releases"
+        - "managed all aspects of commit and software development cycles"
         - "trained 22 developers on git flow branching model"
         - "created process for documentation of development"
         - "guided developers in resolution of merge conflicts"
@@ -303,8 +297,8 @@ experience:
         - "implemented smart commits for JIRA issues"
         - "trained offshore developers in the use of gitflow"
       scraping:
-        - "used Python, Scrapy, MongoDB, and BASH for project"
-        - "scraped web for information relevant to project"
+        - "used Python and BASH for project"
+        - "scraped web with Scrapy and saved information to MongoDB"
         - "identified and removed redundancies within the project"
         - "ran daily scrum meetings and maintained a storyboard"
       proposal:
@@ -349,11 +343,11 @@ experience:
     projects:
       systems_administrator:
         - "installed and configured several different Linux servers"
-        - "used distributions such as Ubuntu, CentOS, and Gentoo"
+        - "used Ubuntu Gentoo and CentOS Linux distributions"
         - "also maintained a number of Windows 7 workstations"
       web_developer:
         - "developed internal products for sales operations"
-        - "made use of PHP, JavaScript, jQuery, JSON, REST, and SOAP"
+        - "used PHP and jQuery along with other front end tools"
         - "created data models for two internal software projects"
         - "documented existing and new code"
       source_code_management:
