@@ -18,8 +18,11 @@ skills:
     name: "Oligo and Array Manufacturing"
     start: 2009
     subskill:
-      name: "Sub Skill"
-      start: 2010
+      name: "DNA Synthesis"
+      start: 2009
+      subskill:
+      name: "Column Cleavage and Deprotection"
+      start: 2009
   snp_genotyping:
     name: "SNP Genotyping"
     start: 2013
