@@ -10,19 +10,22 @@ platforms:
     command: "/usr/bin/supervisord -n"
     image: ecla/psql:latest
     ports:
-      - "5433:5433"
+      - "5433:5432"
   - name: "mrsum"
     command: "/usr/bin/supervisord -n"
     image: ecla/ansible:latest
     ports:
       - "8193:8193"
-    links:
-      - "mpsql:mpsql"
+  - name: "mngnx"
+    command: "/usr/bin/supervisord -n"
+    image: ecla/ansible:latest
+    ports:
+      - "8080:8080"
   - name: "mngos"
     command: "/usr/bin/supervisord -n"
     image: ecla/ansible:latest
     ports:
-      - "2050:80"
+      - "2052:80"
 provisioner:
   name: ansible
   lint:

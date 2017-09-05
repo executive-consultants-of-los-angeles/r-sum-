@@ -2,7 +2,7 @@
 intro:
   id: 1
   name: "Alex Harris"
-  position: "Python Developer / Site Reliablity Engineer"
+  position: "Python Developer / Site Reliability Engineer"
   social_media_links:
     facebook: 'https://www.facebook.com/eclacfo'
     twitter: 'https://twitter.com/eclacfo'
@@ -11,8 +11,15 @@ intro:
 summary:
   id: 2
   content: "Straight shooter with upper management written all over me."
+  calendly: 'https://calendly.com/xander-ecla'
   build_status:
     name: "Build Status"
+    ngnx:
+      name: "NGINX"
+      image:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/ngnx.svg?branch=master"
+      link:
+        "https://travis-ci.org/executive-consultants-of-los-angeles/ngnx"
     rsum:
       name: "CV"
       image:
@@ -22,9 +29,9 @@ summary:
     ngos:
       name: "Nagios"
       image:
-        "https://travis-ci.org/executive-consultants-of-los-angeles/nagios.svg?branch=master"
+        "https://travis-ci.org/executive-consultants-of-los-angeles/ngos.svg?branch=master"
       link:
-        "https://travis-ci.org/executive-consultants-of-los-angeles/nagios"
+        "https://travis-ci.org/executive-consultants-of-los-angeles/ngos"
     psql:
       name: "PostgreSQL"
       image:
@@ -48,7 +55,7 @@ skills:
       name: "Bourne Again SHell"
       start: 2000
     vim:
-      name: "Very IMproved Text Alexitor"
+      name: "Very IMproved Text Editor"
       start: 2000
   cloud_architecture:
     id: 2
@@ -143,11 +150,9 @@ values:
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-badge"'
-      text: 'One good turn deserves another, and really this
-        comes down to the Golden Rule: do unto others
-        and then run. But seriously, I do what I can to help
-        people that have helped me and I don''t ask people for
-        action that I haven''t done myself in the past.'
+      text: 'Success is the result of perfection,
+        hard work, learning from failure,
+        loyalty, and persistence. - Colin Powell'
     industry:
       id: 2
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
@@ -157,28 +162,23 @@ values:
           data-wow-duration=".3"
           data-wow-delay=".1s"'
       icon: ' class="service-icon color-white icon-chemistry"'
-      text: 'You know what they say about Idle Hands. . . Seth
-        Green would be homeless if not for Seth McFarlane.
-        But seriously, I find I can''t properly enjoy leisure
-        unless it''s leisure that''s been earned.'
+      text: 'Concentration is my motto - first
+        honesty, then industry,
+        then concentration. - Andrew Carnegie'
     efficiency:
       id: 3
       col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-screen-tablet"'
-      text: 'With that said, working hard but dumb is not
-        going to get you very far, so I like things that are
-        speedy and free of waste.'
+      text: 'There can be economy only where there is
+        efficiency. - Benjamin Disraeli'
     wealth:
       id: 4
       col: 'class="col-md-3 col-sm-6"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon  icon-mustache"'
-      text: 'Finally, this requires some clarity.&nbsp;&nbsp;I do not mean
-        money when I say wealth because the two are not synonymous.
-        Wealth in this context refers to a richness of resources
-        such as endurance, information, health, and kindness.
-        Essentially, an ability to get things done.'
+      text: 'Wealth is the ability to fully experience
+        life. - Henry David Thoreau'
 experience:
   id: 5
   introduction: 'Counting from the first time I installed

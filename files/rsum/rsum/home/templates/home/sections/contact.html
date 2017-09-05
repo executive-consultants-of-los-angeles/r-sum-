@@ -1,5 +1,5 @@
 {% load static %}
-{# section.content.5.content #}
+{# section.content #}
         <!-- Contact -->
         <div id="contact">
             <div class="bg-color-sky-light">
@@ -14,6 +14,7 @@
 
                 <div class="row">
                   {% for s in section.content %}
+                    {# s #}
                     {% if s.content.0.name != 'title' and s.content.0.name != 'message' %}
                       {% if forloop.counter < 3 %}
                         <div class="col-md-3 col-xs-6 md-margin-b-30">
@@ -21,7 +22,15 @@
                         <div class="col-md-3 col-xs-6">
                       {% endif %}
                             <h4>{{ s.content.0.name|title }}</h4>
-                            <a href="https://maps.google.com">{{ s.content.0.content }}</a>
+                          {% if s.content.0.name == 'location' %}
+                            <a href="http://bit.ly/2uUAArH">{{ s.content.0.content }}</a>
+                          {% elif s.content.0.name == 'web' %}
+                            <a href="{{ s.content.0.content }}">{{ s.content.0.content }}</a>
+                          {% elif s.content.0.name == 'email' %}
+                            <a href="mailto:{{ s.content.0.content }}">{{ s.content.0.content }}</a>
+                          {% else %}
+                            <p>{{ s.content.0.content }}</p> 
+                          {% endif %}
                         </div>
                     {% endif %}
                   {% endfor %}

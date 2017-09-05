@@ -23,7 +23,7 @@ def test_http_connection(host):
 
 def test_pgsql_connection(host):
     h = host.get_host('docker://mpsql')
-    s = h.socket('tcp://0.0.0.0:5433')
+    s = h.socket('tcp://0.0.0.0:5432')
 
     assert s.is_listening
 
