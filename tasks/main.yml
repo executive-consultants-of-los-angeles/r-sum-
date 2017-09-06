@@ -8,7 +8,7 @@
   pip:
     name:
       "git+https://github.com/executive-consultants-of-los-angeles/python-docx.git"
-    state: present
+    state: latest 
 - include: "db/{{ inventory_hostname }}.yml"
 - name: "Copy fixed environment."
   copy:
