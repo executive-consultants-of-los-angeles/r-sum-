@@ -21,6 +21,7 @@ platforms:
     image: ecla/ansible:latest
     ports:
       - "8080:8080"
+      - "80:80"
   - name: "mngos"
     command: "/usr/bin/supervisord -n"
     image: ecla/ansible:latest

@@ -6,6 +6,7 @@ from __future__ import print_function
 from django.shortcuts import render
 from django.db import models
 from django.http import HttpResponse
+from django.conf import settings
 
 from schema.cv import CV
 
@@ -13,6 +14,8 @@ from export.word import ExportDocument
 
 import json
 import socket
+
+print(settings.CV_NAME)
 
 if socket.gethostname() == 'jrsum':
     CV_OWNER = 'jess-hartwell'
@@ -33,7 +36,7 @@ if socket.gethostname() == 'arsum':
 def index(request):
     cv_instance = CV()
 
-    cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='engineer')
+    cv_id = cv_instance.check_sections(name_of_owner=CV_OWNER, name_of_cv=CV_NAME)
     cv = cv_instance.get_cv(cv_id=cv_id)
 
     context = {
