@@ -187,29 +187,29 @@ experience:
     effort for more than twenty years.  I have been getting
     paid for it about fifteen of those years, not counting
     this year.'
-  cfo_at_gahan_corporation:
-    id: 1
-    duration: "May 2016 - Present"
-    location: "Los Angeles, California"
-    company: "Gahan Corporation"
-    position: "Chief Financial Officer"
-    projects:
-      technology:
-        - "maintain multiple cloud services"
-        - "total cost of ownership < $100/mo"
-        - "pretty good uptime"
-        - "at least not terrible security"
-      legal:
-        - "converted from an LLC started May 2016"
-        - "wrote the filed Articles of Incorporation"
-        - "also have an author credit on the bylaws"
-        - "have written every agreement executed by the corporation so far"
-        - "keep the corporation in good standing with the State of California"
-      finance:
-        - "aiming at issuing registered stock by 2020"
-        - "pretty depressing at the moment"
-        - "maintain books to GAAP standards"
-        - "keep us up to date with taxes and reporting"
+  # cfo_at_gahan_corporation:
+  #  id: 1
+  #  duration: "May 2016 - Present"
+  #  location: "Los Angeles, California"
+  #  company: "Gahan Corporation"
+  #  position: "Chief Financial Officer"
+  #  projects:
+  #    technology:
+  #      - "maintain multiple cloud services"
+  #      - "total cost of ownership < $100/mo"
+  #      - "pretty good uptime"
+  #      - "at least not terrible security"
+  #    legal:
+  #      - "converted from an LLC started May 2016"
+  #      - "wrote the filed Articles of Incorporation"
+  #      - "also have an author credit on the bylaws"
+  #      - "have written every agreement executed by the corporation so far"
+  #      - "keep the corporation in good standing with the State of California"
+  #    finance:
+  #      - "aiming at issuing registered stock by 2020"
+  #      - "pretty depressing at the moment"
+  #      - "maintain books to GAAP standards"
+  #      - "keep us up to date with taxes and reporting"
   abiogenix_incorporated:
     id: 2
     duration: "August 2014 - Present"
