@@ -16,29 +16,29 @@ skills:
   oligo_and_array_manufacturing:
     name: "Oligo and Array Manufacturing"
     start: 2009
-    subskill:
+    dna_synthesis:
       name: "DNA Synthesis"
       start: 2011
-    subskill:
+    column_clevage_and_deprotection:
       name: "Column Cleavage and Deprotection"
       start: 2013
-    subskill:
+    dna_purification_via_ethanol_precipitation:
       name: "DNA Purification via Ethanol Precipitation"
       start: 2013
-    subskill:
+    reverse_phase_hplc:
       name: "Reverse Phase HPLC"
       start: 2013
-    subskill:
-      name: "SPE (Solid Phase Extraction)"
+    solid_phase_extraction:
+      name: "Solid Phase Extraction"
       start: 2013
-    subskill:
+    spectrophotometric_dna_quantification:
       name: "Spectrophotometric DNA Quantification"
       start: 2013
-    subskill:
-      name: "Dilution and Formatting via Robotic Systems"
+    dilution_and_formatting_via_robotic_instruments:
+      name: "Dilution and Formatting via Robotic Instruments"
       start: 2009
-    subskill:
-      name: "Dilution and Formatting via Robotic Systems"
+    final_product_finishing_and_packaging:
+      name: "Final Product Finishing and Packaging"
       start: 2009 
   manufacturing_quality_control:
     name: "Manufacturing Quality Control"
