@@ -48,6 +48,7 @@ else:
     CV_NAME = 'engineer'
 
 ALLOWED_HOSTS = [
+    'trsum',
     'arsum',
     'jrsum',
     'mrsum',
