@@ -1,10 +1,10 @@
 ---
 - name: "Install arsum."
-  hosts: tmrsum
+  hosts: trsum
   roles:
     - role: rsum
 - name: "Add angnx to hosts file."
-  hosts: tmrsum
+  hosts: trsum
   tasks:
     - name: "That's what we're doing."
       lineinfile:
