@@ -20,9 +20,9 @@ docker build -t jrsum:latest /src/rsum/files/deploy/jess
 # docker run -d --network arsum --name jrsum -p 8704:8704 -h jrsum jrsum /usr/bin/supervisord -n
 /opt/py/bin/ansible-playbook /src/rsum/files/deploy/jess/playbook.yml
 
-# tmrsum
-docker build -t tmrsum:latest /src/rsum/files/deploy/alex-tm/
-/opt/py/bin/ansible-galaxy remove tmrsum 
+# trsum
+docker build -t trsum:latest /src/rsum/files/deploy/alex-tm/
+/opt/py/bin/ansible-galaxy remove trsum 
 /opt/py/bin/ansible-galaxy install --force -r /src/rsum/files/deploy/alex-tm/requirements.yml
 # docker run -d --network arsum --name arsum -p 8192:8192 -h arsum arsum /usr/bin/supervisord -n
 /opt/py/bin/ansible-playbook /src/rsum/files/deploy/alex-tm/playbook.yml
