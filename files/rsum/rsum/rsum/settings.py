@@ -117,6 +117,10 @@ elif socket.gethostname() == 'arsum':
     DB_HOST = 'apsql'
     DB_PORT = '5432'
     DB_NAME = 'arsum'
+elif socket.gethostname() == 'trsum':
+    DB_HOST = 'apsql'
+    DB_PORT = '5432'
+    DB_NAME = 'trsum'
 elif socket.gethostname() == 'jrsum':
     DB_HOST = 'apsql'
     DB_PORT = '5432'
