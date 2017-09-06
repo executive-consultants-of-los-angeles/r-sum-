@@ -353,6 +353,22 @@ experience:
       source_code_management:
         - "implemented git and gitflow for source code control"
         - "provided training to other employees on their use"
+  wishb:
+    id: 10
+    duration: "July 2010  -  September 2010 (3 months)"
+    location: "San Francisco, California"
+    company: "WishB LLC"
+    position: "PHP Developer / Systems Administrator"
+    projects:
+      web_developer:
+        - "used a homebrew MVC to program a website"
+        - "dynamically loaded images with css and jquery"
+        - "used Subversion for version control of code"
+        - "coded user profiles for application"
+      system_administrator:
+        - "maintained and configured the webserver"
+        - "designed database schemas in MySQL"
+        - "contributed to daily SCRUM meetings"
 education:
   id: 6
   name: "Broadmoor Elementary School"
