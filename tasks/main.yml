@@ -19,7 +19,7 @@
   copy:
     src: "roles/arsum.yml"
     dest: "/tmp/r.yml"
-- name: "Install role."
+- name: "Install roles."
   command: "ansible-galaxy install -r /tmp/r.yml --force"
   args:
     creates: "/root/.ansible/roles/rsum/files"
