@@ -48,7 +48,7 @@
   supervisorctl:
     name: "gunicorn"
     state: "started"
-- include_tasks: "index/{{ inventory_hostname }}.yml" 
+- include_tasks: "index/{{ inventory_hostname }}.yml"
 - name: "Run sanity tests."
   django_manage:
     command: test

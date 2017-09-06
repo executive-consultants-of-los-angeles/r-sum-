@@ -4,4 +4,4 @@
     url: 'http://alex.ecla.solutions/'
     dest: /tmp/index.html
 ...
-# vim: ft=ansible: 
+# vim: ft=ansible:
