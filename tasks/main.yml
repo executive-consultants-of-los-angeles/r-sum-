@@ -4,6 +4,11 @@
     name: "{{ item }}"
     state: present
   with_items: "{{ pip_install_list }}"
+- name: "Install python-docx."
+  pip:
+    name: 'git+https://github.com/executive-consultants-of-los-angeles/python-docx'
+    state: present
+    editable: False
 - name: "Include db tasks."
   include: "db/{{ inventory_hostname }}.yml"
 - name: "Copy fixed environment."
