@@ -1,0 +1,7 @@
+---
+- name: "Get the index."
+  get_url:
+    url: 'http://alex-tm.ecla.solutions/'
+    dest: /tmp/index.html
+...
+# vim: ft=ansible:
