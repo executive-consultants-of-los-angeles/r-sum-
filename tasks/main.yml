@@ -48,7 +48,7 @@
   supervisorctl:
     name: "gunicorn"
     state: "started"
-- name: "What's that about include being deprecated Ansible?" 
+- name: "What's that about include being deprecated Ansible?"
   include: "index/{{ inventory_hostname }}.yml"
 - name: "Run sanity tests."
   django_manage:
