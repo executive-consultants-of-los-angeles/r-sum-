@@ -4,7 +4,7 @@
   roles:
     - role: rsum
 - name: "Add angnx to hosts file."
-  hosts: arsum
+  hosts: tmrsum
   tasks:
     - name: "That's what we're doing."
       lineinfile:
