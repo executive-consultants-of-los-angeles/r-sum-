@@ -9,27 +9,20 @@ intro:
     linkedin: "https://www.linkedin.com/in/jessicahartwell"
 summary:
   id: 2
-  content: 'A driven leader with over
-    13 years of experience and a proven
-    track record of outstanding performance.'
+  content: 'A driven leader with experience in biotech
+            manufacturing and research with a proven track record
+            of outstanding performance.'
 skills:
   id: 3
-  start: 2015
+  People management:
+  name: "People Management"
+  start: 2008
   oligo_and_array_manufacturing:
     name: "Oligo and Array Manufacturing"
-    start: 2009
-    dna_synthesis:
-      name: "DNA Synthesis"
-      start: 2009
-    column_cleavage_and_deprotection:
-      name: "Column Cleavage and Deprotection"
-      start: 2009
+    start: 2006
   snp_genotyping:
     name: "SNP Genotyping"
-    start: 2013
-    subskill:
-      name: "Sub Skill"
-      start: 2013
+    start: 2001
 values:
   id: 4
   introduction: 'A clearly defined system of ethics is vital to a
@@ -90,7 +83,7 @@ experience:
     duration: "August 2012 - November 2014 (2 years)"
     location: "Pleasonton, California"
     company: 'Thermo Fischer Scientific
-      (Formerly Life Technologies and previously Applied Biosystems)'
+    (Formerly Life Technologies and previously Applied Biosystems)'
     position: "Supervisor, Manufacturing"
     projects:
       management:
@@ -111,7 +104,7 @@ experience:
     duration: "April 2012 - August 2012 (4 months)"
     location: "Pleasonton, California"
     company: 'Thermo Fischer Scientific
-      (Formerly Life Technologies and previously Applied Biosystems)'
+    (Formerly Life Technologies and previously Applied Biosystems)'
     position: "Scientist II, Production"
     projects:
       scientist_two_production:
@@ -125,7 +118,7 @@ experience:
     duration: "April 2010 - April 2012 (2 years)"
     location: "Pleasonton, California"
     company: 'Thermo Fischer Scientific
-      (Formerly Life Technologies and previously Applied Biosystems)'
+    (Formerly Life Technologies and previously Applied Biosystems)'
     position: "Senior Associate Manufacturing Specialist"
     projects:
       senior_associate_manufacturing_specialist:

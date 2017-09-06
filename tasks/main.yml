@@ -19,7 +19,7 @@
   copy:
     src: "roles/arsum.yml"
     dest: "/tmp/r.yml"
-- name: "Install role."
+- name: "Install roles."
   command: "ansible-galaxy install -r /tmp/r.yml --force"
   args:
     creates: "/root/.ansible/roles/rsum/files"
@@ -48,16 +48,8 @@
   supervisorctl:
     name: "gunicorn"
     state: "started"
-- name: "Get the index."
-  get_url:
-    url: 'http://127.0.0.1:8193'
-    dest: /tmp/index.html
-  when: inventory_hostname == 'mrsum'
-- name: "Get the index."
-  get_url:
-    url: 'http://alex.ecla.solutions/'
-    dest: /tmp/index.html
-  when: inventory_hostname == 'arsum'
+- name: "What's that about include being deprecated Ansible?"
+  include: "index/{{ inventory_hostname }}.yml"
 - name: "Run sanity tests."
   django_manage:
     command: test

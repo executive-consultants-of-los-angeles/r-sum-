@@ -1,0 +1,23 @@
+---
+- name: "Install arsum."
+  hosts: trsum
+  roles:
+    - role: rsum
+- name: "Add angnx to hosts file."
+  hosts: trsum
+  tasks:
+    - name: "That's what we're doing."
+      lineinfile:
+        line: 'angnx ansible_connection=docker'
+        state: 'present'
+        dest: '/etc/ansible/hosts'
+        create: 'yes'
+- name: "Install requirements on angnx."
+  hosts: angnx
+  tasks:
+    - name: "Remove role."
+      command: "ansible-galaxy remove tmrsum"
+    - name: "Install requirements."
+      command: "ansible-galaxy install -r /tmp/arsum.yml --force"
+...
+# vim: ft=ansible:

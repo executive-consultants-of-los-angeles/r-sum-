@@ -9,23 +9,9 @@ import socket
 import yaml
 
 from django.db import models
+from django.conf import settings
 from section import Section
 from subsection import SubSection
-
-if socket.gethostname() == 'jrsum':
-    CV_OWNER = 'jess' 
-    CV_TEMPLATE = 'jcv' 
-    CV_NAME = 'general' 
-
-if socket.gethostname() == 'mrsum':
-    CV_OWNER = 'jess' 
-    CV_TEMPLATE = 'jcv' 
-    CV_NAME = 'general'
-
-if socket.gethostname() == 'arsum':
-    CV_OWNER = 'alex' 
-    CV_TEMPLATE = 'acv' 
-    CV_NAME = 'engineer'
 
 
 class CV(models.Model):
@@ -35,14 +21,14 @@ class CV(models.Model):
     def check_sections(self, *args, **kwargs):
         prefix = '/srv/rsum/cvs/'
         with open(
-            prefix+CV_OWNER+'/'+CV_NAME+'.yml',
+            prefix+settings.CV_DIR+'/'+settings.CV_NAME+'.yml',
             'r'
         ) as cv_file:
             cv_dict = yaml.load(cv_file.read())
         self.id = self.save_cv(
             cv_dict, 
-            name=CV_NAME,
-            template=CV_TEMPLATE
+            name=settings.CV_NAME,
+            template=settings.CV_TEMPLATE
         )
         return self.id 
 
