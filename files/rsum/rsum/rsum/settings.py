@@ -36,7 +36,7 @@ elif socket.gethostname() == 'mrsum':
     CV_OWNER = 'jess-hartwell'
     CV_TEMPLATE = 'jcv'
     CV_NAME = 'general'
-elif socket.gethostname() == 'tmrsum':
+elif socket.gethostname() == 'trsum':
     CV_DIR = 'alex'
     CV_OWNER = 'alex-harris'  
     CV_TEMPLATE = 'acv'
