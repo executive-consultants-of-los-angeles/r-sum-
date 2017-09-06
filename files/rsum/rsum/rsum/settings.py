@@ -36,7 +36,7 @@ elif socket.gethostname() == 'mrsum':
     CV_OWNER = 'jess-hartwell'
     CV_TEMPLATE = 'jcv'
     CV_NAME = 'general'
-elif socket.gethostname() == 'tmrsum':
+elif socket.gethostname() == 'trsum':
     CV_DIR = 'alex'
     CV_OWNER = 'alex-harris'  
     CV_TEMPLATE = 'acv'
@@ -117,6 +117,10 @@ elif socket.gethostname() == 'arsum':
     DB_HOST = 'apsql'
     DB_PORT = '5432'
     DB_NAME = 'arsum'
+elif socket.gethostname() == 'trsum':
+    DB_HOST = 'apsql'
+    DB_PORT = '5432'
+    DB_NAME = 'trsum'
 elif socket.gethostname() == 'jrsum':
     DB_HOST = 'apsql'
     DB_PORT = '5432'

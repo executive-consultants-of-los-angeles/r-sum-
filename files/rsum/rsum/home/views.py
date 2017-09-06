@@ -15,28 +15,11 @@ from export.word import ExportDocument
 import json
 import socket
 
-print(settings.CV_NAME)
-
-if socket.gethostname() == 'jrsum':
-    CV_OWNER = 'jess-hartwell'
-    CV_TEMPLATE = 'jcv'
-    CV_NAME = 'general'
-
-if socket.gethostname() == 'mrsum':
-    CV_OWNER = 'jess-hartwell'
-    CV_TEMPLATE = 'jcv'
-    CV_NAME = 'general'
-
-if socket.gethostname() == 'arsum':
-    CV_OWNER = 'alex-harris'
-    CV_TEMPLATE = 'acv'
-    CV_NAME = 'engineer'
-
 
 def index(request):
     cv_instance = CV()
 
-    cv_id = cv_instance.check_sections(name_of_owner=CV_OWNER, name_of_cv=CV_NAME)
+    cv_id = cv_instance.check_sections(name_of_owner=settings.CV_OWNER, name_of_cv=settings.CV_NAME)
     cv = cv_instance.get_cv(cv_id=cv_id)
 
     context = {
@@ -81,7 +64,7 @@ def export_docx(request, cv_id='1'):
         stream.getvalue(),
         content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     )
-    response['Content-Disposition'] = 'attachment; filename={0}-cv.docx'.format(CV_OWNER)
+    response['Content-Disposition'] = 'attachment; filename={0}-cv.docx'.format(settings.CV_OWNER)
     response['Content-Length'] = length
 
     return response 
