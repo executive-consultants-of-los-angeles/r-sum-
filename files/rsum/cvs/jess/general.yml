@@ -18,10 +18,34 @@ skills:
     start: 2009
     subskill:
       name: "DNA Synthesis"
-      start: 2009
-      subskill:
+      start: 2011
+    subskill:
       name: "Column Cleavage and Deprotection"
+      start: 2013
+    subskill:
+      name: "DNA Purification via Ethanol Precipitation"
+      start: 2013
+    subskill:
+      name: "Reverse Phase HPLC"
+      start: 2013
+    subskill:
+      name: "SPE (Solid Phase Extraction)"
+      start: 2013
+    subskill:
+      name: "Spectrophotometric DNA Quantification"
+      start: 2013
+    subskill:
+      name: "Dilution and Formatting via Robotic Systems"
       start: 2009
+    subskill:
+      name: "Dilution and Formatting via Robotic Systems"
+      start: 2009 
+  manufacturing_quality_control:
+    name: "Manufacturing Quality Control"
+    start: 2009
+    subskill:
+      name: "Sub Skill"
+      start: 2013
   snp_genotyping:
     name: "SNP Genotyping"
     start: 2013
