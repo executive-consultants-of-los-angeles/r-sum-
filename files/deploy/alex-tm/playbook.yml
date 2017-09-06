@@ -1,6 +1,6 @@
 ---
 - name: "Install arsum."
-  hosts: arsum
+  hosts: tmrsum
   roles:
     - role: rsum
 - name: "Add angnx to hosts file."
@@ -16,8 +16,8 @@
   hosts: angnx
   tasks:
     - name: "Remove role."
-      command: "ansible-galaxy remove arsum"
+      command: "ansible-galaxy remove tmrsum"
     - name: "Install requirements."
-      command: "ansible-galaxy install -r /tmp/requirements.yml --force"
+      command: "ansible-galaxy install -r /tmp/arsum.yml --force"
 ...
 # vim: ft=ansible:
