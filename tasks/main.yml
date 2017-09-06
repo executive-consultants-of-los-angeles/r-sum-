@@ -48,16 +48,7 @@
   supervisorctl:
     name: "gunicorn"
     state: "started"
-- name: "Get the index."
-  get_url:
-    url: 'http://mrsum:8193'
-    dest: /tmp/index.html
-  when: inventory_hostname == 'mrsum'
-- name: "Get the index."
-  get_url:
-    url: 'http://alex.ecla.solutions/'
-    dest: /tmp/index.html
-  when: inventory_hostname == 'arsum'
+- include_tasks: "index/{{ inventory_hostname }}.yml" 
 - name: "Run sanity tests."
   django_manage:
     command: test
