@@ -1,0 +1,10 @@
+---
+- name: "Create tmrsum DB."
+  postgresql_db:
+    name: "tmrsum"
+    state: "present"
+    login_host: "apsql"
+    login_user: "psql"
+    port: "5432"
+...
+# vim: ft=ansible:
