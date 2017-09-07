@@ -18,7 +18,6 @@ import cv_settings
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -91,31 +90,14 @@ WSGI_APPLICATION = 'rsum.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-if socket.gethostname() == 'mrsum': 
-    DB_HOST = 'mpsql'
-    DB_PORT = '5432'
-    DB_NAME = 'mrsum'
-elif socket.gethostname() == 'arsum':
-    DB_HOST = 'apsql'
-    DB_PORT = '5432'
-    DB_NAME = 'arsum'
-elif socket.gethostname() == 'trsum':
-    DB_HOST = 'apsql'
-    DB_PORT = '5432'
-    DB_NAME = 'trsum'
-elif socket.gethostname() == 'jrsum':
-    DB_HOST = 'apsql'
-    DB_PORT = '5432'
-    DB_NAME = 'jrsum'
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': DB_NAME,
+        'NAME': cv_settings.values.get(socket.gethostname()).get('name'),
         'USER': 'psql',
         'PASSWORD': '',
-        'HOST': DB_HOST, 
-        'PORT': DB_PORT,
+        'HOST': cv_settings.values.get(socket.gethostname()).get('db_host'), 
+        'PORT': 5432,
     }
 }
 
