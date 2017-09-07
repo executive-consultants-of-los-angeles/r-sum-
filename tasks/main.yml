@@ -2,6 +2,7 @@
 - name: "Define filenames."
   set_fact:
     '{{ item }}': "{{ lookup('pipe','ls -1 /src/rsum/files/rsum/cvs/'+item+'/').split('\n') | list }}"
+  with_items: "{{ dirs }}"
 - name: "Install some packages with pip."
   pip:
     name: "{{ item }}"
