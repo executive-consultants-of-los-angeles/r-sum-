@@ -88,12 +88,12 @@ values:
     from left to right.'
   content:
     loyalty:
-    id: 1
-    col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
-    service: 'class="service" data-height="height"'
-    icon: 'class="service-icon icon-badge"'
-    text: 'One good turn deserves another, and really this
-        and then run.'
+      id: 1
+      col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+      service: 'class="service" data-height="height"'
+      icon: 'class="service-icon icon-badge"'
+      text: 'One good turn deserves another, and really this
+          and then run.'
     industry:
       id: 2
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
