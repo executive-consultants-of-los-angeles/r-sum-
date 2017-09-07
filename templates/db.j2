@@ -1,7 +1,7 @@
 ---
-- name: "Create arsum DB."
+- name: "Create {{ inventory_hostname }} DB."
   postgresql_db:
-    name: "arsum"
+    name: "{{ inventory_hostname }}"
     state: "present"
     login_host: "apsql"
     login_user: "psql"
