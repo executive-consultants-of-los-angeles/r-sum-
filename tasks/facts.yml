@@ -1,11 +1,23 @@
 ---
 - name: "Set directories for all others."
   set_fact:
-    dirs: "{{ lookup('pipe', 'ls -1 files/rsum/cvs/').split('\n') | list }}"
+    dirs: 
+      "{{ 
+        lookup(
+          'pipe',
+          'ls -1 files/rsum/cvs/'
+        ).split('\n') | list 
+      }}"
   when: inventory_hostname != 'mrsum'
 - name: "Set directories for molecule."
   set_fact:
-    mdirs: "{{ lookup('pipe', 'ls -1 ../../files/rsum/cvs/').split('\n') | list }}"
+    mdirs: 
+      "{{ 
+        lookup(
+          'pipe', 
+          'ls -1 ../../files/rsum/cvs/'
+        ).split('\n') | list 
+      }}"
   when: inventory_hostname == 'mrsum'
 - name: "Define filenames for molecule."
   set_fact:
