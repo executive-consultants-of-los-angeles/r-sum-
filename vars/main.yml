@@ -5,7 +5,7 @@ apt_install_list:
     - nmap
     - postgresql-client
     - vim
-dirs: '{{ lookup('pipe', 'ls /src/rsum/files/rsum/cvs/') }}'
+dirs: '{{ lookup('pipe', 'ls -1 /src/rsum/files/rsum/cvs/').split('\n') | list }}'
 pip_install_list:
     - django
     - psycopg2
