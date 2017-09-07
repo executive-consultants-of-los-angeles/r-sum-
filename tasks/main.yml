@@ -1,4 +1,6 @@
 ---
+- debug:
+    var: dirs
 - name: "Install some packages with pip."
   pip:
     name: "{{ item }}"
