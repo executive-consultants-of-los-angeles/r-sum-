@@ -56,9 +56,30 @@ skills:
   snp_genotyping:
     name: "SNP Genotyping"
     start: 2013
-    subskill:
-      name: "Sub Skill"
+    taqman_snp_genotyping_assays:
+      name: "TaqMan® SNP Genotyping Assay"
+      start: 2015
+    mgb_eclipse_probe_based_assays:
+      name: "MGB Eclipse® Probe Based Assays"
+      start: 2015
+    snplex_assays:
+      name: "SNPlex Assays"
+      start: 2016
+    taqman_real_time_pcr__assays:
+      name: "TaqMan® Real-Time PC"
+      start: 2015
+    identifiler_hid_assays:
+      name: "Identifiler® HID Assay"
+      start: 2014
+    di_deoxy_sequencing_reactions:
+      name: "Di-deoxy Sequencing Reactions"
+      start: 2016
+    picogreen_dsdna_quantitation_reactions:
+      name: "PicoGreen® dsDNA Quanttation"
       start: 2013
+    sequenom_massextend_reactions:
+      name: "Sequenom MassEXTEND® Reactions"
+      start: 2016
 values:
   id: 4
   introduction: 'A clearly defined system of ethics is vital to a
@@ -67,7 +88,7 @@ values:
     from left to right.'
   content:
     loyalty:
-      id: 1
+    id: 1
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-badge"'
