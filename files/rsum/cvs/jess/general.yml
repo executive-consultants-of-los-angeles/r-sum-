@@ -9,27 +9,77 @@ intro:
     linkedin: "https://www.linkedin.com/in/jessicahartwell"
 summary:
   id: 2
-  content: 'A driven leader with over
-    13 years of experience and a proven
-    track record of outstanding performance.'
+  content: 'A driven leader with over 13 years of experience
+    and a proven track record of outstanding performance.'
 skills:
   id: 3
-  start: 2015
+  start: 2001
   oligo_and_array_manufacturing:
     name: "Oligo and Array Manufacturing"
     start: 2009
     dna_synthesis:
       name: "DNA Synthesis"
-      start: 2009
-    column_cleavage_and_deprotection:
+      start: 2011
+    column_clevage_and_deprotection:
       name: "Column Cleavage and Deprotection"
+      start: 2013
+    dna_purification_via_ethanol_precipitation:
+      name: "DNA Purification via Ethanol Precipitation"
+      start: 2013
+    reverse_phase_hplc:
+      name: "Reverse Phase HPLC"
+      start: 2013
+    solid_phase_extraction:
+      name: "Solid Phase Extraction"
+      start: 2013
+    spectrophotometric_dna_quantification:
+      name: "Spectrophotometric DNA Quantification"
+      start: 2013
+    dilution_and_formatting_via_robotic_instruments:
+      name: "Dilution and Formatting via Robotic Instruments"
       start: 2009
+    final_product_finishing_and_packaging:
+      name: "Final Product Finishing and Packaging"
+      start: 2009
+  manufacturing_quality_control:
+    name: "Manufacturing Quality Control"
+    start: 2009
+    sequence_identification_by_mass_spectrometry:
+      name: "Sequence Identification by Mass Spectrometry"
+      start: 2009
+    functional_testing_of_taqman_snp_and_gene_expression_assays:
+      name: "Functional Testing of TaqMan® SNP and Gene Expression Assays"
+      start: 2013
+    functional_testing_of_taqman_arrays:
+      name: "Functional Testing of TaqMan® Arrays"
+      start: 2015
   snp_genotyping:
     name: "SNP Genotyping"
     start: 2013
-    subskill:
-      name: "Sub Skill"
+    taqman_snp_genotyping_assays:
+      name: "TaqMan® SNP Genotyping Assay"
+      start: 2015
+    mgb_eclipse_probe_based_assays:
+      name: "MGB Eclipse® Probe Based Assays"
+      start: 2015
+    snplex_assays:
+      name: "SNPlex Assays"
+      start: 2016
+    taqman_real_time_pcr__assays:
+      name: "TaqMan® Real-Time PC"
+      start: 2015
+    identifiler_hid_assays:
+      name: "Identifiler® HID Assay"
+      start: 2014
+    di_deoxy_sequencing_reactions:
+      name: "Di-deoxy Sequencing Reactions"
+      start: 2016
+    picogreen_dsdna_quantitation_reactions:
+      name: "PicoGreen® dsDNA Quanttation"
       start: 2013
+    sequenom_massextend_reactions:
+      name: "Sequenom MassEXTEND® Reactions"
+      start: 2016
 values:
   id: 4
   introduction: 'A clearly defined system of ethics is vital to a
@@ -38,15 +88,12 @@ values:
     from left to right.'
   content:
     loyalty:
-      id: 1
-      col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
-      service: 'class="service" data-height="height"'
-      icon: 'class="service-icon icon-badge"'
-      text: 'One good turn deserves another, and really this
-        comes down to the Golden Rule: do unto others
-        and then run. But seriously, I do what I can to help
-        people that have helped me and I don''t ask people for
-        action that I haven''t done myself in the past.'
+    id: 1
+    col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+    service: 'class="service" data-height="height"'
+    icon: 'class="service-icon icon-badge"'
+    text: 'One good turn deserves another, and really this
+        and then run.'
     industry:
       id: 2
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
