@@ -21,14 +21,14 @@ class CV(models.Model):
     def check_sections(self, *args, **kwargs):
         prefix = '/srv/rsum/cvs/'
         with open(
-            prefix+settings.CV_DIR+'/'+settings.CV_NAME+'.yml',
+            prefix+settings.CV_SETTINGS.get(socket.gethostname()).get('dir')+'/'+settings.CV_SETTINGS.get(socket.gethostname()).get('name')+'.yml',
             'r'
         ) as cv_file:
             cv_dict = yaml.load(cv_file.read())
         self.id = self.save_cv(
             cv_dict, 
-            name=settings.CV_NAME,
-            template=settings.CV_TEMPLATE
+            name=settings.CV_SETTINGS.get(socket.gethostname()).get('name'),
+            template=settings.CV_SETTINGS.get(socket.gethostname()).get('template')
         )
         return self.id 
 

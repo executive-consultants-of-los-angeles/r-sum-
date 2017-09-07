@@ -5,9 +5,9 @@ apt_install_list:
     - nmap
     - postgresql-client
     - vim
-cv_name: alex
 pip_install_list:
     - django
     - psycopg2
+    - 'git+https://github.com/executive-consultants-of-los-angeles/python-docx'
 ...
 # vim: ft=ansible:

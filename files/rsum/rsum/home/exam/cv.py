@@ -4,18 +4,18 @@ from __future__ import unicode_literals
 
 from django.test import TestCase
 from home.schema.cv import CV
+from rsum.cv_settings import values
 
 import json
+import socket
 import yaml
 
 
 class CVTestCase(TestCase):
     def setUp(self):
-        f = open('/srv/rsum/cvs/alex/abridged.yml')
+        s = values.get(socket.gethostname())
+        f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
         self.abridged = yaml.load(f.read())
-        f.close()
-        f = open('/srv/rsum/cvs/alex/complete.yml')
-        self.complete = yaml.load(f.read())
         f.close()
 
     def test_check_sections(self):
@@ -39,9 +39,10 @@ class CVTestCase(TestCase):
         self.assertEqual(True, True)
 
     def test_save_abridged_cv(self):
+        s = values.get(socket.gethostname())
         abridged = self.abridged
         cv = CV()
-        cv_id = cv.save_cv(abridged, 'abridged', template='acecv')
+        cv_id = cv.save_cv(abridged, s.get('name'), template=s.get('template'))
         self.assertEqual(
             cv_id,
             list(CV.objects.filter(
@@ -51,21 +52,6 @@ class CVTestCase(TestCase):
                 flat=True
             ))[0]
         )
-
-
-    def test_save_complete_cv(self):
-        complete = self.complete
-        cv = CV()
-        cv_id = cv.save_cv(complete, 'complete', template='acecv')
-        self.assertEqual(
-            cv_id,
-            list(CV.objects.filter(
-                id=cv_id
-            ).values_list(
-                'id',
-                flat=True
-            ))[0]
-        ) 
 
 
 class CVGetsTestCase(TestCase):
