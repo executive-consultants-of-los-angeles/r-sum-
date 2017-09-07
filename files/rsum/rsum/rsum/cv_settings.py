@@ -20,14 +20,14 @@ values = {
         'dir': 'alex',
         'owner': 'alex-harris',
         'template': 'acv',
-        'name': 'alex-tm'
+        'name': 'alex-tm',
         'host': 'apsql',
     },
     'arsum': {
         'dir': 'alex',
         'owner': 'alex-harris',
         'template': 'acv',
-        'name': 'alex'
+        'name': 'alex',
         'host': 'apsql',
     }
 }
