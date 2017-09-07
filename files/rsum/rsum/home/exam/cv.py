@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 from django.test import TestCase
 from home.schema.cv import CV
+from rsum.cv_settings import values as s
 
 import json
 import yaml
@@ -11,11 +12,8 @@ import yaml
 
 class CVTestCase(TestCase):
     def setUp(self):
-        f = open('/srv/rsum/cvs/alex/abridged.yml')
+        f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
         self.abridged = yaml.load(f.read())
-        f.close()
-        f = open('/srv/rsum/cvs/alex/complete.yml')
-        self.complete = yaml.load(f.read())
         f.close()
 
     def test_check_sections(self):
