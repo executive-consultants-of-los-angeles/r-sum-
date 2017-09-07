@@ -35,11 +35,11 @@ skills:
     solid_phase_extraction:
       name: "Solid Phase Extraction"
       start: 2013
-    spectrophotometric_dna_quantitation_with_molecular_devices_spectramax_gemini_and_spectramax_190:
-      name: "Spectrophotometric DNA Quantitation with Molecular Devices SpectraMax Gemini and SpectraMax 190"
+    spectrophotometric_dna_quantitation_with_molecular_devices_spectramax_gemini_and_190:
+      name: "Spectrophotometric DNA Quantitation with Molecular Devices SpectraMax Gemini and 190"
       start: 2013
-    intermediate_product dilution_and_sampling_with_hamilton_microlab_star_agilent_technologies_bravo_and_beckman_biomek_fx:
-      name: "Intermediate Product Dilution and Sampling with Hamilton MICROLAB STAR, Agilent Technologies Bravo, and Beckman Biomek FX"
+    product_dilution_and_sampling_with_hamilton_microlab_star_agilent_technologies_bravo_and_beckman_biomek_fx:
+      name: "Product Dilution and Sampling with Hamilton MICROLAB STAR, Agilent Technologies Bravo, and Beckman Biomek FX"
       start: 2009
     finished good aliquoting_and_formatting_with_tecan_genesis_biomicolab_xl20_and_beckman_biomek_2000:
       name: "Finished Good Aliquoting and Formatting with Tecan Genesis, BioMicroLab XL20, and Beckman Biomek 2000"
@@ -53,29 +53,29 @@ skills:
     sequence_identification_with_abi_voyager_de_pro_biospectrometry_workstation:
       name: "Sequence Identification with ABI Voyager-DE PRO BioSpectrometry Workstation"
       start: 2009
-    testing_of_taqman_snp_and_gene_expression_assays_with_abi_7900_ht_sequence_detection_system_and_pe_thermal_cyclers:
-      name: "Testing of TaqMan SNP and GeEx Assays with ABI 7900 HT Sequence Detection System and PE thermal cyclers"
+    testing_of_taqman_snp_and_gene_expression_assays_with_abi_7900_ht_sds_and_pe_thermal_cyclers:
+      name: "Testing of TaqMan SNP and GeEx Assays with ABI 7900 HT SDS and PE thermal cyclers"
       start: 2013
-    testing_of_taqman_arrays_with_abi_7900_ht_sequence_detection_system_and_pe_thermal_cyclers:
-      name: "Testing of TaqMan Arrays with ABI 7900 HT Sequence Detection System and PE thermal cyclers"
+    testing_of_taqman_arrays_with_abi_7900_ht_sds_and_pe_thermal_cyclers:
+      name: "Testing of TaqMan Arrays with ABI 7900 HT SDS and PE thermal cyclers"
       start: 2015
   snp_genotyping:
     name: "SNP Genotyping"
     start: 2013
-    taqman_snp_genotyping_assays_with_abi_7900_ht_sequence_detection_system_and_bio_rad_thermal cyclers:
-      name: "TaqMan SNP Genotyping Assays with ABI 7900 HT Sequence Detection System and Bio-Rad thermal cyclers"
+    taqman_snp_genotyping_assays_with_abi_7900_ht_sds_and_bio_rad_thermal cyclers:
+      name: "TaqMan SNP Genotyping Assays with ABI 7900 HT SDS and Bio-Rad thermal cyclers"
       start: 2015
-    eclipse_assays_with_abi_7900_ht_sequence_detection_system:
-      name: "Eclipse Assays with ABI 7900 HT Sequence Detection System"
+    eclipse_probe_based_assays_with_abi_7900_ht_sds:
+      name: "Eclipse Probe Based Assays with ABI 7900 HT SDS"
       start: 2015
     snplex_assays_with_applied_biosystems_3130xl_genetic_analyzer:
       name: "SNPlex Assays with Applied Biosystems 3130xl Genetic Analyzer"
       start: 2016
-    taqman_real_time_qpcr_assays_with_abi_7900_ht_sequence_detection_system:
-      name: "TaqMan Real-Time qPCR Assays with ABI 7900 HT Sequence Detection System"
+    taqman_real_time_pcr_assays_with_abi_7900_ht_sds:
+      name: "TaqMan Real-Time PCR Assays with ABI 7900 HT SDS"
       start: 2015
     identifiler_hid_assays_with_abi_prism_3100_genetic_analyzer:
-      name: "Identifiler  HID Assays with ABI PRISM 3100 Genetic Analyzer"
+      name: "Identifiler HID Assays with ABI PRISM 3100 Genetic Analyzer"
       start: 2014
     di_deoxy_sequencing_reactions_with_abi_3700_dna_analyzer_and_pe_thermal_cyclers:
       name: "Di-deoxy Sequencing Reactions with ABI 3700 DNA Analyzer and PE thermal cyclers"
