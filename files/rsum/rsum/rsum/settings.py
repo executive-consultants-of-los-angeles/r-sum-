@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
     'arsum',
     'jrsum',
     'mrsum',
+    'xander',
     'localhost',
     'ecla.solutions',
     '127.0.0.1',
