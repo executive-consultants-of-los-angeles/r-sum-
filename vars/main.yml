@@ -6,7 +6,7 @@ apt_install_list:
     - postgresql-client
     - vim
 current_directory: "{{ lookup('pipe', 'pwd') }}"
-# dirs: "{{ lookup('pipe', 'ls -1 files/rsum/cvs/').split('\n') | list }}"
+dirs: "{{ lookup('pipe', 'ls -1 ../../files/rsum/cvs/').split('\n') | list }}"
 pip_install_list:
     - django
     - psycopg2
