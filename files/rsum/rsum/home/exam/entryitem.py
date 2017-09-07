@@ -10,13 +10,15 @@ from home.schema.project import Project
 from home.schema.projectitem import ProjectItem
 from home.schema.entry import Entry
 from home.schema.entryitem import EntryItem
-from rsum.cv_settings import values as s
+from rsum.cv_settings import values
 
+import socket
 import yaml
 
 
 class EntryItemTestCase(TestCase):
     def setUp(self):
+        s = values.get(socket.gethostname())
         f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
         abridged = yaml.load(f.read())
         f.close()
