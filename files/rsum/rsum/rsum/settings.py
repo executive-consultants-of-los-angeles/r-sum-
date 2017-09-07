@@ -98,7 +98,7 @@ DATABASES = {
         'NAME': cv_settings.values.get(socket.gethostname()).get('name'),
         'USER': 'psql',
         'PASSWORD': '',
-        'HOST': cv_settings.values.get(socket.gethostname()).get('db_host'),
+        'HOST': cv_settings.values.get(socket.gethostname()).get('host'),
         'PORT': 5432,
     }
 }
