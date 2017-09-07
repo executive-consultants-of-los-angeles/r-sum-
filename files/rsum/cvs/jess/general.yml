@@ -20,8 +20,8 @@ skills:
     dna_synthesis_with_abi_3900_dna_synthesizer:
       name: "DNA Synthesis with ABI 3900 DNA Synthesizer"
       start: 2013
-    dna_rna_synthesis_with_jurassic:
-      name: "DNA / RNA Synthesis with Jurassic"
+    dna_and_rna_synthesis_with_jurassic:
+      name: "DNA and RNA Synthesis with Jurassic"
       start: 2015
     column_clevage_and_deprotection:
       name: "Column Cleavage and Deprotection"
@@ -39,7 +39,7 @@ skills:
       name: "Spectrophotometric DNA Quantitation with Molecular Devices SpectraMax Gemini and SpectraMax 190"
       start: 2013
     intermediate_product dilution_and_sampling_with_hamilton_microlab_star_agilent_technologies_bravo_and_beckman_biomek_fx:
-      name: "Intermediate Product Dilution and Sampling with Hamilton MICROLAB® STAR, Agilent Technologies ravo, and Beckman Biomek FX"
+      name: "Intermediate Product Dilution and Sampling with Hamilton MICROLAB STAR, Agilent Technologies Bravo, and Beckman Biomek FX"
       start: 2009
     finished good aliquoting_and_formatting_with_tecan_genesis_biomicolab_xl20_and_beckman_biomek_2000:
       name: "Finished Good Aliquoting and Formatting with Tecan Genesis, BioMicroLab XL20, and Beckman Biomek 2000"
@@ -54,37 +54,37 @@ skills:
       name: "Sequence Identification with ABI Voyager-DE PRO BioSpectrometry Workstation"
       start: 2009
     testing_of_taqman_snp_and_gene_expression_assays_with_abi_7900_ht_sequence_detection_system_and_pe_thermal_cyclers:
-      name: "Testing of TaqMan® SNP and Gene Expression Assys with ABI 7900 HT Sequence Detection System and PE thermal cyclers"
+      name: "Testing of TaqMan SNP and GeEx Assays with ABI 7900 HT Sequence Detection System and PE thermal cyclers"
       start: 2013
     testing_of_taqman_arrays_with_abi_7900_ht_sequence_detection_system_and_pe_thermal_cyclers:
-      name: "Testing of TaqMan® Arrys with ABI 7900 HT Sequence Detection System and PE thermal cyclers"
+      name: "Testing of TaqMan Arrays with ABI 7900 HT Sequence Detection System and PE thermal cyclers"
       start: 2015
   snp_genotyping:
     name: "SNP Genotyping"
     start: 2013
     taqman_snp_genotyping_assays_with_abi_7900_ht_sequence_detection_system_and_bio_rad_thermal cyclers:
-      name: "TaqMan® SNP Genotyping Assys with ABI 7900 HT Sequence Detection System and Bio-Rad thermal cyclers"
+      name: "TaqMan SNP Genotyping Assays with ABI 7900 HT Sequence Detection System and Bio-Rad thermal cyclers"
       start: 2015
-    mgb_eclipse_probe_based_assays_with_abi_7900_ht_sequence_detection_system:
-      name: "MGB Eclipse® Probe Based Assas with ABI 7900 HT Sequence Detection System"
+    eclipse_assays_with_abi_7900_ht_sequence_detection_system:
+      name: "Eclipse Assays with ABI 7900 HT Sequence Detection System"
       start: 2015
     snplex_assays_with_applied_biosystems_3130xl_genetic_analyzer:
-      name: "SNPlex Assays with Applied Biosystems® 3130x lGenetic Analyzer"
+      name: "SNPlex Assays with Applied Biosystems 3130xl Genetic Analyzer"
       start: 2016
     taqman_real_time_qpcr_assays_with_abi_7900_ht_sequence_detection_system:
-      name: "TaqMan® Real-TimeqPCR Assays with ABI 7900 HT Sequence Detection System"
+      name: "TaqMan Real-Time qPCR Assays with ABI 7900 HT Sequence Detection System"
       start: 2015
     identifiler_hid_assays_with_abi_prism_3100_genetic_analyzer:
-      name: "Identifiler® HID Asays with ABI PRISM 3100 Genetic Analyzer"
+      name: "Identifiler  HID Assays with ABI PRISM 3100 Genetic Analyzer"
       start: 2014
     di_deoxy_sequencing_reactions_with_abi_3700_dna_analyzer_and_pe_thermal_cyclers:
       name: "Di-deoxy Sequencing Reactions with ABI 3700 DNA Analyzer and PE thermal cyclers"
       start: 2016
     picogreen_dsdna_quantitation_reactions_with_beckman_du_600:
-      name: "PicoGreen® dsDNA Quntitation Reactions with Beckman DU 600"
+      name: "PicoGreen dsDNA Quantitation Reactions with Beckman DU 600"
       start: 2013
     sequenom_massextend_reactions_with_sequenom_maldi_tof_and_pe_thermal_cyclers:
-      name: "Sequenom MassEXTEND® Reactins with Sequenom MALDI-TOF and PE thermal cyclers"
+      name: "Sequenom MassEXTEND Reactions with Sequenom MALDI-TOF and PE thermal cyclers"
       start: 2016
     liquid_handling_with_robbins_hydra_96_matrix_hydra_384_beckman_multimek_96_and_hp_multiprobe_ii_ex:
       name: "Liquid Handling with Robbins Hydra 96, Matrix Hydra 384, Beckman Multimek 96, and HP Multiprobe II EX"
