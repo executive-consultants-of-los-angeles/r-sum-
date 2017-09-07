@@ -43,9 +43,15 @@ skills:
   manufacturing_quality_control:
     name: "Manufacturing Quality Control"
     start: 2009
-    subskill:
-      name: "Sub Skill"
-      start: 2013
+    sequence_identification_by_mass_spectrometry
+      name: "Sequence Identification by Mass Spectrometry"
+      start: 2009
+    functional_testing_of_taqman_snp_and_gene_expression_assays
+      name: "Functional Testing of TaqMan® Arrays"
+      start: 2009
+    functional_testing_of_taqman_snp_and_gene_expression_assays
+      name: "Functional Testing of TaqMan® Arrays"
+      start: 2009
   snp_genotyping:
     name: "SNP Genotyping"
     start: 2013
