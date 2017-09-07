@@ -9,10 +9,11 @@ intro:
     linkedin: "https://www.linkedin.com/in/jessicahartwell"
 summary:
   id: 2
-  content: 'A driven leader with over 13 years of experience and a proven track record of outstanding performance.'
+  content: 'A driven leader with over 13 years of experience
+    and a proven track record of outstanding performance.'
 skills:
   id: 3
-  start: 2015
+  start: 2001
   oligo_and_array_manufacturing:
     name: "Oligo and Array Manufacturing"
     start: 2009
@@ -39,7 +40,7 @@ skills:
       start: 2009
     final_product_finishing_and_packaging:
       name: "Final Product Finishing and Packaging"
-      start: 2009 
+      start: 2009
   manufacturing_quality_control:
     name: "Manufacturing Quality Control"
     start: 2009
