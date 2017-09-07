@@ -16,7 +16,7 @@ import yaml
 
 class EntryTestCase(TestCase):
     def setUp(self):
-        f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name'))
+        f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
         abridged = yaml.load(f.read())
         f.close()
 
