@@ -3,6 +3,7 @@
   pip:
     name: "{{ item }}"
     state: present
+    editable: 'False'
   with_items: "{{ pip_install_list }}"
 - name: "Install python-docx."
   pip:

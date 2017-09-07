@@ -8,5 +8,6 @@ apt_install_list:
 pip_install_list:
     - django
     - psycopg2
+    - 'git+https://github.com/executive-consultants-of-los-angeles/python-docx'
 ...
 # vim: ft=ansible:
