@@ -39,10 +39,10 @@ skills:
       name: "Spectrophotometric DNA Quantitation with Molecular Devices SpectraMax Gemini and 190"
       start: 2013
     dilution_and_sampling_with_hamilton_microlab_star_agilent_technologies_bravo_beckman_biomek_fx:
-      name: "Dilution and Sampling with Hamilton MICROLAB STAR, Agilent Technologies Bravo, Beckman Biomek FX"
+      name: "Dilution and Sampling with Hamilton MICROLAB STAR, Agilent Technologies Bravo, & Beckman Biomek FX"
       start: 2009
     fg_aliquoting_and_formatting_with_tecan_genesis_biomicolab_xl20_beckman_biomek_2000:
-      name: "FG Aliquoting and Formatting with Tecan Genesis, BioMicroLab XL20, Beckman Biomek 2000"
+      name: "FG Aliquoting and Formatting with Tecan Genesis, BioMicroLab XL20, & Beckman Biomek 2000"
       start: 2009
     fg_and_kit_assembly_and_packaging:
       name: "FG and Kit Assembly and Packaging"
@@ -87,14 +87,12 @@ skills:
       name: "hME Assays with PE thermal cyclers and Sequenom MassARRAY System with Nanodispenser"
       start: 2016
     liquid_handling_with_robbins_hydra_96_matrix_hydra_384_beckman_multimek_96_and_hp_multiprobe_ii_ex:
-      name: "Liquid Handling with Robbins Hydra 96, Matrix Hydra 384, Beckman Multimek 96, HP Multiprobe II EX"
+      name: "Liquid Handling with Robbins Hydra 96, Matrix Hydra 384, Beckman Multimek 96, & HP Multiprobe II EX"
       start: 2013
 values:
   id: 4
   introduction: 'A clearly defined system of ethics is vital to a
-    happy and productive life, so I have defined my values as
-    the following.  These are listed in order or precedence
-    from left to right.'
+    happy and productive life.'
   content:
     loyalty:
       id: 1
