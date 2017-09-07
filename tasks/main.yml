@@ -1,12 +1,6 @@
 ---
-- name: "Define filenames."
-  set_fact:
-    '{{ item }}':
-      "{{ lookup(
-        'pipe',
-        'ls -1 ../../files/rsum/cvs/'+item+'/'
-      ).split('\n') | list }}"
-  with_items: "{{ dirs }}"
+- name: "Include some additional facts."
+  include: facts.yml
 - name: "Install some packages with pip."
   pip:
     name: "{{ item }}"
