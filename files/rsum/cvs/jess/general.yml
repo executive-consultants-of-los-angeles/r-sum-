@@ -29,20 +29,20 @@ skills:
     dna_purification_via_ethanol_precipitation:
       name: "DNA Purification via Ethanol Precipitation"
       start: 2013
-    reverse_phase_hplc_withtransgenomic_wave_dna_fragment_analysis_system:
+    reverse_phase_hplc_with_transgenomic_wave_dna_fragment_analysis_system:
       name: "Reverse Phase HPLC with Transgenomic Wave DNA Fragment Analysis System"
       start: 2013
     solid_phase_extraction:
       name: "Solid Phase Extraction"
       start: 2013
     spectrophotometric_dna_quantitation_with_molecular_devices_spectramax_gemini_and_spectramax_190:
-      name: "Spectrophotometric DNA Quantitation via Molecular Devices SpectraMax Gemini and SpectraMax 190"
+      name: "Spectrophotometric DNA Quantitation with Molecular Devices SpectraMax Gemini and SpectraMax 190"
       start: 2013
-    dilution_and_formatting_using_robotic_instruments_tecan_genesis_hamilton_microlab_star_agilent_technologies_bravo_biomicrolab_xl20_beckman_biomek_fx_beckman_biomek_2000:
-      name: "Dilution and Formatting using robotic instruments (Tecan Genesis, Hamilton MICROLAB® STAR, Agilent Technologies Brao, BioMicroLab XL20, Beckman Biomek FX, Beckman Biomek 2000)"
+    dilution_and_formatting_with_tecan_genesis_hamilton_microlab_star_agilent_technologies_bravo_biomicrolab_xl20_beckman_biomek_fx_and_beckman_biomek_2000:
+      name: "Dilution and Formatting with Tecan Genesis, Hamilton MICROLAB® STAR, Agilent Technologies Brvo, BioMicroLab XL20, Beckman Biomek FX, and Beckman Biomek 2000"
       start: 2009
-    final_product_finishing_and_packaging:
-      name: "Final Product Finishing and Packaging"
+    finished_goods_assembly_and_packaging:
+      name: "Finished Goods Assembly and Packaging"
       start: 2009
   manufacturing_quality_control:
     name: "Manufacturing Quality Control"
@@ -50,11 +50,11 @@ skills:
     sequence_identification_by_mass_spectrometry_with_abi_voyager_de_pro_biospectrometry_workstation:
       name: "Sequence Identification by Mass Spectrometry with ABI Voyager-DE PRO BioSpectrometry Workstation"
       start: 2009
-    functional_testing_of_taqman_snp_and_gene_expression_assays_with_abi_7900_ht_sequence_detection_system:
-      name: "Functional Testing of TaqMan® SNP and Gene Expression Assay with ABI 7900 HT Sequence Detection System"
+    functional_testing_of_taqman_snp_and_gene_expression_assays_with_abi_7900_ht_sequence_detection_system_and_pe_thermal_cyclers:
+      name: "Functional Testing of TaqMan® SNP and Gene Expression Assas with ABI 7900 HT Sequence Detection System and PE thermal cyclers"
       start: 2013
     functional_testing_of_taqman_arrays_with_abi_7900_ht_sequence_detection_system_and_pe_thermal_cyclers:
-      name: "Functional Testing of TaqMan® Array with ABI 7900 HT Sequence Detection Syste and PE thermal cyclers"
+      name: "Functional Testing of TaqMan® Arras with ABI 7900 HT Sequence Detection System and PE thermal cyclers"
       start: 2015
   snp_genotyping:
     name: "SNP Genotyping"
@@ -69,22 +69,22 @@ skills:
       name: "SNPlex Assays with Applied Biosystems® 3130xlGenetic Analyzer"
       start: 2016
     taqman_real_time_pcr_assays_with_abi_7900_ht_sequence_detection_system:
-      name: "TaqMan® Real-Time PR Assays with ABI 7900 HT Sequence Detection System"
+      name: "TaqMan® Real-Time CR Assays with ABI 7900 HT Sequence Detection System"
       start: 2015
     identifiler_hid_assays_with_abi_prism_3100_genetic_analyzer:
-      name: "Identifiler® HID Assas with ABI PRISM 3100 Genetic Analyzer"
+      name: "Identifiler® HID Assys with ABI PRISM 3100 Genetic Analyzer"
       start: 2014
-    di_deoxy_sequencing_reactions_with_abi_3700_dna_analyzer:
-      name: "Di-deoxy Sequencing Reactions with ABI 3700 DNA Analyzer"
+    di_deoxy_sequencing_reactions_with_abi_3700_dna_analyzer_and_pe_thermal_cyclers:
+      name: "Di-deoxy Sequencing Reactions with ABI 3700 DNA Analyzer and PE thermal cyclers"
       start: 2016
     picogreen_dsdna_quantitation_reactions_with_beckman_du_600:
-      name: "PicoGreen® dsDNA Quanitation Reactions with Beckman DU 600"
+      name: "PicoGreen® dsDNA Quatitation Reactions with Beckman DU 600"
       start: 2013
     sequenom_massextend_reactions_with_sequenom_maldi_tof_and_pe_thermal_cyclers:
-      name: "Sequenom MassEXTEND® Reaction with Sequenom MALDI-TOF and PE thermal cyclers"
+      name: "Sequenom MassEXTEND® Reactios with Sequenom MALDI-TOF and PE thermal cyclers"
       start: 2016
-    automated_liquid_handling_using_robotic_instruments_robbins_hydra_96_matrix_hydra_384_beckman_multimek_96_hp_multiprobe_ii_ex:
-      name: "Automated Liquid Handling using robotic instruments (Robbins Hydra 96, Matrix Hydra 384, Beckman Multimek 96, HP Multiprobe II EX)"
+    automated_liquid_handling_with_robbins_hydra_96_matrix_hydra_384_beckman_multimek_96_and_hp_multiprobe_ii_ex:
+      name: "Automated Liquid Handling with Robbins Hydra 96, Matrix Hydra 384, Beckman Multimek 96, and HP Multiprobe II EX"
       start: 2013
 values:
   id: 4
