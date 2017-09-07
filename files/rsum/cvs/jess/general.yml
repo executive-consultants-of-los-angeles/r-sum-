@@ -53,11 +53,11 @@ skills:
     sequence_identification_with_abi_voyager_de_pro_biospectrometry_workstation:
       name: "Sequence Identification with ABI Voyager-DE PRO BioSpectrometry Workstation"
       start: 2009
-    testing_of_taqman_snp_and_gene_expression_assays_with_abi_7900_ht_sds_and_pe_thermal_cyclers:
-      name: "Testing of TaqMan SNP and GeEx Assays with ABI 7900 HT SDS and PE thermal cyclers"
+    qc_testing_of_taqman_snp_and_gene_expression_assays_with_abi_7900_ht_sds_and_pe_thermal_cyclers:
+      name: "QC Testing of TaqMan SNP and Gene Expression Assays with ABI 7900 HT SDS and PE thermal cyclers"
       start: 2013
-    testing_of_taqman_arrays_with_abi_7900_ht_sds_and_pe_thermal_cyclers:
-      name: "Testing of TaqMan Arrays with ABI 7900 HT SDS and PE thermal cyclers"
+    qc_testing_of_taqman_array_cards_and_plates_with_abi_7900_ht_sds_7500_fast_real_time_pcr_system_and_stepone_system:
+      name: "QC Testing of TaqMan Array Cards and Plates with ABI 7900 HT SDS and 7500 Fast Real-Time PCR System"
       start: 2015
   snp_genotyping:
     name: "SNP Genotyping"
@@ -69,7 +69,7 @@ skills:
       name: "Eclipse Probe Based Assays with ABI 7900 HT SDS"
       start: 2015
     snplex_assays_with_applied_biosystems_3130xl_genetic_analyzer:
-      name: "SNPlex Assays with Applied Biosystems 3130xl Genetic Analyzer"
+      name: "SNPlex Assays with ABI 3130xl Genetic Analyzer"
       start: 2016
     taqman_real_time_pcr_assays_with_abi_7900_ht_sds:
       name: "TaqMan Real-Time PCR Assays with ABI 7900 HT SDS"
