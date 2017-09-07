@@ -19,7 +19,7 @@ import socket
 def index(request):
     cv_instance = CV()
 
-    cv_id = cv_instance.check_sections(name_of_owner=settings.CV_OWNER, name_of_cv=settings.CV_NAME)
+    cv_id = cv_instance.check_sections(name_of_owner=settings.CV_SETTINGS.get(socket.gethostname()).get('owner'), name_of_cv=settings.CV_SETTINGS.get(socket.gethostname()).get('name'))
     cv = cv_instance.get_cv(cv_id=cv_id)
 
     context = {
@@ -64,7 +64,7 @@ def export_docx(request, cv_id='1'):
         stream.getvalue(),
         content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     )
-    response['Content-Disposition'] = 'attachment; filename={0}-cv.docx'.format(settings.CV_OWNER)
+    response['Content-Disposition'] = 'attachment; filename={0}-cv.docx'.format(settings.CV_SETTINGS.get(socket.gethostname()).get('owner'))
     response['Content-Length'] = length
 
     return response 
