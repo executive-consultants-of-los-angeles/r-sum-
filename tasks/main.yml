@@ -1,10 +1,8 @@
 ---
-- debug:
-    var: current_directory
-# - name: "Define filenames."
-#  set_fact:
-#    '{{ item }}': "{{ lookup('pipe','ls -1 files/rsum/cvs/'+item+'/').split('\n') | list }}"
-#  with_items: "{{ dirs }}"
+- name: "Define filenames."
+  set_fact:
+    '{{ item }}': "{{ lookup('pipe','ls -1 files/rsum/cvs/'+item+'/').split('\n') | list }}"
+  with_items: "{{ dirs }}"
 - name: "Install some packages with pip."
   pip:
     name: "{{ item }}"
