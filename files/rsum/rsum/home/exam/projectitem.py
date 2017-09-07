@@ -8,15 +8,18 @@ from home.schema.section import Section
 from home.schema.subsection import SubSection
 from home.schema.project import Project
 from home.schema.projectitem import ProjectItem
+from rsum.cv_settings import values
 
 import home
 import json
+import socket
 import yaml
 
 
 class ProjectItemTestCase(TestCase):
     def setUp(self):
-        f = open('/srv/rsum/cvs/alex/abridged.yml')
+        s = values.get(socket.gethostname())
+        f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
         abridged = yaml.load(f.read())
         f.close()
 
