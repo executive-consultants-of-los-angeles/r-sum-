@@ -148,5 +148,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'+CV_TEMPLATE+'/'
-STATIC_ROOT = '/srv/'+CV_OWNER+'/rsum/static/'+CV_TEMPLATE+'/'
+STATIC_URL = '/static/'+cv_settings.values.get(socket.gethostname()).get('template')+'/'
+STATIC_ROOT = '/srv/'+cv_settings.values.get(socket.gethostname()).get('dir')+'/rsum/static/'+cv_settings.values.get(socket.gethostname()).get('template')+'/'
