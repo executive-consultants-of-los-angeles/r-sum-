@@ -12,8 +12,7 @@ import json
 class Section(models.Model):
     cv = models.ForeignKey('home.CV', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
-    content = models.CharField(max_length=200, null=True)
-    iterable = models.BooleanField(default=False)
+    content = models.TextField()
 
     def get_sections(self, cv):
         sections = [] 
