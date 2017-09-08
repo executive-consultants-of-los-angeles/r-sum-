@@ -14,17 +14,17 @@ summary:
 skills:
   id: 3
   start: 2001
-  oligo_and_array_manufacturing:
-    name: "Oligo and Array Manufacturing"
+  oligo_array_manufacturing:
+    name: "Oligo & Array Manufacturing"
     start: 2009
     dna_synthesis_with_abi_3900_dna_synthesizer:
       name: "DNA Synthesis with ABI 3900 DNA Synthesizer"
       start: 2013
-    dna_and_rna_synthesis_with_jurassic:
-      name: "DNA and RNA Synthesis with Jurassic DNA and RNA Synthesizer"
+    dna_rna_synthesis_with_jurassic:
+      name: "DNA & RNA Synthesis with Jurassic"
       start: 2015
     column_clevage_and_deprotection:
-      name: "Column Cleavage and Deprotection"
+      name: "Column Cleavage & Deprotection"
       start: 2013
     dna_purification_via_ethanol_precipitation:
       name: "DNA Purification via Ethanol Precipitation"
@@ -35,17 +35,17 @@ skills:
     solid_phase_extraction:
       name: "Solid Phase Extraction"
       start: 2013
-    spectrophotometric_dna_quantitation_with_molecular_devices_spectramax_gemini_and_190:
-      name: "Spectrophotometric DNA Quantitation with Molecular Devices SpectraMax Gemini and 190"
+    spectrophotometric_dna_quantitation_with_molecular_devices_spectramax_gemini_190:
+      name: "Spectrophotometric DNA Quantitation with Molecular Devices SpectraMax Gemini & 190"
       start: 2013
-    dilution_and_sampling_with_hamilton_microlab_star_agilent_technologies_bravo_beckman_biomek_fx:
-      name: "Dilution and Sampling with Hamilton MICROLAB STAR, Agilent Technologies Bravo, & Beckman Biomek FX"
+    dilution_sampling_with_hamilton_microlab_star_agilent_technologies_bravo_beckman_biomek_fx:
+      name: "Dilution & Sampling with Hamilton MICROLAB STAR, Agilent Technologies Bravo, & Beckman Biomek FX"
       start: 2009
-    fg_aliquoting_and_formatting_with_tecan_genesis_biomicolab_xl20_beckman_biomek_2000:
-      name: "FG Aliquoting and Formatting with Tecan Genesis, BioMicroLab XL20, & Beckman Biomek 2000"
+    aliquoting_formatting_with_tecan_genesis_biomicolab_xl20_beckman_biomek_2000:
+      name: "Aliquoting & Formatting with Tecan Genesis, BioMicroLab XL20, & Beckman Biomek 2000"
       start: 2009
-    fg_and_kit_assembly_and_packaging:
-      name: "FG and Kit Assembly and Packaging"
+    finished_good_assembly_kitting_packaging:
+      name: "Finshed Good Assembly, Kitting & Packaging"
       start: 2009
   manufacturing_quality_control:
     name: "Manufacturing Quality Control"
@@ -53,17 +53,17 @@ skills:
     sequence_identification_with_abi_voyager_de_pro_biospectrometry_workstation:
       name: "Sequence Identification with ABI Voyager-DE PRO BioSpectrometry Workstation"
       start: 2009
-    ft_of_taqman_snp_and_gene_expression_assays_with_pe_thermal_cyclers_and_abi_7900_ht_sds:
-      name: "FT of TaqMan SNP and Gene Expression Assays with PE thermal cyclers and ABI 7900 HT SDS"
+    ft_of_taqman_snp_gene_expression_assays_with_pe_thermal_cyclers_abi_7900_ht_sds:
+      name: "FT of TaqMan SNP & Gene Expression Assays with PE thermal cyclers & ABI 7900 HT SDS"
       start: 2013
-    ft_of_taqman_array_cards_and_plates_with_abi_7900_ht_sds_7500_fast_real_time_pcr_system_and_stepone_system:
-      name: "FT of TaqMan Array Cards and Plates with ABI 7900 HT SDS and 7500 Fast Real-Time PCR System"
+    ft_of_taqman_array_cards_plates_with_abi_7900_ht_sds_7500_fast_real_time_pcr_system_and_stepone_system:
+      name: "FT of TaqMan Array Cards & Plates with ABI 7900 HT SDS & 7500 Fast Real-Time PCR System"
       start: 2015
   snp_genotyping:
     name: "SNP Genotyping"
     start: 2013
-    taqman_snp_genotyping_assays_with_bio_rad_thermal_cyclers_and_abi_7900_ht_sds:
-      name: "TaqMan SNP Genotyping Assays with Bio-Rad thermal cyclers and ABI 7900 HT SDS"
+    taqman_snp_genotyping_assays_with_bio_rad_thermal_cyclers_abi_7900_ht_sds:
+      name: "TaqMan SNP Genotyping Assays with Bio-Rad thermal cyclers & ABI 7900 HT SDS"
       start: 2015
     eclipse_probe_based_assays_with_abi_7900_ht_sds:
       name: "Eclipse Probe Based Assays with ABI 7900 HT SDS"
@@ -77,16 +77,16 @@ skills:
     identifiler_hid_assays_with_abi_prism_3100_genetic_analyzer:
       name: "Identifiler HID Assays with ABI PRISM 3100 Genetic Analyzer"
       start: 2014
-    di_deoxy_sequencing_reactions_with_pe_thermal_cyclers_and_abi_3700_dna_analyzer:
-      name: "Di-deoxy Sequencing Reactions with PE thermal cyclers and ABI 3700 DNA Analyzer"
+    di_deoxy_sequencing_reactions_with_pe_thermal_cyclers_abi_3700_dna_analyzer:
+      name: "Di-deoxy Sequencing Reactions with PE thermal cyclers & ABI 3700 DNA Analyzer"
       start: 2016
     picogreen_dsdna_quantitation_reactions_with_beckman_du_600:
       name: "PicoGreen dsDNA Quantitation Reactions with Beckman DU 600"
       start: 2013
     hme_assays_with_pe_thermal_cyclers_and_sequenom_massarray_system_with_nanodispenser:
-      name: "hME Assays with PE thermal cyclers and Sequenom MassARRAY System with Nanodispenser"
+      name: "hME Assays with PE thermal cyclers & Sequenom MassARRAY System with Nanodispenser"
       start: 2016
-    liquid_handling_with_robbins_hydra_96_matrix_hydra_384_beckman_multimek_96_and_hp_multiprobe_ii_ex:
+    liquid_handling_with_robbins_hydra_96_matrix_hydra_384_beckman_multimek_and_hp_multiprobe_ii_ex:
       name: "Liquid Handling with Robbins Hydra 96, Matrix Hydra 384, Beckman Multimek 96, & HP Multiprobe II EX"
       start: 2013
 values:
@@ -99,9 +99,8 @@ values:
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-badge"'
-      text: 'One good turn deserves another, and really this
-          and then run.'
-    industry:
+      text: 'Insert a quote about loyalty.'
+    integrity:
       id: 2
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
       service:
@@ -110,35 +109,23 @@ values:
           data-wow-duration=".3"
           data-wow-delay=".1s"'
       icon: ' class="service-icon color-white icon-chemistry"'
-      text: 'You know what they say about Idle Hands. . . Seth
-        Green would be homeless if not for Seth McFarlane.
-        But seriously, I find I can''t properly enjoy leisure
-        unless it''s leisure that''s been earned.'
-    efficiency:
+      text: 'Insert a quote about integrity.'
+    ingenuity:
       id: 3
       col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-screen-tablet"'
-      text: 'With that said, working hard but dumb is not
-        going to get you very far, so I like things that are
-        speedy and free of waste.'
-    wealth:
+      text: 'Insert a quote about ingenuity.'
+    quality:
       id: 4
       col: 'class="col-md-3 col-sm-6"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon  icon-mustache"'
-      text: 'Finally, this requires some clarity.&nbsp;&nbsp;I do not mean
-        money when I say wealth because the two are not synonymous.
-        Wealth in this context refers to a richness of resources
-        such as endurance, information, health, and kindness.
-        Essentially, an ability to get things done.'
+      text: 'Insert a quote about quality.'
 experience:
   id: 5
-  introduction: 'Counting from the first time I installed
-    linux onto a pc I have been actively doing some kind
-    of programming or computer administration type of
-    effort for more than twenty years.  I have been getting
-    paid for it about fifteen of those years.'
+  introduction: 'I am fasinated by the inherent duality of nature. What seems simple upon first look is often far more complex than expected,
+conversly all things can be broken down into simpiler components.'
   thermo_fisher_supervisor:
     id: 1
     duration: "August 2012 - November 2014 (2 years)"
