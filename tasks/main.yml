@@ -57,7 +57,11 @@
     name: "gunicorn"
     state: "started"
 - name: "What's that about include being deprecated Ansible?"
+  include: "/src/rsum/tasks/index/{{ inventory_hostname }}.yml"
+  when: inventory_hostname != 'mrsum'
+- name: "What's that about include being deprecated Ansible?"
   include: "index/{{ inventory_hostname }}.yml"
+  when: inventory_hostname == 'mrsum'
 - name: "Run sanity tests."
   django_manage:
     command: test
