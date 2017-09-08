@@ -14,7 +14,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.enum.style import WD_BUILTIN_STYLE
 
-from django.conf import settings
+from rsum.cv_settings import values
 
 import home.schema
 
@@ -26,7 +26,9 @@ CV = home.schema.cv.CV
 
 class ExportDocument(object):
     def __init__(self):
-        self.name = '{0}-cv.docx'.format(settings.CV_OWNER)
+        self.s = values.get(socket.gethostname())
+        s = self.s
+        self.name = '{0}-cv.docx'.format(s.get('owner'))
 
     def export(self, cv_id):
         cv_instance = CV()
@@ -72,29 +74,32 @@ class ExportDocument(object):
         return stream 
 
     def add_intro(self, intro, document):
+        s = self.s
         table = document.add_table(rows=1, cols=2)
         table.alignment = WD_TABLE_ALIGNMENT.CENTER
+        content = {}
         for index, item in enumerate(sorted(intro)):
-            if len(item.get('content')) == 1:
-                content = item.get('content')[0].get('content')
-                table.cell(0,0).add_paragraph(content, style='Heading '+str(index+1))
-            else:
-                # Need to add image linking support to docx.
-                # print(item.get('content'))
-                pass
+            print(item)
+            if item.get('content')[0].get('name') == 'name':
+                content.update({'name': item.get('content')[0].get('content')})
+            if item.get('content')[0].get('name') == 'position':
+                content.update({'position': item.get('content')[0].get('content')})
+        table.cell(0,0).add_paragraph(content.get('name'), style='Heading 1')
+        table.cell(0,0).add_paragraph(content.get('position'), style='Heading 2')
 
         table.cell(0,0).width = Cm(12)
-        table.cell(0,1).add_picture('/srv/rsum/static/{0}/img/mockup/avatar-01.png'.format(settings.CV_TEMPLATE), width=Cm(4))
+        table.cell(0,1).add_picture('/srv/rsum/static/{0}/img/mockup/avatar-01.png'.format(s.get('template')), width=Cm(4))
         table.cell(0,1).width = Cm(4)
         table.cell(0,1).paragraphs[0].paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
         return document 
 
     def add_summary(self, summary, document):
+        s = self.s
         t = document.add_table(rows=1, cols=2)
         t.alignment = WD_TABLE_ALIGNMENT.CENTER
         for index, item in enumerate(sorted(summary)):
             if len(item.get('content')) == 1:
-                t.cell(0,0).add_picture('/srv/rsum/static/{0}/img/500x700/01.jpg'.format(settings.CV_TEMPLATE), width=Cm(6))
+                t.cell(0,0).add_picture('/srv/rsum/static/{0}/img/500x700/01.jpg'.format(s.get('template')), width=Cm(6))
                 t.cell(0,0).width = Cm(6)
                 t.cell(0,1).add_paragraph('Summary', style='Heading 3')
                 t.cell(0,1).add_paragraph(item.get('content')[0].get('content'), style='Normal')
@@ -178,6 +183,7 @@ class ExportDocument(object):
         return ts 
 
     def add_experience(self, experience, document):
+        s = self.s
         del experience[0]
         p = document.add_paragraph('Experience', style='Heading 3')
         t = document.add_table(rows=1, cols=3)
@@ -204,7 +210,7 @@ class ExportDocument(object):
             row = index / 3
             p = t.cell(row,col).paragraphs[0]
             p.paragraph_format.line_spacing = 0.0
-            t.cell(row,col).add_picture('/srv/rsum/static/{0}/img/970x647/{1}.jpg'.format(settings.CV_TEMPLATE,photo), width=Cm(4.8))
+            t.cell(row,col).add_picture('/srv/rsum/static/{0}/img/970x647/{1}.jpg'.format(s.get('template'),photo), width=Cm(4.8))
             p = t.cell(row,col).paragraphs[1]
             p.paragraph_format.space_after = 0
             p = t.cell(row,col).add_paragraph(position, style='Heading 4')
@@ -234,11 +240,12 @@ class ExportDocument(object):
         return table
 
     def add_education(self, education, document):
+        s = self.s
         p = document.add_paragraph('Education', style='Heading 3')
         p.paragraph_format.line_spacing = 1.0
         p.paragraph_format.space_after = 0
         p.paragraph_format.page_break_before = True
-        document.add_picture('/srv/rsum/static/{0}/img/1920x1080/01.jpg'.format(settings.CV_TEMPLATE), width=Cm(4))
+        document.add_picture('/srv/rsum/static/{0}/img/1920x1080/01.jpg'.format(s.get('template')), width=Cm(4))
         for item in education:
             if item.get('content')[0].get('name') == u'name':
                 name = item.get('content')[0].get('content')
