@@ -13,7 +13,7 @@ class Entry(models.Model):
         on_delete=models.CASCADE
     )
     name = models.CharField(max_length=200, null=True)
-    value = models.CharField(max_length=200, null=True)
+    content = models.TextField() 
 
     def get_entry(self, project_item):
         entries = []
