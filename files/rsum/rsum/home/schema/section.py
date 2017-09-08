@@ -54,7 +54,6 @@ class Section(models.Model):
             s_i.save()
         else:
             s_i.content = type(section)
-            s_i.iterable = True
             s_i.save()
             ss = SubSection()
             ss.save_sub_sections(section, s_i)
