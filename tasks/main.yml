@@ -11,7 +11,7 @@
   include: "/src/rsum/tasks/db/{{ inventory_hostname }}.yml"
   when: inventory_hostname != 'mrsum'
 - name: "Include db tasks."
-  include: "../../db/{{ inventory_hostname }}.yml"
+  include: "../../tasks/db/{{ inventory_hostname }}.yml"
   when: inventory_hostname == 'mrsum'
 - name: "Copy fixed environment."
   copy:
