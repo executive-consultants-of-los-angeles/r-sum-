@@ -1,4 +1,7 @@
 ---
+- name: "Debug current working directory."
+  debug:
+    var: current_directory
 - name: "Set directories for all others."
   set_fact:
     dirs:
