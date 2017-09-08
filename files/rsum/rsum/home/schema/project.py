@@ -15,7 +15,7 @@ class Project(models.Model):
         on_delete=models.CASCADE
     )
     name = models.CharField(max_length=200, null=True)
-    content = models.CharField(max_length=200, null=True)
+    content = models.TextField()
 
     def get_projects(self, subsection):
         # print(subsection)
