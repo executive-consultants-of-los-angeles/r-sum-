@@ -74,19 +74,21 @@ class ExportDocument(object):
         return stream 
 
     def add_intro(self, intro, document):
+        s = self.s
         table = document.add_table(rows=1, cols=2)
         table.alignment = WD_TABLE_ALIGNMENT.CENTER
+        content = {}
         for index, item in enumerate(sorted(intro)):
-            if len(item.get('content')) == 1:
-                content = item.get('content')[0].get('content')
-                table.cell(0,0).add_paragraph(content, style='Heading '+str(index+1))
-            else:
-                # Need to add image linking support to docx.
-                # print(item.get('content'))
-                pass
+            print(item)
+            if item.get('content')[0].get('name') == 'name':
+                content.update({'name': item.get('content')[0].get('content')})
+            if item.get('content')[0].get('name') == 'position':
+                content.update({'position': item.get('content')[0].get('content')})
+        table.cell(0,0).add_paragraph(content.get('name'), style='Heading 1')
+        table.cell(0,0).add_paragraph(content.get('position'), style='Heading 2')
 
         table.cell(0,0).width = Cm(12)
-        table.cell(0,1).add_picture('/srv/rsum/static/{0}/img/mockup/avatar-01.png'.format(), width=Cm(4))
+        table.cell(0,1).add_picture('/srv/rsum/static/{0}/img/mockup/avatar-01.png'.format(s.get('template')), width=Cm(4))
         table.cell(0,1).width = Cm(4)
         table.cell(0,1).paragraphs[0].paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
         return document 
