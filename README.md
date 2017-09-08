@@ -404,10 +404,11 @@ This is a very rough sketch of the integration system that makes sure the site s
 
 ![Integration Graph](files/docs/continuous-integration.png)
 
-Dependencies
-------------
+## Schema Diagram
 
-All dependencies are handled within the role itelf. 
+Diagram of the schema that is used to store data contained in the .yml files.
+
+![Schema Diagram](files/docs/schema.png)
 
 Example Playbook
 ----------------
