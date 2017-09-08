@@ -8,7 +8,7 @@
       "{{
         lookup(
           'pipe',
-          'ls -1 files/rsum/cvs/'
+          'ls -1 ../../../files/rsum/cvs/'
         ).split('\n') | list
       }}"
   when: inventory_hostname != 'mrsum'
@@ -36,7 +36,7 @@
     '{{ item }}':
       "{{ lookup(
         'pipe',
-        'ls -1 files/rsum/cvs/'+item+'/'
+        'ls -1 ../../../files/rsum/cvs/'+item+'/'
       ).split('\n') | list }}"
   with_items: "{{ dirs }}"
   when: inventory_hostname != 'mrsum'
