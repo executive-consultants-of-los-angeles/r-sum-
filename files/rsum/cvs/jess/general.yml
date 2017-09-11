@@ -104,14 +104,16 @@ skills:
     di_deoxy_sequencing_reactions_with_pe_thermal_cyclers_abi_3700_dna_analyzer:
       name: '
         Di-deoxy Sequencing Reactions with PE Thermal Cyclers & 
-        ABI 3700 DNA Analyzer"
+        ABI 3700 DNA Analyzer
+      '
       start: 2016
     picogreen_dsdna_quantitation_reactions_with_beckman_du_600:
       name: "PicoGreen dsDNA Quantitation Reactions with Beckman DU 600"
       start: 2013
     hme_assays_with_pe_thermal_cyclers_and_sequenom_with_nanodispenser:
-      name: 'hME Assays with PE Thermal Cyclers & Sequenom MassARRAY System 
-       with Nanodispenser
+      name: '
+        hME Assays with PE Thermal Cyclers & Sequenom MassARRAY System 
+        with Nanodispenser
       '
       start: 2016
     liquid_handling_with_hydra_96_384_beckman_multimek_and_hp_multiprobe_ii_ex:
