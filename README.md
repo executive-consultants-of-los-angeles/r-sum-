@@ -406,7 +406,7 @@ This is a very rough sketch of the integration system that makes sure the site s
 
 ## Schema Diagram
 
-Diagram of the schema that is used to store data contained in the .yml files.
+Schema for relational database storage.
 
 ![Schema Diagram](files/docs/schema.png)
 
