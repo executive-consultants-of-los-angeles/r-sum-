@@ -112,7 +112,7 @@ skills:
       start: 2013
     hme_assays_with_pe_thermal_cyclers_and_sequenom_with_nanodispenser:
       name: '
-        hME Assays with PE Thermal Cyclers & Sequenom MassARRAY System 
+        hME Assays with PE Thermal Cyclers & Sequenom MassARRAY System
         with Nanodispenser
       '
       start: 2016
@@ -136,6 +136,7 @@ values:
         Loyalty implies a faithfulness that is steadfast in the face of any
         temptation to renounce, desert, or betray.
       '
+    ingenuity:
       id: 2
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
       service:
@@ -148,7 +149,7 @@ values:
         The tantalizing discomfort of perplexity is what inspires otherwise 
         ordinary men and women to extraordinary feats of ingenuity and creativity; 
         nothing quite focuses the mind like dissonant details loyalty 
-        implies. Brian Greene
+        implies. - Brian Greene
       '
     quality:
       id: 3
@@ -166,7 +167,7 @@ values:
       text: '
         The supreme quality for leadership is unquestionably integrity. Without
         it, no real success is possible no matter whether it is on a 
-        section gang, a football field, in an army, or in an office. 
+        section gang, a football field, in an army, or in an office. -
         Dwight D. Eisenhower'
 experience:
   id: 5
