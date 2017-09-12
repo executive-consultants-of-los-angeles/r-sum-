@@ -8,7 +8,8 @@ from django.db import models
 
 class EntryItem(models.Model):
     entry = models.ForeignKey('home.Entry', on_delete=models.CASCADE)
-    value = models.CharField(max_length=200, null=True)
+    name = models.CharField(max_length=255, default='entry item')
+    content = models.TextField() 
 
     def get_list_item(self, entry):
         items = []

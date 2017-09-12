@@ -1,0 +1,10 @@
+---
+- name: "Create xrsum DB."
+  postgresql_db:
+    name: "xrsum"
+    state: "present"
+    login_host: "apsql"
+    login_user: "psql"
+    port: "5432"
+...
+# vim: ft=ansible:

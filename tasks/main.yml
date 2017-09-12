@@ -1,17 +1,18 @@
 ---
+- name: "Include some additional facts."
+  include: facts.yml
 - name: "Install some packages with pip."
   pip:
     name: "{{ item }}"
     state: present
-  with_items: "{{ pip_install_list }}"
-- name: "Install python-docx."
-  pip:
-    name:
-      'git+https://github.com/executive-consultants-of-los-angeles/python-docx'
-    state: present
     editable: 'False'
+  with_items: "{{ pip_install_list }}"
 - name: "Include db tasks."
-  include: "db/{{ inventory_hostname }}.yml"
+  include: "/src/rsum/tasks/db/{{ inventory_hostname }}.yml"
+  when: inventory_hostname != 'mrsum'
+- name: "Include db tasks."
+  include: "../../tasks/db/{{ inventory_hostname }}.yml"
+  when: inventory_hostname == 'mrsum'
 - name: "Copy fixed environment."
   copy:
     src: environment
@@ -56,7 +57,11 @@
     name: "gunicorn"
     state: "started"
 - name: "What's that about include being deprecated Ansible?"
+  include: "/src/rsum/tasks/index/{{ inventory_hostname }}.yml"
+  when: inventory_hostname != 'mrsum'
+- name: "What's that about include being deprecated Ansible?"
   include: "index/{{ inventory_hostname }}.yml"
+  when: inventory_hostname == 'mrsum'
 - name: "Run sanity tests."
   django_manage:
     command: test

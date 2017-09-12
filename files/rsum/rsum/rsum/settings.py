@@ -13,9 +13,12 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import socket
 
+import cv_settings
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+CV_SETTINGS = cv_settings.values
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -25,33 +28,14 @@ SECRET_KEY = 'b@@ifd5u2=wktjinidhajaucaqsgo4nbm++!8hjc%1m0bzuxg_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
- 
-if socket.gethostname() == 'jrsum':
-    CV_DIR = 'jess'
-    CV_OWNER = 'jess-hartwell'
-    CV_TEMPLATE = 'jcv'
-    CV_NAME = 'general'
-elif socket.gethostname() == 'mrsum':
-    CV_DIR = 'jess'
-    CV_OWNER = 'jess-hartwell'
-    CV_TEMPLATE = 'jcv'
-    CV_NAME = 'general'
-elif socket.gethostname() == 'trsum':
-    CV_DIR = 'alex'
-    CV_OWNER = 'alex-harris'  
-    CV_TEMPLATE = 'acv'
-    CV_NAME = 'talent-merchants'
-else:
-    CV_DIR = 'alex'
-    CV_OWNER = 'xander-harris'
-    CV_TEMPLATE = 'acv'
-    CV_NAME = 'engineer'
 
 ALLOWED_HOSTS = [
     'trsum',
     'arsum',
     'jrsum',
     'mrsum',
+    'xander',
+    'xrsum',
     'localhost',
     'ecla.solutions',
     '127.0.0.1',
@@ -109,31 +93,14 @@ WSGI_APPLICATION = 'rsum.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-if socket.gethostname() == 'mrsum': 
-    DB_HOST = 'mpsql'
-    DB_PORT = '5432'
-    DB_NAME = 'mrsum'
-elif socket.gethostname() == 'arsum':
-    DB_HOST = 'apsql'
-    DB_PORT = '5432'
-    DB_NAME = 'arsum'
-elif socket.gethostname() == 'trsum':
-    DB_HOST = 'apsql'
-    DB_PORT = '5432'
-    DB_NAME = 'trsum'
-elif socket.gethostname() == 'jrsum':
-    DB_HOST = 'apsql'
-    DB_PORT = '5432'
-    DB_NAME = 'jrsum'
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': DB_NAME,
+        'NAME': cv_settings.values.get(socket.gethostname()).get('name'),
         'USER': 'psql',
         'PASSWORD': '',
-        'HOST': DB_HOST, 
-        'PORT': DB_PORT,
+        'HOST': cv_settings.values.get(socket.gethostname()).get('host'),
+        'PORT': 5432,
     }
 }
 
@@ -142,25 +109,32 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [{
-    'NAME': 
-        ('django.contrib.auth'
-        '.password_validation'
-        '.UserAttributeSimilarityValidator'),
+    'NAME': (
+            'django.contrib.auth'
+            '.password_validation'
+            '.UserAttributeSimilarityValidator'
+        ),
     },
     {
-        'NAME': ('django.contrib'
+        'NAME': (
+            'django.contrib'
             '.auth.password_validation'
-            '.MinimumLengthValidator'),
+            '.MinimumLengthValidator'
+        ),
     },
     {
-        'NAME': ('django.contrib.auth'
-                '.password_validation'
-                '.CommonPasswordValidator'),
+        'NAME': (
+            'django.contrib.auth'
+            '.password_validation'
+            '.CommonPasswordValidator'
+        ),
     },
     {
-        'NAME': ('django.contrib.auth'
-                '.password_validation'
-                '.NumericPasswordValidator'),
+        'NAME': (
+            'django.contrib.auth'
+            '.password_validation'
+            '.NumericPasswordValidator'
+        ),
     },
 ]
 
@@ -182,5 +156,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'+CV_TEMPLATE+'/'
-STATIC_ROOT = '/srv/'+CV_OWNER+'/rsum/static/'+CV_TEMPLATE+'/'
+STATIC_URL = '/static/'+cv_settings.values.get(
+    socket.gethostname()
+).get('template')+'/'
+STATIC_ROOT = '/srv/'+cv_settings.values.get(
+    socket.gethostname()
+).get('dir')+'/rsum/static/'+cv_settings.values.get(
+    socket.gethostname()
+).get('template')+'/'

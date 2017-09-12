@@ -1,0 +1,27 @@
+---
+- name: "Install role for {{ inventory_hostname }}."
+  hosts: "{{ inventory_hostname }}" 
+  roles:
+    - role: rsum
+- name: "Add angnx to Ansible hosts file."
+  hosts: "{{ inventory_hostname }}" 
+  tasks:
+    - name: "That's what we're doing."
+      lineinfile:
+        line: 'angnx ansible_connection=docker'
+        state: 'present'
+        dest: '/etc/ansible/hosts'
+        create: 'yes'
+- name: "Install requirements on angnx."
+  hosts: angnx
+  tasks:
+    - name: "Template requirements."
+      template:
+        src: "requirements.j2"
+        dest: "/tmp/{{ inventory_hostname }}.yml"
+    - name: "Remove role."
+      command: "ansible-galaxy remove {{ inventory_hostname }}"
+    - name: "Install requirements."
+      command: "ansible-galaxy install -r /tmp/{{ inventory_hostname }}.yml --force"
+...
+# vim: ft=ansible:

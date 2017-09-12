@@ -1,7 +1,7 @@
 ---
-- name: "Create tmrsum DB."
+- name: "Create trsum DB."
   postgresql_db:
-    name: "tmrsum"
+    name: "trsum"
     state: "present"
     login_host: "apsql"
     login_user: "psql"
