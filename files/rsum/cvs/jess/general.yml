@@ -125,8 +125,9 @@ skills:
 values:
   id: 4
   introduction: '
-       A clearly defined system of ethics is vital to a happy and productive life.
-'
+       A clearly defined system of ethics is vital to a 
+happy and productive life.
+      '
   content:
     loyalty
       id: 1
@@ -157,9 +158,9 @@ values:
       col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-screen-tablet"'
-      text:  '
+      text: '
 "Be a yardstick of quality. Some people aren't used to an environment where excellence is expected." - Steve Jobs
-'
+      '
     integrity:
       id: 4
       col: 'class="col-md-3 col-sm-6"'
@@ -168,8 +169,8 @@ values:
       text: '
         "The supreme quality for leadership is unquestionably integrity. Without
         it, no real success is possible no matter whether it is on a
-        section gang, a football field, in an army, or in an office." -
-        Dwight D. Eisenhower'
+        section gang, a football field, in an army, or in an office." - Dwight D. Eisenhower
+      '
 experience:
   id: 5
   introduction: '
