@@ -17,11 +17,11 @@ Docker Engine, or *nix, or access to a cloud provider that supports *nix.  You w
 ansible-galaxy install executive-consultants-of-los-angeles.r-sum-
 ```
 
-## Integration Graph
+## Network Diagram 
  
-This is a very rough sketch of the integration system that makes sure the site stays up while updates are continuously deployed.
+The rsum software is capable of producing (most of) this network on demand. 
 
-![Integration Graph](files/docs/continuous-integration.png)
+![Integration Graph](files/docs/network.png)
 
 ## Schema Diagram
 
@@ -30,6 +30,8 @@ Diagram of the schema that is used to store data contained in the .yml files.
 ![Schema Diagram](files/docs/schema.png)
 
 ## Data Structure Diagram
+
+Diagram of data structure as it exists in the yml files. 
 
 ![Data Structure Diagram](files/docs/data-structure-yml.png)
 
