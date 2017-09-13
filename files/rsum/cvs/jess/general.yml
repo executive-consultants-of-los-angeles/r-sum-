@@ -13,7 +13,7 @@ summary:
     and a proven track record of outstanding performance.'
 skills:
   id: 3
-  start: 2001
+  start: 2004
   oligo_array_manufacturing:
     name: "Oligo & Array Manufacturing"
     start: 2009
@@ -124,10 +124,11 @@ skills:
       start: 2013
 values:
   id: 4
-  introduction: 'A clearly defined system of ethics is vital to a
-    happy and productive life.'
+  introduction: '
+       A clearly defined system of ethics is vital to a happy and productive life.
+'
   content:
-    loyalty:
+    loyalty
       id: 1
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
       service: 'class="service" data-height="height"'
@@ -146,28 +147,28 @@ values:
           data-wow-delay=".1s"'
       icon: ' class="service-icon color-white icon-chemistry"'
       text: '
-        The tantalizing discomfort of perplexity is what inspires otherwise
+        "The tantalizing discomfort of perplexity is what inspires otherwise
         ordinary men and women to extraordinary feats of ingenuity
         and creativity; nothing quite focuses the mind like dissonant
-        details loyalty implies. - Brian Greene
+        details loyalty implies." - Brian Greene
       '
     quality:
       id: 3
       col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-screen-tablet"'
-      text:
-        "Be a yardstick of quality. Some people aren't used to an environment
-        where excellence is expected. - Steve Jobs"
+      text:  '
+"Be a yardstick of quality. Some people aren't used to an environment where excellence is expected." - Steve Jobs
+'
     integrity:
       id: 4
       col: 'class="col-md-3 col-sm-6"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon  icon-mustache"'
       text: '
-        The supreme quality for leadership is unquestionably integrity. Without
+        "The supreme quality for leadership is unquestionably integrity. Without
         it, no real success is possible no matter whether it is on a
-        section gang, a football field, in an army, or in an office. -
+        section gang, a football field, in an army, or in an office." -
         Dwight D. Eisenhower'
 experience:
   id: 5
@@ -177,10 +178,9 @@ experience:
 conversly all things can be broken down into simpiler components.'
   thermo_fisher_supervisor:
     id: 1
-    duration: "August 2012 - November 2014 (2 years)"
+    duration: "August 2012 - November 2014 (2 years 3 months)"
     location: "Pleasonton, California"
-    company: 'Thermo Fischer Scientific
-      (Formerly Life Technologies and previously Applied Biosystems)'
+    company: 'Thermo Fischer Scientific'
     position: "Supervisor, Manufacturing"
     projects:
       management:
