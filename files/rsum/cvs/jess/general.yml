@@ -126,8 +126,8 @@ values:
   id: 4
   introduction: '
        A clearly defined system of ethics is vital to a
-happy and productive life.
-      '
+    happy and productive life.'
+  content:
     loyalty:
       id: 1
       col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
@@ -157,10 +157,10 @@ happy and productive life.
       col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
       service: 'class="service" data-height="height"'
       icon: 'class="service-icon icon-screen-tablet"'
-      text: '
-"Be a yardstick of quality. Some people aren't used to
-an environment where excellence is expected." - Steve Jobs
-      '
+      text: >
+        "Be a yardstick of quality. Some people aren't used
+        to an environment where excellence is expected."
+        - Steve Jobs
     integrity:
       id: 4
       col: 'class="col-md-3 col-sm-6"'
