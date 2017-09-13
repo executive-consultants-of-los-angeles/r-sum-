@@ -399,7 +399,7 @@ ansible-galaxy install executive-consultants-of-los-angeles.r-sum-
 ```
 
 ## Integration Graph
-
+ 
 This is a very rough sketch of the integration system that makes sure the site stays up while updates are continuously deployed.
 
 ![Integration Graph](files/docs/continuous-integration.png)
@@ -409,6 +409,10 @@ This is a very rough sketch of the integration system that makes sure the site s
 Diagram of the schema that is used to store data contained in the .yml files.
 
 ![Schema Diagram](files/docs/schema.png)
+
+## Data Structure Diagram
+
+![Data Structure Diagram](files/docs/data-structure-yml.png)
 
 Example Playbook
 ----------------
