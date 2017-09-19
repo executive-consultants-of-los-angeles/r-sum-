@@ -122,6 +122,15 @@ skills:
         Beckman Multimek 96, & HP Multiprobe II EX
       '
       start: 2013
+  lims:
+    name: 'Labratory Information Management Systems'
+    start: 2004
+  data_analysis_applications:
+    name: 'Data Analysis Applications'
+    start: 2004
+  business_applications:
+    name: 'Business Applications'
+    start: 2016
 values:
   id: 4
   introduction: '
