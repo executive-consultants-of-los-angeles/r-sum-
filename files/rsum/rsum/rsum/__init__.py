@@ -23,5 +23,5 @@ Attributes:
         one convention to document module level variables and be consistent
         with it.
 
-.. automodule:: rsum
+.. automodule:: rsum.rsum
 """
