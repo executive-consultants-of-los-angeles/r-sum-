@@ -47,19 +47,6 @@ extensions = [
     'sphinxcontrib.restbuilder',
 ]
 
-rst_file_suffix = '.rst'
-rst_link_suffix = ''
-rst_line_width = 78
-rst_indent = 3
-def rst_file_transform(docname):
-    if docname == 'index':
-        docname = 'home'
-    return docname.title() + rst_file_suffix
-def rst_link_transform(docname):
-    if docname == 'index':
-        return 'wiki'
-    return 'wiki/' + docname.title()
-
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -71,6 +58,8 @@ source_suffix = '.rst'
 
 # The master toctree document.
 master_doc = 'Home'
+
+nitpicky = True
 
 # General information about the project.
 project = u'rsum'
@@ -97,6 +86,27 @@ language = None
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+
+# rst builder configuration
+rst_file_suffix = '.rst'
+rst_link_suffix = ''
+rst_line_width = 78
+rst_indent = 3
+
+def rst_file_transform(docname):
+    if docname == 'index':
+        docname = 'home'
+    return docname.title() + rst_file_suffix
+
+def rst_link_transform(docname):
+    if docname == 'index':
+        return 'wiki'
+    return 'wiki/' + docname.title()
+
+
+supported_image_types = [
+    'image/png',
+]
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
