@@ -7,8 +7,8 @@ Welcome to rsum Documentation
 =============================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+  :maxdepth: 2
+  :caption: Contents:
 
   Data-Structure  
   Django-Control-Flow

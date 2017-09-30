@@ -1,6 +1,7 @@
-## Data Structure Diagram
+Data Structure
+==============
 
-![Data Structure Diagram](https://raw.githubusercontent.com/executive-consultants-of-los-angeles/rsum/master/files/docs/data-structure-yml.png)
+.. image:: https://raw.githubusercontent.com/executive-consultants-of-los-angeles/rsum/master/files/docs/data-structure-yml.png
 
 ## Schema Diagram
 
