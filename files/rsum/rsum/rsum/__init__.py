@@ -22,4 +22,6 @@ Attributes:
         Either form is acceptable, but the two should not be mixed. Choose
         one convention to document module level variables and be consistent
         with it.
+
+.. automodule:: rsum
 """
