@@ -1,37 +1,21 @@
 rsum package
 ============
 
+Subpackages
+-----------
+
+.. toctree::
+
+    rsum.home
+    rsum.rsum
+
 Submodules
 ----------
 
-rsum\.cv\_settings module
--------------------------
+rsum\.manage module
+-------------------
 
-.. automodule:: rsum.cv_settings
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-rsum\.settings module
----------------------
-
-.. automodule:: rsum.settings
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-rsum\.urls module
------------------
-
-.. automodule:: rsum.urls
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-rsum\.wsgi module
------------------
-
-.. automodule:: rsum.wsgi
+.. automodule:: rsum.manage
     :members:
     :undoc-members:
     :show-inheritance:

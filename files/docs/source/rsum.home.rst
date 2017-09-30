@@ -1,54 +1,54 @@
-home package
-============
+rsum\.home package
+==================
 
 Subpackages
 -----------
 
 .. toctree::
 
-    home.exam
-    home.export
-    home.schema
+    rsum.home.exam
+    rsum.home.export
+    rsum.home.schema
 
 Submodules
 ----------
 
-home\.admin module
-------------------
+rsum\.home\.admin module
+------------------------
 
-.. automodule:: home.admin
+.. automodule:: rsum.home.admin
     :members:
     :undoc-members:
     :show-inheritance:
 
-home\.apps module
------------------
+rsum\.home\.apps module
+-----------------------
 
-.. automodule:: home.apps
+.. automodule:: rsum.home.apps
     :members:
     :undoc-members:
     :show-inheritance:
 
-home\.models module
--------------------
+rsum\.home\.models module
+-------------------------
 
-.. automodule:: home.models
+.. automodule:: rsum.home.models
     :members:
     :undoc-members:
     :show-inheritance:
 
-home\.tests module
-------------------
+rsum\.home\.tests module
+------------------------
 
-.. automodule:: home.tests
+.. automodule:: rsum.home.tests
     :members:
     :undoc-members:
     :show-inheritance:
 
-home\.views module
-------------------
+rsum\.home\.views module
+------------------------
 
-.. automodule:: home.views
+.. automodule:: rsum.home.views
     :members:
     :undoc-members:
     :show-inheritance:
@@ -57,7 +57,7 @@ home\.views module
 Module contents
 ---------------
 
-.. automodule:: home
+.. automodule:: rsum.home
     :members:
     :undoc-members:
     :show-inheritance:
