@@ -1,63 +1,10 @@
-home package
-============
-
-Subpackages
------------
+rsum Project Documentation
+==========================
 
 .. toctree::
+   :members:
 
-    home.exam
-    home.export
-    home.schema
+   Data-Structure
+   Django-Control-Flow
 
-Submodules
-----------
-
-home\.admin module
-------------------
-
-.. automodule:: home.admin
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-home\.apps module
------------------
-
-.. automodule:: home.apps
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-home\.models module
--------------------
-
-.. automodule:: home.models
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-home\.tests module
-------------------
-
-.. automodule:: home.tests
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-home\.views module
-------------------
-
-.. automodule:: home.views
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-Module contents
----------------
-
-.. automodule:: home
-    :members:
-    :undoc-members:
-    :show-inheritance:
+.. vim: ft=rst sw=3 sts=3 ts=3:
