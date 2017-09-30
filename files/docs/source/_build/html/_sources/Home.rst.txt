@@ -10,7 +10,7 @@ Welcome to rsum Documentation
   :maxdepth: 2
   :caption: Contents:
 
-  Data-Structure
+  Data-Structure  
   Django-Control-Flow
 
 
@@ -20,8 +20,6 @@ This wiki is intended to provide all of the necessary documentation related to t
 
 The repository currently hosts the résumés of Jessica Hartwell and Xander Harris along with all of the software required to run their websites and related infrastructure. 
 
-
-.. image:: img/schema.png
 
 
 Indices and tables

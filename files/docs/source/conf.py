@@ -19,6 +19,9 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('/src/rsum/files/rsum/'))
+sys.path.insert(0, os.path.abspath('/src/rsum/files/docs/'))
+sys.path.insert(0, os.path.abspath('/src/rsum/files/docs/wiki/'))
+sys.path.insert(0, os.path.abspath('/src/rsum/files/docs/source/'))
 
 
 # -- General configuration ------------------------------------------------
@@ -47,7 +50,7 @@ extensions = [
 rst_file_suffix = '.rst'
 rst_link_suffix = ''
 rst_line_width = 78
-rst_indent = 4
+rst_indent = 3
 def rst_file_transform(docname):
     if docname == 'index':
         docname = 'home'
@@ -70,8 +73,8 @@ source_suffix = '.rst'
 master_doc = 'Home'
 
 # General information about the project.
-project = u'Xander Harris CV'
-copyright = u'2017, Xander Harris'
+project = u'rsum'
+copyright = u'2017, ECLA'
 author = u'Xander Harris'
 
 # The version info for the project you're documenting, acts as replacement for
