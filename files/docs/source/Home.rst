@@ -10,6 +10,9 @@ Welcome to rsum Documentation
    :maxdepth: 2
    :caption: Contents:
 
+  Data-Structure  
+  Django-Control-Flow
+
 
 Welcome to the rsum wiki!
 
