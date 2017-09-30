@@ -24,4 +24,6 @@ Attributes:
         with it.
 
 .. automodule:: rsum.rsum
+
+.. currentmodule:: rsum.rsum
 """

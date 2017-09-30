@@ -4,8 +4,10 @@ from __future__ import unicode_literals
 
 from django.test import TestCase
 
-import home
 import yaml
+
+import home 
+
 from exam.cv import CVTestCase
 from exam.cv import CVGetsTestCase
 from exam.section import SectionTestCase
