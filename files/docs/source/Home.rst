@@ -11,6 +11,11 @@ rsum package docs
    home.models
    home.exam
    home.exam.cv
+   home.exam.section
+   home.exam.subsection
+   home.exam.project
+   home.exam.projectitem
+   home.exam.entry
    home.exam.entryitem
 
 
@@ -38,3 +43,5 @@ Network
 -------
 
 .. image:: img/network.png
+
+.. vim: ft=rst sts=3 sw=3 ts=3:
