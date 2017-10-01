@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Settings related to individual rsums.
+
+.. automodule:: rsum
+"""
 
 values = {
     'jrsum': {
@@ -36,5 +40,12 @@ values = {
         'template': 'acv',
         'name': 'alex',
         'host': 'apsql',
+    }
+    'cody': {
+        'dir': 'xander',
+        'owner': 'xander-harris',
+        'template': 'xander',
+        'name': 'xander',
+        'host': 'cody'
     }
 }
