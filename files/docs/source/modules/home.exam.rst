@@ -2,6 +2,7 @@ home\.exam
 ==========
 
 .. automodule:: home.exam
+   :show-inheritance:
 
 .. autosummary::
 
