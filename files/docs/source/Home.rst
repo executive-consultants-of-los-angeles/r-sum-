@@ -6,9 +6,12 @@ rsum package docs
 
    rsum.settings
    rsum.settings.rsum
+   home
    home.schema
    home.models
    home.exam
+   home.exam.cv
+   home.exam.entryitem
 
 
 .. toctree::
@@ -24,3 +27,14 @@ Data Structure
 --------------
 
 .. image:: img/data-structure-yml.png
+
+
+Django Control Flow
+-------------------
+
+.. image:: img/flowchart-django.png
+
+Network
+-------
+
+.. image:: img/network.png
