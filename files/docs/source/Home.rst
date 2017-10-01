@@ -19,3 +19,8 @@ rsum package docs
    modules/rsum.urls.rst
    modules/home.tests.rst
    modules/home.views.rst
+
+Data Structure
+--------------
+
+.. image:: img/data-structure-yml.png
