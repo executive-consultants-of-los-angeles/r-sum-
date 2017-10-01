@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Views for the rsum home application."""
 from __future__ import unicode_literals
 from __future__ import print_function
 

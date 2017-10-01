@@ -40,6 +40,7 @@ ALLOWED_HOSTS = [
     'localhost',
     'ecla.solutions',
     '127.0.0.1',
+    'cody.local',
 ]
 
 ADMINS = []
