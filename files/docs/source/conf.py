@@ -18,9 +18,7 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('/src/rsum/files/rsum/rsum/'))
-sys.path.insert(0, os.path.abspath('/src/rsum/files/rsum/rsum/rsum/'))
-sys.path.insert(0, os.path.abspath('/src/rsum/files/rsum/rsum/home/'))
+sys.path.insert(0, os.path.abspath('/src/rsum/files/rsum'))
 sys.path.insert(0, os.path.abspath('/src/rsum/files/docs/'))
 sys.path.insert(0, os.path.abspath('/src/rsum/files/docs/wiki/'))
 sys.path.insert(0, os.path.abspath('/src/rsum/files/docs/source/'))
@@ -37,6 +35,7 @@ sys.path.insert(0, os.path.abspath('/src/rsum/files/docs/source/'))
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.autosectionlabel',
     'sphinx.ext.autosummary',
     'sphinx.ext.coverage',
     'sphinx.ext.doctest',
