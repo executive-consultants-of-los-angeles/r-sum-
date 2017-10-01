@@ -1,18 +1,24 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Test cases for the Section model. """
 from __future__ import unicode_literals
-
-from django.test import TestCase
-from home.schema.cv import CV
-from home.schema.section import Section
-from rsum.cv_settings import values
 
 import socket
 import yaml
 
+import django
+from django.test import TestCase
+
+django.setup()
+from home.schema.cv import CV
+from home.schema.section import Section
+from rsum.settings.rsum import values
+
 
 class SectionTestCase(TestCase):
+    """Class for testing Section model saves."""
     def setUp(self):
+        """Setup method for SectionTestCase class."""
         s = values.get(socket.gethostname())
         f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
         self.abridged = yaml.load(f.read())
@@ -24,6 +30,7 @@ class SectionTestCase(TestCase):
         self.cv = cv
 
     def test_save_section(self):
+        """Test for saving Section model objects."""
         cv = self.cv
 
         for name, section in sorted(
@@ -43,7 +50,9 @@ class SectionTestCase(TestCase):
 
 
 class GetSectionTestCase(TestCase):
+    """Class for testing Section model gets."""
     def setUp(self):
+        """Setup for Section model get tests."""
         cv_instance = CV()
         cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='abridged', template='acecv')
         self.cv_id = cv_id
@@ -53,6 +62,7 @@ class GetSectionTestCase(TestCase):
         )
 
     def test_get_section(self):
+        """Test Section moodel gets."""
         section_instance = Section()
         sections = section_instance.get_sections(
             CV.objects.filter(id=self.cv_id)

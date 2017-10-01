@@ -1,20 +1,30 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Test cases for the SubSection model."""
 from __future__ import unicode_literals
 
+import socket
+import yaml
+
+import django
 from django.test import TestCase
+
+django.setup()
+
 from home.schema.cv import CV
 from home.schema.section import Section
 from home.schema.subsection import SubSection
 from home.schema.project import Project
-from rsum.cv_settings import values
-
+from rsum.settings.rsum import values
 import home
-import socket
-import yaml
 
 class SubSectionTestCase(TestCase):
+    """Class for testing SubSection model saves.
+
+    .. note: The SubSectionTestCase has a note.
+    """
     def setUp(self):
+        """Method to setup SubSection model save tests."""
         s = values.get(socket.gethostname())
         f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
         self.abridged = yaml.load(f.read())
@@ -32,6 +42,7 @@ class SubSectionTestCase(TestCase):
         self.s = s
 
     def test_save_sub_section(self):
+        """Test saving a SubSection model object."""
         ss = SubSection()
         section = self.abridged.items()[3]
 
@@ -50,7 +61,9 @@ class SubSectionTestCase(TestCase):
 
 
 class GetSubSectionTestCase(TestCase):
+    """Class for testing SubSection model gets."""
     def setUp(self):
+        """Setup method for testing SubSection model gets."""
         cv_instance = CV()
         cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='abridged', template='acecv')
         sections = Section.objects.filter(
@@ -64,6 +77,7 @@ class GetSubSectionTestCase(TestCase):
         self.sections = sections
     
     def test_get_subsection(self):
+        """Method to test getting SubSection model objects."""
         subsection_instance = SubSection()
         subsections = [subsection_instance.get_sub_section(section) for section in self.sections]
         self.assertEqual(

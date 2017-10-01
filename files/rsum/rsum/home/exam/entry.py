@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Test classes for entry model."""
 from __future__ import unicode_literals
+
+import socket
+import yaml
+
+import django
+
+django.setup()
 
 from django.test import TestCase
 from home.schema.cv import CV
@@ -9,14 +17,13 @@ from home.schema.subsection import SubSection
 from home.schema.project import Project
 from home.schema.projectitem import ProjectItem
 from home.schema.entry import Entry
-from rsum.cv_settings import values
-
-import socket
-import yaml
+from rsum.settings.rsum import values
 
 
 class EntryTestCase(TestCase):
+    """Test class for the Entry model."""
     def setUp(self):
+        """Setup for EntryTestCase."""
         s = values.get(socket.gethostname())
         f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
         abridged = yaml.load(f.read())
@@ -55,6 +62,7 @@ class EntryTestCase(TestCase):
 
 
     def test_save_entry(self):
+        """Test saving an entry to the Entry model."""
         entry = {}
         entry.update({
             'dictionary!': {
@@ -75,7 +83,9 @@ class EntryTestCase(TestCase):
 
 
 class GetEntryTestCase(TestCase):
+    """Class for testing the get methods for entries."""
     def setUp(self):
+        """Setup the GetEntryTestCase."""
         cv_instance = CV()
         cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='abridged', template='acecv')
         sections = Section.objects.filter(cv=cv_instance)
@@ -103,6 +113,7 @@ class GetEntryTestCase(TestCase):
         self.projectitems = projectitems
     
     def test_get_entry(self):
+        """Test getting an entry."""
         entries = []
         entry_instance = Entry()
         for projectitem in self.projectitems:

@@ -1,13 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Test cases for the Project model."""
 from __future__ import unicode_literals
 
+import django
 from django.test import TestCase
+
+django.setup()
+
 from home.schema.cv import CV
 from home.schema.section import Section
 from home.schema.subsection import SubSection
 from home.schema.project import Project
-from rsum.cv_settings import values
+from rsum.settings.rsum import values
 
 import home
 import socket
@@ -15,7 +20,9 @@ import yaml
 
 
 class ProjectTestCase(TestCase):
+    """Test class for tests of Project model save methods."""
     def setUp(self):
+        """Setup for Project model save method tests."""
         s = values.get(socket.gethostname())
         f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
         abridged = yaml.load(f.read())
@@ -44,6 +51,7 @@ class ProjectTestCase(TestCase):
                 self.ss = ss
 
     def test_save_projects(self):
+        """Test saving a Project."""
         ss = self.ss
         projects = {}
         projects.update({
@@ -94,7 +102,9 @@ class ProjectTestCase(TestCase):
 
 
 class GetProjectTestCase(TestCase):
+    """Test class for Project model get methods."""
     def setUp(self):
+        """Setup project model get method tests."""
         cv_instance = CV()
         cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='abridged', template='acecv')
         sections = Section.objects.filter(
@@ -114,6 +124,7 @@ class GetProjectTestCase(TestCase):
                 )
 
     def test_get_project(self):
+        """Test get method for Project model."""
         project_instance = Project()
         projects = []
         for subsection in self.subsections:

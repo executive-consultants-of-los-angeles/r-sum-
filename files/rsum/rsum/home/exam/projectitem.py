@@ -1,14 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Test cases for the ProjectItem model."""
 from __future__ import unicode_literals
 
+import django
 from django.test import TestCase
+
+django.setup()
+
 from home.schema.cv import CV
 from home.schema.section import Section
 from home.schema.subsection import SubSection
 from home.schema.project import Project
 from home.schema.projectitem import ProjectItem
-from rsum.cv_settings import values
+from rsum.settings.rsum import values
 
 import home
 import json
@@ -17,7 +22,9 @@ import yaml
 
 
 class ProjectItemTestCase(TestCase):
+    """Test class for ProjectItem saves."""
     def setUp(self):
+        """Setup for ProjectItem save tests."""
         s = values.get(socket.gethostname())
         f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
         abridged = yaml.load(f.read())
@@ -51,6 +58,7 @@ class ProjectItemTestCase(TestCase):
                 self.p = p
 
     def test_save_project_items(self):
+        """Test for saving ProjectItems. """
         project_item = {}
         project_item.update({
             'dictionary': {
@@ -82,7 +90,9 @@ class ProjectItemTestCase(TestCase):
 
 
 class GetProjectItemTestCase(TestCase):
+    """Class for testing ProjectItem get."""
     def setUp(self):
+        """Setup ProjectItem get tests."""
         cv_instance = CV()
         cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='abridged', template='acecv')
         sections = Section.objects.filter(cv=cv_instance)
@@ -102,6 +112,7 @@ class GetProjectItemTestCase(TestCase):
                 self.projectitems.append(projectitem)
 
     def test_get_project_item(self):
+        """Test ProjectItem get method."""
         projectitems = []
         for project in self.projects:
             for project_object in project:

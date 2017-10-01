@@ -1,23 +1,31 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Test class for the entry item test case."""
 from __future__ import unicode_literals
 
+import django
 from django.test import TestCase
-from home.schema.cv import CV
+from django.apps import apps
+
+django.setup()
+
+from home.schema.cv import CV 
 from home.schema.section import Section
 from home.schema.subsection import SubSection
 from home.schema.project import Project
 from home.schema.projectitem import ProjectItem
 from home.schema.entry import Entry
 from home.schema.entryitem import EntryItem
-from rsum.cv_settings import values
+from rsum.settings.rsum import values
 
 import socket
 import yaml
 
 
 class EntryItemTestCase(TestCase):
+    """EntryItemTestCase class."""
     def setUp(self):
+        """Setup the EntryItemTestCase."""
         s = values.get(socket.gethostname())
         f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
         abridged = yaml.load(f.read())
@@ -59,6 +67,7 @@ class EntryItemTestCase(TestCase):
                 self.e = e
 
     def test_save_entry_item(self):
+        """Test saving an EnryItem."""
         e = self.e
         entry_item_string = str("this is a string")
         entry_item_list = [
@@ -90,7 +99,9 @@ class EntryItemTestCase(TestCase):
 
 
 class GetEntryItemTestCase(TestCase):
+    """Test class for EntryItem get methods."""
     def setUp(self):
+        """Setup testing for EntryItem get methods."""
         cv_instance = CV()
         cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='abridged', template='acecv')
         sections = Section.objects.filter(cv=cv_instance)
@@ -126,6 +137,7 @@ class GetEntryItemTestCase(TestCase):
         self.entries = entries
 
     def test_get_entry_item(self):
+        """Test getting an EntryItem. """
         entries = self.entries
         entryitems = []
         for index, entry in enumerate(entries):
