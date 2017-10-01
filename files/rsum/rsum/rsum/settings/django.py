@@ -16,6 +16,7 @@ import socket
 
 from rsum import values
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -100,7 +101,7 @@ DATABASES = {
         'NAME': CV_SETTINGS.get(socket.gethostname()).get('name'),
         'USER': 'psql',
         'PASSWORD': '',
-        'HOST': cv_settings.values.get(socket.gethostname()).get('host'),
+        'HOST': CV_SETTINGS.get(socket.gethostname()).get('host'),
         'PORT': 5432,
     }
 }
@@ -157,11 +158,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'+cv_settings.values.get(
+STATIC_URL = '/static/'+CV_SETTINGS.get(
     socket.gethostname()
 ).get('template')+'/'
-STATIC_ROOT = '/srv/'+cv_settings.values.get(
+STATIC_ROOT = '/srv/'+CV_SETTINGS.get(
     socket.gethostname()
-).get('dir')+'/rsum/static/'+cv_settings.values.get(
+).get('dir')+'/rsum/static/'+CV_SETTINGS.get(
     socket.gethostname()
 ).get('template')+'/'

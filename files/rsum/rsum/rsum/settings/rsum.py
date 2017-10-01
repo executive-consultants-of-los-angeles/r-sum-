@@ -40,8 +40,8 @@ values = {
         'template': 'acv',
         'name': 'alex',
         'host': 'apsql',
-    }
-    'cody': {
+    },
+    'cody.local': {
         'dir': 'xander',
         'owner': 'xander-harris',
         'template': 'xander',
