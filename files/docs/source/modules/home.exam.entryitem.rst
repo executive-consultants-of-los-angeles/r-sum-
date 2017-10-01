@@ -4,15 +4,17 @@ home.exam.entryitem
 .. automodule:: home.exam.entryitem
    
 .. autoclass:: EntryItemTestCase   
+   :members:
 
-   .. automethod:: setUp
+.. automethod:: EntryItemTestCase.setUp
 
-   .. automethod:: test_save_entry_item
+.. automethod:: EntryItemTestCase.test_save_entry_item
    
 .. autoclass:: GetEntryItemTestCase
+   :members:
 
-   .. automethod:: setUp
+.. automethod:: GetEntryItemTestCase.setUp
 
-   .. automethod:: test_get_entry_item
+.. automethod:: GetEntryItemTestCase.test_get_entry_item
 
 .. vim: ft=rst sts=3 ts=3 sw=3:

@@ -5,22 +5,22 @@ home.exam.cv
 
 .. autoclass:: CVTestCase   
    
-   .. automethod:: setUp   
+.. automethod:: CVTestCase.setUp   
 
-   .. automethod:: test_check_sections 
+.. automethod:: CVTestCase.test_check_sections 
 
-   .. automethod:: test_save_abridged_cv
+.. automethod:: CVTestCase.test_save_abridged_cv
 
 .. autoclass:: CVGetsTestCase
 
-   .. automethod:: setUp
+.. automethod:: CVGetsTestCase.setUp
 
-   .. automethod:: test_get_cv
+.. automethod:: CVGetsTestCase.test_get_cv
 
-   .. automethod:: test_get_experience
+.. automethod:: CVGetsTestCase.test_get_experience
 
-   .. automethod:: test_get_skills
+.. automethod:: CVGetsTestCase.test_get_skills
 
-   .. automethod:: test_get_values
+.. automethod:: CVGetsTestCase.test_get_values
 
 .. vim: ft=rst sts=3 ts=3 sw=3:
