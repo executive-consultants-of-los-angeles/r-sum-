@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Settings related to individual rsums.
+"""Settings related to individual rsums."""
 
-.. automodule:: rsum.settings.rsum
-"""
 
 values = {
     'jrsum': {
