@@ -3,6 +3,5 @@
 
 
 .. automodule:: rsum.home
-
-.. currentmodule:: rsum.home
+   :members:
 """

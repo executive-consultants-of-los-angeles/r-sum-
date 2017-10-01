@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Settings related to individual rsums.
 
-.. automodule:: rsum
+.. automodule:: rsum.settings.rsum
 """
 
 values = {
