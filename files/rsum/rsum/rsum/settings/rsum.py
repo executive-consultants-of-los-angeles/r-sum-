@@ -13,14 +13,6 @@ values = {
         'name': 'general',
         'host': 'apsql',
     },
-    'mrsum': {
-        'dir': 'jess',
-        'owner': 'mrsum',
-        'template': 'jcv',
-        'name': 'general',
-        'host': 'mpsql',
-    },
-    'xrsum': {
         'dir': 'xander',
         'owner': 'xander-harris',
         'template': 'xander',
