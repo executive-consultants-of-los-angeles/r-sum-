@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+"""Module for exporting cvs to Word format."""
 import docx
 
 from StringIO import StringIO
@@ -14,7 +14,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.enum.style import WD_BUILTIN_STYLE
 
-from rsum.cv_settings import values
+from rsum.settings.rsum import values
 
 import home.schema
 
