@@ -31,8 +31,8 @@ class CV(models.Model):
             cv_dict = yaml.load(cv_file.read())
         self.id = self.save_cv(
             cv_dict, 
-            name=settings.CV_SETTINGS.get(socket.gethostname()).get('name'),
-            template=settings.CV_SETTINGS.get(socket.gethostname()).get('template')
+            name=settings.CV,
+            template=settings.OWNER
         )
         return self.id 
 

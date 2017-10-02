@@ -17,9 +17,10 @@ DATABASES = {
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/jess/'
-STATIC_ROOT = '/srv/rsum/static/jess/'
 
 OWNER = 'mrsum'
 CV = 'general'
 DIR = 'jess'
+
+STATIC_URL = '/static/{}/'.format(OWNER)
+STATIC_ROOT = '/srv/{}/static/{}/'.format(OWNER, OWNER)
