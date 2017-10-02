@@ -1,8 +1,12 @@
 #!/usr/bin/env python
 import os
 import sys
+import socket
+
+settings = "rsum.settings.{}".format(socket.gethostname())
 
 if __name__ == "__main__":
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings)
     try:
         from django.core.management import execute_from_command_line
     except ImportError:
