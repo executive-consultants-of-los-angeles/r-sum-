@@ -3,10 +3,7 @@
 """Test cases for the Project model."""
 from __future__ import unicode_literals
 
-import django
 from django.test import TestCase
-
-django.setup()
 
 from home.schema.cv import CV
 from home.schema.section import Section

@@ -9,11 +9,8 @@ import json
 import socket
 import yaml
 
-import django
 from django.db import models
 from django.conf import settings
-
-django.setup()
 
 from section import Section
 from subsection import SubSection

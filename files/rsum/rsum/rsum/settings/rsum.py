@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """Settings related to individual rsums."""
 
-
 values = {
     'jrsum': {
         'dir': 'jess',
@@ -10,13 +9,6 @@ values = {
         'template': 'jcv',
         'name': 'general',
         'host': 'apsql',
-    },
-    'mrsum': {
-        'dir': 'jess',
-        'owner': 'mrsum',
-        'template': 'jcv',
-        'name': 'general',
-        'host': 'mpsql',
     },
     'xrsum': {
         'dir': 'xander',
