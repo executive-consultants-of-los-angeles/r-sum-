@@ -1,6 +1,7 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Xander Harris CV documentation build configuration file, created by
+# rsum documentation build configuration file, created by
 # sphinx-quickstart on Sat Sep 30 13:41:08 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -42,7 +43,6 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.viewcode',
-    'sphinxcontrib.restbuilder',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -84,23 +84,6 @@ language = None
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
-# rst builder configuration
-rst_file_suffix = '.rst'
-rst_link_suffix = ''
-rst_line_width = 78
-rst_indent = 3
-
-def rst_file_transform(docname):
-    if docname == 'index':
-        docname = 'home'
-    return docname.title() + rst_file_suffix
-
-def rst_link_transform(docname):
-    if docname == 'index':
-        return 'wiki'
-    return 'wiki/' + docname.title()
-
 
 supported_image_types = [
     'image/png',
@@ -150,7 +133,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'XanderHarrisCVdoc'
+htmlhelp_basename = 'rsum_'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -177,7 +160,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'XanderHarrisCV.tex', u'Xander Harris CV Documentation',
+    (master_doc, 'XanderHarrisCV.tex', u'rsum Documentation',
      u'Xander Harris', 'manual'),
 ]
 
@@ -187,7 +170,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'xanderharriscv', u'Xander Harris CV Documentation',
+    (master_doc, 'xanderharriscv', u'rsum Documentation',
      [author], 1)
 ]
 
@@ -198,7 +181,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'XanderHarrisCV', u'Xander Harris CV Documentation',
+    (master_doc, 'XanderHarrisCV', u'rsum Documentation',
      author, 'XanderHarrisCV', 'One line description of project.',
      'Miscellaneous'),
 ]
