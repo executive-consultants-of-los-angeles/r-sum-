@@ -8,6 +8,7 @@ rsum package docs
    rsum.settings.rsum
    home
    home.schema
+   home.schema.cv
    home.models
    home.exam
    home.exam.cv
