@@ -1,0 +1,6 @@
+---
+- name: "Prepare playbook."
+  debug:
+    msg: "For Travis."
+...
+# vim: ft=ansible:
