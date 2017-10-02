@@ -1,6 +1,4 @@
 ---
-- name: "Include some additional facts."
-  include: facts.yml
 - name: "Install some packages with pip."
   pip:
     name: "{{ item }}"
