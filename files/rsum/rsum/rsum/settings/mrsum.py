@@ -19,3 +19,7 @@ DATABASES = {
 
 STATIC_URL = '/static/jess/'
 STATIC_ROOT = '/srv/rsum/static/jess/'
+
+OWNER = 'mrsum'
+CV = 'general'
+DIR = 'jess'
