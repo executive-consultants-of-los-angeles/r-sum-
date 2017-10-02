@@ -6,10 +6,6 @@ from __future__ import unicode_literals
 import socket
 import yaml
 
-import django
-
-django.setup()
-
 from django.test import TestCase
 from home.schema.cv import CV
 from home.schema.section import Section

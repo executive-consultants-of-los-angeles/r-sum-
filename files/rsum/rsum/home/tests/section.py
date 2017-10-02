@@ -6,10 +6,8 @@ from __future__ import unicode_literals
 import socket
 import yaml
 
-import django
 from django.test import TestCase
 
-django.setup()
 from home.schema.cv import CV
 from home.schema.section import Section
 from rsum.settings.rsum import values

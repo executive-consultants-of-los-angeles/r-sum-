@@ -3,11 +3,8 @@
 """Test class for the entry item test case."""
 from __future__ import unicode_literals
 
-import django
 from django.test import TestCase
 from django.apps import apps
-
-django.setup()
 
 from home.schema.cv import CV 
 from home.schema.section import Section

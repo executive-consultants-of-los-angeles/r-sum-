@@ -7,10 +7,7 @@ import json
 import socket
 import yaml
 
-import django
 from django.test import TestCase
-
-django.setup()
 
 from home.schema.cv import CV
 from rsum.settings.rsum import values
