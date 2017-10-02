@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 """Settings related to individual rsums."""
 
-from common import *
-
-
 values = {
     'jrsum': {
         'dir': 'jess',
