@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Views for the rsum home application."""
 from __future__ import unicode_literals
 from __future__ import print_function
 
@@ -8,7 +9,7 @@ from django.db import models
 from django.http import HttpResponse
 from django.conf import settings
 
-from schema.cv import CV
+from models.cv import CV
 
 from export.word import ExportDocument
 
@@ -17,9 +18,12 @@ import socket
 
 
 def index(request):
+    """Method for loading the index page."""
     cv_instance = CV()
 
-    cv_id = cv_instance.check_sections(name_of_owner=settings.CV_SETTINGS.get(socket.gethostname()).get('owner'), name_of_cv=settings.CV_SETTINGS.get(socket.gethostname()).get('name'))
+    cv_id = cv_instance.check_sections(
+        name_of_owner=settings.OWNER,
+        name_of_cv=settings.CV)
     cv = cv_instance.get_cv(cv_id=cv_id)
 
     context = {
@@ -54,6 +58,7 @@ def index(request):
     return render(request, 'home/index.html', context)
 
 def export_docx(request, cv_id='1'):
+    """Method for exporting Word documents."""
     stream = ExportDocument().export(cv_id)
 
     # Special thanks to: https://stackoverflow.com/a/24122313 
@@ -64,7 +69,7 @@ def export_docx(request, cv_id='1'):
         stream.getvalue(),
         content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     )
-    response['Content-Disposition'] = 'attachment; filename={0}-cv.docx'.format(settings.CV_SETTINGS.get(socket.gethostname()).get('owner'))
+    response['Content-Disposition'] = 'attachment; filename={0}-cv.docx'.format(settings.OWNER)
     response['Content-Length'] = length
 
     return response 

@@ -46,7 +46,7 @@
         recreate: "False"
         command: "{{ item.command | default('/usr/bin/supervisord -n') }}"
         privileged: "{{ item.privileged | default(omit) }}"
-        ports: "{{ item.ports | default(omit) }}"
+        exposed_ports: "{{ item.ports | default(omit) }}"
         volumes: "{{ item.volumes | default(omit) }}"
         capabilities: "{{ item.capabilities | default(omit) }}"
       with_items: "{{ molecule_yml.platforms }}"

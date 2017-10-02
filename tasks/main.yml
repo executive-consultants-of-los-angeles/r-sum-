@@ -1,6 +1,4 @@
 ---
-- name: "Include some additional facts."
-  include: facts.yml
 - name: "Install some packages with pip."
   pip:
     name: "{{ item }}"
@@ -37,13 +35,17 @@
     src: /root/.ansible/roles/rsum/files/rsum
     dest: /srv/rsum
 - name: "Make migrations."
-  command: "/srv/rsum/rsum/manage.py makemigrations home"
+  command: '
+    /srv/rsum/rsum/manage.py makemigrations home
+    --settings rsum.settings.mrsum
+  '
   args:
     creates: /srv/rsum/rsum/home/migrations
 - name: "Migrate db."
   django_manage:
     command: migrate
     app_path: /srv/rsum/rsum
+    settings: rsum.settings.mrsum
 - name: "Copy settings for supervisord."
   copy:
     src: "supervisor/{{ inventory_hostname }}.conf"
