@@ -16,7 +16,7 @@ def test_hosts_file(host):
 
 def test_http_connection(host):
     h = host.get_host('docker://mrsum')
-    s = h.socket('tcp://0.0.0.0:8193')
+    s = h.socket('tcp://0.0.0.0:8192')
 
     assert s.is_listening
 
