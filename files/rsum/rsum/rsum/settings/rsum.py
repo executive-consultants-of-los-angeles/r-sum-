@@ -10,6 +10,7 @@ values = {
         'name': 'general',
         'host': 'apsql',
     },
+    'xrsum': {
         'dir': 'xander',
         'owner': 'xander-harris',
         'template': 'xander',

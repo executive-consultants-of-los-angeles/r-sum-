@@ -9,7 +9,7 @@ from django.db import models
 from django.http import HttpResponse
 from django.conf import settings
 
-from schema.cv import CV
+from models.cv import CV
 
 from export.word import ExportDocument
 

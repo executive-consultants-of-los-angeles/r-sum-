@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """Module for exporting cvs to Word format."""
-import docx
+from __future__ import print_function
 
+import datetime
+import socket
+import docx
 from StringIO import StringIO
 
 from docx import Document
@@ -13,15 +16,11 @@ from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.enum.style import WD_BUILTIN_STYLE
-
 from rsum.settings.rsum import values
 
-import home.schema
+import home.models
 
-import datetime
-import socket
-
-CV = home.schema.cv.CV
+CV = home.models.cv.CV
 
 
 class ExportDocument(object):
