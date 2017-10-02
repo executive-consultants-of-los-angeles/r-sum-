@@ -25,7 +25,7 @@ class CV(models.Model):
         """Check to see if the current CV Model already has sections."""
         prefix = '/srv/rsum/cvs/'
         with open(
-            prefix+settings.CV_SETTINGS.get(socket.gethostname()).get('dir')+'/'+settings.CV_SETTINGS.get(socket.gethostname()).get('name')+'.yml',
+            prefix+settings.DIR+'/'+settings.CV+'.yml',
             'r'
         ) as cv_file:
             cv_dict = yaml.load(cv_file.read())
