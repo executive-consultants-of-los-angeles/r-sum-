@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Module containing the CV Model class."""
 from __future__ import unicode_literals
 from __future__ import print_function
 
@@ -8,17 +9,23 @@ import json
 import socket
 import yaml
 
+import django
 from django.db import models
 from django.conf import settings
+
+django.setup()
+
 from section import Section
 from subsection import SubSection
 
 
 class CV(models.Model):
+    """The CV Model class."""
     name = models.CharField(max_length=200)
     template = models.CharField(max_length=200, null=True)
 
     def check_sections(self, *args, **kwargs):
+        """Check to see if the current CV Model already has sections."""
         prefix = '/srv/rsum/cvs/'
         with open(
             prefix+settings.CV_SETTINGS.get(socket.gethostname()).get('dir')+'/'+settings.CV_SETTINGS.get(socket.gethostname()).get('name')+'.yml',
@@ -33,6 +40,7 @@ class CV(models.Model):
         return self.id 
 
     def get_cv(self, cv_id=1, *args, **kwargs):
+        """Get the CV at location cv_id."""
         s = Section()
         cv = {
             'name': kwargs.get('name_of_cv'),
@@ -45,6 +53,7 @@ class CV(models.Model):
         return cv
 
     def get_experience(self, context):
+        """Get the experience section for related value in context."""
         experience_list = context.get('cv')[4].get('content')[1:]
         for k, v in enumerate(experience_list):
             for p, i in v.get(
@@ -66,6 +75,7 @@ class CV(models.Model):
         return experience_list
 
     def get_skills(self, context):
+        """Get Skills section for related value in context."""
         skills = context.get('cv')[2].get('content')
         skillset = {}
 
@@ -136,6 +146,7 @@ class CV(models.Model):
         return skillset
 
     def get_values(self, context):
+        """Get values section for related value in context."""
         values = {}
         values_list = context.get(
             'cv'
@@ -154,6 +165,7 @@ class CV(models.Model):
         return values_list
 
     def save_cv(self, cv_d, name='default', *args, **kwargs):
+        """Save the current CV model."""
         cv = CV()
         cv.name = name 
         cv.template = kwargs.get('template')

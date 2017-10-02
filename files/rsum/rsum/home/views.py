@@ -18,6 +18,7 @@ import socket
 
 
 def index(request):
+    """Method for loading the index page."""
     cv_instance = CV()
 
     cv_id = cv_instance.check_sections(name_of_owner=settings.CV_SETTINGS.get(socket.gethostname()).get('owner'), name_of_cv=settings.CV_SETTINGS.get(socket.gethostname()).get('name'))
@@ -55,6 +56,7 @@ def index(request):
     return render(request, 'home/index.html', context)
 
 def export_docx(request, cv_id='1'):
+    """Method for exporting Word documents."""
     stream = ExportDocument().export(cv_id)
 
     # Special thanks to: https://stackoverflow.com/a/24122313 
