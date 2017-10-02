@@ -47,6 +47,7 @@
   django_manage:
     command: migrate
     app_path: /srv/rsum/rsum
+    settings: rsum.settings.mrsum
 - name: "Copy settings for supervisord."
   copy:
     src: "supervisor/{{ inventory_hostname }}.conf"
