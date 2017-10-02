@@ -7,23 +7,6 @@ from django.test import TestCase
 
 import yaml
 
-import home 
-
-from exam.cv import CVTestCase
-from exam.cv import CVGetsTestCase
-from exam.section import SectionTestCase
-from exam.section import GetSectionTestCase
-from exam.subsection import SubSectionTestCase
-from exam.subsection import GetSubSectionTestCase
-from exam.project import ProjectTestCase
-from exam.project import GetProjectTestCase
-from exam.projectitem import ProjectItemTestCase
-from exam.projectitem import GetProjectItemTestCase
-from exam.entry import EntryTestCase
-from exam.entry import GetEntryTestCase
-from exam.entryitem import EntryItemTestCase
-from exam.entryitem import GetEntryItemTestCase
-from exam.views import ViewsTestCase
 import cv
 import section
 import subsection
