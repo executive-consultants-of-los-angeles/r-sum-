@@ -24,7 +24,8 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="home.models.entryitem.EntryItem" href="home.models.entryitem.EntryItem.html" />
+    <link rel="next" title="EntryItem Class" href="home.models.entryitem.html" />
+    <link rel="prev" title="home.models" href="../home.models.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -65,7 +66,7 @@
 <tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">check</span></code>(**kwargs)</td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../cv/home.models.cv.CV.html#home.models.cv.CV.check_sections" title="home.models.cv.CV.check_sections"><code class="xref py py-obj docutils literal"><span class="pre">check_sections</span></code></a>(*args,&nbsp;**kwargs)</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">check_sections</span></code>(*args,&nbsp;**kwargs)</td>
 <td>Check to see if the current CV Model already has sections.</td>
 </tr>
 <tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">clean</span></code>()</td>
@@ -86,19 +87,19 @@
 <tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">full_clean</span></code>([exclude,&nbsp;validate_unique])</td>
 <td>Calls clean_fields, clean, and validate_unique, on the model, and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../cv/home.models.cv.CV.html#home.models.cv.CV.get_cv" title="home.models.cv.CV.get_cv"><code class="xref py py-obj docutils literal"><span class="pre">get_cv</span></code></a>([cv_id])</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">get_cv</span></code>([cv_id])</td>
 <td>Get the CV at location cv_id.</td>
 </tr>
 <tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">get_deferred_fields</span></code>()</td>
 <td>Returns a set containing names of deferred fields for this instance.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../cv/home.models.cv.CV.html#home.models.cv.CV.get_experience" title="home.models.cv.CV.get_experience"><code class="xref py py-obj docutils literal"><span class="pre">get_experience</span></code></a>(context)</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">get_experience</span></code>(context)</td>
 <td>Get the experience section for related value in context.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../cv/home.models.cv.CV.html#home.models.cv.CV.get_skills" title="home.models.cv.CV.get_skills"><code class="xref py py-obj docutils literal"><span class="pre">get_skills</span></code></a>(context)</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">get_skills</span></code>(context)</td>
 <td>Get Skills section for related value in context.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../cv/home.models.cv.CV.html#home.models.cv.CV.get_values" title="home.models.cv.CV.get_values"><code class="xref py py-obj docutils literal"><span class="pre">get_values</span></code></a>(context)</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">get_values</span></code>(context)</td>
 <td>Get values section for related value in context.</td>
 </tr>
 <tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">prepare_database_save</span></code>(field)</td>
@@ -113,7 +114,7 @@
 <tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">save_base</span></code>([raw,&nbsp;force_insert,&nbsp;force_update,&nbsp;…])</td>
 <td>Handles the parts of saving which should be done only once per save, yet need to be done in raw saves, too.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../cv/home.models.cv.CV.html#home.models.cv.CV.save_cv" title="home.models.cv.CV.save_cv"><code class="xref py py-obj docutils literal"><span class="pre">save_cv</span></code></a>(cv_d[,&nbsp;name])</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">save_cv</span></code>(cv_d[,&nbsp;name])</td>
 <td>Save the current CV model.</td>
 </tr>
 <tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">serializable_value</span></code>(field_name)</td>
@@ -152,7 +153,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../tests/home.tests.html">home.tests</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../home.models.html">home.models</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">home.models.cv.CV</a></li>
-<li class="toctree-l3"><a class="reference internal" href="home.models.entryitem.EntryItem.html">home.models.entryitem.EntryItem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.models.entryitem.html">EntryItem Class</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../export/home.export.html">home.export</a></li>
@@ -170,7 +171,8 @@
   <li><a href="../../../index.html">Documentation overview</a><ul>
   <li><a href="../../home.html">home</a><ul>
   <li><a href="../home.models.html">home.models</a><ul>
-      <li>Next: <a href="home.models.entryitem.EntryItem.html" title="next chapter">home.models.entryitem.EntryItem</a></li>
+      <li>Previous: <a href="../home.models.html" title="previous chapter">home.models</a></li>
+      <li>Next: <a href="home.models.entryitem.html" title="next chapter">EntryItem Class</a></li>
   </ul></li>
   </ul></li>
   </ul></li>
