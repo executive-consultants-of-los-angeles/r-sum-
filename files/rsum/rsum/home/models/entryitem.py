@@ -16,7 +16,10 @@ class EntryItem(models.Model):
     def get_list_item(self, entry):
         """Get an EntryItem object.
 
-        :param obj entry: The related Entry object.
+        :param entry: The related Entry object.
+        :type entry: object 
+        :return: List of EntryItem dictionaries.
+        :rtype: list
         """
         items = []
         for item in list(
@@ -31,9 +34,9 @@ class EntryItem(models.Model):
         """Save an EntryItem object.
         
         :param entry_item: Content for current item.
-        :type entry_item: str or list(str) 
+        :type entry_item: str or list(str)
         :param entry: Related Entry object.
-        :type entry: obj
+        :type entry: object
         :return: Dictionary of EntryItem values.
         :rtype: dict[str, str]
         """
