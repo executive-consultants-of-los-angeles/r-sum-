@@ -22,7 +22,13 @@ class ProjectItem(models.Model):
     content = models.TextField(null=True)
 
     def get_project_item(self, project):
-        """Get a ProjectItem object."""
+        """Get a ProjectItem object.
+
+        :param project: Associated :obj:`home.models.project.Project` object.
+        :type project: :obj:`home.models.project.Project`
+        :return: A dictionary of ProjectItem values or a list of same.
+        :rtype: dict(str, str) or list(dict) 
+        """
         try:
             name = list(project.values())[0].get('name')
             pid = {
@@ -39,7 +45,10 @@ class ProjectItem(models.Model):
                 })
             return pid
         except Exception as e:
-            # print(e)
+            #: print(e)
+            """
+            .. todo:: Something with this Exception.
+            """
             pass
 
         project_items = []
@@ -62,7 +71,7 @@ class ProjectItem(models.Model):
                 project_items.append({
                     project_item.get('name'): project_item.get('content')
                 })
-        # print(json.dumps(project_items, indent=1))
+        #: print(json.dumps(project_items, indent=1))
         return project_items
 
     def save_project_item(self, project_item, project):
