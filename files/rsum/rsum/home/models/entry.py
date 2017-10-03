@@ -9,7 +9,11 @@ from entryitem import EntryItem
 
 
 class Entry(models.Model):
-    """Class for Entry objects."""
+    """Class for Entry objects.
+
+    :attribute projectitem:
+        Associated obj:`home.models.projectitem.ProjectItem` object.
+    """
     projectitem = models.ForeignKey(
         'home.ProjectItem',
         on_delete=models.CASCADE

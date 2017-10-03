@@ -10,7 +10,7 @@ from django.db import models
 class EntryItem(models.Model):
     """Class that defines EntryItem objects.
     
-    :attribute entry: Related entry object. 
+    :attribute entry: Related :obj:`home.models.entry.Entry` object.
     :attribute name: Name of stored content.
     :attribute content: Stored content.
     """

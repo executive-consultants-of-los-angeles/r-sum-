@@ -4,5 +4,6 @@ home\.models
 .. autosummary::
    :toctree: classes
 
-   home.models.cv.CV
-   home.models.entryitem
+   home.models.cv
+   home.models.entry
+   home.models.entryitem 

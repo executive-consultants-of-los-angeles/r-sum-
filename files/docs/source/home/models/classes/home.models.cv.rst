@@ -1,0 +1,22 @@
+home\.models\.cv
+================
+
+.. automodule:: home.models.cv
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CV
+   
+   
+
+   
+   
+   
