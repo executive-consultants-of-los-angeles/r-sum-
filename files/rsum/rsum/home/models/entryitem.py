@@ -34,9 +34,9 @@ class EntryItem(models.Model):
         """Save an EntryItem object.
         
         :param entry_item: Content for current item.
-        :type entry_item: str or list(str)
+        :type entry_item: unicode or str or list(str)
         :param entry: Related Entry object.
-        :type entry: object
+        :type entry: obj:`home.models.entry.Entry`
         :return: Dictionary of EntryItem values.
         :rtype: dict[str, str]
         """
