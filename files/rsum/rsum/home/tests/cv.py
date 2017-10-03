@@ -9,7 +9,7 @@ import yaml
 
 from django.test import TestCase
 
-from home.schema.cv import CV
+from home.models.cv import CV
 from rsum.settings.rsum import values
 
 

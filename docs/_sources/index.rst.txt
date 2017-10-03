@@ -7,6 +7,7 @@ rsum package docs
    home
    home.models
    home.tests
+   home.tests.cv
    home.views
    rsum
    rsum.settings

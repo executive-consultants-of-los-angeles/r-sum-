@@ -7,3 +7,4 @@ from django.test import TestCase
 
 import yaml
 
+import cv

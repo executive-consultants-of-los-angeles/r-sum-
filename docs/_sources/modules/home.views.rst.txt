@@ -11,13 +11,5 @@ home\.views
    
       export_docx
       index
-   
-   
 
-   
-   
-   
-
-   
-   
-   
+.. vim: ft=rst sts=3 ts=3 sw=e:   
