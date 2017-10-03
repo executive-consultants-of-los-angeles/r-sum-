@@ -6,3 +6,4 @@ EntryItem Class
 .. autoclass:: EntryItem 
    :members:
 
+   .. method:: get_list_item(entry)
