@@ -1,7 +1,7 @@
-home\.models\.entryitem\.EntryItem
-==================================
+EntryItem Class
+====================
 
 .. currentmodule:: home.models.entryitem
 
-.. autoclass:: EntryItem
+.. autoclass:: EntryItem 
    :members:
