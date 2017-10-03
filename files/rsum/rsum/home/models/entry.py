@@ -9,8 +9,15 @@ from entryitem import EntryItem
 
 
 class Entry(models.Model):
-    """Class for Entry objects."""
-    projectitem = models.ForeignKey(
+    """Class for Entry objects.
+
+    :attribute project_item:
+        Associated :obj:`home.models.project_item.ProjectItem` object.
+
+    :attribute name: Name of stored content.
+    :attribute content: Actual stored content.
+    """
+    project_item = models.ForeignKey(
         'home.ProjectItem',
         on_delete=models.CASCADE
     )
@@ -18,16 +25,22 @@ class Entry(models.Model):
     content = models.TextField() 
 
     def get_entry(self, project_item):
-        """Get an Entry object."""
+        """Get an Entry object.
+        
+        :param project_item: Related ProjectItem object.
+        :type project_item: :obj:`home.models.projectitem.ProjectItem`
+        :return: List of associated Entry object values.
+        :rtype: list(object)
+        """
         entries = []
         for entry in list(
             Entry.objects.filter(
-                projectitem=project_item
+                project_item=project_item
             ).values()
         ):
-            eli = EntryItem()
+            entry_item_instance = EntryItem()
             entry.update({
-                'value': eli.get_list_item(
+                'value': entry_item_instance.get_list_item(
                     Entry.objects.filter(
                         id=entry.get('id')
                     )
@@ -36,17 +49,24 @@ class Entry(models.Model):
             entries.append(entry)
         return entries
 
-    def save_entry(self, entry, pi_l):
-        """Save an Entry object."""
+    def save_entry(self, entry, project_item):
+        """Save an Entry object.
+
+        :param entry: Entry to be saved.
+        :type entry: :obj:'`home.models.entry.Entry`
+        :param project_item: Related :obj:`home.models.projectitem.ProjectItem` 
+        :return: Dictionary containing the saved Entry values.
+        :rtype: dict(str, str)
+        """
         if isinstance(entry, dict):
             for k, v in entry.iteritems():
-                pe_i = Entry()
-                pe_i.projectitem = pi_l
-                pe_i.name = k
-                pe_i.value = type(v)
-                pe_i.save()
-                eli = EntryItem()
-                eli.save_list_item(v, pe_i)
+                entry_instance = Entry()
+                entry_instance.project_item = project_item 
+                entry_instance.name = k
+                entry_instance.value = type(v)
+                entry_instance.save()
+                entry_item_instance = EntryItem()
+                entry_item_instance.save_list_item(v, entry_instance)
             return Entry.objects.values() 
 
     class Meta:
