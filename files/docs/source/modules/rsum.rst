@@ -1,7 +1,7 @@
-home
+rsum
 ====
 
-.. automodule:: home
+.. automodule:: rsum
 
    
    
