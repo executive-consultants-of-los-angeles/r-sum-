@@ -1,6 +1,5 @@
 CVTestCase
 ==========
 
-.. currentmodule:: home.tests.cv
-
-.. autoclass:: CVTestCase
+.. autoclass:: home.tests.cv.CVTestCase
+   :members:
