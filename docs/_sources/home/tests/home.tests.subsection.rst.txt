@@ -2,17 +2,11 @@ home\.tests\.subsection
 =======================
 
 .. automodule:: home.tests.subsection
-
-   
-   
-   
-
-   
    
    .. rubric:: Classes
 
    .. autosummary::
-      :toctree: classes
+      :toctree: subsection 
    
       GetSubSectionTestCase
       SubSectionTestCase

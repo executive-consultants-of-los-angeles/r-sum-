@@ -12,6 +12,7 @@ home\.tests\.projectitem
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree: projectitem
    
       GetProjectItemTestCase
       ProjectItemTestCase

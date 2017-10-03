@@ -6,7 +6,7 @@ home\.tests\.cv
    .. rubric:: Classes
 
    .. autosummary::
-      :toctree: classes
+      :toctree: cv 
    
       CVGetsTestCase
       CVTestCase

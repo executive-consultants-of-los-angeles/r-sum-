@@ -6,7 +6,7 @@ home\.tests\.section
    .. rubric:: Classes
 
    .. autosummary::
-      :toctree: classes
+      :toctree: section 
    
       GetSectionTestCase
       SectionTestCase
