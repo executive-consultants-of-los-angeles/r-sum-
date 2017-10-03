@@ -23,6 +23,10 @@ script:
   - molecule test
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
+on_success: never
+on_failure: never
+services:
+  docker
 # deploy:
 #   provider: script
 #   skip_cleanup: true
@@ -31,9 +35,5 @@ notifications:
 #     duchess@ecla.solutions /src/rsum/files/deploy/deploy.bash
 #   "on":
 #     branch: master
-on_success: never
-on_failure: never
-services:
-  docker
 ...
 # vim: ft=ansible:
