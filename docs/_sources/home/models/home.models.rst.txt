@@ -1,4 +1,4 @@
-home\.models
+home.models
 ============
 
 .. currentmodule:: home.models

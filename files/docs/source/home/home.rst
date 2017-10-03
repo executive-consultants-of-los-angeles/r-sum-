@@ -6,10 +6,17 @@ home
 
    home.tests
 
+
 .. autosummary::
    :toctree: models
 
    home.models
+
+.. autosummary::
+   :toctree: export
+
+   home.export
+
 
 .. autosummary::
    :toctree: views
@@ -18,4 +25,4 @@ home
 
 .. automodule:: home
 
-
+.. vim: ft=rst sts=3 ts=3 sw=3:
