@@ -2,12 +2,14 @@ rsum package docs
 =================
 
 .. autosummary::
-   :toctree: modules
+   :toctree: home 
 
    home
+
+.. autosummary::
+   :toctree: rsum
+
    rsum
-   rsum.settings
-   rsum.settings.mrsum
 
 
 Data Structure
