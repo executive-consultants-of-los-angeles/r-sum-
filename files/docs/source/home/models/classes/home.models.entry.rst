@@ -3,20 +3,7 @@ home\.models\.entry
 
 .. automodule:: home.models.entry
 
-   
-   
-   
+.. currentmodule:: home.models.entry
 
-   
-   
-   .. rubric:: Classes
-
-   .. autosummary::
-   
-      Entry
-   
-   
-
-   
-   
-   
+.. autoclass:: Entry
+   :members:
