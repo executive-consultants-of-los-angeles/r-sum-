@@ -14,7 +14,10 @@ class EntryItem(models.Model):
     content = models.TextField() 
 
     def get_list_item(self, entry):
-        """Get an EntryItem object."""
+        """Get an EntryItem object.
+
+        :param: obj entry: The related Entry object.
+        """
         items = []
         for item in list(
             EntryItem.objects.filter(
@@ -25,7 +28,11 @@ class EntryItem(models.Model):
         return items
 
     def save_list_item(self, list_item, pe):
-        """Save an EntryItem object."""
+        """Save an EntryItem object.
+        
+        :param: list_item [list, str, unicode]: Content for current item.
+        :param: pe obj: Related Entry object.
+        """
         if (
             isinstance(list_item, str) or
             isinstance(list_item, unicode)
