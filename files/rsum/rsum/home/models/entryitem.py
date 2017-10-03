@@ -27,28 +27,31 @@ class EntryItem(models.Model):
             items.append(item)
         return items
 
-    def save_list_item(self, list_item, pe):
+    def save_list_item(self, entry_item, entry):
         """Save an EntryItem object.
         
-        :param list_item: Content for current item.
-        :type list_item: list(str) or str or unicode
-        :param obj pe: Related Entry object.
+        :param entry_item: Content for current item.
+        :type entry_item: str or list(str) 
+        :param entry: Related Entry object.
+        :type entry: obj
+        :return: Dictionary of EntryItem values.
+        :rtype: dict[str, str]
         """
         if (
-            isinstance(list_item, str) or
-            isinstance(list_item, unicode)
+            isinstance(entry_item, str) or
+            isinstance(entry_item, unicode)
         ):
-            eli = EntryItem()
-            eli.entry = pe
-            eli.value = list_item
-            eli.save()
+            entry_item_instance = EntryItem()
+            entry_item_instance.entry = entry 
+            entry_item_instance.value = entry_item 
+            entry_item_instance.save()
 
-        if isinstance(list_item, list):
-            for i in list_item:
-                eli = EntryItem()
-                eli.entry = pe
-                eli.value = str(i)
-                eli.save()
+        if isinstance(entry_item, list):
+            for entry_item_value in entry_item:
+                entry_item_instance = EntryItem()
+                entry_item_instance.entry = entry 
+                entry_item_instance.content = str(entry_item_value)
+                entry_item_instance.save()
         return EntryItem.objects.values() 
 
     class Meta:
