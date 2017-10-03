@@ -1,4 +1,4 @@
-home\.models\.entryitem\.EntryItem
+EntryItem Class
 ==================================
 
 .. currentmodule:: home.models.entryitem
