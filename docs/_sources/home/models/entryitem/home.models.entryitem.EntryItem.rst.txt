@@ -5,3 +5,4 @@ EntryItem Class
 
 .. autoclass:: EntryItem 
    :members:
+
