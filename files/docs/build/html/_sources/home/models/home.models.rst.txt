@@ -1,4 +1,4 @@
 home\.models
 ============
 
-.. automodule:: home.models
+.. autosummary:: home.models
