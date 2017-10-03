@@ -12,6 +12,7 @@ home\.tests\.subsection
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree: classes
    
       GetSubSectionTestCase
       SubSectionTestCase
