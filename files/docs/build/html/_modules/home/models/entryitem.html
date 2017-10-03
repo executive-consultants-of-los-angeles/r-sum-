@@ -50,6 +50,8 @@
 
 <div class="viewcode-block" id="EntryItem"><a class="viewcode-back" href="../../../home/models/entryitem/home.models.entryitem.EntryItem.html#home.models.entryitem.EntryItem">[docs]</a><span class="k">class</span> <span class="nc">EntryItem</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Class that defines EntryItem objects.</span>
+
+<span class="sd">    .. py:method:: get_list_item(entry)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">entry</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;home.Entry&#39;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;entry item&#39;</span><span class="p">)</span>
