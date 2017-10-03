@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Module to define class for Project objects."""
 from __future__ import unicode_literals
 from __future__ import print_function
 
@@ -10,6 +11,7 @@ import json
 
 
 class Project(models.Model):
+    """Class for project objects."""
     sub_section = models.ForeignKey(
         'home.SubSection',
         on_delete=models.CASCADE
@@ -18,6 +20,7 @@ class Project(models.Model):
     content = models.TextField()
 
     def get_projects(self, subsection):
+        """Get all Project objects."""
         # print(subsection)
         projects = []
         for project in list(
@@ -40,6 +43,7 @@ class Project(models.Model):
         return projects
 
     def save_projects(self, projects, sub_section, name):
+        """Save all Project objects."""
         # print(json.dumps(projects, indent=1))
         # print(name)
         if name == 'id':

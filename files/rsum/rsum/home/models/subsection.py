@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Module for class that defines SubSection objects."""
 from __future__ import unicode_literals
 from __future__ import print_function
 
@@ -10,6 +11,7 @@ import json
 
 
 class SubSection(models.Model):
+    """Class to define SubSection objects."""
     section = models.ForeignKey(
         'home.Section', 
         on_delete=models.CASCADE,
@@ -19,6 +21,7 @@ class SubSection(models.Model):
     content = models.TextField()
 
     def get_sub_section(self, section):
+        """Get a SubSection object."""
         # print(SubSection.objects.filter(section=section).values())
         subsections = []
         for subsection in list(
@@ -54,6 +57,7 @@ class SubSection(models.Model):
         return subsections
 
     def save_sub_sections(self, sub_section, section):
+        """Save SubSection objects."""
         projects = []
         if (
             getattr(section, 'name') == 'experience' or

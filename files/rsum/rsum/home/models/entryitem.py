@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Module to define EntryItem objects."""
 from __future__ import unicode_literals
 from __future__ import print_function
 
@@ -7,11 +8,13 @@ from django.db import models
 
 
 class EntryItem(models.Model):
+    """Class that defines EntryItem objects."""
     entry = models.ForeignKey('home.Entry', on_delete=models.CASCADE)
     name = models.CharField(max_length=255, default='entry item')
     content = models.TextField() 
 
     def get_list_item(self, entry):
+        """Get an EntryItem object."""
         items = []
         for item in list(
             EntryItem.objects.filter(
@@ -22,6 +25,7 @@ class EntryItem(models.Model):
         return items
 
     def save_list_item(self, list_item, pe):
+        """Save an EntryItem object."""
         if (
             isinstance(list_item, str) or
             isinstance(list_item, unicode)

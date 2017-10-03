@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Module for Entry objects."""
 from __future__ import unicode_literals
 from __future__ import print_function
 
@@ -8,6 +9,7 @@ from entryitem import EntryItem
 
 
 class Entry(models.Model):
+    """Class for Entry objects."""
     projectitem = models.ForeignKey(
         'home.ProjectItem',
         on_delete=models.CASCADE
@@ -16,6 +18,7 @@ class Entry(models.Model):
     content = models.TextField() 
 
     def get_entry(self, project_item):
+        """Get an Entry object."""
         entries = []
         for entry in list(
             Entry.objects.filter(
@@ -34,6 +37,7 @@ class Entry(models.Model):
         return entries
 
     def save_entry(self, entry, pi_l):
+        """Save an Entry object."""
         if isinstance(entry, dict):
             for k, v in entry.iteritems():
                 pe_i = Entry()

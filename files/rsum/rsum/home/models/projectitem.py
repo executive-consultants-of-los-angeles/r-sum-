@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Module that definies ProjectItem objects."""
 from __future__ import unicode_literals
 from __future__ import print_function
 
@@ -10,11 +11,13 @@ import json
 
 
 class ProjectItem(models.Model):
+    """Class that definies ProjectItem objects."""
     project = models.ForeignKey('home.Project', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     content = models.TextField(null=True)
 
     def get_project_item(self, project):
+        """Get a ProjectItem object."""
         try:
             name = list(project.values())[0].get('name')
             pid = {
@@ -58,6 +61,7 @@ class ProjectItem(models.Model):
         return project_items
 
     def save_project_item(self, project_item, project):
+        """Save a ProjectItem object."""
         if isinstance(project_item, list):
             print('save the list you dolt!')
 

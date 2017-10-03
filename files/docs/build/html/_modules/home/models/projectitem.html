@@ -41,6 +41,7 @@
   <h1>Source code for home.models.projectitem</h1><div class="highlight"><pre>
 <span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;Module that definies ProjectItem objects.&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">unicode_literals</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
 
@@ -51,11 +52,13 @@
 
 
 <div class="viewcode-block" id="ProjectItem"><a class="viewcode-back" href="../../../home/models/projectitem/home.models.projectitem.ProjectItem.html#home.models.projectitem.ProjectItem">[docs]</a><span class="k">class</span> <span class="nc">ProjectItem</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class that definies ProjectItem objects.&quot;&quot;&quot;</span>
     <span class="n">project</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;home.Project&#39;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">get_project_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">):</span>
+<div class="viewcode-block" id="ProjectItem.get_project_item"><a class="viewcode-back" href="../../../home/models/projectitem/home.models.projectitem.ProjectItem.html#home.models.projectitem.ProjectItem.get_project_item">[docs]</a>    <span class="k">def</span> <span class="nf">get_project_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get a ProjectItem object.&quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">project</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
             <span class="n">pid</span> <span class="o">=</span> <span class="p">{</span>
@@ -96,9 +99,10 @@
                     <span class="n">project_item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">):</span> <span class="n">project_item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">)</span>
                 <span class="p">})</span>
         <span class="c1"># print(json.dumps(project_items, indent=1))</span>
-        <span class="k">return</span> <span class="n">project_items</span>
+        <span class="k">return</span> <span class="n">project_items</span></div>
 
-    <span class="k">def</span> <span class="nf">save_project_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project_item</span><span class="p">,</span> <span class="n">project</span><span class="p">):</span>
+<div class="viewcode-block" id="ProjectItem.save_project_item"><a class="viewcode-back" href="../../../home/models/projectitem/home.models.projectitem.ProjectItem.html#home.models.projectitem.ProjectItem.save_project_item">[docs]</a>    <span class="k">def</span> <span class="nf">save_project_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project_item</span><span class="p">,</span> <span class="n">project</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Save a ProjectItem object.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">project_item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;save the list you dolt!&#39;</span><span class="p">)</span>
 
@@ -127,7 +131,7 @@
             <span class="n">pi_i</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">project_item</span>
             <span class="n">pi_i</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">name</span> 
             <span class="n">pi_i</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">ProjectItem</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> 
+        <span class="k">return</span> <span class="n">ProjectItem</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> </div>
 
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">app_label</span> <span class="o">=</span> <span class="s1">&#39;home&#39;</span>

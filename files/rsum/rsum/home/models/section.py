@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Model class that handles Section objects."""
 from __future__ import unicode_literals
 from __future__ import print_function
 
@@ -10,11 +11,13 @@ import json
 
 
 class Section(models.Model):
+    """Class to define Section objects."""
     cv = models.ForeignKey('home.CV', on_delete=models.CASCADE)
     name = models.CharField(max_length=200, default='section')
     content = models.TextField()
 
     def get_sections(self, cv):
+        """Get all Section objects for a document."""
         sections = [] 
         for section in list(
             Section.objects.filter(
@@ -43,6 +46,7 @@ class Section(models.Model):
         return sections
 
     def save_section(self, cv, section, name):
+        """Save one Section object."""
         if section is None:
             return None
         s_i = Section()
