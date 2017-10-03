@@ -47,75 +47,58 @@
 <dt id="home.models.entryitem.EntryItem">
 <em class="property">class </em><code class="descclassname">home.models.entryitem.</code><code class="descname">EntryItem</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/entryitem.html#EntryItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.entryitem.EntryItem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class that defines EntryItem objects.</p>
-<dl class="method">
-<dt id="home.models.entryitem.EntryItem.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#home.models.entryitem.EntryItem.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>x.__init__(…) initializes x; see help(type(x)) for signature</p>
-</dd></dl>
+<dl class="exception">
+<dt id="home.models.entryitem.EntryItem.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#home.models.entryitem.EntryItem.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
+<dl class="exception">
+<dt id="home.models.entryitem.EntryItem.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#home.models.entryitem.EntryItem.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="home.models.entryitem.EntryItem.get_list_item">
+<code class="descname">get_list_item</code><span class="sig-paren">(</span><em>entry</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/entryitem.html#EntryItem.get_list_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.entryitem.EntryItem.get_list_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an EntryItem object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#home.models.entryitem.EntryItem.__init__" title="home.models.entryitem.EntryItem.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(*args,&nbsp;**kwargs)</td>
-<td>x.__init__(…) initializes x; see help(type(x)) for signature</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>entry</strong> (obj:<cite>home.models.entry.Entry</cite>) – The related Entry object.</td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">check</span></code>(**kwargs)</td>
-<td></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">List of EntryItem dictionaries.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">clean</span></code>()</td>
-<td>Hook for doing any extra model-wide validation after clean() has been called on every field by self.clean_fields.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">clean_fields</span></code>([exclude])</td>
-<td>Cleans all fields and raises a ValidationError containing a dict of all validation errors if any occur.</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">date_error_message</span></code>(lookup_type,&nbsp;field_name,&nbsp;…)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">delete</span></code>([using,&nbsp;keep_parents])</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">from_db</span></code>(db,&nbsp;field_names,&nbsp;values)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">full_clean</span></code>([exclude,&nbsp;validate_unique])</td>
-<td>Calls clean_fields, clean, and validate_unique, on the model, and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">get_deferred_fields</span></code>()</td>
-<td>Returns a set containing names of deferred fields for this instance.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="../entryitem/home.models.entryitem.EntryItem.html#home.models.entryitem.EntryItem.get_list_item" title="home.models.entryitem.EntryItem.get_list_item"><code class="xref py py-obj docutils literal"><span class="pre">get_list_item</span></code></a>(entry)</td>
-<td>Get an EntryItem object.</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">prepare_database_save</span></code>(field)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">refresh_from_db</span></code>([using,&nbsp;fields])</td>
-<td>Reloads field values from the database.</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">save</span></code>([force_insert,&nbsp;force_update,&nbsp;using,&nbsp;…])</td>
-<td>Saves the current instance.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">save_base</span></code>([raw,&nbsp;force_insert,&nbsp;force_update,&nbsp;…])</td>
-<td>Handles the parts of saving which should be done only once per save, yet need to be done in raw saves, too.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="../entryitem/home.models.entryitem.EntryItem.html#home.models.entryitem.EntryItem.save_list_item" title="home.models.entryitem.EntryItem.save_list_item"><code class="xref py py-obj docutils literal"><span class="pre">save_list_item</span></code></a>(entry_item,&nbsp;entry)</td>
-<td>Save an EntryItem object.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">serializable_value</span></code>(field_name)</td>
-<td>Returns the value of the field name for this instance.</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">unique_error_message</span></code>(model_class,&nbsp;unique_check)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">validate_unique</span></code>([exclude])</td>
-<td>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code> if any failed.</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list(obj:<cite>home.models.entryitem.EntryItem</cite>)</td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.entryitem.EntryItem.save_list_item">
+<code class="descname">save_list_item</code><span class="sig-paren">(</span><em>entry_item</em>, <em>entry</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/entryitem.html#EntryItem.save_list_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.entryitem.EntryItem.save_list_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save an EntryItem object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entry_item</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em> or </em><em>list</em><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>)</em>) – Content for current item.</li>
+<li><strong>entry</strong> (obj:<cite>home.models.entry.Entry</cite>) – Related Entry object.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Dictionary of EntryItem values.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a>[<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a>, <a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a>]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 </div>
