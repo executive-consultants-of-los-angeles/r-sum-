@@ -21,11 +21,6 @@ rsum package docs
 * `home.tests <Modules/Home.Tests>`_
 * `home.views <Modules/Home.Views>`_
 
-Data Structure
-==============
-
-.. image:: img/data-strcuture-yml.png
-
 
 Schema
 ======

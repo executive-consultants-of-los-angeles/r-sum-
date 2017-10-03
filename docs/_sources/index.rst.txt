@@ -12,4 +12,9 @@ rsum package docs
    rsum.settings
    rsum.settings.mrsum
 
+Data Structure
+==============
+
+.. image:: img/data-strcuture-yml.png
+
 .. vim: ft=rst sts=3 sw=3 ts=3:
