@@ -17,9 +17,9 @@ class EntryItem(models.Model):
         """Get an EntryItem object.
 
         :param entry: The related Entry object.
-        :type entry: object 
+        :type entry: obj:`home.models.entry.Entry`
         :return: List of EntryItem dictionaries.
-        :rtype: list[object]
+        :rtype: list(object)
         """
         items = []
         for item in list(
