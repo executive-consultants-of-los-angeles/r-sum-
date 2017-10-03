@@ -1,8 +1,8 @@
 home\.models
 ============
 
-.. autosummary:: home.models
-  :toctree: classes
+.. autosummary::
+   :toctree: classes
 
    home.models.cv.CV
    home.models.entryitem.EntryItem

@@ -10,8 +10,7 @@ home
 .. autosummary::
    :toctree: models
 
-   home.models.cv
-   home.models.entryitem.EntryItem
+   home.models
 
 .. autosummary::
    :toctree: export
