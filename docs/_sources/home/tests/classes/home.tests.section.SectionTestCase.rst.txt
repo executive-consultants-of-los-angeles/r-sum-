@@ -1,5 +1,5 @@
-home\.tests\.section\.SectionTestCase
-=====================================
+SectionTestCase
+===============
 
 .. currentmodule:: home.tests.section
 
