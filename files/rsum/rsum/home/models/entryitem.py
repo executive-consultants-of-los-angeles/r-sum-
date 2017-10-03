@@ -31,7 +31,8 @@ class EntryItem(models.Model):
         """Save an EntryItem object.
         
         :param list_item: Content for current item.
-        :type list_item: list or str or unicode
+        :type list_item: unicode or str
+        :type list_item: list(str)
         :param obj pe: Related Entry object.
         """
         if (
