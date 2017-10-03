@@ -7,12 +7,12 @@ import socket
 import yaml
 
 from django.test import TestCase
-from home.schema.cv import CV
-from home.schema.section import Section
-from home.schema.subsection import SubSection
-from home.schema.project import Project
-from home.schema.projectitem import ProjectItem
-from home.schema.entry import Entry
+from home.models.cv import CV
+from home.models.section import Section
+from home.models.subsection import SubSection
+from home.models.project import Project
+from home.models.projectitem import ProjectItem
+from home.models.entry import Entry
 from rsum.settings.rsum import values
 
 

@@ -8,3 +8,9 @@ from django.test import TestCase
 import yaml
 
 import cv
+import section
+import subsection
+import project
+import projectitem
+import entry
+import entryitem

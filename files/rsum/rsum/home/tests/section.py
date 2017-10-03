@@ -8,8 +8,8 @@ import yaml
 
 from django.test import TestCase
 
-from home.schema.cv import CV
-from home.schema.section import Section
+from home.models.cv import CV
+from home.models.section import Section
 from rsum.settings.rsum import values
 
 
