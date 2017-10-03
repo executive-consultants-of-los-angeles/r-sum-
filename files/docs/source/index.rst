@@ -23,18 +23,18 @@ Data Structure
 Schema
 ======
 
-.. image:: img/schema.png
+.. image:: _static/img/schema.png
 
 
 Django Control Flow
 ===================
 
-.. image:: img/flowchart-django.png
+.. image:: _static/img/flowchart-django.png
 
 
 Network
 =======
 
-.. image:: img/network.png
+.. image:: _static/img/network.png
 
 .. vim: ft=rst sts=3 sw=3 ts=3:
