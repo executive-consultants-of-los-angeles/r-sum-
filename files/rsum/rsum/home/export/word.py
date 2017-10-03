@@ -76,6 +76,7 @@ class ExportDocument(object):
         return stream 
 
     def add_intro(self, intro, document):
+        """Add introduction section."""
         s = self.s
         table = document.add_table(rows=1, cols=2)
         table.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -96,6 +97,7 @@ class ExportDocument(object):
         return document 
 
     def add_summary(self, summary, document):
+        """Add summary section."""
         s = self.s
         t = document.add_table(rows=1, cols=2)
         t.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -115,6 +117,7 @@ class ExportDocument(object):
         return document 
 
     def add_skills(self, skills, document):
+        """Add skills section."""
         current_year = datetime.datetime.now().strftime("%Y")
 
         t = document.tables[1]
@@ -158,6 +161,7 @@ class ExportDocument(object):
         return document
 
     def add_sub_skills(self, subs, ts, ts_index):
+        """Add sub skills to skills section."""
         current_year = float(datetime.datetime.now().strftime("%Y")) 
         sub_table = ts.cell(ts_index,0).add_table(rows=1,cols=2)
         for i, sub in enumerate(subs):
@@ -185,6 +189,7 @@ class ExportDocument(object):
         return ts 
 
     def add_experience(self, experience, document):
+        """Add experience section."""
         s = self.s
         del experience[0]
         p = document.add_paragraph('Experience', style='Heading 3')
@@ -230,6 +235,7 @@ class ExportDocument(object):
         return document
 
     def add_projects(self, projects, table, row, col):
+        """Add projects to experience section."""
         for project in projects.items():
             p = table.cell(row,col).add_paragraph(project[0], style='List Bullet')
             p.paragraph_format.line_spacing = 1.0
@@ -242,6 +248,7 @@ class ExportDocument(object):
         return table
 
     def add_education(self, education, document):
+        """Add education section."""
         s = self.s
         p = document.add_paragraph('Education', style='Heading 3')
         p.paragraph_format.line_spacing = 1.0
@@ -274,6 +281,7 @@ class ExportDocument(object):
         return document
 
     def add_contact(self, contact, document):
+        """Add contact section."""
         for item in contact:
             if item.get('name') == 'web':
                 web = item.get('content')[0].get('content')
@@ -314,6 +322,7 @@ class ExportDocument(object):
         return document
 
     def set_styles(self, document):
+        """Set styles in the Word document."""
         style = document.styles['Heading 1'] 
         font = style.font
         font.color.rgb = RGBColor(0x51, 0x57, 0x6A) 
@@ -394,6 +403,7 @@ class ExportDocument(object):
         return document
 
     def set_layout(self, document):
+        """Define document layout."""
         sections = document.sections 
         section = sections[0] 
         section.page_height = Cm(29.7)
