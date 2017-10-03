@@ -20,4 +20,4 @@ home\.tests\.cv
 
    
    
-   
+.. vim: ft=rst sw=3 sts=3 ts=3:   
