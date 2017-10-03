@@ -2,17 +2,11 @@ home\.tests\.cv
 ===============
 
 .. automodule:: home.tests.cv
-
+   
    .. rubric:: Classes
 
    .. autosummary::
-      :toctree:
+      :toctree: classes
    
       CVGetsTestCase
       CVTestCase
-   
-   
-
-   
-   
-   

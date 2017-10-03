@@ -54,7 +54,7 @@
 <span class="kn">from</span> <span class="nn">rsum.settings.rsum</span> <span class="k">import</span> <span class="n">values</span>
 
 
-<div class="viewcode-block" id="SectionTestCase"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.section.SectionTestCase.html#home.tests.section.SectionTestCase">[docs]</a><span class="k">class</span> <span class="nc">SectionTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="SectionTestCase"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.section.SectionTestCase.html#home.tests.section.SectionTestCase">[docs]</a><span class="k">class</span> <span class="nc">SectionTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Class for testing Section model saves.&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Setup method for SectionTestCase class.&quot;&quot;&quot;</span>
@@ -90,7 +90,7 @@
 
 <div class="viewcode-block" id="GetSectionTestCase"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.section.GetSectionTestCase.html#home.tests.section.GetSectionTestCase">[docs]</a><span class="k">class</span> <span class="nc">GetSectionTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Class for testing Section model gets.&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GetSectionTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.section.GetSectionTestCase.html#home.tests.section.GetSectionTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Setup for Section model get tests.&quot;&quot;&quot;</span>
         <span class="n">cv_instance</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span>
         <span class="n">cv_id</span> <span class="o">=</span> <span class="n">cv_instance</span><span class="o">.</span><span class="n">check_sections</span><span class="p">(</span><span class="n">name_of_owner</span><span class="o">=</span><span class="s1">&#39;alex&#39;</span><span class="p">,</span> <span class="n">name_of_cv</span><span class="o">=</span><span class="s1">&#39;abridged&#39;</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="s1">&#39;acecv&#39;</span><span class="p">)</span>
@@ -98,9 +98,9 @@
         <span class="n">section_instance</span> <span class="o">=</span> <span class="n">Section</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sections</span> <span class="o">=</span> <span class="n">section_instance</span><span class="o">.</span><span class="n">get_sections</span><span class="p">(</span>
             <span class="n">CV</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">cv_id</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">test_get_section</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GetSectionTestCase.test_get_section"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.section.GetSectionTestCase.html#home.tests.section.GetSectionTestCase.test_get_section">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_section</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test Section moodel gets.&quot;&quot;&quot;</span>
         <span class="n">section_instance</span> <span class="o">=</span> <span class="n">Section</span><span class="p">()</span>
         <span class="n">sections</span> <span class="o">=</span> <span class="n">section_instance</span><span class="o">.</span><span class="n">get_sections</span><span class="p">(</span>
@@ -109,7 +109,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">,</span>
             <span class="n">sections</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span></div></div>
 </pre></div>
 
           </div>

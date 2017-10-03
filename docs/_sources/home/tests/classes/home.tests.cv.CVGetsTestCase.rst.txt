@@ -1,5 +1,7 @@
 home\.tests\.cv\.CVGetsTestCase
 ===============================
 
-.. autoclass:: home.tests.cv.CVGetsTestCase
+.. currentmodule:: home.tests.cv
+
+.. autoclass:: CVGetsTestCase
    :members:

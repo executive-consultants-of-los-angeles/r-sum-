@@ -54,16 +54,16 @@
 <span class="kn">from</span> <span class="nn">rsum.settings.rsum</span> <span class="k">import</span> <span class="n">values</span>
 
 
-<div class="viewcode-block" id="CVTestCase"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVTestCase.html#home.tests.cv.CVTestCase">[docs]</a><span class="k">class</span> <span class="nc">CVTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="CVTestCase"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.CVTestCase.html#home.tests.cv.CVTestCase">[docs]</a><span class="k">class</span> <span class="nc">CVTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;CVTestCase class.&quot;&quot;&quot;</span>
-<div class="viewcode-block" id="CVTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVTestCase.html#home.tests.cv.CVTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CVTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.CVTestCase.html#home.tests.cv.CVTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set up the CVTestCase class.&quot;&quot;&quot;</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">())</span>
         <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/srv/rsum/cvs/</span><span class="si">{0}</span><span class="s1">/</span><span class="si">{1}</span><span class="s1">.yml&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;dir&#39;</span><span class="p">),</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">abridged</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
         <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="CVTestCase.test_check_sections"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVTestCase.html#home.tests.cv.CVTestCase.test_check_sections">[docs]</a>    <span class="k">def</span> <span class="nf">test_check_sections</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CVTestCase.test_check_sections"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.CVTestCase.html#home.tests.cv.CVTestCase.test_check_sections">[docs]</a>    <span class="k">def</span> <span class="nf">test_check_sections</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test the check_sections method, currently broken.&quot;&quot;&quot;</span>
         <span class="n">cv</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -84,7 +84,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CVTestCase.test_save_abridged_cv"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVTestCase.html#home.tests.cv.CVTestCase.test_save_abridged_cv">[docs]</a>    <span class="k">def</span> <span class="nf">test_save_abridged_cv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CVTestCase.test_save_abridged_cv"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.CVTestCase.html#home.tests.cv.CVTestCase.test_save_abridged_cv">[docs]</a>    <span class="k">def</span> <span class="nf">test_save_abridged_cv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test save for abridged cv.&quot;&quot;&quot;</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">())</span>
         <span class="n">abridged</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">abridged</span>
@@ -101,9 +101,9 @@
         <span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="CVGetsTestCase"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase">[docs]</a><span class="k">class</span> <span class="nc">CVGetsTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="CVGetsTestCase"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase">[docs]</a><span class="k">class</span> <span class="nc">CVGetsTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Test class for CV get methods.&quot;&quot;&quot;</span>
-<div class="viewcode-block" id="CVGetsTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CVGetsTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set up test class for cv get mehtods.&quot;&quot;&quot;</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        cv = CV()</span>
@@ -134,7 +134,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">cv</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="CVGetsTestCase.test_get_cv"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.test_get_cv">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_cv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CVGetsTestCase.test_get_cv"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.test_get_cv">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_cv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Broken, test get cv.&quot;&quot;&quot;</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        cv_instance = CV()</span>
@@ -151,7 +151,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CVGetsTestCase.test_get_experience"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.test_get_experience">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_experience</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CVGetsTestCase.test_get_experience"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.test_get_experience">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_experience</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Broken, test get experience.&quot;&quot;&quot;</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        cv_instance = CV()</span>
@@ -166,7 +166,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CVGetsTestCase.test_get_skills"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.test_get_skills">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_skills</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CVGetsTestCase.test_get_skills"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.test_get_skills">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_skills</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Broken, test get skills.&quot;&quot;&quot;</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        cv_instance = CV()</span>
@@ -181,7 +181,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span></div>
     
-<div class="viewcode-block" id="CVGetsTestCase.test_get_values"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.test_get_values">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CVGetsTestCase.test_get_values"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.test_get_values">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Broken, test get values.</span>
 <span class="sd">        </span>
 <span class="sd">        .. note:: This will be fixed as soon as I have the bandwidth.</span>

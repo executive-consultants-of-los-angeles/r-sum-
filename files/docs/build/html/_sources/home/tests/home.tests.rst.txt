@@ -1,16 +1,18 @@
 home\.tests
 ===========
 
-.. autosummary::
-   :toctree: tests
+.. currentmodule:: home.tests
 
-   home.tests.cv
-   home.tests.section
-   home.tests.subsection
-   home.tests.project
-   home.tests.projectitem
-   home.tests.entry
-   home.tests.entryitem
+.. autosummary::
+   :toctree: 
+
+   cv
+   section
+   subsection
+   project
+   projectitem
+   entry
+   entryitem
 
 .. automodule:: home.tests
 
