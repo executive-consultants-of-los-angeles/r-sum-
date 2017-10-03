@@ -8,10 +8,7 @@ from django.db import models
 
 
 class EntryItem(models.Model):
-    """Class that defines EntryItem objects.
-
-    .. py:method:: get_list_item(entry)
-    """
+    """Class that defines EntryItem objects."""
     entry = models.ForeignKey('home.Entry', on_delete=models.CASCADE)
     name = models.CharField(max_length=255, default='entry item')
     content = models.TextField() 

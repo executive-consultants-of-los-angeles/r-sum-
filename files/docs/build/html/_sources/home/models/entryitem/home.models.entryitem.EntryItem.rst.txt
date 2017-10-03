@@ -3,10 +3,9 @@ EntryItem Class
 
 .. currentmodule:: home.models.entryitem
 
-.. autoclass:: EntryItem 
-   :members:
+.. class:: EntryItem 
 
-   .. py:method:: get_list_item(entry)
+   .. function:: get_list_item(entry)
 
       Get an EntryItem object related to `entry`.
 
