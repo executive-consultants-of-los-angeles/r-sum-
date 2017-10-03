@@ -12,7 +12,8 @@ home\.models\.project
    .. rubric:: Classes
 
    .. autosummary::
-   
+      :toctree: project   
+
       Project
    
    
