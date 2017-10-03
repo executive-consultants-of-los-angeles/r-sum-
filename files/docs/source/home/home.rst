@@ -7,10 +7,9 @@ home
    home.tests
 
 
-.. autosummary::
-   :toctree: models
+.. toctree::
 
-   home.models
+   models/home.models.rst
 
 .. autosummary::
    :toctree: export
