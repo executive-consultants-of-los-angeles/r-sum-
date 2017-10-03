@@ -24,12 +24,15 @@ CV = home.models.cv.CV
 
 
 class ExportDocument(object):
+    """Class to handle exporting rsum pages to Word documents."""
     def __init__(self):
+        """Initialize ExportDocument class."""
         self.s = values.get(socket.gethostname())
         s = self.s
         self.name = '{0}-cv.docx'.format(s.get('owner'))
 
     def export(self, cv_id):
+        """Export a word document."""
         cv_instance = CV()
         cv = cv_instance.get_cv(cv_id)
         stream = StringIO()
