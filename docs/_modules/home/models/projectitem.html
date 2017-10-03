@@ -117,7 +117,16 @@
         <span class="k">return</span> <span class="n">project_items</span>
 
 <div class="viewcode-block" id="ProjectItem.save_project_item"><a class="viewcode-back" href="../../../home/models/classes/home.models.projectitem.html#home.models.projectitem.ProjectItem.save_project_item">[docs]</a>    <span class="k">def</span> <span class="nf">save_project_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project_item</span><span class="p">,</span> <span class="n">project</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Save a ProjectItem object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Save a ProjectItem.</span>
+
+<span class="sd">        :param project_item: The data that is to be saved to the ProjectItem</span>
+<span class="sd">            model.</span>
+<span class="sd">        :type project_item: dict(str, str) or str</span>
+<span class="sd">        :param project: The associated :obj:`home.models.project.Project` object.</span>
+<span class="sd">        :type project: :obj:`home.models.project.Project`</span>
+<span class="sd">        :return: Dictionary containing the avlues saved to ProjectItem.</span>
+<span class="sd">        :rtype: dict(str, str)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">project_item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;save the list you dolt!&#39;</span><span class="p">)</span>
 

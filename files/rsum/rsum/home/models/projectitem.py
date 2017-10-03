@@ -75,7 +75,16 @@ class ProjectItem(models.Model):
         return project_items
 
     def save_project_item(self, project_item, project):
-        """Save a ProjectItem object."""
+        """Save a ProjectItem.
+
+        :param project_item: The data that is to be saved to the ProjectItem
+            model.
+        :type project_item: dict(str, str) or str
+        :param project: The associated :obj:`home.models.project.Project` object.
+        :type project: :obj:`home.models.project.Project`
+        :return: Dictionary containing the avlues saved to ProjectItem.
+        :rtype: dict(str, str)
+        """
         if isinstance(project_item, list):
             print('save the list you dolt!')
 
