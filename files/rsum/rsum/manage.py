@@ -3,7 +3,10 @@ import os
 import sys
 import socket
 
-settings = "rsum.settings.{}".format(socket.gethostname())
+if socket.gethostname() == 'ecla.solutions':
+    settings = "rsum.settings"
+else:
+    settings = "rsum.settings.{}".format(socket.gethostname())
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings)

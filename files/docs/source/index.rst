@@ -5,6 +5,9 @@ rsum package docs
    :toctree: modules
 
    home
+   home.models
+   home.tests
+   home.views
    rsum
    rsum.settings
    rsum.settings.mrsum

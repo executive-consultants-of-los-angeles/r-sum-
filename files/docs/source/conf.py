@@ -22,6 +22,9 @@ sys.path.insert(0, '/src/rsum/files/rsum/rsum')
 sys.path.insert(0, '/src/rsum/files/rsum/rsum/rsum')
 sys.path.insert(0, '/src/rsum/files/rsum/rsum/home')
 
+import django
+django.setup()
+
 
 # -- General configuration ------------------------------------------------
 
