@@ -13,6 +13,13 @@ class EntryItem(models.Model):
     name = models.CharField(max_length=255, default='entry item')
     content = models.TextField() 
 
+    def __init__(self, *args, **kwargs):
+        """Instantiate EntryItem object.
+
+        .. versionadded:: v0.1.1
+        """
+        return None
+
     def get_list_item(self, entry):
         """Get an EntryItem object."""
         items = []
