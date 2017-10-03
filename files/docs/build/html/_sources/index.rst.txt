@@ -16,6 +16,6 @@ rsum package docs
 Data Structure
 ==============
 
-.. image:: _static/img/data-strcuture-yml.png
+.. image:: img/data-strcuture-yml.png
 
 .. vim: ft=rst sts=3 sw=3 ts=3:
