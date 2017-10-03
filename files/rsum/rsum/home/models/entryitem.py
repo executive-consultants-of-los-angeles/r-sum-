@@ -17,6 +17,8 @@ class EntryItem(models.Model):
         """Instantiate EntryItem object.
 
         .. versionadded:: v0.1.1
+
+        Returns None
         """
         return None
 
