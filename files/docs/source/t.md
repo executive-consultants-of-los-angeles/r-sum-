@@ -22,19 +22,4 @@ rsum package docs
 * `home.views <Modules/Home.Views>`_
 
 
-Schema
-======
 
-.. image:: img/schema.png
-
-
-Django Control Flow
-===================
-
-.. image:: img/flowchart-django.png
-
-
-Network
-=======
-
-.. image:: img/network.png
