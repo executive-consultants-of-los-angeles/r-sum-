@@ -103,7 +103,7 @@
 
 <div class="viewcode-block" id="CVGetsTestCase"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase">[docs]</a><span class="k">class</span> <span class="nc">CVGetsTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Test class for CV get methods.&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CVGetsTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set up test class for cv get mehtods.&quot;&quot;&quot;</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        cv = CV()</span>
@@ -132,9 +132,9 @@
 <span class="sd">        )</span>
 <span class="sd">        self.ab_sections = cv.get_cv(cv_id=cv_id, cvname=&#39;abridged&#39;).get(&#39;sections&#39;)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">cv</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span>
+        <span class="n">cv</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span></div>
 
-    <span class="k">def</span> <span class="nf">test_get_cv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CVGetsTestCase.test_get_cv"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.test_get_cv">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_cv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Broken, test get cv.&quot;&quot;&quot;</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        cv_instance = CV()</span>
@@ -149,9 +149,9 @@
 <span class="sd">            len(self.complete_sections)</span>
 <span class="sd">        )</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">test_get_experience</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CVGetsTestCase.test_get_experience"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.test_get_experience">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_experience</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Broken, test get experience.&quot;&quot;&quot;</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        cv_instance = CV()</span>
@@ -164,9 +164,9 @@
 <span class="sd">            self.experience</span>
 <span class="sd">        )</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">test_get_skills</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CVGetsTestCase.test_get_skills"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.test_get_skills">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_skills</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Broken, test get skills.&quot;&quot;&quot;</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        cv_instance = CV()</span>
@@ -179,9 +179,9 @@
 <span class="sd">           self.skills</span>
 <span class="sd">        )</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span></div>
     
-    <span class="k">def</span> <span class="nf">test_get_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CVGetsTestCase.test_get_values"><a class="viewcode-back" href="../../../home/tests/tests/home.tests.cv.CVGetsTestCase.html#home.tests.cv.CVGetsTestCase.test_get_values">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Broken, test get values.</span>
 <span class="sd">        </span>
 <span class="sd">        .. note:: This will be fixed as soon as I have the bandwidth.</span>
@@ -197,7 +197,7 @@
 <span class="sd">            self.values</span>
 <span class="sd">        )</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span></div></div>
 </pre></div>
 
           </div>
