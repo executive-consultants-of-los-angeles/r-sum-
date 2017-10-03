@@ -19,7 +19,7 @@ class EntryItem(models.Model):
         :param entry: The related Entry object.
         :type entry: obj:`home.models.entry.Entry`
         :return: List of EntryItem dictionaries.
-        :rtype: list(object)
+        :rtype: list(obj:`home.models.entryitem.EntryItem`)
         """
         items = []
         for item in list(
@@ -34,7 +34,7 @@ class EntryItem(models.Model):
         """Save an EntryItem object.
         
         :param entry_item: Content for current item.
-        :type entry_item: unicode or str or list(str)
+        :type entry_item: str or list(str)
         :param entry: Related Entry object.
         :type entry: obj:`home.models.entry.Entry`
         :return: Dictionary of EntryItem values.
