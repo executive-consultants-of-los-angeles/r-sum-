@@ -6,4 +6,8 @@ EntryItem Class
 .. autoclass:: EntryItem 
    :members:
 
-   .. method:: get_list_item(entry)
+   .. py:method:: get_list_item(entry)
+
+      Get an EntryItem object related to `entry`.
+
+      :param: obj entry: The parent ojbect for this EntryItem.
