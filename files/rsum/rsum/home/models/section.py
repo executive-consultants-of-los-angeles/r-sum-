@@ -11,13 +11,35 @@ import json
 
 
 class Section(models.Model):
-    """Class to define Section objects."""
-    cv = models.ForeignKey('home.CV', on_delete=models.CASCADE)
+    """Class to define Section objects.
+
+    .. attribute:: cv
+
+       Related :obj:`home.models.cv.CV` object.
+
+    .. attribute:: name
+
+       Name of Section object for reference.
+
+    .. attribute:: content
+
+       Content for Section object.
+    """
+    cv = models.ForeignKey(
+        'home.CV',
+        on_delete=models.CASCADE
+    )
     name = models.CharField(max_length=200, default='section')
     content = models.TextField()
 
     def get_sections(self, cv):
-        """Get all Section objects for a document."""
+        """Get all Section objects for a document.
+
+        :param cv: Related :obj:`home.models.cv.CV` object.
+        :type cv: :obj:`home.models.cv.CV`
+        :return: List of dicionaries containing Section data.
+        :rtype: list(dict(str, str)
+        """
         sections = [] 
         for section in list(
             Section.objects.filter(
@@ -46,7 +68,17 @@ class Section(models.Model):
         return sections
 
     def save_section(self, cv, section, name):
-        """Save one Section object."""
+        """Save one Section object.
+        
+        :param cv: Related :obj:`home.models.cv.CV` object.
+        :type cv: :obj:`home.models.cv.CV`
+        :param section: Content for storage in the Section.
+        :type section: dict(str, str) or str
+        :param name: Name of current Section.
+        :type name: str
+        :return: Dictionary of values stored in Section.
+        :rtype: dict(str, str)
+        """
         if section is None:
             return None
         s_i = Section()

@@ -11,17 +11,37 @@ import json
 
 
 class Project(models.Model):
-    """Class for project objects."""
+    """Class that includes methods related to the Project model.
+
+    .. attribute:: sub_section
+       
+       Associated :obj:`home.models.subsection.SubSection` object.
+
+    .. attribute:: name 
+
+       Name of content to be stored in Project.
+
+    .. attribute:: content 
+
+       Content to be stored in Project.
+    """
     sub_section = models.ForeignKey(
         'home.SubSection',
         on_delete=models.CASCADE
-    )
+    ) 
     name = models.CharField(max_length=200, null=True)
     content = models.TextField()
 
     def get_projects(self, subsection):
-        """Get all Project objects."""
-        # print(subsection)
+        """Get all Project objects.
+        
+        :param subsection:
+            Related :obj:`home.models.subsection.SubSection` object.
+        :type subsection: :obj:`home.models.subsection.SubSection`
+        :return: List of dictionaries containing stored projects.
+        :rtype: list(dict(str, str))
+        """
+        #: print(subsection)
         projects = []
         for project in list(
             Project.objects.filter(
@@ -39,11 +59,22 @@ class Project(models.Model):
                 })
 
             projects.append(project)
-            # print(json.dumps(projects,indent=1))
+            #: print(json.dumps(projects,indent=1))
         return projects
 
     def save_projects(self, projects, sub_section, name):
-        """Save all Project objects."""
+        """Save all Project objects.
+
+        :param projects: List of Project objects to be saved.
+        :type projects: list(str) or dict(str, str)
+        :param sub_section: 
+            Related :obj:`home.models.subsection.SubSection` object.
+        :type sub_section: :obj:`home.models.subsection.SubSection`
+        :param name: Name of Project content.
+        :type name: str
+        :return: Dictionary of saved Project values.
+        :rtype: dict(str, str)
+        """
         # print(json.dumps(projects, indent=1))
         # print(name)
         if name == 'id':

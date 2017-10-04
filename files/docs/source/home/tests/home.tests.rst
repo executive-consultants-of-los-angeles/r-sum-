@@ -1,5 +1,10 @@
-home\.tests
-===========
+Tests
+=====
+
+.. warning:: As far as I know all of these tests are broken
+   and essentially useless.
+
+.. automodule:: home.tests
 
 .. currentmodule:: home.tests
 
@@ -12,7 +17,5 @@ home\.tests
    project
    projectitem
    entry
-   test_entryitem
-
-.. automodule:: home.tests
-
+   entryitem
+   views

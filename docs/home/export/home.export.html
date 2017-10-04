@@ -6,7 +6,7 @@
   <head>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>home.export &#8212; rsum v0.1.0 documentation</title>
+    <title>Export &#8212; rsum v0.1.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,6 +24,8 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="home.models" href="../models/home.models.html" />
+    <link rel="prev" title="home" href="../home.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -39,20 +41,294 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="home-export">
-<h1>home.export<a class="headerlink" href="#home-export" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
+  <div class="section" id="module-home.export.word">
+<span id="export"></span><h1>Export<a class="headerlink" href="#module-home.export.word" title="Permalink to this headline">¶</a></h1>
+<p>Module for exporting cvs to Word format.</p>
+<dl class="class">
+<dt id="home.export.word.ExportDocument">
+<em class="property">class </em><code class="descclassname">home.export.word.</code><code class="descname">ExportDocument</code><a class="reference internal" href="../../_modules/home/export/word.html#ExportDocument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.export.word.ExportDocument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to handle exporting rsum pages to Word documents.</p>
+<dl class="attribute">
+<dt id="home.export.word.ExportDocument.s">
+<code class="descname">s</code><a class="headerlink" href="#home.export.word.ExportDocument.s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hostname of current host.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="home.export.word.ExportDocument.name">
+<code class="descname">name</code><a class="headerlink" href="#home.export.word.ExportDocument.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filename to offer to the end user.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="home.export.word.ExportDocument.CV">
+<code class="descname">CV</code><em class="property"> = None</em><a class="headerlink" href="#home.export.word.ExportDocument.CV" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to handle exporting rsum pages to Word documents.</p>
+<dl class="attribute">
+<dt>
+<code class="descname">s</code></dt>
+<dd><p>Hostname of current host.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">name</code></dt>
+<dd><p>Filename to offer to the end user.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="home.export.word.ExportDocument.add_contact">
+<code class="descname">add_contact</code><span class="sig-paren">(</span><em>contact</em>, <em>document</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/home/export/word.html#ExportDocument.add_contact"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.export.word.ExportDocument.add_contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add contact section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="word/home.export.word.ExportDocument.html#home.export.word.ExportDocument" title="home.export.word.ExportDocument"><code class="xref py py-obj docutils literal"><span class="pre">ExportDocument</span></code></a>()</td>
-<td>Class to handle exporting rsum pages to Word documents.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>str</strong><strong>)</strong><strong>] </strong><strong>contact</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>,</em>) – Contact section for current document.</li>
+<li><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Current document with Contact section.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
 </tr>
 </tbody>
 </table>
-<span class="target" id="module-home.export.word"></span><p>Module for exporting cvs to Word format.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.export.word.ExportDocument.add_education">
+<code class="descname">add_education</code><span class="sig-paren">(</span><em>education</em>, <em>document</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/home/export/word.html#ExportDocument.add_education"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.export.word.ExportDocument.add_education" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add education section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>str</strong><strong>)</strong><strong>] </strong><strong>education</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>,</em>) – Education section for current document.</li>
+<li><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Current document with Educaiton section.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.export.word.ExportDocument.add_experience">
+<code class="descname">add_experience</code><span class="sig-paren">(</span><em>experience</em>, <em>document</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/home/export/word.html#ExportDocument.add_experience"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.export.word.ExportDocument.add_experience" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add experience section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>str</strong><strong>)</strong><strong>] </strong><strong>experience</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>,</em>) – Experience section to add to document.</li>
+<li><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Document to update.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Document updated with Experience section.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.export.word.ExportDocument.add_intro">
+<code class="descname">add_intro</code><span class="sig-paren">(</span><em>intro</em>, <em>document</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/home/export/word.html#ExportDocument.add_intro"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.export.word.ExportDocument.add_intro" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add introduction section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>intro</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>)</em><em>]</em>) – Introduction to add to document.</li>
+<li><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Document updated with Introduction.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.export.word.ExportDocument.add_projects">
+<code class="descname">add_projects</code><span class="sig-paren">(</span><em>projects</em>, <em>table</em>, <em>row</em>, <em>col</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/home/export/word.html#ExportDocument.add_projects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.export.word.ExportDocument.add_projects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add projects to experience section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>str</strong><strong>)</strong><strong>] </strong><strong>projects</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>,</em>) – Projects for a portion of Experience section.</li>
+<li><strong>table</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Table from current document.</li>
+<li><strong>row</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – Index of current row.</li>
+<li><strong>col</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – Index of current col.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Updated Projects table.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.export.word.ExportDocument.add_skills">
+<code class="descname">add_skills</code><span class="sig-paren">(</span><em>skills</em>, <em>document</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/home/export/word.html#ExportDocument.add_skills"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.export.word.ExportDocument.add_skills" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add skills section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>skills</strong> – Skills section to add to document.</li>
+<li><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Document updated with Skills.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.export.word.ExportDocument.add_sub_skills">
+<code class="descname">add_sub_skills</code><span class="sig-paren">(</span><em>subs</em>, <em>ts</em>, <em>ts_index</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/home/export/word.html#ExportDocument.add_sub_skills"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.export.word.ExportDocument.add_sub_skills" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add sub skills to skills section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>subs</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>)</em><em>]</em>) – Sub skills to add to document.</li>
+<li><strong>ts</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Table cell to update.</li>
+<li><strong>ts_index</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – Index for current table cell.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Document updated with sub skills.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.export.word.ExportDocument.add_summary">
+<code class="descname">add_summary</code><span class="sig-paren">(</span><em>summary</em>, <em>document</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/home/export/word.html#ExportDocument.add_summary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.export.word.ExportDocument.add_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add summary section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>summary</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>)</em><em>]</em>) – Summary section to add to document.</li>
+<li><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Document updated with Summary.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.export.word.ExportDocument.export">
+<code class="descname">export</code><span class="sig-paren">(</span><em>cv_id</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/home/export/word.html#ExportDocument.export"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.export.word.ExportDocument.export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a word document.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cv_id</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – ID of CV to export.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Stream of Word document for end user.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.export.word.ExportDocument.set_layout">
+<code class="descname">set_layout</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/home/export/word.html#ExportDocument.set_layout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.export.word.ExportDocument.set_layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define document layout.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Current document with adjusted layougt.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.export.word.ExportDocument.set_styles">
+<code class="descname">set_styles</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/home/export/word.html#ExportDocument.set_styles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.export.word.ExportDocument.set_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set styles in the Word document.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Current document with correct styles.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -71,8 +347,14 @@
 
 
 <h3>Navigation</h3>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../home.html">home</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../home.html">home</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/home.models.html">home.models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests/home.tests.html">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views/home.views.html">Views</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../rsum/rsum.html">rsum</a></li>
@@ -82,6 +364,10 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../home.html">home</a><ul>
+      <li>Previous: <a href="../home.html" title="previous chapter">home</a></li>
+      <li>Next: <a href="../models/home.models.html" title="next chapter">home.models</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>

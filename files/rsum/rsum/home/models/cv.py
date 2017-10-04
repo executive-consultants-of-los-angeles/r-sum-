@@ -17,12 +17,28 @@ from subsection import SubSection
 
 
 class CV(models.Model):
-    """The CV Model class."""
+    """The CV Model class.
+
+    .. attribute:: name
+
+       Name of the current CV.
+
+    .. attribute:: template
+
+        Template path containing static files for CV.
+
+        .. warning:: I believe this is not used and should be removed.
+
+    """
     name = models.CharField(max_length=200)
     template = models.CharField(max_length=200, null=True)
 
     def check_sections(self, *args, **kwargs):
-        """Check to see if the current CV Model already has sections."""
+        """Check to see if the current CV Model already has sections.
+
+        :return: ID of the current CV object.
+        :rtype: int
+        """
         prefix = '/srv/rsum/cvs/'
         with open(
             prefix+settings.DIR+'/'+settings.CV+'.yml',
@@ -37,7 +53,13 @@ class CV(models.Model):
         return self.id 
 
     def get_cv(self, cv_id=1, *args, **kwargs):
-        """Get the CV at location cv_id."""
+        """Get the CV at location cv_id.
+
+        :param cv_id: ID of a CV object to retrieve.
+        :type cv_id: int
+        :return: Filled out CV. 
+        :rtype: dict(str, str)
+        """
         s = Section()
         cv = {
             'name': kwargs.get('name_of_cv'),
@@ -50,7 +72,13 @@ class CV(models.Model):
         return cv
 
     def get_experience(self, context):
-        """Get the experience section for related value in context."""
+        """Get the experience section for related value in context.
+
+        :param context: Dictionary of existing cv context.
+        :type context: dict(str, str)
+        :return: Context for CV updated with assembled Experience section.
+        :rtype: [dict(str, str)]
+        """
         experience_list = context.get('cv')[4].get('content')[1:]
         for k, v in enumerate(experience_list):
             for p, i in v.get(
@@ -72,7 +100,13 @@ class CV(models.Model):
         return experience_list
 
     def get_skills(self, context):
-        """Get Skills section for related value in context."""
+        """Get Skills section for related value in context.
+
+        :param context: Existing context for current CV.
+        :type context: dict(str, str)
+        :return: Skills section of CV.
+        :rtype: dict(str, str) 
+        """
         skills = context.get('cv')[2].get('content')
         skillset = {}
 
@@ -143,7 +177,13 @@ class CV(models.Model):
         return skillset
 
     def get_values(self, context):
-        """Get values section for related value in context."""
+        """Get values section for related value in context.
+
+        :param context: Exis5ting context for CV object.
+        :type context: dict(str, str) 
+        :return: List of dictionaries containing the Values section.
+        :rtype: [dict(str, str)]
+        """
         values = {}
         values_list = context.get(
             'cv'
@@ -162,7 +202,15 @@ class CV(models.Model):
         return values_list
 
     def save_cv(self, cv_d, name='default', *args, **kwargs):
-        """Save the current CV model."""
+        """Save the current CV model.
+
+        :param cv_d: Data to be saved into current CV.
+        :type cv_d: dict(str, str) 
+        :param name: Name of current CV.
+        :type name: str
+        :return: ID of saved CV.
+        :rtype: int
+        """
         cv = CV()
         cv.name = name 
         cv.template = kwargs.get('template')

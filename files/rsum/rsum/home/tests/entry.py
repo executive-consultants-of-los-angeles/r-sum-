@@ -17,9 +17,13 @@ from rsum.settings.rsum import values
 
 
 class EntryTestCase(TestCase):
-    """Test class for the Entry model."""
+    """Test class for the Entry model.
+
+    :param TestCase:
+    """
     def setUp(self):
-        """Setup for EntryTestCase."""
+        """Setup for EntryTestCase.
+        """
         s = values.get(socket.gethostname())
         f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
         abridged = yaml.load(f.read())

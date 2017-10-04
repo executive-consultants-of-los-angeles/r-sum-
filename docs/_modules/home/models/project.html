@@ -52,18 +52,38 @@
 <span class="kn">import</span> <span class="nn">json</span>
 
 
-<div class="viewcode-block" id="Project"><a class="viewcode-back" href="../../../home/models/project/home.models.project.Project.html#home.models.project.Project">[docs]</a><span class="k">class</span> <span class="nc">Project</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Class for project objects.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Project"><a class="viewcode-back" href="../../../home/models/classes/home.models.project.html#home.models.project.Project">[docs]</a><span class="k">class</span> <span class="nc">Project</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class that includes methods related to the Project model.</span>
+
+<span class="sd">    .. attribute:: sub_section</span>
+<span class="sd">       </span>
+<span class="sd">       Associated :obj:`home.models.subsection.SubSection` object.</span>
+
+<span class="sd">    .. attribute:: name </span>
+
+<span class="sd">       Name of content to be stored in Project.</span>
+
+<span class="sd">    .. attribute:: content </span>
+
+<span class="sd">       Content to be stored in Project.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sub_section</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span>
         <span class="s1">&#39;home.SubSection&#39;</span><span class="p">,</span>
         <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span>
-    <span class="p">)</span>
+    <span class="p">)</span> 
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
 
-<div class="viewcode-block" id="Project.get_projects"><a class="viewcode-back" href="../../../home/models/project/home.models.project.Project.html#home.models.project.Project.get_projects">[docs]</a>    <span class="k">def</span> <span class="nf">get_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subsection</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get all Project objects.&quot;&quot;&quot;</span>
-        <span class="c1"># print(subsection)</span>
+<div class="viewcode-block" id="Project.get_projects"><a class="viewcode-back" href="../../../home/models/classes/home.models.project.html#home.models.project.Project.get_projects">[docs]</a>    <span class="k">def</span> <span class="nf">get_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subsection</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get all Project objects.</span>
+<span class="sd">        </span>
+<span class="sd">        :param subsection:</span>
+<span class="sd">            Related :obj:`home.models.subsection.SubSection` object.</span>
+<span class="sd">        :type subsection: :obj:`home.models.subsection.SubSection`</span>
+<span class="sd">        :return: List of dictionaries containing stored projects.</span>
+<span class="sd">        :rtype: list(dict(str, str))</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#: print(subsection)</span>
         <span class="n">projects</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">project</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span>
             <span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
@@ -81,11 +101,22 @@
                 <span class="p">})</span>
 
             <span class="n">projects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">project</span><span class="p">)</span>
-            <span class="c1"># print(json.dumps(projects,indent=1))</span>
-        <span class="k">return</span> <span class="n">projects</span></div>
+            <span class="c1">#: print(json.dumps(projects,indent=1))</span></div>
+        <span class="k">return</span> <span class="n">projects</span>
 
-<div class="viewcode-block" id="Project.save_projects"><a class="viewcode-back" href="../../../home/models/project/home.models.project.Project.html#home.models.project.Project.save_projects">[docs]</a>    <span class="k">def</span> <span class="nf">save_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">projects</span><span class="p">,</span> <span class="n">sub_section</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Save all Project objects.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Project.save_projects"><a class="viewcode-back" href="../../../home/models/classes/home.models.project.html#home.models.project.Project.save_projects">[docs]</a>    <span class="k">def</span> <span class="nf">save_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">projects</span><span class="p">,</span> <span class="n">sub_section</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Save all Project objects.</span>
+
+<span class="sd">        :param projects: List of Project objects to be saved.</span>
+<span class="sd">        :type projects: list(str) or dict(str, str)</span>
+<span class="sd">        :param sub_section: </span>
+<span class="sd">            Related :obj:`home.models.subsection.SubSection` object.</span>
+<span class="sd">        :type sub_section: :obj:`home.models.subsection.SubSection`</span>
+<span class="sd">        :param name: Name of Project content.</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :return: Dictionary of saved Project values.</span>
+<span class="sd">        :rtype: dict(str, str)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># print(json.dumps(projects, indent=1))</span>
         <span class="c1"># print(name)</span>
         <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span>
@@ -125,12 +156,12 @@
             <span class="n">p_i</span><span class="o">.</span><span class="n">sub_section</span> <span class="o">=</span> <span class="n">sub_section</span>
             <span class="n">p_i</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">sub_section</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span> 
             <span class="n">p_i</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">projects</span>
-            <span class="n">p_i</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-            <span class="k">return</span> <span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">()</span></div>
+            <span class="n">p_i</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
+            <span class="k">return</span> <span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
-        <span class="n">app_label</span> <span class="o">=</span> <span class="s2">&quot;home&quot;</span>
-        <span class="n">managed</span> <span class="o">=</span> <span class="kc">True</span></div>
+        <span class="n">app_label</span> <span class="o">=</span> <span class="s2">&quot;home&quot;</span></div>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 
           </div>
