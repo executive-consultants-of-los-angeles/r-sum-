@@ -1,9 +1,9 @@
-EntryItem
-=========
-
-.. currentmodule:: home.tests.test_entryitem
+home\.tests\.test\_entryitem
+============================
 
 .. automodule:: home.tests.test_entryitem
+
+.. currentmodule:: home.tests.test_entryitem
 
 .. autoclass:: EntryItemTestCase
    :members:

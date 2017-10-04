@@ -6,7 +6,7 @@
   <head>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>home.models.entryitem &#8212; rsum v0.1.0 documentation</title>
+    <title>EntryItem &#8212; rsum v0.1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="home.tests" href="../../tests/home.tests.html" />
-    <link rel="prev" title="home.models.entry" href="home.models.entry.html" />
+    <link rel="next" title="Tests" href="../../tests/home.tests.html" />
+    <link rel="prev" title="Entry" href="home.models.entry.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -42,26 +42,30 @@
           <div class="body" role="main">
             
   <div class="section" id="module-home.models.entryitem">
-<span id="home-models-entryitem"></span><h1>home.models.entryitem<a class="headerlink" href="#module-home.models.entryitem" title="Permalink to this headline">¶</a></h1>
+<span id="entryitem"></span><h1>EntryItem<a class="headerlink" href="#module-home.models.entryitem" title="Permalink to this headline">¶</a></h1>
 <p>Module to define EntryItem objects.</p>
 <dl class="class">
 <dt id="home.models.entryitem.EntryItem">
 <em class="property">class </em><code class="descclassname">home.models.entryitem.</code><code class="descname">EntryItem</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/entryitem.html#EntryItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.entryitem.EntryItem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class that defines EntryItem objects.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Attribute entry:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">Related <a class="reference internal" href="home.models.entry.html#home.models.entry.Entry" title="home.models.entry.Entry"><code class="xref py py-obj docutils literal"><span class="pre">home.models.entry.Entry</span></code></a> object.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Attribute name:</th><td class="field-body">Name of stored content.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">Attribute content:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">Stored content.</td>
-</tr>
-</tbody>
-</table>
+<dl class="attribute">
+<dt id="home.models.entryitem.EntryItem.entry">
+<code class="descname">entry</code><a class="headerlink" href="#home.models.entryitem.EntryItem.entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Related <a class="reference internal" href="home.models.entry.html#home.models.entry.Entry" title="home.models.entry.Entry"><code class="xref py py-obj docutils literal"><span class="pre">home.models.entry.Entry</span></code></a> object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="home.models.entryitem.EntryItem.name">
+<code class="descname">name</code><a class="headerlink" href="#home.models.entryitem.EntryItem.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of stored content.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="home.models.entryitem.EntryItem.content">
+<code class="descname">content</code><a class="headerlink" href="#home.models.entryitem.EntryItem.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stored content.</p>
+</dd></dl>
+
 <dl class="exception">
 <dt id="home.models.entryitem.EntryItem.DoesNotExist">
 <em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#home.models.entryitem.EntryItem.DoesNotExist" title="Permalink to this definition">¶</a></dt>
@@ -136,19 +140,19 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../home.html">home</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../export/home.export.html">home.export</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../home.models.html">home.models</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../export/home.export.html">Export</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../home.models.html">Models</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="home.models.cv.html">home.models.cv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="home.models.section.html">home.models.section</a></li>
 <li class="toctree-l3"><a class="reference internal" href="home.models.subsection.html">home.models.subsection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="home.models.project.html">home.models.project</a></li>
-<li class="toctree-l3"><a class="reference internal" href="home.models.projectitem.html">home.models.projectitem</a></li>
-<li class="toctree-l3"><a class="reference internal" href="home.models.entry.html">home.models.entry</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">home.models.entryitem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.models.projectitem.html">ProjectItem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.models.entry.html">Entry</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">EntryItem</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../tests/home.tests.html">home.tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../views/home.views.html">home.views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tests/home.tests.html">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../views/home.views.html">Views</a></li>
 </ul>
 </li>
 </ul>
@@ -161,9 +165,9 @@
 <ul>
   <li><a href="../../../index.html">Documentation overview</a><ul>
   <li><a href="../../home.html">home</a><ul>
-  <li><a href="../home.models.html">home.models</a><ul>
-      <li>Previous: <a href="home.models.entry.html" title="previous chapter">home.models.entry</a></li>
-      <li>Next: <a href="../../tests/home.tests.html" title="next chapter">home.tests</a></li>
+  <li><a href="../home.models.html">Models</a><ul>
+      <li>Previous: <a href="home.models.entry.html" title="previous chapter">Entry</a></li>
+      <li>Next: <a href="../../tests/home.tests.html" title="next chapter">Tests</a></li>
   </ul></li>
   </ul></li>
   </ul></li>
