@@ -1,6 +1,8 @@
 home
 ====
 
+.. automodule:: home
+
 .. toctree::
 
    export/home.export.rst
