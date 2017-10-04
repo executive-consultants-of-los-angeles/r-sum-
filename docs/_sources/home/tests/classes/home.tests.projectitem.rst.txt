@@ -1,23 +1,12 @@
-home\.tests\.projectitem
-========================
+ProjectItem
+===========
 
 .. automodule:: home.tests.projectitem
 
-   
-   
-   
+.. currentmodule:: home.tests.projectitem
 
-   
-   
-   .. rubric:: Classes
+.. autoclass:: ProjectItemTestCase
+   :members:
 
-   .. autosummary::
-   
-      GetProjectItemTestCase
-      ProjectItemTestCase
-   
-   
-
-   
-   
-   
+.. autoclass:: GetProjectItemTestCase
+   :members:

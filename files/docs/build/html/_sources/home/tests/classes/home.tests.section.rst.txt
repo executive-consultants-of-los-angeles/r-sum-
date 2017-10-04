@@ -1,23 +1,12 @@
-home\.tests\.section
-====================
+Section
+=======
 
 .. automodule:: home.tests.section
 
-   
-   
-   
+.. currentmodule:: home.tests.section
 
-   
-   
-   .. rubric:: Classes
+.. autoclass:: SectionTestCase
+   :members:
 
-   .. autosummary::
-   
-      GetSectionTestCase
-      SectionTestCase
-   
-   
-
-   
-   
-   
+.. autoclass:: GetSectionTestCase
+   :members:

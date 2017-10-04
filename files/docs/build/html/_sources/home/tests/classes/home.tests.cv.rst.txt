@@ -1,23 +1,12 @@
-home\.tests\.cv
-===============
+CV
+==
 
 .. automodule:: home.tests.cv
 
+.. currrentmodule:: home.tests.cv
    
-   
-   
+.. autoclass:: CVTestCase
+   :members:
 
-   
-   
-   .. rubric:: Classes
-
-   .. autosummary::
-   
-      CVGetsTestCase
-      CVTestCase
-   
-   
-
-   
-   
-   
+.. autoclass:: CVGetsTestCase
+   :members:

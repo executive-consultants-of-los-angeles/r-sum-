@@ -58,9 +58,9 @@
 <span class="kn">import</span> <span class="nn">yaml</span>
 
 
-<div class="viewcode-block" id="ProjectTestCase"><a class="viewcode-back" href="../../../home/tests/project/home.tests.project.ProjectTestCase.html#home.tests.project.ProjectTestCase">[docs]</a><span class="k">class</span> <span class="nc">ProjectTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="ProjectTestCase"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.project.html#home.tests.project.ProjectTestCase">[docs]</a><span class="k">class</span> <span class="nc">ProjectTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Test class for tests of Project model save methods.&quot;&quot;&quot;</span>
-<div class="viewcode-block" id="ProjectTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/project/home.tests.project.ProjectTestCase.html#home.tests.project.ProjectTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ProjectTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.project.html#home.tests.project.ProjectTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Setup for Project model save method tests.&quot;&quot;&quot;</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">())</span>
         <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/srv/rsum/cvs/</span><span class="si">{0}</span><span class="s1">/</span><span class="si">{1}</span><span class="s1">.yml&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;dir&#39;</span><span class="p">),</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)))</span>
@@ -89,7 +89,7 @@
                 <span class="n">ss</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">ss</span> <span class="o">=</span> <span class="n">ss</span></div>
 
-<div class="viewcode-block" id="ProjectTestCase.test_save_projects"><a class="viewcode-back" href="../../../home/tests/project/home.tests.project.ProjectTestCase.html#home.tests.project.ProjectTestCase.test_save_projects">[docs]</a>    <span class="k">def</span> <span class="nf">test_save_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ProjectTestCase.test_save_projects"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.project.html#home.tests.project.ProjectTestCase.test_save_projects">[docs]</a>    <span class="k">def</span> <span class="nf">test_save_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test saving a Project.&quot;&quot;&quot;</span>
         <span class="n">ss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ss</span>
         <span class="n">projects</span> <span class="o">=</span> <span class="p">{}</span>
@@ -140,9 +140,9 @@
         <span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="GetProjectTestCase"><a class="viewcode-back" href="../../../home/tests/project/home.tests.project.GetProjectTestCase.html#home.tests.project.GetProjectTestCase">[docs]</a><span class="k">class</span> <span class="nc">GetProjectTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="GetProjectTestCase"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.project.html#home.tests.project.GetProjectTestCase">[docs]</a><span class="k">class</span> <span class="nc">GetProjectTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Test class for Project model get methods.&quot;&quot;&quot;</span>
-<div class="viewcode-block" id="GetProjectTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/project/home.tests.project.GetProjectTestCase.html#home.tests.project.GetProjectTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GetProjectTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.project.html#home.tests.project.GetProjectTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Setup project model get method tests.&quot;&quot;&quot;</span>
         <span class="n">cv_instance</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span>
         <span class="n">cv_id</span> <span class="o">=</span> <span class="n">cv_instance</span><span class="o">.</span><span class="n">check_sections</span><span class="p">(</span><span class="n">name_of_owner</span><span class="o">=</span><span class="s1">&#39;alex&#39;</span><span class="p">,</span> <span class="n">name_of_cv</span><span class="o">=</span><span class="s1">&#39;abridged&#39;</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="s1">&#39;acecv&#39;</span><span class="p">)</span>
@@ -162,7 +162,7 @@
                     <span class="n">project_instance</span><span class="o">.</span><span class="n">get_projects</span><span class="p">(</span><span class="n">subsection_object</span><span class="p">)</span>
                 <span class="p">)</span></div>
 
-<div class="viewcode-block" id="GetProjectTestCase.test_get_project"><a class="viewcode-back" href="../../../home/tests/project/home.tests.project.GetProjectTestCase.html#home.tests.project.GetProjectTestCase.test_get_project">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_project</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GetProjectTestCase.test_get_project"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.project.html#home.tests.project.GetProjectTestCase.test_get_project">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_project</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test get method for Project model.&quot;&quot;&quot;</span>
         <span class="n">project_instance</span> <span class="o">=</span> <span class="n">Project</span><span class="p">()</span>
         <span class="n">projects</span> <span class="o">=</span> <span class="p">[]</span>

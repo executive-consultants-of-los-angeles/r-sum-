@@ -1,23 +1,12 @@
-home\.tests\.subsection
-=======================
+SubSection
+==========
 
 .. automodule:: home.tests.subsection
 
-   
-   
-   
+.. currentmodule:: home.tests.subsection
 
-   
-   
-   .. rubric:: Classes
+.. autoclass:: SubSectionTestCase
+   :members:
 
-   .. autosummary::
-   
-      GetSubSectionTestCase
-      SubSectionTestCase
-   
-   
-
-   
-   
-   
+.. autoclass:: GetSubSectionTestCase
+   :members:

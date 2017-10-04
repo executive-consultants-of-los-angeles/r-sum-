@@ -1,23 +1,9 @@
-home\.tests\.entry
-==================
+Entry
+=====
 
 .. automodule:: home.tests.entry
 
-   
-   
-   
+.. currentmodule:: home.tests.entry
 
-   
-   
-   .. rubric:: Classes
-
-   .. autosummary::
-   
-      EntryTestCase
-      GetEntryTestCase
-   
-   
-
-   
-   
-   
+.. autoclass:: Entry
+   :members:
