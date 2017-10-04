@@ -1,5 +1,5 @@
-home\.models\.entry
-===================
+Entry
+=====
 
 .. automodule:: home.models.entry
 
