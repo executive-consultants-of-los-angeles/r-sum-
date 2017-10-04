@@ -1,6 +1,8 @@
 home\.tests
 ===========
 
+.. automodule:: home.tests
+
 .. currentmodule:: home.tests
 
 .. autosummary::
@@ -13,6 +15,4 @@ home\.tests
    projectitem
    entry
    entryitem
-
-.. automodule:: home.tests
 
