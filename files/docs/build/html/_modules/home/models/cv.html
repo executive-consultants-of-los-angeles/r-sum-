@@ -59,12 +59,28 @@
 
 
 <div class="viewcode-block" id="CV"><a class="viewcode-back" href="../../../home/models/classes/home.models.cv.html#home.models.cv.CV">[docs]</a><span class="k">class</span> <span class="nc">CV</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The CV Model class.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;The CV Model class.</span>
+
+<span class="sd">    .. attribute:: name</span>
+
+<span class="sd">       Name of the current CV.</span>
+
+<span class="sd">    .. attribute:: template</span>
+
+<span class="sd">        Template path containing static files for CV.</span>
+
+<span class="sd">        .. warning:: I believe this is not used and should be removed.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
     <span class="n">template</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <div class="viewcode-block" id="CV.check_sections"><a class="viewcode-back" href="../../../home/models/classes/home.models.cv.html#home.models.cv.CV.check_sections">[docs]</a>    <span class="k">def</span> <span class="nf">check_sections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Check to see if the current CV Model already has sections.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Check to see if the current CV Model already has sections.</span>
+
+<span class="sd">        :return: ID of the current CV object.</span>
+<span class="sd">        :rtype: int</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;/srv/rsum/cvs/&#39;</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
             <span class="n">prefix</span><span class="o">+</span><span class="n">settings</span><span class="o">.</span><span class="n">DIR</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="n">settings</span><span class="o">.</span><span class="n">CV</span><span class="o">+</span><span class="s1">&#39;.yml&#39;</span><span class="p">,</span>
@@ -75,11 +91,17 @@
             <span class="n">cv_dict</span><span class="p">,</span> 
             <span class="n">name</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">CV</span><span class="p">,</span>
             <span class="n">template</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">OWNER</span>
-        <span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span> </div>
+        <span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span> 
 
 <div class="viewcode-block" id="CV.get_cv"><a class="viewcode-back" href="../../../home/models/classes/home.models.cv.html#home.models.cv.CV.get_cv">[docs]</a>    <span class="k">def</span> <span class="nf">get_cv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cv_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the CV at location cv_id.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get the CV at location cv_id.</span>
+
+<span class="sd">        :param cv_id: ID of a CV object to retrieve.</span>
+<span class="sd">        :type cv_id: int</span>
+<span class="sd">        :return: Filled out CV. </span>
+<span class="sd">        :rtype: dict(str, str)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">Section</span><span class="p">()</span>
         <span class="n">cv</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name_of_cv&#39;</span><span class="p">),</span>
@@ -88,11 +110,17 @@
                     <span class="nb">id</span><span class="o">=</span><span class="n">cv_id</span>
                 <span class="p">)</span>
             <span class="p">),</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">cv</span></div>
+        <span class="p">}</span></div>
+        <span class="k">return</span> <span class="n">cv</span>
 
 <div class="viewcode-block" id="CV.get_experience"><a class="viewcode-back" href="../../../home/models/classes/home.models.cv.html#home.models.cv.CV.get_experience">[docs]</a>    <span class="k">def</span> <span class="nf">get_experience</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the experience section for related value in context.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get the experience section for related value in context.</span>
+
+<span class="sd">        :param context: Dictionary of existing cv context.</span>
+<span class="sd">        :type context: dict(str, str)</span>
+<span class="sd">        :return: Context for CV updated with assembled Experience section.</span>
+<span class="sd">        :rtype: [dict(str, str)]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">experience_list</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cv&#39;</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">experience_list</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
@@ -110,11 +138,17 @@
                         <span class="n">l</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
                         <span class="n">experience_list</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
                             <span class="s1">&#39;content&#39;</span>
-                        <span class="p">)[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;projects&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">experience_list</span></div>
+                        <span class="p">)[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;projects&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">experience_list</span>
 
 <div class="viewcode-block" id="CV.get_skills"><a class="viewcode-back" href="../../../home/models/classes/home.models.cv.html#home.models.cv.CV.get_skills">[docs]</a>    <span class="k">def</span> <span class="nf">get_skills</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get Skills section for related value in context.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get Skills section for related value in context.</span>
+
+<span class="sd">        :param context: Existing context for current CV.</span>
+<span class="sd">        :type context: dict(str, str)</span>
+<span class="sd">        :return: Skills section of CV.</span>
+<span class="sd">        :rtype: dict(str, str) </span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">skills</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cv&#39;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">)</span>
         <span class="n">skillset</span> <span class="o">=</span> <span class="p">{}</span>
 
@@ -181,11 +215,17 @@
                             <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">sub_name</span><span class="p">,</span>
                             <span class="s1">&#39;experience_value&#39;</span><span class="p">:</span> <span class="n">experience_value</span><span class="p">,</span> 
                         <span class="p">}</span>
-                    <span class="p">})</span>
-        <span class="k">return</span> <span class="n">skillset</span></div>
+                    <span class="p">})</span></div>
+        <span class="k">return</span> <span class="n">skillset</span>
 
 <div class="viewcode-block" id="CV.get_values"><a class="viewcode-back" href="../../../home/models/classes/home.models.cv.html#home.models.cv.CV.get_values">[docs]</a>    <span class="k">def</span> <span class="nf">get_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get values section for related value in context.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get values section for related value in context.</span>
+
+<span class="sd">        :param context: Exis5ting context for CV object.</span>
+<span class="sd">        :type context: dict(str, str) </span>
+<span class="sd">        :return: List of dictionaries containing the Values section.</span>
+<span class="sd">        :rtype: [dict(str, str)]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">values</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">values_list</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
             <span class="s1">&#39;cv&#39;</span>
@@ -200,11 +240,19 @@
             <span class="n">values</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span>
             <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
         <span class="p">):</span>
-            <span class="n">values_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">values_list</span></div>
+            <span class="n">values_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">values_list</span>
 
 <div class="viewcode-block" id="CV.save_cv"><a class="viewcode-back" href="../../../home/models/classes/home.models.cv.html#home.models.cv.CV.save_cv">[docs]</a>    <span class="k">def</span> <span class="nf">save_cv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cv_d</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Save the current CV model.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Save the current CV model.</span>
+
+<span class="sd">        :param cv_d: Data to be saved into current CV.</span>
+<span class="sd">        :type cv_d: dict(str, str) </span>
+<span class="sd">        :param name: Name of current CV.</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :return: ID of saved CV.</span>
+<span class="sd">        :rtype: int</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">cv</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span>
         <span class="n">cv</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span> 
         <span class="n">cv</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;template&#39;</span><span class="p">)</span>
@@ -216,12 +264,12 @@
         <span class="p">):</span>
             <span class="n">s</span> <span class="o">=</span> <span class="n">Section</span><span class="p">()</span>
             <span class="n">s</span><span class="o">.</span><span class="n">save_section</span><span class="p">(</span><span class="n">cv</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">cv</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">)</span></div>
+</div>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">cv</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">)</span>
 
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
-        <span class="n">app_label</span> <span class="o">=</span> <span class="s2">&quot;home&quot;</span>
-        <span class="n">managed</span> <span class="o">=</span> <span class="kc">True</span></div>
+        <span class="n">app_label</span> <span class="o">=</span> <span class="s2">&quot;home&quot;</span></div>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 
           </div>
