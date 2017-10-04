@@ -77,13 +77,23 @@
 <span class="sd">       Filename to offer to the end user.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initialize ExportDocument class.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Initialize ExportDocument class.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">s</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">())</span>
         <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">s</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">-cv.docx&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;owner&#39;</span><span class="p">))</span>
 
 <div class="viewcode-block" id="ExportDocument.export"><a class="viewcode-back" href="../../../home/export/home.export.html#home.export.word.ExportDocument.export">[docs]</a>    <span class="k">def</span> <span class="nf">export</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cv_id</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Export a word document.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Export a word document.</span>
+<span class="sd">    </span>
+<span class="sd">        :param cv_id: ID of CV to export.</span>
+<span class="sd">        :type cv_id: int</span>
+<span class="sd">        :return: Stream of Word document for end user.</span>
+<span class="sd">        :rtype: object </span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">cv_instance</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span>
         <span class="n">cv</span> <span class="o">=</span> <span class="n">cv_instance</span><span class="o">.</span><span class="n">get_cv</span><span class="p">(</span><span class="n">cv_id</span><span class="p">)</span>
         <span class="n">stream</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
@@ -127,7 +137,15 @@
         <span class="k">return</span> <span class="n">stream</span> 
 
 <div class="viewcode-block" id="ExportDocument.add_intro"><a class="viewcode-back" href="../../../home/export/home.export.html#home.export.word.ExportDocument.add_intro">[docs]</a>    <span class="k">def</span> <span class="nf">add_intro</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">intro</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add introduction section.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Add introduction section.</span>
+<span class="sd">    </span>
+<span class="sd">        :param intro: Introduction to add to document.</span>
+<span class="sd">        :type intro: [dict(str, str)]</span>
+<span class="sd">        :param document: Current document.</span>
+<span class="sd">        :type document: object</span>
+<span class="sd">        :return: Document updated with Introduction.</span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">s</span>
         <span class="n">table</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="n">table</span><span class="o">.</span><span class="n">alignment</span> <span class="o">=</span> <span class="n">WD_TABLE_ALIGNMENT</span><span class="o">.</span><span class="n">CENTER</span>
@@ -148,7 +166,15 @@
         <span class="k">return</span> <span class="n">document</span> 
 
 <div class="viewcode-block" id="ExportDocument.add_summary"><a class="viewcode-back" href="../../../home/export/home.export.html#home.export.word.ExportDocument.add_summary">[docs]</a>    <span class="k">def</span> <span class="nf">add_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">summary</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add summary section.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Add summary section.</span>
+<span class="sd">    </span>
+<span class="sd">        :param summary: Summary section to add to document.</span>
+<span class="sd">        :type summary: [dict(str, str)]</span>
+<span class="sd">        :param document: Current document.</span>
+<span class="sd">        :type document: object</span>
+<span class="sd">        :return: Document updated with Summary.</span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">s</span>
         <span class="n">t</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="n">t</span><span class="o">.</span><span class="n">alignment</span> <span class="o">=</span> <span class="n">WD_TABLE_ALIGNMENT</span><span class="o">.</span><span class="n">CENTER</span>
@@ -168,7 +194,15 @@
         <span class="k">return</span> <span class="n">document</span> 
 
 <div class="viewcode-block" id="ExportDocument.add_skills"><a class="viewcode-back" href="../../../home/export/home.export.html#home.export.word.ExportDocument.add_skills">[docs]</a>    <span class="k">def</span> <span class="nf">add_skills</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">skills</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add skills section.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Add skills section.</span>
+<span class="sd">    </span>
+<span class="sd">        :param skills: Skills section to add to document.</span>
+<span class="sd">        :type summary: [dict(str, str)]</span>
+<span class="sd">        :param document: Current document.</span>
+<span class="sd">        :type document: object</span>
+<span class="sd">        :return: Document updated with Skills.</span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">current_year</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y&quot;</span><span class="p">)</span>
 
         <span class="n">t</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -212,7 +246,15 @@
         <span class="k">return</span> <span class="n">document</span>
 
 <div class="viewcode-block" id="ExportDocument.add_sub_skills"><a class="viewcode-back" href="../../../home/export/home.export.html#home.export.word.ExportDocument.add_sub_skills">[docs]</a>    <span class="k">def</span> <span class="nf">add_sub_skills</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subs</span><span class="p">,</span> <span class="n">ts</span><span class="p">,</span> <span class="n">ts_index</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add sub skills to skills section.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Add sub skills to skills section.</span>
+<span class="sd">    </span>
+<span class="sd">        :param subs: Sub skills to add to document.</span>
+<span class="sd">        :type subs: [dict(str, str)]</span>
+<span class="sd">        :param object ts: Table cell to update. </span>
+<span class="sd">        :param int ts_index: Index for current table cell. </span>
+<span class="sd">        :return: Document updated with sub skills.</span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">current_year</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y&quot;</span><span class="p">))</span> 
         <span class="n">sub_table</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">ts_index</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sub</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">subs</span><span class="p">):</span>
@@ -240,7 +282,14 @@
         <span class="k">return</span> <span class="n">ts</span> 
 
 <div class="viewcode-block" id="ExportDocument.add_experience"><a class="viewcode-back" href="../../../home/export/home.export.html#home.export.word.ExportDocument.add_experience">[docs]</a>    <span class="k">def</span> <span class="nf">add_experience</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experience</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add experience section.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Add experience section.</span>
+<span class="sd">    </span>
+<span class="sd">        :param [dict(str, str)] experience:</span>
+<span class="sd">            Experience section to add to document.</span>
+<span class="sd">        :param object document: Document to update. </span>
+<span class="sd">        :return: Document updated with Experience section.</span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">s</span>
         <span class="k">del</span> <span class="n">experience</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="s1">&#39;Experience&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 3&#39;</span><span class="p">)</span>
@@ -286,7 +335,16 @@
         <span class="k">return</span> <span class="n">document</span>
 
 <div class="viewcode-block" id="ExportDocument.add_projects"><a class="viewcode-back" href="../../../home/export/home.export.html#home.export.word.ExportDocument.add_projects">[docs]</a>    <span class="k">def</span> <span class="nf">add_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">projects</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add projects to experience section.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Add projects to experience section.</span>
+<span class="sd">    </span>
+<span class="sd">        :param [dict(str, str)] projects:</span>
+<span class="sd">            Projects for a portion of Experience section. </span>
+<span class="sd">        :param object table: Table from current document. </span>
+<span class="sd">        :param int row: Index of current row.</span>
+<span class="sd">        :param int col: Index of current col.</span>
+<span class="sd">        :return: Updated Projects table. </span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">projects</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="n">p</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="n">project</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;List Bullet&#39;</span><span class="p">)</span>
             <span class="n">p</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">1.0</span>
@@ -299,7 +357,14 @@
         <span class="k">return</span> <span class="n">table</span>
 
 <div class="viewcode-block" id="ExportDocument.add_education"><a class="viewcode-back" href="../../../home/export/home.export.html#home.export.word.ExportDocument.add_education">[docs]</a>    <span class="k">def</span> <span class="nf">add_education</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">education</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add education section.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Add education section.</span>
+<span class="sd">    </span>
+<span class="sd">        :param [dict(str, str)] education:</span>
+<span class="sd">            Education section for current document. </span>
+<span class="sd">        :param object document: Current document. </span>
+<span class="sd">        :return: Current document with Educaiton section. </span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">s</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="s1">&#39;Education&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 3&#39;</span><span class="p">)</span>
         <span class="n">p</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">1.0</span>
@@ -332,7 +397,14 @@
         <span class="k">return</span> <span class="n">document</span>
 
 <div class="viewcode-block" id="ExportDocument.add_contact"><a class="viewcode-back" href="../../../home/export/home.export.html#home.export.word.ExportDocument.add_contact">[docs]</a>    <span class="k">def</span> <span class="nf">add_contact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contact</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add contact section.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Add contact section.</span>
+<span class="sd">    </span>
+<span class="sd">        :param [dict(str, str)] contact:</span>
+<span class="sd">            Contact section for current document. </span>
+<span class="sd">        :param object document: Current document. </span>
+<span class="sd">        :return: Current document with Contact section. </span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">contact</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;web&#39;</span><span class="p">:</span>
                 <span class="n">web</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">)</span>
@@ -373,7 +445,12 @@
         <span class="k">return</span> <span class="n">document</span>
 
 <div class="viewcode-block" id="ExportDocument.set_styles"><a class="viewcode-back" href="../../../home/export/home.export.html#home.export.word.ExportDocument.set_styles">[docs]</a>    <span class="k">def</span> <span class="nf">set_styles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Set styles in the Word document.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Set styles in the Word document.</span>
+<span class="sd">    </span>
+<span class="sd">        :param object document: Current document. </span>
+<span class="sd">        :return: Current document with correct styles. </span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Heading 1&#39;</span><span class="p">]</span> 
         <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
         <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mh">0x51</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0x6A</span><span class="p">)</span> 
@@ -454,7 +531,12 @@
         <span class="k">return</span> <span class="n">document</span>
 
 <div class="viewcode-block" id="ExportDocument.set_layout"><a class="viewcode-back" href="../../../home/export/home.export.html#home.export.word.ExportDocument.set_layout">[docs]</a>    <span class="k">def</span> <span class="nf">set_layout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Define document layout.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Define document layout.</span>
+<span class="sd">    </span>
+<span class="sd">        :param object document: Current document. </span>
+<span class="sd">        :return: Current document with adjusted layougt. </span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">sections</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">sections</span> 
         <span class="n">section</span> <span class="o">=</span> <span class="n">sections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
         <span class="n">section</span><span class="o">.</span><span class="n">page_height</span> <span class="o">=</span> <span class="n">Cm</span><span class="p">(</span><span class="mf">29.7</span><span class="p">)</span>

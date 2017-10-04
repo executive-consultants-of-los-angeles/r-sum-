@@ -403,10 +403,12 @@ class ExportDocument(object):
         return document
 
     def set_styles(self, document):
-        """Set styles in the Word document.
+        """Set styles in the Word document."""
     
+        :param [dict(str, str)] contact:
+            Contact section for current document. 
         :param object document: Current document. 
-        :return: Current document with correct styles. 
+        :return: Current document with Contact section. 
         :rtype: object
         """
         style = document.styles['Heading 1'] 
@@ -489,12 +491,7 @@ class ExportDocument(object):
         return document
 
     def set_layout(self, document):
-        """Define document layout.
-    
-        :param object document: Current document. 
-        :return: Current document with adjusted layougt. 
-        :rtype: object
-        """
+        """Define document layout."""
         sections = document.sections 
         section = sections[0] 
         section.page_height = Cm(29.7)
