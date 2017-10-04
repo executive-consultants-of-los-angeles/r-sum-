@@ -10,9 +10,17 @@ from django.db import models
 class EntryItem(models.Model):
     """Class that defines EntryItem objects.
     
-    :attribute entry: Related :obj:`home.models.entry.Entry` object.
-    :attribute name: Name of stored content.
-    :attribute content: Stored content.
+    .. attribute:: entry 
+
+       Related :obj:`home.models.entry.Entry` object.
+
+    .. attribute:: name 
+
+       Name of stored content.
+
+    .. attribute:: content
+        
+        Stored content.
     """
     entry = models.ForeignKey('home.Entry', on_delete=models.CASCADE)
     name = models.CharField(max_length=255, default='entry item')

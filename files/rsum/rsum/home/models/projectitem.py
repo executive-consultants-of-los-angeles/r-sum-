@@ -13,9 +13,17 @@ import json
 class ProjectItem(models.Model):
     """Class that definies ProjectItem objects.
 
-    :attribute project: Associated :obj:`home.models.project.Project` object.
-    :attribute name: Name for stored ProjectItem content.
-    :attribute content: Stored ProjectItem content.
+    .. attribute:: project 
+
+       Associated :obj:`home.models.project.Project` object.
+    
+    .. attribute:: name 
+
+       Name for stored ProjectItem content.
+
+    .. attribute:: content
+
+       Stored ProjectItem content.
     """
     project = models.ForeignKey('home.Project', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)

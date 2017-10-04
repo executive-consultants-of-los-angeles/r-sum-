@@ -53,11 +53,17 @@
 <div class="viewcode-block" id="Entry"><a class="viewcode-back" href="../../../home/models/classes/home.models.entry.html#home.models.entry.Entry">[docs]</a><span class="k">class</span> <span class="nc">Entry</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Class for Entry objects.</span>
 
-<span class="sd">    :attribute project_item:</span>
+<span class="sd">    .. attribute:: project_item</span>
+
 <span class="sd">        Associated :obj:`home.models.project_item.ProjectItem` object.</span>
 
-<span class="sd">    :attribute name: Name of stored content.</span>
-<span class="sd">    :attribute content: Actual stored content.</span>
+<span class="sd">    .. attribute:: name</span>
+
+<span class="sd">       Name of stored content.</span>
+
+<span class="sd">    .. attribute:: content </span>
+
+<span class="sd">       Actual stored content.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">project_item</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span>
         <span class="s1">&#39;home.ProjectItem&#39;</span><span class="p">,</span>

@@ -11,11 +11,17 @@ from entryitem import EntryItem
 class Entry(models.Model):
     """Class for Entry objects.
 
-    :attribute project_item:
+    .. attribute:: project_item
+
         Associated :obj:`home.models.project_item.ProjectItem` object.
 
-    :attribute name: Name of stored content.
-    :attribute content: Actual stored content.
+    .. attribute:: name
+
+       Name of stored content.
+
+    .. attribute:: content 
+
+       Actual stored content.
     """
     project_item = models.ForeignKey(
         'home.ProjectItem',
