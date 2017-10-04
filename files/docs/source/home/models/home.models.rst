@@ -1,5 +1,5 @@
-home\.models
-============
+Models
+======
 
 .. autosummary::
    :toctree: classes
