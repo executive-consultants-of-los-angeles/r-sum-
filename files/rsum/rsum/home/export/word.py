@@ -24,7 +24,16 @@ CV = home.models.cv.CV
 
 
 class ExportDocument(object):
-    """Class to handle exporting rsum pages to Word documents."""
+    """Class to handle exporting rsum pages to Word documents.
+
+    .. attribute:: s
+
+       Hostname of current host.
+
+    .. attribute:: name
+
+       Filename to offer to the end user.
+    """
     def __init__(self):
         """Initialize ExportDocument class."""
         self.s = values.get(socket.gethostname())
