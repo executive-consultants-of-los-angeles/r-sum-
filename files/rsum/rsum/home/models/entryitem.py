@@ -22,7 +22,9 @@ class EntryItem(models.Model):
         
         Stored content.
     """
-    entry = models.ForeignKey('home.Entry', on_delete=models.CASCADE)
+    entry = models.ForeignKey(
+        'Entry',
+        on_delete=models.CASCADE)
     name = models.CharField(max_length=255, default='entry item')
     content = models.TextField() 
 

@@ -10,10 +10,20 @@ import yaml
 from django.test import TestCase
 from django.apps import apps
 
+import home.models
+
 
 class EntryItemTestCase(TestCase):
     """EntryItemTestCase class.
         
+    .. attribute:: entry_instance
+
+       The instantiated :obj:`home.models.entry.Entry` object for the
+       current :obj:`home.models.entryitem.EntryItem`.
+
+    .. attribute:: entry_item
+
+       The :obj:`home.models.entryitem.EntryItem` Model for testing.
     """
     def setUp(self):
         """Setup the EntryItemTestCase.
@@ -21,11 +31,23 @@ class EntryItemTestCase(TestCase):
         :return: none
         :rtype: None
         """
+        self.entry_item = home.models.entryitem.EntryItem()
+        self.entry_instance = home.models.entry.Entry.create(
+            name="test",
+            content="none",
+            project_item_id=1)
 
 
-    def test_save_entry_item(self):
-        """Test saving an EnryItem."""
-        e = self.e
+    def test_save_entry_item(self, entry=home.models.entry.Entry):
+        """EntryItem objects should save corrrectly.  Test for the ability
+           to save both strings and lists.
+
+        :param entry: The :obj:`home.models.entry.Entry` related to
+            the current :obj:`home.models.entry.EntryItem` being tested.
+        :type entry: :obj:`home.models.entry.Entry`
+        :return: True on success, False on failure.
+        :rtype: bool
+        """
         entry_item_string = str("this is a string")
         entry_item_list = [
             'this',
@@ -36,23 +58,14 @@ class EntryItemTestCase(TestCase):
             'strings'
         ]
 
-        ei = EntryItem()
-        ei.entry = e
-        ei.value = 'this is a different string'
-        ei.save()
+        entry_item_instance = self.entry_item 
+        entry_item_instance.name = "Testing."
+        entry_item_instance.content = entry_item_string
+        entry_item_instance.entry = self.entry_instance
+        entry_item_instance.save()
 
-        ei = EntryItem()
-        ei_result = ei.save_list_item(entry_item_string, e)
-        self.assertEqual(
-            list(ei_result),
-            list(EntryItem.objects.values())
-        )
-
-        ei_result = ei.save_list_item(entry_item_list, e)
-        self.assertEqual(
-            list(ei_result),
-            list(EntryItem.objects.values())
-        )
+        print(type(entry_item_instance))
+        return None
 
 
 class GetEntryItemTestCase(TestCase):

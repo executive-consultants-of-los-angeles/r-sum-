@@ -30,6 +30,22 @@ class Entry(models.Model):
     name = models.CharField(max_length=200, null=True)
     content = models.TextField() 
 
+    @classmethod
+    def create(cls, name='default', content='default', project_item_id=1):
+        """Class method to handle creation of Entry objects for testing.
+        
+        :param cls: The Entry class.
+        :type cls: :obj:`home.models.entry.Entry`
+        :param str name: Name of the entry.
+        :param str content: Content for the entry.
+        :param int project_item_id: ID of related project item. 
+        :return: Reference to the created Entry.
+        :rtype: :obj:`home.models.entry.Entry`
+        """
+        entry = cls(name=name, content=content, project_item_id=project_item_id)
+        entry.save()
+        return entry
+
     def get_entry(self, project_item):
         """Get an Entry object.
         
