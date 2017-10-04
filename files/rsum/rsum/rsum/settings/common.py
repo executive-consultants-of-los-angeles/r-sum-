@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'trsum',
-    'arsum',
+    'xander-complete',
     'jrsum',
     'mrsum',
     'xander',

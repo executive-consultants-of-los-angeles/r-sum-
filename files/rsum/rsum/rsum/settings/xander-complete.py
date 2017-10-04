@@ -9,7 +9,7 @@ DATABASES = {
         'NAME': 'xander-complete', 
         'USER': 'psql',
         'PASSWORD': '',
-        'HOST': 'psql', 
+        'HOST': 'apsql', 
         'PORT': 5432,
     }
 }
@@ -22,5 +22,5 @@ OWNER = 'xander-harris'
 CV = 'complete'
 DIR = 'xander'
 
-STATIC_URL = '/static/{}/'.format(OWNER)
-STATIC_ROOT = '/srv/{}/static/{}/'.format(OWNER, OWNER)
+STATIC_URL = '/static/xander/'
+STATIC_ROOT = '/srv/rsum/xander-complete/static/xander/'
