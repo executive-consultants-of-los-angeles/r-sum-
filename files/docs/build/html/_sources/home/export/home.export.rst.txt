@@ -1,5 +1,5 @@
-home.export
-============
+Export
+======
 
 .. automodule:: home.export.word
 

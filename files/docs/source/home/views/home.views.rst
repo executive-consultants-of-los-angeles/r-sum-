@@ -1,5 +1,5 @@
-home\.views
-===========
+Views
+=====
 
 .. automodule:: home.views
 
