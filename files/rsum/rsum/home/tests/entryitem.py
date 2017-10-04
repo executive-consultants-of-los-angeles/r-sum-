@@ -3,8 +3,12 @@
 """Test class for the entry item test case."""
 from __future__ import unicode_literals
 
+import socket
+import yaml
+
 from django.test import TestCase
 from django.apps import apps
+from django.conf import settings
 
 from home.models.cv import CV 
 from home.models.section import Section
@@ -13,18 +17,27 @@ from home.models.project import Project
 from home.models.projectitem import ProjectItem
 from home.models.entry import Entry
 from home.models.entryitem import EntryItem
-from rsum.settings.rsum import values
-
-import socket
-import yaml
 
 
 class EntryItemTestCase(TestCase):
-    """EntryItemTestCase class."""
+    """EntryItemTestCase class.
+    
+    .. attribute:: entry
+
+       Related :obj:`home.models.entry.Entry`.    
+    """
+    entry = Entry()
+
     def setUp(self):
-        """Setup the EntryItemTestCase."""
-        s = values.get(socket.gethostname())
-        f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
+        """Setup the EntryItemTestCase.
+
+        :return: None 
+        """
+        f = open(
+            '/srv/rsum/cvs/{0}/{1}.yml'.format(
+                settings.DIR, settings.NAME),
+            'r'
+        )
         abridged = yaml.load(f.read())
         f.close()
 
@@ -62,9 +75,14 @@ class EntryItemTestCase(TestCase):
                 e.projectitem = pi
                 e.save()
                 self.e = e
+        return None
 
     def test_save_entry_item(self):
-        """Test saving an EnryItem."""
+        """Test saving an EnryItem.
+
+        :return: None 
+        :raises: :exc:`AssertionError`
+        """
         e = self.e
         entry_item_string = str("this is a string")
         entry_item_list = [
@@ -87,18 +105,32 @@ class EntryItemTestCase(TestCase):
             list(ei_result),
             list(EntryItem.objects.values())
         )
-
         ei_result = ei.save_list_item(entry_item_list, e)
-        self.assertEqual(
-            list(ei_result),
-            list(EntryItem.objects.values())
-        )
+        assert list(ei_result) is list(EntryItem.objects.values())
+        return None
 
 
 class GetEntryItemTestCase(TestCase):
-    """Test class for EntryItem get methods."""
+    """Test class for EntryItem get methods.
+
+    :param: TestCase inherited object.
+    
+    .. attribute:: entries
+
+       :obj:`home.models.entry.Entry` object for testing.
+
+    .. attribute:: entryitems
+    
+       :obj:`home.models.entry.EntryItem` object for testing.
+    """
+    entries = Entry()
+    entryitems = EntryItem()
+
     def setUp(self):
-        """Setup testing for EntryItem get methods."""
+        """Setup testing for EntryItem get methods.
+
+        :return: None 
+        """
         cv_instance = CV()
         cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='abridged', template='acecv')
         sections = Section.objects.filter(cv=cv_instance)
@@ -132,9 +164,14 @@ class GetEntryItemTestCase(TestCase):
             entryitems.append(entryitem)
         self.entryitems = entryitems
         self.entries = entries
+        return None
 
     def test_get_entry_item(self):
-        """Test getting an EntryItem. """
+        """Test getting an EntryItem.
+        
+        :return: None 
+        :raises: AssertionError
+        """
         entries = self.entries
         entryitems = []
         for index, entry in enumerate(entries):
@@ -142,7 +179,5 @@ class GetEntryItemTestCase(TestCase):
                 entry=index
             ))
             entryitems.append(entryitem)
-        self.assertEqual(
-            self.entryitems,
-            entryitems
-        )
+        assert self.entryitems is entryitems
+        return None 
