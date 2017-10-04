@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="home.models.entry" href="home.models.entry.html" />
+    <link rel="next" title="home.models.section" href="home.models.section.html" />
     <link rel="prev" title="home.models" href="../home.models.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
@@ -44,18 +44,58 @@
   <div class="section" id="module-home.models.cv">
 <span id="home-models-cv"></span><h1>home.models.cv<a class="headerlink" href="#module-home.models.cv" title="Permalink to this headline">¶</a></h1>
 <p>Module containing the CV Model class.</p>
-<p class="rubric">Classes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="home.models.cv.CV.html#home.models.cv.CV" title="home.models.cv.CV"><code class="xref py py-obj docutils literal"><span class="pre">CV</span></code></a>(*args,&nbsp;**kwargs)</td>
-<td>The CV Model class.</td>
-</tr>
-</tbody>
-</table>
+<dl class="class">
+<dt id="home.models.cv.CV">
+<em class="property">class </em><code class="descclassname">home.models.cv.</code><code class="descname">CV</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/cv.html#CV"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.cv.CV" title="Permalink to this definition">¶</a></dt>
+<dd><p>The CV Model class.</p>
+<dl class="exception">
+<dt id="home.models.cv.CV.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#home.models.cv.CV.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="exception">
+<dt id="home.models.cv.CV.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#home.models.cv.CV.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="home.models.cv.CV.check_sections">
+<code class="descname">check_sections</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/cv.html#CV.check_sections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.cv.CV.check_sections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check to see if the current CV Model already has sections.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.cv.CV.get_cv">
+<code class="descname">get_cv</code><span class="sig-paren">(</span><em>cv_id=1</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/cv.html#CV.get_cv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.cv.CV.get_cv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the CV at location cv_id.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.cv.CV.get_experience">
+<code class="descname">get_experience</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/cv.html#CV.get_experience"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.cv.CV.get_experience" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the experience section for related value in context.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.cv.CV.get_skills">
+<code class="descname">get_skills</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/cv.html#CV.get_skills"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.cv.CV.get_skills" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Skills section for related value in context.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.cv.CV.get_values">
+<code class="descname">get_values</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/cv.html#CV.get_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.cv.CV.get_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get values section for related value in context.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.cv.CV.save_cv">
+<code class="descname">save_cv</code><span class="sig-paren">(</span><em>cv_d</em>, <em>name=u'default'</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/cv.html#CV.save_cv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.cv.CV.save_cv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the current CV model.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -78,6 +118,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../home.html">home</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../home.models.html">home.models</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">home.models.cv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.models.section.html">home.models.section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.models.subsection.html">home.models.subsection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.models.project.html">home.models.project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.models.projectitem.html">home.models.projectitem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="home.models.entry.html">home.models.entry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="home.models.entryitem.html">home.models.entryitem</a></li>
 </ul>
@@ -96,7 +140,7 @@
   <li><a href="../../home.html">home</a><ul>
   <li><a href="../home.models.html">home.models</a><ul>
       <li>Previous: <a href="../home.models.html" title="previous chapter">home.models</a></li>
-      <li>Next: <a href="home.models.entry.html" title="next chapter">home.models.entry</a></li>
+      <li>Next: <a href="home.models.section.html" title="next chapter">home.models.section</a></li>
   </ul></li>
   </ul></li>
   </ul></li>
