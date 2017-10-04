@@ -17,5 +17,5 @@ Tests
    project
    projectitem
    entry
-   entryitem
+   test_entryitem
    views
