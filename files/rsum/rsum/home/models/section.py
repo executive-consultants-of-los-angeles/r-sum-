@@ -74,6 +74,8 @@ class Section(models.Model):
         :type cv: :obj:`home.models.cv.CV`
         :param section: Content for storage in the Section.
         :type section: dict(str, str) or str
+        :param name: Name of current Section.
+        :type name: str
         :return: Dictionary of values stored in Section.
         :rtype: dict(str, str)
         """
