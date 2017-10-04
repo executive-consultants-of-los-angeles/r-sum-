@@ -1,5 +1,5 @@
-home\.tests
-===========
+Tests
+=====
 
 .. automodule:: home.tests
 
