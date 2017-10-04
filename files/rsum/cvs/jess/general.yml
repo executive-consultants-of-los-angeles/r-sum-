@@ -122,26 +122,27 @@ skills:
         Beckman Multimek 96, & HP Multiprobe II EX
       '
       start: 2013
-  lims:
-    name: 'Labratory Information Management Systems'
+  meslims:
+    name: '
+      Manufacturing Execution Systems (MES) &
+      Labratory Information Management Systems (LIMS) 
+    '
     start: 2004
-    primertrak:
-      name: 'PrimerTrak'
-      start: 2015
-    primertrak_west:
-      name: 'PrimerTrak West'
-      start: 2015
-    goast:
-      name: 'GOAST web-based MES'
-      start: 2015
-    oracle_xpo_database:
-      name: 'Oracle XPO database'
+    web_based_meslims_primertrak_primertrakwest_goast_sapphirelabvantage:
+      name: '
+        Web based MES & LIMS: PrimerTrak MES, PrimerTrak West MES, GOAST MES,
+        & Sapphire LabVantage LIMS
+      '
+      start: 2004
+    oracle_based_mes_oms_xpo:
+      name: 'Oracle based MES: Oligo Manufacturing System (OMS) & XPO'
       start: 2013
-    calc:
-      name: 'Excel-based CALC'
+    microsoft_excel_based_mes_calc:
+      name: 'Microsoft Excel based MES: CALC'
       start: 2013
-    access_based_production_monitor:
-      name: 'Access Based Production Monitor'
+    microsoft_access_based_mes_pm_bat:
+      name: 'Microsoft Access based MES: Production Monitor
+        & Business Assay Tracker (BAT)'
       start: 2013
   data_analysis_applications:
     name: 'Data Analysis Applications'
