@@ -76,7 +76,14 @@
     <span class="n">content</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
 
 <div class="viewcode-block" id="SubSection.get_sub_section"><a class="viewcode-back" href="../../../home/models/classes/home.models.subsection.html#home.models.subsection.SubSection.get_sub_section">[docs]</a>    <span class="k">def</span> <span class="nf">get_sub_section</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get a SubSection object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get a SubSection object.</span>
+
+<span class="sd">        :param section:</span>
+<span class="sd">            Related :obj:`home.models.section.Section` object.</span>
+<span class="sd">        :type section: :obj:`home.models.section.Section`</span>
+<span class="sd">        :return: List of dictionaries of retrieved SubSection values.</span>
+<span class="sd">        :rtype: list(dict(str, str)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># print(SubSection.objects.filter(section=section).values())</span>
         <span class="n">subsections</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">subsection</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span>

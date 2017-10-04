@@ -34,7 +34,14 @@ class SubSection(models.Model):
     content = models.TextField()
 
     def get_sub_section(self, section):
-        """Get a SubSection object."""
+        """Get a SubSection object.
+
+        :param section:
+            Related :obj:`home.models.section.Section` object.
+        :type section: :obj:`home.models.section.Section`
+        :return: List of dictionaries of retrieved SubSection values.
+        :rtype: list(dict(str, str)
+        """
         # print(SubSection.objects.filter(section=section).values())
         subsections = []
         for subsection in list(
