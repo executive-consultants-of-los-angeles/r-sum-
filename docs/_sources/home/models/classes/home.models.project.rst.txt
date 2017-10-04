@@ -1,5 +1,5 @@
-home\.models\.project
-=====================
+Project
+=======
 
 .. automodule:: home.models.project
 
