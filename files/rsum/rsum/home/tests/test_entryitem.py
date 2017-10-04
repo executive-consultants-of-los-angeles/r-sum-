@@ -2,66 +2,26 @@
 # -*- coding: utf-8 -*-
 """Test class for the entry item test case."""
 from __future__ import unicode_literals
-
-from django.test import TestCase
-from django.apps import apps
-
-from home.models.cv import CV 
-from home.models.section import Section
-from home.models.subsection import SubSection
-from home.models.project import Project
-from home.models.projectitem import ProjectItem
-from home.models.entry import Entry
-from home.models.entryitem import EntryItem
-from rsum.settings.rsum import values
+from __future__ import print_function
 
 import socket
 import yaml
 
+from django.test import TestCase
+from django.apps import apps
+
 
 class EntryItemTestCase(TestCase):
-    """EntryItemTestCase class."""
+    """EntryItemTestCase class.
+        
+    """
     def setUp(self):
-        """Setup the EntryItemTestCase."""
-        s = values.get(socket.gethostname())
-        f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
-        abridged = yaml.load(f.read())
-        f.close()
+        """Setup the EntryItemTestCase.
+        
+        :return: none
+        :rtype: None
+        """
 
-        cv = CV()
-        cv.name = 'abridged'
-        cv.save()
-
-        for name, section in sorted(
-            abridged.items(),
-            key=lambda t: t[1].get('id')
-        ): 
-            if isinstance(section, str):
-                pass
-            else:
-                s = Section()
-                s.cv = cv
-                s.name = name
-                s.content = type(section)
-                s.save()
-                ss = SubSection()
-                ss.name = 'ptest'
-                ss.section = s
-                ss.save()
-                p = Project()
-                p.name = "pitest"
-                p.content = type(dict())
-                p.sub_section = ss
-                p.save()
-                pi = ProjectItem()
-                pi.content = type(dict())
-                pi.project = p
-                pi.save()
-                e = Entry()
-                e.content = type(list()) 
-                e.projectitem = pi
-                e.save()
-                self.e = e
 
     def test_save_entry_item(self):
         """Test saving an EnryItem."""
