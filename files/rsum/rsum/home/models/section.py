@@ -11,8 +11,24 @@ import json
 
 
 class Section(models.Model):
-    """Class to define Section objects."""
-    cv = models.ForeignKey('home.CV', on_delete=models.CASCADE)
+    """Class to define Section objects.
+
+    .. attribute:: cv
+
+       Related :obj:`home.models.cv.CV` object.
+
+    .. attribute:: name
+
+       Name of Section object for reference.
+
+    .. attribute:: content
+
+       Content for Section object.
+    """
+    cv = models.ForeignKey(
+        'home.CV',
+        on_delete=models.CASCADE
+    )
     name = models.CharField(max_length=200, default='section')
     content = models.TextField()
 
