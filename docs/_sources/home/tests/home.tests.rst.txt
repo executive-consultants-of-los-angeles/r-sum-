@@ -18,3 +18,4 @@ Tests
    projectitem
    entry
    entryitem
+   views
