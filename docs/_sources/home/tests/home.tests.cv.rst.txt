@@ -1,0 +1,13 @@
+Tests Module
+============
+
+.. autosummary::
+   :toctree: classes
+
+   home.tests.cv
+   home.tests.section
+   home.tests.subsection
+   home.tests.project
+   home.tests.projectitem
+   home.tests.entry
+   home.tests.entryitem 

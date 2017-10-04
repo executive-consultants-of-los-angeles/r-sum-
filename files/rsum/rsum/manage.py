@@ -1,9 +1,15 @@
 #!/usr/bin/env python
 import os
 import sys
+import socket
+
+if socket.gethostname() == 'ecla.solutions':
+    settings = "rsum.settings"
+else:
+    settings = "rsum.settings.{}".format(socket.gethostname())
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "rsum.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings)
     try:
         from django.core.management import execute_from_command_line
     except ImportError:
