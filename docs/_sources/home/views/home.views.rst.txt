@@ -3,22 +3,8 @@ home\.views
 
 .. automodule:: home.views
 
-   
-   
-   .. rubric:: Functions
+.. currentmodule:: home.views
 
-   .. autosummary::
-      :toctree: methods
-   
-      export_docx
-      index
-   
-   
+.. autofunction:: index
 
-   
-   
-   
-
-   
-   
-   
+.. autofunction:: export_docx
