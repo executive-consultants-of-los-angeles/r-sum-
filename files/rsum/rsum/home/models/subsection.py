@@ -11,7 +11,20 @@ import json
 
 
 class SubSection(models.Model):
-    """Class to define SubSection objects."""
+    """Class to define SubSection objects.
+
+    .. attribute:: section
+
+       Related :obj:`home.models.section.Section` object.
+
+    .. attribute:: name
+
+       Name of SubSection.
+
+    .. attribute:: content
+
+       Content for SubSection.
+    """
     section = models.ForeignKey(
         'home.Section', 
         on_delete=models.CASCADE,

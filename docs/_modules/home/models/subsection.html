@@ -53,7 +53,20 @@
 
 
 <div class="viewcode-block" id="SubSection"><a class="viewcode-back" href="../../../home/models/classes/home.models.subsection.html#home.models.subsection.SubSection">[docs]</a><span class="k">class</span> <span class="nc">SubSection</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Class to define SubSection objects.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Class to define SubSection objects.</span>
+
+<span class="sd">    .. attribute:: section</span>
+
+<span class="sd">       Related :obj:`home.models.section.Section` object.</span>
+
+<span class="sd">    .. attribute:: name</span>
+
+<span class="sd">       Name of SubSection.</span>
+
+<span class="sd">    .. attribute:: content</span>
+
+<span class="sd">       Content for SubSection.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">section</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span>
         <span class="s1">&#39;home.Section&#39;</span><span class="p">,</span> 
         <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span>
@@ -95,8 +108,8 @@
                         <span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
                     <span class="p">)</span>
                 <span class="p">})</span>
-            <span class="n">subsections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subsection</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">subsections</span></div>
+            <span class="n">subsections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subsection</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">subsections</span>
 
 <div class="viewcode-block" id="SubSection.save_sub_sections"><a class="viewcode-back" href="../../../home/models/classes/home.models.subsection.html#home.models.subsection.SubSection.save_sub_sections">[docs]</a>    <span class="k">def</span> <span class="nf">save_sub_sections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sub_section</span><span class="p">,</span> <span class="n">section</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Save SubSection objects.&quot;&quot;&quot;</span>
@@ -144,12 +157,12 @@
                 <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span>
                     <span class="n">ss_i</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
                     <span class="n">p</span> <span class="o">=</span> <span class="n">Project</span><span class="p">()</span>
-                    <span class="n">projects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">save_projects</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">ss_i</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
-            <span class="k">return</span> <span class="n">projects</span></div>
+                    <span class="n">projects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">save_projects</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">ss_i</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span></div>
+            <span class="k">return</span> <span class="n">projects</span>
 
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
-        <span class="n">app_label</span> <span class="o">=</span> <span class="s2">&quot;home&quot;</span>
-        <span class="n">managed</span> <span class="o">=</span> <span class="kc">True</span></div>
+        <span class="n">app_label</span> <span class="o">=</span> <span class="s2">&quot;home&quot;</span></div>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 
           </div>
