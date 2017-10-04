@@ -1,7 +1,7 @@
-home\.tests\.entryitem
-======================
+home\.tests\.test\_entryitem
+============================
 
-.. automodule:: home.tests.entryitem
+.. automodule:: home.tests.test_entryitem
 
    
    
@@ -12,7 +12,6 @@ home\.tests\.entryitem
    .. rubric:: Classes
 
    .. autosummary::
-      :toctree: entryitem
    
       EntryItemTestCase
       GetEntryItemTestCase

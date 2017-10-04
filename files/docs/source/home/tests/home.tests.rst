@@ -4,7 +4,7 @@ home\.tests
 .. currentmodule:: home.tests
 
 .. autosummary::
-   :toctree: 
+   :toctree: classes 
 
    cv
    section
@@ -12,7 +12,7 @@ home\.tests
    project
    projectitem
    entry
-   entryitem
+   test_entryitem
 
 .. automodule:: home.tests
 
