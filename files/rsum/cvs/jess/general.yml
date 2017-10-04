@@ -125,22 +125,22 @@ skills:
   lims:
     name: 'Labratory Information Management Systems'
     start: 2004
-    primertrak:
+  primertrak:
     name: 'PrimerTrak'
     start: 2015
-    primertrak_west:
+  primertrak_west:
     name: "PrimerTrak West'
     start: 2015
-    goast:
+  goast:
     name: 'GOAST web-based MES'
     start: 2015
-    oracle_xpo_database:
+  oracle_xpo_database:
     name: 'Oracle XPO database'
     start: 2013
-    calc:
+  calc:
     name: 'Excel-based CALC'
     start: 2013
-    access_based_production_monitor:
+  access_based_production_monitor:
     name: 'Access Based Production Monitor'
     start: 2013
   data_analysis_applications:
