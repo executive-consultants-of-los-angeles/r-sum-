@@ -33,7 +33,13 @@ class Section(models.Model):
     content = models.TextField()
 
     def get_sections(self, cv):
-        """Get all Section objects for a document."""
+        """Get all Section objects for a document.
+
+        :param cv: Related :obj:`home.models.cv.CV` object.
+        :type cv: :obj:`home.models.cv.CV`
+        :return: List of dicionaries containing Section data.
+        :rtype: list(dict(str, str)
+        """
         sections = [] 
         for section in list(
             Section.objects.filter(
@@ -62,7 +68,15 @@ class Section(models.Model):
         return sections
 
     def save_section(self, cv, section, name):
-        """Save one Section object."""
+        """Save one Section object.
+        
+        :param cv: Related :obj:`home.models.cv.CV` object.
+        :type cv: :obj:`home.models.cv.CV`
+        :param section: Content for storage in the Section.
+        :type section: dict(str, str) or str
+        :return: Dictionary of values stored in Section.
+        :rtype: dict(str, str)
+        """
         if section is None:
             return None
         s_i = Section()

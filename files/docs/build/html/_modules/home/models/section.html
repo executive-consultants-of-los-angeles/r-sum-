@@ -75,7 +75,13 @@
     <span class="n">content</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
 
 <div class="viewcode-block" id="Section.get_sections"><a class="viewcode-back" href="../../../home/models/classes/home.models.section.html#home.models.section.Section.get_sections">[docs]</a>    <span class="k">def</span> <span class="nf">get_sections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cv</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get all Section objects for a document.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get all Section objects for a document.</span>
+
+<span class="sd">        :param cv: Related :obj:`home.models.cv.CV` object.</span>
+<span class="sd">        :type cv: :obj:`home.models.cv.CV`</span>
+<span class="sd">        :return: List of dicionaries containing Section data.</span>
+<span class="sd">        :rtype: list(dict(str, str)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">sections</span> <span class="o">=</span> <span class="p">[]</span> 
         <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span>
             <span class="n">Section</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
@@ -104,7 +110,15 @@
         <span class="k">return</span> <span class="n">sections</span>
 
 <div class="viewcode-block" id="Section.save_section"><a class="viewcode-back" href="../../../home/models/classes/home.models.section.html#home.models.section.Section.save_section">[docs]</a>    <span class="k">def</span> <span class="nf">save_section</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cv</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Save one Section object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Save one Section object.</span>
+<span class="sd">        </span>
+<span class="sd">        :param cv: Related :obj:`home.models.cv.CV` object.</span>
+<span class="sd">        :type cv: :obj:`home.models.cv.CV`</span>
+<span class="sd">        :param section: Content for storage in the Section.</span>
+<span class="sd">        :type section: dict(str, str) or str</span>
+<span class="sd">        :return: Dictionary of values stored in Section.</span>
+<span class="sd">        :rtype: dict(str, str)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">section</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
         <span class="n">s_i</span> <span class="o">=</span> <span class="n">Section</span><span class="p">()</span>
