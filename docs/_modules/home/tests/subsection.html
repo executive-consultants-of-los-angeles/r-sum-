@@ -57,12 +57,12 @@
 <span class="kn">from</span> <span class="nn">rsum.settings.rsum</span> <span class="k">import</span> <span class="n">values</span>
 <span class="kn">import</span> <span class="nn">home</span>
 
-<div class="viewcode-block" id="SubSectionTestCase"><a class="viewcode-back" href="../../../home/tests/subsection/home.tests.subsection.SubSectionTestCase.html#home.tests.subsection.SubSectionTestCase">[docs]</a><span class="k">class</span> <span class="nc">SubSectionTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="SubSectionTestCase"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.subsection.html#home.tests.subsection.SubSectionTestCase">[docs]</a><span class="k">class</span> <span class="nc">SubSectionTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Class for testing SubSection model saves.</span>
 
 <span class="sd">    .. note: The SubSectionTestCase has a note.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="SubSectionTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/subsection/home.tests.subsection.SubSectionTestCase.html#home.tests.subsection.SubSectionTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SubSectionTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.subsection.html#home.tests.subsection.SubSectionTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Method to setup SubSection model save tests.&quot;&quot;&quot;</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">())</span>
         <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/srv/rsum/cvs/</span><span class="si">{0}</span><span class="s1">/</span><span class="si">{1}</span><span class="s1">.yml&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;dir&#39;</span><span class="p">),</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)))</span>
@@ -80,7 +80,7 @@
         <span class="n">s</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">s</span> <span class="o">=</span> <span class="n">s</span></div>
 
-<div class="viewcode-block" id="SubSectionTestCase.test_save_sub_section"><a class="viewcode-back" href="../../../home/tests/subsection/home.tests.subsection.SubSectionTestCase.html#home.tests.subsection.SubSectionTestCase.test_save_sub_section">[docs]</a>    <span class="k">def</span> <span class="nf">test_save_sub_section</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SubSectionTestCase.test_save_sub_section"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.subsection.html#home.tests.subsection.SubSectionTestCase.test_save_sub_section">[docs]</a>    <span class="k">def</span> <span class="nf">test_save_sub_section</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test saving a SubSection model object.&quot;&quot;&quot;</span>
         <span class="n">ss</span> <span class="o">=</span> <span class="n">SubSection</span><span class="p">()</span>
         <span class="n">section</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">abridged</span><span class="o">.</span><span class="n">items</span><span class="p">()[</span><span class="mi">3</span><span class="p">]</span>
@@ -99,9 +99,9 @@
                 <span class="p">)</span> </div></div>
 
 
-<div class="viewcode-block" id="GetSubSectionTestCase"><a class="viewcode-back" href="../../../home/tests/subsection/home.tests.subsection.GetSubSectionTestCase.html#home.tests.subsection.GetSubSectionTestCase">[docs]</a><span class="k">class</span> <span class="nc">GetSubSectionTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="GetSubSectionTestCase"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.subsection.html#home.tests.subsection.GetSubSectionTestCase">[docs]</a><span class="k">class</span> <span class="nc">GetSubSectionTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Class for testing SubSection model gets.&quot;&quot;&quot;</span>
-<div class="viewcode-block" id="GetSubSectionTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/subsection/home.tests.subsection.GetSubSectionTestCase.html#home.tests.subsection.GetSubSectionTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GetSubSectionTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.subsection.html#home.tests.subsection.GetSubSectionTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Setup method for testing SubSection model gets.&quot;&quot;&quot;</span>
         <span class="n">cv_instance</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span>
         <span class="n">cv_id</span> <span class="o">=</span> <span class="n">cv_instance</span><span class="o">.</span><span class="n">check_sections</span><span class="p">(</span><span class="n">name_of_owner</span><span class="o">=</span><span class="s1">&#39;alex&#39;</span><span class="p">,</span> <span class="n">name_of_cv</span><span class="o">=</span><span class="s1">&#39;abridged&#39;</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="s1">&#39;acecv&#39;</span><span class="p">)</span>
@@ -115,7 +115,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">subsections</span> <span class="o">=</span> <span class="n">subsections</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sections</span> <span class="o">=</span> <span class="n">sections</span></div>
     
-<div class="viewcode-block" id="GetSubSectionTestCase.test_get_subsection"><a class="viewcode-back" href="../../../home/tests/subsection/home.tests.subsection.GetSubSectionTestCase.html#home.tests.subsection.GetSubSectionTestCase.test_get_subsection">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_subsection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GetSubSectionTestCase.test_get_subsection"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.subsection.html#home.tests.subsection.GetSubSectionTestCase.test_get_subsection">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_subsection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Method to test getting SubSection model objects.&quot;&quot;&quot;</span>
         <span class="n">subsection_instance</span> <span class="o">=</span> <span class="n">SubSection</span><span class="p">()</span>
         <span class="n">subsections</span> <span class="o">=</span> <span class="p">[</span><span class="n">subsection_instance</span><span class="o">.</span><span class="n">get_sub_section</span><span class="p">(</span><span class="n">section</span><span class="p">)</span> <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">]</span>

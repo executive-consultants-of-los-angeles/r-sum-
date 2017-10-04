@@ -1,10 +1,15 @@
-home\.tests
-===========
+Tests
+=====
+
+.. warning:: As far as I know all of these tests are broken
+   and essentially useless.
+
+.. automodule:: home.tests
 
 .. currentmodule:: home.tests
 
 .. autosummary::
-   :toctree: 
+   :toctree: classes 
 
    cv
    section
@@ -13,6 +18,4 @@ home\.tests
    projectitem
    entry
    entryitem
-
-.. automodule:: home.tests
-
+   views
