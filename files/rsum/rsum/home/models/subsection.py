@@ -77,7 +77,15 @@ class SubSection(models.Model):
         return subsections
 
     def save_sub_sections(self, sub_section, section):
-        """Save SubSection objects."""
+        """Save SubSection objects.
+
+        :param sub_section: Content to be stored in the SubSection model.
+        :type sub_section: dict(str, str) 
+        :param section: Related :obj:'home.models.section.Section` object.
+        :type section: :obj:`home.models.section.Section`
+        :return: Sorted or unsorted values saved in SubSection.
+        :rtype: dict(str, str) or tuple(str, dict(str, str))
+        """
         projects = []
         if (
             getattr(section, 'name') == 'experience' or
