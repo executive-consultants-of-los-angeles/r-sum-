@@ -1,5 +1,5 @@
-EntryItem Tests
-===============
+EntryItem
+=========
 
 .. currentmodule:: home.tests.entryitem
 
