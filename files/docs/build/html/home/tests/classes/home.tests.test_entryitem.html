@@ -49,9 +49,34 @@
 <em class="property">class </em><code class="descclassname">home.tests.test_entryitem.</code><code class="descname">EntryItemTestCase</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/tests/test_entryitem.html#EntryItemTestCase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.tests.test_entryitem.EntryItemTestCase" title="Permalink to this definition">¶</a></dt>
 <dd><p>EntryItemTestCase class.</p>
 <dl class="attribute">
+<dt id="home.tests.test_entryitem.EntryItemTestCase.cv">
+<code class="descname">cv</code><a class="headerlink" href="#home.tests.test_entryitem.EntryItemTestCase.cv" title="Permalink to this definition">¶</a></dt>
+<dd><p>The instantiated <a class="reference internal" href="../../models/classes/home.models.cv.html#home.models.cv.CV" title="home.models.cv.CV"><code class="xref py py-obj docutils literal"><span class="pre">home.models.cv.CV</span></code></a> object for the
+current <a class="reference internal" href="../../models/classes/home.models.entryitem.html#home.models.entryitem.EntryItem" title="home.models.entryitem.EntryItem"><code class="xref py py-obj docutils literal"><span class="pre">home.models.entryitem.EntryItem</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="home.tests.test_entryitem.EntryItemTestCase.entry">
 <code class="descname">entry</code><a class="headerlink" href="#home.tests.test_entryitem.EntryItemTestCase.entry" title="Permalink to this definition">¶</a></dt>
-<dd><p>Related <a class="reference internal" href="../../models/classes/home.models.entry.html#home.models.entry.Entry" title="home.models.entry.Entry"><code class="xref py py-obj docutils literal"><span class="pre">home.models.entry.Entry</span></code></a>.</p>
+<dd><p>The <a class="reference internal" href="../../models/classes/home.models.entry.html#home.models.entry.Entry" title="home.models.entry.Entry"><code class="xref py py-obj docutils literal"><span class="pre">home.models.entry.Entry</span></code></a> necessary for tests.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="home.tests.test_entryitem.EntryItemTestCase.entry_item">
+<code class="descname">entry_item</code><a class="headerlink" href="#home.tests.test_entryitem.EntryItemTestCase.entry_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="../../models/classes/home.models.entryitem.html#home.models.entryitem.EntryItem" title="home.models.entryitem.EntryItem"><code class="xref py py-obj docutils literal"><span class="pre">home.models.entryitem.EntryItem</span></code></a> Model for testing.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">entry</code></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Entry</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="home.tests.test_entryitem.EntryItemTestCase.entry_itemm">
+<code class="descname">entry_itemm</code><a class="headerlink" href="#home.tests.test_entryitem.EntryItemTestCase.entry_itemm" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">EntryItem</span></code></p>
 </dd></dl>
 
 <dl class="method">
@@ -62,7 +87,9 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">none</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
 </tr>
 </tbody>
 </table>
@@ -70,15 +97,18 @@
 
 <dl class="method">
 <dt id="home.tests.test_entryitem.EntryItemTestCase.test_save_entry_item">
-<code class="descname">test_save_entry_item</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/tests/test_entryitem.html#EntryItemTestCase.test_save_entry_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.tests.test_entryitem.EntryItemTestCase.test_save_entry_item" title="Permalink to this definition">¶</a></dt>
-<dd><p>Test saving an EnryItem.</p>
+<code class="descname">test_save_entry_item</code><span class="sig-paren">(</span><em>entry=&lt;class 'home.models.entry.Entry'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/tests/test_entryitem.html#EntryItemTestCase.test_save_entry_item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.tests.test_entryitem.EntryItemTestCase.test_save_entry_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test saving a list.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>entry</strong> (<a class="reference internal" href="../../models/classes/home.models.entry.html#home.models.entry.Entry" title="home.models.entry.Entry"><code class="xref py py-obj docutils literal"><span class="pre">home.models.entry.Entry</span></code></a>) – The <a class="reference internal" href="../../models/classes/home.models.entry.html#home.models.entry.Entry" title="home.models.entry.Entry"><code class="xref py py-obj docutils literal"><span class="pre">home.models.entry.Entry</span></code></a> related to
+the current <code class="xref py py-obj docutils literal"><span class="pre">home.models.entry.EntryItem</span></code> being tested.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">none</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
 </tr>
 </tbody>
 </table>
@@ -90,26 +120,6 @@
 <dt id="home.tests.test_entryitem.GetEntryItemTestCase">
 <em class="property">class </em><code class="descclassname">home.tests.test_entryitem.</code><code class="descname">GetEntryItemTestCase</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/tests/test_entryitem.html#GetEntryItemTestCase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.tests.test_entryitem.GetEntryItemTestCase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test class for EntryItem get methods.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Param:</th><td class="field-body">TestCase inherited object.</td>
-</tr>
-</tbody>
-</table>
-<dl class="attribute">
-<dt id="home.tests.test_entryitem.GetEntryItemTestCase.entries">
-<code class="descname">entries</code><a class="headerlink" href="#home.tests.test_entryitem.GetEntryItemTestCase.entries" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference internal" href="../../models/classes/home.models.entry.html#home.models.entry.Entry" title="home.models.entry.Entry"><code class="xref py py-obj docutils literal"><span class="pre">home.models.entry.Entry</span></code></a> object for testing.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="home.tests.test_entryitem.GetEntryItemTestCase.entryitems">
-<code class="descname">entryitems</code><a class="headerlink" href="#home.tests.test_entryitem.GetEntryItemTestCase.entryitems" title="Permalink to this definition">¶</a></dt>
-<dd><p><code class="xref py py-obj docutils literal"><span class="pre">home.models.entry.EntryItem</span></code> object for testing.</p>
-</dd></dl>
-
 <dl class="method">
 <dt id="home.tests.test_entryitem.GetEntryItemTestCase.setUp">
 <code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/tests/test_entryitem.html#GetEntryItemTestCase.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.tests.test_entryitem.GetEntryItemTestCase.setUp" title="Permalink to this definition">¶</a></dt>
@@ -118,7 +128,9 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">none</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
 </tr>
 </tbody>
 </table>
@@ -132,9 +144,9 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">none</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">AssertionError</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
 </tr>
 </tbody>
 </table>

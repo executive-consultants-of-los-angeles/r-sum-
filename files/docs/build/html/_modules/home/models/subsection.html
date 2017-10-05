@@ -75,6 +75,22 @@
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
 
+<div class="viewcode-block" id="SubSection.create"><a class="viewcode-back" href="../../../home/models/classes/home.models.subsection.html#home.models.subsection.SubSection.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Class method to handle creation of SubSection objects for testing.</span>
+<span class="sd">        </span>
+<span class="sd">        :param cls: The SubSection class.</span>
+<span class="sd">        :type cls: :obj:`home.models.subsection.SubSection`</span>
+<span class="sd">        :param str name: Name of the sub section.</span>
+<span class="sd">        :param str content: Content for the sub section.</span>
+<span class="sd">        :return: Reference to the created SubSection.</span>
+<span class="sd">        :rtype: :obj:`home.models.subsection.SubSection`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">section</span> <span class="o">=</span> <span class="n">Section</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">)</span>
+        <span class="n">sub_section</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="n">section</span><span class="p">)</span>
+        <span class="n">sub_section</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
+        <span class="k">return</span> <span class="n">sub_section</span> 
+
 <div class="viewcode-block" id="SubSection.get_sub_section"><a class="viewcode-back" href="../../../home/models/classes/home.models.subsection.html#home.models.subsection.SubSection.get_sub_section">[docs]</a>    <span class="k">def</span> <span class="nf">get_sub_section</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get a SubSection object.</span>
 

@@ -43,90 +43,104 @@
 <span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="sd">&quot;&quot;&quot;Test class for the entry item test case.&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">unicode_literals</span>
-
-<span class="kn">import</span> <span class="nn">socket</span>
-<span class="kn">import</span> <span class="nn">yaml</span>
-
 <span class="kn">from</span> <span class="nn">django.test</span> <span class="k">import</span> <span class="n">TestCase</span>
-<span class="kn">from</span> <span class="nn">django.apps</span> <span class="k">import</span> <span class="n">apps</span>
-<span class="kn">from</span> <span class="nn">django.conf</span> <span class="k">import</span> <span class="n">settings</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="k">import</span> <span class="n">models</span>
 
-<span class="kn">from</span> <span class="nn">home.models.cv</span> <span class="k">import</span> <span class="n">CV</span> 
-<span class="kn">from</span> <span class="nn">home.models.section</span> <span class="k">import</span> <span class="n">Section</span>
-<span class="kn">from</span> <span class="nn">home.models.subsection</span> <span class="k">import</span> <span class="n">SubSection</span>
-<span class="kn">from</span> <span class="nn">home.models.project</span> <span class="k">import</span> <span class="n">Project</span>
-<span class="kn">from</span> <span class="nn">home.models.projectitem</span> <span class="k">import</span> <span class="n">ProjectItem</span>
-<span class="kn">from</span> <span class="nn">home.models.entry</span> <span class="k">import</span> <span class="n">Entry</span>
-<span class="kn">from</span> <span class="nn">home.models.entryitem</span> <span class="k">import</span> <span class="n">EntryItem</span>
+<span class="kn">import</span> <span class="nn">home.models</span>
 
 
 <div class="viewcode-block" id="EntryItemTestCase"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.test_entryitem.html#home.tests.test_entryitem.EntryItemTestCase">[docs]</a><span class="k">class</span> <span class="nc">EntryItemTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;EntryItemTestCase class.</span>
-<span class="sd">    </span>
+<span class="sd">        </span>
+<span class="sd">    .. attribute:: cv </span>
+
+<span class="sd">       The instantiated :obj:`home.models.cv.CV` object for the</span>
+<span class="sd">       current :obj:`home.models.entryitem.EntryItem`.</span>
+
 <span class="sd">    .. attribute:: entry</span>
 
-<span class="sd">       Related :obj:`home.models.entry.Entry`.    </span>
+<span class="sd">       The :obj:`home.models.entry.Entry` necessary for tests.</span>
+
+<span class="sd">    .. attribute:: entry_item</span>
+
+<span class="sd">       The :obj:`home.models.entryitem.EntryItem` Model for testing.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">()</span>
+    <span class="n">cv</span> <span class="o">=</span> <span class="n">home</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">cv</span><span class="o">.</span><span class="n">CV</span><span class="p">()</span>
+    <span class="n">entry</span> <span class="o">=</span> <span class="n">home</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">Entry</span>
+    <span class="n">entry_itemm</span> <span class="o">=</span> <span class="n">home</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">entryitem</span><span class="o">.</span><span class="n">EntryItem</span>
 
 <div class="viewcode-block" id="EntryItemTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.test_entryitem.html#home.tests.test_entryitem.EntryItemTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Setup the EntryItemTestCase.</span>
-
-<span class="sd">        :return: None </span>
+<span class="sd">        </span>
+<span class="sd">        :return: none</span>
+<span class="sd">        :rtype: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-            <span class="s1">&#39;/srv/rsum/cvs/</span><span class="si">{0}</span><span class="s1">/</span><span class="si">{1}</span><span class="s1">.yml&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                <span class="n">settings</span><span class="o">.</span><span class="n">DIR</span><span class="p">,</span> <span class="n">settings</span><span class="o">.</span><span class="n">NAME</span><span class="p">),</span>
-            <span class="s1">&#39;r&#39;</span>
-        <span class="p">)</span>
-        <span class="n">abridged</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-        <span class="n">cv</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span>
-        <span class="n">cv</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;abridged&#39;</span>
-        <span class="n">cv</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-
-        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">section</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span>
-            <span class="n">abridged</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span>
-            <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
-        <span class="p">):</span> 
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-                <span class="k">pass</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">s</span> <span class="o">=</span> <span class="n">Section</span><span class="p">()</span>
-                <span class="n">s</span><span class="o">.</span><span class="n">cv</span> <span class="o">=</span> <span class="n">cv</span>
-                <span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-                <span class="n">s</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">section</span><span class="p">)</span>
-                <span class="n">s</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-                <span class="n">ss</span> <span class="o">=</span> <span class="n">SubSection</span><span class="p">()</span>
-                <span class="n">ss</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;ptest&#39;</span>
-                <span class="n">ss</span><span class="o">.</span><span class="n">section</span> <span class="o">=</span> <span class="n">s</span>
-                <span class="n">ss</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-                <span class="n">p</span> <span class="o">=</span> <span class="n">Project</span><span class="p">()</span>
-                <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;pitest&quot;</span>
-                <span class="n">p</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="nb">dict</span><span class="p">())</span>
-                <span class="n">p</span><span class="o">.</span><span class="n">sub_section</span> <span class="o">=</span> <span class="n">ss</span>
-                <span class="n">p</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-                <span class="n">pi</span> <span class="o">=</span> <span class="n">ProjectItem</span><span class="p">()</span>
-                <span class="n">pi</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="nb">dict</span><span class="p">())</span>
-                <span class="n">pi</span><span class="o">.</span><span class="n">project</span> <span class="o">=</span> <span class="n">p</span>
-                <span class="n">pi</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-                <span class="n">e</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">()</span>
-                <span class="n">e</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="nb">list</span><span class="p">())</span> 
-                <span class="n">e</span><span class="o">.</span><span class="n">projectitem</span> <span class="o">=</span> <span class="n">pi</span>
-                <span class="n">e</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">e</span> <span class="o">=</span> <span class="n">e</span></div>
+        <span class="n">cv_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cv</span><span class="o">.</span><span class="n">check_sections</span><span class="p">()</span> 
+        <span class="n">cv</span> <span class="o">=</span> <span class="n">home</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">cv</span><span class="o">.</span><span class="n">CV</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">cv_id</span><span class="p">)</span>
+        <span class="n">section</span> <span class="o">=</span> <span class="n">home</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">section</span><span class="o">.</span><span class="n">Section</span><span class="p">(</span><span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">)</span>
+        <span class="n">section</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="n">sub_section</span> <span class="o">=</span> <span class="n">home</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">subsection</span><span class="o">.</span><span class="n">SubSection</span><span class="p">(</span><span class="n">section</span><span class="o">=</span><span class="n">section</span><span class="p">)</span>
+        <span class="n">sub_section</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="n">project</span> <span class="o">=</span> <span class="n">home</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">Project</span><span class="p">(</span><span class="n">sub_section</span><span class="o">=</span><span class="n">sub_section</span><span class="p">)</span>
+        <span class="n">project</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="n">project_item</span> <span class="o">=</span> <span class="n">home</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">projectitem</span><span class="o">.</span><span class="n">ProjectItem</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="n">project</span><span class="p">)</span>
+        <span class="n">project_item</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span> <span class="o">=</span> <span class="n">home</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">project_item</span><span class="o">=</span><span class="n">project_item</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry_item</span> <span class="o">=</span> <span class="n">home</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">entryitem</span><span class="o">.</span><span class="n">EntryItem</span><span class="p">()</span></div>
         <span class="k">return</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="EntryItemTestCase.test_save_entry_item"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.test_entryitem.html#home.tests.test_entryitem.EntryItemTestCase.test_save_entry_item">[docs]</a>    <span class="k">def</span> <span class="nf">test_save_entry_item</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Test saving an EnryItem.</span>
 
-<span class="sd">        :return: None </span>
-<span class="sd">        :raises: :exc:`AssertionError`</span>
+    <span class="k">def</span> <span class="nf">test_save_entry_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry</span><span class="o">=</span><span class="n">home</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">Entry</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;EntryItem objects should save corrrectly.</span>
+
+<span class="sd">        :param entry: The :obj:`home.models.entry.Entry` related to</span>
+<span class="sd">            the current :obj:`home.models.entry.EntryItem` being tested.</span>
+<span class="sd">        :type entry: :obj:`home.models.entry.Entry`</span>
+<span class="sd">        :return: none </span>
+<span class="sd">        :rtype: None </span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">e</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">e</span>
         <span class="n">entry_item_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;this is a string&quot;</span><span class="p">)</span>
+        <span class="n">entry_item_instance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entry_item</span> 
+        <span class="n">entry_item_instance</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Testing.&quot;</span>
+        <span class="n">entry_item_instance</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">entry_item_string</span>
+        <span class="n">entry_item_instance</span><span class="o">.</span><span class="n">entry</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entry</span>
+        <span class="n">entry_item_instance</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="n">entry_item_instance</span><span class="p">,</span> 
+            <span class="n">home</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">entryitem</span><span class="o">.</span><span class="n">EntryItem</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">test_save_entry_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry</span><span class="o">=</span><span class="n">home</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">Entry</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test saving a string.</span>
+
+<span class="sd">        :param entry: The :obj:`home.models.entry.Entry` related to</span>
+<span class="sd">            the current :obj:`home.models.entry.EntryItem` being tested.</span>
+<span class="sd">        :type entry: :obj:`home.models.entry.Entry`</span>
+<span class="sd">        :return: none </span>
+<span class="sd">        :rtype: None </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">entry_item_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;this is a string&quot;</span><span class="p">)</span>
+
+        <span class="n">test_save_entry_item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entry_item</span><span class="o">.</span><span class="n">save_entry_item</span><span class="p">(</span>
+            <span class="n">entry_item_list</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="p">)</span>
+
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="n">test_save_entry_item</span><span class="p">,</span>
+            <span class="n">models</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">QuerySet</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="EntryItemTestCase.test_save_entry_item"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.test_entryitem.html#home.tests.test_entryitem.EntryItemTestCase.test_save_entry_item">[docs]</a>    <span class="k">def</span> <span class="nf">test_save_entry_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry</span><span class="o">=</span><span class="n">home</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">Entry</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test saving a list.</span>
+
+<span class="sd">        :param entry: The :obj:`home.models.entry.Entry` related to</span>
+<span class="sd">            the current :obj:`home.models.entry.EntryItem` being tested.</span>
+<span class="sd">        :type entry: :obj:`home.models.entry.Entry`</span>
+<span class="sd">        :return: none </span>
+<span class="sd">        :rtype: None </span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">entry_item_list</span> <span class="o">=</span> <span class="p">[</span>
             <span class="s1">&#39;this&#39;</span><span class="p">,</span>
             <span class="s1">&#39;is&#39;</span><span class="p">,</span>
@@ -136,93 +150,33 @@
             <span class="s1">&#39;strings&#39;</span>
         <span class="p">]</span>
 
-        <span class="n">ei</span> <span class="o">=</span> <span class="n">EntryItem</span><span class="p">()</span>
-        <span class="n">ei</span><span class="o">.</span><span class="n">entry</span> <span class="o">=</span> <span class="n">e</span>
-        <span class="n">ei</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;this is a different string&#39;</span>
-        <span class="n">ei</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="n">test_save_entry_item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entry_item</span><span class="o">.</span><span class="n">save_entry_item</span><span class="p">(</span>
+            <span class="n">entry_item_list</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="p">)</span> 
 
-        <span class="n">ei</span> <span class="o">=</span> <span class="n">EntryItem</span><span class="p">()</span>
-        <span class="n">ei_result</span> <span class="o">=</span> <span class="n">ei</span><span class="o">.</span><span class="n">save_list_item</span><span class="p">(</span><span class="n">entry_item_string</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span>
-            <span class="nb">list</span><span class="p">(</span><span class="n">ei_result</span><span class="p">),</span>
-            <span class="nb">list</span><span class="p">(</span><span class="n">EntryItem</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-        <span class="p">)</span>
-        <span class="n">ei_result</span> <span class="o">=</span> <span class="n">ei</span><span class="o">.</span><span class="n">save_list_item</span><span class="p">(</span><span class="n">entry_item_list</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-        <span class="k">assert</span> <span class="nb">list</span><span class="p">(</span><span class="n">ei_result</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">(</span><span class="n">EntryItem</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">())</span></div></div>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="n">test_save_entry_item</span><span class="p">,</span>
+            <span class="n">models</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">QuerySet</span><span class="p">)</span></div></div>
         <span class="k">return</span> <span class="kc">None</span>
 
 
 <div class="viewcode-block" id="GetEntryItemTestCase"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.test_entryitem.html#home.tests.test_entryitem.GetEntryItemTestCase">[docs]</a><span class="k">class</span> <span class="nc">GetEntryItemTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Test class for EntryItem get methods.</span>
-
-<span class="sd">    :param: TestCase inherited object.</span>
-<span class="sd">    </span>
-<span class="sd">    .. attribute:: entries</span>
-
-<span class="sd">       :obj:`home.models.entry.Entry` object for testing.</span>
-
-<span class="sd">    .. attribute:: entryitems</span>
-<span class="sd">    </span>
-<span class="sd">       :obj:`home.models.entry.EntryItem` object for testing.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">entries</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">()</span>
-    <span class="n">entryitems</span> <span class="o">=</span> <span class="n">EntryItem</span><span class="p">()</span>
-
+    <span class="sd">&quot;&quot;&quot;Test class for EntryItem get methods.&quot;&quot;&quot;</span>
 <div class="viewcode-block" id="GetEntryItemTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.test_entryitem.html#home.tests.test_entryitem.GetEntryItemTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Setup testing for EntryItem get methods.</span>
-
-<span class="sd">        :return: None </span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">cv_instance</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span>
-        <span class="n">cv_id</span> <span class="o">=</span> <span class="n">cv_instance</span><span class="o">.</span><span class="n">check_sections</span><span class="p">(</span><span class="n">name_of_owner</span><span class="o">=</span><span class="s1">&#39;alex&#39;</span><span class="p">,</span> <span class="n">name_of_cv</span><span class="o">=</span><span class="s1">&#39;abridged&#39;</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="s1">&#39;acecv&#39;</span><span class="p">)</span>
-        <span class="n">sections</span> <span class="o">=</span> <span class="n">Section</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">cv</span><span class="o">=</span><span class="n">cv_instance</span><span class="p">)</span>
-        <span class="n">subsections</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">SubSection</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">section</span><span class="o">=</span><span class="n">section</span><span class="p">))</span> <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">sections</span><span class="p">]</span>
-        <span class="n">projects</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">subsection</span> <span class="ow">in</span> <span class="n">subsections</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">subsection_object</span> <span class="ow">in</span> <span class="n">subsection</span><span class="p">:</span>
-                <span class="n">project</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Project</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
-                    <span class="n">sub_section</span><span class="o">=</span><span class="n">subsection_object</span>
-                <span class="p">))</span>
-                <span class="n">projects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">project</span><span class="p">)</span>
-        <span class="n">projectitems</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">projects</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">project_object</span> <span class="ow">in</span> <span class="n">project</span><span class="p">:</span>
-                <span class="n">projectitem</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ProjectItem</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
-                    <span class="n">project</span><span class="o">=</span><span class="n">project_object</span>
-                <span class="p">))</span> 
-                <span class="n">projectitems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">projectitem</span><span class="p">)</span>
-        <span class="n">entries</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">projectitem</span> <span class="ow">in</span> <span class="n">projectitems</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">projectitem_object</span> <span class="ow">in</span> <span class="n">projectitem</span><span class="p">:</span>
-                <span class="n">entry</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
-                    <span class="n">projectitem</span><span class="o">=</span><span class="n">projectitem_object</span>
-                <span class="p">))</span>
-                <span class="n">entries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
-        <span class="n">entryitems</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">entry</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">entries</span><span class="p">):</span>
-            <span class="n">entryitem</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">EntryItem</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
-                <span class="n">entry</span><span class="o">=</span><span class="n">index</span>
-            <span class="p">))</span>
-            <span class="n">entryitems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entryitem</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">entryitems</span> <span class="o">=</span> <span class="n">entryitems</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">entries</span> <span class="o">=</span> <span class="n">entries</span></div>
+<span class="sd">        </span>
+<span class="sd">        :return: none</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
         <span class="k">return</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="GetEntryItemTestCase.test_get_entry_item"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.test_entryitem.html#home.tests.test_entryitem.GetEntryItemTestCase.test_get_entry_item">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_entry_item</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Test getting an EntryItem.</span>
+        <span class="sd">&quot;&quot;&quot;Test getting an EntryItem. </span>
 <span class="sd">        </span>
-<span class="sd">        :return: None </span>
-<span class="sd">        :raises: AssertionError</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">entries</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entries</span>
-        <span class="n">entryitems</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">entry</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">entries</span><span class="p">):</span>
-            <span class="n">entryitem</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">EntryItem</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
-                <span class="n">entry</span><span class="o">=</span><span class="n">index</span>
-            <span class="p">))</span>
-            <span class="n">entryitems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entryitem</span><span class="p">)</span>
-        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">entryitems</span> <span class="ow">is</span> <span class="n">entryitems</span></div></div>
-        <span class="k">return</span> <span class="kc">None</span> 
+<span class="sd">        :return: none</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span></div></div>
+        <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
 
           </div>
