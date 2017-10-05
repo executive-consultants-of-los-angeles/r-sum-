@@ -12,6 +12,7 @@ import yaml
 from django.db import models
 from django.conf import settings
 from section import Section
+from subsection import SubSection
 
 
 class CV(models.Model):
@@ -21,15 +22,8 @@ class CV(models.Model):
 
        Name of the current CV.
 
-    .. attribute:: template
-
-        Template path containing static files for CV.
-
-        .. warning:: I believe this is not used and should be removed.
-
     """
     name = models.CharField(max_length=200)
-    template = models.CharField(max_length=200, null=True)
 
     @classmethod
     def create(cls, name='default'):
@@ -60,7 +54,6 @@ class CV(models.Model):
         self.id = self.save_cv(
             cv_dict, 
             name=settings.CV,
-            template=settings.OWNER
         )
         return self.id 
 
@@ -225,7 +218,6 @@ class CV(models.Model):
         """
         cv = CV()
         cv.name = name 
-        cv.template = kwargs.get('template')
         cv.save()
 
         for name, section in sorted(
