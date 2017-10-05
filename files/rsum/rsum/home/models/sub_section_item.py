@@ -63,7 +63,7 @@ class SubItem(models.Model):
                 sub_section_item.save()
                 return sub_section_item
 
-        print(content.items())
+        # print(content.items())
 
 
     def get_sub_section_items(self, subsection):

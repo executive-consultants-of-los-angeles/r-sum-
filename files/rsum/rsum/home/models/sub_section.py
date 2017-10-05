@@ -64,6 +64,16 @@ class SubSection(models.Model):
                     sub_section=sub_section)
             return sub_section
 
+        try:
+            temp_list = [sub_item for name, sub_item in content.items()]
+            print(temp_list)
+            sub_items = OrderedDict(
+                sorted(temp_list, key=lambda k: k.get('id'))
+            )
+            print(sub_items)
+        except:
+            sub_items = content.items()
+
         for name, sub_item in content.items():
             SubItem.create(
                 name=name,

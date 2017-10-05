@@ -45,13 +45,14 @@ class Section(models.Model):
         :return: Reference to the created Section.
         :rtype: :obj:`home.models.section.Section`
         """
-        subsections = None 
         content = kwargs.get('content')
         profile = kwargs.get('profile')
         section = cls(name=name, content=content, profile=profile)
         section.save()
 
-        for name, subsection in content.items():
-            SubSection.create(name=name, content=subsection, section=section)
+        print(content)
+        for item in content:
+            if isinstance(item, str):
+                print(item) 
 
-        return None
+        return section 

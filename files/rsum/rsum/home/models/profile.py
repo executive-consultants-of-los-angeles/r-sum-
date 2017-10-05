@@ -6,8 +6,6 @@ import json
 import socket
 import yaml
 
-from collections import OrderedDict
-
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 from django.conf import settings
@@ -41,13 +39,12 @@ class Profile(models.Model):
         with open(settings.FILE, 'r') as yaml_file:
             raw_content = yaml.load(yaml_file.read())
         yaml_file.close()
-        ordered_content = OrderedDict(
-            sorted(raw_content.items(), key=lambda k: k[1].get('id'))
-        )
-        profile = cls(name=settings.OWNER, content=json.dumps(ordered_content))
+        profile = cls(name=settings.OWNER, content=json.dumps(raw_content))
         profile.save()
 
-        for name, section in ordered_content.items():
+        for item in raw_content:
+            name = item.items()[0][0]
+            section = item.items()[0][1]
             Section.create(name=name, content=section, profile=profile)
 
         return profile 
