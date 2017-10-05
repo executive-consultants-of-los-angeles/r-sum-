@@ -1,5 +1,5 @@
-home\.tests\.test\_entryitem
-============================
+Test EntryItem
+==============
 
 .. automodule:: home.tests.test_entryitem
 

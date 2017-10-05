@@ -16,6 +16,6 @@ Tests
    subsection
    project
    projectitem
-   entry
+   test_entry
    test_entryitem
    views
