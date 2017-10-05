@@ -1,7 +1,7 @@
 ---
 intro:
   id: 1
-  name: "Xander Harris"
+  name: 'Xander Harris'
   position: "Python Developer / Site Reliability Engineer"
   social_media_links:
     facebook: 'https://www.facebook.com/eclacfo'
@@ -13,26 +13,31 @@ summary:
   content: "Straight shooter with upper management written all over me."
   # calendly: 'https://calendly.com/xander-ecla'
   build_status:
+    id: 2
     name: "Build Status"
     ngnx:
+      id: 1
       name: "NGINX"
       image:
         "https://travis-ci.org/executive-consultants-of-los-angeles/ngnx.svg?branch=master"
       link:
         "https://travis-ci.org/executive-consultants-of-los-angeles/ngnx"
     rsum:
+      id: 2
       name: "CV"
       image:
         "https://travis-ci.org/executive-consultants-of-los-angeles/rsum.svg?branch=master"
       link:
         "https://travis-ci.org/executive-consultants-of-los-angeles/rsum"
     ngos:
+      id: 3
       name: "Nagios"
       image:
         "https://travis-ci.org/executive-consultants-of-los-angeles/ngos.svg?branch=master"
       link:
         "https://travis-ci.org/executive-consultants-of-los-angeles/ngos"
     psql:
+      id: 4
       name: "PostgreSQL"
       image:
         "https://travis-ci.org/executive-consultants-of-los-angeles/psql.svg?branch=master"
@@ -40,7 +45,9 @@ summary:
         "https://travis-ci.org/executive-consultants-of-los-angeles/psql"
 skills:
   id: 3
-  start: 2000
+  start: 
+    name: 'start'
+    content: 2000
   infrastructure_automation:
     id: 1
     name: "Infrastructure Automation and Administration"
@@ -140,7 +147,10 @@ skills:
       start: 2014
 values:
   id: 4
-  introduction: 'A clearly defined system of ethics is vital to a
+  introduction: 
+    id: 1
+    name: 'Introduction'
+    content: 'A clearly defined system of ethics is vital to a
     happy and productive life, so I have defined my values as
     the following.  These are listed in order or precedence
     from left to right.'
@@ -551,7 +561,7 @@ education:
   name: "Broadmoor Elementary School"
   location: "Lafayette, Louisiana"
   studies: "Kindergarten Diploma, General Studies, Kindergarten"
-  duration: "1988 – 1989 (1 year)"
+  duration: "1988 - 1989 (1 year)"
   projects:
     tests:
       - "I have always tested well"

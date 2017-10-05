@@ -1,20 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """Module containing the Profile Model class."""
-from __future__ import unicode_literals
-from __future__ import print_function
-
 import datetime
 import json
 import socket
 import yaml
+
+from collections import OrderedDict
 
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 from django.conf import settings
 
 from section import Section
-from sub_section import SubSection
 
 
 class Profile(models.Model):
@@ -47,4 +45,11 @@ class Profile(models.Model):
         profile = cls(name=settings.OWNER, content=json.dumps(raw_content))
         profile.save()
 
-        return None
+        sections = OrderedDict(
+            sorted(raw_content.items(), key=lambda k: k[1].get('id'))
+        )
+
+        for name, section in sections.items():
+            Section.create(name=name, content=section, profile=profile)
+
+        return profile 

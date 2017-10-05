@@ -18,9 +18,8 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 
+FILE = '/srv/rsum/cvs/xander/complete.yml'
 OWNER = 'xander-harris'
-CV = 'complete'
-DIR = 'xander'
 
 STATIC_URL = '/static/xander/'
 STATIC_ROOT = '/srv/rsum/xander-complete/static/xander/'
