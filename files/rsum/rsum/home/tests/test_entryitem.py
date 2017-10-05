@@ -70,7 +70,7 @@ class EntryItemTestCase(TestCase):
             home.models.entryitem.EntryItem)
         return None
 
-    def test_save_entry_item(self, entry=home.models.entry.Entry):
+    def test_save_entry_string(self, entry=home.models.entry.Entry):
         """Test saving a string.
 
         :param entry: The :obj:`home.models.entry.Entry` related to
@@ -90,7 +90,7 @@ class EntryItemTestCase(TestCase):
             models.query.QuerySet)
         return None
 
-    def test_save_entry_item(self, entry=home.models.entry.Entry):
+    def test_save_entry_list(self, entry=home.models.entry.Entry):
         """Test saving a list.
 
         :param entry: The :obj:`home.models.entry.Entry` related to
