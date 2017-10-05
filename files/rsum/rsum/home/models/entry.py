@@ -7,6 +7,8 @@ from __future__ import print_function
 from django.db import models
 from django.apps import apps 
 
+import home.models
+
 
 class Entry(models.Model):
     """Class for Entry objects.
@@ -63,16 +65,20 @@ class Entry(models.Model):
         :param project_item: Related :obj:`home.models.projectitem.ProjectItem` 
         :return: Dictionary containing the saved Entry values.
         :rtype: dict(str, str)
+        :raises: :exc:`AssertionError`
         """
         if isinstance(entry, dict):
             for k, v in entry.iteritems():
-                entry_instance = Entry()
+                entry_instance = self
                 entry_instance.project_item = project_item 
                 entry_instance.name = k
                 entry_instance.value = type(v)
                 entry_instance.save()
-                entry_item_instance = EntryItem()
-                entry_item_instance.save_list_item(v, entry_instance)
+                entry_item_instance = home.models.entryitem.EntryItem()
+                entry_item_instance.save_entry_item(
+                    entry,
+                    entry_instance
+                )
             return Entry.objects.values() 
 
     class Meta:
