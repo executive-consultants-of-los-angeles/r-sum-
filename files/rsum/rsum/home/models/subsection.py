@@ -33,6 +33,22 @@ class SubSection(models.Model):
     name = models.CharField(max_length=200)
     content = models.TextField()
 
+    @classmethod
+    def create(cls, name='default', content='default'):
+        """Class method to handle creation of SubSection objects for testing.
+        
+        :param cls: The SubSection class.
+        :type cls: :obj:`home.models.subsection.SubSection`
+        :param str name: Name of the sub section.
+        :param str content: Content for the sub section.
+        :return: Reference to the created SubSection.
+        :rtype: :obj:`home.models.subsection.SubSection`
+        """
+        section = Section.create(name='default', content='default')
+        sub_section = cls(name=name, content=content, section=section)
+        sub_section.save()
+        return sub_section 
+
     def get_sub_section(self, section):
         """Get a SubSection object.
 

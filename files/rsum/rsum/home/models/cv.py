@@ -11,9 +11,7 @@ import yaml
 
 from django.db import models
 from django.conf import settings
-
 from section import Section
-from subsection import SubSection
 
 
 class CV(models.Model):
@@ -32,6 +30,20 @@ class CV(models.Model):
     """
     name = models.CharField(max_length=200)
     template = models.CharField(max_length=200, null=True)
+
+    @classmethod
+    def create(cls, name='default'):
+        """Class method to handle creation of CV objects for testing.
+        
+        :param cls: The CV class.
+        :type cls: :obj:`home.models.cv.CV`
+        :param str name: Name of the cv.
+        :return: Reference to the created CV.
+        :rtype: :obj:`home.models.cv.CV`
+        """
+        cv = cls(name=name)
+        cv.save()
+        return cv 
 
     def check_sections(self, *args, **kwargs):
         """Check to see if the current CV Model already has sections.

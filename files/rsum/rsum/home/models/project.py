@@ -4,10 +4,10 @@
 from __future__ import unicode_literals
 from __future__ import print_function
 
+import json
+
 from django.db import models
 from projectitem import ProjectItem
-
-import json
 
 
 class Project(models.Model):
@@ -31,6 +31,22 @@ class Project(models.Model):
     ) 
     name = models.CharField(max_length=200, null=True)
     content = models.TextField()
+
+    @classmethod
+    def create(cls, name='default', content='default'):
+        """Class method to handle creation of Project objects for testing.
+        
+        :param cls: The Project class.
+        :type cls: :obj:`home.models.project.Project`
+        :param str name: Name of the project.
+        :param str content: Content for the project.
+        :return: Reference to the created Entry.
+        :rtype: :obj:`home.models.entry.Entry`
+        """
+        sub_section = SubSection.create(name='default', content='default')
+        project = cls(name=name, content=content, sub_section=sub_section)
+        project.save()
+        return project 
 
     def get_projects(self, subsection):
         """Get all Project objects.

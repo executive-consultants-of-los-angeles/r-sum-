@@ -23,12 +23,12 @@ class EntryItem(models.Model):
         Stored content.
     """
     entry = models.ForeignKey(
-        'Entry',
+        'home.Entry',
         on_delete=models.CASCADE)
     name = models.CharField(max_length=255, default='entry item')
     content = models.TextField() 
 
-    def get_list_item(self, entry):
+    def get_entry_item(self, entry):
         """Get an EntryItem object.
 
         :param entry: The related Entry object.
@@ -45,7 +45,7 @@ class EntryItem(models.Model):
             items.append(item)
         return items
 
-    def save_list_item(self, entry_item, entry):
+    def save_entry_item(self, entry_item, entry):
         """Save an EntryItem object.
         
         :param entry_item: Content for current item.

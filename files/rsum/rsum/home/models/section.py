@@ -32,6 +32,22 @@ class Section(models.Model):
     name = models.CharField(max_length=200, default='section')
     content = models.TextField()
 
+    @classmethod
+    def create(cls, name='default', content='default'):
+        """Class method to handle creation of Section objects for testing.
+        
+        :param cls: The Section class.
+        :type cls: :obj:`home.models.section.Section`
+        :param str name: Name of the section.
+        :param str content: Content for the section.
+        :return: Reference to the created Section.
+        :rtype: :obj:`home.models.section.Section`
+        """
+        cv = CV.create(name='default')
+        section = cls(name=name, content=content, cv=cv)
+        section.save()
+        return section 
+
     def get_sections(self, cv):
         """Get all Section objects for a document.
 
