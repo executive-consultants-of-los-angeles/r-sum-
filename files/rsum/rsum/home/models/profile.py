@@ -40,16 +40,14 @@ class Profile(models.Model):
         """
         with open(settings.FILE, 'r') as yaml_file:
             raw_content = yaml.load(yaml_file.read())
-        
         yaml_file.close()
-        profile = cls(name=settings.OWNER, content=json.dumps(raw_content))
-        profile.save()
-
-        sections = OrderedDict(
+        ordered_content = OrderedDict(
             sorted(raw_content.items(), key=lambda k: k[1].get('id'))
         )
+        profile = cls(name=settings.OWNER, content=json.dumps(ordered_content))
+        profile.save()
 
-        for name, section in sections.items():
+        for name, section in ordered_content.items():
             Section.create(name=name, content=section, profile=profile)
 
         return profile 

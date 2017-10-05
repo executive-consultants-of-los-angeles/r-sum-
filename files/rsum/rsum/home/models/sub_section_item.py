@@ -32,7 +32,7 @@ class SubItem(models.Model):
     content = models.TextField()
 
     @classmethod
-    def create(cls, name='default', content='default'):
+    def create(cls, name='default', *args, **kwargs): 
         """Class method to handle creation of SubItem objects for testing.
         
         :param cls: The SubItem class.
@@ -42,10 +42,29 @@ class SubItem(models.Model):
         :return: Reference to the created Entry.
         :rtype: :obj:`home.models.entry.Entry`
         """
-        sub_section = SubSection.create(name='default', content='default')
-        sub_section_item = cls(name=name, content=content, sub_section=sub_section)
-        sub_section_item.save()
-        return sub_section_item 
+        content = kwargs.get('content')
+        sub_section = kwargs.get('sub_section')
+
+        if (isinstance(content, str) or
+                isinstance(content, int)):
+            sub_section_item = cls(
+                name=name,
+                content=content,
+                sub_section=sub_section)
+            sub_section_item.save()
+            return sub_section_item
+
+        if isinstance(content, list):
+            for index, item in enumerate(content):
+                sub_section_item = cls(
+                    name=index,
+                    content=item,
+                    sub_section=sub_section)
+                sub_section_item.save()
+                return sub_section_item
+
+        print(content.items())
+
 
     def get_sub_section_items(self, subsection):
         """Get all SubItem objects.

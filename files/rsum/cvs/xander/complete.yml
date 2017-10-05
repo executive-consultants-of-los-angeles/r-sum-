@@ -13,7 +13,6 @@ summary:
   content: "Straight shooter with upper management written all over me."
   # calendly: 'https://calendly.com/xander-ecla'
   build_status:
-    id: 2
     name: "Build Status"
     ngnx:
       id: 1
@@ -45,11 +44,8 @@ summary:
         "https://travis-ci.org/executive-consultants-of-los-angeles/psql"
 skills:
   id: 3
-  start: 
-    name: 'start'
-    content: 2000
+  start:  2000
   infrastructure_automation:
-    id: 1
     name: "Infrastructure Automation and Administration"
     start: 2000
     ansible:
@@ -65,7 +61,6 @@ skills:
       name: "Very IMproved Text Editor"
       start: 2000
   cloud_architecture:
-    id: 2
     name: "Cloud Computing Services"
     start: 2008
     amazon_web_services:
@@ -81,7 +76,6 @@ skills:
       name: "Digital Ocean"
       start: 2014
   software_development:
-    id: 3
     name: "Software Engineering"
     start: 2004
     agile:
@@ -100,7 +94,6 @@ skills:
       name: "SubVersion"
       start: 2006
   linux_unix:
-    id: 4
     name: "Linux Administration"
     start: 2000
     redhat:
@@ -116,7 +109,6 @@ skills:
       name: "Gentoo Linux"
       start: 2004
   programming:
-    id: 5
     name: "Programming Languages"
     start: 2000
     python:
@@ -132,7 +124,6 @@ skills:
       name: "JavaScript"
       start: 2000
   databases:
-    id: 6
     name: "Relational and Other Databases"
     start: 2000
     postgresql:
@@ -148,47 +139,41 @@ skills:
 values:
   id: 4
   introduction: 
-    id: 1
     name: 'Introduction'
     content: 'A clearly defined system of ethics is vital to a
     happy and productive life, so I have defined my values as
     the following.  These are listed in order or precedence
     from left to right.'
-  content:
-    loyalty:
-      id: 1
-      col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
-      service: 'class="service" data-height="height"'
-      icon: 'class="service-icon icon-badge"'
-      text: 'Success is the result of perfection,
-        hard work, learning from failure,
-        loyalty, and persistence. - Colin Powell'
-    industry:
-      id: 2
-      col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
-      service:
-        'class="service bg-color-base wow zoomIn"
-          data-height="height"
-          data-wow-duration=".3"
-          data-wow-delay=".1s"'
-      icon: ' class="service-icon color-white icon-chemistry"'
-      text: 'Concentration is my motto - first
-        honesty, then industry,
-        then concentration. - Andrew Carnegie'
-    efficiency:
-      id: 3
-      col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
-      service: 'class="service" data-height="height"'
-      icon: 'class="service-icon icon-screen-tablet"'
-      text: 'There can be economy only where there is
-        efficiency. - Benjamin Disraeli'
-    wealth:
-      id: 4
-      col: 'class="col-md-3 col-sm-6"'
-      service: 'class="service" data-height="height"'
-      icon: 'class="service-icon  icon-mustache"'
-      text: 'Wealth is the ability to fully experience
-        life. - Henry David Thoreau'
+  loyalty:
+    col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+    service: 'class="service" data-height="height"'
+    icon: 'class="service-icon icon-badge"'
+    text: 'Success is the result of perfection,
+      hard work, learning from failure,
+      loyalty, and persistence. - Colin Powell'
+  industry:
+    col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+    service:
+      'class="service bg-color-base wow zoomIn"
+        data-height="height"
+        data-wow-duration=".3"
+        data-wow-delay=".1s"'
+    icon: ' class="service-icon color-white icon-chemistry"'
+    text: 'Concentration is my motto - first
+      honesty, then industry,
+      then concentration. - Andrew Carnegie'
+  efficiency:
+    col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
+    service: 'class="service" data-height="height"'
+    icon: 'class="service-icon icon-screen-tablet"'
+    text: 'There can be economy only where there is
+      efficiency. - Benjamin Disraeli'
+  wealth:
+    col: 'class="col-md-3 col-sm-6"'
+    service: 'class="service" data-height="height"'
+    icon: 'class="service-icon  icon-mustache"'
+    text: 'Wealth is the ability to fully experience
+      life. - Henry David Thoreau'
 experience:
   id: 5
   introduction: 'Counting from the first time I installed

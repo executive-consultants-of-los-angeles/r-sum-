@@ -51,23 +51,7 @@ class Section(models.Model):
         section = cls(name=name, content=content, profile=profile)
         section.save()
 
-        for name, subsection in content.iteritems():
-            if (isinstance(subsection, dict) and
-                'id' in subsection.keys()):
-                subsections = OrderedDict(
-                    sorted(subsection.items(), key=lambda k: k[1].get('id'))
-                )
-            else:
-                SubSection.create(
-                    name=name,
-                    content=subsection,
-                    section=section)    
-
-        if subsections is not None: 
-            for name, subsection in subsections.items():
-                SubSection.create(
-                    name=name,
-                    content=subsection,
-                    section=section)
+        for name, subsection in content.items():
+            SubSection.create(name=name, content=subsection, section=section)
 
         return None

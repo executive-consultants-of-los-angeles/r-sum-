@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """Module for class that defines SubSection objects."""
+from collections import OrderedDict
+
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 
@@ -43,8 +45,27 @@ class SubSection(models.Model):
         :return: Reference to the created SubSection.
         :rtype: :obj:`home.models.subsection.SubSection`
         """
+        sub_items = {}
         content = kwargs.get('content')
         section = kwargs.get('section')
         sub_section = cls(name=name, content=content, section=section)
         sub_section.save()
-        return sub_section 
+
+        if (isinstance(content, str) or
+            isinstance(content, int)):
+            SubItem.create(name=name, content=content, sub_section=sub_section)
+            return sub_section 
+
+        if (isinstance(content, list)):
+            for index,item in enumerate(content):
+                SubItem.create(
+                    name=index,
+                    content=item,
+                    sub_section=sub_section)
+            return sub_section
+
+        for name, sub_item in content.items():
+            SubItem.create(
+                name=name,
+                content=sub_item,
+                sub_section=sub_section)        
