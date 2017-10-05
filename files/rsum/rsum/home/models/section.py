@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.db import models
-from subsection import SubSection
+from sub_section import SubSection
 
 import json
 
@@ -13,9 +13,9 @@ import json
 class Section(models.Model):
     """Class to define Section objects.
 
-    .. attribute:: cv
+    .. attribute:: profile
 
-       Related :obj:`home.models.cv.CV` object.
+       Related :obj:`home.models.profile.Profile` object.
 
     .. attribute:: name
 
@@ -25,8 +25,8 @@ class Section(models.Model):
 
        Content for Section object.
     """
-    cv = models.ForeignKey(
-        'home.CV',
+    profile = models.ForeignKey(
+        'home.Profile',
         on_delete=models.CASCADE
     )
     name = models.CharField(max_length=200, default='section')
@@ -43,23 +43,23 @@ class Section(models.Model):
         :return: Reference to the created Section.
         :rtype: :obj:`home.models.section.Section`
         """
-        cv = CV.create(name='default')
-        section = cls(name=name, content=content, cv=cv)
+        profile = Profile.create(name='default')
+        section = cls(name=name, content=content, profile=profile)
         section.save()
         return section 
 
-    def get_sections(self, cv):
+    def get_sections(self, profile):
         """Get all Section objects for a document.
 
-        :param cv: Related :obj:`home.models.cv.CV` object.
-        :type cv: :obj:`home.models.cv.CV`
+        :param profile: Related :obj:`home.models.profile.Profile` object.
+        :type profile: :obj:`home.models.profile.Profile`
         :return: List of dicionaries containing Section data.
         :rtype: list(dict(str, str)
         """
         sections = [] 
         for section in list(
             Section.objects.filter(
-                cv=cv
+                profile=profile
             ).order_by('id').values()
         ):
             if section.get('content') == u"<type 'list'>":
@@ -83,11 +83,11 @@ class Section(models.Model):
             sections.append(section)
         return sections
 
-    def save_section(self, cv, section, name):
+    def save_section(self, profile, section, name):
         """Save one Section object.
         
-        :param cv: Related :obj:`home.models.cv.CV` object.
-        :type cv: :obj:`home.models.cv.CV`
+        :param profile: Related :obj:`home.models.profile.Profile` object.
+        :type profile: :obj:`home.models.profile.Profile`
         :param section: Content for storage in the Section.
         :type section: dict(str, str) or str
         :param name: Name of current Section.
@@ -98,7 +98,7 @@ class Section(models.Model):
         if section is None:
             return None
         s_i = Section()
-        s_i.cv = cv
+        s_i.profile = profile
         s_i.name = name
 
         if isinstance(section, str):

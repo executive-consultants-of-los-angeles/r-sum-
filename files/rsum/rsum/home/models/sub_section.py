@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 from django.db import models
-from project import Project
+from sub_section_item import SubItem 
 
 import json
 
@@ -69,13 +69,13 @@ class SubSection(models.Model):
                 subsection.update({'name': 'Build Status'})                
 
             # print(json.dumps(subsection, indent=1))
-            p = Project()
+            p = SubItem()
             if (
                 subsection.get('content') == u"<type 'list'>" or
                 subsection.get('content') == u"<type 'dict'>"
             ):
                 subsection.update({
-                    'content': p.get_projects(
+                    'content': p.get_sub_section_items(
                         SubSection.objects.filter(
                             id=subsection.get('id')
                         )
@@ -84,7 +84,7 @@ class SubSection(models.Model):
             else:
                 subsection.update({
                     'content': list(
-                        Project.objects.filter(
+                        SubItem.objects.filter(
                             sub_section=subsection.get('id')
                         ).values()
                     )
@@ -102,7 +102,7 @@ class SubSection(models.Model):
         :return: Sorted or unsorted values saved in SubSection.
         :rtype: dict(str, str) or tuple(str, dict(str, str))
         """
-        projects = []
+        sub_section_items = []
         if (
             getattr(section, 'name') == 'experience' or
             getattr(section, 'name') == 'skills'
@@ -131,11 +131,11 @@ class SubSection(models.Model):
                 ss_i.content = type(item[1])
                 ss_i.name = item[0]
                 ss_i.save()
-                p = Project()
-                projects.append(p.save_projects(item[1], ss_i, item[0]))
+                p = SubItem()
+                sub_section_items.append(p.save_sub_section_items(item[1], ss_i, item[0]))
                 # print(json.dumps(item, indent=1))
                 # print(type(item[1]))
-            return projects
+            return sub_section_items
 
         if isinstance(sub_section, dict):
             for k, v in sub_section.iteritems():
@@ -145,9 +145,9 @@ class SubSection(models.Model):
                 ss_i.name = k
                 if k != 'id':
                     ss_i.save()
-                    p = Project()
-                    projects.append(p.save_projects(v, ss_i, k))
-            return projects
+                    p = SubItem()
+                    sub_section_items.append(p.save_sub_section_items(v, ss_i, k))
+            return sub_section_items
 
     class Meta:
         app_label = "home"
