@@ -1,6 +1,7 @@
     <h2>{{ section|title }}</h2>
     <!-- Progress Box -->
     {% for skill, data in sections.skills.iteritems %}
+      {% if skill != 'start' %}
       <div class="progress-box">
         <h5>{{ data.name }} <span class="color-heading pull-right">{{ data.experience_string }}</span></h5>
         <div class="progress">
@@ -16,6 +17,7 @@
         {% endfor %}
         </div>
         <!-- End Progress Box -->
+        {% endif %}
       {% endfor %}
       </div>
     </div>
