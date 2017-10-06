@@ -50,9 +50,16 @@ class Section(models.Model):
         section = cls(name=name, content=content, profile=profile)
         section.save()
 
-        print(content)
-        for item in content:
-            if isinstance(item, str):
-                print(item) 
+        if isinstance(content, list):
+            [SubSection.create(
+                name=name,
+                content=content,
+                section=section) for name, content in enumerate(content)]
+            return section
 
+        for name, sub_section in content.items():
+            SubSection.create(
+                name=name,
+                content=sub_section,
+                section=section)
         return section 
