@@ -22,4 +22,4 @@ Profile.create('complete')
 
 f = open('/tmp/ready','w')
 f.write('ready')
-f.cloase()
+f.close()
