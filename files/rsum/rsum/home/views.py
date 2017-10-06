@@ -45,6 +45,7 @@ def index(request):
     context = {
         'profile': profile.name,
         'sections': sections,
+        'dir': settings.DIR,
     } 
          
     return render(request, 'home/index.html', context)

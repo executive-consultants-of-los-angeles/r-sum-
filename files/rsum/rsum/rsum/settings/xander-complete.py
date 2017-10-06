@@ -20,6 +20,7 @@ DATABASES = {
 
 FILE = '/srv/rsum/cvs/xander/complete.yml'
 OWNER = 'xander-harris'
+DIR = 'xander'
 
 STATIC_URL = '/static/xander/'
 STATIC_ROOT = '/srv/rsum/xander-complete/static/xander/'
