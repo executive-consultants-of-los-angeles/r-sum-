@@ -1,21 +1,21 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """Model class that handles Section objects."""
-from __future__ import unicode_literals
-from __future__ import print_function
+import json
 
 from django.db import models
-from subsection import SubSection
+from django.contrib.postgres.fields import JSONField
+from django.conf import settings
 
-import json
+from sub_section import SubSection
 
 
 class Section(models.Model):
     """Class to define Section objects.
 
-    .. attribute:: cv
+    .. attribute:: profile
 
-       Related :obj:`home.models.cv.CV` object.
+       Related :obj:`home.models.profile.Profile` object.
 
     .. attribute:: name
 
@@ -23,79 +23,44 @@ class Section(models.Model):
 
     .. attribute:: content
 
-       Content for Section object.
+       JSON encoded content for the current section. 
     """
-    cv = models.ForeignKey(
-        'home.CV',
+    profile = models.ForeignKey(
+        'home.Profile', 
         on_delete=models.CASCADE
     )
     name = models.CharField(max_length=200, default='section')
-    content = models.TextField()
+    content = JSONField()
 
-    def get_sections(self, cv):
-        """Get all Section objects for a document.
-
-        :param cv: Related :obj:`home.models.cv.CV` object.
-        :type cv: :obj:`home.models.cv.CV`
-        :return: List of dicionaries containing Section data.
-        :rtype: list(dict(str, str)
-        """
-        sections = [] 
-        for section in list(
-            Section.objects.filter(
-                cv=cv
-            ).order_by('id').values()
-        ):
-            if section.get('content') == u"<type 'list'>":
-                ss = SubSection(section=self)
-                section.update({
-                    'content': ss.get_sub_section(
-                        Section.objects.filter(
-                            id=section.get('id')
-                        )
-                    ),
-                })
-            if section.get('content') == u"<type 'dict'>":
-                ss = SubSection(section=self)
-                section.update({
-                    'content': ss.get_sub_section(
-                        Section.objects.filter(
-                            id=section.get('id')
-                        )
-                    ),
-                })
-            sections.append(section)
-        return sections
-
-    def save_section(self, cv, section, name):
-        """Save one Section object.
+    @classmethod
+    def create(cls, name='default', *args, **kwargs):
+        """Class method to handle creation of Section objects for testing.
         
-        :param cv: Related :obj:`home.models.cv.CV` object.
-        :type cv: :obj:`home.models.cv.CV`
-        :param section: Content for storage in the Section.
-        :type section: dict(str, str) or str
-        :param name: Name of current Section.
-        :type name: str
-        :return: Dictionary of values stored in Section.
-        :rtype: dict(str, str)
+        :param cls: The Section class.
+        :type cls: :obj:`home.models.section.Section`
+        :param str name: Name of the section.
+        :param str content: Content for the section.
+        :return: Reference to the created Section.
+        :rtype: :obj:`home.models.section.Section`
         """
-        if section is None:
-            return None
-        s_i = Section()
-        s_i.cv = cv
-        s_i.name = name
+        content = kwargs.get('content')
+        profile = kwargs.get('profile')
+        section = cls(
+            name=name,
+            content=json.dumps(content),
+            profile=profile)
+        section.save()
 
-        if isinstance(section, str):
-            s_i.content = section
-            s_i.save()
-        else:
-            s_i.content = type(section)
-            s_i.save()
-            ss = SubSection()
-            ss.save_sub_sections(section, s_i)
+        if isinstance(content, list):
+            [SubSection.create(
+                name=name,
+                content=content,
+                section=section) for name, content in enumerate(content)]
+            return section
 
-        return Section.objects.values()
-
-    class Meta:
-        app_label = "home"
-        managed = True
+        for name, sub_section in content.items():
+            SubSection.create(
+                name=name,
+                content=sub_section,
+                section=section)
+        return section 

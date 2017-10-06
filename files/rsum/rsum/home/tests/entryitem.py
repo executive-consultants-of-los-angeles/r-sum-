@@ -1,90 +1,104 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """Test class for the entry item test case."""
-from __future__ import unicode_literals
-
-import socket
-import yaml
-
 from django.test import TestCase
-from django.apps import apps
-from django.conf import settings
+from django.db import models
 
-from home.models.cv import CV 
-from home.models.section import Section
-from home.models.subsection import SubSection
-from home.models.project import Project
-from home.models.projectitem import ProjectItem
-from home.models.entry import Entry
-from home.models.entryitem import EntryItem
+import home.models
 
 
 class EntryItemTestCase(TestCase):
     """EntryItemTestCase class.
-    
+        
+    .. attribute:: cv 
+
+       The instantiated :obj:`home.models.cv.CV` object for the
+       current :obj:`home.models.entryitem.EntryItem`.
+
     .. attribute:: entry
 
-       Related :obj:`home.models.entry.Entry`.    
+       The :obj:`home.models.entry.Entry` necessary for tests.
+
+    .. attribute:: entry_item
+
+       The :obj:`home.models.entryitem.EntryItem` Model for testing.
     """
-    entry = Entry()
+    cv = home.models.cv.CV()
+    entry = home.models.entry.Entry
+    entry_itemm = home.models.entryitem.EntryItem
 
     def setUp(self):
         """Setup the EntryItemTestCase.
-
-        :return: None 
+        
+        :return: none
+        :rtype: None
         """
-        f = open(
-            '/srv/rsum/cvs/{0}/{1}.yml'.format(
-                settings.DIR, settings.NAME),
-            'r'
-        )
-        abridged = yaml.load(f.read())
-        f.close()
-
-        cv = CV()
-        cv.name = 'abridged'
-        cv.save()
-
-        for name, section in sorted(
-            abridged.items(),
-            key=lambda t: t[1].get('id')
-        ): 
-            if isinstance(section, str):
-                pass
-            else:
-                s = Section()
-                s.cv = cv
-                s.name = name
-                s.content = type(section)
-                s.save()
-                ss = SubSection()
-                ss.name = 'ptest'
-                ss.section = s
-                ss.save()
-                p = Project()
-                p.name = "pitest"
-                p.content = type(dict())
-                p.sub_section = ss
-                p.save()
-                pi = ProjectItem()
-                pi.content = type(dict())
-                pi.project = p
-                pi.save()
-                e = Entry()
-                e.content = type(list()) 
-                e.projectitem = pi
-                e.save()
-                self.e = e
+        cv_id = self.cv.check_sections() 
+        cv = home.models.cv.CV(id=cv_id)
+        section = home.models.section.Section(cv=cv)
+        section.save()
+        sub_section = home.models.subsection.SubSection(section=section)
+        sub_section.save()
+        project = home.models.project.Project(sub_section=sub_section)
+        project.save()
+        project_item = home.models.projectitem.ProjectItem(project=project)
+        project_item.save()
+        self.entry = home.models.entry.Entry(project_item=project_item)
+        self.entry.save()
+        self.entry_item = home.models.entryitem.EntryItem()
         return None
 
-    def test_save_entry_item(self):
-        """Test saving an EnryItem.
 
-        :return: None 
-        :raises: :exc:`AssertionError`
+    def test_save_entry_item(self, entry=home.models.entry.Entry):
+        """EntryItem objects should save corrrectly.
+
+        :param entry: The :obj:`home.models.entry.Entry` related to
+            the current :obj:`home.models.entry.EntryItem` being tested.
+        :type entry: :obj:`home.models.entry.Entry`
+        :return: none 
+        :rtype: None 
         """
-        e = self.e
         entry_item_string = str("this is a string")
+        entry_item_instance = self.entry_item 
+        entry_item_instance.name = "Testing."
+        entry_item_instance.content = entry_item_string
+        entry_item_instance.entry = self.entry
+        entry_item_instance.save()
+
+        assert isinstance(
+            entry_item_instance, 
+            home.models.entryitem.EntryItem)
+        return None
+
+    def test_save_entry_string(self, entry=home.models.entry.Entry):
+        """Test saving a string.
+
+        :param entry: The :obj:`home.models.entry.Entry` related to
+            the current :obj:`home.models.entry.EntryItem` being tested.
+        :type entry: :obj:`home.models.entry.Entry`
+        :return: none 
+        :rtype: None 
+        """
+        entry_item_string = str("this is a string")
+
+        test_save_entry_item = self.entry_item.save_entry_item(
+            entry_item_list,
+            self.entry)
+
+        assert isinstance(
+            test_save_entry_item,
+            models.query.QuerySet)
+        return None
+
+    def test_save_entry_list(self, entry=home.models.entry.Entry):
+        """Test saving a list.
+
+        :param entry: The :obj:`home.models.entry.Entry` related to
+            the current :obj:`home.models.entry.EntryItem` being tested.
+        :type entry: :obj:`home.models.entry.Entry`
+        :return: none 
+        :rtype: None 
+        """
         entry_item_list = [
             'this',
             'is',
@@ -94,90 +108,30 @@ class EntryItemTestCase(TestCase):
             'strings'
         ]
 
-        ei = EntryItem()
-        ei.entry = e
-        ei.value = 'this is a different string'
-        ei.save()
+        test_save_entry_item = self.entry_item.save_entry_item(
+            entry_item_list,
+            self.entry) 
 
-        ei = EntryItem()
-        ei_result = ei.save_list_item(entry_item_string, e)
-        self.assertEqual(
-            list(ei_result),
-            list(EntryItem.objects.values())
-        )
-        ei_result = ei.save_list_item(entry_item_list, e)
-        assert list(ei_result) is list(EntryItem.objects.values())
+        assert isinstance(
+            test_save_entry_item,
+            models.query.QuerySet)
         return None
 
 
 class GetEntryItemTestCase(TestCase):
-    """Test class for EntryItem get methods.
-
-    :param: TestCase inherited object.
-    
-    .. attribute:: entries
-
-       :obj:`home.models.entry.Entry` object for testing.
-
-    .. attribute:: entryitems
-    
-       :obj:`home.models.entry.EntryItem` object for testing.
-    """
-    entries = Entry()
-    entryitems = EntryItem()
-
+    """Test class for EntryItem get methods."""
     def setUp(self):
         """Setup testing for EntryItem get methods.
-
-        :return: None 
+        
+        :return: none
+        :rtype: None
         """
-        cv_instance = CV()
-        cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='abridged', template='acecv')
-        sections = Section.objects.filter(cv=cv_instance)
-        subsections = [list(SubSection.objects.filter(section=section)) for section in sections]
-        projects = []
-        for subsection in subsections:
-            for subsection_object in subsection:
-                project = list(Project.objects.filter(
-                    sub_section=subsection_object
-                ))
-                projects.append(project)
-        projectitems = []
-        for project in projects:
-            for project_object in project:
-                projectitem = list(ProjectItem.objects.filter(
-                    project=project_object
-                )) 
-                projectitems.append(projectitem)
-        entries = []
-        for projectitem in projectitems:
-            for projectitem_object in projectitem:
-                entry = list(Entry.objects.filter(
-                    projectitem=projectitem_object
-                ))
-                entries.append(entry)
-        entryitems = []
-        for index,entry in enumerate(entries):
-            entryitem = list(EntryItem.objects.filter(
-                entry=index
-            ))
-            entryitems.append(entryitem)
-        self.entryitems = entryitems
-        self.entries = entries
         return None
 
     def test_get_entry_item(self):
-        """Test getting an EntryItem.
+        """Test getting an EntryItem. 
         
-        :return: None 
-        :raises: AssertionError
+        :return: none
+        :rtype: None
         """
-        entries = self.entries
-        entryitems = []
-        for index, entry in enumerate(entries):
-            entryitem = list(EntryItem.objects.filter(
-                entry=index
-            ))
-            entryitems.append(entryitem)
-        assert self.entryitems is entryitems
-        return None 
+        return None

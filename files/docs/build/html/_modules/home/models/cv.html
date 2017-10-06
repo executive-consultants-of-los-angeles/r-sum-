@@ -53,9 +53,7 @@
 
 <span class="kn">from</span> <span class="nn">django.db</span> <span class="k">import</span> <span class="n">models</span>
 <span class="kn">from</span> <span class="nn">django.conf</span> <span class="k">import</span> <span class="n">settings</span>
-
 <span class="kn">from</span> <span class="nn">section</span> <span class="k">import</span> <span class="n">Section</span>
-<span class="kn">from</span> <span class="nn">subsection</span> <span class="k">import</span> <span class="n">SubSection</span>
 
 
 <div class="viewcode-block" id="CV"><a class="viewcode-back" href="../../../home/models/classes/home.models.cv.html#home.models.cv.CV">[docs]</a><span class="k">class</span> <span class="nc">CV</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -74,6 +72,20 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
     <span class="n">template</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CV.create"><a class="viewcode-back" href="../../../home/models/classes/home.models.cv.html#home.models.cv.CV.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Class method to handle creation of CV objects for testing.</span>
+<span class="sd">        </span>
+<span class="sd">        :param cls: The CV class.</span>
+<span class="sd">        :type cls: :obj:`home.models.cv.CV`</span>
+<span class="sd">        :param str name: Name of the cv.</span>
+<span class="sd">        :return: Reference to the created CV.</span>
+<span class="sd">        :rtype: :obj:`home.models.cv.CV`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cv</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">cv</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
+        <span class="k">return</span> <span class="n">cv</span> 
 
 <div class="viewcode-block" id="CV.check_sections"><a class="viewcode-back" href="../../../home/models/classes/home.models.cv.html#home.models.cv.CV.check_sections">[docs]</a>    <span class="k">def</span> <span class="nf">check_sections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Check to see if the current CV Model already has sections.</span>
