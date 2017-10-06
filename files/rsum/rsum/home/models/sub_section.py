@@ -1,14 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """Module for class that defines SubSection objects."""
-from collections import OrderedDict
+import json
 
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 
-from sub_section_item import SubItem 
-
-import json
+from sub_item import SubItem 
 
 
 class SubSection(models.Model):
@@ -47,7 +45,10 @@ class SubSection(models.Model):
         """
         content = kwargs.get('content')
         section = kwargs.get('section')
-        sub_section = cls(name=name, content=content, section=section)
+        sub_section = cls(
+            name=name,
+            content=json.dumps(content),
+            section=section)
         sub_section.save()
 
         if isinstance(content, list):

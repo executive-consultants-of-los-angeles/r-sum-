@@ -3,8 +3,6 @@
 """Model class that handles Section objects."""
 import json
 
-from collections import OrderedDict
-
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 from django.conf import settings
@@ -47,7 +45,10 @@ class Section(models.Model):
         """
         content = kwargs.get('content')
         profile = kwargs.get('profile')
-        section = cls(name=name, content=content, profile=profile)
+        section = cls(
+            name=name,
+            content=json.dumps(content),
+            profile=profile)
         section.save()
 
         if isinstance(content, list):

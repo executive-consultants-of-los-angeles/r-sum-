@@ -10,4 +10,4 @@ from docx.shared import Inches
 import profile 
 import section
 import sub_section
-import sub_section_item
+import sub_item 

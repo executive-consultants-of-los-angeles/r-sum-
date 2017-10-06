@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """Module containing the Profile Model class."""
-import datetime
 import json
-import socket
 import yaml
 
 from django.db import models
@@ -39,7 +37,9 @@ class Profile(models.Model):
         with open(settings.FILE, 'r') as yaml_file:
             raw_content = yaml.load(yaml_file.read())
         yaml_file.close()
-        profile = cls(name=settings.OWNER, content=json.dumps(raw_content))
+        profile = cls(
+            name=settings.OWNER,
+            content=json.dumps(raw_content))
         profile.save()
 
         for item in raw_content:

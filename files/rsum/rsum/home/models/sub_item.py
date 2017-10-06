@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """Module to define class for SubItem objects."""
-from __future__ import unicode_literals
-from __future__ import print_function
-
 import json
 
 from django.db import models
@@ -43,12 +40,11 @@ class SubItem(models.Model):
         :rtype: :obj:`home.models.entry.Entry`
         """
         content = kwargs.get('content')
-        print(content)
         sub_section = kwargs.get('sub_section')
-        sub_item = cls(name=name, content=content, sub_section=sub_section)
+        sub_item = cls(name=name,
+            content=json.dumps(content),
+            sub_section=sub_section)
         sub_item.save()
-
-
 
     def get_sub_section_items(self, subsection):
         """Get all SubItem objects.
