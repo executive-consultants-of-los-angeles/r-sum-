@@ -19,7 +19,7 @@ DATABASES = {
 
 
 OWNER = 'mrsum'
-CV = 'general'
+FILE = 'general'
 DIR = 'jess'
 
 STATIC_URL = '/static/{}/'.format(OWNER)
