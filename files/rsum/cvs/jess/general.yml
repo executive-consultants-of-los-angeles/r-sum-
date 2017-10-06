@@ -110,46 +110,45 @@
           Beckman Multimek 96, & HP Multiprobe II EX
         start: 2013
 - values:
-    introduction: >
-      A clearly defined system of ethics is vital to a
-      happy and productive life.
-    content:
-      - loyalty:
-          col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
-          service: 'class="service" data-height="height"'
-          icon: 'class="service-icon icon-badge"'
-          text: >
-            Loyalty implies a faithfulness that is steadfast in the face of any
-            temptation to renounce, desert, or betray.
-      - ingenuity:
-          col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
-          service:
-            'class="service bg-color-base wow zoomIn"
-              data-height="height"
-              data-wow-duration=".3"
-              data-wow-delay=".1s"'
-          icon: ' class="service-icon color-white icon-chemistry"'
-          text: >
-            The tantalizing discomfort of perplexity is what inspires otherwise
-            ordinary men and women to extraordinary feats of ingenuity
-            and creativity; nothing quite focuses the mind like dissonant
-            details loyalty implies. - Brian Greene
-      - quality:
-          col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
-          service: 'class="service" data-height="height"'
-          icon: 'class="service-icon icon-screen-tablet"'
-          text: >
-            Be a yardstick of quality. Some people aren't used to an environment
-            where excellence is expected. - Steve Jobs
-      - integrity:
-          col: 'class="col-md-3 col-sm-6"'
-          service: 'class="service" data-height="height"'
-          icon: 'class="service-icon  icon-mustache"'
-          text: >
-            The supreme quality for leadership is unquestionably
-            integrity. Without it, no real success is possible
-            no matter whether it is on a section gang, a football
-            field, in an army, or in an office. -  Dwight D. Eisenhower
+    - introduction: >
+        A clearly defined system of ethics is vital to a
+        happy and productive life.
+    - loyalty:
+        col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+        service: 'class="service" data-height="height"'
+        icon: 'class="service-icon icon-badge"'
+        text: >
+          Loyalty implies a faithfulness that is steadfast in the face of any
+          temptation to renounce, desert, or betray.
+    - ingenuity:
+        col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+        service:
+          'class="service bg-color-base wow zoomIn"
+            data-height="height"
+            data-wow-duration=".3"
+            data-wow-delay=".1s"'
+        icon: ' class="service-icon color-white icon-chemistry"'
+        text: >
+          The tantalizing discomfort of perplexity is what inspires otherwise
+          ordinary men and women to extraordinary feats of ingenuity
+          and creativity; nothing quite focuses the mind like dissonant
+          details loyalty implies. - Brian Greene
+    - quality:
+        col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
+        service: 'class="service" data-height="height"'
+        icon: 'class="service-icon icon-screen-tablet"'
+        text: >
+          Be a yardstick of quality. Some people aren't used to an environment
+          where excellence is expected. - Steve Jobs
+    - integrity:
+        col: 'class="col-md-3 col-sm-6"'
+        service: 'class="service" data-height="height"'
+        icon: 'class="service-icon  icon-mustache"'
+        text: >
+          The supreme quality for leadership is unquestionably
+          integrity. Without it, no real success is possible
+          no matter whether it is on a section gang, a football
+          field, in an army, or in an office. -  Dwight D. Eisenhower
 - experience:
     introduction: >
       I am fasinated by the inherent duality of nature.
