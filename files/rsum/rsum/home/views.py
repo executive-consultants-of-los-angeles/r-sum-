@@ -17,7 +17,7 @@ section = models.section.Section
 
 
 def index(request):
-    """Method for loading the index page.
+    """Loads the index page of the rsum application.
 
     :param request: `django.http.HttpRequest` object for index page.
     :type request: object 
@@ -37,10 +37,6 @@ def index(request):
     skills = sections.get('skills')
 
     sections.update({'skills': calculate_skills(skills)})
-
-    values = sections.get('values')
-
-    sections.update({'values': prepare_values(values)})
 
     context = {
         'profile': profile.name,
@@ -74,17 +70,15 @@ def export_docx(request, cv_id='1'):
     """
     return render(request, 'home/index.html', {}) 
 
-def prepare_values(values):
-    values[0].update({'values_list':[]})
-    for index, value in enumerate(values):
-        if index > 0:
-            value.items()[0][1].update({
-                'name': value.items()[0][0]
-            })
-            values[0].get('values_list').append(value.items()[0][1])
-    return values
-
 def calculate_skills(skills):
+    """ Calculates necessary values for the skills progress bars.
+
+    :param skills: The unmodified skills section.
+    :type skills: OrderedDict
+    :return: An updated Skills section with missing values filled in.
+    :rtype: OrderedDict
+    :raises: ValueError
+    """
     begin = skills.get('start')
     current_year = float(datetime.date.today().strftime("%Y"))
     career_length = float(current_year) - float(begin)

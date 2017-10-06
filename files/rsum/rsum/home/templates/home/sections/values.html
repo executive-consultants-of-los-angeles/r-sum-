@@ -10,14 +10,16 @@
                       </div>
                   </div>
                   <div class="row row-space-2 margin-b-4">
-                    {% for row  in sections.values.0.values_list %}
+                  {% for value in sections.values %}
+                    {% if name != 'Introduction' %}
+                      {% for name, row in value.items %}
                       <div {{ row.col|safe }}>
                         <div {{ row.service|safe }}> 
                           <div class="service-element">
                             <i {{ row.icon|safe }}></i>
                           </div>
                           <div class="service-info">
-                            {% if forloop.counter == 2 %}
+                            {% if forloop.parentloop.counter == 3 %}
                             <h3 style="color: white;">{{ row.name|title }}</h3>
                             <p style="color: white;" class="margin-b-5">{{ row.text|safe }}</p>
                             {% else %}
@@ -28,7 +30,9 @@
                           <a href="#" class="content-wrapper-link"></a>    
                         </div>
                       </div>
-                    {% endfor %}
+                      {% endfor %}
+                    {% endif %}
+                  {% endfor %}
                   </div>    
                   <!--// end row -->
                 </div>
