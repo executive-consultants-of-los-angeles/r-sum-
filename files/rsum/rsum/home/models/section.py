@@ -7,8 +7,6 @@ from django.db import models
 from django.contrib.postgres.fields import JSONField
 from django.conf import settings
 
-from sub_section import SubSection
-
 
 class Section(models.Model):
     """Class to define Section objects.
@@ -57,10 +55,3 @@ class Section(models.Model):
                 content=content,
                 section=section) for name, content in enumerate(content)]
             return section
-
-        for name, sub_section in content.items():
-            SubSection.create(
-                name=name,
-                content=sub_section,
-                section=section)
-        return section 
