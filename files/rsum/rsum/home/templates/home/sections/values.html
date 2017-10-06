@@ -5,24 +5,24 @@
                 <div class="container content-lg">
                   <div class="row margin-b-40">
                       <div class="col-sm-6">
-                          <h2>{{ section.name|title }}</h2>
-                          <p style="text-align: justify">{{ section.content.0.content.0.content }}</p>
+                          <h2>{{ section|title }}</h2>
+                          <p style="text-align: justify">{{ sections.values.0.introduction.content }}</p>
                       </div>
                   </div>
                   <div class="row row-space-2 margin-b-4">
-                    {% for row in section.content.1.content %}
-                      <div {{ row.1.col|safe }}>
-                        <div {{ row.1.service|safe }}> 
+                    {% for row  in sections.values.0.values_list %}
+                      <div {{ row.col|safe }}>
+                        <div {{ row.service|safe }}> 
                           <div class="service-element">
-                            <i {{ row.1.icon|safe }}></i>
+                            <i {{ row.icon|safe }}></i>
                           </div>
                           <div class="service-info">
-                            {% if row.1.id == '2' %}
-                            <h3 style="color: white;">{{ row.0|title }}</h3>
-                            <p style="color: white;" class="margin-b-5">{{ row.1.text|safe }}</p>
+                            {% if forloop.counter == 2 %}
+                            <h3 style="color: white;">{{ row.name|title }}</h3>
+                            <p style="color: white;" class="margin-b-5">{{ row.text|safe }}</p>
                             {% else %}
-                            <h3>{{ row.0|title }}</h3>
-                            <p class="margin-b-5">{{ row.1.text|safe }}</p>
+                            <h3>{{ row.name|title }}</h3>
+                            <p class="margin-b-5">{{ row.text|safe }}</p>
                             {% endif %}
                           </div>
                           <a href="#" class="content-wrapper-link"></a>    
