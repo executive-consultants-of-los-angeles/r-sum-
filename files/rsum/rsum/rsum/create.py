@@ -17,3 +17,7 @@ django.setup()
 from home.models.profile import Profile
 
 Profile.create('complete')
+
+f = open('/tmp/ready','w')
+f.write('ready')
+f.cloase()
