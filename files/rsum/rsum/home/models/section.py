@@ -48,10 +48,4 @@ class Section(models.Model):
             content=json.dumps(content),
             profile=profile)
         section.save()
-
-        if isinstance(content, list):
-            [SubSection.create(
-                name=name,
-                content=content,
-                section=section) for name, content in enumerate(content)]
-            return section
+        return section
