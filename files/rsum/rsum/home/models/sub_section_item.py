@@ -43,27 +43,11 @@ class SubItem(models.Model):
         :rtype: :obj:`home.models.entry.Entry`
         """
         content = kwargs.get('content')
+        print(content)
         sub_section = kwargs.get('sub_section')
+        sub_item = cls(name=name, content=content, sub_section=sub_section)
+        sub_item.save()
 
-        if (isinstance(content, str) or
-                isinstance(content, int)):
-            sub_section_item = cls(
-                name=name,
-                content=content,
-                sub_section=sub_section)
-            sub_section_item.save()
-            return sub_section_item
-
-        if isinstance(content, list):
-            for index, item in enumerate(content):
-                sub_section_item = cls(
-                    name=index,
-                    content=item,
-                    sub_section=sub_section)
-                sub_section_item.save()
-                return sub_section_item
-
-        # print(content.items())
 
 
     def get_sub_section_items(self, subsection):

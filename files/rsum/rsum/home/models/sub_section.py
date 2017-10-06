@@ -45,37 +45,23 @@ class SubSection(models.Model):
         :return: Reference to the created SubSection.
         :rtype: :obj:`home.models.subsection.SubSection`
         """
-        sub_items = {}
         content = kwargs.get('content')
         section = kwargs.get('section')
         sub_section = cls(name=name, content=content, section=section)
         sub_section.save()
 
-        if (isinstance(content, str) or
-            isinstance(content, int)):
-            SubItem.create(name=name, content=content, sub_section=sub_section)
-            return sub_section 
-
-        if (isinstance(content, list)):
-            for index,item in enumerate(content):
-                SubItem.create(
-                    name=index,
-                    content=item,
-                    sub_section=sub_section)
-            return sub_section
-
-        try:
-            temp_list = [sub_item for name, sub_item in content.items()]
-            print(temp_list)
-            sub_items = OrderedDict(
-                sorted(temp_list, key=lambda k: k.get('id'))
-            )
-            print(sub_items)
-        except:
-            sub_items = content.items()
-
-        for name, sub_item in content.items():
-            SubItem.create(
+        if isinstance(content, list):
+            [SubItem.create(
                 name=name,
                 content=sub_item,
-                sub_section=sub_section)        
+                sub_section=sub_section
+            ) for name, sub_item in enumerate(content)]
+            return sub_section
+
+        if isinstance(content, dict):
+            for name, sub_item in content.items():
+                SubItem.create(
+                    name=name,
+                    content=sub_item,
+                    sub_section=sub_section)
+        return sub_section
