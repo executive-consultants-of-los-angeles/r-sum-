@@ -10,8 +10,8 @@
                   <p class="promo-block-text">{{ sections.intro.position }}</p>
                 </div>
                 <ul class="list-inline">
-                  {% for social in sections.intro.social_media_links %}
-                    <li><a href="{{ social.content }}" class="social-icons" target="_blank"><i class="icon-social-{{ social.name }}"></i></a></li>
+                  {% for s in sections.intro.social_media_links.items %}
+                    <li><a href="{{ s.1 }}" class="social-icons" target="_blank"><i class="icon-social-{{ s.0 }}"></i></a></li>
                   {% endfor %}
                 </ul>
             </div>
