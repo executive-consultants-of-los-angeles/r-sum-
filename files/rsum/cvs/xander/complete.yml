@@ -182,22 +182,22 @@
         company: "Gahan Corporation"
         position: "Chief Financial Officer"
         projects:
-        technology:
-          - "maintain multiple cloud services"
-          - "total cost of ownership < $100/mo"
-          - "pretty good uptime"
-          - "at least not terrible security"
-        legal:
-          - "converted from an LLC started May 2016"
-          - "wrote the filed Articles of Incorporation"
-          - "also have an author credit on the bylaws"
-          - "have written every agreement executed by the corporation so far"
-          - "keep the corporation in good standing with the State of California"
-        finance:
-          - "aiming at issuing registered stock by 2020"
-          - "pretty depressing at the moment"
-          - "maintain books to GAAP standards"
-          - "keep us up to date with taxes and reporting"
+          technology:
+            - "maintain multiple cloud services"
+            - "total cost of ownership < $100/mo"
+            - "pretty good uptime"
+            - "at least not terrible security"
+          legal:
+            - "converted from an LLC started May 2016"
+            - "wrote the filed Articles of Incorporation"
+            - "also have an author credit on the bylaws"
+            - "have written every agreement executed by the corporation so far"
+            - "keep the corporation in good standing with the State of California"
+          finance:
+            - "aiming at issuing registered stock by 2020"
+            - "pretty depressing at the moment"
+            - "maintain books to GAAP standards"
+            - "keep us up to date with taxes and reporting"
     - abiogenix_incorporated:
         duration: "August 2014 - May 2017"
         location: "Los Angeles, California"
@@ -261,14 +261,14 @@
         company: "Toyota Motor Sales"
         position: "Site Reliability Engineer"
         projects:
-        ansible:
-          - "reduced deployment time by a factor of 15 with Ansible"
-          - "automated deployment of all resources required by project"
-          - "managed Red Hat Enterprise Linux 7 servers"
-        amazon_web_services:
-          - "configured and deployed all infrastructure"
-          - "administered same"
-          - "managed budget for aws monthly spend"
+          ansible:
+            - "reduced deployment time by a factor of 15 with Ansible"
+            - "automated deployment of all resources required by project"
+            - "managed Red Hat Enterprise Linux 7 servers"
+          amazon_web_services:
+            - "configured and deployed all infrastructure"
+            - "administered same"
+            - "managed budget for aws monthly spend"
     - lead_python_developer_toyota_motor_sales:
         duration: "December 2014  -  July 2015 (8 months)"
         location: "Los Angeles, California"
@@ -464,9 +464,9 @@
         company: "Radical Fusion"
         position: "JavaScript Developer"
         projects:
-        web_developer:
-          - "added new features using PHP, MSSQL, and AJAX"
-          - "used design documents to update user interface"
+          web_developer:
+            - "added new features using PHP, MSSQL, and AJAX"
+            - "used design documents to update user interface"
     - optyweb:
         duration: "November 2005  -  May 2006 (7 months)"
         location: "San Francisco, California"
