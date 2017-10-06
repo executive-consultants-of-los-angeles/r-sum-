@@ -2,15 +2,17 @@
 # -*- coding: utf-8 -*-
 """Views for the rsum home application."""
 import json
-import socket
+from collections import OrderedDict
 
 from django.shortcuts import render
 from django.db import models
 from django.http import HttpResponse
 from django.conf import settings
 
-from models.profile import Profile
+import models
 # from export.word import ExportDocument
+
+section = models.section.Section
 
 
 def index(request):
@@ -22,46 +24,21 @@ def index(request):
     :rtype: object 
     """
 
-    context = {}
+    profile = models.profile.Profile.objects.get(name=settings.OWNER)
 
-    """
-    cv_instance = CV()
-
-    cv_id = cv_instance.check_sections(
-        name_of_owner=settings.OWNER,
-        name_of_cv=settings.CV)
-    cv = cv_instance.get_cv(cv_id=cv_id)
+    sections = OrderedDict() 
+    sections_query = section.objects.values() 
+    for section_item in sections_query:
+        sections.update({
+            section_item.get('name'): json.loads(section_item.get('content'))
+        })
 
     context = {
-        'cv': cv.get('sections') 
-    }
-
-    skills = cv_instance.get_skills(context)
-    context.get('cv')[2].update({
-        'skills': skills,
-    })
-
-    values = cv_instance.get_values(context) 
-    context.get('cv')[3].get('content')[1].update({
-        'content': values
-    })
-
-    experience = cv_instance.get_experience(context) 
-    context.get('cv')[4].update({
-        'experience': experience
-    })
-
-    education = context.get(
-        'cv'
-    )[5].get('content')[3].get('content')[0]
-    projects = education.get(
-        'content'
-    ).replace("'", '').replace("[", '').replace("]", '').split(", ")
-    context.get('cv')[5].update({
-        'projects': projects
-    })
-    """
-    return render(request, 'home/tmp.html', context)
+        'profile': profile.name,
+        'sections': sections,
+    } 
+         
+    return render(request, 'home/index.html', context)
 
 def export_docx(request, cv_id='1'):
     """Method for exporting Word documents.
@@ -85,4 +62,4 @@ def export_docx(request, cv_id='1'):
     return response 
 
     """
-    return None
+    return render(request, 'home/index.html', {}) 

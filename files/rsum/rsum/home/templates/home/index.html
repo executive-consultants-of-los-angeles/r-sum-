@@ -56,7 +56,7 @@
                         <!-- Logo -->
                         <div class="logo">
                             <a class="logo-wrap" href="#body">
-                                <img class="logo-img" src="{% static 'img/logo.png' %}" alt="Edward Harris">
+                                <img class="logo-img" src="{% static 'img/logo.png' %}" alt="Xander Harris">
                             </a>
                         </div>
                         <!-- End Logo -->
@@ -80,9 +80,8 @@
             <!-- Navbar -->
         </header>
         <!--========== END HEADER ==========-->
-
-        {% for section in cv %}
-          {% with template_name=section.name|stringformat:"s"|add:".html" %}
+        {% for section in sections %}
+          {% with template_name=section|stringformat:"s"|add:".html" %}
             {% include 'home/sections/'|add:template_name %}
           {% endwith %}
         {% endfor %}

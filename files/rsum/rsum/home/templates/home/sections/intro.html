@@ -1,27 +1,27 @@
 {% load static %}
-{# section #}
-        <!--========== SLIDER ==========-->
-        <div class="promo-block">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 sm-margin-b-60">
-                        <div class="margin-b-30">
-                          <h1 class="promo-block-title">{{ section.content.2.content.0.content }}</h1>
-                          <p class="promo-block-text">{{ section.content.1.content.0.content}}</p>
-                        </div>
-                        <ul class="list-inline">
-                          {% for s in section.content.0.content %}
-                            <li><a href="{{ s.content }}" class="social-icons" target="_blank"><i class="icon-social-{{ s.name }}"></i></a></li>
-                          {% endfor %}
-                        </ul>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="promo-block-img-wrap">
-                            <img class="promo-block-img img-responsive" src="{% static 'img/mockup/avatar-01.png' %}" align="Avatar">
-                        </div>
-                    </div>
+<!--========== SLIDER ==========-->
+<div class="promo-block">
+    <div class="container">
+        <!-- start row --> 
+        <div class="row">
+            <div class="col-sm-6 sm-margin-b-60">
+                <div class="margin-b-30">
+                  <h1 class="promo-block-title">{{ sections.intro.name }}</h1>
+                  <p class="promo-block-text">{{ sections.intro.position }}</p>
                 </div>
-                <!--// end row -->
+                <ul class="list-inline">
+                  {% for social in sections.intro.social_media_links %}
+                    <li><a href="{{ social.content }}" class="social-icons" target="_blank"><i class="icon-social-{{ social.name }}"></i></a></li>
+                  {% endfor %}
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <div class="promo-block-img-wrap">
+                    <img class="promo-block-img img-responsive" src="{% static 'img/mockup/avatar-01.png' %}" align="Avatar">
+                </div>
             </div>
         </div>
-        <!--========== SLIDER ==========-->
+        <!--// end row -->
+    </div>
+</div>
+<!--========== SLIDER ==========-->
