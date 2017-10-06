@@ -4,6 +4,8 @@ import socket
 import django
 from django.conf import settings
 
+sys.path.insert(0, '/srv/rsum/rsum')
+
 if socket.gethostname() == 'ecla.solutions':
     settings_mod = "rsum.settings"
 else:
