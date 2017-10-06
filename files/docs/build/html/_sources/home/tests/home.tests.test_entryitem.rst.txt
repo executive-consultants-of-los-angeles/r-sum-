@@ -1,0 +1,23 @@
+home\.tests\.test\_entryitem
+============================
+
+.. automodule:: home.tests.test_entryitem
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      EntryItemTestCase
+      GetEntryItemTestCase
+   
+   
+
+   
+   
+   

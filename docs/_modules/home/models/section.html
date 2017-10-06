@@ -74,6 +74,22 @@
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;section&#39;</span><span class="p">)</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
 
+<div class="viewcode-block" id="Section.create"><a class="viewcode-back" href="../../../home/models/classes/home.models.section.html#home.models.section.Section.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Class method to handle creation of Section objects for testing.</span>
+<span class="sd">        </span>
+<span class="sd">        :param cls: The Section class.</span>
+<span class="sd">        :type cls: :obj:`home.models.section.Section`</span>
+<span class="sd">        :param str name: Name of the section.</span>
+<span class="sd">        :param str content: Content for the section.</span>
+<span class="sd">        :return: Reference to the created Section.</span>
+<span class="sd">        :rtype: :obj:`home.models.section.Section`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cv</span> <span class="o">=</span> <span class="n">CV</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">)</span>
+        <span class="n">section</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">)</span>
+        <span class="n">section</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
+        <span class="k">return</span> <span class="n">section</span> 
+
 <div class="viewcode-block" id="Section.get_sections"><a class="viewcode-back" href="../../../home/models/classes/home.models.section.html#home.models.section.Section.get_sections">[docs]</a>    <span class="k">def</span> <span class="nf">get_sections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cv</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get all Section objects for a document.</span>
 

@@ -7,10 +7,5 @@ from django.db import models
 from docx import Document
 from docx.shared import Inches
 
-import cv
+import profile 
 import section
-import subsection
-import project
-import projectitem
-import entry
-import entryitem
