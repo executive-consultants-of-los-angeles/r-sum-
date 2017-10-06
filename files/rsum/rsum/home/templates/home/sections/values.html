@@ -10,7 +10,9 @@
                       </div>
                   </div>
                   <div class="row row-space-2 margin-b-4">
-                    {% for row  in sections.values.0.values_list %}
+                    {% for value in sections.values %}
+                      {% if name != 'Introduction' %}
+                      {% for name, row in value %}
                       <div {{ row.col|safe }}>
                         <div {{ row.service|safe }}> 
                           <div class="service-element">
@@ -28,6 +30,7 @@
                           <a href="#" class="content-wrapper-link"></a>    
                         </div>
                       </div>
+                      {% endfor %}
                     {% endfor %}
                   </div>    
                   <!--// end row -->
