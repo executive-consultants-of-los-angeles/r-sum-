@@ -1,10 +1,9 @@
-{# section.skills #}
-
-    <h2>Skills</h2>
+    <h2>{{ section|title }}</h2>
     <!-- Progress Box -->
-    {% for skill,data in section.skills.iteritems %}
+    {{ sections.skills }}
+    {% for skill, data in sections.skills.iteritems %}
       <div class="progress-box">
-        <h5>{{ skill }} <span class="color-heading pull-right">{{ data.experience_string }}</span></h5>
+        <h5>{{ data.name }} <span class="color-heading pull-right">{{ data.experience_string }}</span></h5>
         <div class="progress">
           <div class="progress-bar bg-color-base" role="progressbar" data-width="{{ data.experience_value }}"></div>
         </div>

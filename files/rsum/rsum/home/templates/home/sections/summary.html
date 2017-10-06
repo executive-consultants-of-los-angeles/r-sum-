@@ -1,43 +1,42 @@
 {% load static %}        
 
-{{ section }}
-        <!--========== PAGE LAYOUT ==========-->
-        <!-- About -->
-        <div id="summary">
-            <div class="container content-lg">
-                <div class="row">
-                    <div class="col-sm-5 sm-margin-b-60">
-                        <img class="full-width img-responsive" src="{% static 'img/500x700/01.jpg' %}" alt="Image">
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="section-seperator margin-b-50">
-                            <div class="margin-b-50">
-                                <div class="margin-b-30">
-                                    <h2>{{ section.name|title }}</h2>
-                                    <p style="font-size: 16pt;">{{ section.content.0.content.0.content }}</p>
-                                    <p>
-                                      <a href="{# url 'docx' cv.0.cv_id #}" class="btn-theme btn-theme-md btn-default-bg" style="font-variant: small-caps;">Export to Word Document</a>
-                                    </p>
-                                    <p>
-                                      {% if section.content.1.name == 'Build Status' %}
-                                      <table style="width: 100%; text-align: center;">
-                                        <tr>
-                                          <td colspan="3"><h3>{{ section.content.1.name.split|join:' '|title }}</h3></td>
-                                        </tr>
-                                        {% for sub in section.content.1.content %} 
-                                          {% if sub.content != 'Build Status' %}
-                                          <tr>
-                                            {% for item in sub.content.items %}
-                                              <td><h5>{{ item.1.name }}</h5></td>
-                                              <td><a href="{{ item.1.link }}"><img src="{{ item.1.image }}" /></a></td>
-                                              <td><a class="github-button" href="https://github.com/ecla/{{ item.0 }}/archive/master.zip" aria-label="Download ecla/{{ item.0 }} on GitHub">{{ item.0 }}</a></td>
-                                            {% endfor %}
-                                          </tr>
-                                          {% endif %}
-                                        {% endfor %}
-                                      </table>
-                                      {% endif %}
-                                    </p>
-                                </div>
-                            </div>
+<!--========== PAGE LAYOUT ==========-->
+<!-- About -->
+<div id="summary">
+    <div class="container content-lg">
+        <div class="row">
+            <div class="col-sm-5 sm-margin-b-60">
+                <img class="full-width img-responsive" src="{% static 'img/500x700/01.jpg' %}" alt="Image">
+            </div>
+            <div class="col-sm-7">
+                <div class="section-seperator margin-b-50">
+                    <div class="margin-b-50">
+                        <div class="margin-b-30">
+                            <h2>{{ section|title }}</h2>
+                            <p style="font-size: 16pt;">{{ sections.summary.content }}</p>
+                            <p>
+                              <a href="{# url 'docx' cv.0.cv_id #}" class="btn-theme btn-theme-md btn-default-bg" style="font-variant: small-caps;">Export to Word Document</a>
+                            </p>
+                            <p>
+                              {% if sections.summary.build_status %}
+                              <table style="width: 100%; text-align: center;">
+                                <tr>
+                                  <td colspan="3"><h3>{{ sections.summary.build_status.0.name }}</h3></td>
+                                </tr>
+                                {% for sub in sections.summary.build_status %} 
+                                  {% if sub.name != 'Build Status' %}
+                                  <tr>
+                                    {% for item in sub.items %}
+                                      <td><h5>{{ item.1.name }}</h5></td>
+                                      <td><a href="{{ item.1.link }}"><img src="{{ item.1.image }}" /></a></td>
+                                      <td><a class="github-button" href="https://github.com/ecla/{{ item.0 }}/archive/master.zip" aria-label="Download ecla/{{ item.0 }} on GitHub">{{ item.0 }}</a></td>
+                                    {% endfor %}
+                                  </tr>
+                                  {% endif %}
+                                {% endfor %}
+                              </table>
+                              {% endif %}
+                            </p>
                         </div>
+                    </div>
+                </div>
