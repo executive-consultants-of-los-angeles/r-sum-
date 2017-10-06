@@ -22,5 +22,5 @@ OWNER = 'mrsum'
 FILE = '/srv/rsum/cvs/jess/general.yml'
 DIR = 'jess'
 
-STATIC_URL = '/static/jess/'
-STATIC_ROOT = '/srv/jess/rsum/static/jess/'
+STATIC_URL = '/static/mrsum/'
+STATIC_ROOT = '/srv/mrsum/rsum/static/mrsum'
