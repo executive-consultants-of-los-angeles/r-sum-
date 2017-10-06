@@ -19,8 +19,8 @@ DATABASES = {
 
 
 OWNER = 'mrsum'
-FILE = 'general'
+FILE = '/srv/rsum/cvs/jess/general.yml'
 DIR = 'jess'
 
-STATIC_URL = '/static/{}/'.format(OWNER)
-STATIC_ROOT = '/srv/{}/static/{}/'.format(OWNER, OWNER)
+STATIC_URL = '/static/jess/'
+STATIC_ROOT = '/srv/jess/rsum/static/jess/'
