@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """Views for the rsum home application."""
+import datetime
 import json
 from collections import OrderedDict
 
@@ -32,6 +33,48 @@ def index(request):
         sections.update({
             section_item.get('name'): json.loads(section_item.get('content'))
         })
+
+    skills = sections.get('skills')
+
+    begin = skills.get('start')
+    current_year = float(datetime.date.today().strftime("%Y"))
+    career_length = float(current_year) - float(begin)
+
+    for name, skill in skills.items():
+        if name != 'start':
+            start_skill = float(skill.get('start'))
+            years_skill = current_year - start_skill
+            experience_value = years_skill / career_length * 100
+            experience_string = "{0} year(s)".format(int(years_skill))
+
+            skills.update({
+                name: {
+                    'name': skills.get(name).get('name'),
+                    'start': skills.get(name).get('start'),
+                    'experience_value': experience_value,
+                    'experience_string': experience_string,
+                }
+            })
+            
+            # I don't much like nested for loops, but it's the only way.
+            for sub_name, sub_skill in skill.items():
+                if (not isinstance(sub_skill, unicode) and
+                    not isinstance(sub_skill, int)):
+                    start_sub = float(sub_skill.get('start'))
+                    years_sub = current_year - start_sub
+                    sub_experience_value = years_sub / career_length * 100
+                    sub_experience_string = "{0} year(s)".format(int(years_sub))
+
+                    skills.get(name).update({
+                        sub_name: {
+                            'name': sub_skill.get('name'),
+                            'start': sub_skill.get('start'),
+                            'experience_value': sub_experience_value,
+                            'experience_string': sub_experience_string,
+                        }
+                    })
+
+    sections.update({'skills':skills})
 
     context = {
         'profile': profile.name,
