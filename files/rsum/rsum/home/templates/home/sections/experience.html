@@ -1,57 +1,60 @@
 {% load static %}
-{# section.experience #}
+{# sections.experience #}
 
-        <!-- Experience -->
-        <div id="experience">
-            <div class="container content-lg">
-                <div class="row margin-b-40">
-                    <div class="col-sm-6">
-                        <h2>{{ section.name|title }}</h2>
-                        <p style="text-align: justify;">{{ section.content.0.content.0.content }}</p>
-                    </div>
-                </div>
-                <!--// end row -->
-
-                {% for e in section.experience %}
-                  {% if forloop.counter|divisibleby:3 %}
-                    <div class="row">
-                  {% endif %}
-                    {# e.content.5 #}
-                    <div class="col-sm-4 sm-margin-b-50">
-                        <div class="margin-b-20">
-                            <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
-                              {% with 'img/970x647/'|add:e.content.4.content|add:'.jpg' as image_static %}
-                                <img class="img-responsive" src="{% static image_static %}" alt="Latest Products Image">
-                              {% endwith %}
-                            </div>
-                        </div>
-                        <h3><a href="#"></a>{{ e.content.2.content }}</h3>
-                        <p>
-                          <h5 style="color: #969696; font-variant: small-caps;">{{ e.content.3.content }}</h5>
-                        </p>
-                        <p>
-                          <h6>{{ e.content.0.content }}, {{ e.content.1.content }}</h6>
-                        </p>
-                        <p>
-                          <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{% static 'img/bigdot.png' %}');">
-                          {% for project  in e.content.5.content.projects.items %}
-                            <li>
-                              <h5>{{ project.0|title }}</h5>
-                              <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{% static 'img/littledot.png' %}');">
-                                {% for i in project.1 %}
-                                  <li><h6>{{ i }}</h6></li>
-                                {% endfor %}
-                              </ul>
-                            </li>
-                          {% endfor %} 
-                          </ul>
-                        </p>
-                    </div>
-                  {% if forloop.counter|divisibleby:3 %}
-                    </div>
-                    <!--// end row -->
-                  {% endif %}
-                {% endfor %}
+<!-- Experience -->
+<div id="experience">
+    <div class="container content-lg">
+        <div class="row margin-b-40">
+            <div class="col-sm-6">
+                <h2>{{ section|title }}</h2>
+                <p style="text-align: justify;">{{ sections.experience.0.introduction }}</p>
             </div>
         </div>
-        <!-- End Experience -->
+        <!--// end row -->
+
+{% for experience in sections.experience %}
+  {% for name, content in experience.items %}
+      {% if name != 'introduction' %} 
+        {% if forloop.parentloop.counter0|divisibleby:3 %}
+          <div class="row">
+        {% endif %}
+              <div class="col-sm-4 sm-margin-b-50">
+                  <div class="margin-b-20">
+                      <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                          <img class="img-responsive" src="/static/{{ dir }}/img/970x647/{{ forloop.parentloop.counter0 }}.jpg" alt="{{ name }}">
+                      </div>
+                  </div>
+                  <h3><a href="#"></a>{{ content.position }}</h3>
+                  <p>
+                    <h5 style="color: #969696; font-variant: small-caps;">{{ content.company }}</h5>
+                  </p>
+                  <p>
+                    <h6>{{ content.location }}, {{ content.duration }}</h6>
+                  </p>
+                  <p>
+                    <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{% static 'img/bigdot.png' %}');">
+          {% for project_name, project in content.items %}
+              {% if project_name != 'company' and project_name != 'duration' and project_name != 'location' and project_name != 'position' and project_name != 'projects' %}
+                      <li>
+                        <h5>{{ project_name|title }}</h5>
+                        <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{% static 'img/littledot.png' %}');">
+                          {% for project_item in project %}
+                            <li><h6>{{ project_item }}</h6></li>
+                          {% endfor %}
+                        </ul>
+                      </li>
+            {% endif %}
+          {% endfor %} 
+                    </ul>
+                  </p>
+              </div>
+            {% if forloop.parentloop.counter0|divisibleby:3 %}
+              </div>
+              <!--// end row -->
+            {% endif %}
+          {% endif %}
+  {% endfor %}
+{% endfor %}
+    </div>
+</div>
+<!-- End Experience -->

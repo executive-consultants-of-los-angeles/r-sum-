@@ -46,10 +46,10 @@
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">unicode_literals</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
 
+<span class="kn">import</span> <span class="nn">json</span>
+
 <span class="kn">from</span> <span class="nn">django.db</span> <span class="k">import</span> <span class="n">models</span>
 <span class="kn">from</span> <span class="nn">projectitem</span> <span class="k">import</span> <span class="n">ProjectItem</span>
-
-<span class="kn">import</span> <span class="nn">json</span>
 
 
 <div class="viewcode-block" id="Project"><a class="viewcode-back" href="../../../home/models/classes/home.models.project.html#home.models.project.Project">[docs]</a><span class="k">class</span> <span class="nc">Project</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -73,6 +73,22 @@
     <span class="p">)</span> 
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Project.create"><a class="viewcode-back" href="../../../home/models/classes/home.models.project.html#home.models.project.Project.create">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Class method to handle creation of Project objects for testing.</span>
+<span class="sd">        </span>
+<span class="sd">        :param cls: The Project class.</span>
+<span class="sd">        :type cls: :obj:`home.models.project.Project`</span>
+<span class="sd">        :param str name: Name of the project.</span>
+<span class="sd">        :param str content: Content for the project.</span>
+<span class="sd">        :return: Reference to the created Entry.</span>
+<span class="sd">        :rtype: :obj:`home.models.entry.Entry`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">sub_section</span> <span class="o">=</span> <span class="n">SubSection</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">)</span>
+        <span class="n">project</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">,</span> <span class="n">sub_section</span><span class="o">=</span><span class="n">sub_section</span><span class="p">)</span>
+        <span class="n">project</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
+        <span class="k">return</span> <span class="n">project</span> 
 
 <div class="viewcode-block" id="Project.get_projects"><a class="viewcode-back" href="../../../home/models/classes/home.models.project.html#home.models.project.Project.get_projects">[docs]</a>    <span class="k">def</span> <span class="nf">get_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subsection</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get all Project objects.</span>
