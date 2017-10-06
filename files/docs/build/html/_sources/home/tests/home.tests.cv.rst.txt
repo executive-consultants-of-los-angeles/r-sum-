@@ -1,12 +1,13 @@
-home\.tests\.cv
-===============
+Tests Module
+============
 
-.. automodule:: home.tests.cv
-   
-   .. rubric:: Classes
+.. autosummary::
+   :toctree: classes
 
-   .. autosummary::
-      :toctree: cv 
-   
-      CVGetsTestCase
-      CVTestCase
+   home.tests.cv
+   home.tests.section
+   home.tests.subsection
+   home.tests.project
+   home.tests.projectitem
+   home.tests.entry
+   home.tests.entryitem 

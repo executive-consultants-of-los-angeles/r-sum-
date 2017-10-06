@@ -8,17 +8,20 @@ import socket
 import yaml
 
 from django.test import TestCase
+from django.conf import settings
 
 from home.models.cv import CV
-from rsum.settings.rsum import values
 
 
 class CVTestCase(TestCase):
     """CVTestCase class."""
     def setUp(self):
         """Set up the CVTestCase class."""
-        s = values.get(socket.gethostname())
-        f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
+        f = open(
+            '/srv/rsum/cvs/{0}/{1}.yml'.format(
+                settings.DIR,
+                settings.CV),
+            'r')
         self.abridged = yaml.load(f.read())
         f.close()
 
@@ -45,10 +48,12 @@ class CVTestCase(TestCase):
 
     def test_save_abridged_cv(self):
         """Test save for abridged cv."""
-        s = values.get(socket.gethostname())
         abridged = self.abridged
         cv = CV()
-        cv_id = cv.save_cv(abridged, s.get('name'), template=s.get('template'))
+        cv_id = cv.save_cv(
+            abridged, 
+            settings.CV,
+            template=settings.OWNER)
         self.assertEqual(
             cv_id,
             list(CV.objects.filter(
