@@ -76,22 +76,22 @@ class ExportDocument(object):
                     p = document.add_paragraph('')
                     p.paragraph_format.line_spacing = 0.0
                     document = self.add_skills(s, document)
+       
+                # if name == u'experience':
+                #    p = document.add_paragraph('')
+                #    p.paragraph_format.line_spacing = 0.0
+                #    p.paragraph_format.page_break_before = True
+                #    document = self.add_experience(s, document)
         
-                if name == u'experience':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    p.paragraph_format.page_break_before = True
-                    document = self.add_experience(s, document)
-        
-                if name == u'education':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    document = self.add_education(s, document)
+                #if name == u'education':
+                #    p = document.add_paragraph('')
+                #    p.paragraph_format.line_spacing = 0.0
+                #    document = self.add_education(s, document)
                 
-                if name == u'contact':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    document = self.add_contact(s, document)
+                #if name == u'contact':
+                #    p = document.add_paragraph('')
+                #    p.paragraph_format.line_spacing = 0.0
+                #    document = self.add_contact(s, document)
 
         document.save(stream)
 
@@ -133,10 +133,10 @@ class ExportDocument(object):
         t = document.add_table(rows=1, cols=2)
         t.alignment = WD_TABLE_ALIGNMENT.CENTER
 
-        t.cell(0,0).add_picture('/srv/rsum/static/{0}/img/500x700/01.jpg'.format(s.DIR, width=Cm(6)))
         t.cell(0,0).width = Cm(6)
+        t.cell(0,0).add_picture('/srv/rsum/static/{0}/img/500x700/01.jpg'.format(s.DIR, width=Cm(5)))
         t.cell(0,1).add_paragraph('Summary', style='Heading 3')
-        t.cell(0,1).add_paragraph(summary.get('message'), style='Normal')
+        t.cell(0,1).add_paragraph(summary.get('content'), style='Normal')
         p = t.cell(0,1).paragraphs[1]
         p.paragraph_format.line_spacing = 1.0 
         t.cell(0,1).width = Cm(10)
@@ -156,6 +156,10 @@ class ExportDocument(object):
         :return: Document updated with Skills.
         :rtype: object
         """
+        print(skills)
+        for name, skill in skills.items():
+            print(name)
+            print(json.dumps(skills,indent=1))
         current_year = datetime.datetime.now().strftime("%Y")
 
         t = document.tables[1]
@@ -166,36 +170,26 @@ class ExportDocument(object):
         subskills = []
         index = 1
         for name, skill in skills.items(): 
-            if (
-                isinstance(skill, unicode) and
-                name == 'start'
-            ):
-                experience = int(current_year) - int(item_content.get('content'))
-                skill[1] = '{0} year(s)'.format(str(experience))
-            elif (
-                isinstance(skill, unicode) and
-                name != 'id'
-            ):
-                name = name.replace('_',' ').title()
-                skill[0] = name 
-            elif (
-                isinstance(skill, dict)
-            ):
-                subskills.append(skill)
-            
-            t_sub.add_row()
-            t_sub.cell(index-1,0).text = skill
-            p = t_sub.cell(index-1,0).paragraphs[0]
-            p.style='Skill'
-            p.paragraph_format.line_spacing = 1.0
-            p.paragraph_format.space_after = 0
-            t_sub.cell(index-1,1).text = skill
-            p = t_sub.cell(index-1,1).paragraphs[0]
-            p.style='Skill'
-            p.paragraph_format.line_spacing = 1.0
-            p.paragraph_format.space_after = 0
-            p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-            t_sub = self.add_sub_skills(subskills, t_sub, index-1)
+            if isinstance(skill, dict):
+                experience = int(current_year) - int(skill.get('start'))
+                experience = '{0} year(s)'.format(str(experience))
+                name = skill.get('name').replace('_',' ').title()
+                
+                # Add a row to the sub table.
+                t_sub.add_row()
+                t_sub.cell(index-1,0).text = name 
+                p = t_sub.cell(index-1,0).paragraphs[0]
+                p.style='Skill'
+                p.paragraph_format.line_spacing = 1.0
+                p.paragraph_format.space_after = 0
+                t_sub.cell(index-1,1).text = experience 
+
+                p = t_sub.cell(index-1,1).paragraphs[0]
+                p.style='Skill'
+                p.paragraph_format.line_spacing = 1.0
+                p.paragraph_format.space_after = 0
+                p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+                t_sub = self.add_sub_skills(skill, t_sub, index-1)
             index = index + 1
         return document
 
@@ -211,28 +205,31 @@ class ExportDocument(object):
         """
         current_year = float(datetime.datetime.now().strftime("%Y")) 
         sub_table = ts.cell(ts_index,0).add_table(rows=1,cols=2)
-        for i, sub in enumerate(subs):
-            name = sub.items()[0][1].get('name') 
-            experience = int(current_year) - int(sub.items()[0][1].get('start'))
-            experience = '{0} year(s)'.format(str(experience))
-            if i == 0:
-                sub_table.cell(0,0).text = name 
-                sub_table.cell(0,1).text = experience
-                sub_table.cell(0,0).width = Cm(5)
-            else:
-                sub_table.add_row()
-                sub_table.cell(i,0).text = name
-                sub_table.cell(i,0).width = Cm(1)
-                sub_table.cell(i,1).text = experience
-            p = sub_table.cell(i,0).paragraphs[0]
-            p.style = 'Sub Skill'
-            p.paragraph_format.line_spacing = 1.0
-            p.paragraph_format.space_after = 0
-            p = sub_table.cell(i,1).paragraphs[0]
-            p.style = 'Sub Skill'
-            p.paragraph_format.line_spacing = 1.0
-            p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-            p.paragraph_format.space_after = 0
+        index = 0
+        for name, sub in subs.items(): 
+            if isinstance(sub, dict):
+                print(sub)
+                experience = int(current_year) - int(sub.get('start'))
+                experience = '{0} year(s)'.format(str(experience))
+                if index == 0:
+                    sub_table.cell(0,0).text = sub.get('name') 
+                    sub_table.cell(0,1).text = experience
+                    sub_table.cell(0,0).width = Cm(5)
+                else:
+                    sub_table.add_row()
+                    sub_table.cell(index,0).text = sub.get('name')
+                    sub_table.cell(index,0).width = Cm(1)
+                    sub_table.cell(index,1).text = experience
+                p = sub_table.cell(index,0).paragraphs[0]
+                p.style = 'Sub Skill'
+                p.paragraph_format.line_spacing = 1.0
+                p.paragraph_format.space_after = 0
+                p = sub_table.cell(index,1).paragraphs[0]
+                p.style = 'Sub Skill'
+                p.paragraph_format.line_spacing = 1.0
+                p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+                p.paragraph_format.space_after = 0
+                index = index + 1
         return ts 
 
     def add_experience(self, experience, document):
