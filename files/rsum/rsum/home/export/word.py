@@ -77,11 +77,11 @@ class ExportDocument(object):
                     p.paragraph_format.line_spacing = 0.0
                     document = self.add_skills(s, document)
        
-                # if name == u'experience':
-                #    p = document.add_paragraph('')
-                #    p.paragraph_format.line_spacing = 0.0
-                #    p.paragraph_format.page_break_before = True
-                #    document = self.add_experience(s, document)
+                if name == u'experience':
+                    p = document.add_paragraph('')
+                    p.paragraph_format.line_spacing = 0.0
+                    p.paragraph_format.page_break_before = True
+                    document = self.add_experience(s, document)
         
                 #if name == u'education':
                 #    p = document.add_paragraph('')
@@ -156,10 +156,6 @@ class ExportDocument(object):
         :return: Document updated with Skills.
         :rtype: object
         """
-        print(skills)
-        for name, skill in skills.items():
-            print(name)
-            print(json.dumps(skills,indent=1))
         current_year = datetime.datetime.now().strftime("%Y")
 
         t = document.tables[1]
@@ -208,7 +204,6 @@ class ExportDocument(object):
         index = 0
         for name, sub in subs.items(): 
             if isinstance(sub, dict):
-                print(sub)
                 experience = int(current_year) - int(sub.get('start'))
                 experience = '{0} year(s)'.format(str(experience))
                 if index == 0:
@@ -251,36 +246,30 @@ class ExportDocument(object):
                 pass
             elif index % 3 == 0:
                 t.add_row()
-            for item in value.get('content'):
-                if item.get('name') == 'location':
-                    location = item.get('content')
-                if item.get('name') == 'duration':
-                    duration = item.get('content')
-                if item.get('name') == 'position':
-                    position = item.get('content')
-                if item.get('name') == 'projects':
-                    projects = item.get('content').get('projects')
-                if item.get('name') == 'id':
-                    photo = item.get('content')
-                if item.get('name') == 'company':
-                    company = item.get('content')
-            col = index % 3
-            row = index / 3
-            p = t.cell(row,col).paragraphs[0]
-            p.paragraph_format.line_spacing = 0.0
-            t.cell(row,col).add_picture('/srv/rsum/static/{0}/img/970x647/{1}.jpg'.format(s.get('template'),photo), width=Cm(4.8))
-            p = t.cell(row,col).paragraphs[1]
-            p.paragraph_format.space_after = 0
-            p = t.cell(row,col).add_paragraph(position, style='Heading 4')
-            p.paragraph_format.line_spacing = 1.0
-            p.paragraph_format.space_after = 0
-            p = t.cell(row,col).add_paragraph(company, style='Heading 5')
-            p.paragraph_format.line_spacing = 1.0
-            p.paragraph_format.space_before = 0
-            p = t.cell(row,col).add_paragraph("{0}, {1}".format(location, duration), style='Heading 6')
-            p.paragraph_format.line_spacing = 1.0
-            p.paragraph_format.space_before = 0
-            t = self.add_projects(projects, t, row, col)
+            for name, item in value.items():
+                col = index % 3
+                row = index / 3
+                p = t.cell(row,col).paragraphs[0]
+                p.paragraph_format.line_spacing = 0.0
+                t.cell(row,col).add_picture(
+                    '/srv/rsum/static/{}/img/970x647/{}.jpg'.format(
+                        s.DIR, index+1 
+                    ), 
+                    width=Cm(4.8)
+                )
+                p = t.cell(row, col).paragraphs[1]
+                p.paragraph_format.space_after = 0
+
+                p = t.cell(row, col).add_paragraph(item.get('position'), style='Heading 4')
+                p.paragraph_format.line_spacing = 1.0
+                p.paragraph_format.space_after = 0
+                p = t.cell(row, col).add_paragraph(item.get('company'), style='Heading 5')
+                p.paragraph_format.line_spacing = 1.0
+                p.paragraph_format.space_before = 0
+                p = t.cell(row, col).add_paragraph("{0}, {1}".format(item.get('location'), item.get('duration')), style='Heading 6')
+                p.paragraph_format.line_spacing = 1.0
+                p.paragraph_format.space_before = 0
+                t = self.add_projects(item.get('projects'), t, row, col)
         p = document.add_paragraph('')
         p.paragraph_format.line_spacing = 0
         return document
@@ -296,13 +285,12 @@ class ExportDocument(object):
         :return: Updated Projects table. 
         :rtype: object
         """
-        for project in projects.items():
-            p = table.cell(row,col).add_paragraph(project[0], style='List Bullet')
+        for name, project in projects.items():
+            p = table.cell(row,col).add_paragraph(name.replace('_',' ').title(), style='List Bullet')
             p.paragraph_format.line_spacing = 1.0
             p.paragraph_format.space_after = 0
-            actions = project[1].replace('[','').replace(']','').split("', '") 
-            for action in actions:
-                p = table.cell(row,col).add_paragraph(action.replace("'",""), style = 'List Bullet 2')
+            for item in project:
+                p = table.cell(row,col).add_paragraph(item, style = 'List Bullet 2')
                 p.paragraph_format.line_spacing = 1.0
                 p.paragraph_format.space_after = 0
         return table
