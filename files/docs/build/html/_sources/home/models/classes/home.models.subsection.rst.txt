@@ -1,5 +1,5 @@
-home\.models\.subsection
-========================
+SubSection
+==========
 
 .. automodule:: home.models.subsection
 

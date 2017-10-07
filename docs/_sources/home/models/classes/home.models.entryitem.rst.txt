@@ -1,5 +1,5 @@
-home\.models\.entryitem
-=======================
+EntryItem
+=========
 
 .. automodule:: home.models.entryitem
 

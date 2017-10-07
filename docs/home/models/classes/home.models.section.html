@@ -6,7 +6,7 @@
   <head>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>home.models.section &#8212; rsum v0.1.0 documentation</title>
+    <title>Section &#8212; rsum v0.1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -25,7 +25,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="home.models.subsection" href="home.models.subsection.html" />
-    <link rel="prev" title="CV" href="home.models.cv.html" />
+    <link rel="prev" title="home.models.cv" href="home.models.cv.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -42,7 +42,7 @@
           <div class="body" role="main">
             
   <div class="section" id="module-home.models.section">
-<span id="home-models-section"></span><h1>home.models.section<a class="headerlink" href="#module-home.models.section" title="Permalink to this headline">¶</a></h1>
+<span id="section"></span><h1>Section<a class="headerlink" href="#module-home.models.section" title="Permalink to this headline">¶</a></h1>
 <p>Model class that handles Section objects.</p>
 <dl class="class">
 <dt id="home.models.section.Section">
@@ -75,6 +75,31 @@
 <dt id="home.models.section.Section.MultipleObjectsReturned">
 <em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#home.models.section.Section.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="home.models.section.Section.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>name=u'default'</em>, <em>content=u'default'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/section.html#Section.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class method to handle creation of Section objects for testing.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>cls</strong> (<a class="reference internal" href="#home.models.section.Section" title="home.models.section.Section"><code class="xref py py-obj docutils literal"><span class="pre">home.models.section.Section</span></code></a>) – The Section class.</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) – Name of the section.</li>
+<li><strong>content</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) – Content for the section.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Reference to the created Section.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#home.models.section.Section" title="home.models.section.Section"><code class="xref py py-obj docutils literal"><span class="pre">home.models.section.Section</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="home.models.section.Section.get_sections">
@@ -141,16 +166,19 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../home.html">home</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../home.models.html">home.models</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="home.models.cv.html">CV</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">home.models.section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../export/home.export.html">Export</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../home.models.html">Models</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="home.models.cv.html">home.models.cv</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Section</a></li>
 <li class="toctree-l3"><a class="reference internal" href="home.models.subsection.html">home.models.subsection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="home.models.project.html">home.models.project</a></li>
-<li class="toctree-l3"><a class="reference internal" href="home.models.projectitem.html">home.models.projectitem</a></li>
-<li class="toctree-l3"><a class="reference internal" href="home.models.entry.html">home.models.entry</a></li>
-<li class="toctree-l3"><a class="reference internal" href="home.models.entryitem.html">home.models.entryitem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.models.projectitem.html">ProjectItem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.models.entry.html">Entry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.models.entryitem.html">EntryItem</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../tests/home.tests.html">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../views/home.views.html">Views</a></li>
 </ul>
 </li>
 </ul>
@@ -163,8 +191,8 @@
 <ul>
   <li><a href="../../../index.html">Documentation overview</a><ul>
   <li><a href="../../home.html">home</a><ul>
-  <li><a href="../home.models.html">home.models</a><ul>
-      <li>Previous: <a href="home.models.cv.html" title="previous chapter">CV</a></li>
+  <li><a href="../home.models.html">Models</a><ul>
+      <li>Previous: <a href="home.models.cv.html" title="previous chapter">home.models.cv</a></li>
       <li>Next: <a href="home.models.subsection.html" title="next chapter">home.models.subsection</a></li>
   </ul></li>
   </ul></li>

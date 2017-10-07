@@ -24,15 +24,34 @@ CV = home.models.cv.CV
 
 
 class ExportDocument(object):
-    """Class to handle exporting rsum pages to Word documents."""
+    """Class to handle exporting rsum pages to Word documents.
+
+    .. attribute:: s
+
+       Hostname of current host.
+
+    .. attribute:: name
+
+       Filename to offer to the end user.
+    """
     def __init__(self):
-        """Initialize ExportDocument class."""
+        """Initialize ExportDocument class.
+
+        :return: None
+        :rtype: None
+        """
         self.s = values.get(socket.gethostname())
         s = self.s
         self.name = '{0}-cv.docx'.format(s.get('owner'))
 
     def export(self, cv_id):
-        """Export a word document."""
+        """Export a word document.
+    
+        :param cv_id: ID of CV to export.
+        :type cv_id: int
+        :return: Stream of Word document for end user.
+        :rtype: object 
+        """
         cv_instance = CV()
         cv = cv_instance.get_cv(cv_id)
         stream = StringIO()
@@ -76,7 +95,15 @@ class ExportDocument(object):
         return stream 
 
     def add_intro(self, intro, document):
-        """Add introduction section."""
+        """Add introduction section.
+    
+        :param intro: Introduction to add to document.
+        :type intro: [dict(str, str)]
+        :param document: Current document.
+        :type document: object
+        :return: Document updated with Introduction.
+        :rtype: object
+        """
         s = self.s
         table = document.add_table(rows=1, cols=2)
         table.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -97,7 +124,15 @@ class ExportDocument(object):
         return document 
 
     def add_summary(self, summary, document):
-        """Add summary section."""
+        """Add summary section.
+    
+        :param summary: Summary section to add to document.
+        :type summary: [dict(str, str)]
+        :param document: Current document.
+        :type document: object
+        :return: Document updated with Summary.
+        :rtype: object
+        """
         s = self.s
         t = document.add_table(rows=1, cols=2)
         t.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -117,7 +152,15 @@ class ExportDocument(object):
         return document 
 
     def add_skills(self, skills, document):
-        """Add skills section."""
+        """Add skills section.
+    
+        :param skills: Skills section to add to document.
+        :type summary: [dict(str, str)]
+        :param document: Current document.
+        :type document: object
+        :return: Document updated with Skills.
+        :rtype: object
+        """
         current_year = datetime.datetime.now().strftime("%Y")
 
         t = document.tables[1]
@@ -161,7 +204,15 @@ class ExportDocument(object):
         return document
 
     def add_sub_skills(self, subs, ts, ts_index):
-        """Add sub skills to skills section."""
+        """Add sub skills to skills section.
+    
+        :param subs: Sub skills to add to document.
+        :type subs: [dict(str, str)]
+        :param object ts: Table cell to update. 
+        :param int ts_index: Index for current table cell. 
+        :return: Document updated with sub skills.
+        :rtype: object
+        """
         current_year = float(datetime.datetime.now().strftime("%Y")) 
         sub_table = ts.cell(ts_index,0).add_table(rows=1,cols=2)
         for i, sub in enumerate(subs):
@@ -189,7 +240,14 @@ class ExportDocument(object):
         return ts 
 
     def add_experience(self, experience, document):
-        """Add experience section."""
+        """Add experience section.
+    
+        :param [dict(str, str)] experience:
+            Experience section to add to document.
+        :param object document: Document to update. 
+        :return: Document updated with Experience section.
+        :rtype: object
+        """
         s = self.s
         del experience[0]
         p = document.add_paragraph('Experience', style='Heading 3')
@@ -235,7 +293,16 @@ class ExportDocument(object):
         return document
 
     def add_projects(self, projects, table, row, col):
-        """Add projects to experience section."""
+        """Add projects to experience section.
+    
+        :param [dict(str, str)] projects:
+            Projects for a portion of Experience section. 
+        :param object table: Table from current document. 
+        :param int row: Index of current row.
+        :param int col: Index of current col.
+        :return: Updated Projects table. 
+        :rtype: object
+        """
         for project in projects.items():
             p = table.cell(row,col).add_paragraph(project[0], style='List Bullet')
             p.paragraph_format.line_spacing = 1.0
@@ -248,7 +315,14 @@ class ExportDocument(object):
         return table
 
     def add_education(self, education, document):
-        """Add education section."""
+        """Add education section.
+    
+        :param [dict(str, str)] education:
+            Education section for current document. 
+        :param object document: Current document. 
+        :return: Current document with Educaiton section. 
+        :rtype: object
+        """
         s = self.s
         p = document.add_paragraph('Education', style='Heading 3')
         p.paragraph_format.line_spacing = 1.0
@@ -281,7 +355,14 @@ class ExportDocument(object):
         return document
 
     def add_contact(self, contact, document):
-        """Add contact section."""
+        """Add contact section.
+    
+        :param [dict(str, str)] contact:
+            Contact section for current document. 
+        :param object document: Current document. 
+        :return: Current document with Contact section. 
+        :rtype: object
+        """
         for item in contact:
             if item.get('name') == 'web':
                 web = item.get('content')[0].get('content')
@@ -322,7 +403,12 @@ class ExportDocument(object):
         return document
 
     def set_styles(self, document):
-        """Set styles in the Word document."""
+        """Set styles in the Word document.
+    
+        :param object document: Current document. 
+        :return: Current document with correct styles. 
+        :rtype: object
+        """
         style = document.styles['Heading 1'] 
         font = style.font
         font.color.rgb = RGBColor(0x51, 0x57, 0x6A) 
@@ -403,7 +489,12 @@ class ExportDocument(object):
         return document
 
     def set_layout(self, document):
-        """Define document layout."""
+        """Define document layout.
+    
+        :param object document: Current document. 
+        :return: Current document with adjusted layougt. 
+        :rtype: object
+        """
         sections = document.sections 
         section = sections[0] 
         section.page_height = Cm(29.7)

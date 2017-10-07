@@ -1,5 +1,5 @@
-home\.models\.projectitem
-=========================
+ProjectItem
+===========
 
 .. automodule:: home.models.projectitem
 

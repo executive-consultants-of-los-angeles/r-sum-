@@ -1,0 +1,211 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Test Entry &#8212; rsum v0.1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'v0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Test EntryItem" href="home.tests.test_entryitem.html" />
+    <link rel="prev" title="ProjectItem" href="home.tests.projectitem.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-home.tests.test_entry">
+<span id="test-entry"></span><h1>Test Entry<a class="headerlink" href="#module-home.tests.test_entry" title="Permalink to this headline">¶</a></h1>
+<p>Test classes for entry model.</p>
+<dl class="class">
+<dt id="home.tests.test_entry.EntryTestCase">
+<em class="property">class </em><code class="descclassname">home.tests.test_entry.</code><code class="descname">EntryTestCase</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/tests/test_entry.html#EntryTestCase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.tests.test_entry.EntryTestCase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test class for the Entry model.</p>
+<dl class="attribute">
+<dt id="home.tests.test_entry.EntryTestCase.cv">
+<code class="descname">cv</code><a class="headerlink" href="#home.tests.test_entry.EntryTestCase.cv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Related <a class="reference internal" href="../../models/classes/home.models.cv.html#home.models.cv.CV" title="home.models.cv.CV"><code class="xref py py-obj docutils literal"><span class="pre">home.models.cv.CV</span></code></a> for testing.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="home.tests.test_entry.EntryTestCase.project_item">
+<code class="descname">project_item</code><a class="headerlink" href="#home.tests.test_entry.EntryTestCase.project_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Related <a class="reference internal" href="../../models/classes/home.models.projectitem.html#home.models.projectitem.ProjectItem" title="home.models.projectitem.ProjectItem"><code class="xref py py-obj docutils literal"><span class="pre">home.models.projectitem.ProjectItem</span></code></a> for testing.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="home.tests.test_entry.EntryTestCase.entry">
+<code class="descname">entry</code><a class="headerlink" href="#home.tests.test_entry.EntryTestCase.entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="../../models/classes/home.models.entry.html#home.models.entry.Entry" title="home.models.entry.Entry"><code class="xref py py-obj docutils literal"><span class="pre">home.models.entry.Entry</span></code></a> necessary for tests.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">project_item</code></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">ProjectItem</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.tests.test_entry.EntryTestCase.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/tests/test_entry.html#EntryTestCase.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.tests.test_entry.EntryTestCase.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup for EntryTestCase.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">none</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.tests.test_entry.EntryTestCase.test_save_entry">
+<code class="descname">test_save_entry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/tests/test_entry.html#EntryTestCase.test_save_entry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.tests.test_entry.EntryTestCase.test_save_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test saving an entry to the Entry model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">none</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="home.tests.test_entry.GetEntryTestCase">
+<em class="property">class </em><code class="descclassname">home.tests.test_entry.</code><code class="descname">GetEntryTestCase</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/tests/test_entry.html#GetEntryTestCase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.tests.test_entry.GetEntryTestCase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for testing the get methods for entries.</p>
+<dl class="method">
+<dt id="home.tests.test_entry.GetEntryTestCase.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/tests/test_entry.html#GetEntryTestCase.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.tests.test_entry.GetEntryTestCase.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup the GetEntryTestCase.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.tests.test_entry.GetEntryTestCase.test_get_entry">
+<code class="descname">test_get_entry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/tests/test_entry.html#GetEntryTestCase.test_get_entry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.tests.test_entry.GetEntryTestCase.test_get_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test getting an entry.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">rsum</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../home.html">home</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../export/home.export.html">Export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../models/home.models.html">Models</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../home.tests.html">Tests</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="home.tests.cv.html">CV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.tests.section.html">Section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.tests.subsection.html">SubSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.tests.project.html">Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.tests.projectitem.html">ProjectItem</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Test Entry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.tests.test_entryitem.html">Test EntryItem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home.tests.views.html">Views</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../views/home.views.html">Views</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../rsum/rsum.html">rsum</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../home.html">home</a><ul>
+  <li><a href="../home.tests.html">Tests</a><ul>
+      <li>Previous: <a href="home.tests.projectitem.html" title="previous chapter">ProjectItem</a></li>
+      <li>Next: <a href="home.tests.test_entryitem.html" title="next chapter">Test EntryItem</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, ECLA.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7+</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../../_sources/home/tests/classes/home.tests.test_entry.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
