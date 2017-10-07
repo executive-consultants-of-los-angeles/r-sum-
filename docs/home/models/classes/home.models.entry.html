@@ -24,8 +24,6 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="EntryItem" href="home.models.entryitem.html" />
-    <link rel="prev" title="ProjectItem" href="home.models.projectitem.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -41,88 +39,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-home.models.entry">
-<span id="entry"></span><h1>Entry<a class="headerlink" href="#module-home.models.entry" title="Permalink to this headline">¶</a></h1>
-<p>Module for Entry objects.</p>
-<dl class="class">
-<dt id="home.models.entry.Entry">
-<em class="property">class </em><code class="descclassname">home.models.entry.</code><code class="descname">Entry</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/entry.html#Entry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.entry.Entry" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class for Entry objects.</p>
-<dl class="attribute">
-<dt id="home.models.entry.Entry.project_item">
-<code class="descname">project_item</code><a class="headerlink" href="#home.models.entry.Entry.project_item" title="Permalink to this definition">¶</a></dt>
-<dd><p>Associated <code class="xref py py-obj docutils literal"><span class="pre">home.models.project_item.ProjectItem</span></code> object.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="home.models.entry.Entry.name">
-<code class="descname">name</code><a class="headerlink" href="#home.models.entry.Entry.name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Name of stored content.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="home.models.entry.Entry.content">
-<code class="descname">content</code><a class="headerlink" href="#home.models.entry.Entry.content" title="Permalink to this definition">¶</a></dt>
-<dd><p>Actual stored content.</p>
-</dd></dl>
-
-<dl class="exception">
-<dt id="home.models.entry.Entry.DoesNotExist">
-<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#home.models.entry.Entry.DoesNotExist" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="exception">
-<dt id="home.models.entry.Entry.MultipleObjectsReturned">
-<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#home.models.entry.Entry.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="home.models.entry.Entry.get_entry">
-<code class="descname">get_entry</code><span class="sig-paren">(</span><em>project_item</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/entry.html#Entry.get_entry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.entry.Entry.get_entry" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get an Entry object.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>project_item</strong> (<a class="reference internal" href="home.models.projectitem.html#home.models.projectitem.ProjectItem" title="home.models.projectitem.ProjectItem"><code class="xref py py-obj docutils literal"><span class="pre">home.models.projectitem.ProjectItem</span></code></a>) – Related ProjectItem object.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">List of associated Entry object values.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list(<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a>)</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="home.models.entry.Entry.save_entry">
-<code class="descname">save_entry</code><span class="sig-paren">(</span><em>entry</em>, <em>project_item</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/home/models/entry.html#Entry.save_entry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.entry.Entry.save_entry" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save an Entry object.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>entry</strong> (:obj:’<cite>home.models.entry.Entry</cite>) – Entry to be saved.</li>
-<li><strong>project_item</strong> – Related <a class="reference internal" href="home.models.projectitem.html#home.models.projectitem.ProjectItem" title="home.models.projectitem.ProjectItem"><code class="xref py py-obj docutils literal"><span class="pre">home.models.projectitem.ProjectItem</span></code></a></li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Dictionary containing the saved Entry values.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)">dict</a>(<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a>, <a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)">str</a>)</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">AssertionError</span></code></p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</dd></dl>
-
+  <div class="section" id="entry">
+<h1>Entry<a class="headerlink" href="#entry" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -141,23 +59,8 @@
 
 
 <h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../home.html">home</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../export/home.export.html">Export</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../home.models.html">Models</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="home.models.cv.html">home.models.cv</a></li>
-<li class="toctree-l3"><a class="reference internal" href="home.models.section.html">home.models.section</a></li>
-<li class="toctree-l3"><a class="reference internal" href="home.models.subsection.html">home.models.subsection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="home.models.project.html">home.models.project</a></li>
-<li class="toctree-l3"><a class="reference internal" href="home.models.projectitem.html">ProjectItem</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Entry</a></li>
-<li class="toctree-l3"><a class="reference internal" href="home.models.entryitem.html">EntryItem</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../tests/home.tests.html">Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../views/home.views.html">Views</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../home.html">home</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../rsum/rsum.html">rsum</a></li>
@@ -167,12 +70,6 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../home.html">home</a><ul>
-  <li><a href="../home.models.html">Models</a><ul>
-      <li>Previous: <a href="home.models.projectitem.html" title="previous chapter">ProjectItem</a></li>
-      <li>Next: <a href="home.models.entryitem.html" title="next chapter">EntryItem</a></li>
-  </ul></li>
-  </ul></li>
   </ul></li>
 </ul>
 </div>
