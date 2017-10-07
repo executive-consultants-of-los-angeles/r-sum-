@@ -67,7 +67,6 @@ class ExportDocument(object):
                 if name == u'intro':
                     document = self.add_intro(s, document)
 
-                """
                 if name == u'summary':
                     p = document.add_paragraph('')
                     p.paragraph_format.line_spacing = 0.0
@@ -93,7 +92,6 @@ class ExportDocument(object):
                     p = document.add_paragraph('')
                     p.paragraph_format.line_spacing = 0.0
                     document = self.add_contact(s, document)
-                """
 
         document.save(stream)
 
@@ -114,9 +112,9 @@ class ExportDocument(object):
         table.alignment = WD_TABLE_ALIGNMENT.CENTER
         table.cell(0,0).add_paragraph(intro.get('name'), style='Heading 1')
         table.cell(0,0).add_paragraph(intro.get('position'), style='Heading 2')
-
         table.cell(0,0).width = Cm(12)
-        table.cell(0,1).add_picture('/srv/rsum/static/{0}/img/mockup/avatar-01.png'.format(s.DIR, width=Cm(4)))
+
+        table.cell(0,1).add_picture('/srv/rsum/static/{0}/img/mockup/avatar-01.png'.format(s.DIR, width=Cm(3)))
         table.cell(0,1).width = Cm(4)
         table.cell(0,1).paragraphs[0].paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
         return document 
@@ -134,19 +132,18 @@ class ExportDocument(object):
         s = self.s
         t = document.add_table(rows=1, cols=2)
         t.alignment = WD_TABLE_ALIGNMENT.CENTER
-        for index, item in enumerate(sorted(summary)):
-            if len(item.get('content')) == 1:
-                t.cell(0,0).add_picture('/srv/rsum/static/{0}/img/500x700/01.jpg'.format(s.get('template')), width=Cm(6))
-                t.cell(0,0).width = Cm(6)
-                t.cell(0,1).add_paragraph('Summary', style='Heading 3')
-                t.cell(0,1).add_paragraph(item.get('content')[0].get('content'), style='Normal')
-                p = t.cell(0,1).paragraphs[1]
-                p.paragraph_format.line_spacing = 1.0 
-                t.cell(0,1).width = Cm(10)
-                p = t.cell(0,0).paragraphs[0]
-                p.paragraph_format.line_spacing = 0.0
-                p = t.cell(0,1).paragraphs[0]
-                p.paragraph_format.line_spacing = 0.0
+
+        t.cell(0,0).add_picture('/srv/rsum/static/{0}/img/500x700/01.jpg'.format(s.DIR, width=Cm(6)))
+        t.cell(0,0).width = Cm(6)
+        t.cell(0,1).add_paragraph('Summary', style='Heading 3')
+        t.cell(0,1).add_paragraph(summary.get('message'), style='Normal')
+        p = t.cell(0,1).paragraphs[1]
+        p.paragraph_format.line_spacing = 1.0 
+        t.cell(0,1).width = Cm(10)
+        p = t.cell(0,0).paragraphs[0]
+        p.paragraph_format.line_spacing = 0.0
+        p = t.cell(0,1).paragraphs[0]
+        p.paragraph_format.line_spacing = 0.0
         return document 
 
     def add_skills(self, skills, document):
@@ -165,40 +162,38 @@ class ExportDocument(object):
         t.cell(0,1).add_paragraph('Skills', style='Heading 3')
         t_sub = t.cell(0,1).add_table(rows=1, cols=2)
         t.cell(0,1).tables[0].columns[0].width = Cm(7)
-        for index,item in enumerate(sorted(skills)):
-            if index > 0:
-                skill = ['0', '1'] 
-                subskills = []
-                for item_content in item.get('content'):
-                    if (
-                        isinstance(item_content.get('content'), unicode) and
-                        item_content.get('name') == 'start'
-                    ):
-                        experience = int(current_year) - int(item_content.get('content'))
-                        skill[1] = '{0} year(s)'.format(str(experience))
-                    elif (
-                        isinstance(item_content.get('content'), unicode) and
-                        item_content.get('name') != 'id'
-                    ):
-                        name = item_content.get('content').replace('_',' ').title()
-                        skill[0] = name 
-                    elif (
-                        isinstance(item_content.get('content'), dict)
-                    ):
-                        subskills.append(item_content.get('content'))
-                t_sub.add_row()
-                t_sub.cell(index-1,0).text = skill[0]
-                p = t_sub.cell(index-1,0).paragraphs[0]
-                p.style='Skill'
-                p.paragraph_format.line_spacing = 1.0
-                p.paragraph_format.space_after = 0
-                t_sub.cell(index-1,1).text = skill[1]
-                p = t_sub.cell(index-1,1).paragraphs[0]
-                p.style='Skill'
-                p.paragraph_format.line_spacing = 1.0
-                p.paragraph_format.space_after = 0
-                p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-                t_sub = self.add_sub_skills(subskills, t_sub, index-1)
+        skill_grid = ['0', '1'] 
+        subskills = []
+        for name, skill in skills.items(): 
+            if (
+                isinstance(item_content, unicode) and
+                name == 'start'
+            ):
+                experience = int(current_year) - int(item_content.get('content'))
+                skill[1] = '{0} year(s)'.format(str(experience))
+            elif (
+                isinstance(item_content.get('content'), unicode) and
+                item_content.get('name') != 'id'
+            ):
+                name = item_content.get('content').replace('_',' ').title()
+                skill[0] = name 
+            elif (
+                isinstance(item_content.get('content'), dict)
+            ):
+                subskills.append(item_content.get('content'))
+        t_sub.add_row()
+        t_sub.cell(index-1,0).text = skill[0]
+        p = t_sub.cell(index-1,0).paragraphs[0]
+        p.style='Skill'
+        p.paragraph_format.line_spacing = 1.0
+        p.paragraph_format.space_after = 0
+        t_sub.cell(index-1,1).text = skill[1]
+        p = t_sub.cell(index-1,1).paragraphs[0]
+        p.style='Skill'
+        p.paragraph_format.line_spacing = 1.0
+        p.paragraph_format.space_after = 0
+        p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+        t_sub = self.add_sub_skills(subskills, t_sub, index-1)
         return document
 
     def add_sub_skills(self, subs, ts, ts_index):
