@@ -189,14 +189,14 @@ class ExportDocument(object):
             p.style='Skill'
             p.paragraph_format.line_spacing = 1.0
             p.paragraph_format.space_after = 0
-            t_sub.cell(index-1,1).text = skill
+            t_sub.cell(index-1,1).text = skill[1]
             p = t_sub.cell(index-1,1).paragraphs[0]
             p.style='Skill'
             p.paragraph_format.line_spacing = 1.0
             p.paragraph_format.space_after = 0
             p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
             t_sub = self.add_sub_skills(subskills, t_sub, index-1)
-            index = index + 1
+            index = index +1
         return document
 
     def add_sub_skills(self, subs, ts, ts_index):
