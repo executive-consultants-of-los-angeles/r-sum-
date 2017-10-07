@@ -1,5 +1,5 @@
-home\.models\.profile
-=====================
+Profile Model
+=============
 
 .. automodule:: home.models.profile
 
