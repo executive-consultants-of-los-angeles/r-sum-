@@ -83,10 +83,10 @@ class ExportDocument(object):
                     p.paragraph_format.page_break_before = True
                     document = self.add_experience(s, document)
         
-                #if name == u'education':
-                #    p = document.add_paragraph('')
-                #    p.paragraph_format.line_spacing = 0.0
-                #    document = self.add_education(s, document)
+                if name == u'education':
+                    p = document.add_paragraph('')
+                    p.paragraph_format.line_spacing = 0.0
+                    document = self.add_education(s, document)
                 
                 #if name == u'contact':
                 #    p = document.add_paragraph('')
@@ -309,30 +309,19 @@ class ExportDocument(object):
         p.paragraph_format.line_spacing = 1.0
         p.paragraph_format.space_after = 0
         p.paragraph_format.page_break_before = True
-        document.add_picture('/srv/rsum/static/{0}/img/1920x1080/01.jpg'.format(s.get('template')), width=Cm(4))
-        for item in education:
-            if item.get('content')[0].get('name') == u'name':
-                name = item.get('content')[0].get('content')
-            if item.get('content')[0].get('name') == u'duration':
-                duration = item.get('content')[0].get('content')
-                a = duration[:4]
-                b = duration[7:]
-                duration = a + ' - ' + b
-            if item.get('content')[0].get('name') == u'studies':
-                studies = item.get('content')[0].get('content')
-            if item.get('name') == u'projects':
-                projects = item.get('content')[0].get('content')
-                projects = projects.replace('[','').replace(']','').split("', '")
-            if item.get('name') == u'location':
-                location = item.get('content')[0].get('content')
-        p = document.add_paragraph(name, style='Heading 4')
+        document.add_picture(
+            '/srv/rsum/static/{0}/img/1920x1080/01.jpg'.format(
+                s.DIR), 
+            width=Cm(4))
+        print(education)
+        p = document.add_paragraph(education.get('name'), style='Heading 4')
         p.paragraph_format.space_before = 0
-        p = document.add_paragraph(studies, style='Heading 5')
+        p = document.add_paragraph(education.get('studies'), style='Heading 5')
         p.paragraph_format.space_before = 0
-        p = document.add_paragraph("{0}, {1}".format(location, duration), style='Heading 6')
+        p = document.add_paragraph("{0}, {1}".format(education.get('location'), education.get('duration')), style='Heading 6')
         p.paragraph_format.space_before = 0
-        for project in projects:
-            p = document.add_paragraph(project.replace("'",''), style='List Bullet')
+        for project in education.get('projects'):
+            p = document.add_paragraph(project, style='List Bullet')
         return document
 
     def add_contact(self, contact, document):
