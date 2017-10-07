@@ -31,8 +31,8 @@ class Profile(models.Model):
 
         :param cls: The current class instance.
         :type cls: :obj:`home.models.profile.Profile`
-        :return: ID of the current Profile object.
-        :rtype: int
+        :return: The created instance of :obj:`home.models.profile.Profile`. 
+        :rtype: :obj:`home.models.profile.Profile` 
         """
         with open(settings.FILE, 'r') as yaml_file:
             raw_content = yaml.load(yaml_file.read())
