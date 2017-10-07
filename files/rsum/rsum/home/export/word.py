@@ -109,6 +109,8 @@ class ExportDocument(object):
         """
         s = self.s
         table = document.add_table(rows=1, cols=2)
+        table.cell(0, 0).width = Cm(12)
+
         table.alignment = WD_TABLE_ALIGNMENT.CENTER
         table.cell(0, 0).add_paragraph(
             intro.get('name'),
@@ -116,12 +118,11 @@ class ExportDocument(object):
         table.cell(0, 0).add_paragraph(
             intro.get('position'),
             style='Heading 2')
-        table.cell(0, 0).width = Cm(12)
 
-        table.cell(0, 1).add_picture(
-            '/srv/rsum/static/{0}/img/mockup/avatar-01.png'.format(s.DIR),
-            width=Cm(4))
         table.cell(0, 1).width = Cm(4)
+        table.cell(0, 1).add_picture(
+            '/srv/rsum/static/{0}/img/mockup/avatar-02.png'.format(s.DIR),
+            width=Cm(3))
         table.cell(
             0,
             1
@@ -146,9 +147,9 @@ class ExportDocument(object):
 
         t.cell(0, 0).width = Cm(6)
         t.cell(0, 0).add_picture(
-            '/srv/rsum/static/{0}/img/500x700/01.jpg'.format(
-                s.DIR,
-                width=Cm(5)))
+            '/srv/rsum/static/{0}/img/500x700/02.jpg'.format(s.DIR),
+            width=Cm(5))
+
         t.cell(0, 1).add_paragraph('Summary', style='Heading 3')
         t.cell(0, 1).add_paragraph(summary.get('content'), style='Normal')
         p = t.cell(0, 1).paragraphs[1]
