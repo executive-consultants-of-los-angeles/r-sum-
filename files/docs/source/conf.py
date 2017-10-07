@@ -16,10 +16,14 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-import os
 import sys
-sys.path.insert(0, os.path.abspath('/src/rsum/files/rsum'))
+sys.path.insert(0, '/src/rsum/files/rsum')
+sys.path.insert(0, '/src/rsum/files/rsum/rsum')
+sys.path.insert(0, '/src/rsum/files/rsum/rsum/rsum')
+sys.path.insert(0, '/src/rsum/files/rsum/rsum/home')
+
+import django
+django.setup()
 
 
 # -- General configuration ------------------------------------------------
@@ -84,10 +88,7 @@ language = None
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
-supported_image_types = [
-    'image/png',
-]
+supported_image_types = ['image/svg+xml', 'image/png', 'image/gif', 'image/jpeg']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'

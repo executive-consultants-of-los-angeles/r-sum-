@@ -1,7 +1,11 @@
 ---
+- name: "Load the data."
+  command: '/usr/bin/python /srv/rsum/rsum/rsum/create.py'
+  args:
+    creates: "/tmp/ready"
 - name: "Get the index."
   get_url:
-    url: 'http://mrsum:8193'
+    url: 'http://mrsum:8192'
     dest: /tmp/index.html
 ...
 # vim: ft=ansible:

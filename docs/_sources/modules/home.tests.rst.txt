@@ -1,7 +1,13 @@
-home.tests
-==============
+home\.tests
+===========
 
 .. automodule:: home.tests
+   
+  .. rubric:: Classes 
 
-  
-.. vim: ft=rst sts=3 ts=3 sw=3:
+   .. autosummary::
+   
+      cv.CVTestCase 
+      cv.GetCVTestCase 
+
+.. vim: ft=rst sts=3 ts=3 sw=e:   

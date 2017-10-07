@@ -1,0 +1,16 @@
+rsum
+====
+
+.. automodule:: rsum
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   

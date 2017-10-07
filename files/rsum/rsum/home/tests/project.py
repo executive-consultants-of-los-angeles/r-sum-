@@ -3,15 +3,12 @@
 """Test cases for the Project model."""
 from __future__ import unicode_literals
 
-import django
 from django.test import TestCase
 
-django.setup()
-
-from home.schema.cv import CV
-from home.schema.section import Section
-from home.schema.subsection import SubSection
-from home.schema.project import Project
+from home.models.cv import CV
+from home.models.section import Section
+from home.models.subsection import SubSection
+from home.models.project import Project
 from rsum.settings.rsum import values
 
 import home

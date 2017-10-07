@@ -20,4 +20,4 @@ help:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 dhtml: html
-	cp -r $(BUILDDIR)/html ../../../docs;
+	cp -r $(BUILDDIR)/html/* ../../../docs;

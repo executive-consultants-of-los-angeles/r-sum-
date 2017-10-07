@@ -1,0 +1,262 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>home.tests.cv &#8212; rsum v0.1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'v0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for home.tests.cv</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;Test cases for the home.schema.cv module.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">socket</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+
+<span class="kn">from</span> <span class="nn">django.test</span> <span class="k">import</span> <span class="n">TestCase</span>
+
+<span class="kn">from</span> <span class="nn">home.models.cv</span> <span class="k">import</span> <span class="n">CV</span>
+<span class="kn">from</span> <span class="nn">rsum.settings.rsum</span> <span class="k">import</span> <span class="n">values</span>
+
+
+<div class="viewcode-block" id="CVTestCase"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.html#home.tests.cv.CVTestCase">[docs]</a><span class="k">class</span> <span class="nc">CVTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;CVTestCase class.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="CVTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.html#home.tests.cv.CVTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set up the CVTestCase class.&quot;&quot;&quot;</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">())</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/srv/rsum/cvs/</span><span class="si">{0}</span><span class="s1">/</span><span class="si">{1}</span><span class="s1">.yml&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;dir&#39;</span><span class="p">),</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">abridged</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="CVTestCase.test_check_sections"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.html#home.tests.cv.CVTestCase.test_check_sections">[docs]</a>    <span class="k">def</span> <span class="nf">test_check_sections</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test the check_sections method, currently broken.&quot;&quot;&quot;</span>
+        <span class="n">cv</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        self.cv_id = cv.check_sections(</span>
+<span class="sd">            name_of_owner=&#39;alex&#39;,</span>
+<span class="sd">            name_of_cv=&#39;complete&#39;, </span>
+<span class="sd">            template=&#39;acecb&#39;</span>
+<span class="sd">        )</span>
+<span class="sd">        self.assertEqual(</span>
+<span class="sd">            self.cv_id,</span>
+<span class="sd">            list(CV.objects.filter(</span>
+<span class="sd">                id=self.cv_id</span>
+<span class="sd">            ).values_list(</span>
+<span class="sd">                &#39;id&#39;,</span>
+<span class="sd">                flat=True</span>
+<span class="sd">            ))[0] </span>
+<span class="sd">        )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CVTestCase.test_save_abridged_cv"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.html#home.tests.cv.CVTestCase.test_save_abridged_cv">[docs]</a>    <span class="k">def</span> <span class="nf">test_save_abridged_cv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test save for abridged cv.&quot;&quot;&quot;</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">())</span>
+        <span class="n">abridged</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">abridged</span>
+        <span class="n">cv</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span>
+        <span class="n">cv_id</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">save_cv</span><span class="p">(</span><span class="n">abridged</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">),</span> <span class="n">template</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;template&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span>
+            <span class="n">cv_id</span><span class="p">,</span>
+            <span class="nb">list</span><span class="p">(</span><span class="n">CV</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+                <span class="nb">id</span><span class="o">=</span><span class="n">cv_id</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span>
+                <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+                <span class="n">flat</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="CVGetsTestCase"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.html#home.tests.cv.CVGetsTestCase">[docs]</a><span class="k">class</span> <span class="nc">CVGetsTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Test class for CV get methods.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="CVGetsTestCase.setUp"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.html#home.tests.cv.CVGetsTestCase.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set up test class for cv get mehtods.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        cv = CV()</span>
+<span class="sd">        complete = open(&#39;/srv/rsum/cvs/alex/complete.yml&#39;)</span>
+<span class="sd">        self.complete = yaml.load(complete.read())</span>
+<span class="sd">        complete.close()</span>
+<span class="sd">        cv = CV.objects.filter(</span>
+<span class="sd">            id=cv.check_sections(</span>
+<span class="sd">                name_of_owner=&#39;alex&#39;,</span>
+<span class="sd">                name_of_cv=&#39;complete&#39;,</span>
+<span class="sd">                template=&#39;acecv&#39;</span>
+<span class="sd">            )</span>
+<span class="sd">        )</span>
+<span class="sd">        sections = Section.objects.filter(cv=cv)[5]</span>
+<span class="sd">        print(json.dumps(list(SubSection.objects.filter(section=sections).values()), indent=1))</span>
+<span class="sd">        self.complete_sections = cv.get_cv(cv_id=1, cvname=&#39;complete&#39;).get(&#39;sections&#39;)</span>
+<span class="sd">        self.skills = cv.get_skills({&#39;cv&#39;:self.complete_sections})</span>
+<span class="sd">        self.values = cv.get_values({&#39;cv&#39;:self.complete_sections})</span>
+<span class="sd">        self.experience = cv.get_experience({&#39;cv&#39;:self.complete_sections})</span>
+<span class="sd">        self.cv_id = 1 </span>
+
+<span class="sd">        self.cv_abridged_id = cv.check_sections(</span>
+<span class="sd">            name_of_owner=&#39;alex&#39;,</span>
+<span class="sd">            name_of_cv=&#39;abridged&#39;,</span>
+<span class="sd">            template=&#39;acecv&#39;</span>
+<span class="sd">        )</span>
+<span class="sd">        self.ab_sections = cv.get_cv(cv_id=cv_id, cvname=&#39;abridged&#39;).get(&#39;sections&#39;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cv</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="CVGetsTestCase.test_get_cv"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.html#home.tests.cv.CVGetsTestCase.test_get_cv">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_cv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Broken, test get cv.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        cv_instance = CV()</span>
+<span class="sd">        complete_sections = cv_instance.get_cv(cv_id=self.cv_id, cvname=&#39;complete&#39;).get(&#39;sections&#39;)</span>
+<span class="sd">        ab_sections = cv_instance.get_cv(cv_id=self.cv_abridged_id, cvname=&#39;abridged&#39;).get(&#39;sections&#39;)</span>
+<span class="sd">        self.assertEqual(</span>
+<span class="sd">            len(ab_sections),</span>
+<span class="sd">            len(self.ab_sections)</span>
+<span class="sd">        )</span>
+<span class="sd">        self.assertEqual(</span>
+<span class="sd">            len(complete_sections),</span>
+<span class="sd">            len(self.complete_sections)</span>
+<span class="sd">        )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CVGetsTestCase.test_get_experience"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.html#home.tests.cv.CVGetsTestCase.test_get_experience">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_experience</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Broken, test get experience.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        cv_instance = CV()</span>
+<span class="sd">        context = {</span>
+<span class="sd">            &#39;cv&#39;: self.complete_sections</span>
+<span class="sd">        }</span>
+<span class="sd">        experience = cv_instance.get_experience(context)</span>
+<span class="sd">        self.assertEqual(</span>
+<span class="sd">            experience,</span>
+<span class="sd">            self.experience</span>
+<span class="sd">        )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CVGetsTestCase.test_get_skills"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.html#home.tests.cv.CVGetsTestCase.test_get_skills">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_skills</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Broken, test get skills.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        cv_instance = CV()</span>
+<span class="sd">        context = {</span>
+<span class="sd">            &#39;cv&#39;: self.complete_sections</span>
+<span class="sd">        }</span>
+<span class="sd">        skills = cv_instance.get_skills(context)</span>
+<span class="sd">        self.assertEqual(</span>
+<span class="sd">           skills,</span>
+<span class="sd">           self.skills</span>
+<span class="sd">        )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="CVGetsTestCase.test_get_values"><a class="viewcode-back" href="../../../home/tests/classes/home.tests.cv.html#home.tests.cv.CVGetsTestCase.test_get_values">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Broken, test get values.</span>
+<span class="sd">        </span>
+<span class="sd">        .. note:: This will be fixed as soon as I have the bandwidth.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        cv_instance = CV()</span>
+<span class="sd">        context = {</span>
+<span class="sd">            &#39;cv&#39;: self.complete_sections</span>
+<span class="sd">        }</span>
+<span class="sd">        values = cv_instance.get_values(context)</span>
+<span class="sd">        self.assertEqual(</span>
+<span class="sd">            values,</span>
+<span class="sd">            self.values</span>
+<span class="sd">        )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">rsum</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../home/home.html">home</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../rsum/rsum.html">rsum</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, ECLA.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7+</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

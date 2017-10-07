@@ -1,12 +1,15 @@
-home.views
-==============
-
-.. autosummary:: home.views
+home\.views
+===========
 
 .. automodule:: home.views
 
-.. automethod:: home.views.index
+   
+   
+   .. rubric:: Functions
 
-.. automethod:: home.views.export_docx
+   .. autosummary::
+   
+      export_docx
+      index
 
-.. vim: ft=rst sts=3 ts=3 sw=3:
+.. vim: ft=rst sts=3 ts=3 sw=e:   
