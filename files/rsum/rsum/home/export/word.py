@@ -88,10 +88,10 @@ class ExportDocument(object):
                     p.paragraph_format.line_spacing = 0.0
                     document = self.add_education(s, document)
                 
-                #if name == u'contact':
-                #    p = document.add_paragraph('')
-                #    p.paragraph_format.line_spacing = 0.0
-                #    document = self.add_contact(s, document)
+                if name == u'contact':
+                    p = document.add_paragraph('')
+                    p.paragraph_format.line_spacing = 0.0
+                    document = self.add_contact(s, document)
 
         document.save(stream)
 
@@ -313,15 +313,16 @@ class ExportDocument(object):
             '/srv/rsum/static/{0}/img/1920x1080/01.jpg'.format(
                 s.DIR), 
             width=Cm(4))
-        print(education)
         p = document.add_paragraph(education.get('name'), style='Heading 4')
         p.paragraph_format.space_before = 0
         p = document.add_paragraph(education.get('studies'), style='Heading 5')
         p.paragraph_format.space_before = 0
         p = document.add_paragraph("{0}, {1}".format(education.get('location'), education.get('duration')), style='Heading 6')
         p.paragraph_format.space_before = 0
-        for project in education.get('projects'):
-            p = document.add_paragraph(project, style='List Bullet')
+        for name, project in education.get('projects').items():
+            p = document.add_paragraph(name.title(), style='List Bullet')
+            for item in project:
+                p = document.add_paragraph(item, style='List Bullet 2')
         return document
 
     def add_contact(self, contact, document):
@@ -333,42 +334,29 @@ class ExportDocument(object):
         :return: Current document with Contact section. 
         :rtype: object
         """
-        for item in contact:
-            if item.get('name') == 'web':
-                web = item.get('content')[0].get('content')
-            if item.get('name') == 'location':
-                location = item.get('content')[0].get('content')
-            if item.get('name') == 'title':
-                title = item.get('content')[0].get('content')
-            if item.get('name') == 'message':
-                message = item.get('content')[0].get('content')
-            if item.get('name') == 'email':
-                email = item.get('content')[0].get('content')
-            if item.get('name') == 'phone':
-                phone = item.get('content')[0].get('content')
-        document.add_paragraph(title, style='Heading 3')
-        p = document.add_paragraph(message, style='Normal')
+        document.add_paragraph(contact.get('title'), style='Heading 3')
+        p = document.add_paragraph(contact.get('message'), style='Normal')
         p.paragraph_format.space_after = 0
         t = document.add_table(rows=2,cols=6)
         p = t.cell(0,0).paragraphs[0]
         p.paragraph_format.line_spacing = 0
         t.cell(0,0).add_paragraph('Website', style='Heading 4')
-        p = t.cell(0,0).add_paragraph(web, style='Heading 5')
+        p = t.cell(0,0).add_paragraph(contact.get('web'), style='Heading 5')
         p.paragraph_format.space_before = 0
         p = t.cell(0,1).paragraphs[0]
         p.paragraph_format.line_spacing = 0
         t.cell(0,1).add_paragraph('Email', style='Heading 4')
-        p = t.cell(0,1).add_paragraph(email, style='Heading 5')
+        p = t.cell(0,1).add_paragraph(contact.get('email'), style='Heading 5')
         p.paragraph_format.space_before = 0
         p = t.cell(1,0).paragraphs[0]
         p.paragraph_format.line_spacing = 0
         t.cell(1,0).add_paragraph('Phone', style='Heading 4')
-        p = t.cell(1,0).add_paragraph(phone, style='Heading 5')
+        p = t.cell(1,0).add_paragraph(contact.get('phone'), style='Heading 5')
         p.paragraph_format.space_before = 0
         p = t.cell(1,1).paragraphs[0]
         p.paragraph_format.line_spacing = 0
         t.cell(1,1).add_paragraph('Location', style='Heading 4')
-        p = t.cell(1,1).add_paragraph(location, style='Heading 5') 
+        p = t.cell(1,1).add_paragraph(contact.get('location'), style='Heading 5') 
         p.paragraph_format.space_before = 0
         return document
 
