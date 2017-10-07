@@ -1,5 +1,5 @@
-home\.models\.section
-=====================
+Section
+=======
 
 .. automodule:: home.models.section
 

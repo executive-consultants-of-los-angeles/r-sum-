@@ -33,8 +33,7 @@
                   </p>
                   <p>
                     <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{% static 'img/bigdot.png' %}');">
-          {% for project_name, project in content.items %}
-              {% if project_name != 'company' and project_name != 'duration' and project_name != 'location' and project_name != 'position' and project_name != 'projects' %}
+          {% for project_name, project in content.projects.items %}
                       <li>
                         <h5>{{ project_name|title }}</h5>
                         <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{% static 'img/littledot.png' %}');">
@@ -43,7 +42,6 @@
                           {% endfor %}
                         </ul>
                       </li>
-            {% endif %}
           {% endfor %} 
                     </ul>
                   </p>
