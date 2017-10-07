@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Module for exporting cvs to Word format."""
+"""Module for exporting profiles to Word format."""
 from __future__ import print_function
 
 import datetime
-import socket
 import docx
+import json
+import socket
 from StringIO import StringIO
+
+from django.conf import settings
 
 from docx import Document
 from docx.shared import Cm 
@@ -16,11 +19,10 @@ from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.enum.style import WD_BUILTIN_STYLE
-from rsum.settings.rsum import values
 
 import home.models
 
-CV = home.models.cv.CV
+Profile = home.models.profile.Profile
 
 
 class ExportDocument(object):
@@ -34,61 +36,64 @@ class ExportDocument(object):
 
        Filename to offer to the end user.
     """
+    s = settings
+
     def __init__(self):
         """Initialize ExportDocument class.
 
         :return: None
         :rtype: None
         """
-        self.s = values.get(socket.gethostname())
-        s = self.s
-        self.name = '{0}-cv.docx'.format(s.get('owner'))
+        s = self.s 
+        self.name = '{0}-profile.docx'.format(s.OWNER)
 
-    def export(self, cv_id):
+    def export(self, profile_id):
         """Export a word document.
     
-        :param cv_id: ID of CV to export.
-        :type cv_id: int
+        :param profile_id: ID of CV to export.
+        :type profile_id: int
         :return: Stream of Word document for end user.
         :rtype: object 
         """
-        cv_instance = CV()
-        cv = cv_instance.get_cv(cv_id)
+        profile = Profile.objects.get(pk=profile_id)
         stream = StringIO()
         document = Document()
         document = self.set_styles(document)
         document = self.set_layout(document)
 
-        for current,section in sorted(enumerate(cv.get('sections'))):
-            print(section.get('name'))
-            if section.get('name') == u'intro':
-                document = self.add_intro(section.get('content'), document)
+        sections = json.loads(profile.content)
+        for section in sections: 
+            for name, s in section.items():
+                if name == u'intro':
+                    document = self.add_intro(s, document)
 
-            if section.get('name') == u'summary':
-                p = document.add_paragraph('')
-                p.paragraph_format.line_spacing = 0.0
-                document = self.add_summary(section.get('content'), document)
+                """
+                if name == u'summary':
+                    p = document.add_paragraph('')
+                    p.paragraph_format.line_spacing = 0.0
+                    document = self.add_summary(s, document)
 
-            if section.get('name') == u'skills':
-                p = document.add_paragraph('')
-                p.paragraph_format.line_spacing = 0.0
-                document = self.add_skills(section.get('content'), document)
+                if name == u'skills':
+                    p = document.add_paragraph('')
+                    p.paragraph_format.line_spacing = 0.0
+                    document = self.add_skills(s, document)
         
-            if section.get('name') == u'experience':
-                p = document.add_paragraph('')
-                p.paragraph_format.line_spacing = 0.0
-                p.paragraph_format.page_break_before = True
-                document = self.add_experience(section.get('content'), document)
+                if name == u'experience':
+                    p = document.add_paragraph('')
+                    p.paragraph_format.line_spacing = 0.0
+                    p.paragraph_format.page_break_before = True
+                    document = self.add_experience(s, document)
         
-            if section.get('name') == u'education':
-                p = document.add_paragraph('')
-                p.paragraph_format.line_spacing = 0.0
-                document = self.add_education(section.get('content'), document)
+                if name == u'education':
+                    p = document.add_paragraph('')
+                    p.paragraph_format.line_spacing = 0.0
+                    document = self.add_education(s, document)
                 
-            if section.get('name') == u'contact':
-                p = document.add_paragraph('')
-                p.paragraph_format.line_spacing = 0.0
-                document = self.add_contact(section.get('content'), document)
+                if name == u'contact':
+                    p = document.add_paragraph('')
+                    p.paragraph_format.line_spacing = 0.0
+                    document = self.add_contact(s, document)
+                """
 
         document.save(stream)
 
@@ -107,18 +112,11 @@ class ExportDocument(object):
         s = self.s
         table = document.add_table(rows=1, cols=2)
         table.alignment = WD_TABLE_ALIGNMENT.CENTER
-        content = {}
-        for index, item in enumerate(sorted(intro)):
-            print(item)
-            if item.get('content')[0].get('name') == 'name':
-                content.update({'name': item.get('content')[0].get('content')})
-            if item.get('content')[0].get('name') == 'position':
-                content.update({'position': item.get('content')[0].get('content')})
-        table.cell(0,0).add_paragraph(content.get('name'), style='Heading 1')
-        table.cell(0,0).add_paragraph(content.get('position'), style='Heading 2')
+        table.cell(0,0).add_paragraph(intro.get('name'), style='Heading 1')
+        table.cell(0,0).add_paragraph(intro.get('position'), style='Heading 2')
 
         table.cell(0,0).width = Cm(12)
-        table.cell(0,1).add_picture('/srv/rsum/static/{0}/img/mockup/avatar-01.png'.format(s.get('template')), width=Cm(4))
+        table.cell(0,1).add_picture('/srv/rsum/static/{0}/img/mockup/avatar-01.png'.format(s.DIR, width=Cm(4)))
         table.cell(0,1).width = Cm(4)
         table.cell(0,1).paragraphs[0].paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
         return document 
