@@ -121,8 +121,7 @@ class ExportDocument(object):
 
         table.cell(0, 1).width = Cm(4)
         table.cell(0, 1).add_picture(
-            '/srv/rsum/static/{0}/img/mockup/avatar-02.png'.format(s.DIR),
-            width=Cm(3))
+            '/srv/rsum/static/{0}/img/mockup/avatar-02.png'.format(s.DIR))
         table.cell(
             0,
             1
@@ -147,7 +146,7 @@ class ExportDocument(object):
 
         t.cell(0, 0).width = Cm(6)
         t.cell(0, 0).add_picture(
-            '/srv/rsum/static/{0}/img/500x700/02.jpg'.format(s.DIR),
+            '/srv/rsum/static/{0}/img/500x700/02.png'.format(s.DIR),
             width=Cm(5))
 
         t.cell(0, 1).add_paragraph('Summary', style='Heading 3')
@@ -259,13 +258,22 @@ class ExportDocument(object):
         t = document.add_table(rows=1, cols=3)
         t.alignment = WD_TABLE_ALIGNMENT.CENTER
         for index, value in enumerate(experience):
-            if index < 3:
-                pass
-            elif index % 3 == 0:
+            if index % 3 == 0:
                 t.add_row()
+
             for name, item in value.items():
+                row = (index % 9) / 3
                 col = index % 3
-                row = index / 3
+                if (index % 9 == 0 and
+                    index > 0):
+                    t = document.add_table(rows=1, cols=3)
+                    t.alignment = WD_TABLE_ALIGNMENT.CENTER
+                
+                if (index % 18 == 0
+                    and index > 17):
+                    document.add_page_break()
+                    t = document.add_table(rows=1, cols=3)
+                    t.alignment = WD_TABLE_ALIGNMENT.CENTER
                 p = t.cell(row, col).paragraphs[0]
                 p.paragraph_format.line_spacing = 0.0
                 t.cell(row, col).add_picture(
