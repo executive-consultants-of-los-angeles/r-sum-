@@ -9,7 +9,7 @@ DATABASES = {
         'NAME': 'mrsum', 
         'USER': 'psql',
         'PASSWORD': '',
-        'HOST': 'mpsql', 
+        'HOST': 'apsql', 
         'PORT': 5432,
     }
 }
