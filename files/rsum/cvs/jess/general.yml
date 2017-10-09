@@ -208,122 +208,139 @@
           - >
             On time delivery of a high revenue order for the Saudi
             Genome Project
-  thermo_fisher_scientist:
-    duration: "April 2012 - August 2012 (4 months)"
-    location: "Pleasonton, California"
-    company: 'Thermo Fischer Scientific
-      (Formerly Life Technologies and previously Applied Biosystems)'
-    position: "Scientist II, Production"
-    projects:
-      scientist_two_production:
-        - 'Achieved maximum daily on-time delivery
-            metrics via targeted product release'
-        - "Championed Custom Primers Safety Committee"
-        - 'Led Pleasanton VPP Prep Team and assisted
+    thermo_fisher_scientist:
+      duration: "April 2012 - August 2012 (4 months)"
+      location: "Pleasonton, California"
+      company: >
+        Thermo Fischer Scientific
+        (Formerly Life Technologies and previously Applied Biosystems)
+      position: "Scientist II, Production"
+      projects:
+        scientist_two_production:
+          - >
+            Achieved maximum daily on-time delivery
+            metrics via targeted product release
+          - "Championed Custom Primers Safety Committee"
+          - >
+            Led Pleasanton VPP Prep Team and assisted
             with Cal/OSHA on-site evaluation'
-  thermo_fisher_senior:
-    id: 3
-    duration: "April 2010 - April 2012 (2 years)"
-    location: "Pleasonton, California"
-    company: 'Thermo Fischer Scientific
-      (Formerly Life Technologies and previously Applied Biosystems)'
-    position: "Senior Associate Manufacturing Specialist"
-    projects:
-      senior_associate_manufacturing_specialist:
-        - 'Re-engineered workflow to reduce turn around
-            time from 10 days to 4 days'
-        - "Directed daily operations and managed workload for a team of 8"
-        - "Improved communication with implementation of daily team meetings"
-        - "Updated monthly scorecard and weekly metrics"
-      bonsues_awarded:
-        - "Dedication in preparing team for ISO 13485 audit"
-        - 'Efforts in planning and executing 2011 site-wide
-            Earth Day Celebration'
-        - 'Serving as the process subject matter expert
-            during external customer audits'
-        - 'Collaborating with Finance to submit a high-dollar
-             capital asset request (CAR)'
-  thermo_fisher_senior_production_chemist:
-    id: 4
-    duration: "July 2008 - April 2010 (2 years)"
-    location: "Pleasonton, California"
-    company: 'Thermo Fischer Scientific
-    (Formerly Life Technologies and previously Applied Biosystems)'
-    position: "Senior Production Chemist"
-    projects:
-      senior_production_chemist:
-        - "Assigned daily activities to team to achieve maximum work outputs"
-        - "Trained team members in manufacturing processes"
-        - "Revised SOPs and process control documents using a CRO system"
-        - "Interfaced with vendors to bring in new equipment"
-      bonsues_awarded:
-        - 'Expediting delivery of HIN1 identification kits during
-            the 2009 swine flu pandemic'
-        - "Commitment to laboratory safety"
-        - "Providing leadership to team while supervisor was on leave"
-  thermo_fisher_production_chemist:
-    id: 5
-    duration: "November 2007 - July 2008 (1 year)"
-    location: "Pleasonton, California"
-    company: 'Thermo Fischer Scientific
-    (Formerly Life Technologies and previously Applied Biosystems)'
-    position: "Production Chemist"
-    projects:
-      production_chemist:
-        - 'Created standard work model that reduced turn
-            around time from 5 days to 3 days'
-        - 'Maintained production metrics and led daily
-            status meeting with upper management'
-        - "Used LEAN manufacturing theory to reduce motion waste"
-        - 'Awarded bonuses for using process expertise
-            to add value to Black & Green Belt projects'
-  kelly_services:
-    id: 6
-    duration: "May 2006 - November 2007 (1 year)"
-    location: "Pleasonton, California"
-    company: 'Kelly Services'
-    position: "Production Operator"
-    projects:
-      production_operator:
-        - 'Analyzed HPLC and DNA quantification
-            results for quality control assurance'
-        - "Troubleshot HPLC instruments and difficult to purify oligos"
-        - 'Compiled failure mode histories and
-            evaluated the data to authorize remakes'
-        - "Reviewed and edited bill of materials (BOM) for 13 products"
-        - "Updated daily shipping logs using SAP, Access and Oracle databases"
-        - "Awarded bonus for attentiveness to work and lab"
-  saic_frederick_incorporated:
-    id: 7
-    duration: "June 2004 - July 2005 (1 year)"
-    location: "Gaithersburg, Maryland"
-    company: 'SAIC-Frederick, Incorporated
-      (Contract with National Cancer Institute)'
-    position: "Senior Research Technician"
-    projects:
-      senior_research_technician:
-        - 'Developed applications for the HP
-            Multiprobe II EX liquid handling system'
-        - "Optimized SNPlex assay for use in a high-throughput setting"
-        - "Trained team members in sample handling protocols"
-        - 'Designed a streamlined system for
-            inventorying and repairing 25 Bio-Rad thermal cyclers'
-        - "Awarded bonus in appreciation of
-            contributions made towards company's success"
-  saic_frederick_incorporated_research:
-    id: 8
-    duration: "July 2001 - June 2004 (3 years)"
-    location: "Gaithersburg, Maryland"
-    company: 'SAIC-Frederick, Incorporated
-      (Contract with National Cancer Institute)'
-    position: "Research Technician"
-    projects:
-      research_technician:
-        - 'Generated reports to inform investigators of the quality
-            and quantity of DNA available for genotyping projects'
-        - "Documented DNA quantification assay protocols"
-        - 'Awarded bonus for working at a higher level than
-            that of a Research Technician'
+    thermo_fisher_senior:
+      duration: "April 2010 - April 2012 (2 years)"
+      location: "Pleasonton, California"
+      company: >
+        Thermo Fischer Scientific
+        (Formerly Life Technologies and previously Applied Biosystems)
+      position: "Senior Associate Manufacturing Specialist"
+      projects:
+        senior_associate_manufacturing_specialist:
+          - >
+            Re-engineered workflow to reduce turn around
+            time from 10 days to 4 days
+          - "Directed daily operations and managed workload for a team of 8"
+          - "Improved communication with implementation of daily team meetings"
+          - "Updated monthly scorecard and weekly metrics"
+        bonsues_awarded:
+          - "Dedication in preparing team for ISO 13485 audit"
+          - >
+            Efforts in planning and executing 2011 site-wide
+            Earth Day Celebration
+          - >
+            Serving as the process subject matter expert
+            during external customer audits
+          - >
+            Collaborating with Finance to submit a high-dollar
+            capital asset request (CAR)
+    thermo_fisher_senior_production_chemist:
+      duration: "July 2008 - April 2010 (2 years)"
+      location: "Pleasonton, California"
+      company: >
+        Thermo Fischer Scientific
+        (Formerly Life Technologies and previously Applied Biosystems)
+      position: "Senior Production Chemist"
+      projects:
+        senior_production_chemist:
+          - "Assigned daily activities to team to achieve maximum work outputs"
+          - "Trained team members in manufacturing processes"
+          - "Revised SOPs and process control documents using a CRO system"
+          - "Interfaced with vendors to bring in new equipment"
+        bonsues_awarded:
+          - >
+            Expediting delivery of HIN1 identification kits during
+            the 2009 swine flu pandemic
+          - "Commitment to laboratory safety"
+          - "Providing leadership to team while supervisor was on leave"
+    thermo_fisher_production_chemist:
+      duration: "November 2007 - July 2008 (1 year)"
+      location: "Pleasonton, California"
+      company: >
+        Thermo Fischer Scientific
+        (Formerly Life Technologies and previously Applied Biosystems)
+      position: "Production Chemist"
+      projects:
+        production_chemist:
+          - >
+            Created standard work model that reduced turn
+            around time from 5 days to 3 days
+          - >
+            Maintained production metrics and led daily
+            status meeting with upper management
+          - "Used LEAN manufacturing theory to reduce motion waste"
+          - >
+            Awarded bonuses for using process expertise
+            to add value to Black \& Green Belt projects 
+    kelly_services:
+      duration: "May 2006 - November 2007 (1 year)"
+      location: "Pleasonton, California"
+      company: 'Kelly Services'
+      position: "Production Operator"
+      projects:
+        production_operator:
+          - >
+            Analyzed HPLC and DNA quantification
+            results for quality control assurance
+          - "Troubleshot HPLC instruments and difficult to purify oligos"
+          - >
+            Compiled failure mode histories and
+            evaluated the data to authorize remakes
+          - "Reviewed and edited bill of materials (BOM) for 13 products"
+          - "Updated daily shipping logs using SAP, Access and Oracle databases"
+          - "Awarded bonus for attentiveness to work and lab"
+    saic_frederick_incorporated:
+      duration: "June 2004 - July 2005 (1 year)"
+      location: "Gaithersburg, Maryland"
+      company: >
+        SAIC-Frederick, Incorporated
+        (Contract with National Cancer Institute)
+      position: "Senior Research Technician"
+      projects:
+        senior_research_technician:
+          - >
+            Developed applications for the HP
+            Multiprobe II EX liquid handling system
+          - "Optimized SNPlex assay for use in a high-throughput setting"
+          - "Trained team members in sample handling protocols"
+          - >
+            Designed a streamlined system for
+            inventorying and repairing 25 Bio-Rad thermal cyclers
+          - >
+            Awarded bonus in appreciation of
+            contributions made towards company's success
+    saic_frederick_incorporated_research:
+      duration: "July 2001 - June 2004 (3 years)"
+      location: "Gaithersburg, Maryland"
+      company:  >
+        SAIC-Frederick, Incorporated
+        (Contract with National Cancer Institute)
+      position: "Research Technician"
+      projects:
+        research_technician:
+          - >
+            Generated reports to inform investigators of the quality
+            and quantity of DNA available for genotyping projects
+          - "Documented DNA quantification assay protocols"
+          - >
+            Awarded bonus for working at a higher level than
+            that of a Research Technician
 - education:
     name: "Gettysburg College"
     location: "Gettysburg, Pennsylvania"
@@ -336,8 +353,8 @@
         - "foreign exchange, or whatever."
 - contact:
     title: "Get in Touch with Jess"
-    message:
-      "Jess is available most weekdays after noon Pacific Time."
+    message: >
+      Jess is available most weekdays after noon Pacific Time. 
     location: "Los Angeles, California, United States of America"
     phone: "(424) 209-2976"
     email: "jess@ecla.solutions"
