@@ -56,64 +56,59 @@ skills:
         Beckman Biomek 2000
       '
       start: 2009
-      dna_synthesis_with_abi_3900_dna_synthesizer:
-        name: "DNA Synthesis with ABI 3900 DNA Synthesizer"
-        start: 2013
-      dna_rna_synthesis_with_jurassic:
-        name: "DNA & RNA Synthesis with Jurassic"
-        start: 2015
-      column_clevage_and_deprotection:
-        name: "Column Cleavage & Deprotection"
-        start: 2013
-      dna_purification_via_ethanol_precipitation:
-        name: "DNA Purification via Ethanol Precipitation"
-        start: 2013
-      reverse_phase_hplc_with_transgenomic_wave_dna_fragment_analysis_system:
-        name: >
-          Reverse Phase HPLC with Transgenomic Wave DNA Fragment Analysis
-          System
-        start: 2013
-      solid_phase_extraction:
-        name: "Solid Phase Extraction"
-        start: 2013
-      spectrophotometric_dna:
-        name: >
-          Spectrophotometric DNA Quantitation with Molecular Devices SpectraMax
-          Gemini & 190
-        start: 2013
-      dilut_sampling_with_hamn_microlab_star_agilent_tech_bravo_beckman_biomek_fx:
-        name: >
-          Dilution & Sampling with Hamilton MICROLAB STAR,
-          Agilent Technologies Bravo, & Beckman Biomek FX
-        start: 2009
-      aliquoting_formatting_with_tecan_genesis_bml_xl20_beckman_biomek_2000:
-        name: >
-          Aliquoting & Formatting with Tecan Genesis, BioMicroLab XL20, &
-          Beckman Biomek 2000
-        start: 2009
-      finished_good_assembly_kitting_packaging:
-        name: "Finshed Good Assembly, Kitting & Packaging"
-        start: 2009
-    manufacturing_quality_control:
-      name: "Manufacturing Quality Control"
+    finished_good_assembly_kitting_packaging:
+      name: "Finshed Good Assembly, Kitting & Packaging"
       start: 2009
-      sequence_identification_with_abi_voyager_de_pro_biospectrometry_workstation:
-        name: >
-          Sequence Identification with ABI Voyager-DE PRO BioSpectrometry
-          Workstation
-        start: 2009
-      ft_of_taqman_snp_genex_assays_with_pe_thermal_cyclers_abi_7900_ht_sds:
-        name: >
-          FT of TaqMan SNP & Gene Expression Assays
-          with PE Thermal Cyclers & ABI 7900 HT SDS
-        start: 2013
-      ft_of_taptac_with_abi_7900_ht_sds_7500_fast_real_and_stepone_system:
-        name: >
-          FT of TaqMan Array Cards & Plates with ABI 7900 HT SDS &
-          7500 Fast Real-Time PCR System
-        start: 2015
-    snp_genotyping:
-      name: "SNP Genotyping"
+  manufacturing_quality_control:
+    name: "Manufacturing Quality Control"
+    start: 2009
+    sequence_identification_with_abi_voyager_de_pro_biospectrometry_workstation:
+      name: '
+        Sequence Identification with ABI Voyager-DE PRO BioSpectrometry
+        Workstation
+      '
+      start: 2009
+    ft_of_taqman_snp_genex_assays_with_pe_thermal_cyclers_abi_7900_ht_sds:
+      name: '
+        FT of TaqMan SNP & Gene Expression Assays
+        with PE Thermal Cyclers & ABI 7900 HT SDS
+      '
+      start: 2013
+    ft_of_taptac_with_abi_7900_ht_sds_7500_fast_real_and_stepone_system:
+      name: '
+        FT of TaqMan Array Cards & Plates with ABI 7900 HT SDS &
+        7500 Fast Real-Time PCR System
+      '
+      start: 2015
+  snp_genotyping:
+    name: "SNP Genotyping"
+    start: 2013
+    taqman_snp_assays_with_bio_rad_thermal_cyclers_abi_7900_ht_sds:
+      name: '
+        TaqMan SNP Genotyping Assays with Bio-Rad Thermal Cyclers &
+        ABI 7900 HT SDS
+      '
+      start: 2015
+    eclipse_probe_based_assays_with_abi_7900_ht_sds:
+      name: "Eclipse Probe Based Assays with ABI 7900 HT SDS"
+      start: 2015
+    snplex_assays_with_applied_biosystems_3130xl_genetic_analyzer:
+      name: "SNPlex Assays with ABI 3130xl Genetic Analyzer"
+      start: 2016
+    taqman_real_time_pcr_assays_with_abi_7900_ht_sds:
+      name: "TaqMan Real-Time PCR Assays with ABI 7900 HT SDS"
+      start: 2015
+    identifiler_hid_assays_with_abi_prism_3100_genetic_analyzer:
+      name: "Identifiler HID Assays with ABI PRISM 3100 Genetic Analyzer"
+      start: 2014
+    di_deoxy_sequencing_reactions_with_pe_thermal_cyclers_abi_3700_dna_analyzer:
+      name: '
+        Di-deoxy Sequencing Reactions with PE Thermal Cyclers &
+        ABI 3700 DNA Analyzer
+      '
+      start: 2016
+    picogreen_dsdna_quantitation_reactions_with_beckman_du_600:
+      name: "PicoGreen dsDNA Quantitation Reactions with Beckman DU 600"
       start: 2013
     hme_assays_with_pe_thermal_cyclers_and_sequenom_with_nanodispenser:
       name: '
@@ -344,17 +339,31 @@ broken down into simpiler components.'
       (Contract with National Cancer Institute)'
     position: "Research Technician"
     projects:
-      dna:
-        - "The thing with the professor's data."
-        - "Duke stuff."
-        - "foreign exchange, or whatever."
-- contact:
-    title: "Get in Touch with Jess"
-    message:
-      "Jess is available most weekdays after noon Pacific Time."
-    location: "Los Angeles, California, United States of America"
-    phone: "(424) 209-2976"
-    email: "jess@ecla.solutions"
-    web: "https://ecla.solutions/"
+      research_technician:
+        - 'Generated reports to inform investigators of the quality
+            and quantity of DNA available for genotyping projects'
+        - "Documented DNA quantification assay protocols"
+        - 'Awarded bonus for working at a higher level than
+            that of a Research Technician'
+education:
+  id: 6
+  name: "Gettysburg College"
+  location: "Gettysburg, Pennsylvania"
+  studies: "Bachelor of Science, Cum Laude, Biochemistry and Molecule Biology"
+  duration: "1997 - 2001 (4 years)"
+  projects:
+    dna:
+      - "The thing with the professor's data."
+      - "Duke stuff."
+      - "foreign exchange, or whatever."
+contact:
+  id: 7
+  title: "Get in Touch with Jess"
+  message:
+    "Jess is available most weekdays after noon Pacific Time."
+  location: "Los Angeles, California, United States of America"
+  phone: "(424) 209-2976"
+  email: "jess@ecla.solutions"
+  web: "https://ecla.solutions/"
 ...
 # vim: ft=ansible:
