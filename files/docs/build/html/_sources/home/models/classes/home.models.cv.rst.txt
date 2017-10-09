@@ -1,5 +1,5 @@
-home\.models\.cv
-================
+CV
+==
 
 .. automodule:: home.models.cv
 

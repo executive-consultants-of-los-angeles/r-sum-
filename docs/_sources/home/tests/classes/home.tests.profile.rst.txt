@@ -3,7 +3,7 @@ CV
 
 .. automodule:: home.tests.cv
 
-.. currrentmodule:: home.tests.cv
+.. currentmodule:: home.tests.cv
    
 .. autoclass:: CVTestCase
    :members:

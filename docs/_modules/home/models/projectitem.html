@@ -55,9 +55,17 @@
 <div class="viewcode-block" id="ProjectItem"><a class="viewcode-back" href="../../../home/models/classes/home.models.projectitem.html#home.models.projectitem.ProjectItem">[docs]</a><span class="k">class</span> <span class="nc">ProjectItem</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Class that definies ProjectItem objects.</span>
 
-<span class="sd">    :attribute project: Associated :obj:`home.models.project.Project` object.</span>
-<span class="sd">    :attribute name: Name for stored ProjectItem content.</span>
-<span class="sd">    :attribute content: Stored ProjectItem content.</span>
+<span class="sd">    .. attribute:: project </span>
+
+<span class="sd">       Associated :obj:`home.models.project.Project` object.</span>
+<span class="sd">    </span>
+<span class="sd">    .. attribute:: name </span>
+
+<span class="sd">       Name for stored ProjectItem content.</span>
+
+<span class="sd">    .. attribute:: content</span>
+
+<span class="sd">       Stored ProjectItem content.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">project</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;home.Project&#39;</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>

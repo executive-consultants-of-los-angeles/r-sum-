@@ -11,11 +11,6 @@ Tests
 .. autosummary::
    :toctree: classes 
 
-   cv
+   profile 
    section
-   subsection
-   project
-   projectitem
-   entry
-   entryitem
    views
