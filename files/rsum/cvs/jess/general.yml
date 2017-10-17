@@ -21,8 +21,10 @@
       dna_rna_synthesis_with_jurassic:
         name: "DNA & RNA Synthesis with Jurassic"
         start: 2015
-      column_clevage_and_deprotection:
-        name: "Column Cleavage & Deprotection"
+      clevage_and_deprotection:
+        name: >
+           Product Cleavage, Deprotection & SPE via chemical treatment with
+           Elution Under Vacuum
         start: 2013
       dna_purification_via_ethanol_precipitation:
         name: "DNA Purification via Ethanol Precipitation"
@@ -32,47 +34,44 @@
           Reverse Phase HPLC with Transgenomic Wave DNA Fragment Analysis
           System
         start: 2013
-      solid_phase_extraction:
-        name: "Solid Phase Extraction"
-        start: 2013
-      spectrophotometric_dna_quant_with_molecular_devices_spectramax_gemini_190:
+      dna_quant_with_molecular_devices_spectramax_gemini_190:
         name: >
-          Spectrophotometric DNA Quantitation with Molecular Devices SpectraMax
-          Gemini & 190
+          Spectrophotometric DNA Quantitation with Molecular Devices
+          SpectraMax (Gemini & 190)
         start: 2013
       dilut_sampling:
         name: >
           Dilution & Sampling with Hamilton MICROLAB STAR,
-          Agilent Technologies Bravo, & Beckman Biomek FX
+          Agilent Technologies Bravo & Beckman Biomek FX
         start: 2009
       aliquoting:
         name: >
-          Aliquoting & Formatting with Tecan Genesis, BioMicroLab XL20, &
+          Aliquoting & Formatting with Tecan Genesis, BioMicroLab XL20 &
           Beckman Biomek 2000
         start: 2009
-      finished_good_assembly_kitting_packaging:
-        name: "Finshed Good Assembly, Kitting & Packaging"
+      finished_good_assembly_packaging:
+        name: "Finshed Good Assembly & Packaging"
         start: 2009
     manufacturing_quality_control:
       name: "Manufacturing Quality Control"
       start: 2009
-      sequence_identification_with_abi_voyager_de_pro_biospectrometry_workstation:
+      sequence_identification_with_abi_voyager:
         name: >
           Sequence Identification with ABI Voyager-DE PRO BioSpectrometry
           Workstation
         start: 2009
       ft_of_taqman:
         name: >
-          FT of TaqMan SNP & Gene Expression Assays
+          Functional Testing of TaqMan SNP & Gene Expression Assays
           with PE Thermal Cyclers & ABI 7900 HT SDS
         start: 2013
       ft_of_taptac:
         name: >
-          FT of TaqMan Array Cards & Plates with ABI 7900 HT SDS &
-          7500 Fast Real-Time PCR System
+          Functional Testing of TaqMan Array Cards & Plates with
+          ABI 7900 HT SDS & 7500 Fast Real-Time PCR System
         start: 2015
     snp_genotyping:
-      name: "SNP Genotyping"
+      name: "Sample Handling & SNP Genotyping"
       start: 2013
       taqman_snp_assays_with_bio_rad_thermal_cyclers_abi_7900_ht_sds:
         name: >
@@ -91,7 +90,7 @@
       identifiler_hid_assays_with_abi_prism_3100_genetic_analyzer:
         name: "Identifiler HID Assays with ABI PRISM 3100 Genetic Analyzer"
         start: 2014
-      di_deoxy_sequencing_reactions_with_pe_thermal_cyclers_abi_3700_dna_analyzer:
+      di_deoxy_sequencing_reactions_with_pe_thermal_cyclers_abi_3700:
         name: >
           Di-deoxy Sequencing Reactions with PE Thermal Cyclers &
           ABI 3700 DNA Analyzer
@@ -104,10 +103,10 @@
           hME Assays with PE Thermal Cyclers & Sequenom MassARRAY System
           with Nanodispenser
         start: 2016
-      liquid_handling_with_hydra_96_384_beckman_multimek_and_hp_multiprobe_ii_ex:
+      liquid_handling_with_hydra_96_384_beckman_multimek_and_hp_multiprobe:
         name: >
           Liquid Handling with Robbins Hydra 96, Matrix Hydra 384,
-          Beckman Multimek 96, & HP Multiprobe II EX
+          Beckman Multimek 96 & HP Multiprobe II EX
         start: 2013
     meslims:
       name: >
@@ -116,23 +115,19 @@
       start: 2004
       web_based_meslims_primertrak_primertrakwest_goast_sapphirelabvantage:
         name: >
-          Web based MES \& LIMS\: PrimerTrak MES,
-          PrimerTrak West MES, GOAST MES,
-          \& Sapphire LabVantage LIMS
+          Web based MES & LIMS: PrimerTrak MES, PrimerTrak West MES, GOAST MES,
+          & Sapphire LabVantage LIMS
         start: 2004
       oracle_based_mes_oms_xpo:
-        name: 'Oracle based MES: Oligo Manufacturing System (OMS) & XPO'
+        name: 'Oracle based MES: SAP, OMS & XPO'
         start: 2013
-      microsoft_excel_based_mes_calc:
-        name: 'Microsoft Excel based MES: CALC'
-        start: 2013
-      microsoft_access_based_mes_pm_bat:
+      microsoft_based_mes_calc_pm_bat:
         name: >
-          Microsoft Access based MES\: Production Monitor
-          \& Business Assay Tracker (BAT)
+          Microsoft based MES: CALC, Production Monitor &
+          Business Assay Tracker
         start: 2013
-    data_analysis_applications:
-      name: 'Data Analysis Applications'
+    data_analysis_software:
+      name: 'Data Analysis Software'
       start: 2004
     business_applications:
       name: 'Business Applications'
