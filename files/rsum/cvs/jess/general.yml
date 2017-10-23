@@ -23,7 +23,7 @@
         start: 2015
       clevage_and_deprotection:
         name: >
-           Product Cleavage, Deprotection & SPE via chemical treatment with
+           Product Cleavage, Deprotection & SPE via Chemical Treatment with
            Elution Under Vacuum
         start: 2013
       dna_purification_via_ethanol_precipitation:
@@ -42,15 +42,15 @@
       dilut_sampling:
         name: >
           Dilution & Sampling with Hamilton MICROLAB STAR,
-          Agilent Technologies Bravo & Beckman Biomek FX
+          Agilent Technologies Bravo, & Beckman Biomek FX
         start: 2009
       aliquoting:
         name: >
-          Aliquoting & Formatting with Tecan Genesis, BioMicroLab XL20 &
+          Aliquoting & Formatting with Tecan Genesis, BioMicroLab XL20, &
           Beckman Biomek 2000
         start: 2009
-      finished_good_assembly_packaging:
-        name: "Finshed Good Assembly & Packaging"
+      finished_goods_assembly_packaging:
+        name: "Finshed Goods Assembly & Packaging"
         start: 2009
     manufacturing_quality_control:
       name: "Manufacturing Quality Control"
@@ -70,7 +70,7 @@
           Functional Testing of TaqMan Array Cards & Plates with
           ABI 7900 HT SDS & 7500 Fast Real-Time PCR System
         start: 2015
-    snp_genotyping:
+    sample_handling_snp_genotyping:
       name: "Sample Handling & SNP Genotyping"
       start: 2013
       taqman_snp_assays_with_bio_rad_thermal_cyclers_abi_7900_ht_sds:
@@ -106,7 +106,7 @@
       liquid_handling_with_hydra_96_384_beckman_multimek_and_hp_multiprobe:
         name: >
           Liquid Handling with Robbins Hydra 96, Matrix Hydra 384,
-          Beckman Multimek 96 & HP Multiprobe II EX
+          Beckman Multimek 96, & HP Multiprobe II EX
         start: 2013
     meslims:
       name: >
@@ -115,15 +115,15 @@
       start: 2004
       web_based_meslims_primertrak_primertrakwest_goast_sapphirelabvantage:
         name: >
-          Web based MES & LIMS: PrimerTrak MES, PrimerTrak West MES, GOAST MES,
-          & Sapphire LabVantage LIMS
+          Web based MES & LIMS: PrimerTrak, PrimerTrak West, GOAST, &
+          Sapphire LabVantage
         start: 2004
       oracle_based_mes_oms_xpo:
-        name: 'Oracle based MES: SAP, OMS & XPO'
+        name: 'Oracle based MES: SAP, OMS, & XPO'
         start: 2013
       microsoft_based_mes_calc_pm_bat:
         name: >
-          Microsoft based MES: CALC, Production Monitor &
+          Microsoft based MES: CALC, Production Monitor, &
           Business Assay Tracker
         start: 2013
     data_analysis_software:
@@ -143,8 +143,8 @@
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon icon-badge"'
         text: >
-          Loyalty implies a faithfulness that is steadfast in the face of any
-          temptation to renounce, desert, or betray.
+          Definition of Loyalty
+          Move to position number 2.
     - ingenuity:
         name: "Ingenuity"
         col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
@@ -155,28 +155,23 @@
             data-wow-delay=".1s"'
         icon: ' class="service-icon color-white icon-chemistry"'
         text: >
-          The tantalizing discomfort of perplexity is what inspires otherwise
-          ordinary men and women to extraordinary feats of ingenuity
-          and creativity; nothing quite focuses the mind like dissonant
-          details loyalty implies.  - Brian Greene
+          Definition of Ingenuity
+          Move to position number 4.
     - quality:
         name: "Quality"
         col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon icon-screen-tablet"'
         text: >
-          Be a yardstick of quality. Some people aren't used
-          to an environment where excellence is expected. - Steve Jobs
+          Definition of Quality
     - integrity:
         name: "Integrity"
         col: 'class="col-md-3 col-sm-6"'
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon  icon-mustache"'
         text: >
-          The supreme quality for leadership is
-          unquestionably integrity. Without it, no real success is
-          possible no matter whether it is on a section gang,
-          a football field, in an army, or in an office. - Dwight D. Eisenhower
+          Definition of Integrity
+          Move to position number 1.
 - experience:
     - introduction: >
         I am fasinated by the inherent duality of nature.
