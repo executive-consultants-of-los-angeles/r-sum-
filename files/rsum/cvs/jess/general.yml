@@ -31,8 +31,8 @@
         start: 2013
       reverse_phase_hplc:
         name: >
-          DNA Purification via Reverse Phase HPLC with Transgenomic Wave DNA Fragment Analysis
-          System
+          DNA Purification via Reverse Phase HPLC with Transgenomic Wave
+          DNA Fragment Analysis System
         start: 2013
       dna_quant_with_molecular_devices_spectramax_gemini_190:
         name: >
@@ -69,7 +69,7 @@
         name: >
           Functional Testing of TaqMan Array Cards & Plates with
           ABI 7900 HT SDS & 7500 Fast Real-Time PCR System
-        start: 2015     
+        start: 2015 
     snp_genotyping:
       name: "SNP Genotyping"
       start: 2013
