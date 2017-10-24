@@ -69,7 +69,7 @@
         name: >
           Functional Testing of TaqMan Array Cards & Plates with
           ABI 7900 HT SDS & 7500 Fast Real-Time PCR System
-        start: 2015 
+        start: 2015
     snp_genotyping:
       name: "SNP Genotyping"
       start: 2013
