@@ -31,12 +31,12 @@
         start: 2013
       reverse_phase_hplc:
         name: >
-          Reverse Phase HPLC with Transgenomic Wave DNA Fragment Analysis
+          DNA Purification via Reverse Phase HPLC with Transgenomic Wave DNA Fragment Analysis
           System
         start: 2013
       dna_quant_with_molecular_devices_spectramax_gemini_190:
         name: >
-          Spectrophotometric DNA Quantitation with Molecular Devices
+          Spectrophotometric DNA Quantification with Molecular Devices
           SpectraMax (Gemini & 190)
         start: 2013
       dilut_sampling:
@@ -69,21 +69,29 @@
         name: >
           Functional Testing of TaqMan Array Cards & Plates with
           ABI 7900 HT SDS & 7500 Fast Real-Time PCR System
-        start: 2015
-    sample_handling_snp_genotyping:
-      name: "Sample Handling & SNP Genotyping"
+        start: 2015     
+    snp_genotyping:
+      name: "SNP Genotyping"
       start: 2013
       taqman_snp_assays_with_bio_rad_thermal_cyclers_abi_7900_ht_sds:
         name: >
-          TaqMan SNP Genotyping Assays with Bio-Rad Thermal Cyclers &
+          TaqMan SNP Assays with Bio-Rad Thermal Cyclers &
           ABI 7900 HT SDS
         start: 2015
-      eclipse_probe_based_assays_with_abi_7900_ht_sds:
-        name: "Eclipse Probe Based Assays with ABI 7900 HT SDS"
+      eclipse_probe_based_snp_assays_with_abi_7900_ht_sds:
+        name: "Eclipse Probe Based SNP Assays with ABI 7900 HT SDS"
         start: 2015
       snplex_assays_with_applied_biosystems_3130xl_genetic_analyzer:
         name: "SNPlex Assays with ABI 3130xl Genetic Analyzer"
         start: 2016
+      hme_assays_with_pe_thermal_cyclers_and_sequenom_with_nanodispenser:
+        name: >
+          hME Assays with PE Thermal Cyclers & Sequenom MassARRAY System
+          with Nanodispenser
+        start: 2016
+    sample_handling:
+      name: "Sample Handling"
+      start: 2013
       taqman_real_time_pcr_assays_with_abi_7900_ht_sds:
         name: "TaqMan Real-Time PCR Assays with ABI 7900 HT SDS"
         start: 2015
@@ -98,11 +106,6 @@
       picogreen_dsdna_quantitation_reactions_with_beckman_du_600:
         name: "PicoGreen dsDNA Quantitation Reactions with Beckman DU 600"
         start: 2013
-      hme_assays_with_pe_thermal_cyclers_and_sequenom_with_nanodispenser:
-        name: >
-          hME Assays with PE Thermal Cyclers & Sequenom MassARRAY System
-          with Nanodispenser
-        start: 2016
       liquid_handling_with_hydra_96_384_beckman_multimek_and_hp_multiprobe:
         name: >
           Liquid Handling with Robbins Hydra 96, Matrix Hydra 384,
