@@ -67,6 +67,14 @@
           QC via Functional Testing of TaqMan Array Cards & Plates with
           ABI 7900 HT SDS & 7500 Fast Real-Time PCR System
         start: 2015
+      mes:
+        name: >
+          Manufacturing Execution Systems: PrimerTrak, PrimerTrak West, GOAST,
+          OMS, XPO, CALC, Production Monitor, & BAT
+        start: 2009
+      erp:
+        name: "Enterprise Resource Planning Software: SAP"
+        start: 2009
     cancer_research:
       name: "Cancer Research"
       start: 2013
@@ -97,7 +105,7 @@
           Di-deoxy Sequencing Reactions with PE Thermal Cyclers &
           ABI 3700 DNA Analyzer
         start: 2016
-      picogreen_dsdna_quantitation_reactions_with_beckman_du_600:
+      picogreen_dsdna_quant_reactions_with_beckman_du_600:
         name: "PicoGreen dsDNA Quantitation Reactions with Beckman DU 600"
         start: 2013
       liquid_handling_with_hydra_96_384_beckman_multimek_and_hp_multiprobe:
@@ -105,29 +113,14 @@
           Liquid Handling with Robbins Hydra 96, Matrix Hydra 384,
           Beckman Multimek 96, & HP Multiprobe II EX
         start: 2013
-    meslims:
-      name: >
-        Manufacturing Execution Systems (MES) &
-        Labratory Information Management Systems (LIMS)
-      start: 2004
-      web_based_meslims_primertrak_primertrakwest_goast_sapphirelabvantage:
-        name: >
-          Web based MES & LIMS: PrimerTrak, PrimerTrak West, GOAST, &
-          Sapphire LabVantage
-        start: 2004
-      oracle_based_mes_oms_xpo:
-        name: 'Oracle based MES: SAP, OMS, & XPO'
+      lims:
+        name: "Labratory Information Management System: Sapphire Labvantage"
+        start: 2015
+      data_analysis_software:
+        name: "Data Analysis Software"
         start: 2013
-      microsoft_based_mes_calc_pm_bat:
-        name: >
-          Microsoft based MES: CALC, Production Monitor, &
-          Business Assay Tracker
-        start: 2013
-    data_analysis_software:
-      name: 'Data Analysis Software'
-      start: 2004
-    business_applications:
-      name: 'Business Applications'
+    it_mgmt_consulting:
+      name: 'IT & Management Consulting'
       start: 2016
 - values:
     - introduction:
