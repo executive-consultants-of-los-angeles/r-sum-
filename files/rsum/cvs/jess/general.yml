@@ -13,7 +13,7 @@
 - skills:
     start: 2004
     oligo_array_manufacturing:
-      name: "Oligo & Array Manufacturing"
+      name: "Biotech Manufacturing"
       start: 2009
       dna_synthesis_with_abi_3900_dna_synthesizer:
         name: "DNA Synthesis with ABI 3900 DNA Synthesizer"
@@ -52,26 +52,23 @@
       finished_goods_assembly_packaging:
         name: "Finshed Goods Assembly & Packaging"
         start: 2009
-    manufacturing_quality_control:
-      name: "Manufacturing Quality Control"
-      start: 2009
       sequence_identification_with_abi_voyager:
         name: >
-          Sequence Identification with ABI Voyager-DE PRO BioSpectrometry
-          Workstation
+          QC via Sequence Identification with ABI Voyager-DE PRO
+          BioSpectrometry Workstation
         start: 2009
       ft_of_taqman:
         name: >
-          Functional Testing of TaqMan SNP & Gene Expression Assays
+          QC via Functional Testing of TaqMan SNP & Gene Expression Assays
           with PE Thermal Cyclers & ABI 7900 HT SDS
         start: 2013
       ft_of_taptac:
         name: >
-          Functional Testing of TaqMan Array Cards & Plates with
+          QC via Functional Testing of TaqMan Array Cards & Plates with
           ABI 7900 HT SDS & 7500 Fast Real-Time PCR System
         start: 2015
-    snp_genotyping:
-      name: "SNP Genotyping"
+    cancer_research:
+      name: "Cancer Research"
       start: 2013
       taqman_snp_assays_with_bio_rad_thermal_cyclers_abi_7900_ht_sds:
         name: >
@@ -89,9 +86,6 @@
           hME Assays with PE Thermal Cyclers & Sequenom MassARRAY System
           with Nanodispenser
         start: 2016
-    sample_handling:
-      name: "Sample Handling"
-      start: 2013
       taqman_real_time_pcr_assays_with_abi_7900_ht_sds:
         name: "TaqMan Real-Time PCR Assays with ABI 7900 HT SDS"
         start: 2015
