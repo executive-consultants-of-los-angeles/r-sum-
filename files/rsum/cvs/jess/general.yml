@@ -23,7 +23,7 @@
         start: 2015
       clevage_and_deprotection:
         name: >
-           Product Cleavage, Deprotection & SPE via Chemical Treatment with
+           Column Cleavage, Deprotection & SPE via Chemical Treatment with
            Elution Under Vacuum
         start: 2013
       dna_purification_via_ethanol_precipitation:
@@ -38,7 +38,7 @@
         name: >
           Spectrophotometric DNA Quantification with Molecular Devices
           SpectraMax (Gemini & 190)
-        start: 2013
+        start: 2009
       dilut_sampling:
         name: >
           Dilution & Sampling with Hamilton MICROLAB STAR,
@@ -96,7 +96,7 @@
         start: 2016
       taqman_real_time_pcr_assays_with_abi_7900_ht_sds:
         name: "TaqMan Real-Time PCR Assays with ABI 7900 HT SDS"
-        start: 2015
+        start: 2014
       identifiler_hid_assays_with_abi_prism_3100_genetic_analyzer:
         name: "Identifiler HID Assays with ABI PRISM 3100 Genetic Analyzer"
         start: 2014
