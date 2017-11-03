@@ -69,8 +69,8 @@
         start: 2015
       mes:
         name: >
-          Manufacturing Execution Systems: PrimerTrak, PrimerTrak West, GOAST,
-          OMS, XPO, CALC, Production Monitor, & BAT
+          Manufacturing Execution Systems (MES): PrimerTrak, PrimerTrak West,
+          GOAST, OMS, XPO, CALC, Production Monitor, & Business Assay Tracker
         start: 2009
       erp:
         name: "Enterprise Resource Planning Software: SAP"
@@ -116,8 +116,11 @@
       lims:
         name: "Labratory Information Management System: Sapphire Labvantage"
         start: 2015
-      data_analysis_software:
-        name: "Data Analysis Software"
+      software:
+        name: >
+          Data Analysis & Instrument Operation Software:
+          ABI SDS, EPOCH Dynascore, Molecular Devices SoftMax Pro,
+          Bio-Rad Easy Engine, Gene Mapper, Sequence Navigator, GenBank
         start: 2013
     it_mgmt_consulting:
       name: 'IT & Management Consulting'
