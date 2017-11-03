@@ -8,11 +8,11 @@
       linkedin: "https://www.linkedin.com/in/jessicahartwell"
 - summary:
     content: >
-      A driven leader with over 14 years of experience
+      A driven leader with over 13 years of experience
       and a proven track record of outstanding performance.
 - skills:
     start: 2004
-    oligo_array_manufacturing:
+    biotech_manufacturing:
       name: "Biotech Manufacturing"
       start: 2009
       dna_synthesis_with_abi_3900_dna_synthesizer:
@@ -57,14 +57,14 @@
           QC via Sequence Identification with ABI Voyager-DE PRO
           BioSpectrometry Workstation
         start: 2009
-      ft_of_taqman:
+      qc_of_taqman:
         name: >
-          QC via Functional Testing of TaqMan SNP & Gene Expression Assays
+          QC of TaqMan SNP & Gene Expression Assays
           with PE Thermal Cyclers & ABI 7900 HT SDS
         start: 2013
-      ft_of_taptac:
+      qc_of_taptac:
         name: >
-          QC via Functional Testing of TaqMan Array Cards & Plates with
+          QC of TaqMan Array Cards & Plates with
           ABI 7900 HT SDS & 7500 Fast Real-Time PCR System
         start: 2015
       mes:
