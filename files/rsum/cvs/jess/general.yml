@@ -125,6 +125,11 @@
     it_mgmt_consulting:
       name: 'IT & Management Consulting'
       start: 2016
+      software:
+        name: >
+          Software: Odoo ERP, Quickbooks by Intuit, Toggl, Atlassian Software Suite,
+          Highrise CRM, Microsoft Office 365
+        start: 2016
 - values:
     - introduction:
         content: >
