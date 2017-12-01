@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/root/.py/bin/python
 import os
 import sys
 import socket
