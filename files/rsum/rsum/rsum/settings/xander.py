@@ -9,7 +9,7 @@ DATABASES = {
         'NAME': 'xander-complete', 
         'USER': 'psql',
         'PASSWORD': '',
-        'HOST': 'apsql', 
+        'HOST': 'psql', 
         'PORT': 5432,
     }
 }
