@@ -6,7 +6,7 @@ from common import *
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'xander-complete', 
+        'NAME': 'xander', 
         'USER': 'psql',
         'PASSWORD': '',
         'HOST': 'psql', 
@@ -23,4 +23,4 @@ OWNER = 'xander-harris'
 DIR = 'xander'
 
 STATIC_URL = '/static/xander/'
-STATIC_ROOT = '/srv/rsum/xander-complete/static/xander/'
+STATIC_ROOT = '/srv/rsum/xander/static/xander/'
