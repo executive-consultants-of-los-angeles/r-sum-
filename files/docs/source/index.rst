@@ -15,6 +15,8 @@ rsum package docs
 Data Structure
 ==============
 
+Would be nice if this image worked. 
+
 .. image:: _static/img/data-structure-yml.png
 
 .. .. image:: data-strcuture-yml.png
