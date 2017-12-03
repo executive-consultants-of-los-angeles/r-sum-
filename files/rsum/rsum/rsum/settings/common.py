@@ -134,3 +134,4 @@ USE_L10N = True
 
 USE_TZ = True
 
+TEST_RUNNER = 'rsum.runner.PytestTestRunner'
