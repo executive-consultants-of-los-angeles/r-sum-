@@ -1,0 +1,6 @@
+[run]
+source =
+  ./files/rsum/rsum/home/*
+
+omit = 
+  *test*
