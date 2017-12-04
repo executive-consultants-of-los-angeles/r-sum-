@@ -1,5 +1,8 @@
 [run]
 source = 
-  ./home/
+  home
+  home.export
+  home.models
+  home.views
 omit = 
   *test*
