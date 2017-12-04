@@ -27,6 +27,8 @@ on_success: never
 on_failure: never
 services:
   docker
+env: 
+  CODECLIMATE_REPO_TOKEN: 0c3e89da1f412234cef496030b36ec04ca246e2ca82f6a1a5bf7c523a05380a3
 # deploy:
 #   provider: script
 #   skip_cleanup: true
@@ -36,4 +38,3 @@ services:
 #   "on":
 #     branch: master
 ...
-# vim: ft=ansible:
