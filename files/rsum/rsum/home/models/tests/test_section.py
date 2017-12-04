@@ -4,7 +4,6 @@ from __future__ import unicode_literals
 
 import yaml
 
-from django.test import TestCase
 from django.conf import settings
 
 import home.models.profile as profile
@@ -24,8 +23,9 @@ class TestSection(object):
     """
     profile = profile.Profile()
     section = section.Section()
+    abridged = {}
 
-    def setUp(self):
+    def test_load_file(self):
         """Setup method for SectionTestCase class."""
         directory = settings.rsum.xander.values.get('dir')
         filename = settings.rsum.xander.values.get('name')
@@ -44,33 +44,9 @@ class TestSection(object):
 
         :param: None
         """
-        for section in sorted(
+        for item in sorted(
                 self.abridged.items(),
                 key=lambda t: t[1].get('id')
         ):
             stype = type(self.section)
-            assert isinstance(section, stype)
-
-
-class GetSectionTestCase(TestCase):
-    """Class for testing Section model gets."""
-    def setUp(self):
-        """Setup for Section model get tests."""
-        cv_instance = CV()
-        cv_id = cv_instance.check_sections(name_of_owner='alex', name_of_cv='abridged', template='acecv')
-        self.cv_id = cv_id
-        section_instance = Section()
-        self.sections = section_instance.get_sections(
-            CV.objects.filter(id=cv_id)
-        )
-
-    def test_get_section(self):
-        """Test Section moodel gets."""
-        section_instance = Section()
-        sections = section_instance.get_sections(
-            CV.objects.filter(id=self.cv_id)
-        )
-        self.assertEqual(
-            self.sections,
-            sections
-        )
+            assert isinstance(item, stype)
