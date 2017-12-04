@@ -27,7 +27,7 @@ setup(
         'home',
         'rsum'
     ],
-    long_description=read('readme.md'),
+    long_description=read('readme.rst'),
     setup_requires=['pytest-runner'],
     tests_require=['pytest', 'nose'],
     classifiers=[
