@@ -21,7 +21,7 @@ class ViewsTestCase(TestCase):
         :raises: :exc:`AssertionError`
         """
         """
-        client = self.client 
+        client = self.client
 
         response = client.get(reverse('index'))
         self.assertEqual(
@@ -29,7 +29,7 @@ class ViewsTestCase(TestCase):
             200
         )
         """
-        assert True is True 
+        assert False
 
     def test_export_docx(self):
         """Test export of Word format document.
@@ -37,4 +37,4 @@ class ViewsTestCase(TestCase):
         :return: None
         :raises: :exc:`AssertionError`
         """
-        assert True is True
+        assert False
