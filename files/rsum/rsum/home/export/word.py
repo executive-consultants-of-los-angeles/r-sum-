@@ -14,10 +14,11 @@ from docx.shared import Cm
 from docx.shared import Pt
 from docx.shared import RGBColor
 from docx.enum.style import WD_STYLE_TYPE
-from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 
 import home.models
+
+import home.export.sections.intro
 
 Profile = home.models.profile.Profile
 
@@ -29,26 +30,20 @@ class ExportDocument(object):
 
        Blank document to stream to end user.
 
-    .. attribute:: s
-
+    .. attribute:: settings
        Hostname of current host.
 
     .. attribute:: name
-
        Filename to offer to the end user.
     """
     document = Document()
     name = u''
-    s = settings
+    profile = Profile()
+    settings = settings
 
     def __init__(self):
-        """Initialize ExportDocument class.
-
-        :return: None
-        :rtype: None
-        """
-        s = self.s
-        self.name = '{0}-profile.docx'.format(s.OWNER)
+        """Initialize ExportDocument class."""
+        self.name = '{0}-profile.docx'.format(self.settings.OWNER)
 
     def export(self, profile_id):
         """Export a word document.
@@ -58,19 +53,13 @@ class ExportDocument(object):
         :return: Stream of Word document for end user.
         :rtype: object
         """
-        profile = Profile.objects.get(pk=profile_id)
+        profile = self.profile.objects.get(pk=profile_id)
         stream = StringIO()
         self.document = self.set_styles(self.document)
         self.document = self.set_layout(self.document)
 
         sections = json.loads(profile.content)
         for section in sections:
-            section.update({'add_intro': self.add_intro})
-            section.update({'add_summary': self.add_summary})
-            section.update({'add_skills': self.add_skills})
-            section.update({'add_experience': self.add_experience})
-            section.update({'add_education': self.add_education})
-            section.update({'add_contact': self.add_contact})
             self.export_sections(section)
 
         self.document.save(stream)
@@ -82,10 +71,10 @@ class ExportDocument(object):
         saves them in the appropriate fashion.
         """
         document = self.document
-        for name, s in section.items():
+        for name, section_local in section.items():
             print(name)
             if name == u'intro':
-                self.document = self.add_intro(s, document)
+                self.document = self.add_intro(section_local, document)
 
             if name == u'summary':
                 p = self.document.add_paragraph('')
@@ -112,39 +101,6 @@ class ExportDocument(object):
                 p = self.document.add_paragraph('')
                 p.paragraph_format.line_spacing = 0.0
                 self.document = self.add_contact(s, document)
-
-    def add_intro(self, intro, document):
-        """Add introduction section.
-
-        :param intro: Introduction to add to document.
-        :type intro: [dict(str, str)]
-        :param document: Current document.
-        :type document: object
-        :return: Document updated with Introduction.
-        :rtype: object
-        """
-        s = self.s
-        table = document.add_table(rows=1, cols=2)
-        table.cell(0, 0).width = Cm(12)
-
-        table.alignment = WD_TABLE_ALIGNMENT.CENTER
-        table.cell(0, 0).add_paragraph(
-            intro.get('name'),
-            style='Heading 1')
-        table.cell(0, 0).add_paragraph(
-            intro.get('position'),
-            style='Heading 2')
-
-        table.cell(0, 1).width = Cm(4)
-        table.cell(0, 1).add_picture(
-            '/srv/rsum/static/{0}/img/mockup/avatar-02.png'.format(s.DIR))
-        table.cell(
-            0,
-            1
-        ).paragraphs[
-            0
-        ].paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        return document
 
     def add_summary(self, summary, document):
         """Add summary section.
