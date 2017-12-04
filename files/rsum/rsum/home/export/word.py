@@ -78,8 +78,8 @@ class ExportDocument(object):
     def export_sections(self):
         """Iterates the sections of the document, then
         saves them in the appropriate fashion.
-
         """
+        document = self.document
         for name, s in section.items():
             if name == u'intro':
                 self.document = self.add_intro(s, document)
