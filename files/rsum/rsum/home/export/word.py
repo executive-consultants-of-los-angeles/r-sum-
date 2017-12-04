@@ -4,9 +4,7 @@
 from __future__ import print_function
 
 import datetime
-import docx
 import json
-import socket
 from StringIO import StringIO
 
 from django.conf import settings
@@ -18,7 +16,6 @@ from docx.shared import RGBColor
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
-from docx.enum.style import WD_BUILTIN_STYLE
 
 import home.models
 
@@ -50,9 +47,8 @@ class ExportDocument(object):
         :return: None
         :rtype: None
         """
-            
         s = self.s
-        name = '{0}-profile.docx'.format(s.OWNER)
+        self.name = '{0}-profile.docx'.format(s.OWNER)
 
     def export(self, profile_id):
         """Export a word document.
@@ -64,23 +60,30 @@ class ExportDocument(object):
         """
         profile = Profile.objects.get(pk=profile_id)
         stream = StringIO()
-        self.document = self.set_styles(document)
-        self.document = self.set_layout(document)
+        self.document = self.set_styles(self.document)
+        self.document = self.set_layout(self.document)
 
         sections = json.loads(profile.content)
         for section in sections:
+            section.update({'add_intro': self.add_intro})
+            section.update({'add_summary': self.add_summary})
+            section.update({'add_skills': self.add_skills})
+            section.update({'add_experience': self.add_experience})
+            section.update({'add_education': self.add_education})
+            section.update({'add_contact': self.add_contact})
             self.export_sections(section)
 
         self.document.save(stream)
 
         return stream
 
-    def export_sections(self):
+    def export_sections(self, section):
         """Iterates the sections of the document, then
         saves them in the appropriate fashion.
         """
         document = self.document
         for name, s in section.items():
+            print(name)
             if name == u'intro':
                 self.document = self.add_intro(s, document)
 
@@ -109,7 +112,6 @@ class ExportDocument(object):
                 p = self.document.add_paragraph('')
                 p.paragraph_format.line_spacing = 0.0
                 self.document = self.add_contact(s, document)
-
 
     def add_intro(self, intro, document):
         """Add introduction section.
