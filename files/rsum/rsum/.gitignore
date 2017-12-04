@@ -1,2 +1,3 @@
 *.pyc
 home/migrations/
+*egg*
