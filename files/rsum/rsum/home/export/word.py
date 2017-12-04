@@ -36,6 +36,7 @@ class ExportDocument(object):
 
        Filename to offer to the end user.
     """
+    name = u''
     s = settings
 
     def __init__(self):
@@ -44,8 +45,9 @@ class ExportDocument(object):
         :return: None
         :rtype: None
         """
+            
         s = self.s
-        self.name = '{0}-profile.docx'.format(s.OWNER)
+        name = '{0}-profile.docx'.format(s.OWNER)
 
     def export(self, profile_id):
         """Export a word document.
@@ -63,39 +65,43 @@ class ExportDocument(object):
 
         sections = json.loads(profile.content)
         for section in sections:
-            for name, s in section.items():
-                if name == u'intro':
-                    document = self.add_intro(s, document)
-
-                if name == u'summary':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    document = self.add_summary(s, document)
-
-                if name == u'skills':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    document = self.add_skills(s, document)
-
-                if name == u'experience':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    p.paragraph_format.page_break_before = True
-                    document = self.add_experience(s, document)
-
-                if name == u'education':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    document = self.add_education(s, document)
-
-                if name == u'contact':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    document = self.add_contact(s, document)
+            self.export_sections(section)
 
         document.save(stream)
 
         return stream
+
+    def export_sections(self):
+        for name, s in section.items():
+            if name == u'intro':
+                document = self.add_intro(s, document)
+
+            if name == u'summary':
+                p = document.add_paragraph('')
+                p.paragraph_format.line_spacing = 0.0
+                document = self.add_summary(s, document)
+
+            if name == u'skills':
+                p = document.add_paragraph('')
+                p.paragraph_format.line_spacing = 0.0
+                document = self.add_skills(s, document)
+
+            if name == u'experience':
+                p = document.add_paragraph('')
+                p.paragraph_format.line_spacing = 0.0
+                p.paragraph_format.page_break_before = True
+                document = self.add_experience(s, document)
+
+            if name == u'education':
+                p = document.add_paragraph('')
+                p.paragraph_format.line_spacing = 0.0
+                document = self.add_education(s, document)
+
+            if name == u'contact':
+                p = document.add_paragraph('')
+                p.paragraph_format.line_spacing = 0.0
+                document = self.add_contact(s, document)
+
 
     def add_intro(self, intro, document):
         """Add introduction section.
