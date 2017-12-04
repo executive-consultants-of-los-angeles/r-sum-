@@ -3,18 +3,23 @@
 """Test cases for the home.schema.cv module."""
 from __future__ import unicode_literals
 
-import json
-import socket
 import yaml
 
 from django.test import TestCase
 from django.conf import settings
 
-from home.models.cv import CV
+from home.models.profile import Profile
 
 
-class CVTestCase(TestCase):
-    """CVTestCase class."""
+class TestProfile(object):
+    """TestProfile class.
+
+    .. attribute:: profile
+
+       Profile for testing with.
+    """
+    profile = Profile()
+
     def setUp(self):
         """Set up the CVTestCase class."""
         f = open(
@@ -27,11 +32,10 @@ class CVTestCase(TestCase):
 
     def test_check_sections(self):
         """Test the check_sections method, currently broken."""
-        cv = CV()
         """
         self.cv_id = cv.check_sections(
             name_of_owner='alex',
-            name_of_cv='complete', 
+            name_of_cv='complete',
             template='acecb'
         )
         self.assertEqual(
@@ -41,10 +45,12 @@ class CVTestCase(TestCase):
             ).values_list(
                 'id',
                 flat=True
-            ))[0] 
+            ))[0]
         )
         """
-        self.assertEqual(True, True)
+        ptype = type(self.profile)
+        assert isinstance(self.profile, ptype)
+
 
     def test_save_abridged_cv(self):
         """Test save for abridged cv."""

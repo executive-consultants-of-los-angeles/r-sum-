@@ -28,7 +28,7 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
-  - coverage run files/rsum/rsum/setup.py test || true 
+  - coverage run files/rsum/rsum/manage.py test || true 
   - coverage xml
   - molecule test
 after_script:

@@ -1,50 +1,55 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """Test cases for the Section model. """
 from __future__ import unicode_literals
 
-import socket
 import yaml
 
 from django.test import TestCase
+from django.conf import settings
 
-from home.models.cv import CV
-from home.models.section import Section
-from rsum.settings.rsum import values
+import home.models.profile as profile
+import home.models.section as section
 
 
-class SectionTestCase(TestCase):
-    """Class for testing Section model saves."""
+class TestSection(object):
+    """Class for testing Section model saves.
+
+    .. attribute:: profile
+
+       The profile that contains the tested section.
+
+    .. attribute:: section
+
+       The section to be tested.
+    """
+    profile = profile.Profile()
+    section = section.Section()
+
     def setUp(self):
         """Setup method for SectionTestCase class."""
-        s = values.get(socket.gethostname())
-        f = open('/srv/rsum/cvs/{0}/{1}.yml'.format(s.get('dir'), s.get('name')))
-        self.abridged = yaml.load(f.read())
-        f.close()
-        cv = CV()
-        cv.name = 'abridged'
-        cv.template = 'acecv'
-        cv.save()
-        self.cv = cv
+        directory = settings.rsum.xander.values.get('dir')
+        filename = settings.rsum.xander.values.get('name')
 
-    def test_save_section(self):
-        """Test for saving Section model objects."""
-        cv = self.cv
+        yml_file = open((
+            "/srv/rsum/cvs/{directory}/{filename}.yml"
+        ).format(
+            directory=directory, filename=filename))
+        self.abridged = yaml.load(yml_file.read())
+        yml_file.close()
+        self.profile.name = 'abridged'
+        self.profile.save()
 
-        for name, section in sorted(
-            self.abridged.items(),
-            key=lambda t: t[1].get('id')
+    def test_section(self):
+        """Test for saving Section model objects.
+
+        :param: None
+        """
+        for section in sorted(
+                self.abridged.items(),
+                key=lambda t: t[1].get('id')
         ):
-            section_instance = Section()
-            section_result = section_instance.save_section(
-                cv,
-                section,
-                name
-            )
-            self.assertEqual(
-                list(Section.objects.values()),
-                list(section_result)
-            )
+            stype = type(self.section)
+            assert isinstance(section, stype)
 
 
 class GetSectionTestCase(TestCase):
