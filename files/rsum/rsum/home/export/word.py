@@ -28,6 +28,10 @@ Profile = home.models.profile.Profile
 class ExportDocument(object):
     """Class to handle exporting rsum pages to Word documents.
 
+    .. attribute:: document
+
+       Blank document to stream to end user.
+
     .. attribute:: s
 
        Hostname of current host.
@@ -36,6 +40,7 @@ class ExportDocument(object):
 
        Filename to offer to the end user.
     """
+    document = Document()
     name = u''
     s = settings
 
@@ -59,48 +64,51 @@ class ExportDocument(object):
         """
         profile = Profile.objects.get(pk=profile_id)
         stream = StringIO()
-        document = Document()
-        document = self.set_styles(document)
-        document = self.set_layout(document)
+        self.document = self.set_styles(document)
+        self.document = self.set_layout(document)
 
         sections = json.loads(profile.content)
         for section in sections:
             self.export_sections(section)
 
-        document.save(stream)
+        self.document.save(stream)
 
         return stream
 
     def export_sections(self):
+        """Iterates the sections of the document, then
+        saves them in the appropriate fashion.
+
+        """
         for name, s in section.items():
             if name == u'intro':
-                document = self.add_intro(s, document)
+                self.document = self.add_intro(s, document)
 
             if name == u'summary':
-                p = document.add_paragraph('')
+                p = self.document.add_paragraph('')
                 p.paragraph_format.line_spacing = 0.0
-                document = self.add_summary(s, document)
+                self.document = self.add_summary(s, document)
 
             if name == u'skills':
-                p = document.add_paragraph('')
+                p = self.document.add_paragraph('')
                 p.paragraph_format.line_spacing = 0.0
-                document = self.add_skills(s, document)
+                self.document = self.add_skills(s, document)
 
             if name == u'experience':
-                p = document.add_paragraph('')
+                p = self.document.add_paragraph('')
                 p.paragraph_format.line_spacing = 0.0
                 p.paragraph_format.page_break_before = True
-                document = self.add_experience(s, document)
+                self.document = self.add_experience(s, document)
 
             if name == u'education':
-                p = document.add_paragraph('')
+                p = self.document.add_paragraph('')
                 p.paragraph_format.line_spacing = 0.0
-                document = self.add_education(s, document)
+                self.document = self.add_education(s, document)
 
             if name == u'contact':
-                p = document.add_paragraph('')
+                p = self.document.add_paragraph('')
                 p.paragraph_format.line_spacing = 0.0
-                document = self.add_contact(s, document)
+                self.document = self.add_contact(s, document)
 
 
     def add_intro(self, intro, document):
