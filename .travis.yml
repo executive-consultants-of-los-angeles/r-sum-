@@ -3,7 +3,7 @@ language: python
 sudo: required
 env:
   global:
-  - CC_TEST_REPORTER_ID=e47e814a3a09d59dce31d36ef15abdcf0702e2d3ac7c0cd8ab9b468e97292788
+  - CC_TEST_REPORTER_ID=0c3e89da1f412234cef496030b36ec04ca246e2ca82f6a1a5bf7c523a05380a3
 cache:
   pip: 'yes'
 addons:
