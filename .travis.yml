@@ -1,9 +1,11 @@
 ---
 language: python
 sudo: required
+env:
+  global:
+  - CC_TEST_REPORTER_ID=e47e814a3a09d59dce31d36ef15abdcf0702e2d3ac7c0cd8ab9b468e97292788
 cache:
   pip: 'yes'
-  yarn: 'yes'
 addons:
   apt:
     sources:
@@ -15,12 +17,37 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_88341752b148_key
       -iv $encrypted_88341752b148_iv
       -in files/deploy/deploy.enc -out files/deploy/deploy -d
-install:
-  - pip install git+https://github.com/metacloud/molecule.git
-  - pip install git+https://github.com/docker/docker-py.git
-  - pip install psycopg2
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+    > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - "./cc-test-reporter before-build"
+  - sudo pip install virtualenv
+  - virtualenv -p /usr/bin/python3 .py
+  - source .py/bin/activate
+  - .py/bin/pip install requests
+  - .py/bin/pip install pyyaml
+  - .py/bin/pip install sqlalchemy 
+  - .py/bin/pip install psycopg2 
+  - .py/bin/pip install git+https://github.com/metacloud/molecule.git
+  - .py/bin/pip install git+https://github.com/docker/docker-py.git
+  - .py/bin/pip install psycopg2
+  - .py/bin/pip install coverage 
+  - ".py/bin/pip install pytest"
+  - ".py/bin/pip install nose"
 script:
+  - ".py/bin/pytest || true"
+  - cd files/rsum/rsum
+  - "../../../.py/bin/pytest || true"
+  - ../../../.py/bin/nosetests -s -d -v
+  - coverage run setup.py test 
+  - coverage xml
+  - cp coverage.xml ../../coverage.xml
+  - cd ../../
   - molecule test
+after_script:
+  - "./cc-test-reporter after-build -t coverage.py --exit-code $TRAVIS_TEST_RESULT"
+  - "./cc-test-reporter after-build -t coverage.py --exit-code $TRAVIS_TEST_RESULT modules/humanresources/coverage.xml"
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
 on_success: never
