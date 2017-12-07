@@ -13,7 +13,7 @@
   when: inventory_hostname == 'mrsum'
 - name: "Copy fixed environment."
   copy:
-    src: environment
+    src: deploy/environment
     dest: /etc/environment
 - name: "Install some packages with apt."
   apt:
