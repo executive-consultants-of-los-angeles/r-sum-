@@ -41,8 +41,8 @@ script:
   - ../../../.py/bin/nosetests -s -d -v
   - coverage run setup.py test 
   - coverage xml
-  - cp coverage.xml ../../coverage.xml
-  - cd ../../
+  - cp coverage.xml ../../../coverage.xml
+  - cd ../../../
   - molecule test
 after_script:
   - "./cc-test-reporter after-build -t coverage.py --exit-code $TRAVIS_TEST_RESULT"
