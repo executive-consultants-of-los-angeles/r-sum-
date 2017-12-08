@@ -24,7 +24,7 @@ before_script:
   - "./cc-test-reporter before-build"
   - sudo pip install virtualenv
   - virtualenv -p /usr/bin/python3 ../.py
-  - source .py/bin/activate
+  - source ../.py/bin/activate
   - ../.py/bin/pip install requests
   - ../.py/bin/pip install pyyaml
   - ../.py/bin/pip install django
