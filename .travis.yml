@@ -7,17 +7,12 @@ env:
 cache:
   pip: 'yes'
 addons:
-  apt:
-    sources:
-      - sourceline:
-          'deb http://cz.archive.ubuntu.com/ubuntu xenial main universe'
-    packages:
-      - build-essential
 before_install:
   - openssl aes-256-cbc -K $encrypted_88341752b148_key
       -iv $encrypted_88341752b148_iv
       -in files/deploy/deploy.enc -out files/deploy/deploy -d
 before_script:
+  - sudo apt-get -y install build-essential
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
     > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
