@@ -23,7 +23,7 @@ class Profile(models.Model):
        JSON encoded content for the current profile.
     """
     name = models.CharField(max_length=200, unique=True)
-    content = JSONField()
+    content = JSONField(default={})
 
     @classmethod
     def create(cls, *args, **kwargs):
