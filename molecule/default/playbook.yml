@@ -1,7 +1,0 @@
----
-- name: 'Deploy and test rsum application code.'
-  hosts: rsum
-  roles:
-    - rsum
-...
-# vim: ft=ansible:
