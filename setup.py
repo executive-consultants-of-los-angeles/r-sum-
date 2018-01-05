@@ -4,8 +4,7 @@ from setuptools import setup
 
 
 def read(fname):
-    """Utility function to read the README file.  Used for the long_description.
-    It's nice, because now
+    """Load readme file.
 
     0. we have a top level README file and
     0.  it's easier to type in the README file than to put a raw
@@ -18,18 +17,19 @@ def read(fname):
 setup(
     name="rsum",
     version="0.0.1",
-    author="ECLA",
-    author_email="cfo@ecla.solutiosn",
+    author="Gahan Corporation",
+    author_email="cfo@gahan-corporation.com",
     description=("rsum application"),
     license="The Unlicense",
-    keywords="accounting",
+    keywords="django",
     packages=[
-        'home',
-        'rsum'
+        'rsum.home',
+        'rsum.rsum'
     ],
     long_description=read('readme.rst'),
     setup_requires=['pytest-runner'],
-    tests_require=['pytest', 'nose'],
+    install_requires=['django', 'pyyaml'],
+    tests_require=['pytest'],
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",

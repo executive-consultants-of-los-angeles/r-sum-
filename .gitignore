@@ -1,5 +1,9 @@
 .cache/
+dist/
+.eggs/
+*egg*
 .py/
+build/
 .py3/
 __pycache__/
 *.swp
