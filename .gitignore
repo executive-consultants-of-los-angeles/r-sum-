@@ -1,5 +1,6 @@
 .cache/
 .py/
+.py3/
 __pycache__/
 *.swp
 files/deploy/deploy
