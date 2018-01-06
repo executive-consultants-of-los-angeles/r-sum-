@@ -10,3 +10,4 @@ __pycache__/
 *.swp
 files/deploy/deploy
 *.xcf
+.coverage
