@@ -49,3 +49,6 @@ class Section(models.Model):
             profile=profile)
         section.save()
         return section
+
+    class Meta:
+        app_label = 'home'

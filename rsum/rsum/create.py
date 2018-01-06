@@ -1,25 +1,12 @@
-import sys
+"""Module creates database entries for a profile."""
 import os
-import socket
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "rsum.settings")
 import django
-from django.conf import settings
-
-sys.path.insert(0, '/srv/rsum/rsum')
-
-if socket.gethostname() == 'ecla.solutions':
-    settings_mod = "rsum.settings"
-else:
-    settings_mod = "rsum.settings.{}".format(socket.gethostname())
-
-if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings_mod)
-
 django.setup()
-
 from home.models.profile import Profile
 
-Profile.create('complete')
+Profile.create()
 
-f = open('/tmp/ready','w')
-f.write('ready')
-f.close()
+with open('/tmp/ready', 'w') as ready:
+    ready.write('ready')
+    ready.close()

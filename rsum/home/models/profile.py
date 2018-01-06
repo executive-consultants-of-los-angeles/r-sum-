@@ -7,8 +7,9 @@ import yaml
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 from django.conf import settings
+from .section import Section
 
-from home.models.section import Section
+OWNER = 'xander'
 
 
 class Profile(models.Model):
@@ -35,17 +36,23 @@ class Profile(models.Model):
         :return: The created instance of :obj:`home.models.profile.Profile`.
         :rtype: :obj:`home.models.profile.Profile`
         """
-        with open(settings.FILE, 'r') as yaml_file:
+        with open('/srv/static/profiles/xander/complete.yml', 'r') as yaml_file:
             raw_content = yaml.load(yaml_file.read())
         yaml_file.close()
         profile = cls(
-            name=settings.OWNER,
+            name=OWNER,
             content=json.dumps(raw_content))
         profile.save()
 
         for item in raw_content:
-            name = item.items()[0][0]
-            section = item.items()[0][1]
-            Section.create(name=name, content=section, profile=profile)
+            for entry, content in item.items():
+                name = entry
+                section = content 
+                Section.create(name=name, content=section, profile=profile)
 
         return profile
+
+    class Meta:
+        """Meta data."""
+
+        app_label = 'home'
