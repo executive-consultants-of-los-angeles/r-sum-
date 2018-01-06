@@ -4,10 +4,8 @@
 from __future__ import print_function
 
 import datetime
-import docx
 import json
-import socket
-from StringIO import StringIO
+from io import StringIO
 
 from django.conf import settings
 

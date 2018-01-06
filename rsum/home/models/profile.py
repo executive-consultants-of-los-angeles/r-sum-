@@ -8,7 +8,7 @@ from django.db import models
 from django.contrib.postgres.fields import JSONField
 from django.conf import settings
 
-from section import Section
+from home.models.section import Section
 
 
 class Profile(models.Model):
