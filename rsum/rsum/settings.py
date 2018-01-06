@@ -25,7 +25,11 @@ SECRET_KEY = 's7g+(@&fc-iycjd=yk)%t$_3@h3gx(!v$c9fh1pbj@zi6r6a(6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'xander.gahan-corporation.com',
+    'jess.gahan-corporation.com',
+    '[::]',
+]
 
 
 # Application definition
