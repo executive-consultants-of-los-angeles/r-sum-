@@ -4,13 +4,7 @@ from setuptools import setup
 
 
 def read(fname):
-    """Load readme file.
-
-    0. we have a top level README file and
-    0.  it's easier to type in the README file than to put a raw
-
-     string in below ...
-    """
+    """Load readme file."""
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 

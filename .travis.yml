@@ -25,16 +25,4 @@ script:
   - .py/bin/coverage xml
 after_script:
   - "./cc-test-reporter after-build -t coverage.py --exit-code $TRAVIS_TEST_RESULT"
-  - "./cc-test-reporter after-build -t coverage.py --exit-code $TRAVIS_TEST_RESULT modules/humanresources/coverage.xml"
-on_success: never
-on_failure: never
-# deploy:
-#   provider: script
-#   skip_cleanup: true
-#   script: chmod 600 files/deploy/deploy &&
-#     ssh -o StrictHostKeyChecking=no -i files/deploy/deploy
-#     duchess@ecla.solutions /src/rsum/files/deploy/deploy.bash
-#   "on":
-#     branch: master
 ...
-# vim: ft=ansible:
