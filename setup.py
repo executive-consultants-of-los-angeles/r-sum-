@@ -17,8 +17,10 @@ setup(
     license="The Unlicense",
     keywords="django",
     packages=[
+        'rsum.rsum',
         'rsum.home',
-        'rsum.rsum'
+        'rsum.home.models',
+        'rsum.home.export',
     ],
     long_description=read('readme.rst'),
     setup_requires=['pytest-runner'],
