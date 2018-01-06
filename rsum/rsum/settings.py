@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-DIR = '/srv/static/xander'
+DIR = ''
 FILE = '/srv/static/profiles/xander/complete.yml'
 
 MIDDLEWARE = [
@@ -132,4 +132,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/srv/xander'
 OWNER = 'xander'
