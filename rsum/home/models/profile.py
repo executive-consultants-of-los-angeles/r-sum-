@@ -19,20 +19,21 @@ class Profile(models.Model):
        Name of the current Profile.
 
     .. attribute:: content
-    
+
        JSON encoded content for the current profile.
     """
+
     name = models.CharField(max_length=200, unique=True)
     content = JSONField()
 
     @classmethod
-    def create(cls, *args, **kwargs):
+    def create(cls):
         """Check to see if the current Profile Model already has sections.
 
         :param cls: The current class instance.
         :type cls: :obj:`home.models.profile.Profile`
-        :return: The created instance of :obj:`home.models.profile.Profile`. 
-        :rtype: :obj:`home.models.profile.Profile` 
+        :return: The created instance of :obj:`home.models.profile.Profile`.
+        :rtype: :obj:`home.models.profile.Profile`
         """
         with open(settings.FILE, 'r') as yaml_file:
             raw_content = yaml.load(yaml_file.read())
@@ -47,4 +48,4 @@ class Profile(models.Model):
             section = item.items()[0][1]
             Section.create(name=name, content=section, profile=profile)
 
-        return profile 
+        return profile
