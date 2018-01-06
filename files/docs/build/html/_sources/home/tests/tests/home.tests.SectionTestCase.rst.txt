@@ -1,4 +1,0 @@
-home.tests.section.SectionTestCase
-==================================
-
-.. autoclass:: home.tests.section.SectionTestCase

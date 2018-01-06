@@ -1,9 +1,0 @@
----
-- name: "rsum"
-  src: "executive-consultants-of-los-angeles.rsum"
-- name: "psql"
-  src: "executive-consultants-of-los-angeles.psql"
-- name: "ngos"
-  src: "executive-consultants-of-los-angeles.nagios"
-...
-# vim: ft=ansible:
