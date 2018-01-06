@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-DIR = ''
+DIR = 'xander'
 FILE = '/srv/static/profiles/xander/complete.yml'
 
 MIDDLEWARE = [
@@ -89,8 +89,8 @@ DATABASES = {
         'NAME': 'xander',
         'USER': 'xander',
         'PASSWORD': '',
-        'HOST': 'psql',
-        'PORT': '4096',
+        'HOST': 'pg.gc',
+        'PORT': '5432',
     }
 }
 
@@ -131,5 +131,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/xander'
 OWNER = 'xander'
