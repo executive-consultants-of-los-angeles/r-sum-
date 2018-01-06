@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rsum',
-    'rsum.home',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'rsum.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'xander',
+        'USER': 'xander',
+        'PASSWORD': '',
+        'HOST': 'psql',
+        'PORT': '4096',
     }
 }
 
@@ -87,18 +91,18 @@ DATABASES = {
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': (
+        "django.contrib.auth.password_validation."
+        "UserAttributeSimilarityValidator")},
+    {'NAME': (
+        "django.contrib.auth.password_validation."
+        "MinimumLengthValidatorr")},
+    {'NAME': (
+        "django.contrib.auth.password_validation."
+        "CommonPasswordValidator")},
+    {'NAME': (
+        "django.contrib.auth.password_validation."
+        "NumericPasswordValidator")},
 ]
 
 
