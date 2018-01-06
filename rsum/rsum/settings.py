@@ -26,6 +26,7 @@ SECRET_KEY = 's7g+(@&fc-iycjd=yk)%t$_3@h3gx(!v$c9fh1pbj@zi6r6a(6'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'localhost',
     'xander.gahan-corporation.com',
     'jess.gahan-corporation.com',
     '[::]',
@@ -44,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+DIR = '/srv/static/xander'
 FILE = '/srv/static/profiles/xander/complete.yml'
 
 MIDDLEWARE = [

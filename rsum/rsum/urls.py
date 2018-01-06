@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import re_path
 
 import home.views
 
 urlpatterns = [
     path('', home.views.index),
+    re_path('docx/(?P<cv_id>[0-9]+)/$', home.views.export_docx, name='docx'),
     path('admin/', admin.site.urls),
 ]
