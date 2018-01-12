@@ -137,5 +137,4 @@ def finish_tables(document, **dargs):
         style='Heading 6')
     paragraph.paragraph_format.line_spacing = 1.0
     paragraph.paragraph_format.space_before = 0
-    table = add_projects(item.get('projects'), table, row, col)
     return document
