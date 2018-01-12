@@ -14,7 +14,8 @@ before_script:
   - chmod +x ./cc-test-reporter
   - sudo pip install virtualenv
   - virtualenv -p /usr/bin/python3 .py
-  - .py/bin/pip install requests pyyaml django psycopg2 coverage pytest codacy-coverage
+  - .py/bin/pip install -r .requirements
+  - .py/bin/pip install -e .
   - ./cc-test-reporter before-build
 script:
   - .py/bin/pytest || true

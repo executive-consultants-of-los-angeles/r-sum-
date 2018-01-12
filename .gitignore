@@ -1,4 +1,5 @@
 .cache/
+rsum/home/migrations
 cc-test-reporter
 *.pyc
 *.xml

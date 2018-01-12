@@ -7,7 +7,7 @@ import datetime
 import json
 from io import StringIO
 
-from django.conf import settings
+from django.conf import settings as django_settings
 
 from docx import Document
 from docx.shared import Cm
@@ -31,7 +31,8 @@ class ExportDocument(object):
 
        Filename to offer to the end user.
     """
-    s = settings
+
+    settings = django_settings
 
     def __init__(self):
         """Initialize ExportDocument class.
@@ -39,8 +40,8 @@ class ExportDocument(object):
         :return: None
         :rtype: None
         """
-        s = self.s
-        self.name = '{0}-profile.docx'.format(s.OWNER)
+        settings = self.settings
+        self.name = '{0}-profile.docx'.format(settings.OWNER)
 
     def export(self, profile_id):
         """Export a word document.
@@ -57,42 +58,19 @@ class ExportDocument(object):
         document = self.set_layout(document)
 
         sections = json.loads(profile.content)
-        for section in sections:
-            for name, s in section.items():
-                if name == u'intro':
-                    document = self.add_intro(s, document)
 
-                if name == u'summary':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    document = self.add_summary(s, document)
-
-                if name == u'skills':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    document = self.add_skills(s, document)
-
-                if name == u'experience':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    p.paragraph_format.page_break_before = True
-                    document = self.add_experience(s, document)
-
-                if name == u'education':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    document = self.add_education(s, document)
-
-                if name == u'contact':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    document = self.add_contact(s, document)
+        document = self.add_intro(sections, document)
+        document = self.add_summary(sections, document)
+        document = self.add_skills(sections[2], document)
+        document = self.add_experience(sections[3], document)
+        document = self.add_education(sections[4], document)
+        document = self.add_contact(sections[5], document)
 
         document.save(stream)
 
         return stream
 
-    def add_intro(self, intro, document):
+    def add_intro(self, sections, document):
         """Add introduction section.
 
         :param intro: Introduction to add to document.
@@ -102,21 +80,24 @@ class ExportDocument(object):
         :return: Document updated with Introduction.
         :rtype: object
         """
-        s = self.s
+        intro = sections[0]
+        settings = self.settings
         table = document.add_table(rows=1, cols=2)
         table.cell(0, 0).width = Cm(12)
 
         table.alignment = WD_TABLE_ALIGNMENT.CENTER
         table.cell(0, 0).add_paragraph(
             intro.get('name'),
-            style='Heading 1')
+            style='Heading 1'
+        )
         table.cell(0, 0).add_paragraph(
             intro.get('position'),
             style='Heading 2')
 
         table.cell(0, 1).width = Cm(4)
         table.cell(0, 1).add_picture(
-            '/srv/rsum/static/{0}/img/mockup/avatar-02.png'.format(s.DIR))
+            '/srv/rsum/static/{0}/img/mockup/avatar-02.png'.format(
+                settings.DIR))
         table.cell(
             0,
             1
@@ -125,7 +106,7 @@ class ExportDocument(object):
         ].paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
         return document
 
-    def add_summary(self, summary, document):
+    def add_summary(self, sections, document):
         """Add summary section.
 
         :param summary: Summary section to add to document.
@@ -135,24 +116,30 @@ class ExportDocument(object):
         :return: Document updated with Summary.
         :rtype: object
         """
-        s = self.s
-        t = document.add_table(rows=1, cols=2)
-        t.alignment = WD_TABLE_ALIGNMENT.CENTER
 
-        t.cell(0, 0).width = Cm(6)
-        t.cell(0, 0).add_picture(
-            '/srv/rsum/static/{0}/img/500x700/02.png'.format(s.DIR),
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0.0
+
+        settings = self.settings
+        summary = sections[1]
+        summary_table = document.add_table(rows=1, cols=2)
+        summary_table.alignment = WD_TABLE_ALIGNMENT.CENTER
+
+        summary_table.cell(0, 0).width = Cm(6)
+        summary_table.cell(0, 0).add_picture(
+            '/srv/rsum/static/{0}/img/500x700/02.png'.format(settings.DIR),
             width=Cm(5))
 
-        t.cell(0, 1).add_paragraph('Summary', style='Heading 3')
-        t.cell(0, 1).add_paragraph(summary.get('content'), style='Normal')
-        p = t.cell(0, 1).paragraphs[1]
-        p.paragraph_format.line_spacing = 1.0
-        t.cell(0, 1).width = Cm(10)
-        p = t.cell(0, 0).paragraphs[0]
-        p.paragraph_format.line_spacing = 0.0
-        p = t.cell(0, 1).paragraphs[0]
-        p.paragraph_format.line_spacing = 0.0
+        summary_table.cell(0, 1).add_paragraph('Summary', style='Heading 3')
+        summary_table.cell(0, 1).add_paragraph(
+            summary.get('content'), style='Normal')
+        paragraph = summary_table.cell(0, 1).paragraphs[1]
+        paragraph.paragraph_format.line_spacing = 1.0
+        summary_table.cell(0, 1).width = Cm(10)
+        paragraph = summary_table.cell(0, 0).paragraphs[0]
+        paragraph.paragraph_format.line_spacing = 0.0
+        paragraph = summary_table.cell(0, 1).paragraphs[0]
+        paragraph.paragraph_format.line_spacing = 0.0
         return document
 
     def add_skills(self, skills, document):
@@ -165,6 +152,8 @@ class ExportDocument(object):
         :return: Document updated with Skills.
         :rtype: object
         """
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0.0
         current_year = datetime.datetime.now().strftime("%Y")
 
         t = document.tables[1]
@@ -243,6 +232,9 @@ class ExportDocument(object):
         :return: Document updated with Experience section.
         :rtype: object
         """
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0.0
+        paragraph.paragraph_format.page_break_before = True
         s = self.s
         del experience[0]
         p = document.add_paragraph(
@@ -339,6 +331,8 @@ class ExportDocument(object):
         :return: Current document with Educaiton section.
         :rtype: object
         """
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0.0
         s = self.s
         p = document.add_paragraph(
             'Education',
@@ -383,6 +377,8 @@ class ExportDocument(object):
         :return: Current document with Contact section.
         :rtype: object
         """
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0.0
         document.add_paragraph(contact.get('title'), style='Heading 3')
         p = document.add_paragraph(contact.get('message'), style='Normal')
         p.paragraph_format.space_after = 0

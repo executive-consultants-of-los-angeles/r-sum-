@@ -72,9 +72,11 @@ def export_docx(cv_id='1'):
     response['Content-Length'] = length
     return response
 
+# Create your views here.
+
 
 def calculate_skills(skills):
-    """ Calculate necessary values for the skills progress bars.
+    """Calculate necessary values for the skills progress bars.
 
     :param skills: The unmodified skills section.
     :type skills: OrderedDict
