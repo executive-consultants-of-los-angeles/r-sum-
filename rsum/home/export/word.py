@@ -16,8 +16,8 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 from home.models.profile import Profile
 
-from experience import add_experience
-from contact import add_contact
+from .experience import add_experience
+from .contact import add_contact
 from . import layout
 from . import style
 
@@ -63,11 +63,10 @@ class ExportDocument(object):
 
         document = self.add_intro(sections, document)
         document = self.add_summary(sections, document)
-        document = self.add_skills(sections[2], document)
-        document = add_experience(
-            self.settings, sections[3], document)
-        document = self.add_education(sections[4], document)
-        document = add_contact(sections[5], document)
+        document = self.add_skills(sections, document)
+        document = add_experience(self.settings, sections, document)
+        document = self.add_education(sections, document)
+        document = add_contact(sections, document)
 
         document.save(stream)
 
@@ -144,7 +143,7 @@ class ExportDocument(object):
         paragraph.paragraph_format.line_spacing = 0.0
         return document
 
-    def add_skills(self, skills, document):
+    def add_skills(self, sections, document):
         """Add skills section.
 
         :param skills: Skills section to add to document.
@@ -157,6 +156,8 @@ class ExportDocument(object):
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
         current_year = datetime.datetime.now().strftime("%Y")
+        print(sections[2])
+        skills = sections[2].get('skills')
 
         t = document.tables[1]
         t.cell(0, 1).add_paragraph('Skills', style='Heading 3')

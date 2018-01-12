@@ -29,7 +29,7 @@ def add_projects(projects, table, row, col):
     return table
 
 
-def add_experience(settings, experience, document):
+def add_experience(settings, sections, document):
     """Add experience section.
 
     :param [dict(str, str)] experience:
@@ -38,10 +38,10 @@ def add_experience(settings, experience, document):
     :return: Documentable updated with Experience section.
     :rtype: object
     """
+    experience = sections[4].get('experience')
     paragraph = document.add_paragraph('')
     paragraph.paragraph_format.line_spacing = 0.0
     paragraph.paragraph_format.page_break_before = True
-    del experience[0]
     paragraph = document.add_paragraph(
         'Experience', style='Heading 3')
     table = document.add_table(rows=1, cols=3)
