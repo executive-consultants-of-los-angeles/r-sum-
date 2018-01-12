@@ -131,7 +131,8 @@ class ExportDocument(object):
             width=Cm(5))
 
         summary_table.cell(0, 1).add_paragraph('Summary', style='Heading 3')
-        summary_table.cell(0, 1).add_paragraph(summary.get('content'), style='Normal')
+        summary_table.cell(0, 1).add_paragraph(
+            summary.get('content'), style='Normal')
         paragraph = summary_table.cell(0, 1).paragraphs[1]
         paragraph.paragraph_format.line_spacing = 1.0
         summary_table.cell(0, 1).width = Cm(10)
