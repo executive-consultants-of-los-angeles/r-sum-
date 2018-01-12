@@ -11,6 +11,7 @@ def add_contact(contact, document):
     :rtype: object
     """
     document = start_contact(contact, document)
+    return document
 
 
 def start_contact(contact, document):

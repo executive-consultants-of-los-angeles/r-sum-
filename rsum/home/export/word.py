@@ -17,6 +17,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from home.models.profile import Profile
 
 from experience import add_experience
+from contact import add_contact
 from . import layout
 from . import style
 
@@ -66,7 +67,7 @@ class ExportDocument(object):
         document = add_experience(
             self.settings, sections[3], document)
         document = self.add_education(sections[4], document)
-        document = self.add_contact(sections[5], document)
+        document = add_contact(sections[5], document)
 
         document.save(stream)
 
