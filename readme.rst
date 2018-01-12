@@ -1,6 +1,10 @@
 Résumé
 ======
 
+.. image:: https://api.codacy.com/project/badge/Grade/596eed0bd8544820978e231960047cb1
+   :alt: Codacy Badge
+   :target: https://www.codacy.com/app/gahancorpcfo/rsum.application?utm_source=github.com&utm_medium=referral&utm_content=gahan-corporation/rsum.application&utm_campaign=badger
+
 This project is meant to provide all of the required services for a fully functional professional profile website.  Fully functional remains undefined, but the aim of this code is to automatically deploy (and also scale in theory) a stack consisting of nginx, django, postgresql, and nagios.  WE should be able to detect existing installations of these services and adjust bebhavior accordingly.  The project makes use of Docker and Ansible. 
 
 .. image:: [![Build Status](https://travis-ci.org/executive-consultants-of-los-angeles/rsum.svg?branch=master)](https://travis-ci.org/executive-consultants-of-los-angeles/rsum)
