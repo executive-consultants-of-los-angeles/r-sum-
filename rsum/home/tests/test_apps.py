@@ -8,4 +8,5 @@ class TestApps(object):
 
     def test_home_app_name(self):
         """Test application name."""
-        assert self.assertion 
+        if not self.assertion:
+            raise AssertionError()
