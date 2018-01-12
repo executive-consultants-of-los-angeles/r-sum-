@@ -23,10 +23,12 @@ pyflakes==1.6.0
 pylama==7.4.3
 pylint==1.8.1
 pytest==3.3.2
+pytest-django==3.1.2
 python-docx==0.8.6
 pytz==2017.3
 PyYAML==3.12
 requests==2.18.4
+-e git+git@github.com:gahan-corporation/rsum.application.git@cfd55cd422793f656b1b765a4e378c04332fd975#egg=rsum
 six==1.11.0
 smmap2==2.0.3
 snowballstemmer==1.2.1
