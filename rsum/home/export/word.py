@@ -60,7 +60,7 @@ class ExportDocument(object):
 
         sections = json.loads(profile.content)
         for section in sections:
-            print(section.items()) 
+            print(section.items())
             for name, local_section in section.items():
                 if name == u'intro':
                     document = self.add_intro(local_section, document)
