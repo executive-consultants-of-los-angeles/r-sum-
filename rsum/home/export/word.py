@@ -11,13 +11,12 @@ from django.conf import settings as django_settings
 
 from docx import Document
 from docx.shared import Cm
-from docx.shared import Pt
-from docx.shared import RGBColor
-from docx.enum.style import WD_STYLE_TYPE
-from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
+from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 from home.models.profile import Profile
+
+from . import layout
 
 
 class ExportDocument(object):
@@ -55,7 +54,7 @@ class ExportDocument(object):
         stream = StringIO()
         document = Document()
         document = self.set_styles(document)
-        document = self.set_layout(document)
+        document = layout.set_layout(document)
 
         sections = json.loads(profile.content)
 
@@ -116,7 +115,6 @@ class ExportDocument(object):
         :return: Document updated with Summary.
         :rtype: object
         """
-
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
 
@@ -417,90 +415,4 @@ class ExportDocument(object):
             contact.get('location'),
             style='Heading 5')
         p.paragraph_format.space_before = 0
-        return document
-
-    def set_styles(self, document):
-        """Set styles in the Word document.
-
-        :param object document: Current document.
-        :return: Current document with correct styles.
-        :rtype: object
-        """
-        style = document.styles['Heading 1']
-        font = style.font
-        font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
-        font.name = 'Hind'
-        font.size = Pt(24)
-        font.bold = True
-
-        style = document.styles['Heading 2']
-        font = style.font
-        font.name = 'Hind'
-        font.italic = False
-        font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
-        font.size = Pt(16)
-
-        style = document.styles['Heading 3']
-        font = style.font
-        font.name = 'Hind'
-        font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
-        font.size = Pt(14)
-        font.bold = True
-
-        style = document.styles['Heading 4']
-        font = style.font
-        font.name = 'Hind'
-        font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
-        font.size = Pt(8)
-        font.bold = True
-        font.italic = False
-
-        style = document.styles['Heading 5']
-        font = style.font
-        font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
-        font.small_caps = True
-        font.name = 'Hind'
-        font.size = Pt(7)
-
-        style = document.styles['Heading 6']
-        font = style.font
-        font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
-        font.name = 'Hind'
-        font.size = Pt(6)
-        font.bold = True
-        font.italic = False
-
-        style = document.styles['List Bullet']
-        font = style.font
-        font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
-        font.name = 'Hind'
-        font.size = Pt(5)
-        font.bold = True
-
-        style = document.styles['List Bullet 2']
-        font = style.font
-        font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
-        font.size = Pt(5)
-        font.name = 'Hind'
-
-        document.styles.add_style('Skill', WD_STYLE_TYPE.PARAGRAPH)
-        style = document.styles['Skill']
-        font = style.font
-        font.name = 'Hind'
-        font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
-        font.size = Pt(9)
-        font.bold = True
-
-        document.styles.add_style('Sub Skill', WD_STYLE_TYPE.PARAGRAPH)
-        style = document.styles['Sub Skill']
-        font = style.font
-        font.name = 'Hind'
-        font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
-        font.size = Pt(7)
-
-        style = document.styles['Normal']
-        font = style.font
-        font.name = 'Hind'
-        font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
-        font.size = Pt(11)
         return document
