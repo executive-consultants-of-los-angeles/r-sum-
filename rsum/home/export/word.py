@@ -56,41 +56,15 @@ class ExportDocument(object):
         document = Document()
         document = self.set_styles(document)
         document = self.set_layout(document)
-        paragraph = []
 
         sections = json.loads(profile.content)
 
         document = self.add_intro(sections, document)
-
-        for section in sections:
-            print(section) 
-            for name, local_section in section.items():
-
-                if name == u'summary':
-                    paragraph = document.add_paragraph('')
-                    paragraph.paragraph_format.line_spacing = 0.0
-                    document = self.add_summary(local_section, document)
-
-                if name == u'skills':
-                    paragraph = document.add_paragraph('')
-                    paragraph.paragraph_format.line_spacing = 0.0
-                    document = self.add_skills(local_section, document)
-
-                if name == u'experience':
-                    paragraph = document.add_paragraph('')
-                    paragraph.paragraph_format.line_spacing = 0.0
-                    paragraph.paragraph_format.page_break_before = True
-                    document = self.add_experience(local_section, document)
-
-                if name == u'education':
-                    paragraph = document.add_paragraph('')
-                    paragraph.paragraph_format.line_spacing = 0.0
-                    document = self.add_education(local_section, document)
-
-                if name == u'contact':
-                    paragraph = document.add_paragraph('')
-                    paragraph.paragraph_format.line_spacing = 0.0
-                    document = self.add_contact(local_section, document)
+        document = self.add_summary(sections, document)
+        document = self.add_skills(sections[2], document)
+        document = self.add_experience(sections[3], document)
+        document = self.add_education(sections[4], document)
+        document = self.add_contact(sections[5], document)
 
         document.save(stream)
 
@@ -106,7 +80,7 @@ class ExportDocument(object):
         :return: Document updated with Introduction.
         :rtype: object
         """
-        intro = map(lambda x: x['intro'], sections)
+        intro = sections[0]
         settings = self.settings
         table = document.add_table(rows=1, cols=2)
         table.cell(0, 0).width = Cm(12)
@@ -132,7 +106,7 @@ class ExportDocument(object):
         ].paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
         return document
 
-    def add_summary(self, summary, document):
+    def add_summary(self, sections, document):
         """Add summary section.
 
         :param summary: Summary section to add to document.
@@ -142,24 +116,29 @@ class ExportDocument(object):
         :return: Document updated with Summary.
         :rtype: object
         """
-        s = self.s
-        t = document.add_table(rows=1, cols=2)
-        t.alignment = WD_TABLE_ALIGNMENT.CENTER
 
-        t.cell(0, 0).width = Cm(6)
-        t.cell(0, 0).add_picture(
-            '/srv/rsum/static/{0}/img/500x700/02.png'.format(s.DIR),
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0.0
+
+        settings = self.settings
+        summary = sections[1]
+        summary_table = document.add_table(rows=1, cols=2)
+        summary_table.alignment = WD_TABLE_ALIGNMENT.CENTER
+
+        summary_table.cell(0, 0).width = Cm(6)
+        summary_table.cell(0, 0).add_picture(
+            '/srv/rsum/static/{0}/img/500x700/02.png'.format(settings.DIR),
             width=Cm(5))
 
-        t.cell(0, 1).add_paragraph('Summary', style='Heading 3')
-        t.cell(0, 1).add_paragraph(summary.get('content'), style='Normal')
-        p = t.cell(0, 1).paragraphs[1]
-        p.paragraph_format.line_spacing = 1.0
-        t.cell(0, 1).width = Cm(10)
-        p = t.cell(0, 0).paragraphs[0]
-        p.paragraph_format.line_spacing = 0.0
-        p = t.cell(0, 1).paragraphs[0]
-        p.paragraph_format.line_spacing = 0.0
+        summary_table.cell(0, 1).add_paragraph('Summary', style='Heading 3')
+        summary_table.cell(0, 1).add_paragraph(summary.get('content'), style='Normal')
+        paragraph = summary_table.cell(0, 1).paragraphs[1]
+        paragraph.paragraph_format.line_spacing = 1.0
+        summary_table.cell(0, 1).width = Cm(10)
+        paragraph = summary_table.cell(0, 0).paragraphs[0]
+        paragraph.paragraph_format.line_spacing = 0.0
+        paragraph = summary_table.cell(0, 1).paragraphs[0]
+        paragraph.paragraph_format.line_spacing = 0.0
         return document
 
     def add_skills(self, skills, document):
@@ -172,6 +151,8 @@ class ExportDocument(object):
         :return: Document updated with Skills.
         :rtype: object
         """
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0.0
         current_year = datetime.datetime.now().strftime("%Y")
 
         t = document.tables[1]
@@ -250,6 +231,9 @@ class ExportDocument(object):
         :return: Document updated with Experience section.
         :rtype: object
         """
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0.0
+        paragraph.paragraph_format.page_break_before = True
         s = self.s
         del experience[0]
         p = document.add_paragraph(
@@ -346,6 +330,8 @@ class ExportDocument(object):
         :return: Current document with Educaiton section.
         :rtype: object
         """
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0.0
         s = self.s
         p = document.add_paragraph(
             'Education',
@@ -390,6 +376,8 @@ class ExportDocument(object):
         :return: Current document with Contact section.
         :rtype: object
         """
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0.0
         document.add_paragraph(contact.get('title'), style='Heading 3')
         p = document.add_paragraph(contact.get('message'), style='Normal')
         p.paragraph_format.space_after = 0
