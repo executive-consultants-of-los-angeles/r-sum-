@@ -59,39 +59,8 @@ class ExportDocument(object):
         paragraph = []
 
         sections = json.loads(profile.content)
-        for section in sections:
-            print(section.items())
-            for name, local_section in section.items():
-                if name == u'intro':
-                    document = self.add_intro(local_section, document)
 
-                if name == u'summary':
-                    paragraph = document.add_paragraph('')
-                    paragraph.paragraph_format.line_spacing = 0.0
-                    document = self.add_summary(local_section, document)
-
-                if name == u'skills':
-                    paragraph = document.add_paragraph('')
-                    paragraph.paragraph_format.line_spacing = 0.0
-                    document = self.add_skills(local_section, document)
-
-                if name == u'experience':
-                    paragraph = document.add_paragraph('')
-                    paragraph.paragraph_format.line_spacing = 0.0
-                    paragraph.paragraph_format.page_break_before = True
-                    document = self.add_experience(local_section, document)
-
-                if name == u'education':
-                    paragraph = document.add_paragraph('')
-                    paragraph.paragraph_format.line_spacing = 0.0
-                    document = self.add_education(local_section, document)
-
-                if name == u'contact':
-                    paragraph = document.add_paragraph('')
-                    paragraph.paragraph_format.line_spacing = 0.0
-                    document = self.add_contact(local_section, document)
-
-        document.save(stream)
+        document.save(sections)
 
         return stream
 
