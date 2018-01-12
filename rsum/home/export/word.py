@@ -187,7 +187,8 @@ class ExportDocument(object):
             index = index + 1
         return document
 
-    def add_sub_skills(self, subs, ts, ts_index):
+    @staticmethod
+    def add_sub_skills(subs, skilltable, skilltable_index):
         """Add sub skills to skills section.
 
         :param subs: Sub skills to add to document.
@@ -198,9 +199,10 @@ class ExportDocument(object):
         :rtype: object
         """
         current_year = float(datetime.datetime.now().strftime("%Y"))
-        sub_table = ts.cell(ts_index, 0).add_table(rows=1, cols=2)
+        sub_table = skilltable.cell(
+            skilltable_index, 0).add_table(rows=1, cols=2)
         index = 0
-        for name, sub in subs.items():
+        for sub in subs:
             if isinstance(sub, dict):
                 experience = int(current_year) - int(sub.get('start'))
                 experience = '{0} year(s)'.format(str(experience))
@@ -213,17 +215,17 @@ class ExportDocument(object):
                     sub_table.cell(index, 0).text = sub.get('name')
                     sub_table.cell(index, 0).width = Cm(1)
                     sub_table.cell(index, 1).text = experience
-                p = sub_table.cell(index, 0).paragraphs[0]
-                p.style = 'Sub Skill'
-                p.paragraph_format.line_spacing = 1.0
-                p.paragraph_format.space_after = 0
-                p = sub_table.cell(index, 1).paragraphs[0]
-                p.style = 'Sub Skill'
-                p.paragraph_format.line_spacing = 1.0
-                p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-                p.paragraph_format.space_after = 0
+                paragraph = sub_table.cell(index, 0).paragraphs[0]
+                paragraph.style = 'Sub Skill'
+                paragraph.paragraph_format.line_spacing = 1.0
+                paragraph.paragraph_format.space_after = 0
+                paragraph = sub_table.cell(index, 1).paragraphs[0]
+                paragraph.style = 'Sub Skill'
+                paragraph.paragraph_format.line_spacing = 1.0
+                paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+                paragraph.paragraph_format.space_after = 0
                 index = index + 1
-        return ts
+        return skilltable
 
     def add_education(self, education, document):
         """Add education section.
