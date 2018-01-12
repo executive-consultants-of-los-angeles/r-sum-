@@ -18,6 +18,7 @@ from home.models.profile import Profile
 
 from . import layout
 from . import style
+from . import experience
 
 
 class ExportDocument(object):
@@ -62,7 +63,8 @@ class ExportDocument(object):
         document = self.add_intro(sections, document)
         document = self.add_summary(sections, document)
         document = self.add_skills(sections[2], document)
-        document = self.add_experience(sections[3], document)
+        document = experience.add_experience(
+            self.settings, sections[3], document)
         document = self.add_education(sections[4], document)
         document = self.add_contact(sections[5], document)
 
