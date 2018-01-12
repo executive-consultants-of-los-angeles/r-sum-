@@ -5,7 +5,6 @@ import json
 
 from django.db import models
 from django.contrib.postgres.fields import JSONField
-from django.conf import settings
 
 
 class Section(models.Model):
@@ -21,10 +20,10 @@ class Section(models.Model):
 
     .. attribute:: content
 
-       JSON encoded content for the current section. 
+       JSON encoded content for the current section.
     """
     profile = models.ForeignKey(
-        'home.Profile', 
+        'home.Profile',
         on_delete=models.CASCADE
     )
     name = models.CharField(max_length=200, default='section')
@@ -33,7 +32,7 @@ class Section(models.Model):
     @classmethod
     def create(cls, name='default', *args, **kwargs):
         """Class method to handle creation of Section objects for testing.
-        
+
         :param cls: The Section class.
         :type cls: :obj:`home.models.section.Section`
         :param str name: Name of the section.
