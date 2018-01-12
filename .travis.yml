@@ -19,8 +19,10 @@ before_script:
   - .py/bin/pip install -e .
   - ./cc-test-reporter before-build
 script:
+  - cd container
   - docker build -t rsum .
   - docker run -d --rm rsum
+  - cd ..
   - .py/bin/pytest || true
   - .py/bin/coverage run setup.py test || true
   - .py/bin/coverage xml
