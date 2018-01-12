@@ -12,10 +12,10 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
     > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
-  - "./cc-test-reporter before-build"
   - sudo pip install virtualenv
   - virtualenv -p /usr/bin/python3 .py
   - .py/bin/pip install requests pyyaml django psycopg2 coverage pytest codacy-coverage
+  - ./cc-test-reporter before-build
 script:
   - .py/bin/pytest || true
   - .py/bin/coverage run setup.py test || true
