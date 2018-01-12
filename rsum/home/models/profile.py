@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# pylint: disable=R0903
 # -*- coding: utf-8 -*-
 """Module containing the Profile Model class."""
 import json
