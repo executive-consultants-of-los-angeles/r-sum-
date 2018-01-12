@@ -15,6 +15,7 @@ before_script:
   - sudo pip install virtualenv
   - virtualenv -p /usr/bin/python3 .py
   - .py/bin/pip install -r .requirements
+  - .py/bin/pip install -e .
   - ./cc-test-reporter before-build
 script:
   - .py/bin/pytest || true
