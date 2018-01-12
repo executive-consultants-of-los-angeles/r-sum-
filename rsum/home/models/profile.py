@@ -39,7 +39,7 @@ class Profile(models.Model):
         with open(
             '/srv/static/profiles/xander/complete.yml', 'r'
         ) as yaml_file:
-            raw_content = yaml.load(yaml_file.read())
+            raw_content = yaml.safe_load(yaml_file.read())
         yaml_file.close()
         profile = cls(
             name=OWNER,

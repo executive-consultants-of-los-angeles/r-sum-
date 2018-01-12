@@ -1,15 +1,16 @@
 """pytest configuration module."""
-
 import pytest
 
+import django
 
-class DB(object):
-    """A DB object."""
+from home.models.profile import Profile
 
-    pass
+django.setup()
 
 
 @pytest.fixture(scope="session")
-def db():
-    """Return a DB object."""
-    return DB()
+def profile():
+    """Create a profile for testing."""
+    test_profile = Profile.create()
+    print(test_profile)
+    return test_profile
