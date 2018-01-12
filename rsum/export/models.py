@@ -3,19 +3,12 @@
 """Module for exporting profiles to Word format."""
 from __future__ import print_function
 
-import datetime
 import json
 from io import StringIO
 
 from django.conf import settings as django_settings
 
 from docx import Document
-from docx.shared import Cm
-from docx.shared import Pt
-from docx.shared import RGBColor
-from docx.enum.style import WD_STYLE_TYPE
-from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.enum.table import WD_TABLE_ALIGNMENT
 
 from home.models.profile import Profile
 
@@ -33,6 +26,7 @@ class ExportDocument(object):
     """
 
     settings = django_settings
+    stream = []
 
     def __init__(self):
         """Initialize ExportDocument class.
@@ -52,14 +46,11 @@ class ExportDocument(object):
         :rtype: object
         """
         profile = Profile.objects.get(pk=profile_id)
-        stream = StringIO()
+        self.stream = StringIO()
         document = Document()
-        document = self.set_styles(document)
-        document = self.set_layout(document)
-        paragraph = []
 
         sections = json.loads(profile.content)
 
         document.save(sections)
 
-        return stream
+        return self.stream
