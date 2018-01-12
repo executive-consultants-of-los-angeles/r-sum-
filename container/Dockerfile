@@ -1,4 +1,5 @@
 FROM python:rc-alpine
+MAINTAINER duchess@gahan-corporation.com
 RUN apk update
 RUN apk add build-base git libxml2-dev libxslt-dev openldap-dev wget postgresql postgresql-dev
 RUN mkdir -p /srv/rsum
