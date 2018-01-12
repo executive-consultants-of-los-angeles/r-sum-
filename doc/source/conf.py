@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+"""Sphinx configuration module."""
 # -*- coding: utf-8 -*-
+# pylint: disable=C0103
 #
 # rsum documentation build configuration file, created by
 # sphinx-quickstart on Sat Jan  6 08:00:05 2018.
@@ -31,15 +33,22 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc',
-    'sphinx.ext.doctest',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.todo',
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosectionlabel',
+    'sphinx.ext.autosummary',
     'sphinx.ext.coverage',
-    'sphinx.ext.imgmath',
+    'sphinx.ext.doctest',
+    'sphinx.ext.githubpages'
+    'sphinx.ext.graphviz',
     'sphinx.ext.ifconfig',
+    'sphinx.ext.imgmath',
+    'sphinx.ext.inheritance_diagram',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.linkcode',
+    'sphinx.ext.todo',
     'sphinx.ext.viewcode',
-    'sphinx.ext.githubpages']
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
