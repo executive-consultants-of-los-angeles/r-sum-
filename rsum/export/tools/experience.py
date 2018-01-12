@@ -1,7 +1,7 @@
 """Module for experience."""
 
 
-def add_experience(self, experience, document):
+def add_experience(experience, document):
     """Add experience section.
 
     :param [dict(str, str)] experience:
@@ -72,7 +72,7 @@ def add_experience(self, experience, document):
     p.paragraph_format.line_spacing = 0
     return document
 
-def add_projects(self, projects, table, row, col):
+def add_projects( projects, table, row, col):
     """Add projects to experience section.
 
     :param [dict(str, str)] projects:
