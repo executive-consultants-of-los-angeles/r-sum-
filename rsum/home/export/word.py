@@ -7,7 +7,7 @@ import datetime
 import json
 from io import StringIO
 
-from django.conf import settings
+from django.conf import settings as django_settings
 
 from docx import Document
 from docx.shared import Cm
@@ -32,7 +32,7 @@ class ExportDocument(object):
        Filename to offer to the end user.
     """
 
-    s = settings
+    settings = django_settings
 
     def __init__(self):
         """Initialize ExportDocument class.
@@ -40,8 +40,8 @@ class ExportDocument(object):
         :return: None
         :rtype: None
         """
-        s = self.s
-        self.name = '{0}-profile.docx'.format(s.OWNER)
+        settings = self.settings
+        self.name = '{0}-profile.docx'.format(settings.OWNER)
 
     def export(self, profile_id):
         """Export a word document.
@@ -56,38 +56,40 @@ class ExportDocument(object):
         document = Document()
         document = self.set_styles(document)
         document = self.set_layout(document)
+        paragraph = []
 
         sections = json.loads(profile.content)
         for section in sections:
-            for name, s in section.items():
+            print(section.items()) 
+            for name, local_section in section.items():
                 if name == u'intro':
-                    document = self.add_intro(s, document)
+                    document = self.add_intro(local_section, document)
 
                 if name == u'summary':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    document = self.add_summary(s, document)
+                    paragraph = document.add_paragraph('')
+                    paragraph.paragraph_format.line_spacing = 0.0
+                    document = self.add_summary(local_section, document)
 
                 if name == u'skills':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    document = self.add_skills(s, document)
+                    paragraph = document.add_paragraph('')
+                    paragraph.paragraph_format.line_spacing = 0.0
+                    document = self.add_skills(local_section, document)
 
                 if name == u'experience':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    p.paragraph_format.page_break_before = True
-                    document = self.add_experience(s, document)
+                    paragraph = document.add_paragraph('')
+                    paragraph.paragraph_format.line_spacing = 0.0
+                    paragraph.paragraph_format.page_break_before = True
+                    document = self.add_experience(local_section, document)
 
                 if name == u'education':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    document = self.add_education(s, document)
+                    paragraph = document.add_paragraph('')
+                    paragraph.paragraph_format.line_spacing = 0.0
+                    document = self.add_education(local_section, document)
 
                 if name == u'contact':
-                    p = document.add_paragraph('')
-                    p.paragraph_format.line_spacing = 0.0
-                    document = self.add_contact(s, document)
+                    paragraph = document.add_paragraph('')
+                    paragraph.paragraph_format.line_spacing = 0.0
+                    document = self.add_contact(local_section, document)
 
         document.save(stream)
 
