@@ -16,7 +16,7 @@ from docx.shared import RGBColor
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
-from docx.enum.style import WD_BUILTIN_STYLE
+# from docx.enum.style import WD_BUILTIN_STYLE
 
 from home.models.profile import Profile
 
@@ -172,8 +172,8 @@ class ExportDocument(object):
         t.cell(0, 1).add_paragraph('Skills', style='Heading 3')
         t_sub = t.cell(0, 1).add_table(rows=1, cols=2)
         t.cell(0, 1).tables[0].columns[0].width = Cm(7)
-        skill_grid = ['0', '1']
-        subskills = []
+        # skill_grid = ['0', '1']
+        # subskills = []
         index = 1
         for name, skill in skills.items():
             if isinstance(skill, dict):
@@ -260,13 +260,17 @@ class ExportDocument(object):
             for name, item in value.items():
                 row = (index % 9) / 3
                 col = index % 3
-                if (index % 9 == 0 and
-                    index > 0):
+                if (
+                        index % 9 == 0 and
+                        index > 0
+                ):
                     t = document.add_table(rows=1, cols=3)
                     t.alignment = WD_TABLE_ALIGNMENT.CENTER
-                
-                if (index % 18 == 0
-                    and index > 17):
+
+                if (
+                        index % 18 == 0
+                        and index > 17
+                ):
                     document.add_page_break()
                     t = document.add_table(rows=1, cols=3)
                     t.alignment = WD_TABLE_ALIGNMENT.CENTER
