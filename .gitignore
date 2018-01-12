@@ -1,4 +1,5 @@
 .cache/
+cc-test-reporter
 *.pyc
 *.xml
 .rsum/
