@@ -3,4 +3,5 @@
 
 def test_section_save():
     """Test that sections save correctly."""
-    assert True
+    if not True:
+        raise AssertionError()

@@ -3,4 +3,5 @@
 
 def test_profile_save():
     """Test profile save functionality."""
-    assert True
+    if not True:
+        raise AssertionError()
