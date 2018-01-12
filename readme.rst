@@ -412,3 +412,15 @@ Example
      email: "alex@ecla.solutions"
      web: "https://ecla.solutions/"
    ...
+
+.. code-block::
+   :python:
+
+   for name, project in education.get('projects').items():
+      paragraph = document.add_paragraph(
+          name.title(),
+          style='List Bullet')
+      for item in project:
+          paragraph = document.add_paragraph(
+              item,
+              style='List Bullet 2')

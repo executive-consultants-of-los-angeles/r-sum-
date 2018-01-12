@@ -1,7 +1,7 @@
 """Contact module."""
 
 
-def add_contact(contact, document):
+def add_contact(sections, document):
     """Add contact section.
 
     :param [dict(str, str)] contact:
@@ -10,6 +10,7 @@ def add_contact(contact, document):
     :return: Current document with Contact section.
     :rtype: object
     """
+    contact = sections[6]
     document = start_contact(contact, document)
     return document
 
