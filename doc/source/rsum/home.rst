@@ -8,7 +8,6 @@ Subpackages
 
     home.export
     home.models
-    home.tests
 
 Submodules
 ----------

@@ -1,37 +1,37 @@
-rsum package
-============
+export package
+==============
 
 Submodules
 ----------
 
-rsum\.create module
+export\.admin module
+--------------------
+
+.. automodule:: export.admin
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+export\.apps module
 -------------------
 
-.. automodule:: rsum.create
+.. automodule:: export.apps
     :members:
     :undoc-members:
     :show-inheritance:
 
-rsum\.settings module
+export\.models module
 ---------------------
 
-.. automodule:: rsum.settings
+.. automodule:: export.models
     :members:
     :undoc-members:
     :show-inheritance:
 
-rsum\.urls module
------------------
+export\.views module
+--------------------
 
-.. automodule:: rsum.urls
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-rsum\.wsgi module
------------------
-
-.. automodule:: rsum.wsgi
+.. automodule:: export.views
     :members:
     :undoc-members:
     :show-inheritance:
@@ -40,7 +40,7 @@ rsum\.wsgi module
 Module contents
 ---------------
 
-.. automodule:: rsum
+.. automodule:: export
     :members:
     :undoc-members:
     :show-inheritance:

@@ -1,13 +1,6 @@
 home\.tests package
 ===================
 
-Subpackages
------------
-
-.. toctree::
-
-    home.tests.models
-
 Submodules
 ----------
 

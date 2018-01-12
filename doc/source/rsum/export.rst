@@ -1,15 +1,6 @@
 export package
 ==============
 
-Subpackages
------------
-
-.. toctree::
-
-    export.migrations
-    export.tests
-    export.tools
-
 Submodules
 ----------
 
