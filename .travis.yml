@@ -4,6 +4,7 @@ sudo: required
 env:
   global:
   - CC_TEST_REPORTER_ID=017293648534356d82740656441287b28c2402f86a30e9f6a8fe50fbb2b1e7e7
+  - CODACY_PROJECT_TOKEN=a6401ae2caa54f229e65b73ec1863ef1 
 cache:
   pip: 'yes'
 before_script:
@@ -14,15 +15,12 @@ before_script:
   - "./cc-test-reporter before-build"
   - sudo pip install virtualenv
   - virtualenv -p /usr/bin/python3 .py
-  - .py/bin/pip install requests
-  - .py/bin/pip install pyyaml
-  - .py/bin/pip install django
-  - .py/bin/pip install psycopg2
-  - .py/bin/pip install coverage
-  - .py/bin/pip install pytest
+  - .py/bin/pip install requests pyyaml django psycopg2 coverage pytest codacy-coverage
 script:
+  - .py/bin/pytest || true
   - .py/bin/coverage run setup.py test || true
   - .py/bin/coverage xml
 after_script:
+  - .py/bin/python-codacy-coverage -r coverage.xml
   - "./cc-test-reporter after-build -t coverage.py --exit-code $TRAVIS_TEST_RESULT"
 ...
