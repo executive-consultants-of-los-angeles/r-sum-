@@ -504,21 +504,3 @@ class ExportDocument(object):
         font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
         font.size = Pt(11)
         return document
-
-    def set_layout(self, document):
-        """Define document layout.
-
-        :param object document: Current document.
-        :return: Current document with adjusted layout.
-        :rtype: object
-        """
-        sections = document.sections
-        section = sections[0]
-        section.page_height = Cm(29.7)
-        section.page_width = Cm(21)
-        section.left_margin = Cm(0.5)
-        section.top_margin = Cm(0.5)
-        section.right_margin = Cm(0.5)
-        section.bottom_margin = Cm(0.5)
-
-        return document
