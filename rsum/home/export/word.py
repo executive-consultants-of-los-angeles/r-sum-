@@ -175,15 +175,15 @@ class ExportDocument(object):
                 t_sub.cell(index-1, 0).text = name
                 p = t_sub.cell(index-1, 0).paragraphs[0]
                 p.style = 'Skill'
-                p.paragraph_format.line_spacing = 1.0
-                p.paragraph_format.space_after = 0
+                paragraph.paragraph_format.line_spacing = 1.0
+                paragraph.paragraph_format.space_after = 0
                 t_sub.cell(index-1, 1).text = experience
 
                 p = t_sub.cell(index-1, 1).paragraphs[0]
                 p.style = 'Skill'
-                p.paragraph_format.line_spacing = 1.0
-                p.paragraph_format.space_after = 0
-                p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+                paragraph.paragraph_format.line_spacing = 1.0
+                paragraph.paragraph_format.space_after = 0
+                paragraph.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
                 t_sub = self.add_sub_skills(skill, t_sub, index-1)
             index = index + 1
         return document
@@ -228,7 +228,7 @@ class ExportDocument(object):
                 index = index + 1
         return skilltable
 
-    def add_education(self, education, document):
+    def add_education(self, sections, document):
         """Add education section.
 
         :param [dict(str, str)] education:
@@ -237,39 +237,42 @@ class ExportDocument(object):
         :return: Current document with Educaiton section.
         :rtype: object
         """
+        education = sections[5]
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
-        s = self.s
-        p = document.add_paragraph(
+        settings = self.settings
+        paragraph = document.add_paragraph(
             'Education',
             style='Heading 3')
-        p.paragraph_format.line_spacing = 1.0
-        p.paragraph_format.space_after = 0
-        p.paragraph_format.page_break_before = True
+        paragraph.paragraph_format.line_spacing = 1.0
+        paragraph.paragraph_format.space_after = 0
+        paragraph.paragraph_format.page_break_before = True
         document.add_picture(
             '/srv/rsum/static/{0}/img/1920x1080/01.jpg'.format(
-                s.DIR),
+                settings.DIR),
             width=Cm(4))
-        p = document.add_paragraph(
+        paragraph = document.add_paragraph(
             education.get('name'),
             style='Heading 4')
-        p.paragraph_format.space_before = 0
-        p = document.add_paragraph(
+        paragraph.paragraph_format.space_before = 0
+        paragraph = document.add_paragraph(
             education.get('studies'),
             style='Heading 5')
-        p.paragraph_format.space_before = 0
-        p = document.add_paragraph(
+        paragraph.paragraph_format.space_before = 0
+        paragraph = document.add_paragraph(
             "{0}, {1}".format(
                 education.get('location'),
                 education.get('duration')),
             style='Heading 6')
-        p.paragraph_format.space_before = 0
+        paragraph.paragraph_format.space_before = 0
+        """
         for name, project in education.get('projects').items():
-            p = document.add_paragraph(
+            paragraph = document.add_paragraph(
                 name.title(),
                 style='List Bullet')
             for item in project:
-                p = document.add_paragraph(
+                paragraph = document.add_paragraph(
                     item,
                     style='List Bullet 2')
+        """
         return document
