@@ -5,19 +5,18 @@ This project is meant to provide all of the required services for a fully functi
 
 .. image:: [![Build Status](https://travis-ci.org/executive-consultants-of-los-angeles/rsum.svg?branch=master)](https://travis-ci.org/executive-consultants-of-los-angeles/rsum)
 
-[![Coverage Status](https://coveralls.io/repos/github/executive-consultants-of-los-angeles/rsum/badge.svg?branch=master)](https://coveralls.io/github/executive-consultants-of-los-angeles/rsum?branch=master)
-
 
 Requirements
 ------------
 
 Docker Engine, or *nix, or access to a cloud provider that supports *nix.  You will also need [Ansible](https://www.ansible.com/) and Molecule for the automated deployment. 
 
-### Installation
+Installation
+............
 
-```bash
-ansible-galaxy install executive-consultants-of-los-angeles.r-sum-
-```
+.. code-block:: bash
+
+   ansible-galaxy install executive-consultants-of-los-angeles.r-sum-
 
 ## Network Diagram 
  
@@ -62,7 +61,6 @@ You oughtn't need to write your own playbook for this because the required playb
   roles:
     - role: executive-consultants-of-los-angeles.rsum
 ...
-# vim: ft=ansible:
 ```
 
 But really, if you want to see the thing running locally for whatever reason, you can run `molecule converge` to create and deploy the required Docker containers.  On occasion `molecule converge` won't actually run the required Ansible scripts and will instead only create the required Docker containers.  If you find yourself in such a situation take heed: `ansible-galaxy install -r molecule/default/requirements.yml` will install the required roles to your machine and `ansible-playbook molecule/default/playbook.yml` will execute the automated deployment. 
@@ -459,5 +457,4 @@ contact:
   email: "alex@ecla.solutions"
   web: "https://ecla.solutions/"
 ...
-# vim: ft=ansible:
 ```
