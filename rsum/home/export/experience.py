@@ -57,7 +57,17 @@ def add_experience(settings, experience, document):
 
 
 def set_tables(document, **dargs):
-    """Set the tables for experience sections."""
+    """Set tables for the experience section."""
+    document = (
+        prep_tables(
+            document=document, value=dargs.get('value'),
+            index=dargs.get('index'), settings=dargs.get('settings'))
+    )
+    return document
+
+
+def prep_tables(document, **dargs):
+    """Prepare tables."""
     for item in dargs.get('value'):
         index = dargs.get('index')
         settings = dargs.get('settings')
@@ -86,25 +96,36 @@ def set_tables(document, **dargs):
             ),
             width=Cm(4.8)
         )
-        paragraph = table.cell(row, col).paragraphs[1]
-        paragraph.paragraph_format.space_after = 0
+        document = finish_tables(
+            document=document, table=table, row=row, col=col, item=item)
+    return document
 
-        paragraph = table.cell(row, col).add_paragraph(
-            item.get('position'),
-            style='Heading 4')
-        paragraph.paragraph_format.line_spacing = 1.0
-        paragraph.paragraph_format.space_after = 0
-        paragraph = table.cell(row, col).add_paragraph(
-            item.get('company'),
-            style='Heading 5')
-        paragraph.paragraph_format.line_spacing = 1.0
-        paragraph.paragraph_format.space_before = 0
-        paragraph = table.cell(row, col).add_paragraph(
-            "{0}, {1}".format(
-                item.get('location'),
-                item.get('duration')),
-            style='Heading 6')
-        paragraph.paragraph_format.line_spacing = 1.0
-        paragraph.paragraph_format.space_before = 0
-        table = add_projects(item.get('projects'), table, row, col)
+
+def finish_tables(document, **dargs):
+    """Complete process started in calling methond."""
+    table = dargs.get('table')
+    row = dargs.get('row')
+    col = dargs.get('col')
+    item = dargs.get('item')
+    paragraph = table.cell(row, col).paragraphs[1]
+    paragraph.paragraph_format.space_after = 0
+
+    paragraph = table.cell(row, col).add_paragraph(
+        item.get('position'),
+        style='Heading 4')
+    paragraph.paragraph_format.line_spacing = 1.0
+    paragraph.paragraph_format.space_after = 0
+    paragraph = table.cell(row, col).add_paragraph(
+        item.get('company'),
+        style='Heading 5')
+    paragraph.paragraph_format.line_spacing = 1.0
+    paragraph.paragraph_format.space_before = 0
+    paragraph = table.cell(row, col).add_paragraph(
+        "{0}, {1}".format(
+            item.get('location'),
+            item.get('duration')),
+        style='Heading 6')
+    paragraph.paragraph_format.line_spacing = 1.0
+    paragraph.paragraph_format.space_before = 0
+    table = add_projects(item.get('projects'), table, row, col)
     return document
