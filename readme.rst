@@ -14,7 +14,7 @@ This project is meant to provide all of the required services for a fully functi
 Requirements
 ------------
 
-There are some, definitely.  And I'm pretty sure this got converted already.
+There are some, definitely.  And I'm pretty sure this got converted already.  This is useless.
 
 
 Installation
