@@ -10,7 +10,8 @@ class ViewsTestCase(object):
 
     def test_index(self):
         """Test retrieval of index page."""
-        assert self.assertion
+        if not self.assertion:
+            raise AssertionError()
 
     def test_export_docx(self):
         """Test export of Word format document.
@@ -18,4 +19,5 @@ class ViewsTestCase(object):
         :return: None
         :raises: :exc:`AssertionError`
         """
-        assert self.assertion
+        if not self.assertion:
+            raise AssertionError()
