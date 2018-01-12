@@ -15,7 +15,7 @@ class EntryTestCase(TestCase):
        Related :obj:`home.models.cv.CV` for testing.
 
     .. attribute:: project_item
-    
+
        Related :obj:`home.models.projectitem.ProjectItem` for testing.
 
     .. attribute:: entry
@@ -40,13 +40,14 @@ class EntryTestCase(TestCase):
         sub_section.save()
         project = home.models.project.Project(sub_section=sub_section)
         project.save()
-        self.project_item = home.models.projectitem.ProjectItem(project=project)
+        self.project_item = home.models.projectitem.ProjectItem(
+            project=project)
         self.project_item.save()
         return None
 
     def test_save_entry(self):
         """Test saving an entry to the Entry model.
-        
+
         :return: none
         :rtype: None
         """
@@ -61,12 +62,13 @@ class EntryTestCase(TestCase):
             }
         })
 
-        entry_instance = self.entry 
+        entry_instance = self.entry
         entry_instance_result = entry_instance.save_entry(
             entry,
             self.project_item)
 
-        assert isinstance(entry_instance_result,
+        assert isinstance(
+            entry_instance_result,
             models.query.QuerySet)
         return None
 
@@ -75,8 +77,8 @@ class GetEntryTestCase(TestCase):
     """Class for testing the get methods for entries."""
     def setUp(self):
         """Setup the GetEntryTestCase."""
-        return None 
-    
+        return None
+
     def test_get_entry(self):
         """Test getting an entry."""
         return None
