@@ -59,11 +59,12 @@ class ExportDocument(object):
         paragraph = []
 
         sections = json.loads(profile.content)
+
+        document = self.add_intro(sections, document)
+
         for section in sections:
-            print(section.items())
+            print(section) 
             for name, local_section in section.items():
-                if name == u'intro':
-                    document = self.add_intro(local_section, document)
 
                 if name == u'summary':
                     paragraph = document.add_paragraph('')
@@ -95,7 +96,7 @@ class ExportDocument(object):
 
         return stream
 
-    def add_intro(self, intro, document):
+    def add_intro(self, sections, document):
         """Add introduction section.
 
         :param intro: Introduction to add to document.
@@ -105,21 +106,24 @@ class ExportDocument(object):
         :return: Document updated with Introduction.
         :rtype: object
         """
-        s = self.s
+        intro = map(lambda x: x['intro'], sections)
+        settings = self.settings
         table = document.add_table(rows=1, cols=2)
         table.cell(0, 0).width = Cm(12)
 
         table.alignment = WD_TABLE_ALIGNMENT.CENTER
         table.cell(0, 0).add_paragraph(
             intro.get('name'),
-            style='Heading 1')
+            style='Heading 1'
+        )
         table.cell(0, 0).add_paragraph(
             intro.get('position'),
             style='Heading 2')
 
         table.cell(0, 1).width = Cm(4)
         table.cell(0, 1).add_picture(
-            '/srv/rsum/static/{0}/img/mockup/avatar-02.png'.format(s.DIR))
+            '/srv/rsum/static/{0}/img/mockup/avatar-02.png'.format(
+                settings.DIR))
         table.cell(
             0,
             1
