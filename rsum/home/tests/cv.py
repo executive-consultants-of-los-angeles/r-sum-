@@ -3,8 +3,6 @@
 """Test cases for the home.schema.cv module."""
 from __future__ import unicode_literals
 
-import json
-import socket
 import yaml
 
 from django.test import TestCase
@@ -31,7 +29,7 @@ class CVTestCase(TestCase):
         """
         self.cv_id = cv.check_sections(
             name_of_owner='alex',
-            name_of_cv='complete', 
+            name_of_cv='complete',
             template='acecb'
         )
         self.assertEqual(
@@ -41,17 +39,17 @@ class CVTestCase(TestCase):
             ).values_list(
                 'id',
                 flat=True
-            ))[0] 
+            ))[0]
         )
         """
-        self.assertEqual(True, True)
+        self.assertEqual(cv, True)
 
     def test_save_abridged_cv(self):
         """Test save for abridged cv."""
         abridged = self.abridged
         cv = CV()
         cv_id = cv.save_cv(
-            abridged, 
+            abridged,
             settings.CV,
             template=settings.OWNER)
         self.assertEqual(
@@ -67,43 +65,15 @@ class CVTestCase(TestCase):
 
 class CVGetsTestCase(TestCase):
     """Test class for CV get methods."""
-    def setUp(self):
-        """Set up test class for cv get mehtods."""
-        """
-        cv = CV()
-        complete = open('/srv/rsum/cvs/alex/complete.yml')
-        self.complete = yaml.load(complete.read())
-        complete.close()
-        cv = CV.objects.filter(
-            id=cv.check_sections(
-                name_of_owner='alex',
-                name_of_cv='complete',
-                template='acecv'
-            )
-        )
-        sections = Section.objects.filter(cv=cv)[5]
-        print(json.dumps(list(SubSection.objects.filter(section=sections).values()), indent=1))
-        self.complete_sections = cv.get_cv(cv_id=1, cvname='complete').get('sections')
-        self.skills = cv.get_skills({'cv':self.complete_sections})
-        self.values = cv.get_values({'cv':self.complete_sections})
-        self.experience = cv.get_experience({'cv':self.complete_sections})
-        self.cv_id = 1 
-
-        self.cv_abridged_id = cv.check_sections(
-            name_of_owner='alex',
-            name_of_cv='abridged',
-            template='acecv'
-        )
-        self.ab_sections = cv.get_cv(cv_id=cv_id, cvname='abridged').get('sections')
-        """
-        cv = CV()
 
     def test_get_cv(self):
         """Broken, test get cv."""
         """
         cv_instance = CV()
-        complete_sections = cv_instance.get_cv(cv_id=self.cv_id, cvname='complete').get('sections')
-        ab_sections = cv_instance.get_cv(cv_id=self.cv_abridged_id, cvname='abridged').get('sections')
+        complete_sections = cv_instance.get_cv(
+            cv_id=self.cv_id, cvname='complete').get('sections')
+        ab_sections = cv_instance.get_cv(
+            cv_id=self.cv_abridged_id, cvname='abridged').get('sections')
         self.assertEqual(
             len(ab_sections),
             len(self.ab_sections)
@@ -113,7 +83,7 @@ class CVGetsTestCase(TestCase):
             len(self.complete_sections)
         )
         """
-        self.assertEqual(True,True)
+        self.assertEqual(True, True)
 
     def test_get_experience(self):
         """Broken, test get experience."""
@@ -128,7 +98,7 @@ class CVGetsTestCase(TestCase):
             self.experience
         )
         """
-        self.assertEqual(True,True)
+        self.assertEqual(True, True)
 
     def test_get_skills(self):
         """Broken, test get skills."""
@@ -143,11 +113,11 @@ class CVGetsTestCase(TestCase):
            self.skills
         )
         """
-        self.assertEqual(True,True)
-    
+        self.assertEqual(True, True)
+
     def test_get_values(self):
         """Broken, test get values.
-        
+
         .. note:: This will be fixed as soon as I have the bandwidth.
         """
         """
@@ -161,4 +131,4 @@ class CVGetsTestCase(TestCase):
             self.values
         )
         """
-        self.assertEqual(True,True)
+        self.assertEqual(True, True)
