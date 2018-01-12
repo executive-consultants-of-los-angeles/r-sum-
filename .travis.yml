@@ -12,12 +12,15 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
       > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
+  - docker run --expose 5432 -h pg.gc --name pg.gc --rm -d postgres:latest
   - sudo pip install virtualenv
   - virtualenv -p /usr/bin/python3 .py
   - .py/bin/pip install -r .requirements
   - .py/bin/pip install -e .
   - ./cc-test-reporter before-build
 script:
+  - docker build -t rsum .
+  - docker run -d --rm rsum
   - .py/bin/pytest || true
   - .py/bin/coverage run setup.py test || true
   - .py/bin/coverage xml
