@@ -80,24 +80,33 @@ def prep_tables(document, **dargs):
             table = document.add_table(rows=1, cols=3)
             table.alignment = WD_TABLE_ALIGNMENT.CENTER
 
-        if (
-                index % 18 == 0
-                and index > 17
-        ):
-            document.add_page_break()
-            table = document.add_table(rows=1, cols=3)
-            table.alignment = WD_TABLE_ALIGNMENT.CENTER
-        paragraph = table.cell(row, col).paragraphs[0]
-        paragraph.paragraph_format.line_spacing = 0.0
-        table.cell(row, col).add_picture(
-            '/srv/rsum/static/{}/img/970x647/{}.jpg'.format(
-                settings.DIR,
-                index+1
-            ),
-            width=Cm(4.8)
-        )
-        document = finish_tables(
-            document=document, table=table, row=row, col=col, item=item)
+        document = build_tables(
+            document=document, settings=settings, row=row, col=col, item=item)
+        return document
+
+
+def build_tables(document, **dargs):
+    """Construct tables."""
+    index = dargs.get('index')
+    row = dargs.get('row')
+    col = dargs.get('col')
+    settings = dargs.get('settings')
+    item = dargs.get('item')
+    if (index % 18 == 0 and index > 17):
+        document.add_page_break()
+        table = document.add_table(rows=1, cols=3)
+        table.alignment = WD_TABLE_ALIGNMENT.CENTER
+    paragraph = table.cell(row, col).paragraphs[0]
+    paragraph.paragraph_format.line_spacing = 0.0
+    table.cell(row, col).add_picture(
+        '/srv/rsum/static/{}/img/970x647/{}.jpg'.format(
+            settings.DIR,
+            index+1
+        ),
+        width=Cm(4.8)
+    )
+    document = finish_tables(
+        document=document, table=table, row=row, col=col, item=item)
     return document
 
 
