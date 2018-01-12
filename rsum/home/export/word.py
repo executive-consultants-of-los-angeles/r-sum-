@@ -31,6 +31,7 @@ class ExportDocument(object):
 
        Filename to offer to the end user.
     """
+
     s = settings
 
     def __init__(self):
