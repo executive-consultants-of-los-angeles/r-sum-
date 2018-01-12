@@ -120,19 +120,15 @@ def finish_tables(document, **dargs):
     paragraph.paragraph_format.space_after = 0
 
     paragraph = table.cell(row, col).add_paragraph(
-        item.get('position'),
-        style='Heading 4')
+        item.get('position'), style='Heading 4')
     paragraph.paragraph_format.line_spacing = 1.0
     paragraph.paragraph_format.space_after = 0
     paragraph = table.cell(row, col).add_paragraph(
-        item.get('company'),
-        style='Heading 5')
+        item.get('company'), style='Heading 5')
     paragraph.paragraph_format.line_spacing = 1.0
     paragraph.paragraph_format.space_before = 0
     paragraph = table.cell(row, col).add_paragraph(
-        "{0}, {1}".format(
-            item.get('location'),
-            item.get('duration')),
+        "{0}, {1}".format(item.get('location'), item.get('duration')),
         style='Heading 6')
     paragraph.paragraph_format.line_spacing = 1.0
     paragraph.paragraph_format.space_before = 0
