@@ -265,14 +265,4 @@ class ExportDocument(object):
                 education.get('duration')),
             style='Heading 6')
         paragraph.paragraph_format.space_before = 0
-        """
-        for name, project in education.get('projects').items():
-            paragraph = document.add_paragraph(
-                name.title(),
-                style='List Bullet')
-            for item in project:
-                paragraph = document.add_paragraph(
-                    item,
-                    style='List Bullet 2')
-        """
         return document
