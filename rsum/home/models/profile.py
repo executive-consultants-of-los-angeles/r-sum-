@@ -24,7 +24,7 @@ class Profile(models.Model):
     """
 
     name = models.CharField(max_length=200, unique=True)
-    content = JSONField()
+    content = JSONField(default={})
 
     @classmethod
     def create(cls):

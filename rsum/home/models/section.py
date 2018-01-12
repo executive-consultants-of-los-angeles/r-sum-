@@ -22,12 +22,14 @@ class Section(models.Model):
 
        JSON encoded content for the current section.
     """
+
     profile = models.ForeignKey(
         'home.Profile',
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        default=1
     )
     name = models.CharField(max_length=200, default='section')
-    content = JSONField()
+    content = JSONField(default={})
 
     @classmethod
     def create(cls, name='default', *args, **kwargs):
