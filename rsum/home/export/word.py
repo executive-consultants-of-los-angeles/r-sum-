@@ -222,31 +222,6 @@ class ExportDocument(object):
                 index = index + 1
         return ts
 
-    def add_projects(self, projects, table, row, col):
-        """Add projects to experience section.
-
-        :param [dict(str, str)] projects:
-            Projects for a portion of Experience section.
-        :param object table: Table from current document.
-        :param int row: Index of current row.
-        :param int col: Index of current col.
-        :return: Updated Projects table.
-        :rtype: object
-        """
-        for name, project in projects.items():
-            p = table.cell(row, col).add_paragraph(
-                name.replace('_', ' ').title(),
-                style='List Bullet')
-            p.paragraph_format.line_spacing = 1.0
-            p.paragraph_format.space_after = 0
-            for item in project:
-                p = table.cell(row, col).add_paragraph(
-                    item,
-                    style='List Bullet 2')
-                p.paragraph_format.line_spacing = 1.0
-                p.paragraph_format.space_after = 0
-        return table
-
     def add_education(self, education, document):
         """Add education section.
 

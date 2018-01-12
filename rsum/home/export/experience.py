@@ -3,6 +3,32 @@ from docx.shared import Cm
 from docx.enum.table import WD_TABLE_ALIGNMENT
 
 
+def add_projects(projects, table, row, col):
+    """Add projects to experience section.
+
+    :param [dict(str, str)] projects:
+        Projects for a portion of Experience section.
+    :param object table: Table from current document.
+    :param int row: Index of current row.
+    :param int col: Index of current col.
+    :return: Updated Projects table.
+    :rtype: object
+    """
+    for name, project in projects.items():
+        paragraph = table.cell(row, col).add_paragraph(
+            name.replace('_', ' ').title(),
+            style='List Bullet')
+        paragraph.paragraph_format.line_spacing = 1.0
+        paragraph.paragraph_format.space_after = 0
+        for item in project:
+            paragraph = table.cell(row, col).add_paragraph(
+                item,
+                style='List Bullet 2')
+            paragraph.paragraph_format.line_spacing = 1.0
+            paragraph.paragraph_format.space_after = 0
+    return table
+
+
 def add_experience(settings, experience, document):
     """Add experience section.
 
@@ -25,7 +51,7 @@ def add_experience(settings, experience, document):
         if index % 3 == 0:
             table.add_row()
 
-        for name, item in value.items():
+        for item in value:
             row = (index % 9) / 3
             col = index % 3
             if (
