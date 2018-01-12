@@ -3,14 +3,14 @@ language: python
 sudo: required
 env:
   global:
-  - CC_TEST_REPORTER_ID=017293648534356d82740656441287b28c2402f86a30e9f6a8fe50fbb2b1e7e7
+  - CC_TEST_REPORTER_ID=47df5e0000c73f07c1950f0da60b7e5bbc8b7021e646f20d0d8d2794c52d81b7
   - CODACY_PROJECT_TOKEN=a6401ae2caa54f229e65b73ec1863ef1 
 cache:
   pip: 'yes'
 before_script:
   - sudo apt-get -y install build-essential
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
-    > ./cc-test-reporter
+      > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - sudo pip install virtualenv
   - virtualenv -p /usr/bin/python3 .py
@@ -22,5 +22,5 @@ script:
   - .py/bin/coverage xml
 after_script:
   - .py/bin/python-codacy-coverage -r coverage.xml
-  - "./cc-test-reporter after-build -t coverage.py --exit-code $TRAVIS_TEST_RESULT"
+  - ./cc-test-reporter after-build -t coverage.py --exit-code $TRAVIS_TEST_RESULT
 ...
