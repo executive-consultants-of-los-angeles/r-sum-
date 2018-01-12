@@ -16,9 +16,9 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 from home.models.profile import Profile
 
+from experience import add_experience
 from . import layout
 from . import style
-from . import experience
 
 
 class ExportDocument(object):
@@ -63,7 +63,7 @@ class ExportDocument(object):
         document = self.add_intro(sections, document)
         document = self.add_summary(sections, document)
         document = self.add_skills(sections[2], document)
-        document = experience.add_experience(
+        document = add_experience(
             self.settings, sections[3], document)
         document = self.add_education(sections[4], document)
         document = self.add_contact(sections[5], document)
@@ -268,55 +268,4 @@ class ExportDocument(object):
                 p = document.add_paragraph(
                     item,
                     style='List Bullet 2')
-        return document
-
-    def add_contact(self, contact, document):
-        """Add contact section.
-
-        :param [dict(str, str)] contact:
-            Contact section for current document.
-        :param object document: Current document.
-        :return: Current document with Contact section.
-        :rtype: object
-        """
-        paragraph = document.add_paragraph('')
-        paragraph.paragraph_format.line_spacing = 0.0
-        document.add_paragraph(contact.get('title'), style='Heading 3')
-        p = document.add_paragraph(contact.get('message'), style='Normal')
-        p.paragraph_format.space_after = 0
-        t = document.add_table(rows=2, cols=6)
-        p = t.cell(0, 0).paragraphs[0]
-        p.paragraph_format.line_spacing = 0
-        t.cell(0, 0).add_paragraph(
-            'Website',
-            style='Heading 4')
-        p = t.cell(0, 0).add_paragraph(
-            contact.get('web'),
-            style='Heading 5')
-        p.paragraph_format.space_before = 0
-        p = t.cell(0, 1).paragraphs[0]
-        p.paragraph_format.line_spacing = 0
-        t.cell(0, 1).add_paragraph(
-            'Email',
-            style='Heading 4')
-        p = t.cell(0, 1).add_paragraph(
-            contact.get('email'),
-            style='Heading 5')
-        p.paragraph_format.space_before = 0
-        p = t.cell(1, 0).paragraphs[0]
-        p.paragraph_format.line_spacing = 0
-        t.cell(1, 0).add_paragraph(
-            'Phone',
-            style='Heading 4')
-        p = t.cell(1, 0).add_paragraph(
-            contact.get('phone'),
-            style='Heading 5')
-        p.paragraph_format.space_before = 0
-        p = t.cell(1, 1).paragraphs[0]
-        p.paragraph_format.line_spacing = 0
-        t.cell(1, 1).add_paragraph('Location', style='Heading 4')
-        p = t.cell(1, 1).add_paragraph(
-            contact.get('location'),
-            style='Heading 5')
-        p.paragraph_format.space_before = 0
         return document
