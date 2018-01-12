@@ -17,6 +17,7 @@ Well, I guess a review of the section shema and implemented methods is in order.
 
 A section object conists of a django model with three attributes, all of the methods inherited from django.models.Model plus an additional create method, and finally a meta class for describing the model's metadata.
 
-.. currentmodule:: rsum.home.models.section
+.. currentmodule:: home.models.section
 
 .. autoclass:: Section
+   :members:

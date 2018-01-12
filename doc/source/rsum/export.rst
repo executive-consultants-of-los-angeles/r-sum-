@@ -7,7 +7,7 @@ Submodules
 export\.admin module
 --------------------
 
-.. automodule:: export.admin
+.. automodule:: rsum.export.admin
     :members:
     :undoc-members:
     :show-inheritance:
