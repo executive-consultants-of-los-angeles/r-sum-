@@ -26,6 +26,7 @@ def set_first_headings(document):
     font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
     font.size = Pt(14)
     font.bold = True
+    return document
 
 
 def set_second_headings(document):
@@ -52,6 +53,7 @@ def set_second_headings(document):
     font.size = Pt(6)
     font.bold = True
     font.italic = False
+    return document
 
 
 def set_list_bullets(document):
@@ -68,6 +70,7 @@ def set_list_bullets(document):
     font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
     font.size = Pt(5)
     font.name = 'Hind'
+    return document
 
 
 def set_final_styles(document):
@@ -102,7 +105,8 @@ def set_styles(document):
     :return: Current document with correct styles.
     :rtype: object
     """
-    set_first_headings(document)
-    set_second_headings(document)
-    set_list_bullets(document)
-    set_final_styles(document)
+    document = set_first_headings(document)
+    document = set_second_headings(document)
+    document = set_list_bullets(document)
+    document = set_final_styles(document)
+    return document

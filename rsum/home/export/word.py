@@ -17,6 +17,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from home.models.profile import Profile
 
 from . import layout
+from . import style
 
 
 class ExportDocument(object):
@@ -53,7 +54,7 @@ class ExportDocument(object):
         profile = Profile.objects.get(pk=profile_id)
         stream = StringIO()
         document = Document()
-        document = self.set_styles(document)
+        document = style.set_styles(document)
         document = layout.set_layout(document)
 
         sections = json.loads(profile.content)
