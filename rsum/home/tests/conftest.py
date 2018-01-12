@@ -2,13 +2,19 @@
 import pytest
 
 import django
-from django.conf import settings
 
-from home import models
 from home.export.word import ExportDocument
+from home.models.profile import Profile
 
 django.setup()
 
+
+@pytest.fixture(scope="session")
+def profile():
+    """Create a profile for testing."""
+    prof = Profile.create()
+    print(prof)
+    return prof
 
 
 @pytest.fixture(scope="session")
