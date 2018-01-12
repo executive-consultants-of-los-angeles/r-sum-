@@ -1,5 +1,17 @@
 .cache/
+rsum/home/migrations
+cc-test-reporter
+*.pyc
+*.xml
+.rsum/
+dist/
+.eggs/
+*egg*
+.py/
+build/
+.py3/
 __pycache__/
 *.swp
 files/deploy/deploy
 *.xcf
+.coverage
