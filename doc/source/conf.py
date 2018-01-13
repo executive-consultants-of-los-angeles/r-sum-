@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Sphinx configuration module."""
 # -*- coding: utf-8 -*-
-# pylint: disable=C0103
+# pylint: disable=C0103,redefined-builtin,wrong-import-position
 #
 # rsum documentation build configuration file, created by
 # sphinx-quickstart on Sat Jan  6 08:00:05 2018.
@@ -35,9 +35,11 @@
 # ones.
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../..'))
+import django
 from django.conf import settings
+sys.path.insert(0, os.path.abspath('../..'))
 settings.configure()
+django.setup()
 
 extensions = [
     'sphinx.ext.autodoc',
@@ -92,7 +94,9 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = []
+exclude_patterns = [
+    '**/.eggs',
+]
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'

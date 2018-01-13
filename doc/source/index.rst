@@ -10,8 +10,6 @@ Welcome to rsum's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   rsum/manage 
-
 
 Indices and tables
 ==================
