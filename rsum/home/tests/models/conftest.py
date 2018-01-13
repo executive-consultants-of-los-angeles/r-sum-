@@ -4,6 +4,7 @@ import pytest
 import django
 
 from home.models.profile import Profile
+from home.models.section import Section
 
 django.setup()
 
@@ -14,3 +15,9 @@ def profile():
     test_profile = Profile.create()
     print(test_profile)
     return test_profile
+
+
+@pytest.fixture(scope="session")
+def section():
+    """Create a section for testing."""
+    return Section
