@@ -15,7 +15,7 @@ before_script:
   - docker network create rsum || true
   - docker run --network rsum --expose 5432 -h pg.gc --name pg.gc --rm -d postgres:alpine
   - docker ps
-  - docker exec --user postgres pg.gc createuser -s xander
+  - docker exec --user postgres pg.gc pg_ctl start 
   - ./cc-test-reporter before-build
   - sudo pip install codacy-coverage
 script:
