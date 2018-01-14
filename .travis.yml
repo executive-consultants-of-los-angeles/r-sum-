@@ -13,7 +13,8 @@ before_script:
       > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - docker network create rsum || true
-  - docker run --network rsum --expose 5432 -h pg.gc --name pg.gc --rm -d postgres:alpine
+  - mkdir pg
+  - docker run -v ./pg:/var/lib/postgresql:rw --network rsum --expose 5432 -h pg.gc --name pg.gc --rm -d postgres:alpine
   - docker ps
   - docker exec --user postgres pg.gc pg_ctl start 
   - ./cc-test-reporter before-build
