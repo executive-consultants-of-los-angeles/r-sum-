@@ -13,7 +13,7 @@
       - travis:
           name: 'travis'
           image:
-             'https://travis-ci.org/gahan-corporation/rsum.application.svg?branch=master'
+            'https://travis-ci.org/gahan-corporation/rsum.application.svg?branch=master'
           link:
             'https://travis-ci.org/gahan-corporation/rsum.application'
       - codacy:

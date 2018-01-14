@@ -21,13 +21,13 @@ var ProgressBar = function() {
                 });
             });
         });
-    }
+    };
 
     return {
         init: function() {
             handleProgressBars(); // initial setup for progressbars
         }
-    }
+    };
 }();
 
 $(document).ready(function() {
