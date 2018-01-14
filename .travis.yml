@@ -15,7 +15,7 @@ script:
   - cd container
   - docker build -t rsum .
   - cd ..
-  - docker run -e CODACY_PROJECT_TOKEN=a6401ae2caa54f229e65b73ec1863ef1  CC_TEST_REPORTER_ID=47df5e0000c73f07c1950f0da60b7e5bbc8b7021e646f20d0d8d2794c52d81b7 -e PYTHONPATH=/srv/rsum --network rsum -d --name rsum --rm rsum
+  - docker run -e CODACY_PROJECT_TOKEN=a6401ae2caa54f229e65b73ec1863ef1 CC_TEST_REPORTER_ID=47df5e0000c73f07c1950f0da60b7e5bbc8b7021e646f20d0d8d2794c52d81b7 -e PYTHONPATH=/srv/rsum --network rsum -d --name rsum --rm rsum
   - docker exec pg.gc createuser -s xander 
   - docker exec rsum cc-test-reporter before-build
   - docker exec rsum pytest rsum/home/tests/models/test_section.py
