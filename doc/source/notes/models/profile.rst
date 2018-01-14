@@ -28,3 +28,11 @@ Okay, so it ought to be pretty easy to test then, yeah?
 The author believes so, yes.  It should require just the three tests: one for instantion of Profile objects, one for the attributes of the object, and one to test the create method.
 
 The third test should be the hardest to write since it involves checking the related section objects.
+
+Profile Class
+.............
+
+.. currentmodule:: home.models.profile
+
+.. autoclass:: Profile
+   :members:
