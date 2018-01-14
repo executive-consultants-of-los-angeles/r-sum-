@@ -1,0 +1,7 @@
+---
+formatter: verbose 
+rules:
+  block-no-empty: true
+  comment-empty-line-before: always 
+...
+# vim: set ft=yaml:

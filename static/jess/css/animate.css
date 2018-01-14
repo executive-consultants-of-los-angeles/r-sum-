@@ -1841,8 +1841,8 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .flipInX {
-  -webkit-backface-visibility: visible !important;
-  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible ;
+  backface-visibility: visible ;
   -webkit-animation-name: flipInX;
   animation-name: flipInX;
 }
@@ -1914,8 +1914,8 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .flipInY {
-  -webkit-backface-visibility: visible !important;
-  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible ;
+  backface-visibility: visible ;
   -webkit-animation-name: flipInY;
   animation-name: flipInY;
 }
@@ -1961,8 +1961,8 @@ Copyright (c) 2015 Daniel Eden
 .flipOutX {
   -webkit-animation-name: flipOutX;
   animation-name: flipOutX;
-  -webkit-backface-visibility: visible !important;
-  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible ;
+  backface-visibility: visible ;
 }
 
 @-webkit-keyframes flipOutY {
@@ -2004,8 +2004,8 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .flipOutY {
-  -webkit-backface-visibility: visible !important;
-  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible ;
+  backface-visibility: visible ;
   -webkit-animation-name: flipOutY;
   animation-name: flipOutY;
 }
