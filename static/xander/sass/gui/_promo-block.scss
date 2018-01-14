@@ -28,7 +28,7 @@
 	.promo-block-img-wrap {
 		@include position(relative);
 		height: 400px;
-		
+
 		@media (max-width: $screen-sm-min) {
 			height: auto;
 		}
