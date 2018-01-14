@@ -21,8 +21,10 @@ before_script:
 script:
   - cd container
   - docker build -t rsum .
-  - docker run -d --rm rsum
+  - docker run -d --name rsum --rm rsum
+  - docker stop rsum
   - cd ..
+  - .py/bin/pytest rsum/home/tests/models/test_section.py
   - .py/bin/pytest || true
   - .py/bin/coverage run setup.py test || true
   - .py/bin/coverage xml

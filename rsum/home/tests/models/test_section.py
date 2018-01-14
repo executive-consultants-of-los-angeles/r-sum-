@@ -1,4 +1,5 @@
 """Test module for the section class."""
+import json
 import pytest
 
 
@@ -16,14 +17,22 @@ class TestSection:
             raise AssertionError()
 
     @pytest.mark.usefixtures('db')
-    def test_section_save(self, profile, section):
+    def test_save_method(self, profile, section):
         """Test that sections save correctly."""
         self.section_obj = section
+        save_content = {
+            'projects': {
+                'one': 'grenada',
+                'two': 'the falkands'
+            }
+        }
 
         section = self.section_obj()
+        section.profile = profile
+        section.name = 'Tests!'
+        section.content = json.dumps(save_content)
         print(profile)
 
         print(section)
         if not isinstance(section, self.section_obj):
             raise AssertionError()
-
