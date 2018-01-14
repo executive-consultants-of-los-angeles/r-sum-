@@ -27,7 +27,7 @@ var ProgressBar = function() {
         init: function() {
             handleProgressBars(); // initial setup for progressbars
         }
-    }
+    };
 }();
 
 $(document).ready(function() {

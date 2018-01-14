@@ -1,6 +1,6 @@
 $(window).load(function(){
     // Swiper Clients
-    var swiper = new Swiper('.swiper-clients', {
+    var swiper = new Swiper(".swiper-clients", {
         slidesPerView: 5,
         spaceBetween: 50,
         loop: true,
@@ -29,7 +29,7 @@ $(window).load(function(){
     });
 
     // Swiper Clients
-    var swiper = new Swiper('.swiper-testimonials', {
+    var swiper = new Swiper(".swiper-testimonials", {
         speed: 1000,
         autoplay: 10000,
         slidesPerView: 1,

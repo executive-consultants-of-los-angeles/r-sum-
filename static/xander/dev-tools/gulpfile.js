@@ -70,9 +70,9 @@ gulp.task("rtlcss", function () {
 
 // Minify JS - Minifies JS
 gulp.task("uglify", function (cb) {
-  	pump([
-	        gulp.src(["../HTML/js/**/*.js", "!../HTML/js/**/*.min.js"]),
-	        uglify(),
+  pump([
+    gulp.src(["../HTML/js/**/*.js", "!../HTML/js/**/*.min.js"]),
+    uglify(),
 			rename({ suffix: ".min" }),
 	        gulp.dest("../HTML/js/")
 		],
