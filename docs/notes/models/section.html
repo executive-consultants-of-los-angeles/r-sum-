@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>home app section model &#8212; rsum 0.0.2 documentation</title>
+    <title>home.models.section &#8212; rsum 0.0.2 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,6 +23,8 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Views" href="../views/index.html" />
+    <link rel="prev" title="home.models.profile" href="profile.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -38,8 +40,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="home-app-section-model">
-<h1>home app section model<a class="headerlink" href="#home-app-section-model" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="home-models-section">
+<h1>home.models.section<a class="headerlink" href="#home-models-section" title="Permalink to this headline">¶</a></h1>
 <p>Here will be a brief but complet e discussion of the properties and attributes of the section model.</p>
 <div class="section" id="just-what-is-a-section-anyway">
 <h2>Just what is a section anyway?<a class="headerlink" href="#just-what-is-a-section-anyway" title="Permalink to this headline">¶</a></h2>
@@ -50,37 +52,20 @@
 <h2>Okay, so, we’ve lowered our expectations for this software, now what?<a class="headerlink" href="#okay-so-we-ve-lowered-our-expectations-for-this-software-now-what" title="Permalink to this headline">¶</a></h2>
 <p>Well, I guess a review of the section shema and implemented methods is in order.</p>
 <p>A section object conists of a django model with three attributes, all of the methods inherited from django.models.Model plus an additional create method, and finally a meta class that sets the app label and any other options that may be required.</p>
-<div class="section" id="fields">
-<h3>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">profile:</th><td class="field-body">A link to the relevant Profile.</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body">The name of the section.</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">content:</th><td class="field-body">The content of the section stored in JSON.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
+</div>
+</div>
+<div class="section" id="section-fields">
+<h1>Section Fields<a class="headerlink" href="#section-fields" title="Permalink to this headline">¶</a></h1>
+<p>:profile A link to the relevant Profile.
+:name The name of the section.
+:content The content of the section stored in JSON.</p>
+<div class="section" id="so-how-do-we-write-unit-tests-for-a-section-object">
+<h2>So how do we write unit tests for a Section object?<a class="headerlink" href="#so-how-do-we-write-unit-tests-for-a-section-object" title="Permalink to this headline">¶</a></h2>
+<p>This should be relatively simple I think.  We can start with instantiating a section object and checking that it’s got all of the required attributes.  Then we can test each attribute to be sure that it is of the correct type. Finally, we can run the create method for a section then check that it is stored in the database.</p>
+</div>
+</div>
+<div class="section" id="section-class">
+<h1>Section Class<a class="headerlink" href="#section-class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="home.models.section.Section">
 <em class="property">class </em><code class="descclassname">home.models.section.</code><code class="descname">Section</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../_modules/home/models/section.html#Section"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section" title="Permalink to this definition">¶</a></dt>
@@ -88,7 +73,7 @@
 <dl class="attribute">
 <dt id="home.models.section.Section.profile">
 <code class="descname">profile</code><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.profile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Related <code class="xref py py-obj docutils literal"><span class="pre">home.models.profile.Profile</span></code> object.</p>
+<dd><p>Related <a class="reference internal" href="profile.html#home.models.profile.Profile" title="home.models.profile.Profile"><code class="xref py py-obj docutils literal"><span class="pre">home.models.profile.Profile</span></code></a> object.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -131,12 +116,6 @@
 </dd></dl>
 
 </div>
-</div>
-<div class="section" id="finally-how-do-we-write-unit-tests-for-a-section-object">
-<h2>Finally, how do we write unit tests for a Section object?<a class="headerlink" href="#finally-how-do-we-write-unit-tests-for-a-section-object" title="Permalink to this headline">¶</a></h2>
-<p>This should be relatively simple I think.  We can start with instantiating a section object and checking that it’s got all of the required attributes.  Then we can test each attribute to be sure that it is of the correct type. Finally, we can run the create method for a section then check that it is stored in the database.</p>
-</div>
-</div>
 
 
           </div>
@@ -147,6 +126,12 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../home.html">notes for the home app</a><ul>
+  <li><a href="index.html">home app models</a><ul>
+      <li>Previous: <a href="profile.html" title="previous chapter">home.models.profile</a></li>
+      <li>Next: <a href="../views/index.html" title="next chapter">Views</a></li>
+  </ul></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>

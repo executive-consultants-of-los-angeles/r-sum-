@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>home app profile model &#8212; rsum 0.0.2 documentation</title>
+    <title>home.models.profile &#8212; rsum 0.0.2 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="home app section model" href="section.html" />
+    <link rel="next" title="home.models.section" href="section.html" />
     <link rel="prev" title="home app models" href="index.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -40,8 +40,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="home-app-profile-model">
-<h1>home app profile model<a class="headerlink" href="#home-app-profile-model" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="home-models-profile">
+<h1>home.models.profile<a class="headerlink" href="#home-models-profile" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-do-we-mean-by-profile">
 <h2>What do we mean by profile?<a class="headerlink" href="#what-do-we-mean-by-profile" title="Permalink to this headline">¶</a></h2>
 <p>A profile is a curriculum vitae for an individual that presents their pervious work such that it demonstrates their experience and skill.</p>
@@ -52,12 +52,64 @@
 </div>
 <div class="section" id="right-so-that-s-pretty-dumb-what-s-the-object-look-like">
 <h2>Right, so, that’s pretty dumb. What’s the object look like?<a class="headerlink" href="#right-so-that-s-pretty-dumb-what-s-the-object-look-like" title="Permalink to this headline">¶</a></h2>
-<p>Also pretty dumb.  The only attributes the Profile object contains are the name and the content.  The name, obviously, is the name of the current profile and the content is raw content of the loaded yaml file.</p>
+<p>Also pretty dumb.  The only attributes the Profile object contains are the name and the content.</p>
+<div class="section" id="profile-fields">
+<h3>Profile Fields<a class="headerlink" href="#profile-fields" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body">The name of the current Profile object.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">content:</th><td class="field-body">The unmodified JSON encoded content read from a yaml file.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="section" id="okay-so-it-ought-to-be-pretty-easy-to-test-then-yeah">
 <h2>Okay, so it ought to be pretty easy to test then, yeah?<a class="headerlink" href="#okay-so-it-ought-to-be-pretty-easy-to-test-then-yeah" title="Permalink to this headline">¶</a></h2>
 <p>The author believes so, yes.  It should require just the three tests: one for instantion of Profile objects, one for the attributes of the object, and one to test the create method.</p>
 <p>The third test should be the hardest to write since it involves checking the related section objects.</p>
+<div class="section" id="profile-class">
+<h3>Profile Class<a class="headerlink" href="#profile-class" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="home.models.profile.Profile">
+<em class="property">class </em><code class="descclassname">home.models.profile.</code><code class="descname">Profile</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/profile.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../_modules/home/models/profile.html#Profile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.profile.Profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Profile Model class.</p>
+<dl class="attribute">
+<dt id="home.models.profile.Profile.name">
+<code class="descname">name</code><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/profile.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.profile.Profile.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the current Profile.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="home.models.profile.Profile.content">
+<code class="descname">content</code><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/profile.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.profile.Profile.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>JSON encoded content for the current profile.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="home.models.profile.Profile.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/profile.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../_modules/home/models/profile.html#Profile.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.profile.Profile.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check to see if the current Profile Model already has sections.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cls</strong> (<a class="reference internal" href="#home.models.profile.Profile" title="home.models.profile.Profile"><code class="xref py py-obj docutils literal"><span class="pre">home.models.profile.Profile</span></code></a>) – The current class instance.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The created instance of <a class="reference internal" href="#home.models.profile.Profile" title="home.models.profile.Profile"><code class="xref py py-obj docutils literal"><span class="pre">home.models.profile.Profile</span></code></a>.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#home.models.profile.Profile" title="home.models.profile.Profile"><code class="xref py py-obj docutils literal"><span class="pre">home.models.profile.Profile</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 </div>
 </div>
 
@@ -73,7 +125,7 @@
   <li><a href="../home.html">notes for the home app</a><ul>
   <li><a href="index.html">home app models</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">home app models</a></li>
-      <li>Next: <a href="section.html" title="next chapter">home app section model</a></li>
+      <li>Next: <a href="section.html" title="next chapter">home.models.section</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

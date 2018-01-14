@@ -1,5 +1,5 @@
-home app section model
-======================
+home.models.section
+...................
 
 Here will be a brief but complet e discussion of the properties and attributes of the section model.
 
@@ -17,19 +17,22 @@ Well, I guess a review of the section shema and implemented methods is in order.
 
 A section object conists of a django model with three attributes, all of the methods inherited from django.models.Model plus an additional create method, and finally a meta class that sets the app label and any other options that may be required.
 
-Fields
-......
+Section Fields
+..............
 
-* :profile: A link to the relevant Profile.
-* :name: The name of the section.
-* :content: The content of the section stored in JSON.
+:profile A link to the relevant Profile.
+:name The name of the section.
+:content The content of the section stored in JSON.
+
+So how do we write unit tests for a Section object?
+---------------------------------------------------------
+
+This should be relatively simple I think.  We can start with instantiating a section object and checking that it's got all of the required attributes.  Then we can test each attribute to be sure that it is of the correct type. Finally, we can run the create method for a section then check that it is stored in the database.
+
+Section Class
+.............
 
 .. currentmodule:: home.models.section
 
 .. autoclass:: Section
    :members:
-
-Finally, how do we write unit tests for a Section object?
----------------------------------------------------------
-
-This should be relatively simple I think.  We can start with instantiating a section object and checking that it's got all of the required attributes.  Then we can test each attribute to be sure that it is of the correct type. Finally, we can run the create method for a section then check that it is stored in the database.
