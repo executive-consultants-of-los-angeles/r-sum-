@@ -29,9 +29,6 @@ class TestSection:
         section.content = json.dumps(save_content)
         section.save()
 
-        if section.id != 8:
-            raise AssertionError()
-
         if not isinstance(section, self.section_obj):
             raise AssertionError()
 
