@@ -17,7 +17,7 @@ var gulp 		= require("gulp"),
 
 // Gulp plumber error handler
 function errorLog(error) {
-	console.error.bind(error);
+	//console.error.bind(error);
 	this.emit("end");
 }
 
@@ -86,7 +86,7 @@ gulp.task("htmlhint", function() {
 	gulp.src("../HTML/*.html")
 		.pipe(htmlhint())
 		.pipe(htmlhint.reporter())
-	  	.pipe(htmlhint.failReporter({ suppress: true }))
+      .pipe(htmlhint.failReporter({ suppress: true }))
 });
 
 
