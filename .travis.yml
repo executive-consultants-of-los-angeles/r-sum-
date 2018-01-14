@@ -3,30 +3,30 @@ language: python
 sudo: required
 env:
   global:
-  - CC_TEST_REPORTER_ID=47df5e0000c73f07c1950f0da60b7e5bbc8b7021e646f20d0d8d2794c52d81b7
   - CODACY_PROJECT_TOKEN=a6401ae2caa54f229e65b73ec1863ef1 
 cache:
   pip: 'yes'
 before_script:
   - sudo apt-get -y install build-essential
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
-      > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
   - docker network create rsum || true
-  - docker run --network rsum --expose 5432 -h pg.gc --name pg.gc --rm -d postgres:latest
-  - ./cc-test-reporter before-build
+  - mkdir /tmp/pg
+  - docker pull postgres:alpine
+  - docker run --user postgres -v /tmp/pg:/var/lib/postgresql:rw --network rsum --expose 5432 -h pg.gc --name pg.gc --rm -d postgres:alpine postgres -D /var/lib/postgresql/data
   - sudo pip install codacy-coverage
 script:
   - cd container
   - docker build -t rsum .
   - cd ..
-  - docker run -e PYTHONPATH=/srv/rsum --network rsum -d --name rsum --rm rsum
+  - docker run -e CC_TEST_REPORTER_ID=47df5e0000c73f07c1950f0da60b7e5bbc8b7021e646f20d0d8d2794c52d81b7 -e PYTHONPATH=/srv/rsum --network rsum -d --name rsum --rm rsum
+  - docker exec pg.gc createuser -s xander 
+  - docker exec rsum cc-test-reporter before-build
   - docker exec rsum pytest rsum/home/tests/models/test_section.py
+  - docker exec rsum pytest rsum/home/tests/models/test_profile.py
   - docker exec rsum coverage run setup.py test || true
   - docker exec rsum coverage xml || true
+  - docker exec rsum cc-test-reporter after-build -t coverage.py --exit-code $TRAVIS_TEST_RESULT
   - docker cp rsum:/srv/rsum/coverage.xml .
   - docker stop rsum
 after_script:
   - python-codacy-coverage -r coverage.xml
-  - ./cc-test-reporter after-build -t coverage.py --exit-code $TRAVIS_TEST_RESULT
 ...
