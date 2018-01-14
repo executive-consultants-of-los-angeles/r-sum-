@@ -1,6 +1,5 @@
 """Test module for the section class."""
 import json
-import pytest
 
 
 class TestSection:
@@ -8,15 +7,11 @@ class TestSection:
 
     section_obj = object
 
-    @pytest.mark.usefixtures('db')
-    def test_section_instance(self, profile, section):
+    def test_section_instance(self, section):
         """Test the create method for Section objects."""
-        print(profile)
-        print(section)
         if not isinstance(section, self.section_obj):
             raise AssertionError()
 
-    @pytest.mark.usefixtures('db')
     def test_save_method(self, profile, section):
         """Test that sections save correctly."""
         section_profile = profile.create()
@@ -33,8 +28,26 @@ class TestSection:
         section.name = 'Tests!'
         section.content = json.dumps(save_content)
         section.save()
-        print(section.id)
 
-        print(section)
+        if section.id != 8:
+            raise AssertionError()
+
         if not isinstance(section, self.section_obj):
             raise AssertionError()
+
+    def test_attributes(self, profile, section):
+        """Get a section and test its attributes."""
+        self.section_obj = section
+        profile.create()
+        sections = self.section_obj.objects.all()
+
+        for item in sections:
+            json_content = json.loads(item.content)
+            if not isinstance(item.name, str):
+                raise AssertionError()
+
+            if not isinstance(json_content, (dict, list)):
+                raise AssertionError()
+
+            if not isinstance(item.profile, profile):
+                raise AssertionError()
