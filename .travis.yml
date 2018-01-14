@@ -12,20 +12,19 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
       > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
-  - docker run --expose 5432 -h pg.gc --name pg.gc --rm -d postgres:latest
-  - sudo pip install virtualenv
-  - virtualenv -p /usr/bin/python3 .py
-  - .py/bin/pip install -r .requirements
-  - .py/bin/pip install -e .
+  - docker network create rsum || true
+  - docker run --network rsum --expose 5432 -h pg.gc --name pg.gc --rm -d postgres:latest
   - ./cc-test-reporter before-build
 script:
   - cd container
   - docker build -t rsum .
-  - docker run -d --rm rsum
   - cd ..
-  - .py/bin/pytest || true
-  - .py/bin/coverage run setup.py test || true
-  - .py/bin/coverage xml
+  - docker run -e PYTHONPATH=/srv/rsum --network rsum -d --name rsum --rm rsum
+  - docker exec rsum pytest rsum/home/tests/models/test_section.py
+  - docker exec rsum coverage run setup.py test || true
+  - docker exec rsum coverage xml || true
+  - docker cp rsum:/srv/rsum/coverage.xml .
+  - docker stop rsum
 after_script:
   - .py/bin/python-codacy-coverage -r coverage.xml
   - ./cc-test-reporter after-build -t coverage.py --exit-code $TRAVIS_TEST_RESULT
