@@ -39,7 +39,7 @@ gulp.task('sass', function () {
 // Minify CSS
 gulp.task('minify-css', function() {
 	// Theme
-    gulp.src(['../HTML/css/layout.css', '!../HTML/css/layout.min.css'])
+    gulp.src(["../HTML/css/layout.css", "!../HTML/css/layout.min.css"])
         .pipe(cleanCSS({debug: true}, function(details) {
             console.log(details.name + ': ' + details.stats.originalSize);
             console.log(details.name + ': ' + details.stats.minifiedSize);
