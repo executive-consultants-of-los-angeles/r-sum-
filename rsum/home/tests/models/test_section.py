@@ -19,6 +19,7 @@ class TestSection:
     @pytest.mark.usefixtures('db')
     def test_save_method(self, profile, section):
         """Test that sections save correctly."""
+        section_profile = profile.create()
         self.section_obj = section
         save_content = {
             'projects': {
@@ -28,10 +29,11 @@ class TestSection:
         }
 
         section = self.section_obj()
-        section.profile = profile
+        section.profile = section_profile
         section.name = 'Tests!'
         section.content = json.dumps(save_content)
-        print(profile)
+        section.save()
+        print(section.id)
 
         print(section)
         if not isinstance(section, self.section_obj):

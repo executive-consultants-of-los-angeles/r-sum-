@@ -12,9 +12,7 @@ django.setup()
 @pytest.fixture(scope="session")
 def profile():
     """Create a profile for testing."""
-    test_profile = Profile.create()
-    print(test_profile)
-    return test_profile
+    return Profile
 
 
 @pytest.fixture(scope="session")
