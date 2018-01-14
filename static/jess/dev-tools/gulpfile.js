@@ -41,8 +41,8 @@ gulp.task("minify-css", function() {
 	// Theme
     gulp.src(["../HTML/css/layout.css", "!../HTML/css/layout.min.css"])
         .pipe(cleanCSS({debug: true}, function(details) {
-            console.log(details.name + ": " + details.stats.originalSize);
-            console.log(details.name + ": " + details.stats.minifiedSize);
+            //console.log(details.name + ": " + details.stats.originalSize);
+            //console.log(details.name + ": " + details.stats.minifiedSize);
         }))
         .pipe(rename({suffix: ".min"}))
         .pipe(gulp.dest("../HTML/css/"));
@@ -70,14 +70,14 @@ gulp.task("rtlcss", function () {
 
 // Minify JS - Minifies JS
 gulp.task("uglify", function (cb) {
-  	pump([
-      gulp.src(["../HTML/js/**/*.js", "!../HTML/js/**/*.min.js"]),
-	        uglify(),
-			rename({ suffix: ".min" }),
-	        gulp.dest("../HTML/js/")
-		],
-		cb
-	);
+  pump([
+    gulp.src(["../HTML/js/**/*.js", "!../HTML/js/**/*.min.js"]),
+      uglify(),
+    rename({ suffix: ".min" }),
+      gulp.dest("../HTML/js/")
+    ],
+    cb
+  );
 });
 
 
