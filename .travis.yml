@@ -27,6 +27,6 @@ script:
   - docker cp rsum:/srv/rsum/coverage.xml .
   - docker stop rsum
 after_script:
-  - .py/bin/python-codacy-coverage -r coverage.xml
+  - python-codacy-coverage -r coverage.xml
   - ./cc-test-reporter after-build -t coverage.py --exit-code $TRAVIS_TEST_RESULT
 ...
