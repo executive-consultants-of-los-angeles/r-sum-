@@ -16,8 +16,6 @@ before_script:
   - mkdir /tmp/pg
   - docker pull postgres:alpine
   - docker run --user postgres -v /tmp/pg:/var/lib/postgresql:rw --network rsum --expose 5432 -h pg.gc --name pg.gc --rm -d postgres:alpine postgres -D /var/lib/postgresql/data
-  - docker exec pg.gc ps aux 
-  - docker exec pg.gc createuser -s xander 
   - ./cc-test-reporter before-build
   - sudo pip install codacy-coverage
 script:
@@ -25,6 +23,7 @@ script:
   - docker build -t rsum .
   - cd ..
   - docker run -e PYTHONPATH=/srv/rsum --network rsum -d --name rsum --rm rsum
+  - docker exec pg.gc createuser -s xander 
   - docker exec rsum pytest rsum/home/tests/models/test_section.py
   - docker exec rsum pytest rsum/home/tests/models/test_profile.py
   - docker exec rsum coverage run setup.py test || true
