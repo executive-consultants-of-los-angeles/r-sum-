@@ -7,5 +7,6 @@ rules:
   indentation: true
   quotes: true
   no-console: true
+  semi: true
 ...
 # vim: set ft=yaml:
