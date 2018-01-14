@@ -15,6 +15,7 @@ before_script:
   - docker network create rsum || true
   - docker run --network rsum --expose 5432 -h pg.gc --name pg.gc --rm -d postgres:latest
   - ./cc-test-reporter before-build
+  - sudo pip install codacy-coverage
 script:
   - cd container
   - docker build -t rsum .
