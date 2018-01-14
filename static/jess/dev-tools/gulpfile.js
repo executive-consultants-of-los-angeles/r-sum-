@@ -50,8 +50,9 @@ gulp.task("minify-css", function() {
     // RTL
     gulp.src(["../HTML/css/layout-rtl.css", "!../HTML/css/layout-rtl.min.css"])
         .pipe(cleanCSS({debug: true}, function(details) {
-            console.log(details.name + ": " + details.stats.originalSize);
-            console.log(details.name + ": " + details.stats.minifiedSize);
+            //something
+            //console.log(details.name + ": " + details.stats.originalSize);
+            //console.log(details.name + ": " + details.stats.minifiedSize);
         }))
         .pipe(rename({suffix: ".min"}))
         .pipe(gulp.dest("../HTML/css/"));
