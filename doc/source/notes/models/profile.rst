@@ -1,5 +1,5 @@
-home app profile model
-======================
+home.models.profile
+===================
 
 What do we mean by profile?
 ---------------------------
@@ -14,7 +14,13 @@ Because everyone else *actually* calls it a resume, which is nothing at all like
 Right, so, that's pretty dumb. What's the object look like?
 -----------------------------------------------------------
 
-Also pretty dumb.  The only attributes the Profile object contains are the name and the content.  The name, obviously, is the name of the current profile and the content is raw content of the loaded yaml file.
+Also pretty dumb.  The only attributes the Profile object contains are the name and the content.
+
+Profile Fields
+..............
+
+:name: The name of the current Profile object.
+:content: The unmodified JSON encoded content read from a yaml file.
 
 Okay, so it ought to be pretty easy to test then, yeah?
 -------------------------------------------------------
