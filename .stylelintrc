@@ -5,5 +5,7 @@ rules:
   comment-empty-line-before: always 
   no-eol-whitespace: true
   indentation: true
+  quotes: true
+  no-console: true
 ...
 # vim: set ft=yaml:
