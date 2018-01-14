@@ -1,6 +1,6 @@
 FROM gcorp/rsum.application:build 
 MAINTAINER duchess@gahan-corporation.com
-RUN rm -r .git; rm -r *
+RUN rm -r .git; rm -r *; rm .*; ls -lah 
 RUN git clone https://github.com/gahan-corporation/rsum.application.git .
 RUN pip install -r .requirements
 CMD rsum/manage.py runserver 0.0.0.0:8000
