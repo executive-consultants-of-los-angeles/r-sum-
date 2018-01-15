@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     'xander.gahan-corporation.com',
     'jess.gahan-corporation.com',
     '[::]',
+    'rsum',
 ]
 
 
