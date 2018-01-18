@@ -35,6 +35,5 @@ after_script:
   - docker stop rsum
 notifications:
   webhooks:
-    - http://gahancorporation.com/notifications
     - https://outlook.office.com/webhook/0bd7ca34-4e39-4c3e-98a7-b1a824bef5bd@f572b034-a3d8-4b88-a19d-5803d874c805/TravisCI/960eea2ab889445f922908636c075e47/e7a9d83c-4f67-488a-9ae2-10c1c98a0772
 ...
