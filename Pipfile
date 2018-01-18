@@ -10,4 +10,4 @@ psycopg2 = "*"
 whitenoise = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.5"
