@@ -1,10 +1,10 @@
 """Module creates database entries for a profile."""
 import tempfile
-import django
+import loadapps
 
 from home.models.profile import Profile
 
-django.setup()
+loadapps.main()
 
 Profile.create()
 
