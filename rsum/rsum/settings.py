@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
     '.gahan-corporation.com',
     '[::]',
     '.herokuapp.com',
+    'rsum',
 ]
 
 
