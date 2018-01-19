@@ -12,5 +12,5 @@ RUN ln -sf /srv/rsum/static /srv/static
 RUN pip install dj-database-url==0.4.2 
 RUN pip install gunicorn==19.7.1
 RUN pip install -r .requirements
-RUN pip install git+https://github.com/gahan-corporation/rsum.application.git
+RUN pip install git+https://github.com/gahan-corporation/rsum.application.git@iss199
 CMD gunicorn rsum.wsgi 
