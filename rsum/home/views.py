@@ -68,7 +68,7 @@ def export_docx(cv_id='1'):
         )
     )
     response['Content-Disposition'] = (
-        'attachment; filename={0}-cv.docx'.format(os.environ.get('OWNER'))
+        'attachment; filename={0}-cv.docx'.format(xander)
     )
     response['Content-Length'] = length
     return response
