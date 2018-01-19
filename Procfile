@@ -1,1 +1,1 @@
-web: python rsum/manage.py runserver 
+web: gunicorn --chdir /srv/rsum/rsum rsum:wsgi 
