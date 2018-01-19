@@ -9,6 +9,6 @@ RUN rm -r rsum
 RUN git clone https://github.com/gahan-corporation/rsum.application.git rsum
 WORKDIR /srv/rsum
 RUN ln -sf /srv/rsum/static /srv/static
-RUN pip install -r .requirements
 RUN pip install gunicorn
+RUN pip install -r .requirements
 CMD gunicorn rsum.wsgi 
