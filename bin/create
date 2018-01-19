@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python rsum/rsum/create.py

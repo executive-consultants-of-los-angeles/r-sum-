@@ -3,13 +3,13 @@
 # -*- coding: utf-8 -*-
 """Module containing the Profile Model class."""
 import json
+import os
 import yaml
 
 from django.db import models
 from django.contrib.postgres.fields import JSONField
+from django.conf import settings
 from .section import Section
-
-OWNER = 'xander'
 
 
 class Profile(models.Model):
@@ -27,6 +27,17 @@ class Profile(models.Model):
     name = models.CharField(max_length=200, unique=True)
     content = JSONField(default={})
 
+    def get_name(self):
+        """Assign a name no matter what."""
+        try:
+            self.name = settings.OWNER
+        except AttributeError:
+            self.name = os.environ.get('OWNER')
+
+        if not self.name:
+            self.name = 'xander'
+        return self.name
+
     @classmethod
     def create(cls):
         """Check to see if the current Profile Model already has sections.
@@ -37,12 +48,12 @@ class Profile(models.Model):
         :rtype: :obj:`home.models.profile.Profile`
         """
         with open(
-            '/srv/static/profiles/xander/complete.yml', 'r'
+            'static/profiles/xander/complete.yml', 'r'
         ) as yaml_file:
             raw_content = yaml.safe_load(yaml_file.read())
         yaml_file.close()
         profile = cls(
-            name=OWNER,
+            name=Profile().get_name(),
             content=json.dumps(raw_content))
         profile.save()
 

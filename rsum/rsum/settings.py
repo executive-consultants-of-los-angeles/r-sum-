@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,9 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'xander.gahan-corporation.com',
-    'jess.gahan-corporation.com',
+    '.gahan-corporation.com',
     '[::]',
+    '.herokuapp.com',
     'rsum',
 ]
 
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+OWNER = 'xander'
 DIR = 'xander'
 FILE = '/srv/static/profiles/xander/complete.yml'
 
@@ -90,10 +92,13 @@ DATABASES = {
         'NAME': 'xander',
         'USER': 'xander',
         'PASSWORD': '',
-        'HOST': 'pg.gc',
+        'HOST': 'heroku',
         'PORT': '5432',
     }
 }
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -132,5 +137,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+STATIC_ROOT = '../static'
 STATIC_URL = '/static/xander/'
-OWNER = 'xander'
