@@ -15,9 +15,7 @@ before_script:
       --network rsum --expose 5432 -h pg.gc --name pg.gc --rm -d
       postgres:alpine postgres -D /var/lib/postgresql/data
 script:
-  - cd container
-  - docker build -t rsum .
-  - cd ..
+  - docker build -t rsum bin
   - >
       docker run -e CODACY_PROJECT_TOKEN=a6401ae2caa54f229e65b73ec1863ef1
       --network rsum -d --name rsum --rm rsum
