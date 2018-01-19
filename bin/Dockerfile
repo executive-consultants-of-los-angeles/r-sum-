@@ -10,5 +10,4 @@ RUN git clone https://github.com/gahan-corporation/rsum.application.git rsum
 WORKDIR /srv/rsum
 RUN ln -sf /srv/rsum/static /srv/static
 RUN pip install -r .requirements
-RUN pip install dj-database-url
 CMD rsum/manage.py runserver 0.0.0.0:8000
