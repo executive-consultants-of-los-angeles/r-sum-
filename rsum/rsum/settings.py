@@ -27,9 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'xander.gahan-corporation.com',
-    'jess.gahan-corporation.com',
+    '.gahan-corporation.com',
     '[::]',
+    '.herokuapp.com',
 ]
 
 
