@@ -641,10 +641,10 @@ fieldset[disabled] .btn-theme {
     display: block;
   }
   .header .navbar-collapse.collapse {
-    display: none ;
+    display: none !important;
   }
   .header .navbar-collapse.collapse.in {
-    display: block ;
+    display: block !important;
   }
   .header .nav-collapse {
     padding-left: 0;
@@ -832,62 +832,62 @@ fieldset[disabled] .btn-theme {
   	[Text Colors]
 ------------------------------------------------------------------*/
 .color-base {
-  color: #17bed2 ;
+  color: #17bed2 !important;
 }
 
 .color-white {
-  color: #fff ;
+  color: #fff !important;
 }
 
 .color-heading {
-  color: #515769 ;
+  color: #515769 !important;
 }
 
 .color-subtitle {
-  color: #a6a7aa ;
+  color: #a6a7aa !important;
 }
 
 .color-link {
-  color: #81848f ;
+  color: #81848f !important;
 }
 
 .color-link-hover {
-  color: #999caa ;
+  color: #999caa !important;
 }
 
 .color-sky-light {
-  color: #fafafa ;
+  color: #fafafa !important;
 }
 
 /*------------------------------------------------------------------
   	[Background Colors]
 ------------------------------------------------------------------*/
 .bg-color-base {
-  background: #17bed2 ;
+  background: #17bed2 !important;
 }
 
 .bg-color-white {
-  background: #fff ;
+  background: #fff !important;
 }
 
 .bg-color-heading {
-  background: #515769 ;
+  background: #515769 !important;
 }
 
 .bg-color-subtitle {
-  background: #a6a7aa ;
+  background: #a6a7aa !important;
 }
 
 .bg-color-link {
-  background: #81848f ;
+  background: #81848f !important;
 }
 
 .bg-color-link-hover {
-  background: #999caa ;
+  background: #999caa !important;
 }
 
 .bg-color-sky-light {
-  background: #fafafa ;
+  background: #fafafa !important;
 }
 
 /*------------------------------------------------------------------
@@ -988,151 +988,151 @@ fieldset[disabled] .btn-theme {
     [Font Weight]
 ----------------------------------------------------*/
 .fweight-300 {
-  font-weight: 300 ;
+  font-weight: 300 !important;
 }
 
 .fweight-400 {
-  font-weight: 400 ;
+  font-weight: 400 !important;
 }
 
 .fweight-500 {
-  font-weight: 500 ;
+  font-weight: 500 !important;
 }
 
 .fweight-600 {
-  font-weight: 600 ;
+  font-weight: 600 !important;
 }
 
 .fweight-700 {
-  font-weight: 700 ;
+  font-weight: 700 !important;
 }
 
 /*------------------------------------------------------------------
     [Left margin]
 ------------------------------------------------------------------*/
 .margin-l-0 {
-  margin-left: 0 ;
+  margin-left: 0 !important;
 }
 
 .margin-l-5 {
-  margin-left: 5px ;
+  margin-left: 5px !important;
 }
 
 .margin-l-10 {
-  margin-left: 10px ;
+  margin-left: 10px !important;
 }
 
 .margin-l-20 {
-  margin-left: 20px ;
+  margin-left: 20px !important;
 }
 
 /*------------------------------------------------------------------
     [Right margin]
 ------------------------------------------------------------------*/
 .margin-r-0 {
-  margin-right: 0 ;
+  margin-right: 0 !important;
 }
 
 .margin-r-5 {
-  margin-right: 5px ;
+  margin-right: 5px !important;
 }
 
 .margin-r-10 {
-  margin-right: 10px ;
+  margin-right: 10px !important;
 }
 
 .margin-r-20 {
-  margin-right: 20px ;
+  margin-right: 20px !important;
 }
 
 /*------------------------------------------------------------------
     [Top margin]
 ------------------------------------------------------------------*/
 .margin-t-0 {
-  margin-top: 0 ;
+  margin-top: 0 !important;
 }
 
 .margin-t-5 {
-  margin-top: 5px ;
+  margin-top: 5px !important;
 }
 
 .margin-t-10 {
-  margin-top: 10px ;
+  margin-top: 10px !important;
 }
 
 .margin-t-20 {
-  margin-top: 20px ;
+  margin-top: 20px !important;
 }
 
 .margin-t-30 {
-  margin-top: 30px ;
+  margin-top: 30px !important;
 }
 
 .margin-t-40 {
-  margin-top: 40px ;
+  margin-top: 40px !important;
 }
 
 .margin-t-50 {
-  margin-top: 50px ;
+  margin-top: 50px !important;
 }
 
 .margin-t-60 {
-  margin-top: 60px ;
+  margin-top: 60px !important;
 }
 
 /*------------------------------------------------------------------
     [Bottom margin]
 ------------------------------------------------------------------*/
 .margin-b-0 {
-  margin-bottom: 0 ;
+  margin-bottom: 0 !important;
 }
 
 .margin-b-4 {
-  margin-bottom: 4px ;
+  margin-bottom: 4px !important;
 }
 
 .margin-b-5 {
-  margin-bottom: 5px ;
+  margin-bottom: 5px !important;
 }
 
 .margin-b-10 {
-  margin-bottom: 10px ;
+  margin-bottom: 10px !important;
 }
 
 .margin-b-20 {
-  margin-bottom: 20px ;
+  margin-bottom: 20px !important;
 }
 
 .margin-b-30 {
-  margin-bottom: 30px ;
+  margin-bottom: 30px !important;
 }
 
 .margin-b-40 {
-  margin-bottom: 40px ;
+  margin-bottom: 40px !important;
 }
 
 .margin-b-50 {
-  margin-bottom: 50px ;
+  margin-bottom: 50px !important;
 }
 
 .margin-b-60 {
-  margin-bottom: 60px ;
+  margin-bottom: 60px !important;
 }
 
 .margin-b-70 {
-  margin-bottom: 70px ;
+  margin-bottom: 70px !important;
 }
 
 .margin-b-80 {
-  margin-bottom: 80px ;
+  margin-bottom: 80px !important;
 }
 
 .margin-b-90 {
-  margin-bottom: 90px ;
+  margin-bottom: 90px !important;
 }
 
 .margin-b-100 {
-  margin-bottom: 100px ;
+  margin-bottom: 100px !important;
 }
 
 /*------------------------------------------------------------------
@@ -1140,43 +1140,43 @@ fieldset[disabled] .btn-theme {
 ------------------------------------------------------------------*/
 @media (max-width: 992px) {
   .md-margin-b-0 {
-    margin-bottom: 0 ;
+    margin-bottom: 0 !important;
   }
   .md-margin-b-4 {
-    margin-bottom: 4px ;
+    margin-bottom: 4px !important;
   }
   .md-margin-b-5 {
-    margin-bottom: 5px ;
+    margin-bottom: 5px !important;
   }
   .md-margin-b-10 {
-    margin-bottom: 10px ;
+    margin-bottom: 10px !important;
   }
   .md-margin-b-20 {
-    margin-bottom: 20px ;
+    margin-bottom: 20px !important;
   }
   .md-margin-b-30 {
-    margin-bottom: 30px ;
+    margin-bottom: 30px !important;
   }
   .md-margin-b-40 {
-    margin-bottom: 40px ;
+    margin-bottom: 40px !important;
   }
   .md-margin-b-50 {
-    margin-bottom: 50px ;
+    margin-bottom: 50px !important;
   }
   .md-margin-b-60 {
-    margin-bottom: 60px ;
+    margin-bottom: 60px !important;
   }
   .md-margin-b-70 {
-    margin-bottom: 70px ;
+    margin-bottom: 70px !important;
   }
   .md-margin-b-80 {
-    margin-bottom: 80px ;
+    margin-bottom: 80px !important;
   }
   .md-margin-b-90 {
-    margin-bottom: 90px ;
+    margin-bottom: 90px !important;
   }
   .md-margin-b-100 {
-    margin-bottom: 100px ;
+    margin-bottom: 100px !important;
   }
 }
 
@@ -1185,43 +1185,43 @@ fieldset[disabled] .btn-theme {
 ------------------------------------------------------------------*/
 @media (max-width: 768px) {
   .sm-margin-b-0 {
-    margin-bottom: 0 ;
+    margin-bottom: 0 !important;
   }
   .sm-margin-b-4 {
-    margin-bottom: 4px ;
+    margin-bottom: 4px !important;
   }
   .sm-margin-b-5 {
-    margin-bottom: 5px ;
+    margin-bottom: 5px !important;
   }
   .sm-margin-b-10 {
-    margin-bottom: 10px ;
+    margin-bottom: 10px !important;
   }
   .sm-margin-b-20 {
-    margin-bottom: 20px ;
+    margin-bottom: 20px !important;
   }
   .sm-margin-b-30 {
-    margin-bottom: 30px ;
+    margin-bottom: 30px !important;
   }
   .sm-margin-b-40 {
-    margin-bottom: 40px ;
+    margin-bottom: 40px !important;
   }
   .sm-margin-b-50 {
-    margin-bottom: 50px ;
+    margin-bottom: 50px !important;
   }
   .sm-margin-b-60 {
-    margin-bottom: 60px ;
+    margin-bottom: 60px !important;
   }
   .sm-margin-b-70 {
-    margin-bottom: 70px ;
+    margin-bottom: 70px !important;
   }
   .sm-margin-b-80 {
-    margin-bottom: 80px ;
+    margin-bottom: 80px !important;
   }
   .sm-margin-b-90 {
-    margin-bottom: 90px ;
+    margin-bottom: 90px !important;
   }
   .sm-margin-b-100 {
-    margin-bottom: 100px ;
+    margin-bottom: 100px !important;
   }
 }
 
@@ -1230,43 +1230,43 @@ fieldset[disabled] .btn-theme {
 ------------------------------------------------------------------*/
 @media (max-width: 480px) {
   .xs-margin-b-0 {
-    margin-bottom: 0 ;
+    margin-bottom: 0 !important;
   }
   .xs-margin-b-4 {
-    margin-bottom: 4px ;
+    margin-bottom: 4px !important;
   }
   .xs-margin-b-5 {
-    margin-bottom: 5px ;
+    margin-bottom: 5px !important;
   }
   .xs-margin-b-10 {
-    margin-bottom: 10px ;
+    margin-bottom: 10px !important;
   }
   .xs-margin-b-20 {
-    margin-bottom: 20px ;
+    margin-bottom: 20px !important;
   }
   .xs-margin-b-30 {
-    margin-bottom: 30px ;
+    margin-bottom: 30px !important;
   }
   .xs-margin-b-40 {
-    margin-bottom: 40px ;
+    margin-bottom: 40px !important;
   }
   .xs-margin-b-50 {
-    margin-bottom: 50px ;
+    margin-bottom: 50px !important;
   }
   .xs-margin-b-60 {
-    margin-bottom: 60px ;
+    margin-bottom: 60px !important;
   }
   .xs-margin-b-70 {
-    margin-bottom: 70px ;
+    margin-bottom: 70px !important;
   }
   .xs-margin-b-80 {
-    margin-bottom: 80px ;
+    margin-bottom: 80px !important;
   }
   .xs-margin-b-90 {
-    margin-bottom: 90px ;
+    margin-bottom: 90px !important;
   }
   .xs-margin-b-100 {
-    margin-bottom: 100px ;
+    margin-bottom: 100px !important;
   }
 }
 
@@ -1274,23 +1274,23 @@ fieldset[disabled] .btn-theme {
     [Height]
 ----------------------------------------------------*/
 .height-100 {
-  height: 100px ;
+  height: 100px !important;
 }
 
 .height-200 {
-  height: 200px ;
+  height: 200px !important;
 }
 
 .height-300 {
-  height: 300px ;
+  height: 300px !important;
 }
 
 .height-400 {
-  height: 400px ;
+  height: 400px !important;
 }
 
 .height-500 {
-  height: 500px ;
+  height: 500px !important;
 }
 
 /*------------------------------------------------------------------

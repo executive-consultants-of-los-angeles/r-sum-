@@ -15,22 +15,19 @@ before_script:
       --network rsum --expose 5432 -h pg.gc --name pg.gc --rm -d
       postgres:alpine postgres -D /var/lib/postgresql/data
 script:
-  - cd container
-  - docker build -t rsum .
-  - cd ..
+  - docker build -t rsum bin
   - >
       docker run -e CODACY_PROJECT_TOKEN=a6401ae2caa54f229e65b73ec1863ef1
       --network rsum -d --name rsum --rm rsum
   - docker exec pg.gc createuser -s xander
-  - docker exec rsum cc-test-reporter before-build
   - docker exec rsum pytest rsum/home/tests/models/test_section.py
   - docker exec rsum pytest rsum/home/tests/models/test_profile.py
   - docker exec rsum coverage run setup.py test || true
   - docker exec rsum coverage xml || true
-  - >
-      docker exec rsum cc-test-reporter after-build -t coverage.py
-      --exit-code $TRAVIS_TEST_RESULT
   - docker exec rsum python-codacy-coverage -r coverage.xml
 after_script:
   - docker stop rsum
+notifications:
+  webhooks:
+    - https://outlook.office.com/webhook/0bd7ca34-4e39-4c3e-98a7-b1a824bef5bd@f572b034-a3d8-4b88-a19d-5803d874c805/TravisCI/08144b6b88b747fe90e5f6df356fc2d1/e7a9d83c-4f67-488a-9ae2-10c1c98a0772 
 ...

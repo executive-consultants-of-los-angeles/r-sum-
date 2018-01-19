@@ -1,22 +1,23 @@
 {
-  "name": "Start on Heroku: Python",
-  "description": "A barebones Python app, which can easily be deployed to Heroku.",
-  "image": "heroku/python",
-  "repository": "https://github.com/gahan-corporation/rsum.application",
-  "keywords": ["python", "django" ],
-  "addons": [ "" ],
+  "name": "rsum.application",
+  "description": "PR Setup",
+  "scripts": {
+    "postdeploy": "bin/create"
+  },
   "env": {
-    "SECRET_KEY": {
-      "description": "The secret key for the Django application.",
-      "generator": "secret"
+    "DJANGO_SETTINGS_MODULE": "rsum.settings"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
     }
   },
-  "environments": {
-    "test": {
-      "scripts": {
-        "test-setup": "python manage.py collectstatic --noinput",
-        "test": "pytest"
-      }
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
     }
-  }
+  ]
 }

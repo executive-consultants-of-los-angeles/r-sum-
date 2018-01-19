@@ -23,7 +23,7 @@ def index(request):
     :return: HttpResponse object resulting from execution of render method.
     :rtype: object
     """
-    profile = Profile.objects.get(name=settings.OWNER)
+    profile = Profile.objects.get(name='xander')
 
     sections = OrderedDict()
     sections_query = Section.objects.values()
@@ -67,7 +67,7 @@ def export_docx(cv_id='1'):
         )
     )
     response['Content-Disposition'] = (
-        'attachment; filename={0}-cv.docx'.format(settings.OWNER)
+        'attachment; filename={0}-cv.docx'.format('xander')
     )
     response['Content-Length'] = length
     return response
