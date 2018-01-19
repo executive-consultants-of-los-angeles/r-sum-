@@ -1,1 +1,3 @@
-docker run --rm -d -h rsum --name rsum --network psql -v /home/duchess/.postgresql:/root/.postgresql gcorp/rsum.application
+#!/bin/bash
+
+python ../rsum/rsum/create.py
