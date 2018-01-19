@@ -20,14 +20,10 @@ script:
       docker run -e CODACY_PROJECT_TOKEN=a6401ae2caa54f229e65b73ec1863ef1
       --network rsum -d --name rsum --rm rsum
   - docker exec pg.gc createuser -s xander
-  - docker exec rsum cc-test-reporter before-build
   - docker exec rsum pytest rsum/home/tests/models/test_section.py
   - docker exec rsum pytest rsum/home/tests/models/test_profile.py
   - docker exec rsum coverage run setup.py test || true
   - docker exec rsum coverage xml || true
-  - >
-      docker exec rsum cc-test-reporter after-build -t coverage.py
-      --exit-code $TRAVIS_TEST_RESULT
   - docker exec rsum python-codacy-coverage -r coverage.xml
 after_script:
   - docker stop rsum
