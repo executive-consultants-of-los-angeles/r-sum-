@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0e29d654680c858b15ef328aa1c6b0bc7a145985cdc043494aa658f6a4beb303"
+            "sha256": "9c1053839310211704ca4f15e43e24338a51aecf24067d57da5f32ef8ed13b47"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -136,6 +136,9 @@
                 "sha256:fae4cffc040921b8a2d60c6cf0b5d662c1190fe54d718271db4eb17d44a185b7"
             ],
             "version": "==2017.3"
+        },
+        "pyyaml": {
+            "git": "https://github.com/yaml/pyyaml.git"
         },
         "whitenoise": {
             "hashes": [

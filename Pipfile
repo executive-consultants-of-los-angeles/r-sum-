@@ -13,6 +13,7 @@ gunicorn = "*"
 whitenoise = "*"
 python-docx = {git = "git://github.com/executive-consultants-of-los-angeles/python-docx.git", editable = false, ref = "master"}
 setuptools = "*"
+pyyaml = {git = "https://github.com/yaml/pyyaml.git"}
 
 
 [requires]
