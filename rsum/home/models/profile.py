@@ -3,6 +3,7 @@
 # -*- coding: utf-8 -*-
 """Module containing the Profile Model class."""
 import json
+import os
 import yaml
 
 from django.db import models
@@ -26,6 +27,13 @@ class Profile(models.Model):
     name = models.CharField(max_length=200, unique=True)
     content = JSONField(default={})
 
+    def get_name(self):
+        if not settings.OWNER:
+            name = os.environ.get('OWNER')
+        else:
+            name = settings.OWNER
+        return name
+
     @classmethod
     def create(cls):
         """Check to see if the current Profile Model already has sections.
@@ -44,7 +52,7 @@ class Profile(models.Model):
             raw_content = yaml.safe_load(yaml_file.read())
         yaml_file.close()
         profile = cls(
-            name=settings.OWNER,
+            name=Profile().get_name(),
             content=json.dumps(raw_content))
         profile.save()
 
