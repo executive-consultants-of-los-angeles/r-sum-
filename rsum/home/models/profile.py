@@ -3,13 +3,12 @@
 # -*- coding: utf-8 -*-
 """Module containing the Profile Model class."""
 import json
+import os
 import yaml
 
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 from .section import Section
-
-OWNER = 'xander'
 
 
 class Profile(models.Model):
@@ -42,7 +41,7 @@ class Profile(models.Model):
             raw_content = yaml.safe_load(yaml_file.read())
         yaml_file.close()
         profile = cls(
-            name=OWNER,
+            name=os.environ.get('OWNER'),
             content=json.dumps(raw_content))
         profile.save()
 
