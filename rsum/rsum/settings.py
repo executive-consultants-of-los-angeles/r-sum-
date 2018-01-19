@@ -92,7 +92,7 @@ DATABASES = {
         'NAME': 'xander',
         'USER': 'xander',
         'PASSWORD': '',
-        'HOST': 'heroku',
+        'HOST': 'pg.gc',
         'PORT': '5432',
     }
 }
