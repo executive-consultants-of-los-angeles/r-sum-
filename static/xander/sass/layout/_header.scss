@@ -47,7 +47,7 @@
                 @include rotate(0);
                 @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
             }
-
+            
             &:after {
                 @include size(16px, 1px);
                 top: -5px;
@@ -176,7 +176,6 @@
 
 /* Media Queries below 991px */
 @media (max-width: $screen-sm-max) {
-
     /* Bootstrap collapse of navigation with a maximum width: 991px
     (Change it to any breakpoint you want to be collapsed) */
     .header {
@@ -236,7 +235,6 @@
 
 /* Media Queries below 767px */
 @media (max-width: $screen-xs-max) {
-
     /* Menu Container */
     .header {
         .menu-container {
@@ -267,7 +265,6 @@
 
 /* Media Queries above 992px */
 @media (min-width: $screen-md-min) {
-
     /* Navbar */
     .header {
         .navbar-nav-right {
