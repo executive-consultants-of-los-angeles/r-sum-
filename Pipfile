@@ -1,14 +1,20 @@
 [[source]]
+
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 
+
 [packages]
+
 dj-database-url = "*"
 django = "*"
 gunicorn = "*"
-psycopg2 = "*"
+"psycopg2" = "*"
 whitenoise = "*"
 python-docx = {git = "git://github.com/executive-consultants-of-los-angeles/python-docx.git", editable = false, ref = "master"}
+setuptools = "*"
+
 
 [requires]
+
 python_version = "3.7"
