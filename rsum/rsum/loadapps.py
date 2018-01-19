@@ -4,7 +4,10 @@ from django.conf import settings
 
 
 def main():
-    settings.configure()
+    try:
+        settings.configure()
+    except RuntimeError:
+        pass
     return django.setup()
 
 
