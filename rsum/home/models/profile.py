@@ -36,7 +36,7 @@ class Profile(models.Model):
         :rtype: :obj:`home.models.profile.Profile`
         """
         with open(
-            '/srv/static/profiles/xander/complete.yml', 'r'
+            '../../../static/profiles/xander/complete.yml', 'r'
         ) as yaml_file:
             raw_content = yaml.safe_load(yaml_file.read())
         yaml_file.close()
