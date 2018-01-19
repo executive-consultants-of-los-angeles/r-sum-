@@ -123,9 +123,9 @@
             "version": "==2.7.3.2"
         },
         "python-docx": {
-            "editable": true,
+            "editable": false,
             "git": "git://github.com/executive-consultants-of-los-angeles/python-docx.git",
-            "ref": "33c96190312ed027b99c5f6a65f1288eed1eff62"
+            "ref": "master"
         },
         "pytz": {
             "hashes": [

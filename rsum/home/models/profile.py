@@ -24,14 +24,18 @@ class Profile(models.Model):
        JSON encoded content for the current profile.
     """
 
-    name = models.CharField(default='xander', max_length=200, unique=True)
+    name = models.CharField(max_length=200, unique=True)
     content = JSONField(default={})
 
     def get_name(self):
+        """Assign a name no matter what."""
         try:
             name = settings.OWNER
         except AttributeError:
             name = os.environ.get('OWNER')
+
+        if not name:
+            name = 'xander'
         return name
 
     @classmethod
