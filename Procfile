@@ -1,1 +1,1 @@
-web: rsum/manage.py runserver 
+web: python rsum/manage.py runserver 
