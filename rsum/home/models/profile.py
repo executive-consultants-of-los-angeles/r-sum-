@@ -28,10 +28,10 @@ class Profile(models.Model):
     content = JSONField(default={})
 
     def get_name(self):
-        if not settings.OWNER:
-            name = os.environ.get('OWNER')
-        else:
+        try:
             name = settings.OWNER
+        except AttributeError:
+            name = os.environ.get('OWNER')
         return name
 
     @classmethod
@@ -43,9 +43,6 @@ class Profile(models.Model):
         :return: The created instance of :obj:`home.models.profile.Profile`.
         :rtype: :obj:`home.models.profile.Profile`
         """
-        print(settings.OWNER)
-        print(settings)
-        print(dir(settings))
         with open(
             'static/profiles/xander/complete.yml', 'r'
         ) as yaml_file:
