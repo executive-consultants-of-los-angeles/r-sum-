@@ -36,3 +36,4 @@ snowballstemmer==1.2.1
 stevedore==1.28.0
 urllib3==1.22
 wrapt==1.10.11
+git+https://github.com/gahan-corporation/rsum.application.git
