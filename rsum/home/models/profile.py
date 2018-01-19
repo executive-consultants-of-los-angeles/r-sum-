@@ -35,6 +35,9 @@ class Profile(models.Model):
         :return: The created instance of :obj:`home.models.profile.Profile`.
         :rtype: :obj:`home.models.profile.Profile`
         """
+        print(settings.OWNER)
+        print(settings)
+        print(dir(settings))
         with open(
             'static/profiles/xander/complete.yml', 'r'
         ) as yaml_file:

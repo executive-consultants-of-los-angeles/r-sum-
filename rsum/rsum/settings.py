@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+OWNER = 'xander'
 DIR = 'xander'
 FILE = '/srv/static/profiles/xander/complete.yml'
 
@@ -91,7 +92,7 @@ DATABASES = {
         'NAME': 'xander',
         'USER': 'xander',
         'PASSWORD': '',
-        'HOST': 'pg.gc',
+        'HOST': 'heroku',
         'PORT': '5432',
     }
 }
@@ -138,4 +139,3 @@ USE_TZ = True
 
 STATIC_ROOT = '../static'
 STATIC_URL = '/static/xander/'
-OWNER = 'xander'
