@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ff9e30195e28776325d7dc41187263debe3eb96a1ef09d985db1412864f7a6e7"
+            "sha256": "413d21b9cbd9e04b6951e754ae03e902c9d55e4e583cb5956565d20823ed66e2"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -123,9 +123,9 @@
             "version": "==2.7.3.2"
         },
         "python-docx": {
-            "editable": false,
+            "editable": true,
             "git": "git://github.com/executive-consultants-of-los-angeles/python-docx.git",
-            "ref": "master"
+            "ref": "33c96190312ed027b99c5f6a65f1288eed1eff62"
         },
         "pytz": {
             "hashes": [
