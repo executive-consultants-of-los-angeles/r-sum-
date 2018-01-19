@@ -8,6 +8,7 @@ django = "*"
 gunicorn = "*"
 psycopg2 = "*"
 whitenoise = "*"
+python-docx = {git = "git://github.com/executive-consultants-of-los-angeles/python-docx.git", editable = false, ref = "master"}
 
 [requires]
 python_version = "3.7"
