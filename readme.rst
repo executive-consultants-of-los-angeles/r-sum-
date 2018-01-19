@@ -13,15 +13,6 @@ Résumé
    :alt: Travis
    :target: https://travis-ci.org/gahan-corporation/rsum.application
 
-.. image:: https://api.codeclimate.com/v1/badges/174065f2c90869f99680/maintainability
-   :target: https://codeclimate.com/github/gahan-corporation/rsum.application/maintainability
-   :alt: Maintainability
-
-.. image:: https://api.codeclimate.com/v1/badges/174065f2c90869f99680/test_coverage
-   :target: https://codeclimate.com/github/gahan-corporation/rsum.application/test_coverage
-   :alt: Test Coverage
-
-
 
 This project is meant to provide all of the required services for a fully functional professional profile website.  Fully functional remains undefined, but the aim of this code is to automatically deploy (and also scale in theory) a stack consisting of nginx, django, postgresql, and nagios.  WE should be able to detect existing installations of these services and adjust bebhavior accordingly.  The project makes use of Docker and Ansible. 
 
