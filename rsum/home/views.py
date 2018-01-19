@@ -24,7 +24,7 @@ def index(request):
     :return: HttpResponse object resulting from execution of render method.
     :rtype: object
     """
-    profile = Profile.objects.get(name=os.environ.get('OWNER'))
+    profile = Profile.objects.get(name='xander')
 
     sections = OrderedDict()
     sections_query = Section.objects.values()
