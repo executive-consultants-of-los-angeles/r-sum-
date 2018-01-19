@@ -1,1 +1,1 @@
-web: gunicorn --chdir /srv/rsum/rsum rsum:wsgi 
+web: gunicorn rsum.wsgi 
