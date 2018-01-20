@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 IN=refs/heads/iss204
 count=0
