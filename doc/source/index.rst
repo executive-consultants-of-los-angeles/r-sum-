@@ -12,6 +12,12 @@ Welcome to rsum's documentation!
 
    notes/home
 
+All the Badges
+--------------
+
+.. image:: https://travis-ci.org/gahan-corporation/rsum.application.svg?branch=master
+   :target: https://travis-ci.org/gahan-corporation/rsum.application
+
 
 Indices and tables
 ==================
