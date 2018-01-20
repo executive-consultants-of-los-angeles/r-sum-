@@ -1,10 +1,10 @@
-"use strict";
+'use strict';
 
-var util = require("util");
-var Orchestrator = require("orchestrator");
-var gutil = require("gulp-util");
-var deprecated = require("deprecated");
-var vfs = require("vinyl-fs");
+var util = require('util');
+var Orchestrator = require('orchestrator');
+var gutil = require('gulp-util');
+var deprecated = require('deprecated');
+var vfs = require('vinyl-fs');
 
 function Gulp() {
   Orchestrator.call(this);
@@ -17,7 +17,7 @@ Gulp.prototype.run = function() {
   // Use task dependencies instead
 
   // Impose our opinion of "default" tasks onto orchestrator
-  var tasks = arguments.length ? arguments : ["default"];
+  var tasks = arguments.length ? arguments : ['default'];
 
   this.start.apply(this, tasks);
 };
@@ -25,7 +25,7 @@ Gulp.prototype.run = function() {
 Gulp.prototype.src = vfs.src;
 Gulp.prototype.dest = vfs.dest;
 Gulp.prototype.watch = function(glob, opt, fn) {
-  if (typeof opt === "function" || Array.isArray(opt)) {
+  if (typeof opt === 'function' || Array.isArray(opt)) {
     fn = opt;
     opt = null;
   }
@@ -44,17 +44,17 @@ Gulp.prototype.watch = function(glob, opt, fn) {
 Gulp.prototype.Gulp = Gulp;
 
 // Deprecations
-deprecated.field("gulp.env has been deprecated. " +
-  "Use your own CLI parser instead. " +
-  "We recommend using yargs or minimist.",
-  //console.warn,
+deprecated.field('gulp.env has been deprecated. ' +
+  'Use your own CLI parser instead. ' +
+  'We recommend using yargs or minimist.',
+  console.warn,
   Gulp.prototype,
-  "env",
+  'env',
   gutil.env
 );
 
-Gulp.prototype.run = deprecated.method("gulp.run() has been deprecated. " +
-  "Use task dependencies or gulp.watch task triggering instead.",
+Gulp.prototype.run = deprecated.method('gulp.run() has been deprecated. ' +
+  'Use task dependencies or gulp.watch task triggering instead.',
   console.warn,
   Gulp.prototype.run
 );

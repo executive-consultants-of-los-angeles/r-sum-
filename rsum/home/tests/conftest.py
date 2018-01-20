@@ -1,12 +1,11 @@
 """pytest configuration module."""
 import pytest
-
-import django
+from . import loadapps
 
 from home.export.word import ExportDocument
 from home.models.profile import Profile
 
-django.setup()
+loadapps.main()
 
 
 @pytest.fixture(scope="session")

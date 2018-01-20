@@ -9,5 +9,8 @@ RUN rm -r rsum
 RUN git clone https://github.com/gahan-corporation/rsum.application.git rsum
 WORKDIR /srv/rsum
 RUN ln -sf /srv/rsum/static /srv/static
+RUN pip install dj-database-url==0.4.2 
+RUN pip install gunicorn==19.7.1
 RUN pip install -r .requirements
-CMD rsum/manage.py runserver 0.0.0.0:8000
+RUN pip install git+https://github.com/gahan-corporation/rsum.application.git
+CMD gunicorn rsum.wsgi 
