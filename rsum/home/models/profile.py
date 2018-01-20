@@ -30,9 +30,9 @@ class Profile(models.Model):
     def get_name(self):
         """Assign a name no matter what."""
         try:
-            self.name = settings.OWNER
+            self.name = settings.DIR
         except AttributeError:
-            self.name = os.environ.get('OWNER')
+            self.name = os.environ.get('DIR')
 
         if not self.name:
             self.name = 'xander'
