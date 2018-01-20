@@ -32,11 +32,11 @@
                     <h6>{{ content.location }}, {{ content.duration }}</h6>
                   </p>
                   <p>
-                    <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{% static 'profiles/'|add:dir|add:'img/bigdot.png' %}');">
+                    <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{% static 'profiles/'|add:dir|add:'/img/bigdot.png' %}');">
           {% for project_name, project in content.projects.items %}
                       <li>
                         <h5>{{ project_name|title }}</h5>
-                        <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{% static 'profiles/'|add:dir|add:'img/littledot.png' %}');">
+                        <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{% static 'profiles/'|add:dir|add:'/img/littledot.png' %}');">
                           {% for project_item in project %}
                             <li><h6>{{ project_item }}</h6></li>
                           {% endfor %}
