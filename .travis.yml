@@ -1,11 +1,6 @@
 ---
-dist: xenial
 language: python
 sudo: required
-env:
-  global:
-cache:
-  pip: 'yes'
 before_script:
   - sudo apt-get -y install build-essential
   - docker network create rsum || true
