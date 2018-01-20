@@ -1,5 +1,5 @@
 Continuous Deployment
----------------------
+=====================
 
 Partly out of a need for parsimony and partly out of the author's genuine interest in being able to get things done while consuming the fewest resources possible, most of this application is hosted on `Heroku`_.
 
