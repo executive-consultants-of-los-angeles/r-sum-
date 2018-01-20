@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     'django_s3_storage',
 ]
 DIR = os.environ.get('RSUM_ENV')
-YML_PATH = os.environ.get('RSUM_YML_PATH')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
