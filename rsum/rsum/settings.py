@@ -5,13 +5,9 @@ import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 's7g+(@&fc-iycjd=yk)%t$_3@h3gx(!v$c9fh1pbj@zi6r6a(6'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -23,9 +19,7 @@ ALLOWED_HOSTS = [
     'rsum',
 ]
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'rsum',
     'home',
@@ -35,8 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_s3_storage',
 ]
-
 OWNER = 'xander'
 DIR = 'xander'
 FILE = '/srv/static/profiles/xander/complete.yml'
@@ -71,10 +65,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'rsum.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -85,14 +77,11 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 DATABASE_ENV = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(DATABASE_ENV)
 
-
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': (
         "django.contrib.auth.password_validation."
@@ -108,7 +97,6 @@ AUTH_PASSWORD_VALIDATORS = [
         "NumericPasswordValidator")},
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 LANGUAGE_CODE = 'en-us'
@@ -121,3 +109,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
+
+DEFAULT_FILE_STORAGE = "django_s3_storage.storage.S3Storage"
+STATICFILES_STORAGE = "django_s3_storage.storage.StaticS3Storage"
+AWS_S3_BUCKET_NAME = "rsum.gahan-corporation.com"
+AWS_REGION = "us-west-2"
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
