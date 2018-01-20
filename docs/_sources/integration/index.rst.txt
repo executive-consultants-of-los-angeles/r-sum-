@@ -1,5 +1,5 @@
 Continuous Integration
-----------------------
+======================
 
 .. note:: draft
 
