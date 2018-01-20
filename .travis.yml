@@ -1,7 +1,10 @@
 ---
 language: python
+sudo: required
+dist: trusty
+group: deprecated-2017Q4
 before_script:
-  - apt-get -y install build-essential
+  - sudo apt-get -y install build-essential
   - docker network create rsum || true
   - mkdir /tmp/pg
   - docker pull postgres:alpine
