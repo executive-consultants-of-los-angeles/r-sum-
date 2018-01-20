@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 ]
 
 OWNER = 'xander'
-DIR = ''
+DIR = 'xander'
 FILE = '/srv/static/profiles/xander/complete.yml'
 
 MIDDLEWARE = [
