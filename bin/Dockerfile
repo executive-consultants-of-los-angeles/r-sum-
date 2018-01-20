@@ -5,6 +5,7 @@ RUN pip install codacy-coverage==1.3.10
 WORKDIR /srv
 ENV CC_TEST_REPORTER_ID 47df5e0000c73f07c1950f0da60b7e5bbc8b7021e646f20d0d8d2794c52d81b7
 ENV PYTHONPATH /srv/rsum
+ENV RSUM_ENV dev
 RUN rm -r rsum
 RUN git clone https://github.com/gahan-corporation/rsum.application.git rsum
 WORKDIR /srv/rsum

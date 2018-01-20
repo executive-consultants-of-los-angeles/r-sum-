@@ -31,9 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_s3_storage',
 ]
-OWNER = 'xander'
-DIR = 'xander'
-FILE = '/srv/static/profiles/xander/complete.yml'
+DIR = os.environ.get('RSUM_ENV')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

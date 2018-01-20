@@ -30,9 +30,9 @@ class Profile(models.Model):
     def get_name(self):
         """Assign a name no matter what."""
         try:
-            self.name = settings.OWNER
+            self.name = settings.DIR
         except AttributeError:
-            self.name = os.environ.get('OWNER')
+            self.name = os.environ.get('DIR')
 
         if not self.name:
             self.name = 'xander'
@@ -47,8 +47,8 @@ class Profile(models.Model):
         :return: The created instance of :obj:`home.models.profile.Profile`.
         :rtype: :obj:`home.models.profile.Profile`
         """
-        with open(
-            'static/profiles/xander/complete.yml', 'r'
+        with open('static/profiles/{}/{}.yml'.format(
+            os.environ.get('RSUM_ENV'), os.environ.get('RSUM_ENV')), 'r'
         ) as yaml_file:
             raw_content = yaml.safe_load(yaml_file.read())
         yaml_file.close()
