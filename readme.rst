@@ -424,3 +424,8 @@ Example
           paragraph = document.add_paragraph(
               item,
               style='List Bullet 2')
+
+
+.. topic:: Pre Push Hook
+
+   I should very much like it if I could deploy to heroku on every push without an additional command. 
