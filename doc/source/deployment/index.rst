@@ -36,3 +36,11 @@ This environment receives all updates pushed to issue branches as they are devel
    alias gp='git push origin $(git rev-parse --abbrev-ref HEAD); git push heroku $(git rev-parse --abbrev-ref HEAD):master'
 
 This is placed in the user's .bashrc file.
+
+
+Static Files
+------------
+
+Currently static files are kept on an Ubuntu 16.04 EC2 instance.  They are served via an NGINX proxy that forwards requests for non-static content on to the appropriate Heroku app. 
+
+Static files should be served through S3 instead and deployment of changes to them should be automated. 
