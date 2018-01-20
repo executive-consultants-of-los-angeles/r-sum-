@@ -11,6 +11,9 @@ Welcome to rsum's documentation!
    :caption: Contents:
 
    notes/home
+   integration/index
+   deployment/index
+   delivery/index
 
 All the Badges
 --------------
