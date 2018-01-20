@@ -44,3 +44,7 @@ Static Files
 Currently static files are kept on an Ubuntu 16.04 EC2 instance.  They are served via an NGINX proxy that forwards requests for non-static content on to the appropriate Heroku app. 
 
 Static files should be served through S3 instead and deployment of changes to them should be automated. 
+
+Django has the `relevant docs`_.
+
+.. _relevant docs: https://docs.djangoproject.com/en/2.0/howto/static-files/deployment/
