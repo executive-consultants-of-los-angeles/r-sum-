@@ -15,8 +15,10 @@ python-docx = {git = "git://github.com/executive-consultants-of-los-angeles/pyth
 setuptools = "*"
 "e1839a8" = {path = ".", editable = true}
 pyyaml = {git = "https://github.com/yaml/pyyaml"}
+"django-s3-storage" = "*"
+aws = "*"
 
 
 [requires]
 
-python_version = "3.7"
+python_version = "3.6"

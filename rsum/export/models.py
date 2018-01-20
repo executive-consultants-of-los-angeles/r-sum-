@@ -35,7 +35,7 @@ class ExportDocument(object):
         :rtype: None
         """
         settings = self.settings
-        self.name = '{0}-profile.docx'.format(settings.OWNER)
+        self.name = '{0}-profile.docx'.format(settings.DIR)
 
     def export(self, profile_id):
         """Export a word document.
