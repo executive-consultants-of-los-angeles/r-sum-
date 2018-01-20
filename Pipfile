@@ -16,6 +16,7 @@ setuptools = "*"
 "e1839a8" = {path = ".", editable = true}
 pyyaml = {git = "https://github.com/yaml/pyyaml"}
 "django-s3-storage" = "*"
+aws = "*"
 
 
 [requires]
