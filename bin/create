@@ -5,4 +5,4 @@ python rsum/manage.py makemigrations home;
 python rsum/manage.py migrate; 
 python rsum/manage.py flush --no-input;
 python rsum/rsum/create.py;
-exec gunicorn rsum.wsgi 
+exec gunicorn -b 0.0.0.0 -p 8000 rsum.wsgi 
