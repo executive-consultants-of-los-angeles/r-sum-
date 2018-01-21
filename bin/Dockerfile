@@ -13,4 +13,4 @@ RUN pip install gunicorn==19.7.1
 RUN pip install -r .requirements
 RUN pip install git+https://github.com/gahan-corporation/rsum.application.git@v0.1.2
 COPY create bin/create
-CMD gunicorn rsum.wsgi 
+CMD bin/create 
