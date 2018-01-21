@@ -27,9 +27,8 @@
                                   {% if sub.name != 'Build Status' %}
                                   <tr>
                                     {% for item in sub.items %}
-                                      <td><h5>{{ item.1.name }}</h5></td>
-                                      <td><a href="{{ item.1.link }}"><img src="{{ item.1.image }}" /></a></td>
-                                      <td><a class="github-button" href="https://github.com/ecla/{{ item.0 }}/archive/master.zip" aria-label="Download ecla/{{ item.0 }} on GitHub">{{ item.0 }}</a></td>
+                                      <td style="text-align: left;"><h5>{{ item.1.name }}</h5></td>
+                                      <td style="text-align: right;"><a href="{{ item.1.link }}"><img src="{{ item.1.image }}" /></a></td>
                                     {% endfor %}
                                   </tr>
                                   {% endif %}
