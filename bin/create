@@ -2,5 +2,6 @@
 
 python rsum/manage.py makemigrations home;
 python rsum/manage.py migrate; 
+python rsum/manage.py sqlflush;
 python rsum/rsum/create.py;
 exec gunicorn rsum.wsgi 
