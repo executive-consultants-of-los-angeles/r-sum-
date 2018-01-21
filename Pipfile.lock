@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "cf0c06e2163b18b9f809e84748ba8774221bc1785357d7fd0e6dcd34b82a60b9"
+            "sha256": "8bc9ae2c7383425a6e3a88765b7b139123af06897bdca1b4abcbbff6b1e7fd2f"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -18,7 +18,7 @@
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.6"
+            "python_version": "3.6.4"
         },
         "sources": [
             {
@@ -126,7 +126,6 @@
                 "sha256:87f837459c3c78d75cb4f5aadf08a7104db15e8c7618a5c732e60f252279c7a6",
                 "sha256:df9083a992b17a28cd4251a3f5c879e0198bb26c9e808c4647e0a18739f1d11d"
             ],
-            "markers": "platform_python_implementation != 'PyPy'",
             "version": "==1.11.4"
         },
         "cryptography": {
@@ -360,9 +359,9 @@
             "version": "==2.6.1"
         },
         "python-docx": {
-            "editable": true,
+            "editable": false,
             "git": "git://github.com/executive-consultants-of-los-angeles/python-docx.git",
-            "ref": "33c96190312ed027b99c5f6a65f1288eed1eff62"
+            "ref": "master"
         },
         "pytz": {
             "hashes": [
