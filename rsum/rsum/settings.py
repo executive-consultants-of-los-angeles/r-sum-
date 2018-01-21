@@ -68,8 +68,8 @@ WSGI_APPLICATION = 'rsum.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'xander',
-        'USER': 'xander',
+        'NAME': os.environ.get('RSUM_ENV'),
+        'USER': os.environ.get('RSUM_ENV'),
         'PASSWORD': '',
         'HOST': 'pg.gc',
         'PORT': '5432',
