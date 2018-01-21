@@ -1,3 +1,6 @@
 #!/bin/bash
 
-python rsum/rsum/create.py
+python rsum/manage.py makemigrations home;
+python rsum/manage.py migrate; 
+python rsum/rsum/create.py;
+exec gunicorn rsum.wsgi 

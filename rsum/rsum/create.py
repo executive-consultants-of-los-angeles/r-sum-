@@ -6,7 +6,7 @@ from home.models.profile import Profile
 
 loadapps.main()
 
-Profile.objects.delete()
+Profile.objects.all().delete()
 Profile.create()
 
 with tempfile.TemporaryFile() as tmpf:
