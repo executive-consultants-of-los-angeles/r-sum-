@@ -1,17 +1,16 @@
 #!/bin/bash
 
-echo "set PGHOST"
-export PGHOST=pg.gc
-echo "set PGUSER"
-export PGUSER=postgres
-echo $RSUM_ENV
+if [ -z ${DATABASE_URL+x} ]; 
+then
+  echo "var is unset"; 
+  export PGHOST=pg.gc
+  export PGUSER=postgres
+  createuser -e -s $RSUM_ENV
+  createdb -e $RSUM_ENV
+else 
+  echo "var is set to '$DATABASE_URL'"; 
+fi
 
-echo "createuser"
-createuser -e -s $RSUM_ENV
-echo "createdb"
-createdb -e $RSUM_ENV
-
-echo "flush db"
 python rsum/manage.py flush --no-input;
 python rsum/manage.py makemigrations home;
 python rsum/manage.py migrate; 
