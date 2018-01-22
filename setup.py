@@ -10,7 +10,7 @@ def read(fname):
 
 setup(
     name="rsum",
-    version="0.0.1",
+    version="0.1.2",
     author="Gahan Corporation",
     author_email="cfo@gahan-corporation.com",
     description=("rsum application"),
