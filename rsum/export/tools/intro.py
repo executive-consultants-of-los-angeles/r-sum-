@@ -1,6 +1,9 @@
 """Intro module."""
 
 
-def get_intro(intro, document):
-    """Get intro."""
-    return [intro, document]
+class Intro(object):
+    """Clas for Intro objects."""
+
+    def save(intro, document):
+        """Get intro."""
+        return [intro, document]

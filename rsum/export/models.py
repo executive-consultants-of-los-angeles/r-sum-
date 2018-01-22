@@ -11,6 +11,7 @@ from django.conf import settings as django_settings
 from docx import Document
 
 from home.models.profile import Profile
+from export.tools.intro import Intro
 
 
 class ExportDocument(object):
@@ -51,6 +52,11 @@ class ExportDocument(object):
 
         sections = json.loads(profile.content)
 
-        document.save(sections)
+        for section in sections:
+            self.save_section(document, section)
 
         return self.stream
+
+    def save_section(self, document, section):
+        """Save a section of a document."""
+        print(section.items())
