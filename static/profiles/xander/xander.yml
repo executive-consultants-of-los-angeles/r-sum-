@@ -3,39 +3,26 @@
     name: 'Xander Harris'
     position: "Python Developer / Site Reliability Engineer"
     social_media_links:
-      facebook: 'https://www.facebook.com/eclacfo'
-      twitter: 'https://twitter.com/eclacfo'
-      linkedin: 'https://www.linkedin.com/in/eclacfo'
-      github: 'https://github.com/eclacfo'
+      facebook: 'https://www.facebook.com/gahancorpcfo'
+      twitter: 'https://twitter.com/gahancorpcfo'
+      linkedin: 'https://www.linkedin.com/in/gahancorpcfo'
+      github: 'https://github.com/gahancorpcfo'
 - summary:
     content: "Straight shooter with upper management written all over me."
-    # calendly: 'https://calendly.com/xander-ecla'
     build_status:
       - name: "Build Status"
-      - ngnx:
-          name: "nginx"
+      - travis:
+          name: "Travis CI"
           image:
-            'https://travis-ci.org/executive-consultants-of-los-angeles/ngnx.svg?branch=master'
-          link:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/ngnx"
-      - rsum:
-          name: "rsum"
+            'https://travis-ci.org/gahan-corporation/rsum.svg?branch=master'
+      - codacy:
+          name: "Codacy Code Quality"
           image:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/rsum.svg?branch=master"
-          link:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/rsum"
-      - ngos:
-          name: "ngos"
+            'https://api.codacy.com/project/badge/Grade/e8ccc643c99147dca4fd98a8b2851451'
+      - codacy_coverage:
+          name: 'Codacy Test Coverage'
           image:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/ngos.svg?branch=master"
-          link:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/ngos"
-      - psql:
-          name: "psql"
-          image:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/psql.svg?branch=master"
-          link:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/psql"
+            'https://api.codacy.com/project/badge/Coverage/e8ccc643c99147dca4fd98a8b2851451'
 - skills:
     start: 2000
     infrastructure_automation:
@@ -346,12 +333,12 @@
         - "that is how I graduated with a GPA in the 1.7 range"
         - "it was a very prestigious kindergarten"
 - contact:
-    title: "Get in Touch with Xander"
+    title: "Get in Touch"
     message:
-      "Xander is available most weekdays after noon Pacific Time."
+      "I'm usually available after noon on week days."
     location: "Los Angeles, California, United States of America"
     phone: "(424) 209-2976"
-    email: "xander@ecla.solutions"
-    web: "http://xander.ecla.solutions/"
+    email: "xander@gahan-corporation.com"
+    web: "https://xander.gahan-corporation.com/"
 ...
 # vim: ft=ansible:
