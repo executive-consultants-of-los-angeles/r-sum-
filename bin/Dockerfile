@@ -4,9 +4,9 @@ WORKDIR /srv
 ENV PYTHONPATH /srv/rsum
 RUN rm -r /srv/rsum
 ENV RSUM_ENV dev
-RUN git clone --branch iss173 https://github.com/gahan-corporation/rsum.application.git rsum
+RUN git clone --branch iss173 https://github.com/gahan-corporation/rsum.git
 WORKDIR /srv/rsum
-RUN pip install git+https://github.com/gahan-corporation/rsum.application.git@v0.1.2
+RUN pip install git+https://github.com/gahan-corporation/rsum.gita
 COPY create /bin/create
 RUN apk add bash
 CMD /bin/create 
