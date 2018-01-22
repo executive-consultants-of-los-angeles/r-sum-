@@ -10,7 +10,7 @@ def read(fname):
 
 setup(
     name="rsum",
-    version="0.0.1",
+    version="0.1.2",
     author="Gahan Corporation",
     author_email="cfo@gahan-corporation.com",
     description=("rsum application"),
@@ -23,6 +23,8 @@ setup(
         'home.models',
         'home.export',
     ],
+    package_data={'': ['rsum/home/templates']},
+    include_package_data=True,
     long_description=read('readme.rst'),
     setup_requires=['pytest-runner'],
     install_requires=['django', 'pyyaml'],
