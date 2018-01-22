@@ -1,14 +1,15 @@
 #!/usr/bin/env python
+# pylint: disable=R0903
 # -*- coding: utf-8 -*-
 """Module containing the Profile Model class."""
 import json
+import os
 import yaml
 
 from django.db import models
 from django.contrib.postgres.fields import JSONField
+from django.conf import settings
 from .section import Section
-
-OWNER = 'xander'
 
 
 class Profile(models.Model):
@@ -26,6 +27,17 @@ class Profile(models.Model):
     name = models.CharField(max_length=200, unique=True)
     content = JSONField(default={})
 
+    def get_name(self):
+        """Assign a name no matter what."""
+        try:
+            self.name = settings.DIR
+        except AttributeError:
+            self.name = os.environ.get('RSUM_ENV')
+
+        if not self.name:
+            raise AttributeError()
+        return self.name
+
     @classmethod
     def create(cls):
         """Check to see if the current Profile Model already has sections.
@@ -35,13 +47,13 @@ class Profile(models.Model):
         :return: The created instance of :obj:`home.models.profile.Profile`.
         :rtype: :obj:`home.models.profile.Profile`
         """
-        with open(
-            '/srv/static/profiles/xander/complete.yml', 'r'
+        with open('static/profiles/{}/{}.yml'.format(
+            os.environ.get('RSUM_ENV'), os.environ.get('RSUM_ENV')), 'r'
         ) as yaml_file:
-            raw_content = yaml.load(yaml_file.read())
+            raw_content = yaml.safe_load(yaml_file.read())
         yaml_file.close()
         profile = cls(
-            name=OWNER,
+            name=Profile().get_name(),
             content=json.dumps(raw_content))
         profile.save()
 

@@ -1,0 +1,12 @@
+---
+formatter: verbose 
+rules:
+  block-no-empty: true
+  comment-empty-line-before: always 
+  no-eol-whitespace: true
+  indentation: true
+  quotes: true
+  no-console: true
+  semi: true
+...
+# vim: set ft=yaml:

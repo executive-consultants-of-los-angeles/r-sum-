@@ -1,0 +1,39 @@
+#!/bin/bash
+
+if [ -z ${DATABASE_URL+x} ]; 
+then
+
+  if [ -z ${LOCAL+x} ];
+  then
+    echo "remote"
+    export PGHOST=pg.gc;
+  else
+    echo "localhost"
+    export PGHOST=localhost; 
+  fi
+
+  echo "var is unset"; 
+  export PGUSER=postgres;
+  echo "exported pguser";
+  createuser -e -s $RSUM_ENV;
+  echo "created user";
+  createdb -e $RSUM_ENV;
+  echo "created db";
+else 
+  echo "var is set to '$DATABASE_URL'"; 
+fi
+
+python rsum/manage.py flush --no-input;
+echo "flushed db"; 
+python rsum/manage.py makemigrations home;
+echo "make migrations";
+python rsum/manage.py migrate; 
+python rsum/manage.py flush --no-input;
+python rsum/rsum/create.py;
+
+if [ -z ${DATABASE_URL+x} ];
+then
+  exec gunicorn -b '0.0.0.0:8000' rsum.wsgi;
+else
+  exec gunicorn rsum.wsgi;
+fi

@@ -1,5 +1,5 @@
-Résumé
-======
+rsum
+====
 
 .. image:: https://api.codacy.com/project/badge/Grade/596eed0bd8544820978e231960047cb1
    :alt: Codacy Badge
@@ -13,8 +13,13 @@ Résumé
    :alt: Travis
    :target: https://travis-ci.org/gahan-corporation/rsum.application
 
-This project is meant to provide all of the required services for a fully functional professional profile website.  Fully functional remains undefined, but the aim of this code is to automatically deploy (and also scale in theory) a stack consisting of nginx, django, postgresql, and nagios.  WE should be able to detect existing installations of these services and adjust bebhavior accordingly.  The project makes use of Docker and Ansible. 
 
+`Documentation`_
+
+.. _Documentation: https://gahan-corporation.github.io/rsum.application/
+
+
+This project is meant to provide all of the required services for a fully functional professional profile website.  Fully functional remains undefined, but the aim of this code is to automatically deploy (and also scale in theory) a stack consisting of nginx, django, postgresql, and nagios.  WE should be able to detect existing installations of these services and adjust bebhavior accordingly.  The project makes use of Docker and Ansible. 
 
 
 Requirements
@@ -412,3 +417,20 @@ Example
      email: "alex@ecla.solutions"
      web: "https://ecla.solutions/"
    ...
+
+.. code-block::
+   :python:
+
+   for name, project in education.get('projects').items():
+      paragraph = document.add_paragraph(
+          name.title(),
+          style='List Bullet')
+      for item in project:
+          paragraph = document.add_paragraph(
+              item,
+              style='List Bullet 2')
+
+
+.. topic:: Pre Push Hook
+
+   I should very much like it if I could deploy to heroku on every push without an additional command. 

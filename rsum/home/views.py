@@ -3,6 +3,7 @@
 """Views for the rsum home application."""
 import datetime
 import json
+import os
 from collections import OrderedDict
 
 from django.shortcuts import render
@@ -23,7 +24,7 @@ def index(request):
     :return: HttpResponse object resulting from execution of render method.
     :rtype: object
     """
-    profile = Profile.objects.get(name=settings.OWNER)
+    profile = Profile.objects.get(id=1)
 
     sections = OrderedDict()
     sections_query = Section.objects.values()
@@ -67,7 +68,7 @@ def export_docx(cv_id='1'):
         )
     )
     response['Content-Disposition'] = (
-        'attachment; filename={0}-cv.docx'.format(settings.OWNER)
+        'attachment; filename={0}-cv.docx'.format(os.environ.get('RSUM_ENV'))
     )
     response['Content-Length'] = length
     return response

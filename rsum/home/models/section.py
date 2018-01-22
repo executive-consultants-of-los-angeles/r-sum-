@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# pylint: disable=too-few-public-methods
 """Model class that handles Section objects."""
 import json
 
@@ -32,7 +33,7 @@ class Section(models.Model):
     content = JSONField(default={})
 
     @classmethod
-    def create(cls, name='default', *args, **kwargs):
+    def create(cls, name='default', **kwargs):
         """Class method to handle creation of Section objects for testing.
 
         :param cls: The Section class.
@@ -52,4 +53,6 @@ class Section(models.Model):
         return section
 
     class Meta:
+        """Meta class for Section objects."""
+
         app_label = 'home'

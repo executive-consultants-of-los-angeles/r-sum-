@@ -9,33 +9,25 @@
       github: 'https://github.com/eclacfo'
 - summary:
     content: "Straight shooter with upper management written all over me."
-    # calendly: 'https://calendly.com/xander-ecla'
     build_status:
-      - name: "Build Status"
-      - ngnx:
-          name: "nginx"
+      - travis:
+          name: 'travis'
           image:
-            'https://travis-ci.org/executive-consultants-of-los-angeles/ngnx.svg?branch=master'
+            'https://travis-ci.org/gahan-corporation/rsum.application.svg?branch=master'
           link:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/ngnx"
-      - rsum:
-          name: "rsum"
+            'https://travis-ci.org/gahan-corporation/rsum.application'
+      - codacy:
+          name: "codacy"
           image:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/rsum.svg?branch=master"
+            "https://api.codacy.com/project/badge/Grade/e8ccc643c99147dca4fd98a8b2851451?isInternal=true"
           link:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/rsum"
+            "https://www.codacy.com/app/projectList/gahancorpcfo/rsum.application"
       - ngos:
-          name: "ngos"
+          name: "codeclimate"
           image:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/ngos.svg?branch=master"
+            "https://api.codeclimate.com/v1/badges/174065f2c90869f99680/maintainability"
           link:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/ngos"
-      - psql:
-          name: "psql"
-          image:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/psql.svg?branch=master"
-          link:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/psql"
+            "https://codeclimate.com/github/gahan-corporation/rsum.application"
 - skills:
     start: 2000
     infrastructure_automation:

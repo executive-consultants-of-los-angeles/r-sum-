@@ -19,5 +19,3 @@ def test_run_export(export_document, profile):
 
     if not isinstance(export_document, ExportDocument):
         raise AssertionError()
-
-    print(export_document.export(1))
