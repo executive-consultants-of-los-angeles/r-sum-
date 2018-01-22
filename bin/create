@@ -3,10 +3,10 @@
 if [ -z ${DATABASE_URL+x} ]; 
 then
   echo "var is unset"; 
-  export PGHOST=pg.gc
-  export PGUSER=postgres
-  createuser -e -s $RSUM_ENV
-  createdb -e $RSUM_ENV
+  export PGHOST=pg.gc;
+  export PGUSER=postgres;
+  createuser -e -s $RSUM_ENV;
+  createdb -e $RSUM_ENV;
 else 
   echo "var is set to '$DATABASE_URL'"; 
 fi
@@ -16,4 +16,10 @@ python rsum/manage.py makemigrations home;
 python rsum/manage.py migrate; 
 python rsum/manage.py flush --no-input;
 python rsum/rsum/create.py;
-exec gunicorn -b '0.0.0.0:8000' rsum.wsgi 
+
+if [ -z ${DATABASE_URL+x} ];
+then
+  exec gunicorn -b '0.0.0.0:8000' rsum.wsgi;
+else
+  exec gunicorn rsum.wsgi;
+fi
