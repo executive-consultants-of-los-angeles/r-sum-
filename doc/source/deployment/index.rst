@@ -41,10 +41,9 @@ This is placed in the user's .bashrc file.
 Static Files
 ------------
 
-Currently static files are kept on an Ubuntu 16.04 EC2 instance.  They are served via an NGINX proxy that forwards requests for non-static content on to the appropriate Heroku app. 
+Static files are kept in S3 with the help of a handy django app.  The process for deploying changes for testing is currently something like the following:
 
-Static files should be served through S3 instead and deployment of changes to them should be automated. 
-
-Django has the `relevant docs`_.
-
-.. _relevant docs: https://docs.djangoproject.com/en/2.0/howto/static-files/deployment/
+#. Update a file, then commit it to the git repository.
+#. Run manage.py collectstatic.
+#. Wait.
+#. Push the updated code to Heroku.

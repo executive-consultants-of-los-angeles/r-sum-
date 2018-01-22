@@ -1,0 +1,8 @@
+FROM alpine:3.7 
+MAINTAINER duchess@gahan-corporation.com
+RUN apk update
+RUN apk add build-base python3 python3-dev wget git postgresql postgresql-dev libxml2 libxml2-dev libxslt libxslt-dev
+RUN ln -sf /usr/bin/python3 /usr/bin/python; wget https://bootstrap.pypa.io/get-pip.py; python get-pip.py; rm get-pip.py; ln -sf /usr/bin/pip3 /usr/bin/pip;
+WORKDIR /srv
+COPY .requirements .requirements
+RUN pip install -r .requirements; rm .requirements

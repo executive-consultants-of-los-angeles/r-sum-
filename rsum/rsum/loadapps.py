@@ -1,4 +1,5 @@
 """Module creates database entries for a profile."""
+import os
 import django
 import dj_database_url
 from django.conf import settings
@@ -6,8 +7,8 @@ from django.conf import settings
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'xander',
-        'USER': 'xander',
+        'NAME': os.environ.get('RSUM_ENV'),
+        'USER': os.environ.get('RSUM_ENV'),
         'PASSWORD': '',
         'HOST': 'pg.gc',
         'PORT': '5432',

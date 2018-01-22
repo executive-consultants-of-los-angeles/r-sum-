@@ -1,15 +1,11 @@
-FROM gcorp/rsum.application:build
+FROM gcorp/rsum:build 
 MAINTAINER duchess@gahan-corporation.com
-RUN pip install codacy-coverage==1.3.10
 WORKDIR /srv
 ENV PYTHONPATH /srv/rsum
 ENV RSUM_ENV dev
-RUN rm -r rsum
-RUN git clone https://github.com/gahan-corporation/rsum.application.git rsum
+RUN git clone https://github.com/gahan-corporation/rsum.git
 WORKDIR /srv/rsum
-RUN ln -sf /srv/rsum/static /srv/static
-RUN pip install dj-database-url==0.4.2 
-RUN pip install gunicorn==19.7.1
-RUN pip install -r .requirements
-RUN pip install git+https://github.com/gahan-corporation/rsum.application.git@v0.1.2
-CMD gunicorn rsum.wsgi 
+RUN pip uninstall -y rsum || true; python setup.py build; python setup.py install
+COPY create /bin/create
+RUN apk add bash
+CMD /bin/create 

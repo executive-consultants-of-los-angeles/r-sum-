@@ -1,13 +1,13 @@
     <h2>{{ section|title }}</h2>
-    <!-- Progress Box -->
-    {% for skill, data in sections.skills.iteritems %}
+    {% for skill, data in sections.skills.items %}
+      <!-- Progress Box -->
       {% if skill != 'start' %}
       <div class="progress-box">
         <h5>{{ data.name }} <span class="color-heading pull-right">{{ data.experience_string }}</span></h5>
         <div class="progress">
           <div class="progress-bar bg-color-base" role="progressbar" data-width="{{ data.experience_value }}"></div>
         </div>
-        {% for related, skills in data.iteritems %}
+        {% for related, skills in data.items %}
           {% if  related != 'start' and related != 'experience_value'  and related != 'name' and related != 'experience_string' %}
           <h6 style="padding-left: 20px;">{{ skills.name }} <span class="color-heading pull-right">{{ skills.experience_string }}</span></h6>
           <div class="progress progress-sub">
