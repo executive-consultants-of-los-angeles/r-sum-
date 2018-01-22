@@ -1,7 +1,9 @@
 FROM alpine:3.7 
 MAINTAINER duchess@gahan-corporation.com
+RUN apk update
 RUN apk add python3
 RUN apk add wget
+RUN apk add git
 RUN ln -sf /usr/bin/python3 /usr/bin/python; wget https://bootstrap.pypa.io/get-pip.py; python get-pip.py; rm get-pip.py;
 WORKDIR /srv
 ENV PYTHONPATH /srv/rsum
