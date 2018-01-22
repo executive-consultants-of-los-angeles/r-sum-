@@ -23,6 +23,8 @@ setup(
         'home.models',
         'home.export',
     ],
+    package_data={'': ['rsum/home/templates']},
+    include_package_data=True,
     long_description=read('readme.rst'),
     setup_requires=['pytest-runner'],
     install_requires=['django', 'pyyaml'],
