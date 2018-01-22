@@ -1,8 +1,6 @@
-    {{ sections.skills }} 
     <h2>{{ section|title }}</h2>
     {% for skill, data in sections.skills.items %}
       <!-- Progress Box -->
-      <b>{{ skill }}</b>
       {% if skill != 'start' %}
       <div class="progress-box">
         <h5>{{ data.name }} <span class="color-heading pull-right">{{ data.experience_string }}</span></h5>
