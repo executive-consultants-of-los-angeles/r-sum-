@@ -7,9 +7,9 @@ export PGUSER=postgres
 echo $RSUM_ENV
 
 echo "createuser"
-createuser -s $RSUM_ENV
+createuser -e -s $RSUM_ENV
 echo "createdb"
-createdb $RSUM_ENV
+createdb -e $RSUM_ENV
 
 echo "flush db"
 python rsum/manage.py flush --no-input;
