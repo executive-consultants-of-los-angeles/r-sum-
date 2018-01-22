@@ -1,5 +1,11 @@
 #!/bin/bash
 
+export PGHOST=pg.gc
+export PGUSER=postgres
+
+createuser -s $RSUM_DEV
+createdb $RSUM_DEV
+
 python rsum/manage.py flush --no-input;
 python rsum/manage.py makemigrations home;
 python rsum/manage.py migrate; 
