@@ -10,6 +10,6 @@ RUN git clone --branch iss173 https://github.com/gahan-corporation/rsum.applicat
 WORKDIR /srv/rsum
 RUN pip install -r .requirements
 RUN pip install git+https://github.com/gahan-corporation/rsum.application.git@v0.1.2
-ADD create /bin/create
+COPY create /bin/create
 RUN apk add bash
 CMD /bin/create 
