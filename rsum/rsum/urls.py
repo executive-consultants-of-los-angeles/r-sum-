@@ -19,6 +19,7 @@ from django.urls import path
 from django.urls import re_path
 
 import home.views
+import export.views
 
 urlpatterns = [
     path('', home.views.index),
