@@ -1,6 +1,7 @@
 FROM alpine:3.7 
 MAINTAINER duchess@gahan-corporation.com
 RUN apk update
+RUN apk add build-base
 RUN apk add python3
 RUN apk add wget
 RUN apk add git
