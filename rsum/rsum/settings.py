@@ -68,8 +68,8 @@ WSGI_APPLICATION = 'rsum.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'xander',
-        'USER': 'xander',
+        'NAME': os.environ.get('RSUM_ENV'),
+        'USER': os.environ.get('RSUM_ENV'),
         'PASSWORD': '',
         'HOST': 'pg.gc',
         'PORT': '5432',
@@ -105,7 +105,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.environ.get('STATICFILES_DIR')
