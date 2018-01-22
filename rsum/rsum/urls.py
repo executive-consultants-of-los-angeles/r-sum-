@@ -22,6 +22,6 @@ import home.views
 
 urlpatterns = [
     path('', home.views.index),
-    re_path('docx/(?P<cv_id>[0-9]+)/$', home.views.export_docx, name='docx'),
+    re_path('docx/(?P<cv_id>[0-9]+)/$', export.views.index, name='docx'),
     path('admin/', admin.site.urls),
 ]

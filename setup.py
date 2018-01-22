@@ -22,6 +22,8 @@ setup(
         'home',
         'home.models',
         'home.export',
+        'export',
+        'export.tools',
     ],
     package_data={'': ['rsum/home/templates']},
     include_package_data=True,
