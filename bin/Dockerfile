@@ -3,6 +3,7 @@ MAINTAINER duchess@gahan-corporation.com
 RUN apk update
 RUN apk add build-base
 RUN apk add python3
+RUN apk add python3-dev
 RUN apk add wget
 RUN apk add git
 RUN apk add postgresql
