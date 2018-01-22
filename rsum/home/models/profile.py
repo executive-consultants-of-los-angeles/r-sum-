@@ -32,10 +32,10 @@ class Profile(models.Model):
         try:
             self.name = settings.DIR
         except AttributeError:
-            self.name = os.environ.get('DIR')
+            self.name = os.environ.get('RSUM_ENV')
 
         if not self.name:
-            self.name = 'xander'
+            raise AttributeError()
         return self.name
 
     @classmethod
