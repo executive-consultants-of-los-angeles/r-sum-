@@ -48,5 +48,6 @@ class Intro(object):
         ).paragraphs[
             0
         ].paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        print(name)
         print(document)
         return document

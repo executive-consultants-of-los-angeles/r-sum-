@@ -67,7 +67,8 @@ class Experience(object):
 
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0
-
+        print(name)
+        print(document)
         return document
 
     def set_tables(self, **dargs):

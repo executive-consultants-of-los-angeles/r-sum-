@@ -21,7 +21,6 @@ setup(
         'rsum',
         'home',
         'home.models',
-        'home.export',
         'home.tests',
         'export',
         'export.tools',
@@ -30,8 +29,8 @@ setup(
     include_package_data=True,
     long_description=read('readme.rst'),
     setup_requires=['pytest-runner'],
-    install_requires=['django', 'pyyaml'],
-    tests_require=['pytest'],
+    install_requires=['django', 'pyyaml', 'django-extensions', 'django-s3-storage'],
+    tests_require=['pytest', 'coverage', 'pytest-django'],
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",

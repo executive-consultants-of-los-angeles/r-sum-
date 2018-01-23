@@ -55,6 +55,7 @@ class Skills(object):
                 paragraph.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
                 t_sub = self.add_sub_skills(skill, t_sub, index-1)
             index = index + 1
+        print(name)
         print(document)
         return document
 

@@ -43,11 +43,7 @@ class ExportDocument(object):
     """
 
     document = Document()
-    document = style.set_styles(document)
-    document = layout.set_layout(document)
-
     settings = django_settings
-    stream = []
 
     def __init__(self):
         """Initialize ExportDocument class.
@@ -67,17 +63,19 @@ class ExportDocument(object):
         :rtype: object
         """
         profile = Profile.objects.get(pk=profile_id)
-        self.stream = StringIO()
-        document = Document()
+        stream = StringIO()
+        document = self.document
+        document = style.set_styles(document)
+        document = layout.set_layout(document)
 
         sections = json.loads(profile.content)
 
         for section in sections:
             document = self.save_section(section)
 
-        print(document)
+        document.save(self.name)
 
-        return self.stream
+        return stream
 
     def save_section(self, section):
         """Save a section of a document."""
