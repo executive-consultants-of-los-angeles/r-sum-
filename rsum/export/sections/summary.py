@@ -1,6 +1,5 @@
 """Summary section export."""
 # pylint: disable=no-member
-import requests
 from django.conf import settings as django_settings
 from docx.shared import Cm
 from docx.enum.table import WD_TABLE_ALIGNMENT
@@ -48,8 +47,6 @@ class Summary(object):
         paragraph = self.format_paragraph(
             summary_table.cell(0, 1).paragraphs[1])
 
-        document = self.add_build_status(document)
-
         print(name)
         print(document)
         return document
@@ -63,22 +60,3 @@ class Summary(object):
         paragraph = self.summary_table.cell(0, 1).paragraphs[0]
         paragraph.paragraph_format.line_spacing = 0.0
         return paragraph
-
-    def add_build_status(self, document):
-        """Add build status to document."""
-        with open('travis.svg', 'w') as travis_file:
-            travis = requests.get(
-                ("https://travis-ci.org/gahan-corporation"
-                 "/rsum.svg?branch=master")
-            )
-            travis_file.write(travis.content)
-
-        build_status = document.add_table(rows=3, cols=2)
-        build_status.alignment = WD_TABLE_ALIGNMENT.RIGHT
-        build_status.add_paragraph(
-            'Build Status', style='Heading 4')
-
-        print(travis.content)
-
-        print(document)
-        return document
