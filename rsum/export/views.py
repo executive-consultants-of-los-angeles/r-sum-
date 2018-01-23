@@ -19,6 +19,7 @@ def index(request):
     stream = ExportDocument().export_word(1)
 
     # Special thanks to: https://stackoverflow.com/a/24122313
+    print(request)
 
     length = stream.tell()
     stream.seek(0)

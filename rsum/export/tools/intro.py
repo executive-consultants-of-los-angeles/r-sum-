@@ -1,11 +1,9 @@
 """Intro module."""
-# pylint: disable=no-member,no-name-in-module
-import os
+# pylint: disable=too-few-public-methods,no-name-in-module,no-member
 from django.conf import settings as django_settings
 from docx.shared import Cm
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-print(os.getcwd())
 
 
 class Intro(object):
@@ -25,13 +23,8 @@ class Intro(object):
         :return: Document updated with Introduction.
         :rtype: object
         """
-        self.name = name
         intro = section
-        document = self.make_table(document, intro)
-        return document
-
-    def make_table(self, document, intro):
-        """Add a table to the document."""
+        self.name = name
         settings = self.settings
         table = document.add_table(rows=1, cols=2)
         table.cell(0, 0).width = Cm(12)
@@ -49,7 +42,10 @@ class Intro(object):
         table.cell(0, 1).add_picture(
             '../static/profiles/{0}/img/mockup/avatar-02.png'.format(
                 settings.DIR))
-        table.cell(0, 1).paragraphs[0].paragraph_format.alignment = (
-            WD_ALIGN_PARAGRAPH.CENTER
-        )
+        table.cell(
+            0,
+            1
+        ).paragraphs[
+            0
+        ].paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
         return document
