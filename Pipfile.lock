@@ -84,17 +84,17 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:1e91fa790d1ca819879490ba61d83cc150ed65c7adf3e12149ac9a8f11f7820d",
-                "sha256:329a34da02fa48162cb8d64d1a34d996107cebb7cf6987cef34ed7987907c51c"
+                "sha256:24f8f919126b8a55ef3be6729243f71ffe4b927408e4a1be4e64671cdb011409",
+                "sha256:06614d6111c0bcc7e76ef699e4caec0de87217180486e43ec2c353d6f01a409d"
             ],
-            "version": "==1.5.19"
+            "version": "==1.5.20"
         },
         "botocore": {
             "hashes": [
-                "sha256:7c1341590a05b8c7146def11e76d71b1b0d2ef6fa1f05a177494113f41bd17e9",
-                "sha256:fa29ea54f26b1193682332d3b4cdde7aa79b4eaccb23f70e88672509c24546f4"
+                "sha256:628994a88d09a1fe7d96e0c4b786302463bdfaff9f829d4a72ebe8d02e8160ba",
+                "sha256:b7c33d79fe4c6b8d15f4191aa6e60e3ac0f290b3ce3a8b4d831f79eddbca7115"
             ],
-            "version": "==1.8.33"
+            "version": "==1.8.34"
         },
         "cffi": {
             "hashes": [
@@ -366,9 +366,9 @@
             "version": "==2.6.1"
         },
         "python-docx": {
-            "editable": true,
+            "editable": false,
             "git": "git://github.com/executive-consultants-of-los-angeles/python-docx.git",
-            "ref": "33c96190312ed027b99c5f6a65f1288eed1eff62"
+            "ref": "master"
         },
         "pytz": {
             "hashes": [

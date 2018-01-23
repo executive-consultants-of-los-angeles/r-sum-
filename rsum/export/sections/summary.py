@@ -3,7 +3,6 @@
 from django.conf import settings as django_settings
 from docx.shared import Cm
 from docx.enum.table import WD_TABLE_ALIGNMENT
-# from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 
 class Summary(object):
@@ -11,6 +10,8 @@ class Summary(object):
 
     name = None
     settings = django_settings
+    cm = Cm
+    summary_table = None
 
     def save(self, name, section, document):
         """Add summary section.
@@ -33,23 +34,29 @@ class Summary(object):
 
         summary_table.cell(0, 0).width = Cm(6)
         summary_table.cell(0, 0).add_picture(
-            'static/profiles/{0}/img/500x700/02.png'.format(settings.DIR),
+            'static/profiles/{0}/img/500x700/02.png'.format(
+                settings.DIR),
             width=Cm(5))
 
-        summary_table.cell(0, 1).add_paragraph('Summary', style='Heading 3')
+        summary_table.cell(0, 1).add_paragraph(
+            'Summary', style='Heading 3')
         summary_table.cell(0, 1).add_paragraph(
             summary.get('content'), style='Normal')
-        paragraph = summary_table.cell(0, 1).paragraphs[1]
-        paragraph.paragraph_format.line_spacing = 1.0
-        summary_table.cell(0, 1).width = Cm(10)
-        paragraph = summary_table.cell(0, 0).paragraphs[0]
-        paragraph.paragraph_format.line_spacing = 0.0
-        paragraph = summary_table.cell(0, 1).paragraphs[0]
-        paragraph.paragraph_format.line_spacing = 0.0
+        self.summary_table = summary_table
+
+        paragraph = self.format_paragraph(
+            summary_table.cell(0, 1).paragraphs[1])
+
         print(name)
         print(document)
         return document
 
-    def no_action(self):
+    def format_paragraph(self, paragraph):
         """Do nothing."""
-        return self
+        paragraph.paragraph_format.line_spacing = 1.0
+        self.summary_table.cell(0, 1).width = self.cm(10)
+        paragraph = self.summary_table.cell(0, 0).paragraphs[0]
+        paragraph.paragraph_format.line_spacing = 0.0
+        paragraph = self.summary_table.cell(0, 1).paragraphs[0]
+        paragraph.paragraph_format.line_spacing = 0.0
+        return paragraph
