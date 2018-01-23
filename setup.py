@@ -22,6 +22,7 @@ setup(
         'home',
         'home.models',
         'home.export',
+        'home.tests',
         'export',
         'export.tools',
     ],
