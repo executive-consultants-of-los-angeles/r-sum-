@@ -82,7 +82,7 @@ class Skills(object):
                 experience = '{0} year(s)'.format(str(experience))
                 if index == 0:
                     sub_table.cell(0, 0).text = (
-                        sub_name.replace('_', ' ').title()
+                        sub_name.replace('_', ' ').title())
                     sub_table.cell(0, 1).text = experience
                     sub_table.cell(0, 0).width = Cm(5)
                 else:
