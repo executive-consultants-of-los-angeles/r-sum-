@@ -5,7 +5,7 @@ ENV PYTHONPATH /srv/rsum
 ENV RSUM_ENV dev
 RUN git clone https://github.com/gahan-corporation/rsum.git
 WORKDIR /srv/rsum
-RUN git checkout v0.1.2
+RUN git fetch -p; git checkout v0.1.2; git checkout -b current
 RUN pip uninstall -y rsum || true; pip uninstall -y rsum || true; python setup.py build; python setup.py install
 COPY create /bin/create
 RUN apk add bash
