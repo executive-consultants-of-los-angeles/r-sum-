@@ -40,7 +40,7 @@ class Intro(object):
 
         table.cell(0, 1).width = Cm(4)
         table.cell(0, 1).add_picture(
-            '../static/profiles/{0}/img/mockup/avatar-02.png'.format(
+            'static/profiles/{0}/img/mockup/avatar-02.png'.format(
                 settings.DIR))
         table.cell(
             0,
