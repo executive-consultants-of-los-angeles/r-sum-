@@ -1,7 +1,11 @@
 """Styles module."""
+# pylint: disable=no-member
 from docx.shared import Pt
 from docx.shared import RGBColor
 from docx.enum.style import WD_STYLE_TYPE
+from docx.enum.text import WD_TAB_ALIGNMENT
+from docx.enum.text import WD_TAB_LEADER
+from docx.shared import Cm
 
 
 def set_first_headings(document):
@@ -70,6 +74,12 @@ def set_list_bullets(document):
     font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
     font.size = Pt(5)
     font.name = 'Hind'
+    style.paragraph_format.tab_stops.add_tab_stop(
+        Cm(0.1),
+        alignment=WD_TAB_ALIGNMENT.LEFT,
+        leader=WD_TAB_LEADER.SPACES
+    )
+    print(dir(style.paragraph_format))
     return document
 
 

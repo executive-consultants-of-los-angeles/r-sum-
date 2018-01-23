@@ -9,6 +9,7 @@ class Experience(object):
     """Export Experience object."""
 
     name = None
+    cm = Cm
     projects = None
     settings = django_settings
     experience = None
@@ -104,7 +105,7 @@ class Experience(object):
                 settings.DIR,
                 index+1
             ),
-            width=Cm(4.8)
+            width=self.cm(4.8)
         )
         document = self.finish_tables(
             document, table=table, row=row, col=col, item=item,
@@ -118,6 +119,8 @@ class Experience(object):
         col = int(dargs.get('col'))
         self.projects = dargs.get('item').get('projects')
 
+        current_cell = table.cell(row, col)
+        current_cell.width = self.cm(5)
         paragraph = table.cell(row, col).paragraphs[1]
         paragraph.paragraph_format.space_after = 0
 
@@ -159,10 +162,13 @@ class Experience(object):
                 style='List Bullet')
             paragraph.paragraph_format.line_spacing = self.spacing
             paragraph.paragraph_format.space_after = 0
+            paragraph.paragraph_format.tab_stops.add_tab_stop(self.cm(0.2))
             for item in project:
-                paragraph = table.cell(row, col).add_paragraph(
+                item_paragraph = table.cell(row, col).add_paragraph(
                     item,
                     style='List Bullet 2')
-                paragraph.paragraph_format.line_spacing = self.spacing
-                paragraph.paragraph_format.space_after = 0
+                item_paragraph.paragraph_format.line_spacing = 0.8
+                item_paragraph.paragraph_format.space_after = 0
+                item_paragraph.paragraph_format.tab_stops.add_tab_stop(
+                    self.cm(10))
         return document
