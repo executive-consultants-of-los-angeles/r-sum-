@@ -1,12 +1,12 @@
 """pytest configuration module."""
 import pytest
 
-import django
+from rsum import loadapps
 
 from home.models.profile import Profile
 from home.models.section import Section
 
-django.setup()
+loadapps.main()
 
 
 @pytest.fixture(scope="session")

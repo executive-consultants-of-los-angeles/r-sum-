@@ -2,7 +2,7 @@
 # pylint: disable=wrong-import-order
 import pytest
 
-from . import loadapps
+from rsum import loadapps
 
 from home.models.profile import Profile
 
