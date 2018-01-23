@@ -1,8 +1,8 @@
-"""Module for contact."""
+"""Values export object module."""
 
 
-class Contact(object):
-    """Contact object class."""
+class Values(object):
+    """Class for Values export object."""
 
     name = None
     document = None

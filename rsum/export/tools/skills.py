@@ -1,8 +1,8 @@
-"""Module for contact."""
+"""Skills section module."""
 
 
-class Contact(object):
-    """Contact object class."""
+class Skills(object):
+    """Class for skills section object."""
 
     name = None
     document = None

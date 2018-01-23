@@ -1,8 +1,8 @@
 #!/usr/bin/env python
+# pylint: disable=no-member,redefined-builtin
 # -*- coding: utf-8 -*-
 """Module for exporting profiles to Word format."""
-from __future__ import print_function
-
+import importlib
 import json
 from io import StringIO
 
@@ -11,21 +11,36 @@ from django.conf import settings as django_settings
 from docx import Document
 
 from home.models.profile import Profile
-from export.tools.intro import Intro
+
+
+def load_class(class_name):
+    """Dynamically load a class.
+
+    Special thanks to: `Thomas Sileo`_.
+
+    .. _Thomas Sileo: http://bit.ly/2DsSINZ
+    """
+    class_data = class_name.split(".")
+    module_path = ".".join(class_data[:-1])
+    class_str = class_data[-1]
+
+    module = importlib.import_module(module_path)
+    return getattr(module, class_str)
 
 
 class ExportDocument(object):
     """Class to handle exporting rsum pages to Word documents.
 
-    .. attribute:: s
+    .. attribute:: document
 
-       Hostname of current host.
+       Document object for export.
 
-    .. attribute:: name
+    .. attribute:: settings
 
-       Filename to offer to the end user.
+       Settings for the current app.
     """
 
+    document = Document()
     settings = django_settings
     stream = []
 
@@ -38,7 +53,7 @@ class ExportDocument(object):
         settings = self.settings
         self.name = '{0}-profile.docx'.format(settings.DIR)
 
-    def export(self, profile_id):
+    def export_word(self, profile_id):
         """Export a word document.
 
         :param profile_id: ID of CV to export.
@@ -53,10 +68,17 @@ class ExportDocument(object):
         sections = json.loads(profile.content)
 
         for section in sections:
-            self.save_section(document, section)
+            document = self.save_section(section)
+
+        print(document)
 
         return self.stream
 
-    def save_section(self, document, section):
+    def save_section(self, section):
         """Save a section of a document."""
-        print(section.items())
+        for name, value in section.items():
+            section_cls = load_class('export.tools.{}.{}'.format(
+                name, name.title()))
+            section_obj = section_cls()
+            self.document = section_obj.save(name, value, self.document)
+        return self.document

@@ -1,16 +1,13 @@
 #!/usr/bin/env python
+# pylint: disable=no-member
 # -*- coding: utf-8 -*-
 """Views for the rsum home application."""
 import datetime
 import json
-# import os
 from collections import OrderedDict
 
 from django.shortcuts import render
-# from django.http import HttpResponse
 from django.conf import settings
-
-# from home.export.word import ExportDocument
 
 from home.models.section import Section
 from home.models.profile import Profile

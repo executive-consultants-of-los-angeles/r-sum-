@@ -1,8 +1,8 @@
-"""Module for contact."""
+"""Summary section export."""
 
 
-class Contact(object):
-    """Contact object class."""
+class Summary(object):
+    """Sumary section object class."""
 
     name = None
     document = None
