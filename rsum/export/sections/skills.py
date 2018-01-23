@@ -77,17 +77,18 @@ class Skills(object):
             skilltable_index, 0).add_table(rows=1, cols=2)
         index = 0
         for sub_name, sub in subs.items():
-            print(sub)
             if isinstance(sub, dict):
                 experience = int(current_year) - int(sub.get('start'))
                 experience = '{0} year(s)'.format(str(experience))
                 if index == 0:
-                    sub_table.cell(0, 0).text = sub.get('name')
+                    sub_table.cell(0, 0).text = (
+                        sub_name.replace('_', ' ').title()
                     sub_table.cell(0, 1).text = experience
                     sub_table.cell(0, 0).width = Cm(5)
                 else:
                     sub_table.add_row()
-                    sub_table.cell(index, 0).text = sub.get('name')
+                    sub_table.cell(index, 0).text = (
+                        sub_name.replace('_', ' ').title())
                     sub_table.cell(index, 0).width = Cm(1)
                     sub_table.cell(index, 1).text = experience
                 paragraph = sub_table.cell(index, 0).paragraphs[0]
