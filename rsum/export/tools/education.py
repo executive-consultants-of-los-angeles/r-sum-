@@ -32,7 +32,7 @@ class Education(object):
         paragraph.paragraph_format.space_after = 0
         paragraph.paragraph_format.page_break_before = True
         document.add_picture(
-            '../static/profiles/{0}/img/1920x1080/01.jpg'.format(
+            'static/profiles/{0}/img/1920x1080/01.jpg'.format(
                 settings.DIR),
             width=Cm(4))
         paragraph = document.add_paragraph(
