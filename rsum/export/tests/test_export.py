@@ -2,6 +2,7 @@
 import pytest
 
 from export.models import ExportDocument
+from home.models.profile import Profile
 
 
 def test_export(export_document):

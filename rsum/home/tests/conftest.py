@@ -2,12 +2,12 @@
 # pylint: disable=wrong-import-order
 import pytest
 
-from rsum import loadapps
+import rsum.loadapps
 
 from home.models.profile import Profile
 
 
-loadapps.main()
+rsum.loadapps.main()
 
 
 @pytest.fixture(scope="session")
