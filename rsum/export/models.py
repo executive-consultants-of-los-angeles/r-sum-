@@ -80,7 +80,7 @@ class ExportDocument(object):
     def save_section(self, section):
         """Save a section of a document."""
         for name, value in section.items():
-            section_cls = load_class('export.tools.{}.{}'.format(
+            section_cls = load_class('export.sections.{}.{}'.format(
                 name, name.title()))
             section_obj = section_cls()
             self.document = section_obj.save(name, value, self.document)
