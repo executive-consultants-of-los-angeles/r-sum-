@@ -1,1 +1,2 @@
 recursive-include rsum/home/templates *
+recursive-exclude * __pycache__
