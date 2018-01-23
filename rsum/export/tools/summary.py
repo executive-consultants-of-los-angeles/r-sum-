@@ -46,6 +46,7 @@ class Summary(object):
         paragraph.paragraph_format.line_spacing = 0.0
         paragraph = summary_table.cell(0, 1).paragraphs[0]
         paragraph.paragraph_format.line_spacing = 0.0
+        print(document)
         return document
 
     def no_action(self):

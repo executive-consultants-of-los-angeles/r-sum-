@@ -3,7 +3,6 @@
 import datetime
 from docx.shared import Cm
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-from . import style
 
 
 class Skills(object):
@@ -56,6 +55,7 @@ class Skills(object):
                 paragraph.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
                 t_sub = self.add_sub_skills(skill, t_sub, index-1)
             index = index + 1
+        print(document)
         return document
 
     def add_sub_skills(self, subs, skilltable, skilltable_index):
