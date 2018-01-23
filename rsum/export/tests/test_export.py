@@ -1,8 +1,7 @@
 """Test module for export class."""
 import pytest
 
-from home.models.profile import Profile
-from home.export.word import ExportDocument
+from export.models import ExportDocument
 
 
 def test_export(export_document):
