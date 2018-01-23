@@ -12,9 +12,7 @@ Welcome to rsum's documentation!
 
    modules/home
    modules/export
-   integration/index
-   deployment/index
-   delivery/index
+   continuous/index
 
 All the Badges
 --------------
