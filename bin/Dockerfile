@@ -3,7 +3,7 @@ MAINTAINER duchess@gahan-corporation.com
 WORKDIR /srv
 ENV PYTHONPATH /srv/rsum
 ENV RSUM_ENV dev
-RUN git clone https://github.com/gahan-corporation/rsum.git
+RUN git clone --branch iss226 https://github.com/gahan-corporation/rsum.git
 WORKDIR /srv/rsum
 RUN pip uninstall -y rsum || true; pip uninstall -y rsum || true; python setup.py build; python setup.py install
 COPY create /bin/create
