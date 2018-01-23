@@ -31,6 +31,7 @@ class Skills(object):
         table = document.tables[1]
         table.cell(0, 1).add_paragraph('Skills', style='Heading 3')
         t_sub = table.cell(0, 1).add_table(rows=1, cols=2)
+        print(t_sub)
         table.cell(0, 1).tables[0].columns[0].width = Cm(7)
         index = 1
         for skill_name, skill in skills.items():
@@ -41,12 +42,12 @@ class Skills(object):
 
                 # Add a row to the sub table.
                 t_sub.add_row()
-                t_sub.cell(index-1, 0).textable = output_name
+                t_sub.cell(index-1, 0).text = output_name
                 paragraph = t_sub.cell(index-1, 0).paragraphs[0]
                 paragraph.style = 'Skill'
                 paragraph.paragraph_format.line_spacing = 1.0
                 paragraph.paragraph_format.space_after = 0
-                t_sub.cell(index-1, 1).textable = experience
+                t_sub.cell(index-1, 1).text = experience
 
                 paragraph = t_sub.cell(index-1, 1).paragraphs[0]
                 paragraph.style = 'Skill'
@@ -69,12 +70,14 @@ class Skills(object):
         :return: Document updated with sub skills.
         :rtype: object
         """
+        print(subs)
         self.sub_skills = subs
         current_year = float(datetime.datetime.now().strftime("%Y"))
         sub_table = skilltable.cell(
             skilltable_index, 0).add_table(rows=1, cols=2)
         index = 0
-        for sub in subs:
+        for sub_name, sub in subs.items():
+            print(sub)
             if isinstance(sub, dict):
                 experience = int(current_year) - int(sub.get('start'))
                 experience = '{0} year(s)'.format(str(experience))
