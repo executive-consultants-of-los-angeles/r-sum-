@@ -66,10 +66,18 @@ class Summary(object):
 
     def add_build_status(self, document):
         """Add build status to document."""
-        travis = requests.get(
-            ("https://travis-ci.org/gahan-corporation"
-             "/rsum.svg?branch=master")
-        )
+        with open('travis.svg', 'w') as travis_file:
+            travis = requests.get(
+                ("https://travis-ci.org/gahan-corporation"
+                 "/rsum.svg?branch=master")
+            )
+            travis_file.write(travis.content)
+
+        build_status = document.add_table(rows=3, cols=2)
+        build_status.alignment = WD_TABLE_ALIGNMENT.RIGHT
+        build_status.add_paragraph(
+            'Build Status', style='Heading 4')
+
         print(travis.content)
 
         print(document)
