@@ -11,7 +11,8 @@ class Experience(object):
     name = None
     projects = None
     settings = django_settings
-    spacing = 1.0
+    experience = None
+    spacing = 0.9
 
     def save(self, name, section, document):
         """Add experience section.
@@ -22,7 +23,7 @@ class Experience(object):
         :return: Documentable updated with Experience section.
         :rtype: object
         """
-        experience = section
+        self.experience = section
         self.name = name
 
         paragraph = document.add_paragraph('')
@@ -31,12 +32,11 @@ class Experience(object):
         paragraph = document.add_paragraph(
             'Experience', style='Heading 3')
 
+        document = self.add_intro(document)
+
         table = document.add_table(rows=1, cols=3)
         table.alignment = WD_TABLE_ALIGNMENT.CENTER
-        print(experience)
-        del experience[0]
-        print(experience)
-        for index, value in enumerate(experience):
+        for index, value in enumerate(self.experience):
             if index % 3 == 0:
                 table.add_row()
             document = self.set_tables(
@@ -46,6 +46,14 @@ class Experience(object):
         paragraph.paragraph_format.line_spacing = 0
         print(name)
         print(document)
+        return document
+
+    def add_intro(self, document):
+        """Add an introduction to the experience section."""
+        introduction = self.experience.pop(0)
+        paragraph = document.add_paragraph(
+            introduction.get('introduction'), style='Normal')
+        paragraph.paragraph_format.line_spacing = 0.7
         return document
 
     def set_tables(self, document, **dargs):
@@ -61,34 +69,34 @@ class Experience(object):
 
     def prep_tables(self, document, **dargs):
         """Prepare tables."""
-        for item in dargs.get('value'):
+        for key, item in dargs.get('value').items():
             index = dargs.get('index')
             row = (index % 9) / 3
             col = index % 3
-            if (
-                    index % 9 == 0 and
-                    index > 0
-            ):
+
+            if (index % 9 == 0 and index > 0):
                 table = document.add_table(rows=1, cols=3)
                 table.alignment = WD_TABLE_ALIGNMENT.CENTER
 
-            document = self.build_tables(document, table=dargs.get('table'),
-                                         index=index, row=row,
-                                         col=col, item=item)
+            document = self.build_tables(
+                document, table=dargs.get('table'), index=index, row=row,
+                col=col, item=item, key=key)
             return document
 
     def build_tables(self, document, **dargs):
         """Construct tables."""
+        settings = self.settings
         index = dargs.get('index')
         row = dargs.get('row')
         col = dargs.get('col')
-        settings = self.settings
         item = dargs.get('item')
         table = dargs.get('table')
+
         if (index % 18 == 0 and index > 17):
             document.add_page_break()
             table = document.add_table(rows=1, cols=3)
             table.alignment = WD_TABLE_ALIGNMENT.CENTER
+
         paragraph = table.cell(int(row), int(col)).paragraphs[0]
         paragraph.paragraph_format.line_spacing = 0.0
         table.cell(int(row), int(col)).add_picture(
@@ -99,36 +107,42 @@ class Experience(object):
             width=Cm(4.8)
         )
         document = self.finish_tables(
-            document, table=table, row=row, col=col, item=item)
+            document, table=table, row=row, col=col, item=item,
+            key=dargs.get('key'))
         return document
 
     def finish_tables(self, document, **dargs):
-        """Complete process started in calling methond."""
+        """Complete process started in calling method."""
         table = dargs.get('table')
         row = int(dargs.get('row'))
         col = int(dargs.get('col'))
-        item = dargs.get('item')
+        self.projects = dargs.get('item').get('projects')
+
         paragraph = table.cell(row, col).paragraphs[1]
         paragraph.paragraph_format.space_after = 0
 
         paragraph = table.cell(row, col).add_paragraph(
-            item, style='Heading 4')
+            dargs.get('item').get('position'), style='Heading 4')
         paragraph.paragraph_format.line_spacing = self.spacing
         paragraph.paragraph_format.space_after = 0
 
         paragraph = table.cell(row, col).add_paragraph(
-            item, style='Heading 5')
+            dargs.get('item').get('company'), style='Heading 5')
         paragraph.paragraph_format.line_spacing = 1.0
         paragraph.paragraph_format.space_before = 0
 
         paragraph = table.cell(row, col).add_paragraph(
-            "{0}, {1}".format(item, item),
+            "{0}, {1}".format(
+                dargs.get('item').get('location'),
+                dargs.get('item').get('duration')),
             style='Heading 6')
         paragraph.paragraph_format.line_spacing = 1.0
         paragraph.paragraph_format.space_before = 0
+        document = self.add_projects(
+            document, table, row, col)
         return document
 
-    def add_projects(self, projects, table, row, col):
+    def add_projects(self, document, table, row, col):
         """Add projects to experience section.
 
         :param [dict(str, str)] projects:
@@ -139,8 +153,7 @@ class Experience(object):
         :return: Updated Projects table.
         :rtype: object
         """
-        projects = self.projects
-        for project_name, project in projects.items():
+        for project_name, project in self.projects.items():
             paragraph = table.cell(row, col).add_paragraph(
                 project_name.replace('_', ' ').title(),
                 style='List Bullet')
@@ -152,4 +165,4 @@ class Experience(object):
                     style='List Bullet 2')
                 paragraph.paragraph_format.line_spacing = self.spacing
                 paragraph.paragraph_format.space_after = 0
-        return table
+        return document
