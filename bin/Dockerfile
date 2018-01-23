@@ -4,6 +4,7 @@ WORKDIR /srv
 ENV PYTHONPATH /srv/rsum
 ENV RSUM_ENV dev
 ENV DJANGO_SETTINGS_MODULE=rsum.settings
+RUN rm -rf /usr/lib/python3.6/site-packages/rsum*
 RUN git clone https://github.com/gahan-corporation/rsum.git
 WORKDIR /srv/rsum
 RUN git fetch -p; git checkout v0.1.2; git checkout -b current
