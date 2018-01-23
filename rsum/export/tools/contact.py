@@ -11,10 +11,10 @@ class Contact(object):
         """Get intro."""
         self.name = name
         self.document = document
-        section = document
+        section = self.document
         print(section)
 
-        return self
+        return document
 
     def organize(self):
         """Organize something."""

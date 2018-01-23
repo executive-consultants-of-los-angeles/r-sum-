@@ -48,7 +48,6 @@ class Experience(object):
         :return: Documentable updated with Experience section.
         :rtype: object
         """
-        settings = self.settings
         experience = section
         self.name = name
 
@@ -64,8 +63,7 @@ class Experience(object):
             if index % 3 == 0:
                 table.add_row()
             self.document = document
-            document = self.set_tables(table=table, value=value,
-                                       index=index, settings=settings)
+            document = self.set_tables(table=table, value=value, index=index)
 
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0
@@ -115,10 +113,10 @@ class Experience(object):
             document.add_page_break()
             table = document.add_table(rows=1, cols=3)
             table.alignment = WD_TABLE_ALIGNMENT.CENTER
-        paragraph = table.cell(row, col).paragraphs[0]
+        paragraph = table.cell(int(row), int(col)).paragraphs[0]
         paragraph.paragraph_format.line_spacing = 0.0
-        table.cell(row, col).add_picture(
-            '/srv/rsum/static/{}/img/970x647/{}.jpg'.format(
+        table.cell(int(row), int(col)).add_picture(
+            '../static/profiles/{}/img/970x647/{}.jpg'.format(
                 settings.DIR,
                 index+1
             ),
@@ -132,8 +130,8 @@ class Experience(object):
         """Complete process started in calling methond."""
         document = self.document
         table = dargs.get('table')
-        row = dargs.get('row')
-        col = dargs.get('col')
+        row = int(dargs.get('row'))
+        col = int(dargs.get('col'))
         item = dargs.get('item')
         paragraph = table.cell(row, col).paragraphs[1]
         paragraph.paragraph_format.space_after = 0

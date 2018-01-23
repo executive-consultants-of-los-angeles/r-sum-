@@ -11,10 +11,8 @@ class Values(object):
         """Get intro."""
         self.name = name
         self.document = document
-        section = document
-        print(section)
 
-        return self
+        return document 
 
     def organize(self):
         """Organize something."""
