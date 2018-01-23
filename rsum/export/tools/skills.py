@@ -3,6 +3,7 @@
 import datetime
 from docx.shared import Cm
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from . import style
 
 
 class Skills(object):
