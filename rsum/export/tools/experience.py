@@ -117,7 +117,7 @@ class Experience(object):
         paragraph = table.cell(int(row), int(col)).paragraphs[0]
         paragraph.paragraph_format.line_spacing = 0.0
         table.cell(int(row), int(col)).add_picture(
-            '../static/profiles/{}/img/970x647/{}.jpg'.format(
+            'static/profiles/{}/img/970x647/{}.jpg'.format(
                 settings.DIR,
                 index+1
             ),
