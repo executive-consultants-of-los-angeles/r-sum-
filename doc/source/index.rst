@@ -10,7 +10,8 @@ Welcome to rsum's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   notes/home
+   modules/home
+   modules/export
    integration/index
    deployment/index
    delivery/index
