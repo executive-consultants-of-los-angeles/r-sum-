@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Views for the export app."""
 import os
-from io import BytesIO 
+from io import BytesIO
 
 from django.http import HttpResponse
 
