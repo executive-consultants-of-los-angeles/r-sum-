@@ -4,7 +4,6 @@
 """Module for exporting profiles to Word format."""
 import importlib
 import json
-import os
 
 from django.conf import settings as django_settings
 
@@ -42,7 +41,7 @@ class ExportDocument(object):
        Settings for the current app.
     """
 
-    document = Document('{}-profile.docx'.format(os.environ.get('RSUM_ENV')))
+    document = Document()
     settings = django_settings
 
     def __init__(self):
