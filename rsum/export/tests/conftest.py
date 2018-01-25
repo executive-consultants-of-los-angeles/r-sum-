@@ -1,10 +1,9 @@
-"""pytest configuration module."""
+"""Conftest config for pytest."""
 import pytest
-
 import rsum.loadapps
 
+from export.models import ExportDocument
 from home.models.profile import Profile
-from home.models.section import Section
 
 rsum.loadapps.main()
 
@@ -12,10 +11,12 @@ rsum.loadapps.main()
 @pytest.fixture(scope="session")
 def profile():
     """Create a profile for testing."""
-    return Profile
+    prof = Profile.create()
+    print(prof)
+    return prof
 
 
 @pytest.fixture(scope="session")
-def section():
-    """Create a section for testing."""
-    return Section
+def export_document():
+    """Return a DB object."""
+    return ExportDocument()

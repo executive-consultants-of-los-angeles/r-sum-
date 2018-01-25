@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8bc9ae2c7383425a6e3a88765b7b139123af06897bdca1b4abcbbff6b1e7fd2f"
+            "sha256": "415d0e1a821fc56c027cbf51d116a22c3902703fe0efb5548a8f4c2a2e48ae97"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -84,17 +84,17 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:1e91fa790d1ca819879490ba61d83cc150ed65c7adf3e12149ac9a8f11f7820d",
-                "sha256:329a34da02fa48162cb8d64d1a34d996107cebb7cf6987cef34ed7987907c51c"
+                "sha256:24f8f919126b8a55ef3be6729243f71ffe4b927408e4a1be4e64671cdb011409",
+                "sha256:06614d6111c0bcc7e76ef699e4caec0de87217180486e43ec2c353d6f01a409d"
             ],
-            "version": "==1.5.19"
+            "version": "==1.5.20"
         },
         "botocore": {
             "hashes": [
-                "sha256:7c1341590a05b8c7146def11e76d71b1b0d2ef6fa1f05a177494113f41bd17e9",
-                "sha256:fa29ea54f26b1193682332d3b4cdde7aa79b4eaccb23f70e88672509c24546f4"
+                "sha256:628994a88d09a1fe7d96e0c4b786302463bdfaff9f829d4a72ebe8d02e8160ba",
+                "sha256:b7c33d79fe4c6b8d15f4191aa6e60e3ac0f290b3ce3a8b4d831f79eddbca7115"
             ],
-            "version": "==1.8.33"
+            "version": "==1.8.34"
         },
         "cffi": {
             "hashes": [
@@ -169,6 +169,13 @@
                 "sha256:d96b804be412a5125a594023ec524a2010a6ffa4d408e5482ab6ff3cb97ec12f"
             ],
             "version": "==2.0.1"
+        },
+        "django-extensions": {
+            "hashes": [
+                "sha256:f642e79990f365e82a7c906c91b0dabea533cdcdf2df7059a732e1e8648f2fa3",
+                "sha256:6fb35133b61e7295d43c1f7added952e5dfe689ae65662d2fb5fe7ea1a397eba"
+            ],
+            "version": "==1.9.9"
         },
         "django-s3-storage": {
             "hashes": [
@@ -409,6 +416,14 @@
                 "sha256:70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"
             ],
             "version": "==1.11.0"
+        },
+        "typing": {
+            "hashes": [
+                "sha256:349b1f9c109c84b53ac79ac1d822eaa68fc91d63b321bd9392df15098f746f53",
+                "sha256:63a8255fe7c6269916baa440eb9b6a67139b0b97a01af632e7bd2842e1e02f15",
+                "sha256:d514bd84b284dd3e844f0305ac07511f097e325171f6cc4a20878d11ad771849"
+            ],
+            "version": "==3.6.2"
         },
         "whitenoise": {
             "hashes": [

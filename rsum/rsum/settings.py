@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_s3_storage',
+    'django_extensions',
 ]
 DIR = os.environ.get('RSUM_ENV')
 
