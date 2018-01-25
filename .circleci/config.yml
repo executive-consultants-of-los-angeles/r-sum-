@@ -22,6 +22,7 @@ jobs:
           name: run tests
           command: |
             docker run --network rsum --rm -d --name rsum rsum
+            docker cp ~/.aws rsum:/root/.aws
             docker exec rsum pytest
             docker cp rsum:/tmp/junit.xml /tmp/junit.xml
       - store_test_results:
