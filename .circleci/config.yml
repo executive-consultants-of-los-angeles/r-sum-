@@ -26,7 +26,7 @@ jobs:
           name: run tests
           command: |
             docker run -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e\
-            AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY --network\
+            AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY --network \
             rsum --rm -d --name rsum rsum
             docker cp ~/.aws rsum:/root/.aws
             docker exec rsum pytest
