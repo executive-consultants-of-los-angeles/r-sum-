@@ -29,7 +29,6 @@ def index(request):
     target_stream = StringIO()
     source_stream.save(target_stream)
     length = target_stream.tell()
-    target_stream.seek(0)
     response = HttpResponse(
         target_stream.getvalue(),
         content_type=(
