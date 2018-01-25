@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 
 """
+# pylint: disable=invalid-name
 # from django.contrib import admin
 from django.urls import path
 # from django.urls import re_path

@@ -4,7 +4,6 @@
 """Module for exporting profiles to Word format."""
 import importlib
 import json
-from io import StringIO
 
 from django.conf import settings as django_settings
 
@@ -63,7 +62,6 @@ class ExportDocument(object):
         :rtype: object
         """
         profile = Profile.objects.get(pk=profile_id)
-        stream = StringIO()
         document = self.document
         document = style.set_styles(document)
         document = layout.set_layout(document)
@@ -73,14 +71,12 @@ class ExportDocument(object):
         for section in sections:
             document = self.save_section(section)
 
-        document.save(self.name)
-
-        return stream
+        return document
 
     def save_section(self, section):
         """Save a section of a document."""
         for name, value in section.items():
-            section_cls = load_class('export.tools.{}.{}'.format(
+            section_cls = load_class('export.sections.{}.{}'.format(
                 name, name.title()))
             section_obj = section_cls()
             self.document = section_obj.save(name, value, self.document)
