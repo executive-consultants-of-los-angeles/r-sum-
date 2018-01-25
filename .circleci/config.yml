@@ -9,6 +9,8 @@ jobs:
     machine: true
     steps:
       - run: >
+          docker network create rsum || true
+      - run: >
           docker run --name pg.gc -h pg.gc --network rsum
           -p 5432:5432 postgres:alpine
       - checkout
