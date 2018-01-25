@@ -6,17 +6,11 @@
 version: 2
 jobs:
   build:
-    docker:
-      # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: python:alpine:3.6
-      - image: postgres:alpine
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-    working_directory: ~/repo
+    machine: true
     steps:
+      - run: >
+          docker run --name pg.gc -h pg.gc --network rsum
+          -p 5432:5432 postgres:alpine
       - checkout
       # Download and cache dependencies
       - restore_cache:
@@ -48,4 +42,5 @@ jobs:
       - store_artifacts:
           path: test-reports
           destination: test-reports
+    working_directory: ~/repo
 ...
