@@ -7,6 +7,10 @@ This project is meant to provide all of the required services for a fully functi
 
 ## Badges
 
+### CircleCI
+
+[![CircleCI](https://circleci.com/gh/gahan-corporation/rsum.svg?style=svg)](https://circleci.com/gh/gahan-corporation/rsum)
+
 ### Codacy
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e8ccc643c99147dca4fd98a8b2851451)](https://www.codacy.com/app/gahancorpcfo/rsum?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gahan-corporation/rsum&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/e8ccc643c99147dca4fd98a8b2851451)](https://www.codacy.com/app/gahancorpcfo/rsum?utm_source=github.com&utm_medium=referral&utm_content=gahan-corporation/rsum&utm_campaign=Badge_Coverage)
