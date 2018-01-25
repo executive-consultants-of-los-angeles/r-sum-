@@ -19,7 +19,7 @@ def index(request):
     :rtype: object
     """
     document = ExportDocument().export_word(1)
-    source_file = open(document.name, 'rb')
+    source_file = open(document.name, 'r')
     source_stream = Document(source_file.read())
     source_file.close()
 
