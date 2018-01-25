@@ -62,7 +62,6 @@ class ExportDocument(object):
         :rtype: object
         """
         profile = Profile.objects.get(pk=profile_id)
-        stream = StringIO()
         document = self.document
         document = style.set_styles(document)
         document = layout.set_layout(document)
