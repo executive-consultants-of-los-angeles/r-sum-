@@ -1,5 +1,27 @@
 ---
 language: python
+env:
+  global:
+    - secure: "lL/+vtEnOqkM0AYAxr4mIAJg/KXhy+Fveq1Jy2aLdtIpn4aJdKeCvnmUhwz4b6QR\
+        FTgChp/NG2H26U9Jyw8dSg6p++7CX1xocnpUsMGoWZppDi1SwL9P83DhIktsuo4+TjSejOJ\
+        m93OyXoCNRcv7VZ+Qn49O7CnEwQ08hGId07D/KcqVZihTq8/zVKpONYubZkG8EtwzDwg22t\
+        CfHuPPg1IHNFx0d7LMcTtWF6RiqB0EZaWGz6vtioO+mTabV8YFdddIbOV1RkCRXyQjWC4kI\
+        zK4dm3+PhBVtfegRA+hoimqvfpKeJAEN4pjmKycJ27pvyzB/QMNWmwfB4CSqxVSwCK9LYr8\
+        QsH0djrMeiTFGLWLDxRNGz45erTKAaBsAG9B7+ejDdnpvW6ndDLnJ0U/1prRHHIhK4rbmtN\
+        6r8V7whqDnV4IHDOCXdL8V2Pbq1I9sl3F4helMXTfhBJfUBYGT6p2EPuuMgprHyEaQn0f7J\
+        fYAo0RKM97cnZZzpbj39kFQ0KoF6w4XlJM200lSKeoF+AD9oFCDkKw6pCXJ+YwWdDhPG3d3\
+        SP51xmKkZQ6RNnWrhzoaHIKKOYVPsgAYtGx+13vrKARuPO0LzI6iVHcyEAmn02dm1g+oDiH\
+        SNuK3GJmAHVZnWGpW19/3PSB8/3SY2iilaevb17eiJdossXVBnc="
+    - secure: "Hs+8JPdzC6dFuax14kkNwRWLK60hE5PoLnX9OHcI59H6iUW2bGJPwxBI70lVMFIR\
+        DK6bMcxfVzFOhzfLRkywC4W813gheib6S1sVZzjA003MNcl/3xHRAsfZjupMWJhWUgX8bYk\
+        UMrISvxLPgvOlYKRPbcJo1NTZr6nagV53VPbLxIF73ZtKwGqRfwpLOeA2Jii5hGsSUqnt1+\
+        RZXxtvvDpAlco1bVShWDbctNfPdabucAscMeWlC/FyJgLUg8IYceXq0/RfpMmgiMcfvvEUM\
+        Jx3oYXOZzPS9737UPYtkH01eiewWH4K7BhNlYTHQ6j0p2RXSwPYIVeSd/8HDEatbhwBuvag\
+        +HjRfZIs7xzniOzTkieTWLEzgVEJ622VQkq2iy+AOBgzT4fa5kNkSBpv/fAt/yRb15BS45S\
+        +3CMvj4pKhLynhDNvCJzhx55pAW+2PqvWMUBhoEmTJAWB9ZhgsDBacewtBYL5Z1OkSQRXtT\
+        urUVuWWyM39XQk/w6fOJS5Dr+AfwgMghwch9iKuTmySnnA7wb1UpcPfNNDHFbbyGZbHCkX+\
+        qrKmbFdX1Ehuxn8Lb7GHsTGjma8UFt0ecxdte5irLVazzn7HiWxl8OyddaXZCzk4GPXw8Xm\
+        emHBq0dD16un0c68nHjZBndNDUhlYkMAnTtVa88iLoEuhL5j6PE="
 sudo: required
 dist: trusty
 before_script:
