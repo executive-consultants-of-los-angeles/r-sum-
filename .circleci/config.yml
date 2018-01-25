@@ -31,7 +31,7 @@ jobs:
             docker exec rsum pytest
             docker cp rsum:/tmp/junit.xml /tmp/junit.xml
       - store_test_results:
-          path: /tmp/junit.xml
+          path: test-results 
       - store_artifacts:
           path: test-reports
           destination: test-reports
