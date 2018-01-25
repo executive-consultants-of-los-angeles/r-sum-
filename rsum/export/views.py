@@ -3,7 +3,7 @@
 """Views for the export app."""
 import os
 
-from io import StringIO
+from io import BytesIO
 from django.http import HttpResponse
 
 from export.models import ExportDocument
@@ -27,7 +27,7 @@ def index(request):
         '{}-profile.docx'.format(os.environ.get('RSUM_ENV')),
         'rb'
     ) as document_file:
-        target_stream = StringIO(document_file.read())
+        target_stream = BytesIO(document_file.read())
 
     length = target_stream.tell()
     target_stream.seek(0)
