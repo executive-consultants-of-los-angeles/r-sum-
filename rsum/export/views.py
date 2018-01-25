@@ -3,7 +3,7 @@
 """Views for the export app."""
 import os
 
-from io import BytesIO
+from io import StringIO 
 from django.http import HttpResponse
 
 from export.models import ExportDocument
@@ -18,17 +18,11 @@ def index(request):
     :rtype: object
     """
     document = ExportDocument().export_word(1)
-    print(document.name)
 
     # Special thanks to: https://stackoverflow.com/a/24122313
     print(request)
 
-    with open(
-        '{}-profile.docx'.format(os.environ.get('RSUM_ENV')),
-        'rb'
-    ) as document_file:
-        target_stream = BytesIO(document_file.read())
-
+    target_stream = StringIO(document.document)
     length = target_stream.tell()
     target_stream.seek(0)
     response = HttpResponse(
