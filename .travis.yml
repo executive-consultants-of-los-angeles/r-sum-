@@ -4,6 +4,11 @@ sudo: required
 dist: trusty
 before_script:
   - sudo apt-get -y install build-essential
+  - >
+      openssl aes-256-cbc -K $encrypted_4151e6353c4d_key
+      -iv $encrypted_4151e6353c4d_iv -in aws.tar.bz2.enc
+      -out aws.tar.bz2 -d
+  - tar xvf aws.tar.bz2; mv -v aws .aws
   - docker network create rsum || true
   - mkdir /tmp/pg
   - docker pull postgres:alpine
