@@ -34,7 +34,8 @@ class Skills(object):
                 experience_value = years_skill / self.career_length * 100
                 experience_string = "{0} year(s)".format(int(years_skill))
 
-                skills_data = self.calculate_sub_skills(name, skill.items(), skills_data)
+                skills_data = self.calculate_sub_skills(
+                    name, skill.items(), skills_data)
 
                 skills_data.update({
                     name: {
