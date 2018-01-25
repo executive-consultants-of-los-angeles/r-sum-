@@ -20,7 +20,7 @@ def index(request):
     """
     document = ExportDocument().export_word(1)
     source_file = open(document.name, 'rb')
-    source_stream = Document(source_file)
+    source_stream = Document(source_file.read())
     source_file.close()
 
     # Special thanks to: https://stackoverflow.com/a/24122313
