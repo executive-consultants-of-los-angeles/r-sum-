@@ -14,12 +14,6 @@ jobs:
           docker run -d --rm --name pg.gc -h pg.gc --network rsum
           -p 5432:5432 postgres:alpine
       - checkout
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "bin/.requirements" }}
-            # fallback to using the latest cache if no exact match is found
-            # - v1-dependencies-
       - run:
           name: build container
           command: |
