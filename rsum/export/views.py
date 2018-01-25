@@ -23,13 +23,13 @@ def index(request):
     # Special thanks to: https://stackoverflow.com/a/24122313
     print(request)
 
-    length = document.document.tell()
     with open(
         '{}-profile.docx'.format(os.environ.get('RSUM_ENV')),
         'rb'
     ) as document_file:
         target_stream = StringIO(document_file.read())
 
+    length = target_stream.tell()
     target_stream.seek(0)
     response = HttpResponse(
         target_stream.getvalue(),
