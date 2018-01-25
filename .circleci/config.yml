@@ -20,7 +20,10 @@ jobs:
             docker build -t rsum bin
       - run:
           name: check aws
-          command: ls -lah /home/circleci
+          command: |
+            ls -lah /home/circleci
+            echo $AWS_ACCESS_KEY_ID
+            echo $AWS_SECRET_ACCESS_KEY
       - run:
           name: run tests
           command: |
