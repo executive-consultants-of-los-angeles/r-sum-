@@ -10,7 +10,7 @@ class TestViews(object):
     assertion = True
     client = Client()
 
-    def test_index(self):
+    def test_index(self, profile):
         """Get the index and test some things."""
         response = self.client.get(reverse('main'))
 

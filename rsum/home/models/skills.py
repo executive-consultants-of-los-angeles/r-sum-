@@ -49,7 +49,7 @@ class Skills(object):
     def calculate_sub_skills(self, name, sub_skills, skills):
         """Calculate sub skills and return the result."""
         # I don't much like nested for loops, but it's the only way.
-        for sub_name, sub_skill in sub_skills.items():
+        for sub_name, sub_skill in sub_skills:
             if (
                     not isinstance(sub_skill, str) and
                     not isinstance(sub_skill, int)
@@ -69,3 +69,4 @@ class Skills(object):
                         'experience_string': sub_experience_string,
                     }
                 })
+        return skills

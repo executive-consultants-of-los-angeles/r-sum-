@@ -21,7 +21,7 @@ def index(request):
     :return: HttpResponse object resulting from execution of render method.
     :rtype: object
     """
-    profile = Profile.objects.get(id=1)
+    profile = Profile.objects.order_by('-id')[0]
 
     sections = OrderedDict()
     sections_query = Section.objects.values()
