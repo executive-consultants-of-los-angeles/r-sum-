@@ -5,14 +5,14 @@ import datetime
 class Skills(object):
     """Skills class for Skills objects."""
 
-    skills = {}
+    skills_data = {}
     sub_skills = {}
     current_year = float(datetime.date.today().strftime("%Y"))
     career_length = float(0)
 
-    def __init__(self, skills):
+    def __init__(self, skills_data):
         """Initialize the Skills class."""
-        self.skills = skills
+        self.skills_data = skills_data
 
     def calculate_skills(self):
         """Calculate necessary values for the skills progress bars.
@@ -23,30 +23,30 @@ class Skills(object):
         :rtype: OrderedDict
         :raises: ValueError
         """
-        skills = self.skills
-        begin = skills.get('start')
+        skills_data = self.skills_data
+        begin = skills_data.get('start')
         self.career_length = float(self.current_year) - float(begin)
 
-        for name, skill in skills.items():
+        for name, skill in skills_data.items():
             if name != 'start':
                 start_skill = float(skill.get('start'))
                 years_skill = self.current_year - start_skill
                 experience_value = years_skill / self.career_length * 100
                 experience_string = "{0} year(s)".format(int(years_skill))
 
-                skills = self.calculate_sub_skills(name, skill.items(), skills)
+                skills_data = self.calculate_sub_skills(name, skill.items(), skills_data)
 
-                skills.update({
+                skills_data.update({
                     name: {
-                        'name': skills.get(name).get('name'),
-                        'start': skills.get(name).get('start'),
+                        'name': skills_data.get(name).get('name'),
+                        'start': skills_data.get(name).get('start'),
                         'experience_value': experience_value,
                         'experience_string': experience_string,
                     }
                 })
-        return skills
+        return skills_data
 
-    def calculate_sub_skills(self, name, sub_skills, skills):
+    def calculate_sub_skills(self, name, sub_skills, skills_data):
         """Calculate sub skills and return the result."""
         # I don't much like nested for loops, but it's the only way.
         for sub_name, sub_skill in sub_skills:
@@ -61,7 +61,7 @@ class Skills(object):
                     "{0} year(s)".format(int(years_sub))
                 )
 
-                skills.get(name).update({
+                skills_data.get(name).update({
                     sub_name: {
                         'name': sub_skill.get('name'),
                         'start': sub_skill.get('start'),
@@ -69,4 +69,4 @@ class Skills(object):
                         'experience_string': sub_experience_string,
                     }
                 })
-        return skills
+        return skills_data
