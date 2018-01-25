@@ -71,7 +71,7 @@ class ExportDocument(object):
         for section in sections:
             document = self.save_section(section)
 
-        return document 
+        return document
 
     def save_section(self, section):
         """Save a section of a document."""
