@@ -1,23 +1,18 @@
 # -*- coding: utf-8 -*-
 """Test case for home.views."""
-from __future__ import unicode_literals
+from django.test import Client
+from django.urls import reverse
 
 
-class ViewsTestCase(object):
+class TestViews(object):
     """Class for testing home.views."""
 
     assertion = True
+    client = Client()
 
     def test_index(self):
-        """Test retrieval of index page."""
-        if not self.assertion:
-            raise AssertionError()
+        """Get the index and test some things."""
+        response = self.client.get(reverse('main'))
 
-    def test_export_docx(self):
-        """Test export of Word format document.
-
-        :return: None
-        :raises: :exc:`AssertionError`
-        """
-        if not self.assertion:
+        if response.status_code != 200:
             raise AssertionError()
