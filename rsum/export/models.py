@@ -4,7 +4,6 @@
 """Module for exporting profiles to Word format."""
 import importlib
 import json
-from io import StringIO
 
 from django.conf import settings as django_settings
 
@@ -75,7 +74,7 @@ class ExportDocument(object):
 
         document.save(self.name)
 
-        return stream
+        return document
 
     def save_section(self, section):
         """Save a section of a document."""
