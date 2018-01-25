@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Views for the export app."""
 import os
-from io import StringIO
+from io import BytesIO
 
 from docx import Document
 from django.http import HttpResponse
@@ -20,13 +20,13 @@ def index(request):
     """
     document = ExportDocument().export_word(1)
     source_file = open(document.name, 'r', encoding='latin-1')
-    source_stream = Document(source_file.read())
+    source_stream = Document(source_file)
     source_file.close()
 
     # Special thanks to: https://stackoverflow.com/a/24122313
     print(request)
 
-    target_stream = StringIO()
+    target_stream = BytesIO()
     source_stream.save(target_stream)
     length = target_stream.tell()
     response = HttpResponse(
