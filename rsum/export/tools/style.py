@@ -85,7 +85,10 @@ def set_list_bullets(document):
 
 def set_final_styles(document):
     """Define remaining styles."""
-    document.styles.add_style('Skill', WD_STYLE_TYPE.PARAGRAPH)
+    try:
+        document.styles.add_style('Skill', WD_STYLE_TYPE.PARAGRAPH)
+    except ValueError:
+        pass
     style = document.styles['Skill']
     font = style.font
     font.name = 'Hind'
@@ -93,7 +96,10 @@ def set_final_styles(document):
     font.size = Pt(9)
     font.bold = True
 
-    document.styles.add_style('Sub Skill', WD_STYLE_TYPE.PARAGRAPH)
+    try:
+        document.styles.add_style('Sub Skill', WD_STYLE_TYPE.PARAGRAPH)
+    except ValueError:
+        pass
     style = document.styles['Sub Skill']
     font = style.font
     font.name = 'Hind'

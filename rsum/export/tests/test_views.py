@@ -8,7 +8,7 @@ from home.models.profile import Profile
 from export.models import ExportDocument
 
 
-@pytest.mark.usefixtures('db')
+@pytest.mark.usefixtures('db', scope='module')
 def test_index(export_document, profile):
     """Get the index and test some things."""
     client = Client()
@@ -22,4 +22,15 @@ def test_index(export_document, profile):
         raise AssertionError()
 
     if not isinstance(export_document, ExportDocument):
+        raise AssertionError()
+
+
+@pytest.mark.usefixtures('db', scope='module')
+def test_doc_properties(profile):
+    """Get the index and test some things."""
+    client = Client()
+    profile.create()
+    response = client.get(reverse('docx'))
+
+    if not response.has_header('content-disposition'):
         raise AssertionError()
