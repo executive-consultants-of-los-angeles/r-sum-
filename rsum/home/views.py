@@ -2,7 +2,6 @@
 # pylint: disable=no-member
 # -*- coding: utf-8 -*-
 """Views for the rsum home application."""
-import datetime
 import json
 from collections import OrderedDict
 
@@ -11,6 +10,7 @@ from django.conf import settings
 
 from home.models.section import Section
 from home.models.profile import Profile
+from home.models.skills import Skills
 
 
 def index(request):
@@ -31,8 +31,9 @@ def index(request):
         })
 
     skills = sections.get('skills')
+    skills_obj = Skills(skills)
 
-    sections.update({'skills': calculate_skills(skills)})
+    sections.update({'skills': skills_obj.calculate_skills()})
 
     context = {
         'profile': profile,
