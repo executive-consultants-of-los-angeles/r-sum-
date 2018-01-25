@@ -4,6 +4,7 @@
 """Module for exporting profiles to Word format."""
 import importlib
 import json
+import os
 
 from django.conf import settings as django_settings
 
@@ -41,7 +42,7 @@ class ExportDocument(object):
        Settings for the current app.
     """
 
-    document = Document()
+    document = Document('{}-profile.docx'.format(os.environ.get('RSUM_ENV')))
     settings = django_settings
 
     def __init__(self):
@@ -74,7 +75,7 @@ class ExportDocument(object):
         document.save(self.name)
         self.document = document
 
-        return self 
+        return self
 
     def save_section(self, section):
         """Save a section of a document."""

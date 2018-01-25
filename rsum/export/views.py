@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """Views for the export app."""
 import os
+from io import StringIO
 
-from io import StringIO 
 from django.http import HttpResponse
 
 from export.models import ExportDocument
@@ -22,7 +22,8 @@ def index(request):
     # Special thanks to: https://stackoverflow.com/a/24122313
     print(request)
 
-    target_stream = StringIO(document.document)
+    target_stream = StringIO()
+    document.document.save(target_stream)
     length = target_stream.tell()
     target_stream.seek(0)
     response = HttpResponse(
