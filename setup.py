@@ -30,7 +30,7 @@ setup(
     package_data={'': ['rsum/home/templates']},
     include_package_data=True,
     long_description=read('readme.rst'),
-    setup_requires=['pytest-runner'],
+    setup_requires=['pytest-runner', 'django'],
     install_requires=[
         'django', 'pyyaml',
         'django-extensions', 'django-s3-storage'
