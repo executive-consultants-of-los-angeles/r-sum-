@@ -21,26 +21,15 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             # - v1-dependencies-
       - run:
-          name: install dependencies
+          name: build container
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r bin/.requirements
-            pip install pytest pytest-runner coverage pytest-django
-      - save_cache:
-          paths:
-            - ./venv
-          key: v1-dependencies-{{ checksum "bin/.requirements" }}
-      # run tests!
-      # this example uses Django's built-in test-runner
-      # other common Python testing frameworks include pytest and nose
-      # https://pytest.org
-      # https://nose.readthedocs.io
+            docker build -t rsum bin
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
-            pytest
+            docker run --network rsum --rm -d --name rsum rsum
+            docker exec rsum pytest
+            docker cp rsum:/tmp/junit.xml /tmp/junit.xml
       - store_test_results:
           path: /tmp/junit.xml
       - store_artifacts:
