@@ -1,5 +1,5 @@
 """Module creates database entries for a profile."""
-import loadapps
+from rsum import loadapps
 
 from home.models.profile import Profile
 
