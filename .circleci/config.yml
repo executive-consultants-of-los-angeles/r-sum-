@@ -11,7 +11,7 @@ jobs:
       - run: >
           docker network create rsum || true
       - run: >
-          docker run --name pg.gc -h pg.gc --network rsum
+          docker run -d --rm --name pg.gc -h pg.gc --network rsum
           -p 5432:5432 postgres:alpine
       - checkout
       # Download and cache dependencies
