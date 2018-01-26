@@ -34,7 +34,8 @@ jobs:
             docker exec rsum pip install coverage
             docker exec rsum /usr/bin/cc-test-reporter before-build
             docker exec rsum coverage run setup.py test
-            docker exec rsum /usr/bin/cc-test-reporter after-build
+            docker exec rsum coverage xml
+            docker exec rsum /usr/bin/cc-test-reporter after-build -t coverage.py
             docker exec rsum pytest
             docker cp rsum:/tmp/junit.xml test-results/junit.xml
       - store_test_results:
