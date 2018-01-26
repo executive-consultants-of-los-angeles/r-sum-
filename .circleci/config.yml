@@ -7,8 +7,6 @@ version: 2
 jobs:
   build:
     machine: true
-    environment:
-        - chmod +x ./cc-test-reporter
     steps:
       - run: >
           docker network create rsum || true
