@@ -1,8 +1,5 @@
 ---
-# Python CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-python/ for more details
-#
+# wat t
 version: 2
 jobs:
   build:
@@ -26,12 +23,23 @@ jobs:
           name: run tests
           command: |
             docker run -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e\
-            AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY --network \
-            rsum --rm -d --name rsum rsum
+            AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e \
+            CC_TEST_REPORTER_ID=65a1929c2dd1c13ee730a5e68a7b00436\
+            b9c15a8ebba3f39969ffa9907081461  --network rsum \
+            --rm -d --name rsum rsum
+            docker exec rsum wget https://codeclimate.com/downloads/\
+            test-reporter/test-reporter-latest-linux-amd64 -O \
+            /usr/bin/cc-test-reporter
+            docker exec rsum chmod +x /usr/bin/cc-test-reporter
+            docker exec rsum pip install coverage
+            docker exec rsum /usr/bin/cc-test-reporter before-build
+            docker exec rsum coverage run setup.py test
+            docker exec rsum coverage xml
+            docker exec rsum /usr/bin/cc-test-reporter \
+            after-build -t coverage.py
             docker exec rsum pytest
-            docker cp rsum:/tmp/junit.xml /tmp/junit.xml
       - store_test_results:
-          path: test-results 
+          path: test-results
       - store_artifacts:
           path: test-reports
           destination: test-reports
