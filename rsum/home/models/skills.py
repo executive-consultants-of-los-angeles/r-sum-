@@ -2,7 +2,7 @@
 import datetime
 
 
-class Skills(object):
+class Skills:
     """Skills class for Skills objects."""
 
     skills_data = {}
