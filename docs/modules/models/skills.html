@@ -74,6 +74,38 @@
 </div>
 <div class="section" id="skills-class">
 <h3>Skills Class<a class="headerlink" href="#skills-class" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="home.models.skills.Skills">
+<em class="property">class </em><code class="descclassname">home.models.skills.</code><code class="descname">Skills</code><span class="sig-paren">(</span><em>skills_data</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../_modules/home/models/skills.html#Skills"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.skills.Skills" title="Permalink to this definition">¶</a></dt>
+<dd><p>Skills class for Skills objects.</p>
+<dl class="method">
+<dt id="home.models.skills.Skills.calculate_skills">
+<code class="descname">calculate_skills</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../_modules/home/models/skills.html#Skills.calculate_skills"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.skills.Skills.calculate_skills" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate necessary values for the skills progress bars.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>skills</strong> (<em>OrderedDict</em>) – The unmodified skills section.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An updated Skills section with missing values filled in.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">OrderedDict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">ValueError</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.skills.Skills.calculate_sub_skills">
+<code class="descname">calculate_sub_skills</code><span class="sig-paren">(</span><em>name</em>, <em>sub_skills</em>, <em>skills_data</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../_modules/home/models/skills.html#Skills.calculate_sub_skills"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.skills.Skills.calculate_sub_skills" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate sub skills and return the result.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 </div>
 </div>
