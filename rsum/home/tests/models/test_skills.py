@@ -31,12 +31,14 @@ class TestSkills:
             if not isinstance(name, str):
                 raise AssertionError()
 
+            if experience.get('value') > 100 or experience.get('value') < 0:
+                raise AssertionError()
+
             if not isinstance(experience.get('string'), str):
                 raise AssertionError()
 
             if not isinstance(experience.get('value'), float):
                 raise AssertionError()
-            print(experience)
 
     def test_calculate_skills(self, profile, skills):
         """Test that skillss save correctly."""
