@@ -24,8 +24,9 @@ jobs:
           command: |
             docker run -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e\
             AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e \
-            CC_TEST_REPORTER_ID=65a1929c2dd1c13ee730a5e68a7b00436\
-            b9c15a8ebba3f39969ffa9907081461  --network rsum \
+            CC_TEST_REPORTER_ID=668e91604e13d51737798e3ca2d2b15\
+            ccb1442075fe98c58eec44dd436b6e4d8 \
+            --network rsum \
             --rm -d --name rsum rsum
             docker exec rsum wget https://codeclimate.com/downloads/\
             test-reporter/test-reporter-latest-linux-amd64 -O \
