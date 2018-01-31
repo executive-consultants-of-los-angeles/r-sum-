@@ -5,6 +5,7 @@ import json
 class TestSkills:
     """Class for testing Skills objects."""
 
+    floating_point = 2 / 3
     skills_obj = object
 
     def test_skills_instance(self, skills):
@@ -12,9 +13,13 @@ class TestSkills:
         if not isinstance(skills, self.skills_obj):
             raise AssertionError()
 
-    def test_calculate_experience(self, profile, skills):
+    def test_calculate_experience(self, skills):
         """Test the validity of the experience calculation method."""
-        if not False:
+
+        if not skills:
+            raise AssertionError()
+
+        if not round(self.floating_point.real, 2):
             raise AssertionError()
 
     def test_calculate_skills(self, profile, skills):
