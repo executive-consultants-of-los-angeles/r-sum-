@@ -1,0 +1,583 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>export.tools package &#8212; rsum 0.0.2 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="export-tools-package">
+<h1>export.tools package<a class="headerlink" href="#export-tools-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-export.tools.contact">
+<span id="export-tools-contact-module"></span><h2>export.tools.contact module<a class="headerlink" href="#module-export.tools.contact" title="Permalink to this headline">¶</a></h2>
+<p>Contact module.</p>
+<dl class="class">
+<dt id="export.tools.contact.Contact">
+<em class="property">class </em><code class="descclassname">export.tools.contact.</code><code class="descname">Contact</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/contact.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/contact.html#Contact"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.contact.Contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Class for contact object export.</p>
+<dl class="method">
+<dt id="export.tools.contact.Contact.complete_contact">
+<code class="descname">complete_contact</code><span class="sig-paren">(</span><em>contact</em>, <em>document</em>, <em>table</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/contact.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/contact.html#Contact.complete_contact"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.contact.Contact.complete_contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Complete addition of contact section.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.tools.contact.Contact.name">
+<code class="descname">name</code><em class="property"> = None</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/contact.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.contact.Contact.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="export.tools.contact.Contact.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>name</em>, <em>section</em>, <em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/contact.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/contact.html#Contact.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.contact.Contact.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add contact section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>str</strong><strong>)</strong><strong>] </strong><strong>contact</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>,</em>) – Contact section for current document.</li>
+<li><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Current document with Contact section.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.tools.contact.Contact.start_contact">
+<code class="descname">start_contact</code><span class="sig-paren">(</span><em>contact</em>, <em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/contact.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/contact.html#Contact.start_contact"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.contact.Contact.start_contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start recording contact.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-export.tools.education">
+<span id="export-tools-education-module"></span><h2>export.tools.education module<a class="headerlink" href="#module-export.tools.education" title="Permalink to this headline">¶</a></h2>
+<p>Module for education.</p>
+<dl class="class">
+<dt id="export.tools.education.Education">
+<em class="property">class </em><code class="descclassname">export.tools.education.</code><code class="descname">Education</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/education.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/education.html#Education"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.education.Education" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Education export object.</p>
+<dl class="attribute">
+<dt id="export.tools.education.Education.document">
+<code class="descname">document</code><em class="property"> = None</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/education.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.education.Education.document" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="export.tools.education.Education.name">
+<code class="descname">name</code><em class="property"> = None</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/education.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.education.Education.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="export.tools.education.Education.organize">
+<code class="descname">organize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/education.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/education.html#Education.organize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.education.Education.organize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Organize something.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.tools.education.Education.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>name</em>, <em>section</em>, <em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/education.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/education.html#Education.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.education.Education.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add education section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>str</strong><strong>)</strong><strong>] </strong><strong>education</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>,</em>) – Education section for current document.</li>
+<li><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Current document with Educaiton section.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.tools.education.Education.settings">
+<code class="descname">settings</code><em class="property"> = &lt;LazySettings &quot;None&quot;&gt;</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/education.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.education.Education.settings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-export.tools.experience">
+<span id="export-tools-experience-module"></span><h2>export.tools.experience module<a class="headerlink" href="#module-export.tools.experience" title="Permalink to this headline">¶</a></h2>
+<p>Experience module.</p>
+<dl class="class">
+<dt id="export.tools.experience.Experience">
+<em class="property">class </em><code class="descclassname">export.tools.experience.</code><code class="descname">Experience</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/experience.html#Experience"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.experience.Experience" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Export Experience object.</p>
+<dl class="method">
+<dt id="export.tools.experience.Experience.add_projects">
+<code class="descname">add_projects</code><span class="sig-paren">(</span><em>projects</em>, <em>table</em>, <em>row</em>, <em>col</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/experience.html#Experience.add_projects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.experience.Experience.add_projects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add projects to experience section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>str</strong><strong>)</strong><strong>] </strong><strong>projects</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>,</em>) – Projects for a portion of Experience section.</li>
+<li><strong>table</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Table from current document.</li>
+<li><strong>row</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – Index of current row.</li>
+<li><strong>col</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – Index of current col.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Updated Projects table.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.tools.experience.Experience.build_tables">
+<code class="descname">build_tables</code><span class="sig-paren">(</span><em>**dargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/experience.html#Experience.build_tables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.experience.Experience.build_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct tables.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.tools.experience.Experience.document">
+<code class="descname">document</code><em class="property"> = None</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/experience.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.experience.Experience.document" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="export.tools.experience.Experience.finish_tables">
+<code class="descname">finish_tables</code><span class="sig-paren">(</span><em>**dargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/experience.html#Experience.finish_tables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.experience.Experience.finish_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Complete process started in calling methond.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.tools.experience.Experience.name">
+<code class="descname">name</code><em class="property"> = None</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/experience.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.experience.Experience.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="export.tools.experience.Experience.prep_tables">
+<code class="descname">prep_tables</code><span class="sig-paren">(</span><em>**dargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/experience.html#Experience.prep_tables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.experience.Experience.prep_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare tables.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.tools.experience.Experience.projects">
+<code class="descname">projects</code><em class="property"> = None</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/experience.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.experience.Experience.projects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="export.tools.experience.Experience.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>name</em>, <em>section</em>, <em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/experience.html#Experience.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.experience.Experience.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add experience section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>str</strong><strong>)</strong><strong>] </strong><strong>experience</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>,</em>) – Experience section to add to document.</li>
+<li><strong>document</strong> (<em>objectable</em>) – Documentable to update.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Documentable updated with Experience section.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.tools.experience.Experience.set_tables">
+<code class="descname">set_tables</code><span class="sig-paren">(</span><em>**dargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/experience.html#Experience.set_tables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.experience.Experience.set_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set tables for the experience section.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.tools.experience.Experience.settings">
+<code class="descname">settings</code><em class="property"> = &lt;LazySettings &quot;None&quot;&gt;</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/experience.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.experience.Experience.settings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-export.tools.intro">
+<span id="export-tools-intro-module"></span><h2>export.tools.intro module<a class="headerlink" href="#module-export.tools.intro" title="Permalink to this headline">¶</a></h2>
+<p>Intro module.</p>
+<dl class="class">
+<dt id="export.tools.intro.Intro">
+<em class="property">class </em><code class="descclassname">export.tools.intro.</code><code class="descname">Intro</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/intro.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/intro.html#Intro"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.intro.Intro" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Class for Intro objects.</p>
+<dl class="attribute">
+<dt id="export.tools.intro.Intro.document">
+<code class="descname">document</code><em class="property"> = None</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/intro.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.intro.Intro.document" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="export.tools.intro.Intro.name">
+<code class="descname">name</code><em class="property"> = None</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/intro.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.intro.Intro.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="export.tools.intro.Intro.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>name</em>, <em>section</em>, <em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/intro.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/intro.html#Intro.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.intro.Intro.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add introduction section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>intro</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>)</em><em>]</em>) – Introduction to add to document.</li>
+<li><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Document updated with Introduction.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.tools.intro.Intro.settings">
+<code class="descname">settings</code><em class="property"> = &lt;LazySettings &quot;None&quot;&gt;</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/intro.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.intro.Intro.settings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-export.tools.layout">
+<span id="export-tools-layout-module"></span><h2>export.tools.layout module<a class="headerlink" href="#module-export.tools.layout" title="Permalink to this headline">¶</a></h2>
+<p>Layout module.</p>
+<dl class="function">
+<dt id="export.tools.layout.set_layout">
+<code class="descclassname">export.tools.layout.</code><code class="descname">set_layout</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/layout.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/layout.html#set_layout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.layout.set_layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define document layout.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Current document with adjusted layout.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-export.tools.skills">
+<span id="export-tools-skills-module"></span><h2>export.tools.skills module<a class="headerlink" href="#module-export.tools.skills" title="Permalink to this headline">¶</a></h2>
+<p>Skills section module.</p>
+<dl class="class">
+<dt id="export.tools.skills.Skills">
+<em class="property">class </em><code class="descclassname">export.tools.skills.</code><code class="descname">Skills</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/skills.html#Skills"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.skills.Skills" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Class for skills section object.</p>
+<dl class="method">
+<dt id="export.tools.skills.Skills.add_sub_skills">
+<code class="descname">add_sub_skills</code><span class="sig-paren">(</span><em>subs</em>, <em>skilltable</em>, <em>skilltable_index</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/skills.html#Skills.add_sub_skills"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.skills.Skills.add_sub_skills" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add sub skills to skills section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>subs</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>)</em><em>]</em>) – Sub skills to add to document.</li>
+<li><strong>ts</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Table cell to update.</li>
+<li><strong>ts_index</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – Index for current table cell.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Document updated with sub skills.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.tools.skills.Skills.document">
+<code class="descname">document</code><em class="property"> = None</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/skills.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.skills.Skills.document" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="export.tools.skills.Skills.name">
+<code class="descname">name</code><em class="property"> = None</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/skills.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.skills.Skills.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="export.tools.skills.Skills.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>name</em>, <em>section</em>, <em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/skills.html#Skills.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.skills.Skills.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add skills section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>skills</strong> – Skills section to add to document.</li>
+<li><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Document updated with Skills.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.tools.skills.Skills.sub_skills">
+<code class="descname">sub_skills</code><em class="property"> = None</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/skills.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.skills.Skills.sub_skills" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-export.tools.style">
+<span id="export-tools-style-module"></span><h2>export.tools.style module<a class="headerlink" href="#module-export.tools.style" title="Permalink to this headline">¶</a></h2>
+<p>Styles module.</p>
+<dl class="function">
+<dt id="export.tools.style.set_final_styles">
+<code class="descclassname">export.tools.style.</code><code class="descname">set_final_styles</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/style.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/style.html#set_final_styles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.style.set_final_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define remaining styles.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="export.tools.style.set_first_headings">
+<code class="descclassname">export.tools.style.</code><code class="descname">set_first_headings</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/style.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/style.html#set_first_headings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.style.set_first_headings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set top three headings on document.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="export.tools.style.set_list_bullets">
+<code class="descclassname">export.tools.style.</code><code class="descname">set_list_bullets</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/style.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/style.html#set_list_bullets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.style.set_list_bullets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set list bullet styles.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="export.tools.style.set_second_headings">
+<code class="descclassname">export.tools.style.</code><code class="descname">set_second_headings</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/style.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/style.html#set_second_headings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.style.set_second_headings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the second three headings.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="export.tools.style.set_styles">
+<code class="descclassname">export.tools.style.</code><code class="descname">set_styles</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/style.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/style.html#set_styles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.style.set_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set styles in the Word document.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Current document with correct styles.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-export.tools.summary">
+<span id="export-tools-summary-module"></span><h2>export.tools.summary module<a class="headerlink" href="#module-export.tools.summary" title="Permalink to this headline">¶</a></h2>
+<p>Summary section export.</p>
+<dl class="class">
+<dt id="export.tools.summary.Summary">
+<em class="property">class </em><code class="descclassname">export.tools.summary.</code><code class="descname">Summary</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/summary.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/summary.html#Summary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.summary.Summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Sumary section object class.</p>
+<dl class="attribute">
+<dt id="export.tools.summary.Summary.name">
+<code class="descname">name</code><em class="property"> = None</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/summary.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.summary.Summary.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="export.tools.summary.Summary.no_action">
+<code class="descname">no_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/summary.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/summary.html#Summary.no_action"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.summary.Summary.no_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do nothing.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.tools.summary.Summary.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>name</em>, <em>section</em>, <em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/summary.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/summary.html#Summary.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.summary.Summary.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add summary section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>summary</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>)</em><em>]</em>) – Summary section to add to document.</li>
+<li><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Document updated with Summary.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.tools.summary.Summary.settings">
+<code class="descname">settings</code><em class="property"> = &lt;LazySettings &quot;None&quot;&gt;</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/summary.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.summary.Summary.settings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-export.tools.values">
+<span id="export-tools-values-module"></span><h2>export.tools.values module<a class="headerlink" href="#module-export.tools.values" title="Permalink to this headline">¶</a></h2>
+<p>Values export object module.</p>
+<dl class="class">
+<dt id="export.tools.values.Values">
+<em class="property">class </em><code class="descclassname">export.tools.values.</code><code class="descname">Values</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/values.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/values.html#Values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.values.Values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Class for Values export object.</p>
+<dl class="attribute">
+<dt id="export.tools.values.Values.document">
+<code class="descname">document</code><em class="property"> = None</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/values.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.values.Values.document" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="export.tools.values.Values.name">
+<code class="descname">name</code><em class="property"> = None</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/values.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.values.Values.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="export.tools.values.Values.organize">
+<code class="descname">organize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/values.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/values.html#Values.organize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.values.Values.organize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Organize something.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.tools.values.Values.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>name</em>, <em>section</em>, <em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tools/values.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tools/values.html#Values.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tools.values.Values.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get intro.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-export.tools">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-export.tools" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Gahan Corporation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/api/export.tools.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

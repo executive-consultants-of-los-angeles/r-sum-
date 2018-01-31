@@ -1,4 +1,5 @@
 .cache/
+coverage/
 py/
 rsum/home/migrations
 cc-test-reporter

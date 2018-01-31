@@ -1,0 +1,124 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Continuous Integration &#8212; rsum 0.0.2 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Continuous Deployment" href="deployment.html" />
+    <link rel="prev" title="Continuous X Is Continuous" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="continuous-integration">
+<h1>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">draft</p>
+</div>
+<div class="section" id="travis-ci">
+<h2><a class="reference external" href="https://travis-ci.org">Travis CI</a><a class="headerlink" href="#travis-ci" title="Permalink to this headline">¶</a></h2>
+<p>We use Travis CI for integration on all of our projects.  It’s the simplest and most effective tool that we’ve tried for integration, so it’s the one we use by default.</p>
+<p>Gahan Corporation’s Travis profile may be <a class="reference external" href="https://travis-ci.org/gahan-corporation">found here</a>.</p>
+<p>The history for this project is available at <a class="reference external" href="https://travis-ci.org/gahan-corporation/rsum.application">this location</a>.</p>
+<div class="section" id="build-status">
+<h3>Build Status<a class="headerlink" href="#build-status" title="Permalink to this headline">¶</a></h3>
+<a class="reference external image-reference" href="https://travis-ci.org/gahan-corporation/rsum.application"><img alt="https://travis-ci.org/gahan-corporation/rsum.application.svg?branch=master" src="https://travis-ci.org/gahan-corporation/rsum.application.svg?branch=master" /></a>
+<div class="section" id="integration-testing">
+<h4>Integration Testing<a class="headerlink" href="#integration-testing" title="Permalink to this headline">¶</a></h4>
+<p>The tests are run inside a Docker container that is built on Travis for the purpose.  The test suite makes use of pytest.  Coverage is calculated using coverage.py, and the application makes use of setuptools for building and installation.</p>
+<p>Integration tests must be passed before any code is allowed to be merged into a protected branch.  This is managed in GitHub.</p>
+</div>
+<div class="section" id="functional-testing">
+<h4>Functional Testing<a class="headerlink" href="#functional-testing" title="Permalink to this headline">¶</a></h4>
+<p>Currently there is no automated functional testing.</p>
+</div>
+<div class="section" id="load-testing">
+<h4>Load Testing<a class="headerlink" href="#load-testing" title="Permalink to this headline">¶</a></h4>
+<p>Currently there is no load testing.</p>
+</div>
+<div class="section" id="user-interface-testing">
+<h4>User Interface Testing<a class="headerlink" href="#user-interface-testing" title="Permalink to this headline">¶</a></h4>
+<p>Also no.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Continuous X Is Continuous</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Continuous X Is Continuous</a></li>
+      <li>Next: <a href="deployment.html" title="next chapter">Continuous Deployment</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Gahan Corporation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/continuous/integration.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
