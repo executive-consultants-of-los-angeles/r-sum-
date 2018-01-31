@@ -1,9 +1,8 @@
-home
-====
+notes for the home app
+======================
 
-.. autosummary::
-   :toctree: modules
+.. toctree::
 
-   home.tests
-
-.. vim: ft=rst sts=3 sw=3 ts=3:
+   models/index
+   views/index
+   templates/index

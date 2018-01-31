@@ -1,0 +1,200 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>export package &#8212; rsum 0.0.2 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="export-package">
+<h1>export package<a class="headerlink" href="#export-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-export.admin">
+<span id="export-admin-module"></span><h2>export.admin module<a class="headerlink" href="#module-export.admin" title="Permalink to this headline">¶</a></h2>
+<p>Admin module.</p>
+</div>
+<div class="section" id="module-export.apps">
+<span id="export-apps-module"></span><h2>export.apps module<a class="headerlink" href="#module-export.apps" title="Permalink to this headline">¶</a></h2>
+<p>App module.</p>
+<dl class="class">
+<dt id="export.apps.ExportConfig">
+<em class="property">class </em><code class="descclassname">export.apps.</code><code class="descname">ExportConfig</code><span class="sig-paren">(</span><em>app_name</em>, <em>app_module</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/apps.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/apps.html#ExportConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.apps.ExportConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<p>Export config class.</p>
+<dl class="attribute">
+<dt id="export.apps.ExportConfig.name">
+<code class="descname">name</code><em class="property"> = 'export'</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/apps.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.apps.ExportConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-export.models">
+<span id="export-models-module"></span><h2>export.models module<a class="headerlink" href="#module-export.models" title="Permalink to this headline">¶</a></h2>
+<p>Module for exporting profiles to Word format.</p>
+<dl class="class">
+<dt id="export.models.ExportDocument">
+<em class="property">class </em><code class="descclassname">export.models.</code><code class="descname">ExportDocument</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/models.html#ExportDocument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.models.ExportDocument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Class to handle exporting rsum pages to Word documents.</p>
+<dl class="attribute">
+<dt id="export.models.ExportDocument.document">
+<code class="descname">document</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.models.ExportDocument.document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Document object for export.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.models.ExportDocument.settings">
+<code class="descname">settings</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.models.ExportDocument.settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Settings for the current app.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">document</code><em class="property"> = &lt;docx.document.Document object&gt;</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="export.models.ExportDocument.export_word">
+<code class="descname">export_word</code><span class="sig-paren">(</span><em>profile_id</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/models.html#ExportDocument.export_word"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.models.ExportDocument.export_word" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a word document.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>profile_id</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – ID of CV to export.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Stream of Word document for end user.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.models.ExportDocument.save_section">
+<code class="descname">save_section</code><span class="sig-paren">(</span><em>section</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/models.html#ExportDocument.save_section"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.models.ExportDocument.save_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save a section of a document.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">settings</code><em class="property"> = &lt;LazySettings &quot;None&quot;&gt;</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="export.models.load_class">
+<code class="descclassname">export.models.</code><code class="descname">load_class</code><span class="sig-paren">(</span><em>class_name</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/models.html#load_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.models.load_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dynamically load a class.</p>
+<p>Special thanks to: <a class="reference external" href="http://bit.ly/2DsSINZ">Thomas Sileo</a>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-export.views">
+<span id="export-views-module"></span><h2>export.views module<a class="headerlink" href="#module-export.views" title="Permalink to this headline">¶</a></h2>
+<p>Views for the export app.</p>
+<dl class="function">
+<dt id="export.views.index">
+<code class="descclassname">export.views.</code><code class="descname">index</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/views.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/views.html#index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.views.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export cv to word document.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – HttpRequest object for export_docx page.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Word document generated by export module.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-export">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-export" title="Permalink to this headline">¶</a></h2>
+<p>Init export module.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Gahan Corporation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/api/export.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
