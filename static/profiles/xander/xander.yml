@@ -125,6 +125,7 @@
           from left to right.
     - loyalty:
         col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+        title: Loyalty
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon icon-badge"'
         text: >
@@ -133,18 +134,23 @@
           loyalty, and persistence. - Colin Powell
     - industry:
         col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+        title: Industry
         service: >
           class="service bg-color-base wow zoomIn"
           data-height="height"
           data-wow-duration=".3"
           data-wow-delay=".1s"
-        icon: ' class="service-icon color-white icon-chemistry"'
+        icon: >
+          style="color: white;"
+          class="service-icon color-white icon-chemistry"
+          style="color: white;"
         text: >
           Concentration is my motto - first
           honesty, then industry,
           then concentration. - Andrew Carnegie
     - efficiency:
         col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
+        title: Efficency
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon icon-screen-tablet"'
         text: >
@@ -152,6 +158,7 @@
           efficiency. - Benjamin Disraeli
     - wealth:
         col: 'class="col-md-3 col-sm-6"'
+        title: Wealth
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon  icon-mustache"'
         text: >
