@@ -35,6 +35,7 @@ class Skills:
         """
         skills_data = self.skills_data
         begin = skills_data.pop('start', None)
+        print(begin)
         self.career_length = float(self.current_year) - float(begin)
 
         for name, skill in skills_data.items():
@@ -42,6 +43,8 @@ class Skills:
 
             skills_data = self.calculate_sub_skills(
                 name, skill.items(), skills_data)
+
+            print(name)
 
             skills_data.update({
                 name: {

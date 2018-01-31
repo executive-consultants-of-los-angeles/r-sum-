@@ -40,14 +40,17 @@ class TestSkills:
             if not isinstance(experience.get('value'), float):
                 raise AssertionError()
 
-    def test_calculate_skills(self, profile, skills):
+    def test_calculate_skills(self, skills):
         """Test that skillss save correctly."""
-        skills_profile = profile.create()
-        self.skills_obj = skills
+        self.skills = skills.skills_data.get('skills')
+        self.start_year = self.skills.pop('start', None)
+        skills.career_length = (
+            float(self.current_year) - float(self.start_year)
+        )
 
-        skills_data = json.loads(skills_profile.content)
+        result = skills.calculate_skills()
 
-        skills = self.skills_obj(skills_data[2])
+        print(result)
 
         if not isinstance(skills, self.skills_obj):
             raise AssertionError()
