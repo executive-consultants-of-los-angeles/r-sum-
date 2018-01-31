@@ -28,10 +28,8 @@ class TestSkills:
         self.skills_obj = skills
 
         skills_data = json.loads(skills_profile.content)
-        print(json.dumps(skills_data, indent=2))
 
-        skills = self.skills_obj(skills_data)
-        print(skills)
+        skills = self.skills_obj(skills_data[2])
 
         if not isinstance(skills, self.skills_obj):
             raise AssertionError()
