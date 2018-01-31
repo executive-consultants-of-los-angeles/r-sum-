@@ -26,18 +26,12 @@ class TestSkills:
         """Test that skillss save correctly."""
         skills_profile = profile.create()
         self.skills_obj = skills
-        save_content = {
-            'projects': {
-                'one': 'grenada',
-                'two': 'the falkands'
-            }
-        }
 
-        skills = self.skills_obj()
-        skills.profile = skills_profile
-        skills.name = 'Tests!'
-        skills.content = json.dumps(save_content)
-        skills.save()
+        skills_data = skills_profile
+        print(skills_profile.objects.all()[0])
+
+        skills = self.skills_obj(skills_data)
+        print(skills)
 
         if not isinstance(skills, self.skills_obj):
             raise AssertionError()

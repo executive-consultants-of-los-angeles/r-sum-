@@ -12,9 +12,6 @@ class Values(object):
         self.name = name
         self.document = document
         section = self.name
-        print(section)
-
-        print(document)
         return document
 
     def organize(self):

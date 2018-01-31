@@ -49,8 +49,6 @@ class Education(object):
                 education.get('duration')),
             style='Heading 6')
         paragraph.paragraph_format.space_before = 0
-        print(name)
-        print(document)
         return document
 
     def organize(self):

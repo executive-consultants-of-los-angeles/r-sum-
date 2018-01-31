@@ -79,7 +79,6 @@ def set_list_bullets(document):
         alignment=WD_TAB_ALIGNMENT.LEFT,
         leader=WD_TAB_LEADER.SPACES
     )
-    print(dir(style.paragraph_format))
     return document
 
 
