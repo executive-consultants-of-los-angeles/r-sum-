@@ -1,21 +1,26 @@
-"""Test module for the section class."""
+"""Test module for the skills class."""
 import json
 
 
-class TestSection:
-    """Class for testing Section objects."""
+class TestSkills:
+    """Class for testing Skills objects."""
 
-    section_obj = object
+    skills_obj = object
 
-    def test_section_instance(self, section):
-        """Test the create method for Section objects."""
-        if not isinstance(section, self.section_obj):
+    def test_skills_instance(self, skills):
+        """Test the create method for Skills objects."""
+        if not isinstance(skills, self.skills_obj):
             raise AssertionError()
 
-    def test_save_method(self, profile, section):
-        """Test that sections save correctly."""
-        section_profile = profile.create()
-        self.section_obj = section
+    def test_calculate_experience(self, profile, skills):
+        """Test the validity of the experience calculation method."""
+        if not False:
+            raise AssertionError()
+
+    def test_calculate_skills(self, profile, skills):
+        """Test that skillss save correctly."""
+        skills_profile = profile.create()
+        self.skills_obj = skills
         save_content = {
             'projects': {
                 'one': 'grenada',
@@ -23,22 +28,22 @@ class TestSection:
             }
         }
 
-        section = self.section_obj()
-        section.profile = section_profile
-        section.name = 'Tests!'
-        section.content = json.dumps(save_content)
-        section.save()
+        skills = self.skills_obj()
+        skills.profile = skills_profile
+        skills.name = 'Tests!'
+        skills.content = json.dumps(save_content)
+        skills.save()
 
-        if not isinstance(section, self.section_obj):
+        if not isinstance(skills, self.skills_obj):
             raise AssertionError()
 
-    def test_attributes(self, profile, section):
-        """Get a section and test its attributes."""
-        self.section_obj = section
+    def test_attributes(self, profile, skills):
+        """Get a skills and test its attributes."""
+        self.skills_obj = skills
         profile.create()
-        sections = self.section_obj.objects.all()
+        skillss = self.skills_obj.objects.all()
 
-        for item in sections:
+        for item in skillss:
             json_content = json.loads(item.content)
             if not isinstance(item.name, str):
                 raise AssertionError()
