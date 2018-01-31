@@ -26,11 +26,17 @@
 - skills:
     start: 2000
     infrastructure_automation:
-      name: "Infrastructure Automation and Administration"
+      name: "Automation and Orchestration"
       start: 2000
       ansible:
         name: "Ansible"
         start: 2013
+      docker:
+        name: "Docker"
+        start: 2015
+      terraform:
+        name: "Terraform"
+        start: 2018
       molecule:
         name: "Molecule"
         start: 2016
@@ -74,7 +80,7 @@
         name: "SubVersion"
         start: 2006
     linux_unix:
-      name: "Linux Administration"
+      name: "Linux Administration and Monitoring"
       start: 2000
       redhat:
         name: "RedHat Enterprise Linux"
@@ -88,12 +94,30 @@
       gentoo:
         name: "Gentoo Linux"
         start: 2004
+      nagios:
+        name: "Nagios"
+        start: 2014
+      new_relic:
+        name: "New Relic"
+        start: 2015
+      netdata:
+        name: "NetData"
+        start: 2018
+      consul:
+        name: "Consul"
+        start: 2018
     programming:
       name: "Programming Languages"
       start: 2000
       python:
         name: "Python"
         start: 2014
+      bash:
+        name: "bash"
+        start: 2000
+      perl:
+        name: "Perl"
+        start: 2016
       java:
         name: "Java"
         start: 2016
