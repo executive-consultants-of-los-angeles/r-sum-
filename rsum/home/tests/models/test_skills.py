@@ -27,8 +27,8 @@ class TestSkills:
         skills_profile = profile.create()
         self.skills_obj = skills
 
-        skills_data = skills_profile
-        print(skills_profile.objects.all()[0])
+        skills_data = json.loads(skills_profile.content)
+        print(json.dumps(skills_data, indent=2))
 
         skills = self.skills_obj(skills_data)
         print(skills)
