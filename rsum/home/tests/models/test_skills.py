@@ -38,15 +38,14 @@ class TestSkills:
         """Get a skills and test its attributes."""
         self.skills_obj = skills
         profile = profile.create()
-        skills_set = json.loads(profile.content[2])
+        skills_set = json.loads(profile.content)
 
         for item in skills_set:
-            json_content = json.loads(item.content)
-            if not isinstance(item.name, str):
+            if not isinstance(item.get('name'), str):
                 raise AssertionError()
 
-            if not isinstance(json_content, (dict, list)):
+            if not isinstance(item, (dict, list)):
                 raise AssertionError()
 
-            if not isinstance(item.profile, profile):
+            if not isinstance(item.get('profile'), profile):
                 raise AssertionError()
