@@ -16,7 +16,11 @@
                       <div {{ row.col|safe }}>
                         <div {{ row.service|safe }}> 
                           <div class="service-element">
+                            {% if forloop.parenttloop.counter == 3 %}
+                            <div style="color: white"><i style="color: white;" {{ row.icon|safe }}></i></div>
+                            {% else %}
                             <i {{ row.icon|safe }}></i>
+                            {% endif %}
                           </div>
                           <div class="service-info">
                             {% if forloop.parentloop.counter == 3 %}
