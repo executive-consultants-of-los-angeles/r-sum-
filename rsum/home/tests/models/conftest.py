@@ -5,6 +5,7 @@ import rsum.loadapps
 
 from home.models.profile import Profile
 from home.models.section import Section
+from home.models.skills import Skills
 
 rsum.loadapps.main()
 
@@ -19,3 +20,9 @@ def profile():
 def section():
     """Create a section for testing."""
     return Section
+
+
+@pytest.fixture(scope="session")
+def skills():
+    """Create a Skills object."""
+    return Skills
