@@ -14,6 +14,16 @@ class Skills:
         """Initialize the Skills class."""
         self.skills_data = skills_data
 
+    def calculate_experience(self, skill):
+        """Return experience as a percentage."""
+        experience = {}
+        start_skill = float(skill.get('start'))
+        years_skill = self.current_year - start_skill
+        experience.update({'value':
+                           years_skill / self.career_length * 100})
+        experience.update({'string': "{0} year(s)".format(int(years_skill))})
+        return experience
+
     def calculate_skills(self):
         """Calculate necessary values for the skills progress bars.
 
@@ -24,27 +34,23 @@ class Skills:
         :raises: ValueError
         """
         skills_data = self.skills_data
-        begin = skills_data.get('start')
+        begin = skills_data.pop('start', None)
         self.career_length = float(self.current_year) - float(begin)
 
         for name, skill in skills_data.items():
-            if name != 'start':
-                start_skill = float(skill.get('start'))
-                years_skill = self.current_year - start_skill
-                experience_value = years_skill / self.career_length * 100
-                experience_string = "{0} year(s)".format(int(years_skill))
+            experience = self.calculate_experience(skill)
 
-                skills_data = self.calculate_sub_skills(
-                    name, skill.items(), skills_data)
+            skills_data = self.calculate_sub_skills(
+                name, skill.items(), skills_data)
 
-                skills_data.update({
-                    name: {
-                        'name': skills_data.get(name).get('name'),
-                        'start': skills_data.get(name).get('start'),
-                        'experience_value': experience_value,
-                        'experience_string': experience_string,
-                    }
-                })
+            skills_data.update({
+                name: {
+                    'name': skills_data.get(name).get('name'),
+                    'start': skills_data.get(name).get('start'),
+                    'experience_value': experience.get('value'),
+                    'experience_string': experience.get('string'),
+                }
+            })
         return skills_data
 
     def calculate_sub_skills(self, name, sub_skills, skills_data):

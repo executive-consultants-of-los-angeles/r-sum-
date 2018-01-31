@@ -1,4 +1,5 @@
 """pytest configuration module."""
+import json
 import pytest
 
 import rsum.loadapps
@@ -25,4 +26,8 @@ def section():
 @pytest.fixture(scope="session")
 def skills():
     """Create a Skills object."""
-    return Skills
+    local_profile = Profile.create()
+
+    local_sections = json.loads(local_profile.content)
+
+    return Skills(local_sections[2])
