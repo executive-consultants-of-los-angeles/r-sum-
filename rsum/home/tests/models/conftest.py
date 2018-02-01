@@ -28,6 +28,4 @@ def skills():
     """Create a Skills object."""
     local_profile = Profile.create()
 
-    local_sections = json.loads(local_profile.content)
-
-    return Skills(local_sections[2])
+    return Skills(json.loads(local_profile.content)[2])

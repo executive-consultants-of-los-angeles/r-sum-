@@ -1,6 +1,6 @@
 """Test module for the skills class."""
+import copy
 import datetime
-import json
 
 
 class TestSkills:
@@ -10,22 +10,34 @@ class TestSkills:
     start_year = 1980
     floating_point = 2 / 3
     skills_obj = object
-    skills = None
 
     def test_skills_instance(self, skills):
         """Test the create method for Skills objects."""
         if not isinstance(skills, self.skills_obj):
             raise AssertionError()
 
+    def test_calculate_skills(self, skills):
+        """Test that skillss save correctly."""
+        local_skills = copy.copy(skills)
+        local_skill_data = local_skills.skills_data.get('skills')
+
+        prepared_skills = skills.calculate_skills(local_skill_data)
+        for name, skill in prepared_skills.items():
+            if not isinstance(name, str):
+                raise AssertionError()
+
+            if not isinstance(skill, dict):
+                raise AssertionError()
+
+        if not isinstance(skills, self.skills_obj):
+            raise AssertionError()
+
     def test_calculate_experience(self, skills):
         """Test the validity of the experience calculation method."""
-        self.skills = skills.skills_data.get('skills')
-        self.start_year = self.skills.pop('start', None)
-        skills.career_length = (
-            float(self.current_year) - float(self.start_year)
-        )
+        local_skills = skills.skills_data.get('skills')
+        self.start_year = local_skills.get('start')
 
-        for name, skill in self.skills.items():
+        for name, skill in local_skills.items():
             experience = skills.calculate_experience(skill)
 
             if not isinstance(name, str):
@@ -38,38 +50,4 @@ class TestSkills:
                 raise AssertionError()
 
             if not isinstance(experience.get('value'), float):
-                raise AssertionError()
-
-    def test_calculate_skills(self, skills):
-        """Test that skillss save correctly."""
-        self.skills = skills.skills_data.get('skills')
-        self.start_year = self.skills.pop('start', None)
-        skills.career_length = (
-            float(self.current_year) - float(self.start_year)
-        )
-
-        result = skills.calculate_skills()
-
-        print(result)
-
-        if not isinstance(skills, self.skills_obj):
-            raise AssertionError()
-
-    def test_calculate_sub_skills(self, profile, skills):
-        """Get a skills and test its attributes."""
-        self.skills_obj = skills
-        profile = profile.create()
-        skills_set = json.loads(profile.content)
-
-        for name, item in skills_set[2].items():
-            if name != 'skills':
-                raise AssertionError()
-
-            if not isinstance(item.get('name'), str):
-                raise AssertionError()
-
-            if not isinstance(item, (dict, list)):
-                raise AssertionError()
-
-            if not isinstance(item.get('profile'), profile):
                 raise AssertionError()
