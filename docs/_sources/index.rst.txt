@@ -10,10 +10,9 @@ Welcome to rsum's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   notes/home
-   integration/index
-   deployment/index
-   delivery/index
+   modules/home
+   modules/export
+   continuous/index
 
 All the Badges
 --------------

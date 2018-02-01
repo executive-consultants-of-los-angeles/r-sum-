@@ -43,6 +43,7 @@ class ExportDocument(object):
 
     document = Document()
     settings = django_settings
+    request = None
 
     def __init__(self):
         """Initialize ExportDocument class.
@@ -53,7 +54,7 @@ class ExportDocument(object):
         settings = self.settings
         self.name = '{0}-profile.docx'.format(settings.DIR)
 
-    def export_word(self, profile_id):
+    def export_word(self, request):
         """Export a word document.
 
         :param profile_id: ID of CV to export.
@@ -61,7 +62,8 @@ class ExportDocument(object):
         :return: Stream of Word document for end user.
         :rtype: object
         """
-        profile = Profile.objects.get(pk=profile_id)
+        profile = Profile.objects.all()[0]
+        self.request = request
         document = self.document
         document = style.set_styles(document)
         document = layout.set_layout(document)

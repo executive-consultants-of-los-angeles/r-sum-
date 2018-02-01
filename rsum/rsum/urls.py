@@ -23,7 +23,7 @@ import home.views
 import export.views
 
 urlpatterns = [
-    path('', home.views.index),
+    path('', home.views.index, name='main'),
     # re_path('docx/(?P<cv_id>[0-9]+)/$', export.views.index, name='docx'),
     path('docx/', export.views.index, name='docx'),
     # path('admin/', admin.site.urls),

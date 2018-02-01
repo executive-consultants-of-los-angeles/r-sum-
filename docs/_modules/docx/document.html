@@ -1,0 +1,299 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>docx.document &#8212; rsum 0.0.2 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for docx.document</h1><div class="highlight"><pre>
+<span></span><span class="c1"># encoding: utf-8</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">|Document| and closely related objects</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">unicode_literals</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">.blkcntnr</span> <span class="k">import</span> <span class="n">BlockItemContainer</span>
+<span class="kn">from</span> <span class="nn">.enum.section</span> <span class="k">import</span> <span class="n">WD_SECTION</span>
+<span class="kn">from</span> <span class="nn">.enum.text</span> <span class="k">import</span> <span class="n">WD_BREAK</span>
+<span class="kn">from</span> <span class="nn">.section</span> <span class="k">import</span> <span class="n">Section</span><span class="p">,</span> <span class="n">Sections</span>
+<span class="kn">from</span> <span class="nn">.shared</span> <span class="k">import</span> <span class="n">ElementProxy</span><span class="p">,</span> <span class="n">Emu</span>
+
+
+<span class="k">class</span> <span class="nc">Document</span><span class="p">(</span><span class="n">ElementProxy</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    WordprocessingML (WML) document. Not intended to be constructed directly.</span>
+<span class="sd">    Use :func:`docx.Document` to open or create a document.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_part&#39;</span><span class="p">,</span> <span class="s1">&#39;__body&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">part</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Document</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_part</span> <span class="o">=</span> <span class="n">part</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__body</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">add_heading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a heading paragraph newly added to the end of the document,</span>
+<span class="sd">        containing *text* and having its paragraph style determined by</span>
+<span class="sd">        *level*. If *level* is 0, the style is set to `Title`. If *level* is</span>
+<span class="sd">        1 (or omitted), `Heading 1` is used. Otherwise the style is set to</span>
+<span class="sd">        `Heading {level}`. Raises |ValueError| if *level* is outside the</span>
+<span class="sd">        range 0-9.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">level</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;level must be in range 0-9, got </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">level</span><span class="p">)</span>
+        <span class="n">style</span> <span class="o">=</span> <span class="s1">&#39;Title&#39;</span> <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;Heading </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">level</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_page_break</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a paragraph newly added to the end of the document and</span>
+<span class="sd">        containing only a page break.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">()</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">add_run</span><span class="p">()</span><span class="o">.</span><span class="n">add_break</span><span class="p">(</span><span class="n">WD_BREAK</span><span class="o">.</span><span class="n">PAGE</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">paragraph</span>
+
+    <span class="k">def</span> <span class="nf">add_paragraph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a paragraph newly added to the end of the document, populated</span>
+<span class="sd">        with *text* and having paragraph style *style*. *text* can contain</span>
+<span class="sd">        tab (``\\t``) characters, which are converted to the appropriate XML</span>
+<span class="sd">        form for a tab. *text* can also include newline (``\\n``) or carriage</span>
+<span class="sd">        return (``\\r``) characters, each of which is converted to a line</span>
+<span class="sd">        break.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_body</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">style</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_picture</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_path_or_stream</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a new picture shape added in its own paragraph at the end of</span>
+<span class="sd">        the document. The picture contains the image at</span>
+<span class="sd">        *image_path_or_stream*, scaled based on *width* and *height*. If</span>
+<span class="sd">        neither width nor height is specified, the picture appears at its</span>
+<span class="sd">        native size. If only one is specified, it is used to compute</span>
+<span class="sd">        a scaling factor that is then applied to the unspecified dimension,</span>
+<span class="sd">        preserving the aspect ratio of the image. The native size of the</span>
+<span class="sd">        picture is calculated using the dots-per-inch (dpi) value specified</span>
+<span class="sd">        in the image file, defaulting to 72 dpi if no value is specified, as</span>
+<span class="sd">        is often the case.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">run</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">()</span><span class="o">.</span><span class="n">add_run</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">run</span><span class="o">.</span><span class="n">add_picture</span><span class="p">(</span><span class="n">image_path_or_stream</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_section</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_type</span><span class="o">=</span><span class="n">WD_SECTION</span><span class="o">.</span><span class="n">NEW_PAGE</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a |Section| object representing a new section added at the end</span>
+<span class="sd">        of the document. The optional *start_type* argument must be a member</span>
+<span class="sd">        of the :ref:`WdSectionStart` enumeration, and defaults to</span>
+<span class="sd">        ``WD_SECTION.NEW_PAGE`` if not provided.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">new_sectPr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">add_section_break</span><span class="p">()</span>
+        <span class="n">new_sectPr</span><span class="o">.</span><span class="n">start_type</span> <span class="o">=</span> <span class="n">start_type</span>
+        <span class="k">return</span> <span class="n">Section</span><span class="p">(</span><span class="n">new_sectPr</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a table having row and column counts of *rows* and *cols*</span>
+<span class="sd">        respectively and table style of *style*. *style* may be a paragraph</span>
+<span class="sd">        style object or a paragraph style name. If *style* is |None|, the</span>
+<span class="sd">        table inherits the default table style of the document.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_body</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_block_width</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">style</span> <span class="o">=</span> <span class="n">style</span>
+        <span class="k">return</span> <span class="n">table</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">core_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A |CoreProperties| object providing read/write access to the core</span>
+<span class="sd">        properties of this document.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_part</span><span class="o">.</span><span class="n">core_properties</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">inline_shapes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        An |InlineShapes| object providing access to the inline shapes in</span>
+<span class="sd">        this document. An inline shape is a graphical object, such as</span>
+<span class="sd">        a picture, contained in a run of text and behaving like a character</span>
+<span class="sd">        glyph, being flowed like other text in a paragraph.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_part</span><span class="o">.</span><span class="n">inline_shapes</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">paragraphs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A list of |Paragraph| instances corresponding to the paragraphs in</span>
+<span class="sd">        the document, in document order. Note that paragraphs within revision</span>
+<span class="sd">        marks such as ``&lt;w:ins&gt;`` or ``&lt;w:del&gt;`` do not appear in this list.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_body</span><span class="o">.</span><span class="n">paragraphs</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">part</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The |DocumentPart| object of this document.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_part</span>
+
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path_or_stream</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save this document to *path_or_stream*, which can be either a path to</span>
+<span class="sd">        a filesystem location (a string) or a file-like object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_part</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">path_or_stream</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">sections</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A |Sections| object providing access to each section in this</span>
+<span class="sd">        document.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Sections</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">settings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A |Settings| object providing access to the document-level settings</span>
+<span class="sd">        for this document.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_part</span><span class="o">.</span><span class="n">settings</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">styles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A |Styles| object providing access to the styles in this document.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_part</span><span class="o">.</span><span class="n">styles</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">tables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A list of |Table| instances corresponding to the tables in the</span>
+<span class="sd">        document, in document order. Note that only tables appearing at the</span>
+<span class="sd">        top level of the document appear in this list; a table nested inside</span>
+<span class="sd">        a table cell does not appear. A table within revision marks such as</span>
+<span class="sd">        ``&lt;w:ins&gt;`` or ``&lt;w:del&gt;`` will also not appear in the list.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_body</span><span class="o">.</span><span class="n">tables</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_block_width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a |Length| object specifying the width of available &quot;writing&quot;</span>
+<span class="sd">        space between the margins of the last section of this document.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">section</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">Emu</span><span class="p">(</span>
+            <span class="n">section</span><span class="o">.</span><span class="n">page_width</span> <span class="o">-</span> <span class="n">section</span><span class="o">.</span><span class="n">left_margin</span> <span class="o">-</span> <span class="n">section</span><span class="o">.</span><span class="n">right_margin</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">_body</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The |_Body| instance containing the content for this document.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__body</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__body</span> <span class="o">=</span> <span class="n">_Body</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__body</span>
+
+
+<span class="k">class</span> <span class="nc">_Body</span><span class="p">(</span><span class="n">BlockItemContainer</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Proxy for ``&lt;w:body&gt;`` element in this document, having primarily a</span>
+<span class="sd">    container role.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">body_elm</span><span class="p">,</span> <span class="n">parent</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">_Body</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">body_elm</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_body</span> <span class="o">=</span> <span class="n">body_elm</span>
+
+    <span class="k">def</span> <span class="nf">clear_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return this |_Body| instance after clearing it of all content.</span>
+<span class="sd">        Section properties for the main document story, if present, are</span>
+<span class="sd">        preserved.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_body</span><span class="o">.</span><span class="n">clear_content</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Gahan Corporation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -53,7 +53,7 @@
 <span class="kn">from</span> <span class="nn">.section</span> <span class="k">import</span> <span class="n">Section</span>
 
 
-<div class="viewcode-block" id="Profile"><a class="viewcode-back" href="../../../notes/models/profile.html#home.models.profile.Profile">[docs]</a><span class="k">class</span> <span class="nc">Profile</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="viewcode-block" id="Profile"><a class="viewcode-back" href="../../../modules/models/profile.html#home.models.profile.Profile">[docs]</a><span class="k">class</span> <span class="nc">Profile</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;The Profile Model class.</span>
 
 <span class="sd">    .. attribute:: name</span>
@@ -68,18 +68,18 @@
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">JSONField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">{})</span>
 
-<div class="viewcode-block" id="Profile.get_name"><a class="viewcode-back" href="../../../notes/models/profile.html#home.models.profile.Profile.get_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Profile.get_name"><a class="viewcode-back" href="../../../modules/models/profile.html#home.models.profile.Profile.get_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Assign a name no matter what.&quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">DIR</span>
         <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DIR&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;RSUM_ENV&#39;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;xander&#39;</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span></div>
 
-<div class="viewcode-block" id="Profile.create"><a class="viewcode-back" href="../../../notes/models/profile.html#home.models.profile.Profile.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Profile.create"><a class="viewcode-back" href="../../../modules/models/profile.html#home.models.profile.Profile.create">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Check to see if the current Profile Model already has sections.</span>
 
@@ -88,8 +88,10 @@
 <span class="sd">        :return: The created instance of :obj:`home.models.profile.Profile`.</span>
 <span class="sd">        :rtype: :obj:`home.models.profile.Profile`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;static/profiles/</span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1">.yml&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;RSUM_ENV&#39;</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;RSUM_ENV&#39;</span><span class="p">)),</span> <span class="s1">&#39;r&#39;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+            <span class="s1">&#39;static/profiles/</span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1">.yml&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;RSUM_ENV&#39;</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;RSUM_ENV&#39;</span><span class="p">)),</span>
+            <span class="s1">&#39;r&#39;</span>
         <span class="p">)</span> <span class="k">as</span> <span class="n">yaml_file</span><span class="p">:</span>
             <span class="n">raw_content</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">yaml_file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
         <span class="n">yaml_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
