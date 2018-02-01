@@ -41,9 +41,6 @@ class Skills:
         for name, skill in skills_data.items():
             experience = self.calculate_experience(skill)
 
-            skills_data = self.calculate_sub_skills(
-                name, skill, skills_data)
-
             skills_data.update({
                 name: {
                     'name': skills_data.get(name).get('name'),
@@ -52,6 +49,9 @@ class Skills:
                     'experience_string': experience.get('string'),
                 }
             })
+
+            skills_data = self.calculate_sub_skills(
+                name, skill, skills_data)
         return skills_data
 
     def calculate_sub_skills(self, name, sub_skills, skills_data):
