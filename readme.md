@@ -17,7 +17,7 @@ This project is meant to provide all of the required services for a fully functi
 
 ### Code Climate
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/e6137a6c3bb11a5db1b3/maintainability)](https://codeclimate.com/github/gahan-corporation/rsum/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/e6137a6c3bb11a5db1b3/test_coverage)](https://codeclimate.com/github/gahan-corporation/rsum/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e6137a6c3bb11a5db1b3/maintainability)](https://codeclimate.com/github/gahan-corporation/rsum/maintainability)
 
 ### Travis
 
