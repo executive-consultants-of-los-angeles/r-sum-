@@ -31,7 +31,6 @@ class Skills(object):
         table = document.tables[1]
         table.cell(0, 1).add_paragraph('Skills', style='Heading 3')
         t_sub = table.cell(0, 1).add_table(rows=1, cols=2)
-        print(t_sub)
         table.cell(0, 1).tables[0].columns[0].width = Cm(7)
         index = 1
         for skill_name, skill in skills.items():
@@ -56,8 +55,6 @@ class Skills(object):
                 paragraph.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
                 t_sub = self.add_sub_skills(skill, t_sub, index-1)
             index = index + 1
-        print(name)
-        print(document)
         return document
 
     def add_sub_skills(self, subs, skilltable, skilltable_index):
@@ -70,7 +67,6 @@ class Skills(object):
         :return: Document updated with sub skills.
         :rtype: object
         """
-        print(subs)
         self.sub_skills = subs
         current_year = float(datetime.datetime.now().strftime("%Y"))
         sub_table = skilltable.cell(

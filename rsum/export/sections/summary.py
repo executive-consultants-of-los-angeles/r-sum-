@@ -47,8 +47,6 @@ class Summary(object):
         paragraph = self.format_paragraph(
             summary_table.cell(0, 1).paragraphs[1])
 
-        print(name)
-        print(document)
         return document
 
     def format_paragraph(self, paragraph):

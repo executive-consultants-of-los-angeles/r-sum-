@@ -33,7 +33,7 @@ def index(request):
     skills = sections.get('skills')
     skills_obj = Skills(skills)
 
-    sections.update({'skills': skills_obj.calculate_skills()})
+    sections.update({'skills': skills_obj.calculate_skills(skills)})
 
     context = {
         'profile': profile,

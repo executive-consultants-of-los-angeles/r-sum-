@@ -124,9 +124,12 @@
     <span class="k">return</span> <span class="n">document</span></div>
 
 
-<div class="viewcode-block" id="set_final_styles"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.style.set_final_styles">[docs]</a><span class="k">def</span> <span class="nf">set_final_styles</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+<div class="viewcode-block" id="set_skill_styles"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.style.set_skill_styles">[docs]</a><span class="k">def</span> <span class="nf">set_skill_styles</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Define remaining styles.&quot;&quot;&quot;</span>
-    <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="o">.</span><span class="n">add_style</span><span class="p">(</span><span class="s1">&#39;Skill&#39;</span><span class="p">,</span> <span class="n">WD_STYLE_TYPE</span><span class="o">.</span><span class="n">PARAGRAPH</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="o">.</span><span class="n">add_style</span><span class="p">(</span><span class="s1">&#39;Skill&#39;</span><span class="p">,</span> <span class="n">WD_STYLE_TYPE</span><span class="o">.</span><span class="n">PARAGRAPH</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">pass</span>
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Skill&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
@@ -134,13 +137,20 @@
     <span class="n">font</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">Pt</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">bold</span> <span class="o">=</span> <span class="kc">True</span>
 
-    <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="o">.</span><span class="n">add_style</span><span class="p">(</span><span class="s1">&#39;Sub Skill&#39;</span><span class="p">,</span> <span class="n">WD_STYLE_TYPE</span><span class="o">.</span><span class="n">PARAGRAPH</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="o">.</span><span class="n">add_style</span><span class="p">(</span><span class="s1">&#39;Sub Skill&#39;</span><span class="p">,</span> <span class="n">WD_STYLE_TYPE</span><span class="o">.</span><span class="n">PARAGRAPH</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">pass</span>
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Sub Skill&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
     <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mh">0x51</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0x6A</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">Pt</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">document</span></div>
 
+
+<div class="viewcode-block" id="set_normal_style"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.style.set_normal_style">[docs]</a><span class="k">def</span> <span class="nf">set_normal_style</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Define the normal style for the template.&quot;&quot;&quot;</span>
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Normal&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
@@ -159,7 +169,8 @@
     <span class="n">document</span> <span class="o">=</span> <span class="n">set_first_headings</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
     <span class="n">document</span> <span class="o">=</span> <span class="n">set_second_headings</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
     <span class="n">document</span> <span class="o">=</span> <span class="n">set_list_bullets</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
-    <span class="n">document</span> <span class="o">=</span> <span class="n">set_final_styles</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+    <span class="n">document</span> <span class="o">=</span> <span class="n">set_skill_styles</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+    <span class="n">document</span> <span class="o">=</span> <span class="n">set_normal_style</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">document</span></div>
 </pre></div>
 
