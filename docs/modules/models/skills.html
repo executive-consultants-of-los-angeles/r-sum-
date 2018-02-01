@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Skills &#8212; rsum 0.0.2 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="skills">
+<h1>Skills<a class="headerlink" href="#skills" title="Permalink to this headline">¶</a></h1>
+<p>Skills are a bit of a special case on account of the way in which they’re handled by the interpreter.</p>
+<div class="section" id="okay-what-s-so-special-then">
+<h2>Okay, what’s so special then?<a class="headerlink" href="#okay-what-s-so-special-then" title="Permalink to this headline">¶</a></h2>
+<p>At the center of the representation of skills is the simple idea that one can roughly guage their relative level of proficiency in a particular area by defining how long they have been working in that area.  Obviously, this is far from a complete representation of the skills or people in question, but it does allow for the communication of what would otherwise be very difficult to describe accurately.</p>
+<p>The credit for the progress bar animation goes to whoever it is that wrote the css for the site, which was certainly not the author of this document.  That author is pretty confident in the parity of those little graphics with what’s actually the case and the reason for that is the formula for their calculation.</p>
+<div class="section" id="formula-for-their-calulcation-isn-t-this-a-resume-application">
+<h3>Formula for their calulcation? Isn’t this a résumé application?<a class="headerlink" href="#formula-for-their-calulcation-isn-t-this-a-resume-application" title="Permalink to this headline">¶</a></h3>
+<p>This is indeed a résumé application, and yes, I did say formula for their calculation.  The formula is this as follows:</p>
+<p>let total years experience = t</p>
+<p>let number of years for a particular skill = s</p>
+<p>let level of skill in an area = l</p>
+<p>If you set up an equation in which t is the dividend and s is the divisor, then oppose them to l you will create something like this:</p>
+<p>s / t = l</p>
+<p>Because the values s and t are (in theory, at least) known to the creator of the résumé in question the only unknown value is l.  And that means that you can solve for l in the above equation to get a floating point value which is easily convertible into a percentage.  That percentage can then be stored with the rest of the skill’s data and sent on to the template for final display in the progress bar.</p>
+</div>
+</div>
+<div class="section" id="fancy">
+<h2>Fancy!<a class="headerlink" href="#fancy" title="Permalink to this headline">¶</a></h2>
+<p>Not really, but flattery is always welcome.  The algorithm for this calculation is not particularly well implemented.  It certainly won’t be winning any awards for elegance in the future.</p>
+</div>
+<div class="section" id="okay-so-it-s-ugly-that-doesn-t-mean-it-can-t-be-tested">
+<h2>Okay, so it’s ugly, that doesn’t mean it can’t be tested.<a class="headerlink" href="#okay-so-it-s-ugly-that-doesn-t-mean-it-can-t-be-tested" title="Permalink to this headline">¶</a></h2>
+<p>No, it certainly does not.</p>
+</div>
+<div class="section" id="but-what-is-there-to-test">
+<h2>But what is there to test?<a class="headerlink" href="#but-what-is-there-to-test" title="Permalink to this headline">¶</a></h2>
+<p>The Skills class is not a database model, though it is stored in the models package.  As of this writing the class contains three methods, the init, a method to calculate skills and another to calculate sub skills.  These three methods are implemented poorly, and really should be split into something more like six methods.  Currently the only possible unit tests are for the results of these three methods.  The init should generate an a new instance of the Skills object, the calculate skills method is meant to return a representation of the skills in the résumé as well as the sub-skills calculated by the method for calculating those.</p>
+<p>This means the tests for the code as written are one to test the instantiation, one to test the calculate skills method, and one to test the calculate sub skills method.</p>
+<div class="section" id="what-should-it-look-like-instead">
+<h3>What should it look like instead?<a class="headerlink" href="#what-should-it-look-like-instead" title="Permalink to this headline">¶</a></h3>
+<p>The calculation for the percentage should be a parameterized method in the class separate from the two other methods.  This new method could be tested against its ability to calculate the percentage correctly within acceptable precision.</p>
+</div>
+<div class="section" id="skills-class">
+<h3>Skills Class<a class="headerlink" href="#skills-class" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="home.models.skills.Skills">
+<em class="property">class </em><code class="descclassname">home.models.skills.</code><code class="descname">Skills</code><span class="sig-paren">(</span><em>skills_data</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../_modules/home/models/skills.html#Skills"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.skills.Skills" title="Permalink to this definition">¶</a></dt>
+<dd><p>Skills class for Skills objects.</p>
+<dl class="method">
+<dt id="home.models.skills.Skills.calculate_skills">
+<code class="descname">calculate_skills</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../_modules/home/models/skills.html#Skills.calculate_skills"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.skills.Skills.calculate_skills" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate necessary values for the skills progress bars.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>skills</strong> (<em>OrderedDict</em>) – The unmodified skills section.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An updated Skills section with missing values filled in.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">OrderedDict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">ValueError</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.skills.Skills.calculate_sub_skills">
+<code class="descname">calculate_sub_skills</code><span class="sig-paren">(</span><em>name</em>, <em>sub_skills</em>, <em>skills_data</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../_modules/home/models/skills.html#Skills.calculate_sub_skills"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.skills.Skills.calculate_sub_skills" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate sub skills and return the result.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Gahan Corporation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../_sources/modules/models/skills.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

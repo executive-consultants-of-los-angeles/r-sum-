@@ -21,7 +21,7 @@
               <div class="col-sm-4 sm-margin-b-50">
                   <div class="margin-b-20">
                       <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
-                          <img class="img-responsive" src="/static/profiles/{{ dir }}/img/970x647/{{ forloop.parentloop.counter0 }}.jpg" alt="{{ name }}">
+                        <img class="img-responsive" src="{% static 'profiles/'|add:dir|add:'/img/970x647/' %}/{{ forloop.parentloop.counter0 }}.jpg" alt="{{ name }}">
                       </div>
                   </div>
                   <h3><a href="#"></a>{{ content.position }}</h3>

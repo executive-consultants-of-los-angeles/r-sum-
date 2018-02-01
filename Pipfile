@@ -18,6 +18,7 @@ pyyaml = {git = "https://github.com/yaml/pyyaml"}
 "django-s3-storage" = "*"
 aws = "*"
 django-extensions = "*"
+pylint = "*"
 
 
 [requires]

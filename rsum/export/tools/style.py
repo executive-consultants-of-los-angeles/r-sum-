@@ -79,13 +79,15 @@ def set_list_bullets(document):
         alignment=WD_TAB_ALIGNMENT.LEFT,
         leader=WD_TAB_LEADER.SPACES
     )
-    print(dir(style.paragraph_format))
     return document
 
 
-def set_final_styles(document):
+def set_skill_styles(document):
     """Define remaining styles."""
-    document.styles.add_style('Skill', WD_STYLE_TYPE.PARAGRAPH)
+    try:
+        document.styles.add_style('Skill', WD_STYLE_TYPE.PARAGRAPH)
+    except ValueError:
+        pass
     style = document.styles['Skill']
     font = style.font
     font.name = 'Hind'
@@ -93,13 +95,20 @@ def set_final_styles(document):
     font.size = Pt(9)
     font.bold = True
 
-    document.styles.add_style('Sub Skill', WD_STYLE_TYPE.PARAGRAPH)
+    try:
+        document.styles.add_style('Sub Skill', WD_STYLE_TYPE.PARAGRAPH)
+    except ValueError:
+        pass
     style = document.styles['Sub Skill']
     font = style.font
     font.name = 'Hind'
     font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
     font.size = Pt(7)
+    return document
 
+
+def set_normal_style(document):
+    """Define the normal style for the template."""
     style = document.styles['Normal']
     font = style.font
     font.name = 'Hind'
@@ -118,5 +127,6 @@ def set_styles(document):
     document = set_first_headings(document)
     document = set_second_headings(document)
     document = set_list_bullets(document)
-    document = set_final_styles(document)
+    document = set_skill_styles(document)
+    document = set_normal_style(document)
     return document

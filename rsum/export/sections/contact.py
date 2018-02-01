@@ -18,7 +18,6 @@ class Contact(object):
         contact = section
         self.name = name
         document = self.start_contact(contact, document)
-        print(document)
         return document
 
     def start_contact(self, contact, document):
@@ -49,7 +48,6 @@ class Contact(object):
 
     def complete_contact(self, contact, document, table):
         """Complete addition of contact section."""
-        print(self.name)
         table.cell(0, 1).add_paragraph(
             'Email',
             style='Heading 4')

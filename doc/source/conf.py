@@ -38,7 +38,7 @@ import sys
 import django
 from django.conf import settings
 sys.path.insert(0, os.path.abspath('../..'))
-settings.configure()
+
 django.setup()
 
 extensions = [

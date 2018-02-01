@@ -1,23 +1,20 @@
 # -*- coding: utf-8 -*-
 """Test case for home.views."""
-from __future__ import unicode_literals
+import pytest
+from django.test import Client
+from django.urls import reverse
+
+from home.models.profile import Profile
 
 
-class ViewsTestCase(object):
-    """Class for testing home.views."""
+@pytest.mark.usefixtures('db')
+def test_index(profile):
+    """Get the index and test some things."""
+    client = Client()
+    response = client.get(reverse('main'))
 
-    assertion = True
+    if response.status_code != 200:
+        raise AssertionError()
 
-    def test_index(self):
-        """Test retrieval of index page."""
-        if not self.assertion:
-            raise AssertionError()
-
-    def test_export_docx(self):
-        """Test export of Word format document.
-
-        :return: None
-        :raises: :exc:`AssertionError`
-        """
-        if not self.assertion:
-            raise AssertionError()
+    if not isinstance(profile, Profile):
+        raise AssertionError()
