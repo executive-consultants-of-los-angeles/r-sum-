@@ -1,5 +1,4 @@
 ---
-# wat t
 version: 2
 jobs:
   build:
@@ -24,8 +23,8 @@ jobs:
           command: |
             docker run -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e\
             AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e \
-            CC_TEST_REPORTER_ID=668e91604e13d51737798e3ca2d2b15\
-            ccb1442075fe98c58eec44dd436b6e4d8 \
+            CC_TEST_REPORTER_ID=d1616b3fee86161abfb666d92c21\
+            c2045da6dce673e1775f3c4d62fd2ac3c72c \
             --network rsum \
             --rm -d --name rsum rsum
             docker exec rsum wget https://codeclimate.com/downloads/\
