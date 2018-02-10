@@ -14,6 +14,9 @@ class Values(object):
         section = self.name
         return document
 
-    def organize(self):
-        """Organize something."""
-        return self
+    def save_with_graphics(self, name, section, document):
+        """Get intro."""
+        self.name = name
+        self.document = document
+        section = self.name
+        return document

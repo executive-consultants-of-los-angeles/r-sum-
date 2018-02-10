@@ -6,6 +6,20 @@ class Contact(object):
 
     name = None
 
+    def save_with_graphics(self, name, section, document):
+        """Add contact section.
+
+        :param [dict(str, str)] contact:
+            Contact section for current document.
+        :param object document: Current document.
+        :return: Current document with Contact section.
+        :rtype: object
+        """
+        contact = section
+        self.name = name
+        document = self.start_contact(contact, document)
+        return document
+
     def save(self, name, section, document):
         """Add contact section.
 
