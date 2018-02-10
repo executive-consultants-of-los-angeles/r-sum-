@@ -29,9 +29,9 @@ class Skills(object):
         skills = section
 
         table = document.tables[1]
-        table.cell(0, 1).add_paragraph('Skills', style='Heading 3')
-        t_sub = table.cell(0, 1).add_table(rows=1, cols=2)
-        table.cell(0, 1).tables[0].columns[0].width = Cm(7)
+        table.cell(0, 0).add_paragraph('Skills', style='Heading 3')
+        t_sub = table.cell(0, 0).add_table(rows=1, cols=2)
+        table.cell(0, 0).tables[0].columns[0].width = Cm(7)
         index = 1
         for skill_name, skill in skills.items():
             if isinstance(skill, dict):
