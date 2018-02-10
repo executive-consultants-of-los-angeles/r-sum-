@@ -75,11 +75,42 @@ class ExportDocument(object):
 
         return document
 
-    def save_section(self, section):
+    def export_boring(self, request):
+        """Export a word document.
+
+        :param profile_id: ID of CV to export.
+        :type profile_id: int
+        :return: Stream of Word document for end user.
+        :rtype: object
+        """
+        profile = Profile.objects.all()[0]
+        self.request = request
+        document = self.document
+        document = style.set_styles(document)
+        document = layout.set_layout(document)
+
+        sections = json.loads(profile.content)
+
+        for section in sections:
+            document = self.save_boring_section(section)
+
+        return document
+
+    def save_boring_section(self, section):
         """Save a section of a document."""
         for name, value in section.items():
             section_cls = load_class('export.sections.{}.{}'.format(
                 name, name.title()))
             section_obj = section_cls()
             self.document = section_obj.save(name, value, self.document)
+        return self.document
+
+    def save_section(self, section):
+        """Save a section of a document."""
+        for name, value in section.items():
+            section_cls = load_class('export.sections.{}.{}'.format(
+                name, name.title()))
+            section_obj = section_cls()
+            self.document = section_obj.save_with_graphics(
+                name, value, self.document)
         return self.document
