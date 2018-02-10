@@ -16,6 +16,28 @@ class Experience(object):
     spacing = 0.9
 
     def save(self, name, section, document):
+        """Save the experience section for dullards.
+
+        :rtype: object
+        """
+        self.experience = section
+        self.name = name
+
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0.0
+        paragraph.paragraph_format.page_break_before = True
+
+        paragraph = document.add_paragraph(
+            'Experience', style='Heading 3')
+
+        document = self.add_intro(document)
+
+        for item in self.experience:
+            print(item)
+
+        return document
+
+    def save_with_graphics(self, name, section, document):
         """Add experience section.
 
         :param [dict(str, str)] experience:

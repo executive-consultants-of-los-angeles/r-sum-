@@ -12,7 +12,7 @@ def set_first_headings(document):
     """Set top three headings on document."""
     style = document.styles['Heading 1']
     font = style.font
-    font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
+    font.color.rgb = RGBColor(0, 0, 0)
     font.name = 'Hind'
     font.size = Pt(24)
     font.bold = True
@@ -21,13 +21,13 @@ def set_first_headings(document):
     font = style.font
     font.name = 'Hind'
     font.italic = False
-    font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
+    font.color.rgb = RGBColor(0, 0, 0)
     font.size = Pt(16)
 
     style = document.styles['Heading 3']
     font = style.font
     font.name = 'Hind'
-    font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
+    font.color.rgb = RGBColor(0, 0, 0)
     font.size = Pt(14)
     font.bold = True
     return document
@@ -38,21 +38,21 @@ def set_second_headings(document):
     style = document.styles['Heading 4']
     font = style.font
     font.name = 'Hind'
-    font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
+    font.color.rgb = RGBColor(0, 0, 0)
     font.size = Pt(8)
     font.bold = True
     font.italic = False
 
     style = document.styles['Heading 5']
     font = style.font
-    font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
+    font.color.rgb = RGBColor(0, 0, 0)
     font.small_caps = True
     font.name = 'Hind'
     font.size = Pt(7)
 
     style = document.styles['Heading 6']
     font = style.font
-    font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
+    font.color.rgb = RGBColor(0, 0, 0)
     font.name = 'Hind'
     font.size = Pt(6)
     font.bold = True
@@ -64,14 +64,14 @@ def set_list_bullets(document):
     """Set list bullet styles."""
     style = document.styles['List Bullet']
     font = style.font
-    font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
+    font.color.rgb = RGBColor(0, 0, 0)
     font.name = 'Hind'
     font.size = Pt(5)
     font.bold = True
 
     style = document.styles['List Bullet 2']
     font = style.font
-    font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
+    font.color.rgb = RGBColor(0, 0, 0)
     font.size = Pt(5)
     font.name = 'Hind'
     style.paragraph_format.tab_stops.add_tab_stop(
@@ -91,7 +91,7 @@ def set_skill_styles(document):
     style = document.styles['Skill']
     font = style.font
     font.name = 'Hind'
-    font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
+    font.color.rgb = RGBColor(0, 0, 0)
     font.size = Pt(9)
     font.bold = True
 
@@ -102,7 +102,7 @@ def set_skill_styles(document):
     style = document.styles['Sub Skill']
     font = style.font
     font.name = 'Hind'
-    font.color.rgb = RGBColor(0x51, 0x57, 0x6A)
+    font.color.rgb = RGBColor(0, 0, 0)
     font.size = Pt(7)
     return document
 
@@ -112,7 +112,7 @@ def set_normal_style(document):
     style = document.styles['Normal']
     font = style.font
     font.name = 'Hind'
-    font.color.rgb = RGBColor(0xA6, 0xA7, 0xAA)
+    font.color.rgb = RGBColor(0, 0, 0)
     font.size = Pt(11)
     return document
 
