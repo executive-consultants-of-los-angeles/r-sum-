@@ -314,7 +314,7 @@
         of programming or computer administration type of
         effort for more than twenty years.  I have been getting
         paid for it about fifteen of those years.'
-    - cloud_architect:
+    - gahan:
         duration: "May 2016 - Present"
         location: "Los Angeles, California"
         company: "Gahan Corporation"
@@ -327,7 +327,7 @@
             - "at least not completely awful security"
           python_development:
             - "develop and maintain company websites"
-    - lead_python_dev_at_csi:
+    - csi:
         duration: "September 2017 - January 2018"
         location: "Los Angeles, California"
         company: "Collaboration Solutions Incorporated"
@@ -342,7 +342,7 @@
             - "automated testing of pre-existing code base of 50-60k lines"
             - "fixed previously broken functionality while adding new features"
             - "initiated proper code analysis to improve code quality"
-    - python_dev_at_sigtec:
+    - sigtec:
         duration: "December 2016 - March 2017"
         location: "Los Angeles, California"
         company: "Signal Technologies LLC"
@@ -375,7 +375,7 @@
           networking:
             - "transfered my-ubox.com to Amazon's Route 53 service"
             - "transfered abiogenix.com to Amazon's Route 53 service"
-    - caa:
+    - creative_artists_agency:
         duration: "September 2015  -  March 2016"
         location: "Los Angeles, California"
         company: "Creative Artists Agency"
@@ -396,7 +396,7 @@
             - "within one quarter the project was delivering new features daily"
             - "enabled Behave testing and eliminated failures due to process"
             - "used Ansible Tower and Jenkins server for deployment"
-    - build_manager_toyota_motor_sales:
+    - build_manager_tms:
         duration: "April 2015  -  July 2015"
         location: "Los Angeles, California"
         company: "Toyota Motor Sales"
@@ -412,7 +412,7 @@
             - "deployed spark and hadoop cluster for distributed processing"
             - "automated builds of all projects within the git repository"
             - "dployed and administered Jenkins server with Ansible"
-    - cloud_architect_toyota_motor_sales:
+    - cloud_architect_tms:
         duration: "January 2015  -  July 2015"
         location: "Los Angeles, California"
         company: "Toyota Motor Sales"
@@ -426,7 +426,7 @@
             - "configured and deployed all infrastructure"
             - "administered same"
             - "managed budget for aws monthly spend"
-    - lead_python_developer_toyota_motor_sales:
+    - lead_python_developer_tms:
         duration: "December 2014  -  July 2015"
         location: "Los Angeles, California"
         company: "Toyota Motor Sales"
@@ -443,7 +443,7 @@
             - "ran daily scrum meetings and maintained a storyboard"
           proposal:
             - "authored A3 to streamline build process"
-    - chief_technical_officer_mintspare:
+    - mintspare:
         duration: "February 2014  -  January 2015"
         location: "Alameda, California"
         company: "Mintspare Incorporated"
