@@ -24,6 +24,40 @@ class Education(object):
         self.name = name
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
+        paragraph = document.add_paragraph(
+            'Education',
+            style='Heading 3')
+        paragraph.paragraph_format.line_spacing = 1.0
+        paragraph.paragraph_format.space_after = 0
+        paragraph.paragraph_format.page_break_before = True
+        paragraph = document.add_paragraph(
+            education.get('name'),
+            style='Heading 4')
+        paragraph.paragraph_format.space_before = 0
+        paragraph = document.add_paragraph(
+            education.get('studies'),
+            style='Heading 5')
+        paragraph.paragraph_format.space_before = 0
+        paragraph = document.add_paragraph(
+            "{0}, {1}".format(
+                education.get('location'),
+                education.get('duration')),
+            style='Heading 6')
+        paragraph.paragraph_format.space_before = 0
+        return document
+
+    def save_with_graphics(self, name, section, document):
+        """Add education section.
+        :param [dict(str, str)] education:
+            Education section for current document.
+        :param object document: Current document.
+        :return: Current document with Educaiton section.
+        :rtype: object
+        """
+        education = section
+        self.name = name
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0.0
         settings = self.settings
         paragraph = document.add_paragraph(
             'Education',
@@ -50,7 +84,3 @@ class Education(object):
             style='Heading 6')
         paragraph.paragraph_format.space_before = 0
         return document
-
-    def organize(self):
-        """Organize something."""
-        return self
