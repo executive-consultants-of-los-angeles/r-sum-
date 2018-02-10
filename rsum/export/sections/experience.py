@@ -135,9 +135,9 @@ class Experience(object):
         paragraph.paragraph_format.line_spacing = 0.0
         if dargs.get('graphics'):
             table.cell(int(row), int(col)).add_picture(
-                'static/profiles/{}/img/970x647/{}.jpg'.format(
+                'static/profiles/{}/img/clients/{}.png'.format(
                     settings.DIR,
-                    index+1
+                    dargs.get('key')
                 ),
                 width=self.cm(4.8)
             )
