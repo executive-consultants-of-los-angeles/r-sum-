@@ -314,30 +314,46 @@
         of programming or computer administration type of
         effort for more than twenty years.  I have been getting
         paid for it about fifteen of those years.'
-    - cfo_at_gahan_corporation:
+    - cloud_architect:
         duration: "May 2016 - Present"
         location: "Los Angeles, California"
         company: "Gahan Corporation"
         position: "Cloud Architect / Python Programmer"
         projects:
-          technology:
+          cloud_architecture:
             - "maintain multiple cloud services"
             - "total cost of ownership < $100/mo"
             - "pretty good uptime"
-            - "at least not terrible security"
-          legal:
-            - "converted from an LLC started May 2016"
-            - "wrote the filed Articles of Incorporation"
-            - "also have an author credit on the bylaws"
-            - "have written every agreement executed by the corporation so far"
-            - >
-              keep the corporation in good standing
-              with the State of California
-          finance:
-            - "aiming at issuing registered stock by 2020"
-            - "pretty depressing at the moment"
-            - "maintain books to GAAP standards"
-            - "keep us up to date with taxes and reporting"
+            - "at least not completely awful security"
+          python_development:
+            - "develop and maintain company websites"
+    - lead_python_dev_at_csi:
+        duration: "September 2017 - January 2018"
+        location: "Los Angeles, California"
+        company: "Collaboration Solutions Incorporated"
+        projects:
+          cloud_architecture:
+            - "automated deployment of erp servers"
+            - "converted fromt old-style bare-metal configuration"
+            - "used Infrastructure as Code to employ Docker containers"
+            - "increased system stability and uptime"
+          python_development:
+            - "automated testing of pre-existing code base of 50-60k lines"
+            - "fixed previously broken functionality while adding new features"
+            - "initiated proper code analysis to improve code quality"
+    - python_dev_at_sigtec:
+        duration: "December 2016 - March 2017"
+        location: "Los Angeles, California"
+        company: "Signal Technologies LLC"
+        position: "Lead Python Developer"
+        projects:
+          cloud_architecture:
+            - "automated deployment of application"
+            - "used IaC to enable quick development of all environments"
+          python_development:
+            - "added features to an existing Flask application"
+            - "used the PokitDok API to analyze patient data"
+            - "translated client requests into working code"
     - abiogenix_incorporated:
         duration: "August 2014 - May 2017"
         location: "Los Angeles, California"
