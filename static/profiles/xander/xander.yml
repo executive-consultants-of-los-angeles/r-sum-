@@ -331,6 +331,7 @@
         duration: "September 2017 - January 2018"
         location: "Los Angeles, California"
         company: "Collaboration Solutions Incorporated"
+        position: "Lead Python Developer"
         projects:
           cloud_architecture:
             - "automated deployment of erp servers"
@@ -375,7 +376,7 @@
             - "transfered my-ubox.com to Amazon's Route 53 service"
             - "transfered abiogenix.com to Amazon's Route 53 service"
     - caa:
-        duration: "September 2015  -  March 2016 (7 months)"
+        duration: "September 2015  -  March 2016"
         location: "Los Angeles, California"
         company: "Creative Artists Agency"
         position: "Cloud Architect / Python Programmer"
@@ -396,7 +397,7 @@
             - "enabled Behave testing and eliminated failures due to process"
             - "used Ansible Tower and Jenkins server for deployment"
     - build_manager_toyota_motor_sales:
-        duration: "April 2015  -  July 2015 (4 months)"
+        duration: "April 2015  -  July 2015"
         location: "Los Angeles, California"
         company: "Toyota Motor Sales"
         position: "Build Manager"
@@ -412,7 +413,7 @@
             - "automated builds of all projects within the git repository"
             - "dployed and administered Jenkins server with Ansible"
     - cloud_architect_toyota_motor_sales:
-        duration: "January 2015  -  July 2015 (7 months)"
+        duration: "January 2015  -  July 2015"
         location: "Los Angeles, California"
         company: "Toyota Motor Sales"
         position: "Cloud Architect"
@@ -426,7 +427,7 @@
             - "administered same"
             - "managed budget for aws monthly spend"
     - lead_python_developer_toyota_motor_sales:
-        duration: "December 2014  -  July 2015 (8 months)"
+        duration: "December 2014  -  July 2015"
         location: "Los Angeles, California"
         company: "Toyota Motor Sales"
         position: "Lead Python Developer"
@@ -443,7 +444,7 @@
           proposal:
             - "authored A3 to streamline build process"
     - chief_technical_officer_mintspare:
-        duration: "February 2014  -  January 2015 (1 year)"
+        duration: "February 2014  -  January 2015"
         location: "Alameda, California"
         company: "Mintspare Incorporated"
         position: "Chief Technical Officer"
@@ -472,7 +473,7 @@
             - "implemented new elements of the email system"
             - "created such as a centralized template store"
     - thrive_marketing:
-        duration: "April 2013  -  July 2013 (4 months)"
+        duration: "April 2013  -  July 2013"
         location: "Nashville, Tennessee"
         company: "Thrive Marketing"
         position: "PHP Developer / Systems Administrator"
@@ -489,6 +490,21 @@
           source_code_management:
             - "implemented git and gitflow for source code control"
             - "provided training to other employees on their use"
+    - wishb:
+        duration: "July 2010  -  September 2010"
+        location: "San Francisco, California"
+        company: "WishB LLC"
+        position: "PHP Developer / Systems Administrator"
+        projects:
+          web_developer:
+            - "used a homebrew MVC to program a website"
+            - "dynamically loaded images with css and jquery"
+            - "used Subversion for version control of code"
+            - "coded user profiles for application"
+          system_administrator:
+            - "maintained and configured the webserver"
+            - "designed database schemas in MySQL"
+            - "contributed to daily SCRUM meetings"
 - education:
     name: "Broadmoor Elementary School"
     location: "Lafayette, Louisiana"
