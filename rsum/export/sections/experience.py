@@ -94,9 +94,9 @@ class Experience(object):
         """Set tables for the experience section."""
         document = (
             self.prep_tables(
-                document,
-                table=dargs.get('table'),
-                value=dargs.get('value'), index=dargs.get('index')
+                document, table=dargs.get('table'),
+                value=dargs.get('value'), index=dargs.get('index'),
+                graphics=dargs.get('graphics')
             )
         )
         return document
@@ -114,7 +114,7 @@ class Experience(object):
 
             document = self.build_tables(
                 document, table=dargs.get('table'), index=index, row=row,
-                col=col, item=item, key=key)
+                col=col, item=item, key=key, graphics=dargs.get('graphics'))
             return document
 
     def build_tables(self, document, **dargs):
