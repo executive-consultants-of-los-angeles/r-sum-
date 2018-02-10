@@ -32,9 +32,19 @@ class Experience(object):
 
         document = self.add_intro(document)
 
-        for item in self.experience:
-            print(item)
+        table = document.add_table(rows=1, cols=3)
+        table.alignment = WD_TABLE_ALIGNMENT.CENTER
+        for index, value in enumerate(self.experience):
+            if index % 3 == 0:
+                table.add_row()
+            document = self.set_tables(
+                document, table=table,
+                value=value, index=index,
+                graphics=False
+            )
 
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0
         return document
 
     def save_with_graphics(self, name, section, document):
@@ -63,7 +73,10 @@ class Experience(object):
             if index % 3 == 0:
                 table.add_row()
             document = self.set_tables(
-                document, table=table, value=value, index=index)
+                document, table=table,
+                value=value, index=index,
+                graphics=True
+            )
 
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0
@@ -120,13 +133,16 @@ class Experience(object):
 
         paragraph = table.cell(int(row), int(col)).paragraphs[0]
         paragraph.paragraph_format.line_spacing = 0.0
-        table.cell(int(row), int(col)).add_picture(
-            'static/profiles/{}/img/970x647/{}.jpg'.format(
-                settings.DIR,
-                index+1
-            ),
-            width=self.cm(4.8)
-        )
+        if dargs.get('graphics'):
+            table.cell(int(row), int(col)).add_picture(
+                'static/profiles/{}/img/970x647/{}.jpg'.format(
+                    settings.DIR,
+                    index+1
+                ),
+                width=self.cm(4.8)
+            )
+        else:
+            table.cell(int(row), int(col)).add_paragraph('')
         document = self.finish_tables(
             document, table=table, row=row, col=col, item=item,
             key=dargs.get('key'))
