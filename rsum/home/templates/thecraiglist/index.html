@@ -13,7 +13,8 @@
 
 
   {% if name == 'skills' %}
-    <table>
+    <h3 align="center">Skills</h3>
+    <table align="center">
       {% for skill,skills in section.items %}
         <tr>
           <td><h5>{{ skill.title }}</h5></td>
@@ -31,11 +32,37 @@
 
 
   {% if name == 'experience' %}
-
+    <h3 align="center">Experience</h3>
+    <table align="center">
+    {% for experience in section %} 
+      {% for job,content in experience.items %}
+        {% if job != 'introduction' %}
+          <tr>
+            <td>{{ content.position }}, {{ content.company }}</td>
+          </tr>
+          <tr>
+            <td>{{ content.location }}, {{ content.duration }}</td>
+          </tr>
+          <tr>
+            <td>
+              <ul>
+                {% for project,pcontent in content.projects.items %}
+                  <li>
+                    {{ project }}
+                    <ul>
+                      {% for pitem in pcontent %}
+                        <li>{{ pitem }}</li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% endfor %}
+              </ul>
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    </table>
   {% endif %}
   
-  <hr />
-
-  {{ section }}
-
 {% endfor %}
