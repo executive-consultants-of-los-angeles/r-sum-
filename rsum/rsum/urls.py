@@ -21,11 +21,13 @@ from django.urls import path
 
 import home.views
 import export.views
+import thecraiglist.views
 
 urlpatterns = [
     path('', home.views.index, name='main'),
     # re_path('docx/(?P<cv_id>[0-9]+)/$', export.views.index, name='docx'),
     path('docx/', export.views.index, name='docx'),
     path('boring/', export.views.boring, name='boring'),
+    path('thecraiglist/', thecraiglist.views.index, name='thecraiglist'),
     # path('admin/', admin.site.urls),
 ]
