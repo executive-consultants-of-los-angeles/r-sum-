@@ -7,11 +7,26 @@
 
   {% if name == 'summary' %}
   <h3 align="center">{{ section.content }}</h3>
+  <h4 align="left">If you'd like to see a prettier version of this, or you want a Word formatted version of my résumé, please go here: https://xander.gahan-corporation.com/</h4>
+  <h5 align="right">If you have the technical capacity, please take a look at my actual résumé on GitHub: https://github.com/gahan-corporation/rsum</h5>
   {% endif %}
 
 
   {% if name == 'skills' %}
-
+    <table>
+      {% for skill,skills in section.items %}
+        <tr>
+          <td><h5>{{ skill.title }}</h5></td>
+          <td>
+            {% for sub in skills %}
+              {% if sub != 'name' and sub != 'start' and sub != 'experience_value' and sub != 'experience_string' %} 
+                <b>{{ sub.title }}</b>{% if not forloop.last %},{% endif %}
+              {% endif %}
+            {% endfor %}  
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
   {% endif %}
 
 
