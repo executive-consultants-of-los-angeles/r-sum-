@@ -12,9 +12,8 @@ class Skills(object):
     document = None
     sub_skills = None
 
-    def save(self, name, section, document):
+    def save_with_graphics(self, name, section, document):
         """Add skills section.
-
         :param skills: Skills section to add to document.
         :type summary: [dict(str, str)]
         :param document: Current document.
@@ -32,6 +31,51 @@ class Skills(object):
         table.cell(0, 1).add_paragraph('Skills', style='Heading 3')
         t_sub = table.cell(0, 1).add_table(rows=1, cols=2)
         table.cell(0, 1).tables[0].columns[0].width = Cm(7)
+        index = 1
+        for skill_name, skill in skills.items():
+            if isinstance(skill, dict):
+                experience = int(current_year) - int(skill.get('start'))
+                experience = '{0} year(s)'.format(str(experience))
+                output_name = skill_name.replace('_', ' ').title()
+
+                # Add a row to the sub table.
+                t_sub.add_row()
+                t_sub.cell(index-1, 0).text = output_name
+                paragraph = t_sub.cell(index-1, 0).paragraphs[0]
+                paragraph.style = 'Skill'
+                paragraph.paragraph_format.line_spacing = 1.0
+                paragraph.paragraph_format.space_after = 0
+                t_sub.cell(index-1, 1).text = experience
+
+                paragraph = t_sub.cell(index-1, 1).paragraphs[0]
+                paragraph.style = 'Skill'
+                paragraph.paragraph_format.line_spacing = 1.0
+                paragraph.paragraph_format.space_after = 0
+                paragraph.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+                t_sub = self.add_sub_skills(skill, t_sub, index-1)
+            index = index + 1
+        return document
+
+    def save(self, name, section, document):
+        """Add skills section.
+
+        :param skills: Skills section to add to document.
+        :type summary: [dict(str, str)]
+        :param document: Current document.
+        :type document: object
+        :return: Document updated with Skills.
+        :rtype: object
+        """
+        self.name = name
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0.0
+        current_year = datetime.datetime.now().strftime("%Y")
+        skills = section
+
+        table = document.add_table(rows=1, cols=1)
+        table.cell(0, 0).add_paragraph('Skills', style='Heading 3')
+        t_sub = table.cell(0, 0).add_table(rows=1, cols=2)
+        table.cell(0, 0).tables[0].columns[0].width = Cm(7)
         index = 1
         for skill_name, skill in skills.items():
             if isinstance(skill, dict):

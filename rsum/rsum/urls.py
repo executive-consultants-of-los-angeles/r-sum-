@@ -26,5 +26,7 @@ urlpatterns = [
     path('', home.views.index, name='main'),
     # re_path('docx/(?P<cv_id>[0-9]+)/$', export.views.index, name='docx'),
     path('docx/', export.views.index, name='docx'),
+    path('boring/', export.views.boring, name='boring'),
+    path('thecraiglist/', home.views.thecraiglist, name='thecraiglist'),
     # path('admin/', admin.site.urls),
 ]

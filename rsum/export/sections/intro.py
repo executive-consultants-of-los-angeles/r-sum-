@@ -25,6 +25,27 @@ class Intro(object):
         """
         intro = section
         self.name = name
+        paragraph = document.add_paragraph(
+            intro.get('name'), style='Heading 1')
+
+        paragraph.alignment = WD_ALIGN_PARAGRAPH.LEFT
+
+        paragraph = document.add_paragraph(
+            intro.get('position'), style='Heading 2')
+
+        return document
+
+    def save_with_graphics(self, name, section, document):
+        """Add introduction section.
+        :param intro: Introduction to add to document.
+        :type intro: [dict(str, str)]
+        :param document: Current document.
+        :type document: object
+        :return: Document updated with Introduction.
+        :rtype: object
+        """
+        intro = section
+        self.name = name
         settings = self.settings
         table = document.add_table(rows=1, cols=2)
         table.cell(0, 0).width = Cm(12)
