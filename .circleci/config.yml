@@ -44,4 +44,9 @@ jobs:
           path: test-reports
           destination: test-reports
     working_directory: ~/repo
+deployment:
+  staging:
+    branch: /iss*/
+    heroku:
+      appname: rsum-dev
 ...
