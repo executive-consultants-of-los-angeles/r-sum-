@@ -25,7 +25,7 @@ jobs:
             AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e \
             CC_TEST_REPORTER_ID=d1616b3fee86161abfb666d92c21\
             c2045da6dce673e1775f3c4d62fd2ac3c72c \
-            --network rsum -v test-results:/tmp:rw \
+            --network rsum -v ./test-results:/tmp:rw \
             --rm -d --name rsum rsum
             docker exec rsum wget https://codeclimate.com/downloads/\
             test-reporter/test-reporter-latest-linux-amd64 -O \
@@ -41,10 +41,6 @@ jobs:
             docker exec rsum pytest --junit-xml=/tmp/circle.xml
       - store_test_results:
           path: test-results
-      - store_artifacts:
-          path: test-reports
-          destination: test-reports
-    working_directory: ~/repo
 deployment:
   staging:
     branch: /iss*/
