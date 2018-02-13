@@ -38,7 +38,8 @@ jobs:
             docker exec rsum cp coverage.xml /tmp/coverage.xml
             docker exec rsum /usr/bin/cc-test-reporter \
             after-build -t coverage.py
-            docker exec rsum pytest --junit-xml=/tmp/circle.xml
+            docker exec rsum mkdir -p /tmp/rsum
+            docker exec rsum pytest --junit-xml=/tmp/rsum/circle.xml
       - store_test_results:
           path: test-results
 deployment:
