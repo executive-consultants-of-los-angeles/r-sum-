@@ -13,7 +13,7 @@ class Skills(object):
     sub_skills = None
     current_year = float(datetime.datetime.now().strftime('%Y'))
 
-    def save(self, name, section, document, graphics):
+    def save(self, section, document, graphics):
         """Add skills section.
         :param skills: Skills section to add to document.
         :type summary: [dict(str, str)]
@@ -22,7 +22,7 @@ class Skills(object):
         :return: Document updated with Skills.
         :rtype: object
         """
-        self.name = name
+        self.document = document
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
         if graphics:
