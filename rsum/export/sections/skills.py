@@ -11,6 +11,7 @@ class Skills(object):
     name = None
     document = None
     sub_skills = None
+    current_year = float(datetime.datetime.now().strftime('%Y'))
 
     def save(self, name, section, document, graphics):
         """Add skills section.
@@ -25,7 +26,6 @@ class Skills(object):
         print(document)
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
-        current_year = datetime.datetime.now().strftime("%Y")
         if graphics:
             document = self.get_skills_graphics(name, section, document)
         else:
@@ -42,7 +42,7 @@ class Skills(object):
         index = 1
         for skill_name, skill in skills.items():
             if isinstance(skill, dict):
-                experience = int(current_year) - int(skill.get('start'))
+                experience = int(self.current_year) - int(skill.get('start'))
                 experience = '{0} year(s)'.format(str(experience))
                 output_name = skill_name.replace('_', ' ').title()
 
@@ -77,7 +77,6 @@ class Skills(object):
         self.name = name
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
-        current_year = datetime.datetime.now().strftime("%Y")
         skills = section
 
         table = document.add_table(rows=1, cols=1)
@@ -87,7 +86,7 @@ class Skills(object):
         index = 1
         for skill_name, skill in skills.items():
             if isinstance(skill, dict):
-                experience = int(current_year) - int(skill.get('start'))
+                experience = int(self.current_year) - int(skill.get('start'))
                 experience = '{0} year(s)'.format(str(experience))
                 output_name = skill_name.replace('_', ' ').title()
 
@@ -120,13 +119,12 @@ class Skills(object):
         :rtype: object
         """
         self.sub_skills = subs
-        current_year = float(datetime.datetime.now().strftime("%Y"))
         sub_table = skilltable.cell(
             skilltable_index, 0).add_table(rows=1, cols=2)
         index = 0
         for sub_name, sub in subs.items():
             if isinstance(sub, dict):
-                experience = int(current_year) - int(sub.get('start'))
+                experience = int(self.current_year) - int(sub.get('start'))
                 experience = '{0} year(s)'.format(str(experience))
                 if index == 0:
                     sub_table.cell(0, 0).text = (
