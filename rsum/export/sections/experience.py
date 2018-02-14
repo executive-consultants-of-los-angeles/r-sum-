@@ -15,13 +15,12 @@ class Experience(object):
     experience = None
     spacing = 0.9
 
-    def save(self, name, section, document):
+    def save(self, section, document, graphics):
         """Save the experience section for dullards.
 
         :rtype: object
         """
         self.experience = section
-        self.name = name
 
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
@@ -40,42 +39,7 @@ class Experience(object):
             document = self.set_tables(
                 document, table=table,
                 value=value, index=index,
-                graphics=False
-            )
-
-        paragraph = document.add_paragraph('')
-        paragraph.paragraph_format.line_spacing = 0
-        return document
-
-    def save_with_graphics(self, name, section, document):
-        """Add experience section.
-
-        :param [dict(str, str)] experience:
-            Experience section to add to document.
-        :param objectable document: Documentable to update.
-        :return: Documentable updated with Experience section.
-        :rtype: object
-        """
-        self.experience = section
-        self.name = name
-
-        paragraph = document.add_paragraph('')
-        paragraph.paragraph_format.line_spacing = 0.0
-        paragraph.paragraph_format.page_break_before = True
-        paragraph = document.add_paragraph(
-            'Experience', style='Heading 3')
-
-        document = self.add_intro(document)
-
-        table = document.add_table(rows=1, cols=3)
-        table.alignment = WD_TABLE_ALIGNMENT.CENTER
-        for index, value in enumerate(self.experience):
-            if index % 3 == 0:
-                table.add_row()
-            document = self.set_tables(
-                document, table=table,
-                value=value, index=index,
-                graphics=True
+                graphics=graphics
             )
 
         paragraph = document.add_paragraph('')
