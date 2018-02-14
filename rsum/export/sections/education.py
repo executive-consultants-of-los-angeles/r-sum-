@@ -11,7 +11,26 @@ class Education(object):
     document = None
     settings = django_settings
 
-    def save(self, name, section, document, graphics=True):
+    def save(self, name, section, document, graphics):
+        """Add education section.
+
+        :param [dict(str, str)] education:
+            Education section for current document.
+        :param object document: Current document.
+        :return: Current document with Educaiton section.
+        :rtype: object
+        """
+        self.name = name
+        paragraph = document.add_paragraph('')
+        paragraph.paragraph_format.line_spacing = 0.0
+        settings = self.settings
+        if graphics:
+            document = self.get_education_graphics(name, section, document)
+        else:
+            document = self.get_education(name, section, document)
+        return document
+
+    def get_education(self, name, section, document):
         """Add education section.
 
         :param [dict(str, str)] education:
@@ -21,9 +40,6 @@ class Education(object):
         :rtype: object
         """
         education = section
-        self.name = name
-        paragraph = document.add_paragraph('')
-        paragraph.paragraph_format.line_spacing = 0.0
         paragraph = document.add_paragraph(
             'Education',
             style='Heading 3')
@@ -46,7 +62,7 @@ class Education(object):
         paragraph.paragraph_format.space_before = 0
         return document
 
-    def save_with_graphics(self, name, section, document):
+    def get_education_graphics(self, name, section, document):
         """Add education section.
         :param [dict(str, str)] education:
             Education section for current document.
@@ -55,9 +71,6 @@ class Education(object):
         :rtype: object
         """
         education = section
-        self.name = name
-        paragraph = document.add_paragraph('')
-        paragraph.paragraph_format.line_spacing = 0.0
         settings = self.settings
         paragraph = document.add_paragraph(
             'Education',
