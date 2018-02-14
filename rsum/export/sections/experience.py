@@ -15,13 +15,12 @@ class Experience(object):
     experience = None
     spacing = 0.9
 
-    def save(self, name, section, document, graphics):
+    def save(self, section, document, graphics):
         """Save the experience section for dullards.
 
         :rtype: object
         """
         self.experience = section
-        self.name = name
 
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0

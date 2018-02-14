@@ -7,9 +7,8 @@ class Values(object):
     name = None
     document = None
 
-    def save(self, name, section, document, graphics=True):
+    def save(self, section, document, graphics=True):
         """Get intro."""
-        self.name = name
         self.document = document
         section = self.name
         return document

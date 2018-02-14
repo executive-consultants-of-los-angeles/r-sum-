@@ -13,7 +13,7 @@ class Summary(object):
     cm = Cm
     summary_table = None
 
-    def save(self, name, section, document, graphics):
+    def save(self, section, document, graphics):
         """Add summary section.
 
         :param summary: Summary section to add to document.
@@ -23,7 +23,6 @@ class Summary(object):
         :return: Document updated with Summary.
         :rtype: object
         """
-        self.name = name
         if graphics:
             document = self.get_summary_graphics(name, section, document)
         else:
