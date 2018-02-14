@@ -9,7 +9,7 @@ from django.http import HttpResponse
 from export.models import ExportDocument
 
 
-def index(request, graphics=True):
+def index(request, graphics):
     """Export cv to word document.
 
     :param request: HttpRequest object for export_docx page.

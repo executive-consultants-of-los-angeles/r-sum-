@@ -24,7 +24,7 @@ import export.views
 
 urlpatterns = [
     path('', home.views.index, name='main'),
-    path('docx/', export.views.index, name='docx'),
-    path('docx/<str:graphics>/', export.views.index, name='boring'),
+    path('docx/', export.views.index, {'graphics': True}, name='docx'),
+    path('docx/boring', export.views.index, {'graphics': False}, name='boring'),
     path('thecraiglist/', home.views.thecraiglist, name='thecraiglist'),
 ]

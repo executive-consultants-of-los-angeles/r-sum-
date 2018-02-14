@@ -105,7 +105,6 @@ class ExportDocument(object):
             section_cls = load_class('export.sections.{}.{}'.format(
                 name, name.title()))
             section_obj = section_cls()
-            print(self.document)
             self.document = section_obj.save(
                 name, value, self.document, graphics=graphics)
         return self.document
