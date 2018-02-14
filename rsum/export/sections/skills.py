@@ -23,7 +23,6 @@ class Skills(object):
         :rtype: object
         """
         self.name = name
-        print(document)
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
         if graphics:
