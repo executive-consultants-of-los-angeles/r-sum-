@@ -38,12 +38,12 @@ class Education(object):
         paragraph.paragraph_format.line_spacing = 0.0
         settings = self.settings
         if graphics:
-            document = self.get_education_graphics(name, section, document)
+            document = self.get_education_graphics(section, document)
         else:
-            document = self.get_education(name, section, document)
+            document = self.get_education(section, document)
         return document
 
-    def get_education(self, name, section, document):
+    def get_education(self, section, document):
         """Add education section.
 
         :param [dict(str, str)] education:
@@ -75,7 +75,7 @@ class Education(object):
         paragraph.paragraph_format.space_before = 0
         return document
 
-    def get_education_graphics(self, name, section, document):
+    def get_education_graphics(self, section, document):
         """Add education section.
         :param [dict(str, str)] education:
             Education section for current document.

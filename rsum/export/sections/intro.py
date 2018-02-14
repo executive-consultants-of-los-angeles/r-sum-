@@ -61,7 +61,6 @@ class Intro(object):
         :rtype: object
         """
         intro = section
-        self.name = name
         settings = self.settings
         table = document.add_table(rows=1, cols=2)
         table.cell(0, 0).width = Cm(12)

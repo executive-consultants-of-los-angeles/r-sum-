@@ -65,7 +65,6 @@ class Summary(object):
         :return: Document updated with Summary.
         :rtype: object
         """
-        self.name = name
         summary = section
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0

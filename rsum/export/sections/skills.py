@@ -25,10 +25,10 @@ class Skills(object):
         self.document = document
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
-        document = self.get_skills(name, section, document)
+        document = self.get_skills(section, document)
         return document
 
-    def get_skills(self, name, section, document):
+    def get_skills(self, section, document):
         """Add skills section.
 
         :param skills: Skills section to add to document.
@@ -38,7 +38,6 @@ class Skills(object):
         :return: Document updated with Skills.
         :rtype: object
         """
-        self.name = name
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
         skills = section
@@ -58,19 +57,19 @@ class Skills(object):
                 t_sub.add_row()
                 t_sub.cell(index-1, 0).text = output_name
                 t_sub.cell(index-1, 0).paragraphs[0] = self.set_paragraph(
-                    t_sub
+                    t_sub, index
                 )
                 t_sub.cell(index-1, 1).text = experience
 
                 t_sub.cell(index-1, 1).paragraphs[0] = (
-                    self.set_inner_paragraph(t_sub)
+                    self.set_inner_paragraph(t_sub, index)
                 )
 
                 t_sub = self.add_sub_skills(skill, t_sub, index-1)
             index = index + 1
         return document
 
-    def set_inner_paragraph(self, t_sub):
+    def set_inner_paragraph(self, t_sub, index):
         paragraph = t_sub.cell(index-1, 1).paragraphs[0]
         paragraph.style = 'Skill'
         paragraph.paragraph_format.line_spacing = 1.0
@@ -79,7 +78,7 @@ class Skills(object):
 
         return paragraph
 
-    def set_paragraph(self, t_sub):
+    def set_paragraph(self, t_sub, index):
         paragraph = t_sub.cell(index-1, 0).paragraphs[0]
         paragraph.style = 'Skill'
         paragraph.paragraph_format.line_spacing = 1.0
