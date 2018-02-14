@@ -49,7 +49,7 @@ class Summary(object):
 
         return document
 
-    def save(self, name, section, document):
+    def save(self, name, section, document, graphics=True):
         """Add summary section.
 
         :param summary: Summary section to add to document.

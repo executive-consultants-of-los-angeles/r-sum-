@@ -15,7 +15,7 @@ class Experience(object):
     experience = None
     spacing = 0.9
 
-    def save(self, name, section, document):
+    def save(self, name, section, document, graphics=True):
         """Save the experience section for dullards.
 
         :rtype: object

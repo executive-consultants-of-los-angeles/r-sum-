@@ -20,7 +20,7 @@ class Contact(object):
         document = self.start_contact(contact, document)
         return document
 
-    def save(self, name, section, document):
+    def save(self, name, section, document, graphics=True):
         """Add contact section.
 
         :param [dict(str, str)] contact:

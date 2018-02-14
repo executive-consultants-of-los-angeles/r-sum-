@@ -56,7 +56,7 @@ class Skills(object):
             index = index + 1
         return document
 
-    def save(self, name, section, document):
+    def save(self, name, section, document, graphics=True):
         """Add skills section.
 
         :param skills: Skills section to add to document.

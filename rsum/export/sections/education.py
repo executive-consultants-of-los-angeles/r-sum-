@@ -11,7 +11,7 @@ class Education(object):
     document = None
     settings = django_settings
 
-    def save(self, name, section, document):
+    def save(self, name, section, document, graphics=True):
         """Add education section.
 
         :param [dict(str, str)] education:

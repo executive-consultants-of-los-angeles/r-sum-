@@ -7,7 +7,7 @@ class Values(object):
     name = None
     document = None
 
-    def save(self, name, section, document):
+    def save(self, name, section, document, graphics=True):
         """Get intro."""
         self.name = name
         self.document = document

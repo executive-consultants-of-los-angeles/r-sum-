@@ -68,10 +68,7 @@ class ExportDocument(object):
         sections = self.prep_sections()
 
         for section in sections:
-            if graphics:
-                document = self.save_section(section, graphics=False)
-            else:
-                document = self.save_section(section, graphics=True)
+            document = self.save_section(section, graphics=graphics)
 
         return document
 
