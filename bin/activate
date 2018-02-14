@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/srv/rsum.application/.py3"
+VIRTUAL_ENV="/Volumes/killface/gahan-corporation/department-of-information/source/rsum"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
@@ -76,7 +76,3 @@ pydoc () {
 if [ -n "${BASH-}" ] || [ -n "${ZSH_VERSION-}" ] ; then
     hash -r 2>/dev/null
 fi
-
-export CC_TEST_REPORTER_ID=47df5e0000c73f07c1950f0da60b7e5bbc8b7021e646f20d0d8d2794c52d81b7
-export CODACY_PROJECT_TOKEN=a6401ae2caa54f229e65b73ec1863ef1
-export PYTHON_PATH=/srv/rsum.application/rsum
