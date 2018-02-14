@@ -43,6 +43,7 @@ class ExportDocument(object):
 
     document = Document()
     settings = django_settings
+    sections = None
     request = None
 
     def __init__(self):
@@ -62,20 +63,33 @@ class ExportDocument(object):
         :return: Stream of Word document for end user.
         :rtype: object
         """
-        profile = Profile.objects.all()[0]
         self.request = request
+        document = self.prep_document()
+        sections = self.prep_sections()
+
+        for section in sections:
+            if boring:
+                document = self.save_section(section, graphics=False)
+            else:
+                document = self.save_section(seciton, graphics=True)
+
+        return document
+
+    def prep_document(self):
+        """Export a word document.
+
+        :param profile_id: ID of CV to export.
+        :type profile_id: int
+        :return: Stream of Word document for end user.
+        :rtype: object
+        """
         document = self.document
         document = style.set_styles(document)
         document = layout.set_layout(document)
 
-        sections = json.loads(profile.content)
-
-        for section in sections:
-            document = self.save_section(section)
-
         return document
 
-    def export_boring(self, request):
+    def prep_sections(self):
         """Export a word document.
 
         :param profile_id: ID of CV to export.
@@ -84,33 +98,16 @@ class ExportDocument(object):
         :rtype: object
         """
         profile = Profile.objects.all()[0]
-        self.request = request
-        document = self.document
-        document = style.set_styles(document)
-        document = layout.set_layout(document)
+        self.sections = json.loads(profile.content)
 
-        sections = json.loads(profile.content)
+        return self.sections
 
-        for section in sections:
-            document = self.save_boring_section(section)
-
-        return document
-
-    def save_boring_section(self, section):
+    def save_section(self, section, graphics=False):
         """Save a section of a document."""
         for name, value in section.items():
             section_cls = load_class('export.sections.{}.{}'.format(
                 name, name.title()))
             section_obj = section_cls()
-            self.document = section_obj.save(name, value, self.document)
-        return self.document
-
-    def save_section(self, section):
-        """Save a section of a document."""
-        for name, value in section.items():
-            section_cls = load_class('export.sections.{}.{}'.format(
-                name, name.title()))
-            section_obj = section_cls()
-            self.document = section_obj.save_with_graphics(
-                name, value, self.document)
+            self.document = section_obj.save(
+                name, value, self.document, graphics=graphics)
         return self.document
