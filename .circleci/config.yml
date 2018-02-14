@@ -22,10 +22,8 @@ jobs:
           name: run tests
           command: |
             docker run -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e\
-            AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e \
-            CC_TEST_REPORTER_ID=d1616b3fee86161abfb666d92c21\
-            c2045da6dce673e1775f3c4d62fd2ac3c72c \
-            --network rsum \
+            AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
+            --network rsum -v $(pwd)/test-results:/tmp:rw \
             --rm -d --name rsum rsum
             docker exec rsum wget https://codeclimate.com/downloads/\
             test-reporter/test-reporter-latest-linux-amd64 -O \
@@ -35,13 +33,16 @@ jobs:
             docker exec rsum /usr/bin/cc-test-reporter before-build
             docker exec rsum coverage run setup.py test
             docker exec rsum coverage xml
+            docker exec rsum cp coverage.xml /tmp/coverage.xml
             docker exec rsum /usr/bin/cc-test-reporter \
             after-build -t coverage.py
-            docker exec rsum pytest
+            docker exec rsum mkdir -p /tmp/rsum
+            docker exec rsum pytest --junit-xml=/tmp/rsum/circle.xml
       - store_test_results:
           path: test-results
-      - store_artifacts:
-          path: test-reports
-          destination: test-reports
-    working_directory: ~/repo
+deployment:
+  staging:
+    branch: /iss*/
+    heroku:
+      appname: rsum-dev
 ...
