@@ -29,7 +29,7 @@ class Intro(object):
             document = self.get_intro(section, document)
         return document
 
-    def get_intro(self, name, section, document):
+    def get_intro(self, section, document):
         """Add introduction section.
 
         :param intro: Introduction to add to document.
@@ -51,7 +51,7 @@ class Intro(object):
 
         return document
 
-    def get_intro_graphics(self, name, section, document):
+    def get_intro_graphics(self, section, document):
         """Add introduction section.
         :param intro: Introduction to add to document.
         :type intro: [dict(str, str)]
