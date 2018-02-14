@@ -13,7 +13,7 @@ class Intro(object):
     document = None
     settings = django_settings
 
-    def save(self, name, section, document, graphics=True):
+    def save(self, name, section, document, graphics):
         """Add introduction section.
 
         :param intro: Introduction to add to document.

@@ -11,16 +11,29 @@ class Education(object):
     document = None
     settings = django_settings
 
-    def save(self, name, section, document, graphics):
-        """Add education section.
+    def save(self, section, document, graphics):
+        """Short summary.
 
-        :param [dict(str, str)] education:
-            Education section for current document.
-        :param object document: Current document.
-        :return: Current document with Educaiton section.
-        :rtype: object
+        Parameters
+        ----------
+        section : type
+            Description of parameter `section`.
+        document : type
+            Description of parameter `document`.
+        graphics : type
+            Description of parameter `graphics`.
+
+        Returns
+        -------
+        type
+            Description of returned object.
+
+        Raises
+        -------
+        ExceptionName
+            Why the exception is raised.
+
         """
-        self.name = name
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
         settings = self.settings
