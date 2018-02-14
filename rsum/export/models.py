@@ -55,7 +55,7 @@ class ExportDocument(object):
         settings = self.settings
         self.name = '{0}-profile.docx'.format(settings.DIR)
 
-    def export_word(self, request):
+    def export_word(self, request, graphics=True):
         """Export a word document.
 
         :param profile_id: ID of CV to export.
@@ -68,10 +68,10 @@ class ExportDocument(object):
         sections = self.prep_sections()
 
         for section in sections:
-            if boring:
+            if graphics:
                 document = self.save_section(section, graphics=False)
             else:
-                document = self.save_section(seciton, graphics=True)
+                document = self.save_section(section, graphics=True)
 
         return document
 
@@ -102,7 +102,7 @@ class ExportDocument(object):
 
         return self.sections
 
-    def save_section(self, section, graphics=False):
+    def save_section(self, section, graphics=True):
         """Save a section of a document."""
         for name, value in section.items():
             section_cls = load_class('export.sections.{}.{}'.format(
