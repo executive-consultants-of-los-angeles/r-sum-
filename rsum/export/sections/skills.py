@@ -57,10 +57,9 @@ class Skills(object):
                 # Add a row to the sub table.
                 t_sub.add_row()
                 t_sub.cell(index-1, 0).text = output_name
-                paragraph = t_sub.cell(index-1, 0).paragraphs[0]
-                paragraph.style = 'Skill'
-                paragraph.paragraph_format.line_spacing = 1.0
-                paragraph.paragraph_format.space_after = 0
+                t_sub.cell(index-1, 0).paragraphs[0] = self.set_paragraph(
+                    t_sub
+                )
                 t_sub.cell(index-1, 1).text = experience
 
                 paragraph = t_sub.cell(index-1, 1).paragraphs[0]
@@ -71,6 +70,14 @@ class Skills(object):
                 t_sub = self.add_sub_skills(skill, t_sub, index-1)
             index = index + 1
         return document
+
+    def set_paragraph(self, t_sub):
+        paragraph = t_sub.cell(index-1, 0).paragraphs[0]
+        paragraph.style = 'Skill'
+        paragraph.paragraph_format.line_spacing = 1.0
+        paragraph.paragraph_format.space_after = 0
+
+        return paragraph
 
     def add_sub_skills(self, subs, skilltable, skilltable_index):
         """Add sub skills to skills section.
