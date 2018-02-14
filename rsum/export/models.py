@@ -99,12 +99,13 @@ class ExportDocument(object):
 
         return self.sections
 
-    def save_section(self, section, graphics=True):
+    def save_section(self, section, graphics):
         """Save a section of a document."""
         for name, value in section.items():
             section_cls = load_class('export.sections.{}.{}'.format(
                 name, name.title()))
             section_obj = section_cls()
+            print(self.document)
             self.document = section_obj.save(
                 name, value, self.document, graphics=graphics)
         return self.document

@@ -12,7 +12,7 @@ class Skills(object):
     document = None
     sub_skills = None
 
-    def save_with_graphics(self, name, section, document):
+    def save(self, name, section, document, graphics):
         """Add skills section.
         :param skills: Skills section to add to document.
         :type summary: [dict(str, str)]
@@ -22,9 +22,17 @@ class Skills(object):
         :rtype: object
         """
         self.name = name
+        print(document)
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
         current_year = datetime.datetime.now().strftime("%Y")
+        if graphics:
+            document = self.get_skills_graphics(name, section, document)
+        else:
+            document = self.get_skills(name, section,document)
+        return document
+
+    def get_skills_graphics(self, name, section, document):
         skills = section
 
         table = document.tables[1]
@@ -56,7 +64,7 @@ class Skills(object):
             index = index + 1
         return document
 
-    def save(self, name, section, document, graphics=True):
+    def get_skills(self, name, section, document):
         """Add skills section.
 
         :param skills: Skills section to add to document.

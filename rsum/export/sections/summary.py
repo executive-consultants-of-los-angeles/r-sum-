@@ -13,7 +13,7 @@ class Summary(object):
     cm = Cm
     summary_table = None
 
-    def save_with_graphics(self, name, section, document):
+    def save(self, name, section, document, graphics):
         """Add summary section.
 
         :param summary: Summary section to add to document.
@@ -25,6 +25,8 @@ class Summary(object):
         """
         settings = self.settings
         self.name = name
+
+    def get_summary_graphics(self, name, section, document):
         summary = section
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
@@ -49,7 +51,7 @@ class Summary(object):
 
         return document
 
-    def save(self, name, section, document, graphics=True):
+    def get_summary(self, name, section, document):
         """Add summary section.
 
         :param summary: Summary section to add to document.

@@ -24,13 +24,12 @@ class Intro(object):
         :rtype: object
         """
         if graphics:
-            document = self.get_intro(name, section, document)
+            document = self.get_intro_graphics(name, section, document)
         else:
-            document = self.get_intro_no_graphics(name, section, document)
-
+            document = self.get_intro(name, section, document)
         return document
 
-    def get_intro_no_graphics(self, name, section, document):
+    def get_intro(self, name, section, document):
         """Add introduction section.
 
         :param intro: Introduction to add to document.
@@ -52,7 +51,7 @@ class Intro(object):
 
         return document
 
-    def get_intro(self, name, section, document):
+    def get_intro_graphics(self, name, section, document):
         """Add introduction section.
         :param intro: Introduction to add to document.
         :type intro: [dict(str, str)]
