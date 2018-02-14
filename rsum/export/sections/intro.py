@@ -13,7 +13,7 @@ class Intro(object):
     document = None
     settings = django_settings
 
-    def save(self, name, section, document, graphics):
+    def save(self, section, document, graphics):
         """Add introduction section.
 
         :param intro: Introduction to add to document.
@@ -24,9 +24,9 @@ class Intro(object):
         :rtype: object
         """
         if graphics:
-            document = self.get_intro_graphics(name, section, document)
+            document = self.get_intro_graphics(section, document)
         else:
-            document = self.get_intro(name, section, document)
+            document = self.get_intro(section, document)
         return document
 
     def get_intro(self, name, section, document):
@@ -40,7 +40,7 @@ class Intro(object):
         :rtype: object
         """
         intro = section
-        self.name = name
+        self.document = document
         paragraph = document.add_paragraph(
             intro.get('name'), style='Heading 1')
 
