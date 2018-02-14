@@ -55,7 +55,7 @@ class ExportDocument(object):
         settings = self.settings
         self.name = '{0}-profile.docx'.format(settings.DIR)
 
-    def export_word(self, request, graphics=True):
+    def export_word(self, request, graphics):
         """Export a word document.
 
         :param profile_id: ID of CV to export.
@@ -106,5 +106,5 @@ class ExportDocument(object):
                 name, name.title()))
             section_obj = section_cls()
             self.document = section_obj.save(
-                name, value, self.document, graphics=graphics)
+                value, self.document, graphics=graphics)
         return self.document
