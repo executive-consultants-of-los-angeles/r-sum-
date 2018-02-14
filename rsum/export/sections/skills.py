@@ -28,7 +28,7 @@ class Skills(object):
         if graphics:
             document = self.get_skills_graphics(name, section, document)
         else:
-            document = self.get_skills(name, section,document)
+            document = self.get_skills(name, section, document)
         return document
 
     def get_skills_graphics(self, name, section, document):
