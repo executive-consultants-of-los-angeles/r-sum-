@@ -1,4 +1,11 @@
 .cache/
+bin/wheel
+bin/e*
+bin/p*
+bin/acti*
+include/
+pip-s*
+lib/
 coverage/
 py/
 rsum/home/migrations
