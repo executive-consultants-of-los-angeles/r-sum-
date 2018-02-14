@@ -109,7 +109,7 @@ class Education(object):
         return document
 
     def set_education_picture(self, settings, document):
-        """Short summary.
+        """Sets the picture for display in the education section.
 
         Parameters
         ----------
@@ -120,14 +120,8 @@ class Education(object):
 
         Returns
         -------
-        type
-            Description of returned object.
-
-        Raises
-        -------
-        ExceptionName
-            Why the exception is raised.
-
+        :obj:docx.document
+            Update document object.
         """
         document.add_picture(
             'static/profiles/{0}/img/1920x1080/01.jpg'.format(
