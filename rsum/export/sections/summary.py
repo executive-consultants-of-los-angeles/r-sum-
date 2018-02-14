@@ -23,11 +23,16 @@ class Summary(object):
         :return: Document updated with Summary.
         :rtype: object
         """
-        settings = self.settings
         self.name = name
+        if graphics:
+            document = self.get_summary_graphics(name, section, document)
+        else:
+            document = self.get_summary(name, section, document)
+        return document
 
     def get_summary_graphics(self, name, section, document):
         summary = section
+        settings = self.settings
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
 
