@@ -25,42 +25,7 @@ class Skills(object):
         self.document = document
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
-        if graphics:
-            document = self.get_skills_graphics(name, section, document)
-        else:
-            document = self.get_skills(name, section, document)
-        return document
-
-    def get_skills_graphics(self, name, section, document):
-        skills = section
-
-        table = document.tables[1]
-        table.cell(0, 0).add_paragraph('Skills', style='Heading 3')
-        t_sub = table.cell(0, 0).add_table(rows=1, cols=2)
-        table.cell(0, 0).tables[0].columns[0].width = Cm(7)
-        index = 1
-        for skill_name, skill in skills.items():
-            if isinstance(skill, dict):
-                experience = int(self.current_year) - int(skill.get('start'))
-                experience = '{0} year(s)'.format(str(experience))
-                output_name = skill_name.replace('_', ' ').title()
-
-                # Add a row to the sub table.
-                t_sub.add_row()
-                t_sub.cell(index-1, 0).text = output_name
-                paragraph = t_sub.cell(index-1, 0).paragraphs[0]
-                paragraph.style = 'Skill'
-                paragraph.paragraph_format.line_spacing = 1.0
-                paragraph.paragraph_format.space_after = 0
-                t_sub.cell(index-1, 1).text = experience
-
-                paragraph = t_sub.cell(index-1, 1).paragraphs[0]
-                paragraph.style = 'Skill'
-                paragraph.paragraph_format.line_spacing = 1.0
-                paragraph.paragraph_format.space_after = 0
-                paragraph.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-                t_sub = self.add_sub_skills(skill, t_sub, index-1)
-            index = index + 1
+        document = self.get_skills(name, section, document)
         return document
 
     def get_skills(self, name, section, document):
