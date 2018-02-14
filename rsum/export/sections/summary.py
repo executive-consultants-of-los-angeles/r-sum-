@@ -24,12 +24,12 @@ class Summary(object):
         :rtype: object
         """
         if graphics:
-            document = self.get_summary_graphics(name, section, document)
+            document = self.get_summary_graphics(section, document)
         else:
-            document = self.get_summary(name, section, document)
+            document = self.get_summary(section, document)
         return document
 
-    def get_summary_graphics(self, name, section, document):
+    def get_summary_graphics(self, section, document):
         summary = section
         settings = self.settings
         paragraph = document.add_paragraph('')
@@ -55,7 +55,7 @@ class Summary(object):
 
         return document
 
-    def get_summary(self, name, section, document):
+    def get_summary(self, section, document):
         """Add summary section.
 
         :param summary: Summary section to add to document.
