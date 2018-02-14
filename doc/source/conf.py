@@ -36,7 +36,7 @@
 import os
 import sys
 import django
-from django.conf import settings
+#from django.conf import settings
 sys.path.insert(0, os.path.abspath('../..'))
 
 django.setup()
