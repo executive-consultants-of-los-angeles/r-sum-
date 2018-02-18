@@ -24,3 +24,11 @@ export tools
 
 .. automodule:: export.tools.style
    :members:
+
+export tests
+============
+
+.. automodule:: export.tests.test_export
+   :members:
+
+.. automodule:: export.tests.test_views

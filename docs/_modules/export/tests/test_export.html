@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>export.tools.layout &#8212; rsum v0.1.2 documentation</title>
+    <title>export.tests.test_export &#8212; rsum v0.1.2 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -38,28 +38,28 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <h1>Source code for export.tools.layout</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;Layout module.&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">docx.shared</span> <span class="k">import</span> <span class="n">Cm</span>
+  <h1>Source code for export.tests.test_export</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Test module for export class.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="kn">from</span> <span class="nn">export.models</span> <span class="k">import</span> <span class="n">ExportDocument</span>
+<span class="kn">from</span> <span class="nn">home.models.profile</span> <span class="k">import</span> <span class="n">Profile</span>
 
 
-<div class="viewcode-block" id="set_layout"><a class="viewcode-back" href="../../../modules/export.html#export.tools.layout.set_layout">[docs]</a><span class="k">def</span> <span class="nf">set_layout</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Define document layout.</span>
+<div class="viewcode-block" id="test_export"><a class="viewcode-back" href="../../../modules/export.html#export.tests.test_export.test_export">[docs]</a><span class="k">def</span> <span class="nf">test_export</span><span class="p">(</span><span class="n">export_document</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Test the object.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">export_document</span><span class="p">,</span> <span class="n">ExportDocument</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">()</span></div>
 
-<span class="sd">    :param object document: Current document.</span>
-<span class="sd">    :return: Current document with adjusted layout.</span>
-<span class="sd">    :rtype: object</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sections</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">sections</span>
-    <span class="n">section</span> <span class="o">=</span> <span class="n">sections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">section</span><span class="o">.</span><span class="n">page_height</span> <span class="o">=</span> <span class="n">Cm</span><span class="p">(</span><span class="mf">29.7</span><span class="p">)</span>
-    <span class="n">section</span><span class="o">.</span><span class="n">page_width</span> <span class="o">=</span> <span class="n">Cm</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
-    <span class="n">section</span><span class="o">.</span><span class="n">left_margin</span> <span class="o">=</span> <span class="n">Cm</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">section</span><span class="o">.</span><span class="n">top_margin</span> <span class="o">=</span> <span class="n">Cm</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">section</span><span class="o">.</span><span class="n">right_margin</span> <span class="o">=</span> <span class="n">Cm</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">section</span><span class="o">.</span><span class="n">bottom_margin</span> <span class="o">=</span> <span class="n">Cm</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">document</span></div>
+<div class="viewcode-block" id="test_run_export"><a class="viewcode-back" href="../../../modules/export.html#export.tests.test_export.test_run_export">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">usefixtures</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_run_export</span><span class="p">(</span><span class="n">export_document</span><span class="p">,</span> <span class="n">profile</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Run the export method and see what happens.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="n">Profile</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">export_document</span><span class="p">,</span> <span class="n">ExportDocument</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">()</span></div>
 </pre></div>
 
           </div>
