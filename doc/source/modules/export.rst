@@ -8,27 +8,39 @@ export models
 =============
 
 .. automodule:: export.models
-   :members:
 
-export views
-============
+export sections
+===============
 
-.. automodule:: export.views
-   :members:
+.. automodule:: export.sections.intro
+
+.. automodule:: export.sections.summary
+
+.. automodule:: export.sections.skills
+
+.. automodule:: export.sections.values
+
+.. automodule:: export.sections.experience
+
+.. automodule:: export.sections.education
+
+.. automodule:: export.sections.contact
 
 export tools
 ============
 
 .. automodule:: export.tools.layout
-   :members:
 
 .. automodule:: export.tools.style
-   :members:
 
 export tests
 ============
 
 .. automodule:: export.tests.test_export
-   :members:
 
 .. automodule:: export.tests.test_views
+
+export views
+============
+
+.. automodule:: export.views
