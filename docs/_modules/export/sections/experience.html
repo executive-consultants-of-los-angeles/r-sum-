@@ -46,7 +46,7 @@
 <span class="kn">from</span> <span class="nn">docx.enum.table</span> <span class="k">import</span> <span class="n">WD_TABLE_ALIGNMENT</span>
 
 
-<div class="viewcode-block" id="Experience"><a class="viewcode-back" href="../../../modules/export.html#export.sections.experience.Experience">[docs]</a><span class="k">class</span> <span class="nc">Experience</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Experience"><a class="viewcode-back" href="../../../modules/export/sections/experience.html#export.sections.experience.Experience">[docs]</a><span class="k">class</span> <span class="nc">Experience</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Export Experience object.&quot;&quot;&quot;</span>
 
     <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
@@ -56,7 +56,7 @@
     <span class="n">experience</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">spacing</span> <span class="o">=</span> <span class="mf">0.9</span>
 
-<div class="viewcode-block" id="Experience.save"><a class="viewcode-back" href="../../../modules/export.html#export.sections.experience.Experience.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="n">graphics</span><span class="p">):</span>
+<div class="viewcode-block" id="Experience.save"><a class="viewcode-back" href="../../../modules/export/sections/experience.html#export.sections.experience.Experience.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="n">graphics</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Save the experience section for dullards.</span>
 
 <span class="sd">        :rtype: object</span>
@@ -87,7 +87,7 @@
         <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">return</span> <span class="n">document</span></div>
 
-<div class="viewcode-block" id="Experience.add_intro"><a class="viewcode-back" href="../../../modules/export.html#export.sections.experience.Experience.add_intro">[docs]</a>    <span class="k">def</span> <span class="nf">add_intro</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
+<div class="viewcode-block" id="Experience.add_intro"><a class="viewcode-back" href="../../../modules/export/sections/experience.html#export.sections.experience.Experience.add_intro">[docs]</a>    <span class="k">def</span> <span class="nf">add_intro</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Add an introduction to the experience section.&quot;&quot;&quot;</span>
         <span class="n">introduction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">experience</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">paragraph</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
@@ -95,7 +95,7 @@
         <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">0.7</span>
         <span class="k">return</span> <span class="n">document</span></div>
 
-<div class="viewcode-block" id="Experience.set_tables"><a class="viewcode-back" href="../../../modules/export.html#export.sections.experience.Experience.set_tables">[docs]</a>    <span class="k">def</span> <span class="nf">set_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Experience.set_tables"><a class="viewcode-back" href="../../../modules/export/sections/experience.html#export.sections.experience.Experience.set_tables">[docs]</a>    <span class="k">def</span> <span class="nf">set_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set tables for the experience section.&quot;&quot;&quot;</span>
         <span class="n">document</span> <span class="o">=</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">prep_tables</span><span class="p">(</span>
@@ -106,7 +106,7 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">document</span></div>
 
-<div class="viewcode-block" id="Experience.prep_tables"><a class="viewcode-back" href="../../../modules/export.html#export.sections.experience.Experience.prep_tables">[docs]</a>    <span class="k">def</span> <span class="nf">prep_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Experience.prep_tables"><a class="viewcode-back" href="../../../modules/export/sections/experience.html#export.sections.experience.Experience.prep_tables">[docs]</a>    <span class="k">def</span> <span class="nf">prep_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Prepare tables.&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="n">index</span> <span class="o">=</span> <span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
@@ -122,7 +122,7 @@
                 <span class="n">col</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">item</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">graphics</span><span class="o">=</span><span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;graphics&#39;</span><span class="p">))</span>
             <span class="k">return</span> <span class="n">document</span></div>
 
-<div class="viewcode-block" id="Experience.build_tables"><a class="viewcode-back" href="../../../modules/export.html#export.sections.experience.Experience.build_tables">[docs]</a>    <span class="k">def</span> <span class="nf">build_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Experience.build_tables"><a class="viewcode-back" href="../../../modules/export/sections/experience.html#export.sections.experience.Experience.build_tables">[docs]</a>    <span class="k">def</span> <span class="nf">build_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Construct tables.&quot;&quot;&quot;</span>
         <span class="n">settings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span>
         <span class="n">index</span> <span class="o">=</span> <span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
@@ -153,7 +153,7 @@
             <span class="n">key</span><span class="o">=</span><span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">document</span></div>
 
-<div class="viewcode-block" id="Experience.finish_tables"><a class="viewcode-back" href="../../../modules/export.html#export.sections.experience.Experience.finish_tables">[docs]</a>    <span class="k">def</span> <span class="nf">finish_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Experience.finish_tables"><a class="viewcode-back" href="../../../modules/export/sections/experience.html#export.sections.experience.Experience.finish_tables">[docs]</a>    <span class="k">def</span> <span class="nf">finish_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Complete process started in calling method.&quot;&quot;&quot;</span>
         <span class="n">table</span> <span class="o">=</span> <span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span>
         <span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;row&#39;</span><span class="p">))</span>
@@ -186,7 +186,7 @@
             <span class="n">document</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">document</span></div>
 
-<div class="viewcode-block" id="Experience.add_projects"><a class="viewcode-back" href="../../../modules/export.html#export.sections.experience.Experience.add_projects">[docs]</a>    <span class="k">def</span> <span class="nf">add_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+<div class="viewcode-block" id="Experience.add_projects"><a class="viewcode-back" href="../../../modules/export/sections/experience.html#export.sections.experience.Experience.add_projects">[docs]</a>    <span class="k">def</span> <span class="nf">add_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Add projects to experience section.</span>
 
 <span class="sd">        :param [dict(str, str)] projects:</span>
@@ -223,7 +223,7 @@
 <h3><a href="../../../index.html">Table Of Contents</a></h3>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules/home.html">notes for the home app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../modules/export.html">Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../continuous/index.html">Continuous X Is Continuous</a></li>
 </ul>

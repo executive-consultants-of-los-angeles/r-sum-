@@ -42,12 +42,12 @@
 <span></span><span class="sd">&quot;&quot;&quot;Contact module.&quot;&quot;&quot;</span>
 
 
-<div class="viewcode-block" id="Contact"><a class="viewcode-back" href="../../../modules/export.html#export.sections.contact.Contact">[docs]</a><span class="k">class</span> <span class="nc">Contact</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Contact"><a class="viewcode-back" href="../../../modules/export/sections/contact.html#export.sections.contact.Contact">[docs]</a><span class="k">class</span> <span class="nc">Contact</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Class for contact object export.&quot;&quot;&quot;</span>
 
     <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="Contact.save"><a class="viewcode-back" href="../../../modules/export.html#export.sections.contact.Contact.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="n">graphics</span><span class="p">):</span>
+<div class="viewcode-block" id="Contact.save"><a class="viewcode-back" href="../../../modules/export/sections/contact.html#export.sections.contact.Contact.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="n">graphics</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Add contact section.</span>
 
 <span class="sd">        :param [dict(str, str)] contact:</span>
@@ -61,7 +61,7 @@
         <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_contact</span><span class="p">(</span><span class="n">contact</span><span class="p">,</span> <span class="n">document</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">document</span></div>
 
-<div class="viewcode-block" id="Contact.start_contact"><a class="viewcode-back" href="../../../modules/export.html#export.sections.contact.Contact.start_contact">[docs]</a>    <span class="k">def</span> <span class="nf">start_contact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contact</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
+<div class="viewcode-block" id="Contact.start_contact"><a class="viewcode-back" href="../../../modules/export/sections/contact.html#export.sections.contact.Contact.start_contact">[docs]</a>    <span class="k">def</span> <span class="nf">start_contact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contact</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Start recording contact.&quot;&quot;&quot;</span>
         <span class="n">paragraph</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -87,7 +87,7 @@
         <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">complete_contact</span><span class="p">(</span><span class="n">contact</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="n">table</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">document</span></div>
 
-<div class="viewcode-block" id="Contact.complete_contact"><a class="viewcode-back" href="../../../modules/export.html#export.sections.contact.Contact.complete_contact">[docs]</a>    <span class="k">def</span> <span class="nf">complete_contact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contact</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+<div class="viewcode-block" id="Contact.complete_contact"><a class="viewcode-back" href="../../../modules/export/sections/contact.html#export.sections.contact.Contact.complete_contact">[docs]</a>    <span class="k">def</span> <span class="nf">complete_contact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contact</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Complete addition of contact section.&quot;&quot;&quot;</span>
         <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
             <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
@@ -123,7 +123,7 @@
 <h3><a href="../../../index.html">Table Of Contents</a></h3>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules/home.html">notes for the home app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../modules/export.html">Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../continuous/index.html">Continuous X Is Continuous</a></li>
 </ul>

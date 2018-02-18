@@ -49,8 +49,12 @@
 <span class="kn">from</span> <span class="nn">docx.shared</span> <span class="k">import</span> <span class="n">Cm</span>
 
 
-<div class="viewcode-block" id="set_first_headings"><a class="viewcode-back" href="../../../modules/export.html#export.tools.style.set_first_headings">[docs]</a><span class="k">def</span> <span class="nf">set_first_headings</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Set top three headings on document.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="set_first_headings"><a class="viewcode-back" href="../../../modules/export/tools/style.html#export.tools.style.set_first_headings">[docs]</a><span class="k">def</span> <span class="nf">set_first_headings</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Set top three headings on document.</span>
+
+<span class="sd">    :param document: The document being manipulated.</span>
+<span class="sd">    :returns: Document with new styles added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Heading 1&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
     <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -74,8 +78,12 @@
     <span class="k">return</span> <span class="n">document</span></div>
 
 
-<div class="viewcode-block" id="set_second_headings"><a class="viewcode-back" href="../../../modules/export.html#export.tools.style.set_second_headings">[docs]</a><span class="k">def</span> <span class="nf">set_second_headings</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Set the second three headings.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="set_second_headings"><a class="viewcode-back" href="../../../modules/export/tools/style.html#export.tools.style.set_second_headings">[docs]</a><span class="k">def</span> <span class="nf">set_second_headings</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Set the second three headings.</span>
+
+<span class="sd">    :param document: The document being manipulated.</span>
+<span class="sd">    :returns: Document with new styles added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Heading 4&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
@@ -101,8 +109,12 @@
     <span class="k">return</span> <span class="n">document</span></div>
 
 
-<div class="viewcode-block" id="set_list_bullets"><a class="viewcode-back" href="../../../modules/export.html#export.tools.style.set_list_bullets">[docs]</a><span class="k">def</span> <span class="nf">set_list_bullets</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Set list bullet styles.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="set_list_bullets"><a class="viewcode-back" href="../../../modules/export/tools/style.html#export.tools.style.set_list_bullets">[docs]</a><span class="k">def</span> <span class="nf">set_list_bullets</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Set list bullet styles.</span>
+
+<span class="sd">    :param document: The document being manipulated.</span>
+<span class="sd">    :returns: Document with new styles added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;List Bullet&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
     <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -123,8 +135,12 @@
     <span class="k">return</span> <span class="n">document</span></div>
 
 
-<div class="viewcode-block" id="set_skill_styles"><a class="viewcode-back" href="../../../modules/export.html#export.tools.style.set_skill_styles">[docs]</a><span class="k">def</span> <span class="nf">set_skill_styles</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Define remaining styles.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="set_skill_styles"><a class="viewcode-back" href="../../../modules/export/tools/style.html#export.tools.style.set_skill_styles">[docs]</a><span class="k">def</span> <span class="nf">set_skill_styles</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Define remaining styles.</span>
+
+<span class="sd">    :param document: The document being manipulated.</span>
+<span class="sd">    :returns: Document with new styles added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="o">.</span><span class="n">add_style</span><span class="p">(</span><span class="s1">&#39;Skill&#39;</span><span class="p">,</span> <span class="n">WD_STYLE_TYPE</span><span class="o">.</span><span class="n">PARAGRAPH</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
@@ -148,8 +164,12 @@
     <span class="k">return</span> <span class="n">document</span></div>
 
 
-<div class="viewcode-block" id="set_normal_style"><a class="viewcode-back" href="../../../modules/export.html#export.tools.style.set_normal_style">[docs]</a><span class="k">def</span> <span class="nf">set_normal_style</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Define the normal style for the template.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="set_normal_style"><a class="viewcode-back" href="../../../modules/export/tools/style.html#export.tools.style.set_normal_style">[docs]</a><span class="k">def</span> <span class="nf">set_normal_style</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Define the normal style for the template.</span>
+
+<span class="sd">    :param document: The document being manipulated.</span>
+<span class="sd">    :returns: Document with new styles added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Normal&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
@@ -158,7 +178,7 @@
     <span class="k">return</span> <span class="n">document</span></div>
 
 
-<div class="viewcode-block" id="set_styles"><a class="viewcode-back" href="../../../modules/export.html#export.tools.style.set_styles">[docs]</a><span class="k">def</span> <span class="nf">set_styles</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+<div class="viewcode-block" id="set_styles"><a class="viewcode-back" href="../../../modules/export/tools/style.html#export.tools.style.set_styles">[docs]</a><span class="k">def</span> <span class="nf">set_styles</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Set styles in the Word document.</span>
 
 <span class="sd">    :param object document: Current document.</span>
@@ -181,7 +201,7 @@
 <h3><a href="../../../index.html">Table Of Contents</a></h3>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules/home.html">notes for the home app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../modules/export.html">Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../continuous/index.html">Continuous X Is Continuous</a></li>
 </ul>

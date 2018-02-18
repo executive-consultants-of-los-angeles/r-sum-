@@ -1,0 +1,185 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>export sections experience &#8212; rsum v0.1.2 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'v0.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-export.sections.experience">
+<span id="export-sections-experience"></span><h1>export sections experience<a class="headerlink" href="#module-export.sections.experience" title="Permalink to this headline">¶</a></h1>
+<p>Experience module.</p>
+<dl class="class">
+<dt id="export.sections.experience.Experience">
+<em class="property">class </em><code class="descclassname">export.sections.experience.</code><code class="descname">Experience</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/experience.html#Experience"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.experience.Experience" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Export Experience object.</p>
+<dl class="attribute">
+<dt id="export.sections.experience.Experience.cm">
+<code class="descname">cm</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/experience.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.experience.Experience.cm" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Cm</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.sections.experience.Experience.add_intro">
+<code class="descname">add_intro</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/experience.html#Experience.add_intro"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.experience.Experience.add_intro" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an introduction to the experience section.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.sections.experience.Experience.add_projects">
+<code class="descname">add_projects</code><span class="sig-paren">(</span><em>document</em>, <em>table</em>, <em>row</em>, <em>col</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/experience.html#Experience.add_projects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.experience.Experience.add_projects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add projects to experience section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>str</strong><strong>)</strong><strong>] </strong><strong>projects</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>,</em>) – Projects for a portion of Experience section.</li>
+<li><strong>table</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Table from current document.</li>
+<li><strong>row</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – Index of current row.</li>
+<li><strong>col</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – Index of current col.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Updated Projects table.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.sections.experience.Experience.build_tables">
+<code class="descname">build_tables</code><span class="sig-paren">(</span><em>document</em>, <em>**dargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/experience.html#Experience.build_tables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.experience.Experience.build_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct tables.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.sections.experience.Experience.finish_tables">
+<code class="descname">finish_tables</code><span class="sig-paren">(</span><em>document</em>, <em>**dargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/experience.html#Experience.finish_tables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.experience.Experience.finish_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Complete process started in calling method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.sections.experience.Experience.prep_tables">
+<code class="descname">prep_tables</code><span class="sig-paren">(</span><em>document</em>, <em>**dargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/experience.html#Experience.prep_tables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.experience.Experience.prep_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare tables.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.sections.experience.Experience.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>section</em>, <em>document</em>, <em>graphics</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/experience.html#Experience.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.experience.Experience.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the experience section for dullards.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.sections.experience.Experience.set_tables">
+<code class="descname">set_tables</code><span class="sig-paren">(</span><em>document</em>, <em>**dargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/experience.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/experience.html#Experience.set_tables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.experience.Experience.set_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set tables for the experience section.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.sections.experience.Experience.settings">
+<code class="descname">settings</code><em class="property"> = &lt;LazySettings &quot;rsum.settings&quot;&gt;</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/experience.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.experience.Experience.settings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../home.html">notes for the home app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../export.html">Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../continuous/index.html">Continuous X Is Continuous</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/modules/export/sections/experience.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Gahan Corporation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../../_sources/modules/export/sections/experience.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

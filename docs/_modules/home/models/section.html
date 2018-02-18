@@ -49,7 +49,7 @@
 <span class="kn">from</span> <span class="nn">django.contrib.postgres.fields</span> <span class="k">import</span> <span class="n">JSONField</span>
 
 
-<div class="viewcode-block" id="Section"><a class="viewcode-back" href="../../../modules/models/section.html#home.models.section.Section">[docs]</a><span class="k">class</span> <span class="nc">Section</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="viewcode-block" id="Section"><a class="viewcode-back" href="../../../modules/home/models/section.html#home.models.section.Section">[docs]</a><span class="k">class</span> <span class="nc">Section</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Class to define Section objects.</span>
 
 <span class="sd">    .. attribute:: profile</span>
@@ -73,7 +73,7 @@
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;section&#39;</span><span class="p">)</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">JSONField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="p">{})</span>
 
-<div class="viewcode-block" id="Section.create"><a class="viewcode-back" href="../../../modules/models/section.html#home.models.section.Section.create">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Section.create"><a class="viewcode-back" href="../../../modules/home/models/section.html#home.models.section.Section.create">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Class method to handle creation of Section objects for testing.</span>
 
@@ -107,7 +107,7 @@
 <h3><a href="../../../index.html">Table Of Contents</a></h3>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules/home.html">notes for the home app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/home.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../modules/export.html">Export</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../continuous/index.html">Continuous X Is Continuous</a></li>
 </ul>

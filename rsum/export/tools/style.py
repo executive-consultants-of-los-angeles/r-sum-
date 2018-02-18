@@ -9,7 +9,11 @@ from docx.shared import Cm
 
 
 def set_first_headings(document):
-    """Set top three headings on document."""
+    """Set top three headings on document.
+
+    :param document: The document being manipulated.
+    :returns: Document with new styles added.
+    """
     style = document.styles['Heading 1']
     font = style.font
     font.color.rgb = RGBColor(0, 0, 0)
@@ -34,7 +38,11 @@ def set_first_headings(document):
 
 
 def set_second_headings(document):
-    """Set the second three headings."""
+    """Set the second three headings.
+
+    :param document: The document being manipulated.
+    :returns: Document with new styles added.
+    """
     style = document.styles['Heading 4']
     font = style.font
     font.name = 'Hind'
@@ -61,7 +69,11 @@ def set_second_headings(document):
 
 
 def set_list_bullets(document):
-    """Set list bullet styles."""
+    """Set list bullet styles.
+
+    :param document: The document being manipulated.
+    :returns: Document with new styles added.
+    """
     style = document.styles['List Bullet']
     font = style.font
     font.color.rgb = RGBColor(0, 0, 0)
@@ -83,7 +95,11 @@ def set_list_bullets(document):
 
 
 def set_skill_styles(document):
-    """Define remaining styles."""
+    """Define remaining styles.
+
+    :param document: The document being manipulated.
+    :returns: Document with new styles added.
+    """
     try:
         document.styles.add_style('Skill', WD_STYLE_TYPE.PARAGRAPH)
     except ValueError:
@@ -108,7 +124,11 @@ def set_skill_styles(document):
 
 
 def set_normal_style(document):
-    """Define the normal style for the template."""
+    """Define the normal style for the template.
+
+    :param document: The document being manipulated.
+    :returns: Document with new styles added.
+    """
     style = document.styles['Normal']
     font = style.font
     font.name = 'Hind'

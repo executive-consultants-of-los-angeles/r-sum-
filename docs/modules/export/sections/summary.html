@@ -1,0 +1,229 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>export sections summary &#8212; rsum v0.1.2 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'v0.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="export sections skills" href="skills.html" />
+    <link rel="prev" title="export sections (intro)" href="intro.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-export.sections.summary">
+<span id="export-sections-summary"></span><h1>export sections summary<a class="headerlink" href="#module-export.sections.summary" title="Permalink to this headline">¶</a></h1>
+<p>Summary section export.</p>
+<dl class="class">
+<dt id="export.sections.summary.Summary">
+<em class="property">class </em><code class="descclassname">export.sections.summary.</code><code class="descname">Summary</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/summary.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/summary.html#Summary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.summary.Summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Sumary section object class.</p>
+<dl class="attribute">
+<dt id="export.sections.summary.Summary.name">
+<code class="descname">name</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/summary.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.summary.Summary.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of section, deprecated.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.sections.summary.Summary.settings">
+<code class="descname">settings</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/summary.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.summary.Summary.settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Django settings.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.sections.summary.Summary.cm">
+<code class="descname">cm</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/summary.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.summary.Summary.cm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cm measurement.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.sections.summary.Summary.summary_table">
+<code class="descname">summary_table</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/summary.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.summary.Summary.summary_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ostensibly the table in which to display the summary.
+Most likely depcrecated.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">cm</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/summary.py"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Cm</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.sections.summary.Summary.format_paragraph">
+<code class="descname">format_paragraph</code><span class="sig-paren">(</span><em>paragraph</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/summary.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/summary.html#Summary.format_paragraph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.summary.Summary.format_paragraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accept a paragraph, format it, then return it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>paragraph</strong> (<em>docx.Paragraph</em>) – Paragraph to format.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Formatted paragraph.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.sections.summary.Summary.get_summary">
+<code class="descname">get_summary</code><span class="sig-paren">(</span><em>section</em>, <em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/summary.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/summary.html#Summary.get_summary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.summary.Summary.get_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add summary section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>section</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) – Summary section to add to document.</li>
+<li><strong>document</strong> (<em>docx.Document</em>) – Current document.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Document updated with Summary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.sections.summary.Summary.get_summary_graphics">
+<code class="descname">get_summary_graphics</code><span class="sig-paren">(</span><em>section</em>, <em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/summary.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/summary.html#Summary.get_summary_graphics"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.summary.Summary.get_summary_graphics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Acquire the graphics for insertion into the current document.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>section</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) – Summary section to add to document.</li>
+<li><strong>document</strong> (<em>docx.Document</em>) – Currently active document.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Document updated with Summary and pretty pictures.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.sections.summary.Summary.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>section</em>, <em>document</em>, <em>graphics</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/summary.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/summary.html#Summary.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.summary.Summary.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add summary section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>summary</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) – Summary section to add to document.</li>
+<li><strong>document</strong> (<em>docx.Document</em>) – Currenlty active document.</li>
+<li><strong>graphics</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) – True to load graphics, false to not.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Document updated with Summary with or without graphics.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">settings</code><em class="property"> = &lt;LazySettings &quot;rsum.settings&quot;&gt;</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/summary.py"><span class="viewcode-link">[source]</span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../home.html">Home</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../export.html">Export</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../sections.html">export sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools.html">export tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../export.html#module-export.models">export models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../export.html#module-export.tests.test_export">export tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../export.html#module-export.views">export views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../continuous/index.html">Continuous X Is Continuous</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/modules/export/sections/summary.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Gahan Corporation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../../_sources/modules/export/sections/summary.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

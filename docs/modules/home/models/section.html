@@ -1,0 +1,272 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Home Section Model &#8212; rsum v0.1.2 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'v0.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Skills" href="skills.html" />
+    <link rel="prev" title="Home Profile Model" href="profile.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="home-section-model">
+<h1>Home Section Model<a class="headerlink" href="#home-section-model" title="Permalink to this headline">¶</a></h1>
+<p>Here will be a brief but complet e discussion of the properties and attributes of the section model.</p>
+<div class="section" id="just-what-is-a-section-anyway">
+<h2>Just what is a section anyway?<a class="headerlink" href="#just-what-is-a-section-anyway" title="Permalink to this headline">¶</a></h2>
+<p>In this context a section is the first level of categorization applied to a person’s c.v.  That is to say, there is the c.v. as a holistic entity, then that is (generally) broken up into constituent parts in order to tell a story that presents the most appealing version of the subject as possible.</p>
+<p>There are further divisions of the data in a c.v., but implementing them in a relational database is clumsy and awkward.  Or at least the author isn’t smart enough to make it not clumsy and awkward.  For the sake of this software, there will be only the two layers: the document itself and its sections.</p>
+</div>
+<div class="section" id="okay-so-we-ve-lowered-our-expectations-for-this-software-now-what">
+<h2>Okay, so, we’ve lowered our expectations for this software, now what?<a class="headerlink" href="#okay-so-we-ve-lowered-our-expectations-for-this-software-now-what" title="Permalink to this headline">¶</a></h2>
+<p>Well, I guess a review of the section shema and implemented methods is in order.</p>
+<p>A section object conists of a django model with three attributes, all of the methods inherited from django.models.Model plus an additional create method, and finally a meta class that sets the app label and any other options that may be required.</p>
+<div class="section" id="section-fields">
+<h3>Section Fields<a class="headerlink" href="#section-fields" title="Permalink to this headline">¶</a></h3>
+<p>:profile A link to the relevant Profile.
+:name The name of the section.
+:content The content of the section stored in JSON.</p>
+</div>
+</div>
+<div class="section" id="so-how-do-we-write-unit-tests-for-a-section-object">
+<h2>So how do we write unit tests for a Section object?<a class="headerlink" href="#so-how-do-we-write-unit-tests-for-a-section-object" title="Permalink to this headline">¶</a></h2>
+<p>This should be relatively simple I think.  We can start with instantiating a section object and checking that it’s got all of the required attributes.  Then we can test each attribute to be sure that it is of the correct type. Finally, we can run the create method for a section then check that it is stored in the database.</p>
+<span class="target" id="module-home.models.section"></span><p>Model class that handles Section objects.</p>
+<dl class="class">
+<dt id="home.models.section.Section">
+<em class="property">class </em><code class="descclassname">home.models.section.</code><code class="descname">Section</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/home/models/section.html#Section"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>Class to define Section objects.</p>
+<dl class="attribute">
+<dt id="home.models.section.Section.profile">
+<code class="descname">profile</code><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Related <a class="reference internal" href="profile.html#home.models.profile.Profile" title="home.models.profile.Profile"><code class="xref py py-obj docutils literal"><span class="pre">home.models.profile.Profile</span></code></a> object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="home.models.section.Section.name">
+<code class="descname">name</code><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of Section object for reference.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="home.models.section.Section.content">
+<code class="descname">content</code><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.content" title="Permalink to this definition">¶</a></dt>
+<dd><p>JSON encoded content for the current section.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.section.Section.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.section.Section.clean_fields">
+<code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.clean_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean all fields and raise a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="home.models.section.Section.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>name='default'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/home/models/section.html#Section.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class method to handle creation of Section objects for testing.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>cls</strong> (<a class="reference internal" href="#home.models.section.Section" title="home.models.section.Section"><code class="xref py py-obj docutils literal"><span class="pre">home.models.section.Section</span></code></a>) – The Section class.</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) – Name of the section.</li>
+<li><strong>content</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) – Content for the section.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Reference to the created Section.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#home.models.section.Section" title="home.models.section.Section"><code class="xref py py-obj docutils literal"><span class="pre">home.models.section.Section</span></code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.section.Section.full_clean">
+<code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.full_clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call clean_fields(), clean(), and validate_unique() on the model.
+Raise a ValidationError for any errors that occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.section.Section.get_deferred_fields">
+<code class="descname">get_deferred_fields</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.get_deferred_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a set containing names of deferred fields for this instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.section.Section.refresh_from_db">
+<code class="descname">refresh_from_db</code><span class="sig-paren">(</span><em>using=None</em>, <em>fields=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.refresh_from_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reload field values from the database.</p>
+<p>By default, the reloading happens from the database this instance was
+loaded from, or by the read router if this instance wasn’t loaded from
+any database. The using parameter will override the default.</p>
+<p>Fields can be used to specify which fields to reload. The fields
+should be an iterable of field attnames. If fields is None, then
+all non-deferred fields are reloaded.</p>
+<p>When accessing deferred fields of an instance, the deferred loading
+of the field will call this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.section.Section.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The ‘force_insert’ and ‘force_update’ parameters can be used to insist
+that the “save” must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.section.Section.save_base">
+<code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.save_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The ‘raw’ argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.section.Section.serializable_value">
+<code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.serializable_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the value of the field name for this instance. If the field is
+a foreign key, return the id value instead of the object. If there’s
+no Field object with this name on the model, return the model
+attribute’s value.</p>
+<p>Used to serialize a field’s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="home.models.section.Section.validate_unique">
+<code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section.validate_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check unique constraints on the model and raise ValidationError if any
+failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Home Section Model</a><ul>
+<li><a class="reference internal" href="#just-what-is-a-section-anyway">Just what is a section anyway?</a></li>
+<li><a class="reference internal" href="#okay-so-we-ve-lowered-our-expectations-for-this-software-now-what">Okay, so, we’ve lowered our expectations for this software, now what?</a><ul>
+<li><a class="reference internal" href="#section-fields">Section Fields</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#so-how-do-we-write-unit-tests-for-a-section-object">So how do we write unit tests for a Section object?</a></li>
+</ul>
+</li>
+</ul>
+
+<h3><a href="../../../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../home.html">Home</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../models.html">Home Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html">Home Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views.html">Home Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../templates/index.html">templates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../export.html">Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../continuous/index.html">Continuous X Is Continuous</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/modules/home/models/section.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Gahan Corporation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../../_sources/modules/home/models/section.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,8 +1,9 @@
-notes for the home app
-======================
+Home
+====
 
 .. toctree::
 
-   models/index
-   views/index
-   templates/index
+   home/models
+   home/tests
+   home/views
+   home/templates/index

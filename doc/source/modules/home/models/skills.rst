@@ -1,5 +1,5 @@
-Skills
-======
+Home Skills Model
+==================
 
 Skills are a bit of a special case on account of the way in which they're handled by the interpreter.
 
@@ -51,10 +51,4 @@ What should it look like instead?
 
 The calculation for the percentage should be a parameterized method in the class separate from the two other methods.  This new method could be tested against its ability to calculate the percentage correctly within acceptable precision.
 
-Skills Class
-............
-
-.. currentmodule:: home.models.skills
-
-.. autoclass:: Skills 
-   :members:
+.. automodule:: home.models.skills

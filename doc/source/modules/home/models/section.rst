@@ -1,5 +1,5 @@
-home.models.section
-...................
+Home Section Model
+==================
 
 Here will be a brief but complet e discussion of the properties and attributes of the section model.
 
@@ -29,10 +29,4 @@ So how do we write unit tests for a Section object?
 
 This should be relatively simple I think.  We can start with instantiating a section object and checking that it's got all of the required attributes.  Then we can test each attribute to be sure that it is of the correct type. Finally, we can run the create method for a section then check that it is stored in the database.
 
-Section Class
-.............
-
-.. currentmodule:: home.models.section
-
-.. autoclass:: Section
-   :members:
+.. automodule:: home.models.section

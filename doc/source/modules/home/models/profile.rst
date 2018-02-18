@@ -1,5 +1,5 @@
-home.models.profile
-===================
+Home Profile Model
+==================
 
 What do we mean by profile?
 ---------------------------
@@ -29,10 +29,4 @@ The author believes so, yes.  It should require just the three tests: one for in
 
 The third test should be the hardest to write since it involves checking the related section objects.
 
-Profile Class
-.............
-
-.. currentmodule:: home.models.profile
-
-.. autoclass:: Profile
-   :members:
+.. automodule:: home.models.profile
