@@ -1,11 +1,7 @@
 Export
 ======
 
-The purpose of this module is to allow for easy export of the profile to easily portable document formats.
+The export module generates a Word document on the fly, then streams it to the requesting user.
 
-Currently only Word format is supported.
-
-.. toctree::
-   
-   models
-   tools/index
+.. automodule:: export
+   :members:
