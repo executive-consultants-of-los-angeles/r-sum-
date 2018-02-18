@@ -35,10 +35,10 @@
 # ones.
 import os
 import sys
-import django
+from rsum import loadapps
 sys.path.insert(0, os.path.abspath('../..'))
 
-django.setup()
+loadapps.main()
 
 extensions = [
     'sphinx.ext.autodoc',
