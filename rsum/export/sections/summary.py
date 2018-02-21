@@ -6,7 +6,25 @@ from docx.enum.table import WD_TABLE_ALIGNMENT
 
 
 class Summary(object):
-    """Sumary section object class."""
+    """Sumary section object class.
+
+    .. attribute:: name
+
+       Name of section, deprecated.
+
+    .. attribute:: settings
+
+       Django settings.
+
+    .. attribute:: cm
+
+       Cm measurement.
+
+    .. attribute:: summary_table
+
+       Ostensibly the table in which to display the summary.
+       Most likely depcrecated.
+    """
 
     name = None
     settings = django_settings
@@ -16,12 +34,10 @@ class Summary(object):
     def save(self, section, document, graphics):
         """Add summary section.
 
-        :param summary: Summary section to add to document.
-        :type summary: [dict(str, str)]
-        :param document: Current document.
-        :type document: object
-        :return: Document updated with Summary.
-        :rtype: object
+        :param dict summary: Summary section to add to document.
+        :param docx.Document document: Currenlty active document.
+        :param bool graphics: True to load graphics, false to not.
+        :return: Document updated with Summary with or without graphics.
         """
         if graphics:
             document = self.get_summary_graphics(section, document)
@@ -30,6 +46,12 @@ class Summary(object):
         return document
 
     def get_summary_graphics(self, section, document):
+        """Acquire the graphics for insertion into the current document.
+
+        :param dict section: Summary section to add to document.
+        :param docx.Document document: Currently active document.
+        :return: Document updated with Summary and pretty pictures.
+        """
         summary = section
         settings = self.settings
         paragraph = document.add_paragraph('')
@@ -58,12 +80,9 @@ class Summary(object):
     def get_summary(self, section, document):
         """Add summary section.
 
-        :param summary: Summary section to add to document.
-        :type summary: [dict(str, str)]
-        :param document: Current document.
-        :type document: object
+        :param dict section: Summary section to add to document.
+        :param docx.Document document: Current document.
         :return: Document updated with Summary.
-        :rtype: object
         """
         summary = section
         paragraph = document.add_paragraph('')
@@ -84,7 +103,11 @@ class Summary(object):
         return document
 
     def format_paragraph(self, paragraph):
-        """Do nothing."""
+        """Accept a paragraph, format it, then return it.
+
+        :param docx.Paragraph paragraph: Paragraph to format.
+        :return: Formatted paragraph.
+        """
         paragraph.paragraph_format.line_spacing = 1.0
         self.summary_table.cell(0, 0).width = self.cm(10)
         paragraph = self.summary_table.cell(0, 0).paragraphs[0]
