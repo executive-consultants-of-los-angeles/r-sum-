@@ -9,20 +9,20 @@ The export module generates a Word document on the fly, then streams it to the r
    export/sections
    export/tools
 
-export models
+Export Models
 =============
 
 .. automodule:: export.models
 
 
-export tests
+Export Tests
 ============
 
 .. automodule:: export.tests.test_export
 
 .. automodule:: export.tests.test_views
 
-export views
+Export Views
 ============
 
 .. automodule:: export.views

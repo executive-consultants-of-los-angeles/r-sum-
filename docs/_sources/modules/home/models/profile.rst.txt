@@ -1,32 +1,21 @@
-Home Profile Model
 ==================
+Profile Model
+==================
+
+Profile Model (API[ish]) 
+========================
+
+.. automodule:: home.models.profile
+
+Pretentious Bullshit About Résumés
+==================================
 
 What do we mean by profile?
 ---------------------------
 
-A profile is a curriculum vitae for an individual that presents their pervious work such that it demonstrates their experience and skill.
+A profile is a résumé.
 
 Why don't we just call it a résumé like everyone else?
 ------------------------------------------------------
 
-Because everyone else *actually* calls it a resume, which is nothing at all like a résumé.  Also, there is no key for the `é` character available on the author's keyboard. This means that in order to type `é` the author has to go out of his way to print the 'special' character by entering a special mode in his text editor.  Persumably this is also why most people call it a resume instead of a résumé.  Finally, because the programming languages this is written in, much like the author's text editor, don't really handle 'special' characters like the `é` very well and most folks these days don't spend too much time learning Latin, that the best way to describe what the program is trying to make ready is the word profile.
-
-Right, so, that's pretty dumb. What's the object look like?
------------------------------------------------------------
-
-Also pretty dumb.  The only attributes the Profile object contains are the name and the content.
-
-Profile Fields
-..............
-
-:name: The name of the current Profile object.
-:content: The unmodified JSON encoded content read from a yaml file.
-
-Okay, so it ought to be pretty easy to test then, yeah?
--------------------------------------------------------
-
-The author believes so, yes.  It should require just the three tests: one for instantion of Profile objects, one for the attributes of the object, and one to test the create method.
-
-The third test should be the hardest to write since it involves checking the related section objects.
-
-.. automodule:: home.models.profile
+Because everyone else *actually* calls it a resume, which is a verb meaning to continue.  The author believes this is due mostly to the lack of an `é` on the U.S. format keyboard. This means that in order to input `é` into a word processor or email program, people have to go out of their way to discover how to input characters that aren't on their keyboard into that program.  This is not something people are good at doing, and so it doesn't get done.  This drives the author nuts, but no one else seems to really know or care about the yawning chasm between the meanings of the two different words. 

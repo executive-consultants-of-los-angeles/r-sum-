@@ -1,4 +1,4 @@
-export sections
+Export Sections
 ===============
 
 .. toctree::

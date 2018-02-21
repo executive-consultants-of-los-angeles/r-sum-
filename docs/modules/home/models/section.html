@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Home Section Model &#8212; rsum v0.1.2 documentation</title>
+    <title>Section Model &#8212; rsum v0.1.2 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,8 +23,8 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Skills" href="skills.html" />
-    <link rel="prev" title="Home Profile Model" href="profile.html" />
+    <link rel="next" title="Skills Model" href="skills.html" />
+    <link rel="prev" title="Profile Model" href="profile.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -40,29 +40,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="home-section-model">
-<h1>Home Section Model<a class="headerlink" href="#home-section-model" title="Permalink to this headline">¶</a></h1>
-<p>Here will be a brief but complet e discussion of the properties and attributes of the section model.</p>
-<div class="section" id="just-what-is-a-section-anyway">
-<h2>Just what is a section anyway?<a class="headerlink" href="#just-what-is-a-section-anyway" title="Permalink to this headline">¶</a></h2>
-<p>In this context a section is the first level of categorization applied to a person’s c.v.  That is to say, there is the c.v. as a holistic entity, then that is (generally) broken up into constituent parts in order to tell a story that presents the most appealing version of the subject as possible.</p>
-<p>There are further divisions of the data in a c.v., but implementing them in a relational database is clumsy and awkward.  Or at least the author isn’t smart enough to make it not clumsy and awkward.  For the sake of this software, there will be only the two layers: the document itself and its sections.</p>
-</div>
-<div class="section" id="okay-so-we-ve-lowered-our-expectations-for-this-software-now-what">
-<h2>Okay, so, we’ve lowered our expectations for this software, now what?<a class="headerlink" href="#okay-so-we-ve-lowered-our-expectations-for-this-software-now-what" title="Permalink to this headline">¶</a></h2>
-<p>Well, I guess a review of the section shema and implemented methods is in order.</p>
-<p>A section object conists of a django model with three attributes, all of the methods inherited from django.models.Model plus an additional create method, and finally a meta class that sets the app label and any other options that may be required.</p>
-<div class="section" id="section-fields">
-<h3>Section Fields<a class="headerlink" href="#section-fields" title="Permalink to this headline">¶</a></h3>
-<p>:profile A link to the relevant Profile.
-:name The name of the section.
-:content The content of the section stored in JSON.</p>
-</div>
-</div>
-<div class="section" id="so-how-do-we-write-unit-tests-for-a-section-object">
-<h2>So how do we write unit tests for a Section object?<a class="headerlink" href="#so-how-do-we-write-unit-tests-for-a-section-object" title="Permalink to this headline">¶</a></h2>
-<p>This should be relatively simple I think.  We can start with instantiating a section object and checking that it’s got all of the required attributes.  Then we can test each attribute to be sure that it is of the correct type. Finally, we can run the create method for a section then check that it is stored in the database.</p>
-<span class="target" id="module-home.models.section"></span><p>Model class that handles Section objects.</p>
+  <div class="section" id="section-model">
+<h1>Section Model<a class="headerlink" href="#section-model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-home.models.section">
+<span id="section-model-kind-of-api"></span><h2>Section Model (kind-of) API<a class="headerlink" href="#module-home.models.section" title="Permalink to this headline">¶</a></h2>
+<p>Model class that handles Section objects.</p>
 <dl class="class">
 <dt id="home.models.section.Section">
 <em class="property">class </em><code class="descclassname">home.models.section.</code><code class="descname">Section</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/home/models/section.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/home/models/section.html#Section"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#home.models.section.Section" title="Permalink to this definition">¶</a></dt>
@@ -197,6 +179,14 @@ failed.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="pretentious-bullshit-about-resume-sections">
+<h2>Pretentious Bullshit About Résumé Sections<a class="headerlink" href="#pretentious-bullshit-about-resume-sections" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-section-of-a-resume">
+<h3>A Section of a Résumé<a class="headerlink" href="#a-section-of-a-resume" title="Permalink to this headline">¶</a></h3>
+<p>In this context a section is the first level of categorization applied to a person’s résumé.  That is to say, there is the résumé as a holistic entity, then that is (generally) broken up into constituent parts in order to tell a story that presents the most appealing version of the subject as possible.</p>
+<p>There are further divisions of the data in a résumé, but implementing them in a relational database is clumsy and awkward.  Or at least the author isn’t smart enough to make it not clumsy and awkward.  For the sake of this software, there will be only the two layers: the document itself and its sections.</p>
+</div>
+</div>
 </div>
 
 
@@ -207,13 +197,12 @@ failed.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Home Section Model</a><ul>
-<li><a class="reference internal" href="#just-what-is-a-section-anyway">Just what is a section anyway?</a></li>
-<li><a class="reference internal" href="#okay-so-we-ve-lowered-our-expectations-for-this-software-now-what">Okay, so, we’ve lowered our expectations for this software, now what?</a><ul>
-<li><a class="reference internal" href="#section-fields">Section Fields</a></li>
+<li><a class="reference internal" href="#">Section Model</a><ul>
+<li><a class="reference internal" href="#module-home.models.section">Section Model (kind-of) API</a></li>
+<li><a class="reference internal" href="#pretentious-bullshit-about-resume-sections">Pretentious Bullshit About Résumé Sections</a><ul>
+<li><a class="reference internal" href="#a-section-of-a-resume">A Section of a Résumé</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#so-how-do-we-write-unit-tests-for-a-section-object">So how do we write unit tests for a Section object?</a></li>
 </ul>
 </li>
 </ul>

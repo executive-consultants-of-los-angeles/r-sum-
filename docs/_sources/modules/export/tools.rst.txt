@@ -1,4 +1,4 @@
-export tools
+Export Tools
 ============
 
 .. toctree::
