@@ -1,9 +1,17 @@
-Skills
-======
+==================
+Skills Model
+==================
 
-Skills are a bit of a special case on account of the way in which they're handled by the interpreter.
+Skills Model (almost-an) API
+============================
 
-Okay, what's so special then?
+.. automodule:: home.models.skills
+
+
+(Even More) Pretentious Bullshit
+================================
+
+Calculation of Skill Values
 -----------------------------
 
 At the center of the representation of skills is the simple idea that one can roughly guage their relative level of proficiency in a particular area by defining how long they have been working in that area.  Obviously, this is far from a complete representation of the skills or people in question, but it does allow for the communication of what would otherwise be very difficult to describe accurately.
@@ -50,11 +58,3 @@ What should it look like instead?
 .................................
 
 The calculation for the percentage should be a parameterized method in the class separate from the two other methods.  This new method could be tested against its ability to calculate the percentage correctly within acceptable precision.
-
-Skills Class
-............
-
-.. currentmodule:: home.models.skills
-
-.. autoclass:: Skills 
-   :members:

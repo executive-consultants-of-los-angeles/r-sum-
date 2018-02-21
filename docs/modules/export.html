@@ -23,8 +23,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Continuous X Is Continuous" href="../continuous/index.html" />
-    <link rel="prev" title="templates" href="templates/index.html" />
+    <link rel="next" title="Export Sections" href="export/sections.html" />
+    <link rel="prev" title="templates" href="home/templates/index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -42,9 +42,171 @@
             
   <div class="section" id="export">
 <h1>Export<a class="headerlink" href="#export" title="Permalink to this headline">¶</a></h1>
-<p>The purpose of this module is to allow for easy export of the profile to easily portable document formats.</p>
-<p>Currently only Word format is supported.</p>
+<p>The export module generates a Word document on the fly, then streams it to the requesting user.</p>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="export/sections.html">Export Sections</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="export/sections/intro.html">Export Section (Intro)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="export/sections/summary.html">Export Section (Summary)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="export/sections/skills.html">Export Section (Skills)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="export/sections/values.html">Export Section (Values)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="export/sections/experience.html">Export Section (Experience)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="export/sections/education.html">Export Section (Education)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="export/sections/contact.html">Export Section (Contact)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="export/tools.html">Export Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="export/tools/layout.html">Export Tool (Layout)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="export/tools/style.html">Export Tool (Style)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="module-export.models">
+<span id="export-models"></span><h2>Export Models<a class="headerlink" href="#module-export.models" title="Permalink to this headline">¶</a></h2>
+<p>Module for exporting profiles to Word format.</p>
+<dl class="class">
+<dt id="export.models.ExportDocument">
+<em class="property">class </em><code class="descclassname">export.models.</code><code class="descname">ExportDocument</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/models.html#ExportDocument"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.models.ExportDocument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Class to handle exporting rsum pages to Word documents.</p>
+<dl class="attribute">
+<dt id="export.models.ExportDocument.document">
+<code class="descname">document</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.models.ExportDocument.document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Document object for export.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="export.models.ExportDocument.settings">
+<code class="descname">settings</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.models.ExportDocument.settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Settings for the current app.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.models.ExportDocument.export_word">
+<code class="descname">export_word</code><span class="sig-paren">(</span><em>request</em>, <em>graphics</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/models.html#ExportDocument.export_word"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.models.ExportDocument.export_word" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a word document.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>profile_id</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – ID of CV to export.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Stream of Word document for end user.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.models.ExportDocument.prep_document">
+<code class="descname">prep_document</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/models.html#ExportDocument.prep_document"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.models.ExportDocument.prep_document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a word document.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>profile_id</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – ID of CV to export.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Stream of Word document for end user.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.models.ExportDocument.prep_sections">
+<code class="descname">prep_sections</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/models.html#ExportDocument.prep_sections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.models.ExportDocument.prep_sections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a word document.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>profile_id</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – ID of CV to export.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Stream of Word document for end user.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.models.ExportDocument.save_section">
+<code class="descname">save_section</code><span class="sig-paren">(</span><em>section</em>, <em>graphics</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/models.html#ExportDocument.save_section"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.models.ExportDocument.save_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save a section of a document.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">settings</code><em class="property"> = &lt;LazySettings &quot;rsum.settings&quot;&gt;</em><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="export.models.load_class">
+<code class="descclassname">export.models.</code><code class="descname">load_class</code><span class="sig-paren">(</span><em>class_name</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/models.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/models.html#load_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.models.load_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dynamically load a class.</p>
+<p>Special thanks to: <a class="reference external" href="http://bit.ly/2DsSINZ">Thomas Sileo</a>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-export.tests.test_export">
+<span id="export-tests"></span><h2>Export Tests<a class="headerlink" href="#module-export.tests.test_export" title="Permalink to this headline">¶</a></h2>
+<p>Test module for export class.</p>
+<dl class="function">
+<dt id="export.tests.test_export.test_export">
+<code class="descclassname">export.tests.test_export.</code><code class="descname">test_export</code><span class="sig-paren">(</span><em>export_document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tests/test_export.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tests/test_export.html#test_export"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tests.test_export.test_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test the object.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="export.tests.test_export.test_run_export">
+<code class="descclassname">export.tests.test_export.</code><code class="descname">test_run_export</code><span class="sig-paren">(</span><em>export_document</em>, <em>profile</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tests/test_export.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tests/test_export.html#test_run_export"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tests.test_export.test_run_export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the export method and see what happens.</p>
+</dd></dl>
+
+<span class="target" id="module-export.tests.test_views"></span><p>Test case for home.views.</p>
+<dl class="function">
+<dt id="export.tests.test_views.test_doc_properties">
+<code class="descclassname">export.tests.test_views.</code><code class="descname">test_doc_properties</code><span class="sig-paren">(</span><em>profile</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tests/test_views.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tests/test_views.html#test_doc_properties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tests.test_views.test_doc_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the index and test some things.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="export.tests.test_views.test_index">
+<code class="descclassname">export.tests.test_views.</code><code class="descname">test_index</code><span class="sig-paren">(</span><em>export_document</em>, <em>profile</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/tests/test_views.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/tests/test_views.html#test_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.tests.test_views.test_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the index and test some things.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-export.views">
+<span id="export-views"></span><h2>Export Views<a class="headerlink" href="#module-export.views" title="Permalink to this headline">¶</a></h2>
+<p>Views for the export app.</p>
+<dl class="function">
+<dt id="export.views.index">
+<code class="descclassname">export.views.</code><code class="descname">index</code><span class="sig-paren">(</span><em>request</em>, <em>graphics</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/views.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../_modules/export/views.html#index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.views.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export cv to word document.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – HttpRequest object for export_docx page.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Word document generated by export module.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 </div>
 
@@ -53,15 +215,39 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="templates/index.html" title="previous chapter">templates</a></li>
-      <li>Next: <a href="../continuous/index.html" title="next chapter">Continuous X Is Continuous</a></li>
-  </ul></li>
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Export</a><ul>
+<li><a class="reference internal" href="#module-export.models">Export Models</a></li>
+<li><a class="reference internal" href="#module-export.tests.test_export">Export Tests</a></li>
+<li><a class="reference internal" href="#module-export.views">Export Views</a></li>
 </ul>
-</div>
+</li>
+</ul>
+
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Export</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="export/sections.html">Export Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="export/tools.html">Export Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-export.models">Export Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-export.tests.test_export">Export Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-export.views">Export Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/index.html">Continuous X Is Continuous</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/export.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">

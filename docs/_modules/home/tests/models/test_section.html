@@ -43,17 +43,17 @@
 <span class="kn">import</span> <span class="nn">json</span>
 
 
-<div class="viewcode-block" id="TestSection"><a class="viewcode-back" href="../../../../api/home.tests.models.html#home.tests.models.test_section.TestSection">[docs]</a><span class="k">class</span> <span class="nc">TestSection</span><span class="p">:</span>
+<div class="viewcode-block" id="TestSection"><a class="viewcode-back" href="../../../../modules/home/tests.html#home.tests.models.test_section.TestSection">[docs]</a><span class="k">class</span> <span class="nc">TestSection</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Class for testing Section objects.&quot;&quot;&quot;</span>
 
     <span class="n">section_obj</span> <span class="o">=</span> <span class="nb">object</span>
 
-<div class="viewcode-block" id="TestSection.test_section_instance"><a class="viewcode-back" href="../../../../api/home.tests.models.html#home.tests.models.test_section.TestSection.test_section_instance">[docs]</a>    <span class="k">def</span> <span class="nf">test_section_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">):</span>
+<div class="viewcode-block" id="TestSection.test_section_instance"><a class="viewcode-back" href="../../../../modules/home/tests.html#home.tests.models.test_section.TestSection.test_section_instance">[docs]</a>    <span class="k">def</span> <span class="nf">test_section_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test the create method for Section objects.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">section_obj</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="TestSection.test_save_method"><a class="viewcode-back" href="../../../../api/home.tests.models.html#home.tests.models.test_section.TestSection.test_save_method">[docs]</a>    <span class="k">def</span> <span class="nf">test_save_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profile</span><span class="p">,</span> <span class="n">section</span><span class="p">):</span>
+<div class="viewcode-block" id="TestSection.test_save_method"><a class="viewcode-back" href="../../../../modules/home/tests.html#home.tests.models.test_section.TestSection.test_save_method">[docs]</a>    <span class="k">def</span> <span class="nf">test_save_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profile</span><span class="p">,</span> <span class="n">section</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Test that sections save correctly.&quot;&quot;&quot;</span>
         <span class="n">section_profile</span> <span class="o">=</span> <span class="n">profile</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">section_obj</span> <span class="o">=</span> <span class="n">section</span>
@@ -73,7 +73,7 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">section_obj</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="TestSection.test_attributes"><a class="viewcode-back" href="../../../../api/home.tests.models.html#home.tests.models.test_section.TestSection.test_attributes">[docs]</a>    <span class="k">def</span> <span class="nf">test_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profile</span><span class="p">,</span> <span class="n">section</span><span class="p">):</span>
+<div class="viewcode-block" id="TestSection.test_attributes"><a class="viewcode-back" href="../../../../modules/home/tests.html#home.tests.models.test_section.TestSection.test_attributes">[docs]</a>    <span class="k">def</span> <span class="nf">test_attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profile</span><span class="p">,</span> <span class="n">section</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get a section and test its attributes.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">section_obj</span> <span class="o">=</span> <span class="n">section</span>
         <span class="n">profile</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
@@ -95,15 +95,15 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../../../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-  <li><a href="../../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../../index.html">Module code</a><ul>
-  </ul></li>
-  </ul></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules/home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules/export.html">Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../continuous/index.html">Continuous X Is Continuous</a></li>
 </ul>
-</div>
+
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../../search.html" method="get">

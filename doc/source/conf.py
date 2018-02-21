@@ -35,10 +35,10 @@
 # ones.
 import os
 import sys
-import django
+from rsum import loadapps
 sys.path.insert(0, os.path.abspath('../..'))
 
-django.setup()
+loadapps.main()
 
 extensions = [
     'sphinx.ext.autodoc',
@@ -56,6 +56,14 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.viewcode',
 ]
+
+autosummary_generate = True
+autodoc_default_flags = [
+    'members',
+    'inherited-members',
+    'show-inheritance'
+]
+autodoc_member_order = 'groupwise'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -129,8 +137,10 @@ html_static_path = ['_static']
 # refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
 html_sidebars = {
     '**': [
-        'relations.html',  # needs 'show_related': True theme option to display
-        'searchbox.html',
+        'localtoc.html',
+        'globaltoc.html',
+        'sourcelink.html',
+        'searchbox.html'
     ]
 }
 
