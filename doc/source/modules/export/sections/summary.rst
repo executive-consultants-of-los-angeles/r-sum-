@@ -1,4 +1,4 @@
-export sections summary
-=======================
+Export Section (Summary)
+========================
 
 .. automodule:: export.sections.summary

@@ -1,4 +1,4 @@
-export sections values
-======================
+Export Section (Values)
+=======================
 
 .. automodule:: export.sections.values

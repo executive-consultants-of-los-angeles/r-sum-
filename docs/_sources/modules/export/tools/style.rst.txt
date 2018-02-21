@@ -1,5 +1,5 @@
 ====================
-export tools (style)
+Export Tool (Style)
 ====================
 
 .. automodule:: export.tools.style

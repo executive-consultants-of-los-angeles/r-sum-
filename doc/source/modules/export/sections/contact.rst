@@ -1,4 +1,4 @@
-export sections contact
-=======================
+Export Section (Contact)
+========================
 
 .. automodule:: export.sections.contact

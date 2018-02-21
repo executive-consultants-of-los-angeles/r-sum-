@@ -1,5 +1,5 @@
 =====================
-export tools (layout)
+Export Tool (Layout)
 =====================
 
 .. automodule:: export.tools.layout

@@ -46,38 +46,32 @@
 
 
 <div class="viewcode-block" id="Education"><a class="viewcode-back" href="../../../modules/export/sections/education.html#export.sections.education.Education">[docs]</a><span class="k">class</span> <span class="nc">Education</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Education export object.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Education export object.</span>
+
+<span class="sd">    .. attribute:: name</span>
+
+<span class="sd">    .. attribute:: document</span>
+
+<span class="sd">    .. attribute:: settings</span>
+
+<span class="sd">    .. attribute:: line_spacing</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">document</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">settings</span> <span class="o">=</span> <span class="n">django_settings</span>
+    <span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">1.0</span>
 
 <div class="viewcode-block" id="Education.save"><a class="viewcode-back" href="../../../modules/export/sections/education.html#export.sections.education.Education.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="n">graphics</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Short summary.</span>
+        <span class="sd">&quot;&quot;&quot;Save the education section of the document.</span>
 
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        section : type</span>
-<span class="sd">            Description of parameter `section`.</span>
-<span class="sd">        document : type</span>
-<span class="sd">            Description of parameter `document`.</span>
-<span class="sd">        graphics : type</span>
-<span class="sd">            Description of parameter `graphics`.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        type</span>
-<span class="sd">            Description of returned object.</span>
-
-<span class="sd">        Raises</span>
-<span class="sd">        -------</span>
-<span class="sd">        ExceptionName</span>
-<span class="sd">            Why the exception is raised.</span>
-
+<span class="sd">        :param: section</span>
+<span class="sd">        :param: document</span>
+<span class="sd">        :param: graphics</span>
+<span class="sd">        :return: Updated document,</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">paragraph</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">0.0</span>
-        <span class="n">settings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span>
         <span class="k">if</span> <span class="n">graphics</span><span class="p">:</span>
             <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_education_graphics</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">document</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -93,6 +87,7 @@
 <span class="sd">        :return: Current document with Educaiton section.</span>
 <span class="sd">        :rtype: object</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">document</span> <span class="o">=</span> <span class="n">document</span>
         <span class="n">education</span> <span class="o">=</span> <span class="n">section</span>
         <span class="n">paragraph</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
             <span class="s1">&#39;Education&#39;</span><span class="p">,</span>
@@ -117,22 +112,21 @@
         <span class="k">return</span> <span class="n">document</span></div>
 
 <div class="viewcode-block" id="Education.get_education_graphics"><a class="viewcode-back" href="../../../modules/export/sections/education.html#export.sections.education.Education.get_education_graphics">[docs]</a>    <span class="k">def</span> <span class="nf">get_education_graphics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add education section.</span>
-<span class="sd">        :param [dict(str, str)] education:</span>
-<span class="sd">            Education section for current document.</span>
+        <span class="sd">&quot;&quot;&quot;Add education section, but this time with graphics.</span>
+
+<span class="sd">        :param dict section: Dictionary containing the section data.</span>
 <span class="sd">        :param object document: Current document.</span>
 <span class="sd">        :return: Current document with Educaiton section.</span>
 <span class="sd">        :rtype: object</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">education</span> <span class="o">=</span> <span class="n">section</span>
-        <span class="n">settings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span>
         <span class="n">paragraph</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
             <span class="s1">&#39;Education&#39;</span><span class="p">,</span>
             <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 3&#39;</span><span class="p">)</span>
-        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_spacing</span>
         <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">space_after</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">page_break_before</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_education_picture</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">document</span><span class="p">)</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_education_picture</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
         <span class="n">paragraph</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
             <span class="n">education</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">),</span>
             <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 4&#39;</span><span class="p">)</span>
@@ -149,21 +143,13 @@
         <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">space_before</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">return</span> <span class="n">document</span></div>
 
-<div class="viewcode-block" id="Education.set_education_picture"><a class="viewcode-back" href="../../../modules/export/sections/education.html#export.sections.education.Education.set_education_picture">[docs]</a>    <span class="k">def</span> <span class="nf">set_education_picture</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">settings</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
+<div class="viewcode-block" id="Education.set_education_picture"><a class="viewcode-back" href="../../../modules/export/sections/education.html#export.sections.education.Education.set_education_picture">[docs]</a>    <span class="k">def</span> <span class="nf">set_education_picture</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Sets the picture for display in the education section.</span>
 
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        settings : type</span>
-<span class="sd">            Description of parameter `settings`.</span>
-<span class="sd">        document : type</span>
-<span class="sd">            Description of parameter `document`.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        :obj:docx.document</span>
-<span class="sd">            Update document object.</span>
+<span class="sd">        :param object document: Document to update.</span>
+<span class="sd">        :return docx.document document: Document with picture added.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">settings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span>
         <span class="n">document</span><span class="o">.</span><span class="n">add_picture</span><span class="p">(</span>
             <span class="s1">&#39;static/profiles/</span><span class="si">{0}</span><span class="s1">/img/1920x1080/01.jpg&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                 <span class="n">settings</span><span class="o">.</span><span class="n">DIR</span><span class="p">),</span>

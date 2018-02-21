@@ -1,4 +1,4 @@
-export sections (intro)
-=======================
+Export Section (Intro)
+======================
 
 .. automodule:: export.sections.intro

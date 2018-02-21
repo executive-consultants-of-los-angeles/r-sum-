@@ -1,4 +1,4 @@
-export sections experience
-==========================
+Export Section (Experience)
+===========================
 
 .. automodule:: export.sections.experience
