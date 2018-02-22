@@ -71,13 +71,14 @@ class Education(object):
         return document
 
     def get_education_graphics(self, section, document):
-        """Add education section, but this time with graphics.
-
-        :param dict section: Dictionary containing the section data.
+        """Add education section.
+        :param [dict(str, str)] education:
+            Education section for current document.
         :param object document: Current document.
         :return: Current document with Educaiton section.
         :rtype: object
         """
+        self.document = document
         education = section
         paragraph = document.add_paragraph(
             'Education',
@@ -105,12 +106,10 @@ class Education(object):
     def set_education_picture(self, document):
         """Sets the picture for display in the education section.
 
-        :param object document: Document to update.
-        :return docx.document document: Document with picture added.
+        :param docx.Document document: The document to update.
         """
-        settings = self.settings
         document.add_picture(
             'static/profiles/{0}/img/1920x1080/01.jpg'.format(
-                settings.DIR),
+                self.settings.DIR),
             width=Cm(4))
         return document
