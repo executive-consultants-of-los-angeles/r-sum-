@@ -31,8 +31,9 @@ def index(request, graphics):
             "wordprocessingml.document"
         )
     )
+    response['Content-Length'] = length
     response['Content-Disposition'] = (
         'attachment; filename={0}-cv.docx'.format(os.environ.get('RSUM_ENV'))
     )
-    response['Content-Length'] = length
+    target_stream.close()
     return response
