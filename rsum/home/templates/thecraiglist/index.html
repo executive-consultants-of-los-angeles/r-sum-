@@ -14,14 +14,14 @@
 
   {% if name == 'skills' %}
     <h3 align="center">Skills</h3>
-    <table align="center">
+    <table align="center" border=1>
       {% for skill,skills in section.items %}
         <tr>
-          <td><h5>{{ skill.title }}</h5></td>
+          <td><b>{{ skills.name }}</b></td>
           <td>
-            {% for sub in skills %}
+            {% for sub,subs in skills.items %}
               {% if sub != 'name' and sub != 'start' and sub != 'experience_value' and sub != 'experience_string' %} 
-                <b>{{ sub.title }}</b>{% if not forloop.last %},{% endif %}
+                <i>{{ subs.name}}</i>{% if not forloop.last %},{% endif %}
               {% endif %}
             {% endfor %}  
           </td>

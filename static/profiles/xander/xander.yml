@@ -77,7 +77,7 @@
         name: "HTML"
         start: 2000
       css:
-        name: "CSS`"
+        name: "CSS"
         start: 2000
       scala:
         name: "Scala"
@@ -320,12 +320,12 @@
         company: "Gahan Corporation"
         position: "Cloud Architect / Python Engineer"
         projects:
-          cloud_architecture:
+          "Cloud Architect":
             - "maintain multiple cloud services"
             - "total cost of ownership < $100/mo"
             - "pretty good uptime"
             - "at least not completely awful security"
-          python_development:
+          "Python Engineer":
             - "develop and maintain company websites"
     - csi:
         duration: "September 2017 - January 2018"
@@ -511,10 +511,10 @@
     studies: "Kindergarten Diploma, General Studies, Kindergarten"
     duration: "1988 - 1989 (1 year)"
     projects:
-      tests:
-        - "I have always tested well"
-        - "that is how I graduated with a GPA in the 1.7 range"
-        - "it was a very prestigious kindergarten"
+      "Testing":
+        - "I have always tested well."
+        - "That is how I graduated with a GPA in the 1.7 range."
+        - "It was a very prestigious kindergarten."
 - contact:
     title: "Get in Touch"
     message:
