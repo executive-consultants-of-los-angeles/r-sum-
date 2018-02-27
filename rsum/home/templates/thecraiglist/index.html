@@ -2,7 +2,7 @@
   {% if name == 'intro' %}<h1 align="center">{{ section.name }}</h1><h2 align="center">{{ section.position }}</h2>{% endif %}
   {% if name == 'summary' %}<h3 align="center">{{ section.content }}</h3>{% endif %}
   {% if name == 'skills' %}
-    <h3 align="center">Skills</h3>
+    <h2 align="center">Skills</h2>
     <table align="center">
       {% for skill,skills in section.items %}<tr>
           <td><b>{{ skills.name }}</b></td>
@@ -13,7 +13,7 @@
     </table>
   {% endif %}
   {% if name == 'experience' %}
-    <h3 align="center">Experience</h3>
+    <h2 align="center">Experience</h2>
     <table align="center" border="1">
     {% for experience in section %} 
       {% for job,content in experience.items %} 
