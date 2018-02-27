@@ -1,39 +1,26 @@
 {% for name,section in sections.items %}
-  {% if name == 'intro' %}
-  <h1 align="center">{{ section.name }}</h1>
-  <h2 align="center">{{ section.position }}</h2>
-  {% endif %}
-  {% if name == 'summary' %}
-  <h3 align="center">{{ section.content }}</h3>
-  {% endif %}
+  {% if name == 'intro' %}<h1 align="center">{{ section.name }}</h1><h2 align="center">{{ section.position }}</h2>{% endif %}
+  {% if name == 'summary' %}<h3 align="center">{{ section.content }}</h3>{% endif %}
   {% if name == 'skills' %}
     <h3 align="center">Skills</h3>
     <table align="center" border=1>
-      {% for skill,skills in section.items %}
-        <tr>
+      {% for skill,skills in section.items %}<tr>
           <td><b>{{ skills.name }}</b></td>
-          <td>
-            {% for sub,subs in skills.items %}
-              {% if sub != 'name' and sub != 'start' and sub != 'experience_value' and sub != 'experience_string' %} 
-                <i>{{ subs.name}}</i>{% if not forloop.last %},{% endif %}
-              {% endif %}
-            {% endfor %}  
+          <td>{% for sub,subs in skills.items %}{% if sub != 'name' and sub != 'start' and sub != 'experience_value' and sub != 'experience_string' %}
+            <i>{{ subs.name}}</i>{% if not forloop.last %},{% endif %}{% endif %}{% endfor %}
           </td>
-        </tr>
-      {% endfor %}
+        </tr>{% endfor %}
     </table>
   {% endif %}
   {% if name == 'experience' %}
     <h3 align="center">Experience</h3>
     <table align="center">
-    {% for experience in section %} 
-      {% for job,content in experience.items %}
-        {% if job != 'introduction' %}
+    {% for experience in section %} {% for job,content in experience.items %} {% if job != 'introduction' %}
           <tr>
-            <td>{{ content.position }}, {{ content.company }}</td>
+            <td><b>{{ content.position }}</b>, {{ content.company }}</td>
           </tr>
           <tr>
-            <td>{{ content.location }}, {{ content.duration }}</td>
+            <td><i>{{ content.location }}, {{ content.duration }}</i></td>
           </tr>
           <tr>
             <td>
