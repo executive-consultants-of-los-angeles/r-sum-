@@ -11,5 +11,5 @@ WORKDIR /srv/rsum
 RUN git fetch -p; git checkout v0.1.2; git checkout -b current
 RUN pip uninstall -y rsum || true; pip uninstall -y rsum || true; python setup.py build; python setup.py install
 COPY create /bin/create
-RUN apk add bash
+RUN apk update; apk add bash
 CMD /bin/create 
