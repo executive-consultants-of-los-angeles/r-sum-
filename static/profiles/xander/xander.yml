@@ -331,14 +331,14 @@
         duration: "September 2017 - January 2018"
         location: "Los Angeles, California"
         company: "Collaboration Solutions Incorporated"
-        position: "Lead Python Developer"
+        position: "Python Engineer / Cloud Architect / ERP Analyst"
         projects:
-          cloud_architecture:
+          "Cloud Architect":
             - "automated deployment of erp servers"
             - "converted fromt old-style bare-metal configuration"
             - "used Infrastructure as Code to employ Docker containers"
             - "increased system stability and uptime"
-          python_development:
+          "Python Engineer":
             - "automated testing of pre-existing code base of 50-60k lines"
             - "fixed previously broken functionality while adding new features"
             - "initiated proper code analysis to improve code quality"
@@ -346,12 +346,12 @@
         duration: "December 2016 - March 2017"
         location: "Los Angeles, California"
         company: "Signal Technologies LLC"
-        position: "Lead Python Developer"
+        position: "Python Engineer / Cloud Architect"
         projects:
-          cloud_architecture:
+          "Cloud Architect":
             - "automated deployment of application"
             - "used IaC to enable quick development of all environments"
-          python_development:
+          "Python Engineer":
             - "added features to an existing Flask application"
             - "used the PokitDok API to analyze patient data"
             - "translated client requests into working code"
@@ -359,38 +359,37 @@
         duration: "August 2014 - May 2017"
         location: "Los Angeles, California"
         company: "Abiogenix Incorporated"
-        position: "Cloud Architect / Python Engineer"
+        position: "Python Engineer / Cloud Architect / ERP Analyst"
         projects:
-          enterprise_resource_planning:
-            - "automated deployment and maintenance of the Odoo ERP system"
-            - "installed Google SSO for better auditing"
-          buy_my_ubox_com:
+          "Python Engineer":
             - "designed and implemented the my-ubox.com web store"
             - "makes use of the Django web framework"
             - "some custom code that integrates the order system with Odoo"
-          atlassian:
+          "Cloud Architect":
+            - "transfered my-ubox.com to Amazon's Route 53 service"
+            - "transfered abiogenix.com to Amazon's Route 53 service"
             - "deployed Atlassian suite to Abiogenix cloud assets"
             - "maintain those same tools for uptime and performance"
             - "very limited budget"
-          networking:
-            - "transfered my-ubox.com to Amazon's Route 53 service"
-            - "transfered abiogenix.com to Amazon's Route 53 service"
+          "ERP Analyst":
+            - "automated deployment and maintenance of the Odoo ERP system"
+            - "installed Google SSO for better auditing"
     - creative_artists_agency:
         duration: "September 2015  -  March 2016"
         location: "Los Angeles, California"
         company: "Creative Artists Agency"
         position: "Cloud Architect / Python Engineer"
         projects:
-          jupyterhub:
+          "Python Engineer":
             - "automated deployment of JupyterHub with Ansible"
             - "instructed analysts on the use of Python and JupyterHub"
             - "enabled the quants to transfer data from Excel to WorkDay"
-          ansible_tower:
+          "Cloud Architect":
             - "refactored existing Ansible playbooks for improved security"
             - "implemented best practices in all Ansible playbooks"
             - "managed more than one upgrade of Ansible Tower server"
             - "enabled logging and monitoring with New Relic and Splunk"
-          continuous_integration:
+          "Build Manager":
             - "project was a year late on delivery upon my assignment"
             - "walked into an unfamiliar stack and uncooperative team"
             - "within one quarter the project was delivering new features daily"
@@ -402,13 +401,12 @@
         company: "Toyota Motor Sales"
         position: "Build Manager"
         projects:
-          atlassian:
+          "Build Manager":
             - "maintained project git repository"
             - "managed branches, pull requests, and releases"
             - "trained 22 developers on git flow branching model"
             - "created process for documentation of development"
             - "guided developers in resolution of merge conflicts"
-          continuous_delivery:
             - "deployed spark and hadoop cluster for distributed processing"
             - "automated builds of all projects within the git repository"
             - "dployed and administered Jenkins server with Ansible"
@@ -418,11 +416,10 @@
         company: "Toyota Motor Sales"
         position: "Cloud Architect"
         projects:
-          ansible:
+          "Cloud Architect":
             - "reduced deployment time by a factor of 15 with Ansible"
             - "automated deployment of all resources required by project"
             - "managed Red Hat Enterprise Linux 7 servers"
-          amazon_web_services:
             - "configured and deployed all infrastructure"
             - "administered same"
             - "managed budget for aws monthly spend"
@@ -430,18 +427,16 @@
         duration: "December 2014  -  July 2015"
         location: "Los Angeles, California"
         company: "Toyota Motor Sales"
-        position: "Lead Python Developer"
+        position: "Lead Python Engineer"
         projects:
-          training:
+          "Lead Python Engineer":
             - "wrote Python style guide"
             - "implemented smart commits for JIRA issues"
             - "trained offshore developers in the use of gitflow"
-          scraping:
             - "used Python, Scrapy, MongoDB, and BASH for project"
             - "scraped web for information relevant to project"
             - "identified and removed redundancies within the project"
             - "ran daily scrum meetings and maintained a storyboard"
-          proposal:
             - "authored A3 to streamline build process"
     - mintspare:
         duration: "February 2014  -  January 2015"
@@ -449,10 +444,9 @@
         company: "Mintspare Incorporated"
         position: "Chief Technical Officer"
         projects:
-          webmaster:
+          "Chief Technical Officer":
             - "developmed all Mintspare websites"
             - "used CakePHP as well as jQuery"
-          systems_administrator:
             - "administrated Mintspare databases"
             - "prevented data loss and developed schemas"
             - "responsible for all Mintspare IT infrastructure"
@@ -462,46 +456,45 @@
         duration: "August 2013  -  December 2013 (5 months)"
         location: "Los Angeles, California"
         company: "VS Media"
-        position: "PHP Developer / Analyst"
+        position: "PHP Engineer / Analyst"
         projects:
-          analyst:
+          "Analyst":
             - "collected and analyzed data on email marketing"
             - "improved performance of email servers and content"
             - "documented control flow of complex scripts"
             - "sent roughly 150,000 emails a day"
-          email_administrator:
+          "PHP Engineer":
             - "implemented new elements of the email system"
             - "created such as a centralized template store"
     - thrive_marketing:
         duration: "April 2013  -  July 2013"
         location: "Nashville, Tennessee"
         company: "Thrive Marketing"
-        position: "PHP Developer / Systems Administrator"
+        position: "PHP Engineer / Systems Administrator"
         projects:
-          systems_administrator:
-            - "installed and configured several different Linux servers"
-            - "used distributions such as Ubuntu, CentOS, and Gentoo"
-            - "also maintained a number of Windows 7 workstations"
-          web_developer:
+          "PHP Engineer":
             - "developed internal products for sales operations"
             - "made use of PHP, JavaScript, jQuery, JSON, REST, and SOAP"
             - "created data models for two internal software projects"
             - "documented existing and new code"
-          source_code_management:
+          "Systems Administrator":
+            - "installed and configured several different Linux servers"
+            - "used distributions such as Ubuntu, CentOS, and Gentoo"
+            - "also maintained a number of Windows 7 workstations"
             - "implemented git and gitflow for source code control"
             - "provided training to other employees on their use"
     - wishb:
         duration: "July 2010  -  September 2010"
         location: "San Francisco, California"
         company: "WishB LLC"
-        position: "PHP Developer / Systems Administrator"
+        position: "PHP Engineer / Systems Administrator"
         projects:
-          web_developer:
+          "PHP Engineer":
             - "used a homebrew MVC to program a website"
             - "dynamically loaded images with css and jquery"
             - "used Subversion for version control of code"
             - "coded user profiles for application"
-          system_administrator:
+          "Systems Administrator":
             - "maintained and configured the webserver"
             - "designed database schemas in MySQL"
             - "contributed to daily SCRUM meetings"
