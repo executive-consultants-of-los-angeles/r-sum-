@@ -1,7 +1,7 @@
 ---
 - intro:
     name: 'Xander Harris'
-    position: "Cloud Architect / Python Programmer"
+    position: "Cloud Architect / Python Engineer"
     social_media_links:
       facebook: 'https://www.facebook.com/gahancorpcfo'
       twitter: 'https://twitter.com/gahancorpcfo'
@@ -318,7 +318,7 @@
         duration: "May 2016 - Present"
         location: "Los Angeles, California"
         company: "Gahan Corporation"
-        position: "Cloud Architect / Python Programmer"
+        position: "Cloud Architect / Python Engineer"
         projects:
           cloud_architecture:
             - "maintain multiple cloud services"
@@ -359,7 +359,7 @@
         duration: "August 2014 - May 2017"
         location: "Los Angeles, California"
         company: "Abiogenix Incorporated"
-        position: "Cloud Architect / Python Programmer"
+        position: "Cloud Architect / Python Engineer"
         projects:
           enterprise_resource_planning:
             - "automated deployment and maintenance of the Odoo ERP system"
@@ -379,7 +379,7 @@
         duration: "September 2015  -  March 2016"
         location: "Los Angeles, California"
         company: "Creative Artists Agency"
-        position: "Cloud Architect / Python Programmer"
+        position: "Cloud Architect / Python Engineer"
         projects:
           jupyterhub:
             - "automated deployment of JupyterHub with Ansible"
