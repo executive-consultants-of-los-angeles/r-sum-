@@ -1,17 +1,11 @@
 {% for name,section in sections.items %}
-
   {% if name == 'intro' %}
   <h1 align="center">{{ section.name }}</h1>
   <h2 align="center">{{ section.position }}</h2>
   {% endif %}
-
   {% if name == 'summary' %}
   <h3 align="center">{{ section.content }}</h3>
-  <!-- <h4 align="left">If you'd like to see a prettier version of this, or you want a Word formatted version of my résumé, please go here: https://xander.gahan-corporation.com/</h4>
-  <h5 align="right">If you have the technical capacity, please take a look at my actual résumé on GitHub: https://github.com/gahan-corporation/rsum</h5>-->
   {% endif %}
-
-
   {% if name == 'skills' %}
     <h3 align="center">Skills</h3>
     <table align="center" border=1>
@@ -29,8 +23,6 @@
       {% endfor %}
     </table>
   {% endif %}
-
-
   {% if name == 'experience' %}
     <h3 align="center">Experience</h3>
     <table align="center">
@@ -64,5 +56,4 @@
     {% endfor %}
     </table>
   {% endif %}
-  
 {% endfor %}
