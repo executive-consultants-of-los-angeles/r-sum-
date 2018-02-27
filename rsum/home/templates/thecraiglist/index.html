@@ -15,29 +15,32 @@
   {% if name == 'experience' %}
     <h3 align="center">Experience</h3>
     <table align="center">
-    {% for experience in section %} {% for job,content in experience.items %} {% if job != 'introduction' %}
-          <tr>
-            <td><b>{{ content.position }}</b>, {{ content.company }}</td>
-          </tr>
-          <tr>
-            <td><i>{{ content.location }}, {{ content.duration }}</i></td>
-          </tr>
-          <tr>
+    {% for experience in section %} 
+      {% for job,content in experience.items %} 
+        {% if job != 'introduction' %}
+          {% cycle '<tr>' '' '' %}
             <td>
-              <ul>
-                {% for project,pcontent in content.projects.items %}
-                  <li>
-                    {{ project }}
+              <table>
+                <tr>
+                  <td><b>{{ content.position }}</b>, {{ content.company }}</td>
+                </tr>
+                <tr>
+                  <td><i>{{ content.location }}, {{ content.duration }}</i></td>
+                </tr>
+                <tr>
+                  <td>
                     <ul>
-                      {% for pitem in pcontent %}
-                        <li>{{ pitem }}</li>
+                      {% for project,pcontent in content.projects.items %}
+                        <li>{{ project }}
+                          <ul>{% for pitem in pcontent %}<li>{{ pitem }}</li>{% endfor %}</ul>
+                        </li>
                       {% endfor %}
                     </ul>
-                  </li>
-                {% endfor %}
-              </ul>
+                  </td>
+                </tr>
+              </table>
             </td>
-          </tr>
+          {% cycle '' '' '</tr>' %}
         {% endif %}
       {% endfor %}
     {% endfor %}
