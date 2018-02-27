@@ -14,7 +14,7 @@
   {% endif %}
   {% if name == 'experience' %}
     <h3 align="center">Experience</h3>
-    <table align="center">
+    <table align="center" border="1">
     {% for experience in section %} 
       {% for job,content in experience.items %} 
         {% if job != 'introduction' %}
