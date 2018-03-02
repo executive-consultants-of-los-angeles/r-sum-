@@ -294,7 +294,7 @@
           then concentration. - Andrew Carnegie
     - efficiency:
         col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
-        title: Efficency
+        title: 'Efficiency'
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon icon-screen-tablet"'
         text: >
@@ -513,8 +513,8 @@
     message:
       "I'm usually available after noon on week days."
     location: "Los Angeles, California, United States of America"
-    phone: "(424) 209-2976"
-    email: "xander@gahan-corporation.com"
+    phone: "(424) 242-9209"
+    email: "xander@gahancorporation.com"
     web: "https://xander.gahan-corporation.com/"
 ...
 # vim: ft=ansible:
