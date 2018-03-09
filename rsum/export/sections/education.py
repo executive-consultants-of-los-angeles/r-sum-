@@ -29,8 +29,6 @@ class Education(object):
         :param: graphics
         :return: Updated document,
         """
-        paragraph = document.add_paragraph('')
-        paragraph.paragraph_format.line_spacing = 0.0
         if graphics:
             document = self.get_education_graphics(section, document)
         else:
@@ -53,7 +51,6 @@ class Education(object):
             style='Heading 3')
         paragraph.paragraph_format.line_spacing = 1.0
         paragraph.paragraph_format.space_after = 0
-        paragraph.paragraph_format.page_break_before = True
         paragraph = document.add_paragraph(
             education.get('name'),
             style='Heading 4')
