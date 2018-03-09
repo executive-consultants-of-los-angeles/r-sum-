@@ -409,7 +409,7 @@
             - "guided developers in resolution of merge conflicts"
             - "deployed spark and hadoop cluster for distributed processing"
             - "automated builds of all projects within the git repository"
-            - "dployed and administered Jenkins server with Ansible"
+            - "deployed and administered Jenkins server with Ansible"
     - cloud_architect_tms:
         duration: "January 2015  -  July 2015"
         location: "Los Angeles, California"
