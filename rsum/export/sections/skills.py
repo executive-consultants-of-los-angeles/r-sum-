@@ -5,10 +5,40 @@ from docx.shared import Cm
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 
+def set_paragraph(t_sub, index):
+    """Add skills section.
+
+    :param t_sub: Table for the current sub skill.
+    :param index: Index of current skill.
+    """
+    paragraph = t_sub.cell(index-1, 0).paragraphs[0]
+    paragraph.style = 'Skill'
+    paragraph.paragraph_format.line_spacing = 1.0
+    paragraph.paragraph_format.space_after = 0
+
+    return paragraph
+
+
+def set_inner_paragraph(t_sub, index):
+    """Set styles for inner skills section.
+
+    :param t_sub: Table for the current sub skill.
+    :param index: Index of current skill.
+    """
+    paragraph = t_sub.cell(index-1, 1).paragraphs[0]
+    paragraph.style = 'Skill'
+    paragraph.paragraph_format.line_spacing = 1.0
+    paragraph.paragraph_format.space_after = 0
+    paragraph.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+
+    return paragraph
+
+
 class Skills(object):
     """Class for skills section object."""
 
     name = None
+    graphics = False
     document = None
     sub_skills = None
     current_year = float(datetime.datetime.now().strftime('%Y'))
@@ -23,6 +53,7 @@ class Skills(object):
         :rtype: object
         """
         self.document = document
+        self.graphics = graphics
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
         document = self.get_skills(section, document)
@@ -56,35 +87,18 @@ class Skills(object):
                 # Add a row to the sub table.
                 t_sub.add_row()
                 t_sub.cell(index-1, 0).text = output_name
-                t_sub.cell(index-1, 0).paragraphs[0] = self.set_paragraph(
+                t_sub.cell(index-1, 0).paragraphs[0] = set_paragraph(
                     t_sub, index
                 )
                 t_sub.cell(index-1, 1).text = experience
 
                 t_sub.cell(index-1, 1).paragraphs[0] = (
-                    self.set_inner_paragraph(t_sub, index)
+                    set_inner_paragraph(t_sub, index)
                 )
 
                 t_sub = self.add_sub_skills(skill, t_sub, index-1)
             index = index + 1
         return document
-
-    def set_inner_paragraph(self, t_sub, index):
-        paragraph = t_sub.cell(index-1, 1).paragraphs[0]
-        paragraph.style = 'Skill'
-        paragraph.paragraph_format.line_spacing = 1.0
-        paragraph.paragraph_format.space_after = 0
-        paragraph.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-
-        return paragraph
-
-    def set_paragraph(self, t_sub, index):
-        paragraph = t_sub.cell(index-1, 0).paragraphs[0]
-        paragraph.style = 'Skill'
-        paragraph.paragraph_format.line_spacing = 1.0
-        paragraph.paragraph_format.space_after = 0
-
-        return paragraph
 
     def add_sub_skills(self, subs, skilltable, skilltable_index):
         """Add sub skills to skills section.
