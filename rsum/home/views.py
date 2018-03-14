@@ -49,6 +49,7 @@ def get_context():
         'profile': profile,
         'sections': sections,
         'dir': settings.DIR,
+        'google_analytics_id': settings.GAID,
     }
 
     return context
