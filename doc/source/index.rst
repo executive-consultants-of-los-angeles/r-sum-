@@ -14,8 +14,24 @@ Welcome to rsum's documentation!
    modules/export
    continuous/index
 
+Environment
+===========
+
+The software expects two environment variables to be defined for configuration.
+
+RSUM_ENV
+--------
+
+This defines the url for the current résumé.  On the Gahan Corp integration system, the resulting output is something like xander.gahan-corporation.com for a value of `xander`.  This also defines where the code will look for static files, so a value of `xander` will cause the software to look for static files under static/profiles/xander from the root directory of the project. 
+
+RSUM_GAID
+---------
+
+This sets a Google Analytics ID for tracking information about visitors to the generated websites.
+
+
 All the Badges
---------------
+==============
 
 .. image:: https://travis-ci.org/gahan-corporation/rsum.application.svg?branch=master
    :target: https://travis-ci.org/gahan-corporation/rsum.application
