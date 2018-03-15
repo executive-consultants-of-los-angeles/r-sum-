@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>export.tools.layout &#8212; rsum 0.0.2 documentation</title>
+    <title>export.tools.layout &#8212; rsum v0.1.2 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '0.0.2',
+        VERSION:     'v0.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -39,16 +39,15 @@
           <div class="body" role="main">
             
   <h1>Source code for export.tools.layout</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;Layout module.&quot;&quot;&quot;</span>
+<span></span><span class="sd">&quot;&quot;&quot;Set page layout for the document that is being generated.&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">docx.shared</span> <span class="k">import</span> <span class="n">Cm</span>
 
 
-<div class="viewcode-block" id="set_layout"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.layout.set_layout">[docs]</a><span class="k">def</span> <span class="nf">set_layout</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+<div class="viewcode-block" id="set_layout"><a class="viewcode-back" href="../../../modules/export/tools/layout.html#export.tools.layout.set_layout">[docs]</a><span class="k">def</span> <span class="nf">set_layout</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Define document layout.</span>
 
 <span class="sd">    :param object document: Current document.</span>
 <span class="sd">    :return: Current document with adjusted layout.</span>
-<span class="sd">    :rtype: object</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sections</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">sections</span>
     <span class="n">section</span> <span class="o">=</span> <span class="n">sections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -66,15 +65,15 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-  <li><a href="../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../index.html">Module code</a><ul>
-  </ul></li>
-  </ul></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/export.html">Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../continuous/index.html">Continuous X Is Continuous</a></li>
 </ul>
-</div>
+
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">

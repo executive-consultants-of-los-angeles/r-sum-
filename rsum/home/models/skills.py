@@ -43,7 +43,10 @@ class Skills:
 
             skills_data.update({
                 name: {
-                    'name': skills_data.get(name).get('name'),
+                    'name': (
+                        skills_data.get(name).get(
+                            'name').replace('_', ' ').title()
+                    ),
                     'start': skills_data.get(name).get('start'),
                     'experience_value': experience.get('value'),
                     'experience_string': experience.get('string'),

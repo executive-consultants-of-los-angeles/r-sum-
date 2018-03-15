@@ -6,7 +6,7 @@ class Contact(object):
 
     name = None
 
-    def save(self, name, section, document):
+    def save(self, section, document, graphics):
         """Add contact section.
 
         :param [dict(str, str)] contact:
@@ -16,7 +16,7 @@ class Contact(object):
         :rtype: object
         """
         contact = section
-        self.name = name
+        self.name = graphics
         document = self.start_contact(contact, document)
         return document
 

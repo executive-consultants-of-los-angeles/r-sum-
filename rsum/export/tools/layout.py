@@ -1,4 +1,4 @@
-"""Layout module."""
+"""Set page layout for the document that is being generated."""
 from docx.shared import Cm
 
 
@@ -7,7 +7,6 @@ def set_layout(document):
 
     :param object document: Current document.
     :return: Current document with adjusted layout.
-    :rtype: object
     """
     sections = document.sections
     section = sections[0]

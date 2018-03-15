@@ -15,21 +15,17 @@ class Experience(object):
     experience = None
     spacing = 0.9
 
-    def save(self, name, section, document):
-        """Add experience section.
+    def save(self, section, document, graphics):
+        """Save the experience section for dullards.
 
-        :param [dict(str, str)] experience:
-            Experience section to add to document.
-        :param objectable document: Documentable to update.
-        :return: Documentable updated with Experience section.
         :rtype: object
         """
         self.experience = section
-        self.name = name
 
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0.0
         paragraph.paragraph_format.page_break_before = True
+
         paragraph = document.add_paragraph(
             'Experience', style='Heading 3')
 
@@ -41,7 +37,10 @@ class Experience(object):
             if index % 3 == 0:
                 table.add_row()
             document = self.set_tables(
-                document, table=table, value=value, index=index)
+                document, table=table,
+                value=value, index=index,
+                graphics=graphics
+            )
 
         paragraph = document.add_paragraph('')
         paragraph.paragraph_format.line_spacing = 0
@@ -59,9 +58,9 @@ class Experience(object):
         """Set tables for the experience section."""
         document = (
             self.prep_tables(
-                document,
-                table=dargs.get('table'),
-                value=dargs.get('value'), index=dargs.get('index')
+                document, table=dargs.get('table'),
+                value=dargs.get('value'), index=dargs.get('index'),
+                graphics=dargs.get('graphics')
             )
         )
         return document
@@ -79,7 +78,7 @@ class Experience(object):
 
             document = self.build_tables(
                 document, table=dargs.get('table'), index=index, row=row,
-                col=col, item=item, key=key)
+                col=col, item=item, key=key, graphics=dargs.get('graphics'))
             return document
 
     def build_tables(self, document, **dargs):
@@ -98,13 +97,16 @@ class Experience(object):
 
         paragraph = table.cell(int(row), int(col)).paragraphs[0]
         paragraph.paragraph_format.line_spacing = 0.0
-        table.cell(int(row), int(col)).add_picture(
-            'static/profiles/{}/img/970x647/{}.jpg'.format(
-                settings.DIR,
-                index+1
-            ),
-            width=self.cm(4.8)
-        )
+        if dargs.get('graphics'):
+            table.cell(int(row), int(col)).add_picture(
+                'static/profiles/{}/img/clients/{}.png'.format(
+                    settings.DIR,
+                    dargs.get('key')
+                ),
+                width=self.cm(4.8)
+            )
+        else:
+            table.cell(int(row), int(col)).add_paragraph('')
         document = self.finish_tables(
             document, table=table, row=row, col=col, item=item,
             key=dargs.get('key'))

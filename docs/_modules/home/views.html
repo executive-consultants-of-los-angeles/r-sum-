@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>home.views &#8212; rsum 0.0.2 documentation</title>
+    <title>home.views &#8212; rsum v0.1.2 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.0.2',
+        VERSION:     'v0.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -54,7 +54,7 @@
 <span class="kn">from</span> <span class="nn">home.models.skills</span> <span class="k">import</span> <span class="n">Skills</span>
 
 
-<div class="viewcode-block" id="index"><a class="viewcode-back" href="../../api/home.html#home.views.index">[docs]</a><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<div class="viewcode-block" id="index"><a class="viewcode-back" href="../../modules/home/views.html#home.views.index">[docs]</a><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Load the index page of the rsum application.</span>
 
 <span class="sd">    :param request: `django.http.HttpRequest` object for index page.</span>
@@ -62,6 +62,16 @@
 <span class="sd">    :return: HttpResponse object resulting from execution of render method.</span>
 <span class="sd">    :rtype: object</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;home/index.html&#39;</span><span class="p">,</span> <span class="n">get_context</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="thecraiglist"><a class="viewcode-back" href="../../modules/home/views.html#home.views.thecraiglist">[docs]</a><span class="k">def</span> <span class="nf">thecraiglist</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return view for thecraiglist.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;thecraiglist/index.html&#39;</span><span class="p">,</span> <span class="n">get_context</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="get_context"><a class="viewcode-back" href="../../modules/home/views.html#home.views.get_context">[docs]</a><span class="k">def</span> <span class="nf">get_context</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Return context for view.&quot;&quot;&quot;</span>
     <span class="n">profile</span> <span class="o">=</span> <span class="n">Profile</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="n">sections</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
@@ -74,7 +84,7 @@
     <span class="n">skills</span> <span class="o">=</span> <span class="n">sections</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;skills&#39;</span><span class="p">)</span>
     <span class="n">skills_obj</span> <span class="o">=</span> <span class="n">Skills</span><span class="p">(</span><span class="n">skills</span><span class="p">)</span>
 
-    <span class="n">sections</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;skills&#39;</span><span class="p">:</span> <span class="n">skills_obj</span><span class="o">.</span><span class="n">calculate_skills</span><span class="p">()})</span>
+    <span class="n">sections</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;skills&#39;</span><span class="p">:</span> <span class="n">skills_obj</span><span class="o">.</span><span class="n">calculate_skills</span><span class="p">(</span><span class="n">skills</span><span class="p">)})</span>
 
     <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;profile&#39;</span><span class="p">:</span> <span class="n">profile</span><span class="p">,</span>
@@ -82,22 +92,22 @@
         <span class="s1">&#39;dir&#39;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">DIR</span><span class="p">,</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;home/index.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">context</span></div>
 </pre></div>
 
           </div>
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-  <li><a href="../../index.html">Documentation overview</a><ul>
-  <li><a href="../index.html">Module code</a><ul>
-  </ul></li>
-  </ul></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/export.html">Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../continuous/index.html">Continuous X Is Continuous</a></li>
 </ul>
-</div>
+
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../search.html" method="get">

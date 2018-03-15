@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>export.tools.style &#8212; rsum 0.0.2 documentation</title>
+    <title>export.tools.style &#8212; rsum v0.1.2 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '0.0.2',
+        VERSION:     'v0.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -49,11 +49,15 @@
 <span class="kn">from</span> <span class="nn">docx.shared</span> <span class="k">import</span> <span class="n">Cm</span>
 
 
-<div class="viewcode-block" id="set_first_headings"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.style.set_first_headings">[docs]</a><span class="k">def</span> <span class="nf">set_first_headings</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Set top three headings on document.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="set_first_headings"><a class="viewcode-back" href="../../../modules/export/tools/style.html#export.tools.style.set_first_headings">[docs]</a><span class="k">def</span> <span class="nf">set_first_headings</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Set top three headings on document.</span>
+
+<span class="sd">    :param document: The document being manipulated.</span>
+<span class="sd">    :returns: Document with new styles added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Heading 1&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
-    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mh">0x51</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0x6A</span><span class="p">)</span>
+    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
     <span class="n">font</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">Pt</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">bold</span> <span class="o">=</span> <span class="kc">True</span>
@@ -62,38 +66,42 @@
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
     <span class="n">font</span><span class="o">.</span><span class="n">italic</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mh">0xA6</span><span class="p">,</span> <span class="mh">0xA7</span><span class="p">,</span> <span class="mh">0xAA</span><span class="p">)</span>
+    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">Pt</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
 
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Heading 3&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
-    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mh">0x51</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0x6A</span><span class="p">)</span>
+    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">Pt</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">bold</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">return</span> <span class="n">document</span></div>
 
 
-<div class="viewcode-block" id="set_second_headings"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.style.set_second_headings">[docs]</a><span class="k">def</span> <span class="nf">set_second_headings</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Set the second three headings.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="set_second_headings"><a class="viewcode-back" href="../../../modules/export/tools/style.html#export.tools.style.set_second_headings">[docs]</a><span class="k">def</span> <span class="nf">set_second_headings</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Set the second three headings.</span>
+
+<span class="sd">    :param document: The document being manipulated.</span>
+<span class="sd">    :returns: Document with new styles added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Heading 4&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
-    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mh">0x51</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0x6A</span><span class="p">)</span>
+    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">Pt</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">bold</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="n">font</span><span class="o">.</span><span class="n">italic</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Heading 5&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
-    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mh">0xA6</span><span class="p">,</span> <span class="mh">0xA7</span><span class="p">,</span> <span class="mh">0xAA</span><span class="p">)</span>
+    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">small_caps</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
     <span class="n">font</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">Pt</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Heading 6&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
-    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mh">0x51</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0x6A</span><span class="p">)</span>
+    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
     <span class="n">font</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">Pt</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">bold</span> <span class="o">=</span> <span class="kc">True</span>
@@ -101,18 +109,22 @@
     <span class="k">return</span> <span class="n">document</span></div>
 
 
-<div class="viewcode-block" id="set_list_bullets"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.style.set_list_bullets">[docs]</a><span class="k">def</span> <span class="nf">set_list_bullets</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Set list bullet styles.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="set_list_bullets"><a class="viewcode-back" href="../../../modules/export/tools/style.html#export.tools.style.set_list_bullets">[docs]</a><span class="k">def</span> <span class="nf">set_list_bullets</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Set list bullet styles.</span>
+
+<span class="sd">    :param document: The document being manipulated.</span>
+<span class="sd">    :returns: Document with new styles added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;List Bullet&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
-    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mh">0x51</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0x6A</span><span class="p">)</span>
+    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
     <span class="n">font</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">Pt</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">bold</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;List Bullet 2&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
-    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mh">0xA6</span><span class="p">,</span> <span class="mh">0xA7</span><span class="p">,</span> <span class="mh">0xAA</span><span class="p">)</span>
+    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">Pt</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
     <span class="n">style</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">tab_stops</span><span class="o">.</span><span class="n">add_tab_stop</span><span class="p">(</span>
@@ -120,12 +132,15 @@
         <span class="n">alignment</span><span class="o">=</span><span class="n">WD_TAB_ALIGNMENT</span><span class="o">.</span><span class="n">LEFT</span><span class="p">,</span>
         <span class="n">leader</span><span class="o">=</span><span class="n">WD_TAB_LEADER</span><span class="o">.</span><span class="n">SPACES</span>
     <span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">style</span><span class="o">.</span><span class="n">paragraph_format</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">document</span></div>
 
 
-<div class="viewcode-block" id="set_skill_styles"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.style.set_skill_styles">[docs]</a><span class="k">def</span> <span class="nf">set_skill_styles</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Define remaining styles.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="set_skill_styles"><a class="viewcode-back" href="../../../modules/export/tools/style.html#export.tools.style.set_skill_styles">[docs]</a><span class="k">def</span> <span class="nf">set_skill_styles</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Define remaining styles.</span>
+
+<span class="sd">    :param document: The document being manipulated.</span>
+<span class="sd">    :returns: Document with new styles added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="o">.</span><span class="n">add_style</span><span class="p">(</span><span class="s1">&#39;Skill&#39;</span><span class="p">,</span> <span class="n">WD_STYLE_TYPE</span><span class="o">.</span><span class="n">PARAGRAPH</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
@@ -133,7 +148,7 @@
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Skill&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
-    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mh">0x51</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0x6A</span><span class="p">)</span>
+    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">Pt</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">bold</span> <span class="o">=</span> <span class="kc">True</span>
 
@@ -144,22 +159,26 @@
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Sub Skill&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
-    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mh">0x51</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0x6A</span><span class="p">)</span>
+    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">Pt</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">document</span></div>
 
 
-<div class="viewcode-block" id="set_normal_style"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.style.set_normal_style">[docs]</a><span class="k">def</span> <span class="nf">set_normal_style</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Define the normal style for the template.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="set_normal_style"><a class="viewcode-back" href="../../../modules/export/tools/style.html#export.tools.style.set_normal_style">[docs]</a><span class="k">def</span> <span class="nf">set_normal_style</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Define the normal style for the template.</span>
+
+<span class="sd">    :param document: The document being manipulated.</span>
+<span class="sd">    :returns: Document with new styles added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">style</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="s1">&#39;Normal&#39;</span><span class="p">]</span>
     <span class="n">font</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">font</span>
     <span class="n">font</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Hind&#39;</span>
-    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mh">0xA6</span><span class="p">,</span> <span class="mh">0xA7</span><span class="p">,</span> <span class="mh">0xAA</span><span class="p">)</span>
+    <span class="n">font</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">rgb</span> <span class="o">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">font</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">Pt</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">document</span></div>
 
 
-<div class="viewcode-block" id="set_styles"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.style.set_styles">[docs]</a><span class="k">def</span> <span class="nf">set_styles</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+<div class="viewcode-block" id="set_styles"><a class="viewcode-back" href="../../../modules/export/tools/style.html#export.tools.style.set_styles">[docs]</a><span class="k">def</span> <span class="nf">set_styles</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Set styles in the Word document.</span>
 
 <span class="sd">    :param object document: Current document.</span>
@@ -178,15 +197,15 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-  <li><a href="../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../index.html">Module code</a><ul>
-  </ul></li>
-  </ul></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/export.html">Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../continuous/index.html">Continuous X Is Continuous</a></li>
 </ul>
-</div>
+
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">

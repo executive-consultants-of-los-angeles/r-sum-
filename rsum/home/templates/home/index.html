@@ -14,6 +14,15 @@
 <html lang="en" class="no-js">
     <!-- BEGIN HEAD -->
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ google_analytics_id }}"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '{{ google_analytics_id }}');
+        </script>
         <meta charset="utf-8"/>
         <title>{{ cv.name }}</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,7 +43,7 @@
         <link href="{% static 'css/layout.css' %}" rel="stylesheet" type="text/css"/>
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="favicon.ico"/>
+        <link rel="shortcut icon" href="{% static 'profiles/'|add:dir|add:'/img/favicon.ico' %}"/>
     </head>
     <!-- END HEAD -->
 

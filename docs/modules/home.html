@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>notes for the home app &#8212; rsum 0.0.2 documentation</title>
+    <title>Home &#8212; rsum v0.1.2 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.2',
+        VERSION:     'v0.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="home app models" href="models/index.html" />
+    <link rel="next" title="Home Models" href="home/models.html" />
     <link rel="prev" title="Welcome to rsum’s documentation!" href="../index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -40,38 +40,53 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="notes-for-the-home-app">
-<h1>notes for the home app<a class="headerlink" href="#notes-for-the-home-app" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="home">
+<h1>Home<a class="headerlink" href="#home" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="models/index.html">home app models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="models/profile.html">home.models.profile</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="models/profile.html#what-do-we-mean-by-profile">What do we mean by profile?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models/profile.html#why-don-t-we-just-call-it-a-resume-like-everyone-else">Why don’t we just call it a résumé like everyone else?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models/profile.html#right-so-that-s-pretty-dumb-what-s-the-object-look-like">Right, so, that’s pretty dumb. What’s the object look like?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="models/profile.html#profile-fields">Profile Fields</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="models/profile.html#okay-so-it-ought-to-be-pretty-easy-to-test-then-yeah">Okay, so it ought to be pretty easy to test then, yeah?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="models/profile.html#profile-class">Profile Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="home/models.html">Home Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="home/models/profile.html">Profile Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="home/models/profile.html#module-home.models.profile">Profile Model (API[ish])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home/models/profile.html#pretentious-bullshit-about-resumes">Pretentious Bullshit About Résumés</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="home/models/profile.html#what-do-we-mean-by-profile">What do we mean by profile?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="home/models/profile.html#why-don-t-we-just-call-it-a-resume-like-everyone-else">Why don’t we just call it a résumé like everyone else?</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="models/section.html">home.models.section</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="models/section.html#just-what-is-a-section-anyway">Just what is a section anyway?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models/section.html#okay-so-we-ve-lowered-our-expectations-for-this-software-now-what">Okay, so, we’ve lowered our expectations for this software, now what?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="home/models/section.html">Section Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="home/models/section.html#module-home.models.section">Section Model (kind-of) API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home/models/section.html#pretentious-bullshit-about-resume-sections">Pretentious Bullshit About Résumé Sections</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="home/models/section.html#a-section-of-a-resume">A Section of a Résumé</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="models/section.html#section-fields">Section Fields</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="models/section.html#so-how-do-we-write-unit-tests-for-a-section-object">So how do we write unit tests for a Section object?</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="models/section.html#section-class">Section Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="home/models/skills.html">Skills Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="home/models/skills.html#module-home.models.skills">Skills Model (almost-an) API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="home/models/skills.html#even-more-pretentious-bullshit">(Even More) Pretentious Bullshit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="home/models/skills.html#calculation-of-skill-values">Calculation of Skill Values</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="home/models/skills.html#formula-for-their-calulcation-isn-t-this-a-resume-application">Formula for their calulcation? Isn’t this a résumé application?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="views/index.html">Views</a></li>
-<li class="toctree-l1"><a class="reference internal" href="templates/index.html">templates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="home/models/skills.html#fancy">Fancy!</a></li>
+<li class="toctree-l4"><a class="reference internal" href="home/models/skills.html#okay-so-it-s-ugly-that-doesn-t-mean-it-can-t-be-tested">Okay, so it’s ugly, that doesn’t mean it can’t be tested.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="home/models/skills.html#but-what-is-there-to-test">But what is there to test?</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="home/models/skills.html#what-should-it-look-like-instead">What should it look like instead?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="home/tests.html">Home Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="home/tests.html#module-home.tests.models.test_profile">Home Model Tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="home/views.html">Home Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="home/templates/index.html">templates</a></li>
 </ul>
 </div>
 </div>
@@ -81,15 +96,28 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../index.html" title="previous chapter">Welcome to rsum’s documentation!</a></li>
-      <li>Next: <a href="models/index.html" title="next chapter">home app models</a></li>
-  </ul></li>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Home</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="home/models.html">Home Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="home/tests.html">Home Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="home/views.html">Home Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="home/templates/index.html">templates</a></li>
 </ul>
-</div>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../continuous/index.html">Continuous X Is Continuous</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/home.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">

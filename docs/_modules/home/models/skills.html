@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>home.models.skills &#8212; rsum 0.0.2 documentation</title>
+    <title>home.models.skills &#8212; rsum v0.1.2 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '0.0.2',
+        VERSION:     'v0.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -40,22 +40,34 @@
             
   <h1>Source code for home.models.skills</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Module for handling skils calculation.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">copy</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
 
 
-<div class="viewcode-block" id="Skills"><a class="viewcode-back" href="../../../modules/models/skills.html#home.models.skills.Skills">[docs]</a><span class="k">class</span> <span class="nc">Skills</span><span class="p">:</span>
+<div class="viewcode-block" id="Skills"><a class="viewcode-back" href="../../../modules/home/models/skills.html#home.models.skills.Skills">[docs]</a><span class="k">class</span> <span class="nc">Skills</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Skills class for Skills objects.&quot;&quot;&quot;</span>
 
     <span class="n">skills_data</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">sub_skills</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">current_year</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y&quot;</span><span class="p">))</span>
     <span class="n">career_length</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">start_year</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y&quot;</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">skills_data</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialize the Skills class.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">skills_data</span> <span class="o">=</span> <span class="n">skills_data</span>
 
-<div class="viewcode-block" id="Skills.calculate_skills"><a class="viewcode-back" href="../../../modules/models/skills.html#home.models.skills.Skills.calculate_skills">[docs]</a>    <span class="k">def</span> <span class="nf">calculate_skills</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Skills.calculate_experience"><a class="viewcode-back" href="../../../modules/home/models/skills.html#home.models.skills.Skills.calculate_experience">[docs]</a>    <span class="k">def</span> <span class="nf">calculate_experience</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">skill</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return experience as a percentage.&quot;&quot;&quot;</span>
+        <span class="n">experience</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">start_skill</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">skill</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">))</span>
+        <span class="n">years_skill</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_year</span> <span class="o">-</span> <span class="n">start_skill</span>
+        <span class="n">experience</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;value&#39;</span><span class="p">:</span>
+                           <span class="n">years_skill</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">career_length</span> <span class="o">*</span> <span class="mi">100</span><span class="p">})</span>
+        <span class="n">experience</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;string&#39;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> year(s)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">years_skill</span><span class="p">))})</span>
+        <span class="k">return</span> <span class="n">experience</span></div>
+
+<div class="viewcode-block" id="Skills.calculate_skills"><a class="viewcode-back" href="../../../modules/home/models/skills.html#home.models.skills.Skills.calculate_skills">[docs]</a>    <span class="k">def</span> <span class="nf">calculate_skills</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">skills_data</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Calculate necessary values for the skills progress bars.</span>
 
 <span class="sd">        :param skills: The unmodified skills section.</span>
@@ -64,53 +76,41 @@
 <span class="sd">        :rtype: OrderedDict</span>
 <span class="sd">        :raises: ValueError</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">skills_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">skills_data</span>
-        <span class="n">begin</span> <span class="o">=</span> <span class="n">skills_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">career_length</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_year</span><span class="p">)</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span><span class="n">begin</span><span class="p">)</span>
+        <span class="n">start_year</span> <span class="o">=</span> <span class="n">skills_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">career_length</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_year</span><span class="p">)</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span><span class="n">start_year</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">skill</span> <span class="ow">in</span> <span class="n">skills_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="s1">&#39;start&#39;</span><span class="p">:</span>
-                <span class="n">start_skill</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">skill</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">))</span>
-                <span class="n">years_skill</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_year</span> <span class="o">-</span> <span class="n">start_skill</span>
-                <span class="n">experience_value</span> <span class="o">=</span> <span class="n">years_skill</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">career_length</span> <span class="o">*</span> <span class="mi">100</span>
-                <span class="n">experience_string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> year(s)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">years_skill</span><span class="p">))</span>
+            <span class="n">experience</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_experience</span><span class="p">(</span><span class="n">skill</span><span class="p">)</span>
 
-                <span class="n">skills_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_sub_skills</span><span class="p">(</span>
-                    <span class="n">name</span><span class="p">,</span> <span class="n">skill</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">skills_data</span><span class="p">)</span>
+            <span class="n">skills_data</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+                <span class="n">name</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">skills_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="n">skills_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;experience_value&#39;</span><span class="p">:</span> <span class="n">experience</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;experience_string&#39;</span><span class="p">:</span> <span class="n">experience</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
 
-                <span class="n">skills_data</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
-                    <span class="n">name</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">skills_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">),</span>
-                        <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="n">skills_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">),</span>
-                        <span class="s1">&#39;experience_value&#39;</span><span class="p">:</span> <span class="n">experience_value</span><span class="p">,</span>
-                        <span class="s1">&#39;experience_string&#39;</span><span class="p">:</span> <span class="n">experience_string</span><span class="p">,</span>
-                    <span class="p">}</span>
-                <span class="p">})</span>
+            <span class="n">skills_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_sub_skills</span><span class="p">(</span>
+                <span class="n">name</span><span class="p">,</span> <span class="n">skill</span><span class="p">,</span> <span class="n">skills_data</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">skills_data</span></div>
 
-<div class="viewcode-block" id="Skills.calculate_sub_skills"><a class="viewcode-back" href="../../../modules/models/skills.html#home.models.skills.Skills.calculate_sub_skills">[docs]</a>    <span class="k">def</span> <span class="nf">calculate_sub_skills</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sub_skills</span><span class="p">,</span> <span class="n">skills_data</span><span class="p">):</span>
+<div class="viewcode-block" id="Skills.calculate_sub_skills"><a class="viewcode-back" href="../../../modules/home/models/skills.html#home.models.skills.Skills.calculate_sub_skills">[docs]</a>    <span class="k">def</span> <span class="nf">calculate_sub_skills</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sub_skills</span><span class="p">,</span> <span class="n">skills_data</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Calculate sub skills and return the result.&quot;&quot;&quot;</span>
-        <span class="c1"># I don&#39;t much like nested for loops, but it&#39;s the only way.</span>
-        <span class="k">for</span> <span class="n">sub_name</span><span class="p">,</span> <span class="n">sub_skill</span> <span class="ow">in</span> <span class="n">sub_skills</span><span class="p">:</span>
-            <span class="k">if</span> <span class="p">(</span>
-                    <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sub_skill</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span>
-                    <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sub_skill</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
-            <span class="p">):</span>
-                <span class="n">start_sub</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sub_skill</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">))</span>
-                <span class="n">years_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_year</span> <span class="o">-</span> <span class="n">start_sub</span>
-                <span class="n">sub_experience_value</span> <span class="o">=</span> <span class="n">years_sub</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">career_length</span> <span class="o">*</span> <span class="mi">100</span>
-                <span class="n">sub_experience_string</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> year(s)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">years_sub</span><span class="p">))</span>
-                <span class="p">)</span>
+        <span class="n">local_sub</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">sub_skills</span><span class="p">)</span>
+        <span class="n">local_sub</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+        <span class="n">local_sub</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">sub_name</span><span class="p">,</span> <span class="n">sub_skill</span> <span class="ow">in</span> <span class="n">local_sub</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">experience</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_experience</span><span class="p">(</span><span class="n">sub_skill</span><span class="p">)</span>
 
-                <span class="n">skills_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
-                    <span class="n">sub_name</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">sub_skill</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">),</span>
-                        <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="n">sub_skill</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">),</span>
-                        <span class="s1">&#39;experience_value&#39;</span><span class="p">:</span> <span class="n">sub_experience_value</span><span class="p">,</span>
-                        <span class="s1">&#39;experience_string&#39;</span><span class="p">:</span> <span class="n">sub_experience_string</span><span class="p">,</span>
-                    <span class="p">}</span>
-                <span class="p">})</span>
+            <span class="n">skills_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+                <span class="n">sub_name</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">sub_skill</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="n">sub_skill</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;experience_value&#39;</span><span class="p">:</span> <span class="n">experience</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;experience_string&#39;</span><span class="p">:</span> <span class="n">experience</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
         <span class="k">return</span> <span class="n">skills_data</span></div></div>
 </pre></div>
 
@@ -118,15 +118,15 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-  <li><a href="../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../index.html">Module code</a><ul>
-  </ul></li>
-  </ul></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/export.html">Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../continuous/index.html">Continuous X Is Continuous</a></li>
 </ul>
-</div>
+
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">

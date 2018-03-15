@@ -21,6 +21,16 @@ def index(request):
     :return: HttpResponse object resulting from execution of render method.
     :rtype: object
     """
+    return render(request, 'home/index.html', get_context())
+
+
+def thecraiglist(request):
+    """Return view for thecraiglist."""
+    return render(request, 'thecraiglist/index.html', get_context())
+
+
+def get_context():
+    """Return context for view."""
     profile = Profile.objects.all()[0]
 
     sections = OrderedDict()
@@ -39,6 +49,7 @@ def index(request):
         'profile': profile,
         'sections': sections,
         'dir': settings.DIR,
+        'google_analytics_id': settings.GAID,
     }
 
-    return render(request, 'home/index.html', context)
+    return context

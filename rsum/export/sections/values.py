@@ -7,13 +7,15 @@ class Values(object):
     name = None
     document = None
 
-    def save(self, name, section, document):
+    def save(self, section, document, graphics=True):
+        """Get intro."""
+        self.document = document
+        section = self.name
+        return document
+
+    def save_with_graphics(self, name, section, document):
         """Get intro."""
         self.name = name
         self.document = document
         section = self.name
         return document
-
-    def organize(self):
-        """Organize something."""
-        return self
