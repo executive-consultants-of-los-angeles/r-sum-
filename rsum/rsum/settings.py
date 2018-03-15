@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django_extensions',
 ]
 DIR = os.environ.get('RSUM_ENV')
+GAID = os.environ.get('RSUM_GAID')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
