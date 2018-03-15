@@ -15,13 +15,13 @@
     <!-- BEGIN HEAD -->
     <head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109574078-2"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ google_analytics_id }}"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'UA-109574078-2');
+          gtag('config', '{{ google_analytics_id }}');
         </script>
         <meta charset="utf-8"/>
         <title>{{ cv.name }}</title>
