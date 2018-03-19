@@ -1,11 +1,8 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 
-
 [packages]
-
 dj-database-url = "*"
 django = "*"
 gunicorn = "*"
@@ -19,8 +16,7 @@ pyyaml = {git = "https://github.com/yaml/pyyaml"}
 aws = "*"
 django-extensions = "*"
 pylint = "*"
-
+"psycopg2-binary" = "*"
 
 [requires]
-
 python_version = "3.6.4"
