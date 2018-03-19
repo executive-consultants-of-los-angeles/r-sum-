@@ -30,6 +30,11 @@ class Summary(object):
         return document
 
     def get_summary_graphics(self, section, document):
+        """Get graphics for summary section.
+
+        :param section: The current summary section.
+        :param document: The document being operated on.
+        """
         summary = section
         settings = self.settings
         paragraph = document.add_paragraph('')
