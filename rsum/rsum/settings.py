@@ -73,7 +73,7 @@ DATABASES = {
         'NAME': os.environ.get('RSUM_ENV'),
         'USER': os.environ.get('RSUM_ENV'),
         'PASSWORD': '',
-        'HOST': 'pg.gc',
+        'HOST': 'postgres',
         'PORT': '5432',
     }
 }

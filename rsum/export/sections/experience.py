@@ -42,15 +42,13 @@ class Experience(object):
                 graphics=graphics
             )
 
-        paragraph = document.add_paragraph('')
-        paragraph.paragraph_format.line_spacing = 0
         return document
 
     def add_intro(self, document):
         """Add an introduction to the experience section."""
         introduction = self.experience.pop(0)
         paragraph = document.add_paragraph(
-            introduction.get('introduction'), style='Normal')
+            introduction.get('introduction'), style='Heading 4')
         paragraph.paragraph_format.line_spacing = 0.7
         return document
 
