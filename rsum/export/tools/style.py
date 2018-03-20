@@ -1,7 +1,6 @@
 """Styles module."""
 # pylint: disable=no-member
 from docx.shared import Pt
-from docx.shared import RGBColor
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_TAB_ALIGNMENT
 from docx.enum.text import WD_TAB_LEADER
@@ -70,12 +69,11 @@ def set_list_bullets(document):
     style = document.styles['List Bullet']
     font = style.font
     font.name = 'Calibri'
-    font.size = Pt(5)
-    font.bold = True
+    font.size = Pt(6.5)
 
     style = document.styles['List Bullet 2']
     font = style.font
-    font.size = Pt(5)
+    font.size = Pt(5.5)
     font.name = 'Calibri'
     style.paragraph_format.tab_stops.add_tab_stop(
         Cm(0.1),

@@ -1,5 +1,6 @@
 """Contact module."""
 # pylint: disable=too-few-public-methods
+from docx.shared import Pt
 
 
 def complete_contact(contact, document, table):
@@ -12,7 +13,7 @@ def complete_contact(contact, document, table):
         style='Heading 5')
     paragraph.paragraph_format.space_before = 0
     paragraph = table.cell(1, 0).paragraphs[0]
-    paragraph.paragraph_format.line_spacing = 0
+    paragraph.paragraph_format.line_spacing = Pt(7)
     table.cell(1, 0).add_paragraph(
         'Phone',
         style='Heading 4')
@@ -21,7 +22,7 @@ def complete_contact(contact, document, table):
         style='Heading 5')
     paragraph.paragraph_format.space_before = 0
     paragraph = table.cell(1, 1).paragraphs[0]
-    paragraph.paragraph_format.line_spacing = 0
+    paragraph.paragraph_format.line_spacing = Pt(7)
     table.cell(1, 1).add_paragraph('Location', style='Heading 4')
     paragraph = table.cell(1, 1).add_paragraph(
         contact.get('location'),
@@ -38,22 +39,23 @@ def start_contact(contact, document):
         contact.get('title'), style='Heading 3')
 
     paragraph = document.add_paragraph(
-        contact.get('message'), style='Normal')
+        contact.get('message'), style='Heading 6')
 
     paragraph.paragraph_format.space_after = 0
-    table = document.add_table(rows=2, cols=6)
+    paragraph.paragraph_format.line_spacing = Pt(7)
+    table = document.add_table(rows=2, cols=2)
     paragraph = table.cell(0, 0).paragraphs[0]
-    paragraph.paragraph_format.line_spacing = 0
+    paragraph.paragraph_format.line_spacing = Pt(7)
     table.cell(0, 0).add_paragraph(
-        'Website',
+        'Email',
         style='Heading 4')
     paragraph = table.cell(0, 0).add_paragraph(
-        contact.get('web'),
+        contact.get('email'),
         style='Heading 5')
     paragraph.paragraph_format.space_before = 0
     paragraph = table.cell(0, 1).paragraphs[0]
-    paragraph.paragraph_format.line_spacing = 0
-    document = complete_contact(contact, document, table)
+    paragraph.paragraph_format.line_spacing = Pt(7)
+    # document = complete_contact(contact, document, table)
     return document
 
 
