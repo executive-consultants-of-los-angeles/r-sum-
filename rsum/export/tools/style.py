@@ -16,21 +16,21 @@ def set_first_headings(document):
     """
     style = document.styles['Heading 1']
     font = style.font
-    font.color.rgb = RGBColor(0, 0, 0)
-    font.name = 'Hind'
+    # font.color.rgb = RGBColor(0, 0, 0)
+    # font.name = 'Hind'
     font.size = Pt(24)
     font.bold = True
 
     style = document.styles['Heading 2']
     font = style.font
-    font.name = 'Hind'
+    # font.name = 'Hind'
     font.italic = False
     font.color.rgb = RGBColor(0, 0, 0)
     font.size = Pt(16)
 
     style = document.styles['Heading 3']
     font = style.font
-    font.name = 'Hind'
+    # font.name = 'Hind'
     font.color.rgb = RGBColor(0, 0, 0)
     font.size = Pt(14)
     font.bold = True

@@ -10,7 +10,7 @@ from django.conf import settings as django_settings
 from docx import Document
 
 from export.tools import layout
-from export.tools import style
+# from export.tools import style
 from home.models.profile import Profile
 
 
@@ -81,7 +81,7 @@ class ExportDocument(object):
         :rtype: object
         """
         document = self.document
-        document = style.set_styles(document)
+        # document = style.set_styles(document)
         document = layout.set_layout(document)
 
         return document

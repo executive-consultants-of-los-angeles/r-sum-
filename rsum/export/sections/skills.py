@@ -71,29 +71,26 @@ class Skills(object):
         skills = section
 
         document.add_paragraph('Skills', style='Heading 3')
-        table = document.add_table(rows=1, cols=1)
-        t_sub = table.cell(0, 0).add_table(rows=1, cols=2)
-        table.cell(0, 0).tables[0].columns[0].width = Cm(7)
+        table = document.add_table(rows=1, cols=2)
         index = 1
         for skill_name, skill in skills.items():
             if isinstance(skill, dict):
+                t_sub = table.cell(0, index % 2).add_table(rows=1, cols=2)
                 experience = int(self.current_year) - int(skill.get('start'))
                 experience = '{0} year(s)'.format(str(experience))
                 output_name = skill_name.replace('_', ' ').title()
 
                 # Add a row to the sub table.
                 t_sub.add_row()
-                t_sub.cell(index-1, 0).text = output_name
-                t_sub.cell(index-1, 0).paragraphs[0] = set_paragraph(
-                    t_sub, index
-                )
-                t_sub.cell(index-1, 1).text = experience
+                t_sub.cell(0, 0).text = output_name
+                t_sub.cell(0, 0).paragraphs[0] = set_paragraph(t_sub, 0)
 
-                t_sub.cell(index-1, 1).paragraphs[0] = (
-                    set_inner_paragraph(t_sub, index)
+                t_sub.cell(0, 1).text = experience
+                t_sub.cell(0, 1).paragraphs[0] = (
+                    set_inner_paragraph(t_sub, 1)
                 )
 
-                t_sub = self.add_sub_skills(skill, t_sub, index-1)
+                t_sub = self.add_sub_skills(skill, t_sub, index % 2)
             index = index + 1
         return document
 
