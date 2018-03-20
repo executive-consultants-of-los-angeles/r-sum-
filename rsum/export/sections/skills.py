@@ -45,6 +45,7 @@ class Skills(object):
 
     def save(self, section, document, graphics):
         """Add skills section.
+
         :param skills: Skills section to add to document.
         :type summary: [dict(str, str)]
         :param document: Current document.
@@ -54,8 +55,6 @@ class Skills(object):
         """
         self.document = document
         self.graphics = graphics
-        paragraph = document.add_paragraph('')
-        paragraph.paragraph_format.line_spacing = 0.0
         document = self.get_skills(section, document)
         return document
 
