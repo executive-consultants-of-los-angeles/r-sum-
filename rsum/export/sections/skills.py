@@ -68,8 +68,6 @@ class Skills(object):
         :return: Document updated with Skills.
         :rtype: object
         """
-        paragraph = document.add_paragraph('')
-        paragraph.paragraph_format.line_spacing = 0.0
         skills = section
 
         table = document.add_table(rows=1, cols=1)
