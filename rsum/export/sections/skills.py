@@ -1,34 +1,6 @@
 """Skills section module."""
 # pylint: disable=no-name-in-module
 import datetime
-from docx.enum.text import WD_ALIGN_PARAGRAPH
-
-
-def set_paragraph(t_sub, index):
-    """Add skills section.
-
-    :param t_sub: Table for the current sub skill.
-    :param index: Index of current skill.
-    """
-    paragraph = t_sub.cell(index-1, 0).paragraphs[0]
-    paragraph.paragraph_format.line_spacing = 1.0
-    paragraph.paragraph_format.space_after = 0
-
-    return paragraph
-
-
-def set_inner_paragraph(t_sub, index):
-    """Set styles for inner skills section.
-
-    :param t_sub: Table for the current sub skill.
-    :param index: Index of current skill.
-    """
-    paragraph = t_sub.cell(index-1, 1).paragraphs[0]
-    paragraph.paragraph_format.line_spacing = 1.0
-    paragraph.paragraph_format.space_after = 0
-    paragraph.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-
-    return paragraph
 
 
 class Skills(object):
@@ -79,16 +51,27 @@ class Skills(object):
                     "{} \t || {}".format(output_name, experience),
                     "List Bullet"
                 )
-
-                for sub in skill.items():
-                    if isinstance(sub[1], dict):
-                        experience = (
-                            int(self.current_year) - int(sub[1].get('start')))
-                        experience = '{0} year(s)'.format(str(experience))
-                        table.cell(0, index % 2).add_paragraph(
-                            "{} \t || {}".format(
-                                sub[1].get('name'), experience),
-                            "List Bullet 2"
-                        )
+                self.sub_skills = skill
+                table = self.get_sub_skills(skill, table, index)
             index = index + 1
         return document
+
+    def get_sub_skills(self, sub_skills, table, index):
+        """Add sub skills for skills section.
+
+        :param sub_skills: The collection of sub skills to add.
+        :param table: The table to update.
+        :param index: Current iteration of parent loop.
+        :return: Updated table.
+        """
+        for sub in sub_skills.items():
+            if isinstance(sub[1], dict):
+                experience = (
+                    int(self.current_year) - int(sub[1].get('start')))
+                experience = '{0} year(s)'.format(str(experience))
+                table.cell(0, index % 2).add_paragraph(
+                    "{} \t || {}".format(
+                        sub[1].get('name'), experience),
+                    "List Bullet 2"
+                )
+        return table
