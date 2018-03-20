@@ -70,8 +70,8 @@ class Skills(object):
         """
         skills = section
 
+        document.add_paragraph('Skills', style='Heading 3')
         table = document.add_table(rows=1, cols=1)
-        table.cell(0, 0).add_paragraph('Skills', style='Heading 3')
         t_sub = table.cell(0, 0).add_table(rows=1, cols=2)
         table.cell(0, 0).tables[0].columns[0].width = Cm(7)
         index = 1
