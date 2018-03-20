@@ -16,22 +16,19 @@ def set_first_headings(document):
     """
     style = document.styles['Heading 1']
     font = style.font
-    # font.color.rgb = RGBColor(0, 0, 0)
-    # font.name = 'Hind'
+    font.name = 'Calibri'
     font.size = Pt(24)
     font.bold = True
 
     style = document.styles['Heading 2']
     font = style.font
-    # font.name = 'Hind'
+    font.name = 'Calibri'
     font.italic = False
-    font.color.rgb = RGBColor(0, 0, 0)
     font.size = Pt(16)
 
     style = document.styles['Heading 3']
     font = style.font
-    # font.name = 'Hind'
-    font.color.rgb = RGBColor(0, 0, 0)
+    font.name = 'Calibri'
     font.size = Pt(14)
     font.bold = True
     return document
@@ -45,23 +42,19 @@ def set_second_headings(document):
     """
     style = document.styles['Heading 4']
     font = style.font
-    font.name = 'Hind'
-    font.color.rgb = RGBColor(0, 0, 0)
     font.size = Pt(8)
     font.bold = True
     font.italic = False
 
     style = document.styles['Heading 5']
     font = style.font
-    font.color.rgb = RGBColor(0, 0, 0)
     font.small_caps = True
-    font.name = 'Hind'
+    font.name = 'Calibri'
     font.size = Pt(7)
 
     style = document.styles['Heading 6']
     font = style.font
-    font.color.rgb = RGBColor(0, 0, 0)
-    font.name = 'Hind'
+    font.name = 'Calibri'
     font.size = Pt(6)
     font.bold = True
     font.italic = False
@@ -76,16 +69,14 @@ def set_list_bullets(document):
     """
     style = document.styles['List Bullet']
     font = style.font
-    font.color.rgb = RGBColor(0, 0, 0)
-    font.name = 'Hind'
+    font.name = 'Calibri'
     font.size = Pt(5)
     font.bold = True
 
     style = document.styles['List Bullet 2']
     font = style.font
-    font.color.rgb = RGBColor(0, 0, 0)
     font.size = Pt(5)
-    font.name = 'Hind'
+    font.name = 'Calibri'
     style.paragraph_format.tab_stops.add_tab_stop(
         Cm(0.1),
         alignment=WD_TAB_ALIGNMENT.LEFT,
@@ -106,8 +97,7 @@ def set_skill_styles(document):
         pass
     style = document.styles['Skill']
     font = style.font
-    font.name = 'Hind'
-    font.color.rgb = RGBColor(0, 0, 0)
+    font.name = 'Calibri'
     font.size = Pt(9)
     font.bold = True
 
@@ -117,8 +107,7 @@ def set_skill_styles(document):
         pass
     style = document.styles['Sub Skill']
     font = style.font
-    font.name = 'Hind'
-    font.color.rgb = RGBColor(0, 0, 0)
+    font.name = 'Calibri'
     font.size = Pt(7)
     return document
 
@@ -131,8 +120,7 @@ def set_normal_style(document):
     """
     style = document.styles['Normal']
     font = style.font
-    font.name = 'Hind'
-    font.color.rgb = RGBColor(0, 0, 0)
+    font.name = 'Calibri'
     font.size = Pt(11)
     return document
 

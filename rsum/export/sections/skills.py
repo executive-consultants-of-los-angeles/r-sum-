@@ -12,7 +12,6 @@ def set_paragraph(t_sub, index):
     :param index: Index of current skill.
     """
     paragraph = t_sub.cell(index-1, 0).paragraphs[0]
-    paragraph.style = 'Skill'
     paragraph.paragraph_format.line_spacing = 1.0
     paragraph.paragraph_format.space_after = 0
 
@@ -26,7 +25,6 @@ def set_inner_paragraph(t_sub, index):
     :param index: Index of current skill.
     """
     paragraph = t_sub.cell(index-1, 1).paragraphs[0]
-    paragraph.style = 'Skill'
     paragraph.paragraph_format.line_spacing = 1.0
     paragraph.paragraph_format.space_after = 0
     paragraph.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.RIGHT
@@ -124,11 +122,11 @@ class Skills(object):
                     sub_table.cell(index, 0).width = Cm(1)
                     sub_table.cell(index, 1).text = experience
                 paragraph = sub_table.cell(index, 0).paragraphs[0]
-                paragraph.style = 'Sub Skill'
+                # paragraph.style = 'Sub Skill'
                 paragraph.paragraph_format.line_spacing = 1.0
                 paragraph.paragraph_format.space_after = 0
                 paragraph = sub_table.cell(index, 1).paragraphs[0]
-                paragraph.style = 'Sub Skill'
+                # paragraph.style = 'Sub Skill'
                 paragraph.paragraph_format.line_spacing = 1.0
                 paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
                 paragraph.paragraph_format.space_after = 0

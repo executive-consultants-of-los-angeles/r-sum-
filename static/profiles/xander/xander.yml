@@ -18,11 +18,11 @@
       - codacy:
           name: "Codacy Code Quality"
           image:
-            'https://api.codacy.com/project/badge/Grade/e8ccc643c99147dca4fd98a8b2851451'
+            'https://api.codacy.com/project/badge/Grade/6815cf5fa39f4bbf88ca1cd349eb2f79'
       - codacy_coverage:
           name: 'Codacy Test Coverage'
           image:
-            'https://api.codacy.com/project/badge/Coverage/e8ccc643c99147dca4fd98a8b2851451'
+            'https://api.codacy.com/project/badge/Coverage/6815cf5fa39f4bbf88ca1cd349eb2f79'
 - skills:
     start: 2000
     operating_systems:
