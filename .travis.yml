@@ -13,7 +13,7 @@ before_script:
   - docker pull postgres:alpine
   - >
       docker run --user postgres -v /tmp/pg:/var/lib/postgresql:rw
-      --network rsum --expose 5432 -h pg.gc --name pg.gc --rm -d
+      --network rsum --expose 5432 -h postgres --name postgres --rm -d
       postgres:alpine postgres -D /var/lib/postgresql/data
 script:
   - docker build -t rsum bin
@@ -22,7 +22,7 @@ script:
       --network rsum -d --name rsum --rm rsum
   - tar xvf aws.tar.bz2
   - docker cp aws rsum:/root/.aws
-  - docker exec pg.gc createuser -s xander
+  - docker exec postgres createuser -s xander
   - docker exec rsum pytest rsum/home/tests/models/test_section.py
   - docker exec rsum pytest rsum/home/tests/models/test_profile.py
   - docker exec rsum coverage run setup.py test || true
