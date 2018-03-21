@@ -6,19 +6,22 @@ then
   if [ -z ${LOCAL+x} ];
   then
     echo "remote"
-    export PGHOST=pg.gc;
+    export PGHOST=postgres;
+    docker exec --user postgres postgres createuser -e -s $RSUM_ENV;
+    echo "created user";
+    docker exec --user postgres postgres createdb -e $RSUM_ENV;
   else
     echo "localhost"
     export PGHOST=localhost; 
-  fi
 
-  echo "var is unset"; 
-  export PGUSER=postgres;
-  echo "exported pguser";
-  createuser -e -s $RSUM_ENV;
-  echo "created user";
-  createdb -e $RSUM_ENV;
-  echo "created db";
+    echo "var is unset"; 
+    export PGUSER=postgres;
+    echo "exported pguser";
+    createuser -e -s $RSUM_ENV;
+    echo "created user";
+    createdb -e $RSUM_ENV;
+    echo "created db";
+  fi
 else 
   echo "var is set to '$DATABASE_URL'"; 
 fi
