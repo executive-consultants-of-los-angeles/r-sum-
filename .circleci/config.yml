@@ -7,6 +7,7 @@ jobs:
       - run: docker network create rsum || true
       - run: >
           docker run -d --rm --name postgres -h postgres --network rsum
+          -e PGHOST=postgres -e PGUSER=postgres
           -p 5432:5432 postgres:alpine postgres -D /var/lib/postgresql/data
       - run: docker exec --user postgres postgres createuser -s dev
       - checkout
