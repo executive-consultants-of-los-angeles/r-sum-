@@ -1,0 +1,16 @@
+#!/bin/bash
+
+docker network create rsum || true
+mkdir /tmp/pg
+docker pull postgres:alpine
+docker run --user postgres -v /tmp/pg:/var/lib/postgresql:rw --network rsum --expose 5432 -h postgres --name postgres --rm -d postgres:alpine postgres -D /var/lib/postgresql/data
+docker build -t rsum bin
+docker run -e CODACY_PROJECT_TOKEN=16dae58cf59049eda9c6d34c207c5d54 --network rsum -d --name rsum --rm rsum
+docker cp aws rsum:/root/.aws
+docker exec postgres createuser -s xander
+docker exec rsum pytest rsum/home/tests/models/test_section.py
+docker exec rsum pytest rsum/home/tests/models/test_profile.py
+docker exec rsum coverage run setup.py test || true
+docker exec rsum coverage xml || true
+docker exec rsum python-codacy-coverage -r coverage.xml
+docker stop rsum
