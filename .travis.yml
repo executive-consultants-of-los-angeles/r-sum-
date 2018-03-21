@@ -4,6 +4,10 @@ sudo: required
 dist: trusty
 before_script:
   - sudo apt-get -y install build-essential
+  - >
+      openssl aes-256-cbc -K $encrypted_4151e6353c4d_key
+      -iv $encrypted_4151e6353c4d_iv -in aws.tar.bz2.enc
+      -out aws.tar.bz2 -d
   - docker network create rsum || true
   - mkdir /tmp/pg
   - docker pull postgres:alpine
@@ -14,8 +18,10 @@ before_script:
 script:
   - docker build -t rsum bin
   - >
-      docker run -e CODACY_PROJECT_TOKEN=a6401ae2caa54f229e65b73ec1863ef1
+      docker run -e CODACY_PROJECT_TOKEN=16dae58cf59049eda9c6d34c207c5d54
       --network rsum -d --name rsum --rm rsum
+  - tar xvf aws.tar.bz2
+  - docker cp aws rsum:/root/.aws
   - docker exec pg.gc createuser -s xander
   - docker exec rsum pytest rsum/home/tests/models/test_section.py
   - docker exec rsum pytest rsum/home/tests/models/test_profile.py

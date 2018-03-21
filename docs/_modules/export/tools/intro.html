@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>export.tools.intro &#8212; rsum 0.0.2 documentation</title>
+    <title>export.tools.intro &#8212; rsum v0.1.2 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '0.0.2',
+        VERSION:     'v0.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -40,26 +40,73 @@
             
   <h1>Source code for export.tools.intro</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Intro module.&quot;&quot;&quot;</span>
+<span class="c1"># pylint: disable=too-few-public-methods,no-name-in-module,no-member</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="k">import</span> <span class="n">settings</span> <span class="k">as</span> <span class="n">django_settings</span>
+<span class="kn">from</span> <span class="nn">docx.shared</span> <span class="k">import</span> <span class="n">Cm</span>
+<span class="kn">from</span> <span class="nn">docx.enum.table</span> <span class="k">import</span> <span class="n">WD_TABLE_ALIGNMENT</span>
+<span class="kn">from</span> <span class="nn">docx.enum.text</span> <span class="k">import</span> <span class="n">WD_ALIGN_PARAGRAPH</span>
 
 
-<div class="viewcode-block" id="get_intro"><a class="viewcode-back" href="../../../rsum/export.tools.html#export.tools.intro.get_intro">[docs]</a><span class="k">def</span> <span class="nf">get_intro</span><span class="p">(</span><span class="n">intro</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get intro.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">intro</span><span class="p">,</span> <span class="n">document</span><span class="p">]</span></div>
+<div class="viewcode-block" id="Intro"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.intro.Intro">[docs]</a><span class="k">class</span> <span class="nc">Intro</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class for Intro objects.&quot;&quot;&quot;</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">document</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="n">django_settings</span>
+
+<div class="viewcode-block" id="Intro.save"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.intro.Intro.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add introduction section.</span>
+
+<span class="sd">        :param intro: Introduction to add to document.</span>
+<span class="sd">        :type intro: [dict(str, str)]</span>
+<span class="sd">        :param document: Current document.</span>
+<span class="sd">        :type document: object</span>
+<span class="sd">        :return: Document updated with Introduction.</span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">intro</span> <span class="o">=</span> <span class="n">section</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">settings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">Cm</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+
+        <span class="n">table</span><span class="o">.</span><span class="n">alignment</span> <span class="o">=</span> <span class="n">WD_TABLE_ALIGNMENT</span><span class="o">.</span><span class="n">CENTER</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="n">intro</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">),</span>
+            <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 1&#39;</span>
+        <span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="n">intro</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;position&#39;</span><span class="p">),</span>
+            <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 2&#39;</span><span class="p">)</span>
+
+        <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">Cm</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">add_picture</span><span class="p">(</span>
+            <span class="s1">&#39;../static/profiles/</span><span class="si">{0}</span><span class="s1">/img/mockup/avatar-02.png&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">settings</span><span class="o">.</span><span class="n">DIR</span><span class="p">))</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span>
+            <span class="mi">0</span><span class="p">,</span>
+            <span class="mi">1</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">paragraphs</span><span class="p">[</span>
+            <span class="mi">0</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">alignment</span> <span class="o">=</span> <span class="n">WD_ALIGN_PARAGRAPH</span><span class="o">.</span><span class="n">CENTER</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">document</span></div></div>
 </pre></div>
 
           </div>
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-  <li><a href="../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../index.html">Module code</a><ul>
-  </ul></li>
-  </ul></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/export.html">Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../continuous/index.html">Continuous X Is Continuous</a></li>
 </ul>
-</div>
+
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">

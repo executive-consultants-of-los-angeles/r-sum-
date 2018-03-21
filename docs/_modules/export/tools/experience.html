@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>export.tools.experience &#8212; rsum 0.0.2 documentation</title>
+    <title>export.tools.experience &#8212; rsum v0.1.2 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '0.0.2',
+        VERSION:     'v0.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -39,27 +39,174 @@
           <div class="body" role="main">
             
   <h1>Source code for export.tools.experience</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;Module for experience.&quot;&quot;&quot;</span>
+<span></span><span class="sd">&quot;&quot;&quot;Experience module.&quot;&quot;&quot;</span>
+<span class="c1"># pylint: disable=no-member</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="k">import</span> <span class="n">settings</span> <span class="k">as</span> <span class="n">django_settings</span>
+<span class="kn">from</span> <span class="nn">docx.shared</span> <span class="k">import</span> <span class="n">Cm</span>
+<span class="kn">from</span> <span class="nn">docx.enum.table</span> <span class="k">import</span> <span class="n">WD_TABLE_ALIGNMENT</span>
 
 
-<div class="viewcode-block" id="get_experience"><a class="viewcode-back" href="../../../rsum/export.tools.html#export.tools.experience.get_experience">[docs]</a><span class="k">def</span> <span class="nf">get_experience</span><span class="p">(</span><span class="n">experience</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get experience.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">experience</span><span class="p">,</span> <span class="n">document</span><span class="p">]</span></div>
+<div class="viewcode-block" id="Experience"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.experience.Experience">[docs]</a><span class="k">class</span> <span class="nc">Experience</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Export Experience object.&quot;&quot;&quot;</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">document</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">projects</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="n">django_settings</span>
+
+<div class="viewcode-block" id="Experience.add_projects"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.experience.Experience.add_projects">[docs]</a>    <span class="k">def</span> <span class="nf">add_projects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">projects</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add projects to experience section.</span>
+
+<span class="sd">        :param [dict(str, str)] projects:</span>
+<span class="sd">            Projects for a portion of Experience section.</span>
+<span class="sd">        :param object table: Table from current document.</span>
+<span class="sd">        :param int row: Index of current row.</span>
+<span class="sd">        :param int col: Index of current col.</span>
+<span class="sd">        :return: Updated Projects table.</span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">projects</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">projects</span>
+        <span class="k">for</span> <span class="n">project_name</span><span class="p">,</span> <span class="n">project</span> <span class="ow">in</span> <span class="n">projects</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+                <span class="n">project_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span>
+                <span class="n">style</span><span class="o">=</span><span class="s1">&#39;List Bullet&#39;</span><span class="p">)</span>
+            <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">1.0</span>
+            <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">space_after</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">project</span><span class="p">:</span>
+                <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+                    <span class="n">item</span><span class="p">,</span>
+                    <span class="n">style</span><span class="o">=</span><span class="s1">&#39;List Bullet 2&#39;</span><span class="p">)</span>
+                <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">1.0</span>
+                <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">space_after</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="n">table</span></div>
+
+<div class="viewcode-block" id="Experience.save"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.experience.Experience.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add experience section.</span>
+
+<span class="sd">        :param [dict(str, str)] experience:</span>
+<span class="sd">            Experience section to add to document.</span>
+<span class="sd">        :param objectable document: Documentable to update.</span>
+<span class="sd">        :return: Documentable updated with Experience section.</span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">experience</span> <span class="o">=</span> <span class="n">section</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">page_break_before</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="s1">&#39;Experience&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 3&#39;</span><span class="p">)</span>
+
+        <span class="n">table</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">alignment</span> <span class="o">=</span> <span class="n">WD_TABLE_ALIGNMENT</span><span class="o">.</span><span class="n">CENTER</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">experience</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">index</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">document</span> <span class="o">=</span> <span class="n">document</span>
+            <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_tables</span><span class="p">(</span><span class="n">table</span><span class="o">=</span><span class="n">table</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
+
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">document</span></div>
+
+<div class="viewcode-block" id="Experience.set_tables"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.experience.Experience.set_tables">[docs]</a>    <span class="k">def</span> <span class="nf">set_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set tables for the experience section.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">document</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">prep_tables</span><span class="p">(</span>
+                <span class="n">table</span><span class="o">=</span><span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">),</span>
+                <span class="n">value</span><span class="o">=</span><span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">document</span>
+        <span class="k">return</span> <span class="n">document</span></div>
+
+<div class="viewcode-block" id="Experience.prep_tables"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.experience.Experience.prep_tables">[docs]</a>    <span class="k">def</span> <span class="nf">prep_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Prepare tables.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">):</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+            <span class="n">row</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span> <span class="o">%</span> <span class="mi">9</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
+            <span class="n">col</span> <span class="o">=</span> <span class="n">index</span> <span class="o">%</span> <span class="mi">3</span>
+            <span class="k">if</span> <span class="p">(</span>
+                    <span class="n">index</span> <span class="o">%</span> <span class="mi">9</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span>
+                    <span class="n">index</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="p">):</span>
+                <span class="n">table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+                <span class="n">table</span><span class="o">.</span><span class="n">alignment</span> <span class="o">=</span> <span class="n">WD_TABLE_ALIGNMENT</span><span class="o">.</span><span class="n">CENTER</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">build_tables</span><span class="p">(</span><span class="n">table</span><span class="o">=</span><span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">),</span>
+                                              <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="n">row</span><span class="p">,</span>
+                                              <span class="n">col</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">item</span><span class="p">)</span>
+            <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">document</span>
+            <span class="k">return</span> <span class="n">document</span></div>
+
+<div class="viewcode-block" id="Experience.build_tables"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.experience.Experience.build_tables">[docs]</a>    <span class="k">def</span> <span class="nf">build_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Construct tables.&quot;&quot;&quot;</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">document</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;row&#39;</span><span class="p">)</span>
+        <span class="n">col</span> <span class="o">=</span> <span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;col&#39;</span><span class="p">)</span>
+        <span class="n">settings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">)</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">%</span> <span class="mi">18</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="mi">17</span><span class="p">):</span>
+            <span class="n">document</span><span class="o">.</span><span class="n">add_page_break</span><span class="p">()</span>
+            <span class="n">table</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">alignment</span> <span class="o">=</span> <span class="n">WD_TABLE_ALIGNMENT</span><span class="o">.</span><span class="n">CENTER</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">col</span><span class="p">))</span><span class="o">.</span><span class="n">paragraphs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">col</span><span class="p">))</span><span class="o">.</span><span class="n">add_picture</span><span class="p">(</span>
+            <span class="s1">&#39;../static/profiles/</span><span class="si">{}</span><span class="s1">/img/970x647/</span><span class="si">{}</span><span class="s1">.jpg&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">settings</span><span class="o">.</span><span class="n">DIR</span><span class="p">,</span>
+                <span class="n">index</span><span class="o">+</span><span class="mi">1</span>
+            <span class="p">),</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">Cm</span><span class="p">(</span><span class="mf">4.8</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">finish_tables</span><span class="p">(</span><span class="n">table</span><span class="o">=</span><span class="n">table</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="n">row</span><span class="p">,</span>
+                                           <span class="n">col</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">document</span></div>
+
+<div class="viewcode-block" id="Experience.finish_tables"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.experience.Experience.finish_tables">[docs]</a>    <span class="k">def</span> <span class="nf">finish_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">dargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Complete process started in calling methond.&quot;&quot;&quot;</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">document</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;row&#39;</span><span class="p">))</span>
+        <span class="n">col</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;col&#39;</span><span class="p">))</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">dargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">paragraphs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">space_after</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="n">item</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 4&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">space_after</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="n">item</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 5&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">space_before</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">, </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">item</span><span class="p">),</span>
+            <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 6&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">space_before</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="n">document</span></div></div>
 </pre></div>
 
           </div>
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-  <li><a href="../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../index.html">Module code</a><ul>
-  </ul></li>
-  </ul></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/export.html">Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../continuous/index.html">Continuous X Is Continuous</a></li>
 </ul>
-</div>
+
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">

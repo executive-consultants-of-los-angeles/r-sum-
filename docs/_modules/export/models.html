@@ -1,0 +1,194 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>export.models &#8212; rsum v0.1.2 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     'v0.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for export.models</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># pylint: disable=no-member,redefined-builtin</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;Module for exporting profiles to Word format.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="k">import</span> <span class="n">settings</span> <span class="k">as</span> <span class="n">django_settings</span>
+
+<span class="kn">from</span> <span class="nn">docx</span> <span class="k">import</span> <span class="n">Document</span>
+
+<span class="kn">from</span> <span class="nn">export.tools</span> <span class="k">import</span> <span class="n">layout</span>
+<span class="kn">from</span> <span class="nn">export.tools</span> <span class="k">import</span> <span class="n">style</span>
+<span class="kn">from</span> <span class="nn">home.models.profile</span> <span class="k">import</span> <span class="n">Profile</span>
+
+
+<div class="viewcode-block" id="load_class"><a class="viewcode-back" href="../../modules/export.html#export.models.load_class">[docs]</a><span class="k">def</span> <span class="nf">load_class</span><span class="p">(</span><span class="n">class_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Dynamically load a class.</span>
+
+<span class="sd">    Special thanks to: `Thomas Sileo`_.</span>
+
+<span class="sd">    .. _Thomas Sileo: http://bit.ly/2DsSINZ</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">class_data</span> <span class="o">=</span> <span class="n">class_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+    <span class="n">module_path</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">class_data</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">class_str</span> <span class="o">=</span> <span class="n">class_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_path</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">class_str</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ExportDocument"><a class="viewcode-back" href="../../modules/export.html#export.models.ExportDocument">[docs]</a><span class="k">class</span> <span class="nc">ExportDocument</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class to handle exporting rsum pages to Word documents.</span>
+
+<span class="sd">    .. attribute:: document</span>
+
+<span class="sd">       Document object for export.</span>
+
+<span class="sd">    .. attribute:: settings</span>
+
+<span class="sd">       Settings for the current app.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">document</span> <span class="o">=</span> <span class="n">Document</span><span class="p">()</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="n">django_settings</span>
+    <span class="n">sections</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">request</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Initialize ExportDocument class.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">settings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">-profile.docx&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">DIR</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ExportDocument.export_word"><a class="viewcode-back" href="../../modules/export.html#export.models.ExportDocument.export_word">[docs]</a>    <span class="k">def</span> <span class="nf">export_word</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">graphics</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Export a word document.</span>
+
+<span class="sd">        :param profile_id: ID of CV to export.</span>
+<span class="sd">        :type profile_id: int</span>
+<span class="sd">        :return: Stream of Word document for end user.</span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">request</span> <span class="o">=</span> <span class="n">request</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prep_document</span><span class="p">()</span>
+        <span class="n">sections</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prep_sections</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">sections</span><span class="p">:</span>
+            <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_section</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">graphics</span><span class="o">=</span><span class="n">graphics</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">document</span></div>
+
+<div class="viewcode-block" id="ExportDocument.prep_document"><a class="viewcode-back" href="../../modules/export.html#export.models.ExportDocument.prep_document">[docs]</a>    <span class="k">def</span> <span class="nf">prep_document</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Export a word document.</span>
+
+<span class="sd">        :param profile_id: ID of CV to export.</span>
+<span class="sd">        :type profile_id: int</span>
+<span class="sd">        :return: Stream of Word document for end user.</span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">document</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="n">style</span><span class="o">.</span><span class="n">set_styles</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">set_layout</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">document</span></div>
+
+<div class="viewcode-block" id="ExportDocument.prep_sections"><a class="viewcode-back" href="../../modules/export.html#export.models.ExportDocument.prep_sections">[docs]</a>    <span class="k">def</span> <span class="nf">prep_sections</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Export a word document.</span>
+
+<span class="sd">        :param profile_id: ID of CV to export.</span>
+<span class="sd">        :type profile_id: int</span>
+<span class="sd">        :return: Stream of Word document for end user.</span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">profile</span> <span class="o">=</span> <span class="n">Profile</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sections</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">profile</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span></div>
+
+<div class="viewcode-block" id="ExportDocument.save_section"><a class="viewcode-back" href="../../modules/export.html#export.models.ExportDocument.save_section">[docs]</a>    <span class="k">def</span> <span class="nf">save_section</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">graphics</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Save a section of a document.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">section</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">section_cls</span> <span class="o">=</span> <span class="n">load_class</span><span class="p">(</span><span class="s1">&#39;export.sections.</span><span class="si">{}</span><span class="s1">.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()))</span>
+            <span class="n">section_obj</span> <span class="o">=</span> <span class="n">section_cls</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">document</span> <span class="o">=</span> <span class="n">section_obj</span><span class="o">.</span><span class="n">save</span><span class="p">(</span>
+                <span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">document</span><span class="p">,</span> <span class="n">graphics</span><span class="o">=</span><span class="n">graphics</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">document</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/export.html">Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../continuous/index.html">Continuous X Is Continuous</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Gahan Corporation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

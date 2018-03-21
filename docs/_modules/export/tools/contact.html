@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>export.tools.contact &#8212; rsum 0.0.2 documentation</title>
+    <title>export.tools.contact &#8212; rsum v0.1.2 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '0.0.2',
+        VERSION:     'v0.1.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -39,27 +39,97 @@
           <div class="body" role="main">
             
   <h1>Source code for export.tools.contact</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;Module for contact.&quot;&quot;&quot;</span>
+<span></span><span class="sd">&quot;&quot;&quot;Contact module.&quot;&quot;&quot;</span>
 
 
-<div class="viewcode-block" id="get_contact"><a class="viewcode-back" href="../../../rsum/export.tools.html#export.tools.contact.get_contact">[docs]</a><span class="k">def</span> <span class="nf">get_contact</span><span class="p">(</span><span class="n">contact</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get contact.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">contact</span><span class="p">,</span> <span class="n">document</span><span class="p">]</span></div>
+<div class="viewcode-block" id="Contact"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.contact.Contact">[docs]</a><span class="k">class</span> <span class="nc">Contact</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class for contact object export.&quot;&quot;&quot;</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Contact.save"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.contact.Contact.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add contact section.</span>
+
+<span class="sd">        :param [dict(str, str)] contact:</span>
+<span class="sd">            Contact section for current document.</span>
+<span class="sd">        :param object document: Current document.</span>
+<span class="sd">        :return: Current document with Contact section.</span>
+<span class="sd">        :rtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">contact</span> <span class="o">=</span> <span class="n">section</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_contact</span><span class="p">(</span><span class="n">contact</span><span class="p">,</span> <span class="n">document</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">document</span></div>
+
+<div class="viewcode-block" id="Contact.start_contact"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.contact.Contact.start_contact">[docs]</a>    <span class="k">def</span> <span class="nf">start_contact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contact</span><span class="p">,</span> <span class="n">document</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Start recording contact.&quot;&quot;&quot;</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="n">contact</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">),</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 3&#39;</span><span class="p">)</span>
+
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="n">contact</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">),</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Normal&#39;</span><span class="p">)</span>
+
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">space_after</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">paragraphs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="s1">&#39;Website&#39;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 4&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="n">contact</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;web&#39;</span><span class="p">),</span>
+            <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 5&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">space_before</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">paragraphs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">complete_contact</span><span class="p">(</span><span class="n">contact</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="n">table</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">document</span></div>
+
+<div class="viewcode-block" id="Contact.complete_contact"><a class="viewcode-back" href="../../../api/export.tools.html#export.tools.contact.Contact.complete_contact">[docs]</a>    <span class="k">def</span> <span class="nf">complete_contact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contact</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Complete addition of contact section.&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 4&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="n">contact</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">),</span>
+            <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 5&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">space_before</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">paragraphs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="s1">&#39;Phone&#39;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 4&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="n">contact</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;phone&#39;</span><span class="p">),</span>
+            <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 5&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">space_before</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">paragraphs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">line_spacing</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 4&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">add_paragraph</span><span class="p">(</span>
+            <span class="n">contact</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">),</span>
+            <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Heading 5&#39;</span><span class="p">)</span>
+        <span class="n">paragraph</span><span class="o">.</span><span class="n">paragraph_format</span><span class="o">.</span><span class="n">space_before</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="n">document</span></div></div>
 </pre></div>
 
           </div>
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-  <li><a href="../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../index.html">Module code</a><ul>
-  </ul></li>
-  </ul></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/export.html">Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../continuous/index.html">Continuous X Is Continuous</a></li>
 </ul>
-</div>
+
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">

@@ -1,7 +1,7 @@
 ---
 - intro:
     name: 'Xander Harris'
-    position: "Python Developer / Site Reliability Engineer"
+    position: "Cloud Architect / Python Engineer"
     social_media_links:
       facebook: 'https://www.facebook.com/gahancorpcfo'
       twitter: 'https://twitter.com/gahancorpcfo'
@@ -18,103 +18,247 @@
       - codacy:
           name: "Codacy Code Quality"
           image:
-            'https://api.codacy.com/project/badge/Grade/e8ccc643c99147dca4fd98a8b2851451'
+            'https://api.codacy.com/project/badge/Grade/6815cf5fa39f4bbf88ca1cd349eb2f79'
       - codacy_coverage:
           name: 'Codacy Test Coverage'
           image:
-            'https://api.codacy.com/project/badge/Coverage/e8ccc643c99147dca4fd98a8b2851451'
+            'https://api.codacy.com/project/badge/Coverage/6815cf5fa39f4bbf88ca1cd349eb2f79'
 - skills:
     start: 2000
-    infrastructure_automation:
-      name: "Infrastructure Automation and Administration"
+    operating_systems:
+      name: "Operating Systems"
       start: 2000
-      ansible:
-        name: "Ansible"
-        start: 2013
-      molecule:
-        name: "Molecule"
-        start: 2016
-      bash:
-        name: "Bourne Again SHell"
-        start: 2000
-      vim:
-        name: "Very IMproved Text Editor"
-        start: 2000
-    cloud_architecture:
-      name: "Cloud Computing Services"
-      start: 2008
-      amazon_web_services:
-        name: "Amazon Web Services"
-        start: 2008
-      microsoft_azure:
-        name: "Microsoft Azure"
-        start: 2016
-      google_cloud:
-        name: "Google Cloud"
-        start: 2016
-      digital_ocean:
-        name: "Digital Ocean"
-        start: 2014
-    software_development:
-      name: "Software Engineering"
-      start: 2004
-      agile:
-        name: "Agile Development"
-        start: 2014
-      sdlc:
-        name: "Software Development Life Cycle"
-        start: 2000
-      scm:
-        name: "Source Code Management"
-        start: 2006
-      git:
-        name: "git"
-        start: 2013
-      svn:
-        name: "SubVersion"
-        start: 2006
-    linux_unix:
-      name: "Linux Administration"
-      start: 2000
-      redhat:
-        name: "RedHat Enterprise Linux"
-        start: 2000
-      debian:
-        name: "Debian Linux"
+      rhel:
+        name: "Red Hat Enterprise Linux"
         start: 2000
       ubuntu:
         name: "Ubuntu Linux"
-        start: 2005
-      gentoo:
-        name: "Gentoo Linux"
-        start: 2004
+        start: 2006
+      freebsd:
+        name: "FreeBSD"
+        start: 2000
+      macos:
+        name: "MacOS"
+        start: 2000
+      alpine:
+        name: "Alpine Linux"
+        start: 2017
+      arch:
+        name: "ArchLinux"
+        start: 2016
     programming:
       name: "Programming Languages"
-      start: 2000
+      start: 2008
       python:
         name: "Python"
+        start: 2013
+      microsoft_azure:
+        name: "BASH"
+        start: 2000
+      google_cloud:
+        name: "YAML"
         start: 2014
       java:
         name: "Java"
         start: 2016
-      php:
-        name: "Personal Home Page"
-        start: 2000
       javascript:
         name: "JavaScript"
         start: 2000
+      jquery:
+        name: "jQuery"
+        start: 2009
+      xml:
+        name: "XML"
+        start: 2008
+      ruby:
+        name: "Ruby"
+        start: 2014
+      html:
+        name: "HTML"
+        start: 2000
+      css:
+        name: "CSS"
+        start: 2000
+      scala:
+        name: "Scala"
+        start: 2017
+      php:
+        name: "PHP"
+        start: 2000
     databases:
-      name: "Relational and Other Databases"
+      name: "Databases"
       start: 2000
-      postgresql:
+      postgres:
         name: "PostgreSQL"
-        start: 2007
+        start: 2008
       mysql:
         name: "MySQL"
         start: 2000
+      db2:
+        name: "DB2"
+        start: 2016
+      mssql:
+        name: "MSSQL"
+        start: 2013
+      nosql:
+        name: "NoSQL"
+        start: 2014
       mongodb:
         name: "MongoDB"
         start: 2014
+    develpment_tools:
+      name: "Development Tools"
+      start: 2000
+      maven:
+        name: "Maven"
+        start: 2014
+      sbt:
+        name: "Scala Build Tool"
+        start: 2015
+      django:
+        name: "Django"
+        start: 2014
+      web2py:
+        name: "Web2Py"
+        start: 2015
+      flask:
+        name: "Flask"
+        start: 2016
+      vim:
+        name: "VIM"
+        start: 2000
+      git:
+        name: "git"
+        start: 2013
+      documentation:
+        name: "Documentation"
+        start: 2000
+      sphinx:
+        name: "Sphinx"
+        start: 2015
+      encryption:
+        name: "Encryption"
+        start: 2015
+    distributed:
+      name: "Distributed Technology"
+      start: 2008
+      ansible:
+        name: "Ansible"
+        start: 2014
+      docker:
+        name: "Docker"
+        start: 2015
+      ec2:
+        name: "AWS EC2"
+        start: 2008
+      s3:
+        name: "AWS S3"
+        start: 2008
+      ecs:
+        name: "AWS ECS"
+        start: 2015
+      route53:
+        name: "AWS Route53"
+        start: 2015
+      vagrant:
+        name: "Vagrant"
+        start: 2013
+      spark:
+        name: "Spark"
+        start: 2015
+      hadoop:
+        name: "Hadoop"
+        start: 2015
+    server_technology:
+      name: "Server Technology"
+      start: 2000
+      nginx:
+        name: "NGINX"
+        start: 2013
+      apache2:
+        name: "Apache2"
+        start: 2000
+      uwsgi:
+        name: "uWSGI"
+        start: 2014
+      gunicorn:
+        name: "gunicorn"
+        start: 2014
+      postfix:
+        name: "Postfix"
+        start: 2014
+      dovecot:
+        name: "Dovecot"
+        start: 2015
+      courier:
+        name: "Courier (POP & IMAP)"
+        start: 2015
+      upstart:
+        name: "Upstart"
+        start: 2013
+      systemd:
+        name: "Systemd"
+        start: 2015
+      new_relic:
+        name: "New Relic"
+        start: 2015
+      smtp:
+        name: "SMTP"
+        start: 2015
+      imap:
+        name: "IMAP"
+        start: 2015
+      http:
+        name: "HTTP"
+        start: 2009
+    sdlc:
+      name: "Software Development Life Cycle"
+      start: 2008
+      agile:
+        name: "Agile"
+        start: 2008
+      scrum:
+        name: "SCRUM"
+        start: 2008
+      git:
+        name: "Git"
+        start: 2013
+      branching:
+        name: "Branching Models"
+        start: 2013
+      sprints:
+        name: "Sprint Planning and Review"
+        start: 2014
+      jira:
+        name: "JIRA"
+        start: 2014
+      commit_cycle:
+        name: "Commit Cycles"
+        start: 2013
+    qa:
+      name: "Quality Assurance"
+      start: 2000
+      code_review:
+        name: "Code Review"
+        start: 2008
+      automated_testing:
+        name: "Automated Testing"
+        start: 2014
+      jenkins:
+        name: "Jenkins"
+        start: 2014
+      sonar:
+        name: "Sonar"
+        start: 2014
+      bitbucket:
+        name: "Bitbucket"
+        start: 2014
+      github:
+        name: "GitHub"
+        start: 2013
+      pull_requests:
+        name: "Pull Requests"
+        start: 2013
 - values:
     - introduction:
         name: 'Introduction'
@@ -125,6 +269,7 @@
           from left to right.
     - loyalty:
         col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+        title: Loyalty
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon icon-badge"'
         text: >
@@ -133,18 +278,23 @@
           loyalty, and persistence. - Colin Powell
     - industry:
         col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+        title: Industry
         service: >
           class="service bg-color-base wow zoomIn"
           data-height="height"
           data-wow-duration=".3"
           data-wow-delay=".1s"
-        icon: ' class="service-icon color-white icon-chemistry"'
+        icon: >
+          style="color: white;"
+          class="service-icon color-white icon-chemistry"
+          style="color: white;"
         text: >
           Concentration is my motto - first
           honesty, then industry,
           then concentration. - Andrew Carnegie
     - efficiency:
         col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
+        title: 'Efficiency'
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon icon-screen-tablet"'
         text: >
@@ -152,6 +302,7 @@
           efficiency. - Benjamin Disraeli
     - wealth:
         col: 'class="col-md-3 col-sm-6"'
+        title: Wealth
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon  icon-mustache"'
         text: >
@@ -163,128 +314,139 @@
         of programming or computer administration type of
         effort for more than twenty years.  I have been getting
         paid for it about fifteen of those years.'
-    - cfo_at_gahan_corporation:
+    - gahan:
         duration: "May 2016 - Present"
         location: "Los Angeles, California"
         company: "Gahan Corporation"
-        position: "Chief Financial Officer"
+        position: "Cloud Architect / Python Engineer"
         projects:
-          technology:
+          "Cloud Architect":
             - "maintain multiple cloud services"
             - "total cost of ownership < $100/mo"
             - "pretty good uptime"
-            - "at least not terrible security"
-          legal:
-            - "converted from an LLC started May 2016"
-            - "wrote the filed Articles of Incorporation"
-            - "also have an author credit on the bylaws"
-            - "have written every agreement executed by the corporation so far"
-            - >
-              keep the corporation in good standing
-              with the State of California
-          finance:
-            - "aiming at issuing registered stock by 2020"
-            - "pretty depressing at the moment"
-            - "maintain books to GAAP standards"
-            - "keep us up to date with taxes and reporting"
+            - "at least not completely awful security"
+          "Python Engineer":
+            - "develop and maintain company websites"
+    - csi:
+        duration: "September 2017 - January 2018"
+        location: "Los Angeles, California"
+        company: "Collaboration Solutions Incorporated"
+        position: "Python Engineer / Cloud Architect / ERP Analyst"
+        projects:
+          "Cloud Architect":
+            - "automated deployment of erp servers"
+            - "converted fromt old-style bare-metal configuration"
+            - "used Infrastructure as Code to employ Docker containers"
+            - "increased system stability and uptime"
+          "Python Engineer":
+            - "automated testing of pre-existing code base of 50-60k lines"
+            - "fixed previously broken functionality while adding new features"
+            - "initiated proper code analysis to improve code quality"
+    - sigtec:
+        duration: "December 2016 - March 2017"
+        location: "Los Angeles, California"
+        company: "Signal Technologies LLC"
+        position: "Python Engineer / Cloud Architect"
+        projects:
+          "Cloud Architect":
+            - "automated deployment of application"
+            - "used IaC to enable quick development of all environments"
+          "Python Engineer":
+            - "added features to an existing Flask application"
+            - "used the PokitDok API to analyze patient data"
+            - "translated client requests into working code"
     - abiogenix_incorporated:
         duration: "August 2014 - May 2017"
         location: "Los Angeles, California"
         company: "Abiogenix Incorporated"
-        position: "Python Developer / Site Reliability Engineer"
+        position: "Python Engineer / Cloud Architect / ERP Analyst"
         projects:
-          enterprise_resource_planning:
-            - "automated deployment and maintenance of the Odoo ERP system"
-            - "installed Google SSO for better auditing"
-          buy_my_ubox_com:
+          "Python Engineer":
             - "designed and implemented the my-ubox.com web store"
             - "makes use of the Django web framework"
             - "some custom code that integrates the order system with Odoo"
-          atlassian:
+          "Cloud Architect":
+            - "transfered my-ubox.com to Amazon's Route 53 service"
+            - "transfered abiogenix.com to Amazon's Route 53 service"
             - "deployed Atlassian suite to Abiogenix cloud assets"
             - "maintain those same tools for uptime and performance"
             - "very limited budget"
-          networking:
-            - "transfered my-ubox.com to Amazon's Route 53 service"
-            - "transfered abiogenix.com to Amazon's Route 53 service"
-    - caa:
-        duration: "September 2015  -  March 2016 (7 months)"
+          "ERP Analyst":
+            - "automated deployment and maintenance of the Odoo ERP system"
+            - "installed Google SSO for better auditing"
+    - creative_artists_agency:
+        duration: "September 2015  -  March 2016"
         location: "Los Angeles, California"
         company: "Creative Artists Agency"
-        position: "Python Developer / Site Reliability Engineer"
+        position: "Cloud Architect / Python Engineer"
         projects:
-          jupyterhub:
+          "Python Engineer":
             - "automated deployment of JupyterHub with Ansible"
             - "instructed analysts on the use of Python and JupyterHub"
             - "enabled the quants to transfer data from Excel to WorkDay"
-          ansible_tower:
+          "Cloud Architect":
             - "refactored existing Ansible playbooks for improved security"
             - "implemented best practices in all Ansible playbooks"
             - "managed more than one upgrade of Ansible Tower server"
             - "enabled logging and monitoring with New Relic and Splunk"
-          continuous_integration:
+          "Build Manager":
             - "project was a year late on delivery upon my assignment"
             - "walked into an unfamiliar stack and uncooperative team"
             - "within one quarter the project was delivering new features daily"
             - "enabled Behave testing and eliminated failures due to process"
             - "used Ansible Tower and Jenkins server for deployment"
-    - build_manager_toyota_motor_sales:
-        duration: "April 2015  -  July 2015 (4 months)"
+    - build_manager_tms:
+        duration: "April 2015  -  July 2015"
         location: "Los Angeles, California"
         company: "Toyota Motor Sales"
         position: "Build Manager"
         projects:
-          atlassian:
+          "Build Manager":
             - "maintained project git repository"
             - "managed branches, pull requests, and releases"
             - "trained 22 developers on git flow branching model"
             - "created process for documentation of development"
             - "guided developers in resolution of merge conflicts"
-          continuous_delivery:
             - "deployed spark and hadoop cluster for distributed processing"
             - "automated builds of all projects within the git repository"
-            - "dployed and administered Jenkins server with Ansible"
-    - cloud_architect_toyota_motor_sales:
-        duration: "January 2015  -  July 2015 (7 months)"
+            - "deployed and administered Jenkins server with Ansible"
+    - cloud_architect_tms:
+        duration: "January 2015  -  July 2015"
         location: "Los Angeles, California"
         company: "Toyota Motor Sales"
-        position: "Site Reliability Engineer"
+        position: "Cloud Architect"
         projects:
-          ansible:
+          "Cloud Architect":
             - "reduced deployment time by a factor of 15 with Ansible"
             - "automated deployment of all resources required by project"
             - "managed Red Hat Enterprise Linux 7 servers"
-          amazon_web_services:
             - "configured and deployed all infrastructure"
             - "administered same"
             - "managed budget for aws monthly spend"
-    - lead_python_developer_toyota_motor_sales:
-        duration: "December 2014  -  July 2015 (8 months)"
+    - lead_python_developer_tms:
+        duration: "December 2014  -  July 2015"
         location: "Los Angeles, California"
         company: "Toyota Motor Sales"
-        position: "Lead Python Developer"
+        position: "Lead Python Engineer"
         projects:
-          training:
+          "Lead Python Engineer":
             - "wrote Python style guide"
             - "implemented smart commits for JIRA issues"
             - "trained offshore developers in the use of gitflow"
-          scraping:
             - "used Python, Scrapy, MongoDB, and BASH for project"
             - "scraped web for information relevant to project"
             - "identified and removed redundancies within the project"
             - "ran daily scrum meetings and maintained a storyboard"
-          proposal:
             - "authored A3 to streamline build process"
-    - chief_technical_officer_mintspare:
-        duration: "February 2014  -  January 2015 (1 year)"
+    - mintspare:
+        duration: "February 2014  -  January 2015"
         location: "Alameda, California"
         company: "Mintspare Incorporated"
         position: "Chief Technical Officer"
         projects:
-          webmaster:
+          "Chief Technical Officer":
             - "developmed all Mintspare websites"
             - "used CakePHP as well as jQuery"
-          systems_administrator:
             - "administrated Mintspare databases"
             - "prevented data loss and developed schemas"
             - "responsible for all Mintspare IT infrastructure"
@@ -294,51 +456,65 @@
         duration: "August 2013  -  December 2013 (5 months)"
         location: "Los Angeles, California"
         company: "VS Media"
-        position: "PHP Developer / Analyst"
+        position: "PHP Engineer / Analyst"
         projects:
-          analyst:
+          "Analyst":
             - "collected and analyzed data on email marketing"
             - "improved performance of email servers and content"
             - "documented control flow of complex scripts"
             - "sent roughly 150,000 emails a day"
-          email_administrator:
+          "PHP Engineer":
             - "implemented new elements of the email system"
             - "created such as a centralized template store"
     - thrive_marketing:
-        duration: "April 2013  -  July 2013 (4 months)"
+        duration: "April 2013  -  July 2013"
         location: "Nashville, Tennessee"
         company: "Thrive Marketing"
-        position: "PHP Developer / Systems Administrator"
+        position: "PHP Engineer / Systems Administrator"
         projects:
-          systems_administrator:
-            - "installed and configured several different Linux servers"
-            - "used distributions such as Ubuntu, CentOS, and Gentoo"
-            - "also maintained a number of Windows 7 workstations"
-          web_developer:
+          "PHP Engineer":
             - "developed internal products for sales operations"
             - "made use of PHP, JavaScript, jQuery, JSON, REST, and SOAP"
             - "created data models for two internal software projects"
             - "documented existing and new code"
-          source_code_management:
+          "Systems Administrator":
+            - "installed and configured several different Linux servers"
+            - "used distributions such as Ubuntu, CentOS, and Gentoo"
+            - "also maintained a number of Windows 7 workstations"
             - "implemented git and gitflow for source code control"
             - "provided training to other employees on their use"
+    - wishb:
+        duration: "July 2010  -  September 2010"
+        location: "San Francisco, California"
+        company: "WishB LLC"
+        position: "PHP Engineer / Systems Administrator"
+        projects:
+          "PHP Engineer":
+            - "used a homebrew MVC to program a website"
+            - "dynamically loaded images with css and jquery"
+            - "used Subversion for version control of code"
+            - "coded user profiles for application"
+          "Systems Administrator":
+            - "maintained and configured the webserver"
+            - "designed database schemas in MySQL"
+            - "contributed to daily SCRUM meetings"
 - education:
     name: "Broadmoor Elementary School"
     location: "Lafayette, Louisiana"
     studies: "Kindergarten Diploma, General Studies, Kindergarten"
     duration: "1988 - 1989 (1 year)"
     projects:
-      tests:
-        - "I have always tested well"
-        - "that is how I graduated with a GPA in the 1.7 range"
-        - "it was a very prestigious kindergarten"
+      "Testing":
+        - "I have always tested well."
+        - "That is how I graduated with a GPA in the 1.7 range."
+        - "It was a very prestigious kindergarten."
 - contact:
     title: "Get in Touch"
     message:
       "I'm usually available after noon on week days."
     location: "Los Angeles, California, United States of America"
-    phone: "(424) 209-2976"
-    email: "xander@gahan-corporation.com"
+    phone: "(424) 242-9209"
+    email: "xander@gahancorporation.com"
     web: "https://xander.gahan-corporation.com/"
 ...
 # vim: ft=ansible:

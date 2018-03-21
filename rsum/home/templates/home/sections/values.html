@@ -16,14 +16,18 @@
                       <div {{ row.col|safe }}>
                         <div {{ row.service|safe }}> 
                           <div class="service-element">
+                            {% if forloop.parenttloop.counter == 3 %}
+                            <div style="color: white"><i style="color: white;" {{ row.icon|safe }}></i></div>
+                            {% else %}
                             <i {{ row.icon|safe }}></i>
+                            {% endif %}
                           </div>
                           <div class="service-info">
                             {% if forloop.parentloop.counter == 3 %}
-                            <h3 style="color: white;">{{ row.name|title }}</h3>
+                            <h3 style="color: white;">{{ row.title|title }}</h3>
                             <p style="color: white;" class="margin-b-5">{{ row.text|safe }}</p>
                             {% else %}
-                            <h3>{{ row.name|title }}</h3>
+                            <h3>{{ row.title|title }}</h3>
                             <p class="margin-b-5">{{ row.text|safe }}</p>
                             {% endif %}
                           </div>

@@ -1,0 +1,210 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Export Section (Skills) &#8212; rsum v0.1.2 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     'v0.1.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Export Section (Values)" href="values.html" />
+    <link rel="prev" title="export sections summary" href="summary.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-export.sections.skills">
+<span id="export-section-skills"></span><h1>Export Section (Skills)<a class="headerlink" href="#module-export.sections.skills" title="Permalink to this headline">¶</a></h1>
+<p>Skills section module.</p>
+<dl class="class">
+<dt id="export.sections.skills.Skills">
+<em class="property">class </em><code class="descclassname">export.sections.skills.</code><code class="descname">Skills</code><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/skills.html#Skills"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.skills.Skills" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Class for skills section object.</p>
+<dl class="method">
+<dt id="export.sections.skills.Skills.add_sub_skills">
+<code class="descname">add_sub_skills</code><span class="sig-paren">(</span><em>subs</em>, <em>skilltable</em>, <em>skilltable_index</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/skills.html#Skills.add_sub_skills"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.skills.Skills.add_sub_skills" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add sub skills to skills section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>subs</strong> (<em>[</em><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a><em>(</em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a><em>)</em><em>]</em>) – Sub skills to add to document.</li>
+<li><strong>ts</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Table cell to update.</li>
+<li><strong>ts_index</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) – Index for current table cell.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Document updated with sub skills.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.sections.skills.Skills.get_skills">
+<code class="descname">get_skills</code><span class="sig-paren">(</span><em>section</em>, <em>document</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/skills.html#Skills.get_skills"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.skills.Skills.get_skills" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add skills section.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>skills</strong> – Skills section to add to document.</li>
+<li><strong>document</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – Current document.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Document updated with Skills.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)">object</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="export.sections.skills.Skills.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>section</em>, <em>document</em>, <em>graphics</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/skills.html#Skills.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.skills.Skills.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add skills section.
+:param skills: Skills section to add to document.
+:type summary: [dict(str, str)]
+:param document: Current document.
+:type document: object
+:return: Document updated with Skills.
+:rtype: object</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="export.sections.skills.set_inner_paragraph">
+<code class="descclassname">export.sections.skills.</code><code class="descname">set_inner_paragraph</code><span class="sig-paren">(</span><em>t_sub</em>, <em>index</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/skills.html#set_inner_paragraph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.skills.set_inner_paragraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure an inner paragraph for skills.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>t_sub</strong> – Sub table that is being modified.</li>
+<li><strong>index</strong> – Index for current table.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="export.sections.skills.set_paragraph">
+<code class="descclassname">export.sections.skills.</code><code class="descname">set_paragraph</code><span class="sig-paren">(</span><em>t_sub</em>, <em>index</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/gcorp/rsum.application/export/sections/skills.py"><span class="viewcode-link">[source]</span></a><a class="reference internal" href="../../../_modules/export/sections/skills.html#set_paragraph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#export.sections.skills.set_paragraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure an outer paragraph for a sub skill.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>t_sub</strong> – Sub table being manipulated.</li>
+<li><strong>index</strong> – Index of current table cell.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../../index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../home.html">Home</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../export.html">Export</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../sections.html">export sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools.html">export tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../export.html#module-export.models">export models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../export.html#module-export.tests.test_export">export tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../export.html#module-export.views">export views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../continuous/index.html">Continuous X Is Continuous</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/modules/export/sections/skills.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Gahan Corporation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../../_sources/modules/export/sections/skills.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

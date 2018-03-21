@@ -1,0 +1,48 @@
+---
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - run: >
+          docker network create rsum || true
+      - run: >
+          docker run -d --rm --name pg.gc -h pg.gc --network rsum
+          -p 5432:5432 postgres:alpine
+      - checkout
+      - run:
+          name: build container
+          command: |
+            docker build -t rsum bin
+      - run:
+          name: check aws
+          command: |
+            ls -lah /home/circleci
+      - run:
+          name: run tests
+          command: |
+            docker run -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e\
+            AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
+            --network rsum -v $(pwd)/test-results:/tmp:rw \
+            --rm -d --name rsum rsum
+            docker exec rsum wget https://codeclimate.com/downloads/\
+            test-reporter/test-reporter-latest-linux-amd64 -O \
+            /usr/bin/cc-test-reporter
+            docker exec rsum chmod +x /usr/bin/cc-test-reporter
+            docker exec rsum pip install coverage
+            docker exec rsum /usr/bin/cc-test-reporter before-build
+            docker exec rsum coverage run setup.py test
+            docker exec rsum coverage xml
+            docker exec rsum cp coverage.xml /tmp/coverage.xml
+            docker exec rsum /usr/bin/cc-test-reporter \
+            after-build -t coverage.py
+            docker exec rsum mkdir -p /tmp/rsum
+            docker exec rsum pytest --junit-xml=/tmp/rsum/circle.xml
+      - store_test_results:
+          path: test-results
+deployment:
+  staging:
+    branch: /iss*/
+    heroku:
+      appname: rsum-dev
+...
