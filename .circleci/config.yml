@@ -30,6 +30,7 @@ jobs:
             docker exec rsum ping -c 3 postgres
       - run:
           name: code climate
+          command: |
             docker exec rsum wget https://codeclimate.com/downloads/\
             test-reporter/test-reporter-latest-linux-amd64 -O \
             /usr/bin/cc-test-reporter
