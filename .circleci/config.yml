@@ -20,12 +20,16 @@ jobs:
           command: |
             ls -lah /home/circleci
       - run:
-          name: prepare tests
+          name: run container 
           command: |
             docker run -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e\
             AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
             --network rsum -v $(pwd)/test-results:/tmp:rw \
             --rm -d --name rsum rsum
+            docker network connect rsum rsum
+            docker exec rsum ping -c 3 postgres
+      - run:
+          name: code climate
             docker exec rsum wget https://codeclimate.com/downloads/\
             test-reporter/test-reporter-latest-linux-amd64 -O \
             /usr/bin/cc-test-reporter
