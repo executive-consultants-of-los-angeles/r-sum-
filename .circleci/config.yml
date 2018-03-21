@@ -6,9 +6,8 @@ jobs:
     steps:
       - run: docker network create rsum || true
       - run: >
-          docker run -d --rm --name postgres -h postgres --network rsum
-          -e PGHOST=postgres -e PGUSER=postgres
-          -p 5432:5432 postgres:alpine postgres -D /var/lib/postgresql/data
+          docker run -d --name postgres -h postgres --network rsum
+          -p 5432:5432 postgres:alpine
       - checkout
       - run: docker build -t rsum bin
       - run: docker logs postgres
