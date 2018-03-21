@@ -11,8 +11,8 @@ jobs:
           -p 5432:5432 postgres:alpine postgres -D /var/lib/postgresql/data
       - checkout
       - run: docker build -t rsum bin
-      - run: docker exec --user postgres postgres createuser -s dev
       - run: docker logs postgres
+      - run: docker exec --user postgres postgres createuser -s dev
       - run:
           name: run container
           command: >
