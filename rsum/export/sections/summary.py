@@ -67,7 +67,7 @@ class Summary(object):
         summary_table.cell(0, 0).add_picture(
             'static/profiles/{0}/img/500x700/02.png'.format(
                 settings.DIR),
-            width=Cm(5))
+            height=Cm(3))
 
         summary_table.cell(0, 1).add_paragraph(
             'Summary', style='Heading 3')
