@@ -4,12 +4,16 @@ jobs:
   build:
     machine: true
     steps:
-      - run: >
+      - run:
+        name: create rsum network
           docker network create rsum || true
-      - run: >
+      - run:
+        name: run postgres container
           docker run -d --rm --name postgres -h postgres --network rsum
           -p 5432:5432 postgres:alpine
-          docker exec --user postgres postgres createuser -s dev
+      - run:
+        name: add dev user
+        command: docker exec --user postgres postgres createuser -s dev
       - checkout
       - run:
           name: build container
