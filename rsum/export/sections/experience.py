@@ -101,7 +101,7 @@ class Experience(object):
                     settings.DIR,
                     dargs.get('key')
                 ),
-                width=self.cm(4.8)
+                height=self.cm(2)
             )
         else:
             table.cell(int(row), int(col)).add_paragraph('')
