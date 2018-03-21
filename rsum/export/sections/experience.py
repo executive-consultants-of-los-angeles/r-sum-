@@ -68,10 +68,10 @@ class Experience(object):
         """Prepare tables."""
         for key, item in dargs.get('value').items():
             index = dargs.get('index')
-            row = (index % 9) / 3
+            row = (index % 12) / 3
             col = index % 3
 
-            if (index % 9 == 0 and index > 0):
+            if (index % 12 == 0 and index > 0):
                 table = document.add_table(rows=1, cols=3)
                 table.alignment = WD_TABLE_ALIGNMENT.CENTER
 
