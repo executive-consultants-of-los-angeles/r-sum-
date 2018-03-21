@@ -3,6 +3,7 @@
 from django.conf import settings as django_settings
 from docx.shared import Cm
 from docx.enum.table import WD_TABLE_ALIGNMENT
+from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 
 
 class Experience(object):
@@ -67,10 +68,10 @@ class Experience(object):
         """Prepare tables."""
         for key, item in dargs.get('value').items():
             index = dargs.get('index')
-            row = (index % 9) / 3
+            row = (index % 12) / 3
             col = index % 3
 
-            if (index % 9 == 0 and index > 0):
+            if (index % 12 == 0 and index > 0):
                 table = document.add_table(rows=1, cols=3)
                 table.alignment = WD_TABLE_ALIGNMENT.CENTER
 
@@ -101,8 +102,10 @@ class Experience(object):
                     settings.DIR,
                     dargs.get('key')
                 ),
-                width=self.cm(4.8)
+                height=self.cm(2)
             )
+            table.cell(int(row), int(col)).paragraphs[1].alignment = (
+                WD_PARAGRAPH_ALIGNMENT.CENTER)
         else:
             table.cell(int(row), int(col)).add_paragraph('')
         document = self.finish_tables(
