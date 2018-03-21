@@ -22,7 +22,8 @@ script:
       --network rsum -d --name rsum --rm rsum
   - tar xvf aws.tar.bz2
   - docker cp aws rsum:/root/.aws
-  - docker exec postgres createuser -s xander
+  - docker exec --user postgres postgres createuser -s xander
+  - docker exec --user postgres postgres createuser -s dev
   - docker exec rsum pytest rsum/home/tests/models/test_section.py
   - docker exec rsum pytest rsum/home/tests/models/test_profile.py
   - docker exec rsum coverage run setup.py test || true
