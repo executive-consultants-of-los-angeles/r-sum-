@@ -4,20 +4,13 @@ jobs:
   build:
     machine: true
     steps:
-      - run:
-        name: create rsum network
-          docker network create rsum || true
-      - run:
-        name: run postgres container
+      - run: docker network create rsum || true
+      - run: >
           docker run -d --rm --name postgres -h postgres --network rsum
           -p 5432:5432 postgres:alpine
-      - run:
-        name: add dev user
-        command: docker exec --user postgres postgres createuser -s dev
+      - run: docker exec --user postgres postgres createuser -s dev
       - checkout
-      - run:
-          name: build container
-          command: docker build -t rsum bin
+      - run: docker build -t rsum bin
       - run:
           name: run container
           command: >
@@ -25,11 +18,9 @@ jobs:
             AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
             --network rsum -v $(pwd)/test-results:/tmp:rw \
             --rm -d --name rsum rsum
-      - run:
-        name: connect to network
-            docker network connect rsum postgres || true
-            docker network connect rsum rsum || true
-            docker exec rsum ping -c 3 postgres
+      - run: docker network connect rsum postgres || true
+      - run: docker network connect rsum rsum || true
+      - run: docker exec rsum ping -c 3 postgres
       - run:
           name: code climate
           command: |
