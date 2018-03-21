@@ -5,6 +5,26 @@ from docx.shared import Cm
 from docx.enum.table import WD_TABLE_ALIGNMENT
 
 
+def get_summary(section, document):
+    """Add summary section.
+
+    :param summary: Summary section to add to document.
+    :type summary: [dict(str, str)]
+    :param document: Current document.
+    :type document: object
+    :return: Document updated with Summary.
+    :rtype: object
+    """
+    summary = section
+
+    document.add_paragraph(
+        'Summary', style='Heading 3')
+    document.add_paragraph(
+        summary.get('content'), style='Normal')
+
+    return document
+
+
 class Summary(object):
     """Sumary section object class."""
 
@@ -26,10 +46,15 @@ class Summary(object):
         if graphics:
             document = self.get_summary_graphics(section, document)
         else:
-            document = self.get_summary(section, document)
+            document = get_summary(section, document)
         return document
 
     def get_summary_graphics(self, section, document):
+        """Get graphics for summary section.
+
+        :param section: The current summary section.
+        :param document: The document being operated on.
+        """
         summary = section
         settings = self.settings
         paragraph = document.add_paragraph('')
@@ -52,34 +77,6 @@ class Summary(object):
 
         paragraph = self.format_paragraph(
             summary_table.cell(0, 1).paragraphs[1])
-
-        return document
-
-    def get_summary(self, section, document):
-        """Add summary section.
-
-        :param summary: Summary section to add to document.
-        :type summary: [dict(str, str)]
-        :param document: Current document.
-        :type document: object
-        :return: Document updated with Summary.
-        :rtype: object
-        """
-        summary = section
-        paragraph = document.add_paragraph('')
-        paragraph.paragraph_format.line_spacing = 0.0
-
-        summary_table = document.add_table(rows=1, cols=1)
-        summary_table.alignment = WD_TABLE_ALIGNMENT.CENTER
-
-        summary_table.cell(0, 0).add_paragraph(
-            'Summary', style='Heading 3')
-        summary_table.cell(0, 0).add_paragraph(
-            summary.get('content'), style='Normal')
-        self.summary_table = summary_table
-
-        paragraph = self.format_paragraph(
-            summary_table.cell(0, 0).paragraphs[1])
 
         return document
 

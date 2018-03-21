@@ -69,6 +69,7 @@ class Education(object):
 
     def get_education_graphics(self, section, document):
         """Add education section.
+
         :param [dict(str, str)] education:
             Education section for current document.
         :param object document: Current document.
@@ -101,7 +102,7 @@ class Education(object):
         return document
 
     def set_education_picture(self, document):
-        """Sets the picture for display in the education section.
+        """Set the picture for display in the education section.
 
         :param docx.Document document: The document to update.
         """

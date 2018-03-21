@@ -1,0 +1,28 @@
+#!/bin/bash
+
+docker network create rsum || true
+mkdir -p /tmp/pg
+
+echo "Start postgres. . ."
+docker pull postgres:alpine
+docker run --user postgres -v /tmp/pg:/var/lib/postgresql:rw --network rsum --expose 5432 -h postgres --name postgres --rm -d postgres:alpine postgres -D /var/lib/postgresql/data
+
+echo "Start rsum. . ."
+docker rm -f rsum
+docker build -t rsum bin
+docker run --network rsum -d --name rsum --rm rsum
+
+echo "Create user. . ."
+docker cp ~/.aws rsum:/root/.aws
+docker exec --user postgres postgres createuser -s xander
+docker exec --user postgres postgres createuser -s dev 
+
+echo "Run py.test. . ."
+docker exec rsum pytest rsum/home/tests/models/test_section.py
+docker exec rsum pytest rsum/home/tests/models/test_profile.py
+
+echo "Run coverage. . ."
+docker exec rsum coverage run setup.py test || true
+docker exec rsum coverage xml || true
+docker exec rsum python-codacy-coverage -r coverage.xml
+docker stop rsum
