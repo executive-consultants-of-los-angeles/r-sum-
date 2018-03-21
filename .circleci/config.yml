@@ -5,7 +5,7 @@ jobs:
     machine: true
     steps:
       - run: docker network create rsum || true
-      - run: docker run -p 5432:5432 --name postgres postgres:alpine
+      - run: docker run -p 5432:5432 -d --name postgres postgres:alpine
       - checkout
       - run: docker build -t rsum bin
       - run: docker logs postgres
