@@ -7,8 +7,9 @@ jobs:
       - run: >
           docker network create rsum || true
       - run: >
-          docker run -d --rm --name pg.gc -h pg.gc --network rsum
+          docker run -d --rm --name postgres -h postgres --network rsum
           -p 5432:5432 postgres:alpine
+          docker exec --user postgres postgres createuser -s dev
       - checkout
       - run:
           name: build container
