@@ -17,21 +17,18 @@ jobs:
       - checkout
       - run:
           name: build container
-          command: |
-            docker build -t rsum bin
+          command: docker build -t rsum bin
       - run:
-          name: check aws
-          command: |
-            ls -lah /home/circleci
-      - run:
-          name: run container 
-          command: |
+          name: run container
+          command: >
             docker run -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e\
             AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
             --network rsum -v $(pwd)/test-results:/tmp:rw \
             --rm -d --name rsum rsum
-            docker network connect rsum postgres || true 
-            docker network connect rsum rsum || true 
+      - run:
+        name: connect to network
+            docker network connect rsum postgres || true
+            docker network connect rsum rsum || true
             docker exec rsum ping -c 3 postgres
       - run:
           name: code climate
@@ -44,17 +41,16 @@ jobs:
           name: run coverage
           command: |
             docker exec rsum pip install coverage
-            docker exec rsum /usr/bin/cc-test-reporter before-build
-            docker exec rsum coverage run setup.py test
-            docker exec rsum coverage xml
-            docker exec rsum cp coverage.xml /tmp/coverage.xml
-            docker exec rsum /usr/bin/cc-test-reporter \
-            after-build -t coverage.py
+      - run: docker exec rsum /usr/bin/cc-test-reporter before-build
+      - run: docker exec rsum coverage run setup.py test
+      - run: docker exec rsum coverage xml
+      - run: docker exec rsum cp coverage.xml /tmp/coverage.xml
+      - run:
+          docker exec rsum /usr/bin/cc-test-reporter after-build -t coverage.py
       - run:
           name: run pytest
-          command: |
-            docker exec rsum mkdir -p /tmp/rsum
-            docker exec rsum pytest --junit-xml=/tmp/rsum/circle.xml
+          command: docker exec rsum mkdir -p /tmp/rsum
+      - run: docker exec rsum pytest --junit-xml=/tmp/rsum/circle.xml
       - store_test_results:
           path: test-results
 deployment:
