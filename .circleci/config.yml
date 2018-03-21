@@ -10,7 +10,11 @@ jobs:
       - run: docker build -t rsum bin
       - run: docker logs postgres
       - run: docker exec --user postgres postgres createuser -s dev
-      - run: docker run -v $(pwd)/test-results:/tmp:rw --rm -d --name rsum rsum
+      - run: |
+          docker run -v $(pwd)/test-results:/tmp:rw --rm -d --name rsum \
+          -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
+          -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
+          rsum
       - run: docker network connect rsum postgres || true
       - run: docker network connect rsum rsum || true
       - run: docker exec rsum ping -c 3 postgres
