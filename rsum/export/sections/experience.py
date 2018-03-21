@@ -3,6 +3,7 @@
 from django.conf import settings as django_settings
 from docx.shared import Cm
 from docx.enum.table import WD_TABLE_ALIGNMENT
+from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 
 
 class Experience(object):
@@ -103,6 +104,8 @@ class Experience(object):
                 ),
                 height=self.cm(2)
             )
+            table.cell(int(row), int(col)).paragraphs[1].alignment = (
+                WD_PARAGRAPH_ALIGNMENT.CENTER)
         else:
             table.cell(int(row), int(col)).add_paragraph('')
         document = self.finish_tables(
