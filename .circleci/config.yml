@@ -13,7 +13,7 @@ jobs:
       - run:
           name: run container
           command: >
-            docker run -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e\
+            docker run -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e \
             AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
             --network rsum -v $(pwd)/test-results:/tmp:rw \
             --rm -d --name rsum rsum
