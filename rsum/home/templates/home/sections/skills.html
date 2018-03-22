@@ -1,23 +1,27 @@
-    <h2>{{ section|title }}</h2>
-    {% for skill, data in sections.skills.items %}
-      <!-- Progress Box -->
-      {% if skill != 'start' %}
-      <div class="progress-box">
-        <h5>{{ data.name }} <span class="color-heading pull-right">{{ data.experience_string }}</span></h5>
-        <div class="progress">
-          <div class="progress-bar bg-color-base" role="progressbar" data-width="{{ data.experience_value }}"></div>
-        </div>
-        {% for related, skills in data.items %}
-          {% if  related != 'start' and related != 'experience_value'  and related != 'name' and related != 'experience_string' %}
-          <h6 style="padding-left: 20px;">{{ skills.name }} <span class="color-heading pull-right">{{ skills.experience_string }}</span></h6>
-          <div class="progress progress-sub">
-            <div class="progress-bar bg-color-base" role="progressbar" data-width="{{ skills.experience_value }}"></div>
+    
+    <div class="col-xs-12">
+      <h2>{{ section|title }}</h2>
+      {% for skill, data in sections.skills.items %}
+        <div class="col-xs-6">
+          <!-- Progress Box -->
+          {% if skill != 'start' %}
+          <div class="progress-box">
+            <h5>{{ data.name }} <span class="color-heading pull-right">{{ data.experience_string }}</span></h5>
+            <div class="progress">
+              <div class="progress-bar bg-color-base" role="progressbar" data-width="{{ data.experience_value }}"></div>
+            </div>
+            {% for related, skills in data.items %}
+              {% if  related != 'start' and related != 'experience_value'  and related != 'name' and related != 'experience_string' %}
+              <h6 style="padding-left: 20px;">{{ skills.name }} <span class="color-heading pull-right">{{ skills.experience_string }}</span></h6>
+              <div class="progress progress-sub">
+                <div class="progress-bar bg-color-base" role="progressbar" data-width="{{ skills.experience_value }}"></div>
+              </div>
+              {% endif %}
+            {% endfor %}
           </div>
+          <!-- End Progress Box -->
           {% endif %}
-        {% endfor %}
         </div>
-        <!-- End Progress Box -->
-        {% endif %}
       {% endfor %}
       </div>
     </div>
