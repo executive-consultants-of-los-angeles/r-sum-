@@ -10,19 +10,43 @@
 - summary:
     content: "Straight shooter with upper management written all over me."
     build_status:
-      - name: "Build Status"
+      - name: "Source Code Links"
+      - github:
+          name: 'GitHub Repository'
+          image:
+            'https://img.shields.io/github/tag/gahan-corporation/rsum.svg'
+          link:
+            'https://github.com/gahan-corporation/rsum'
+      - circleci:
+          name: "Circle Continuous Integration"
+          image:
+            'https://circleci.com/gh/gahan-corporation/rsum.svg?style=svg'
+          link:
+            'https://circleci.com/gh/gahan-corporation/rsum'
       - travis:
-          name: "Travis CI"
+          name: "Travis Continuous Integration"
           image:
             'https://travis-ci.org/gahan-corporation/rsum.svg?branch=master'
+          link:
+            'https://travis-ci.org/gahan-corporation/rsum'
       - codacy:
           name: "Codacy Code Quality"
           image:
             'https://api.codacy.com/project/badge/Grade/6815cf5fa39f4bbf88ca1cd349eb2f79'
+          link:
+            'https://app.codacy.com/app/gahancorpcfo/rsum/dashboard'
       - codacy_coverage:
           name: 'Codacy Test Coverage'
           image:
             'https://api.codacy.com/project/badge/Coverage/6815cf5fa39f4bbf88ca1cd349eb2f79'
+          link:
+            'https://app.codacy.com/app/gahancorpcfo/rsum/dashboard'
+      - code_climate:
+          name: "Code Climate Quality"
+          image:
+            'https://api.codeclimate.com/v1/badges/e6137a6c3bb11a5db1b3/maintainability'
+          link:
+            'https://codeclimate.com/github/gahan-corporation/rsum'
 - skills:
     start: 2000
     operating_systems:
