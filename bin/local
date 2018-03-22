@@ -1,7 +1,9 @@
 #!/bin/bash
 
 docker run --user postgres -p 5432:5432 --name postgres --rm -d postgres:alpine
+sleep 10
 docker exec --user postgres postgres createuser -s xander
 docker exec --user postgres postgres createdb xander
 rsum/manage.py migrate
 python rsum/rsum/create.py
+rsum/manage.py runserver 0.0.0.0:8000
