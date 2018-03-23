@@ -14,5 +14,4 @@ rsum.loadapps.main()
 def profile():
     """Create a profile for testing."""
     prof = Profile.create()
-    print(prof)
     return prof
