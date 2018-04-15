@@ -344,28 +344,43 @@
         company: "Gahan Corporation"
         position: "Cloud Architect / Python Engineer"
         projects:
-          "Cloud Architect":
-            - "maintain multiple cloud services"
-            - "total cost of ownership < $100/mo"
-            - "pretty good uptime"
-            - "at least not completely awful security"
-          "Python Engineer":
-            - "develop and maintain company websites"
+          - >
+            Manage cloud assets in Google Cloud Platform, AWS, Micorsoft Azure,
+            Digital Ocean, and Linode.
+          - >
+            Use Ansible, Docker, AWS EC2, AWS ECS, AWS S3, AWS Route53,
+            Google Compute Engine, Google Container Registry, and others 
+            to manage continuously shifting business requirements.
+          - >
+            Wrote several versions of the company website with Python and Django,
+            the current version makes use of Odoo ERP.
+          - >
+            Started the company as an LLC and shortly thereafter converted to a
+            domestic stock corporation.
     - csi:
         duration: "September 2017 - January 2018"
         location: "Los Angeles, California"
         company: "Collaboration Solutions Incorporated"
         position: "Python Engineer / Cloud Architect / ERP Analyst"
         projects:
-          "Cloud Architect":
-            - "automated deployment of erp servers"
-            - "converted fromt old-style bare-metal configuration"
-            - "used Infrastructure as Code to employ Docker containers"
-            - "increased system stability and uptime"
-          "Python Engineer":
-            - "automated testing of pre-existing code base of 50-60k lines"
-            - "fixed previously broken functionality while adding new features"
-            - "initiated proper code analysis to improve code quality"
+          - >
+            Client of Gahan Corporation.
+          - >
+            Automated management of development, staging, and production Odoo environments,
+            as well as PostgreSQL servers and databases with Ansible and Docker.
+          - >
+            Designed and deployed CI/CD system with Jenkins on Linode which enabled
+            automated testing of Python and PostgreSQL with py.test, Ansible, and Docker. 
+          - >
+            Ran the company help desk.
+          - >
+            Developed Odoo Enterprise with customized Python modules that required
+            extreme reduction of cyclomatic complexity, complete rewrites to comply with
+            PEP8, in addition to a far bigger number of bug fixes than was ever
+            accounted for.
+          - >
+            Wrote API documentation with Sphinx and improved documention for standardization
+            and compliance.
     - sigtec:
         duration: "December 2016 - March 2017"
         location: "Los Angeles, California"
