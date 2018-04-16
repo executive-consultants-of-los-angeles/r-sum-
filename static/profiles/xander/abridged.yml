@@ -1,3 +1,4 @@
+---
 - intro:
     name: 'Xander Harris'
     position: "Cloud Architect / Python Engineer"
@@ -292,6 +293,7 @@
           from left to right.
     - loyalty:
         col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+        title: Loyalty
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon icon-badge"'
         text: >
@@ -300,18 +302,23 @@
           loyalty, and persistence. - Colin Powell
     - industry:
         col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
+        title: Industry
         service: >
           class="service bg-color-base wow zoomIn"
           data-height="height"
           data-wow-duration=".3"
           data-wow-delay=".1s"
-        icon: ' class="service-icon color-white icon-chemistry"'
+        icon: >
+          style="color: white;"
+          class="service-icon color-white icon-chemistry"
+          style="color: white;"
         text: >
           Concentration is my motto - first
           honesty, then industry,
           then concentration. - Andrew Carnegie
     - efficiency:
         col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
+        title: 'Efficiency'
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon icon-screen-tablet"'
         text: >
@@ -319,6 +326,7 @@
           efficiency. - Benjamin Disraeli
     - wealth:
         col: 'class="col-md-3 col-sm-6"'
+        title: Wealth
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon  icon-mustache"'
         text: >
@@ -657,17 +665,17 @@
     studies: "Kindergarten Diploma, General Studies, Kindergarten"
     duration: "1988 - 1989 (1 year)"
     projects:
-      tests:
-        - "I have always tested well"
-        - "that is how I graduated with a GPA in the 1.7 range"
-        - "it was a very prestigious kindergarten"
+      "Testing":
+        - "I have always tested well."
+        - "That is how I graduated with a GPA in the 1.7 range."
+        - "It was a very prestigious kindergarten."
 - contact:
-    title: "Get in Touch with Xander"
+    title: "Get in Touch"
     message:
-      "Xander is available most weekdays after noon Pacific Time."
-    location: "Los Angeles, California, United States of America"
-    phone: "(424) 209-2976"
-    email: "xander@ecla.solutions"
-    web: "http://xander.ecla.solutions/"
+      "I'm usually available after noon on week days."
+    location: "Los Angeles, CA, United States of America"
+    phone: "(424) 242-9209"
+    email: "xander@gahancorporation.com"
+    web: "https://xander.gahan-corporation.com/"
 ...
 # vim: ft=ansible:
