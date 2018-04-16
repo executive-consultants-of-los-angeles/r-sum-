@@ -1,133 +1,287 @@
----
 - intro:
     name: 'Xander Harris'
-    position: "Python Developer / Site Reliability Engineer"
+    position: "Cloud Architect / Python Engineer"
     social_media_links:
-      facebook: 'https://www.facebook.com/eclacfo'
-      twitter: 'https://twitter.com/eclacfo'
-      linkedin: 'https://www.linkedin.com/in/eclacfo'
-      github: 'https://github.com/eclacfo'
+      facebook: 'https://www.facebook.com/gahancorpcfo'
+      twitter: 'https://twitter.com/gahancorpcfo'
+      linkedin: 'https://www.linkedin.com/in/gahancorpcfo'
+      github: 'https://github.com/gahancorpcfo'
 - summary:
     content: "Straight shooter with upper management written all over me."
-    # calendly: 'https://calendly.com/xander-ecla'
     build_status:
-      - name: "Build Status"
-      - ngnx:
-          name: "nginx"
+      - name: "Source Code Links"
+      - github:
+          name: 'GitHub Repository'
           image:
-            'https://travis-ci.org/executive-consultants-of-los-angeles/ngnx.svg?branch=master'
+            'https://img.shields.io/github/tag/gahan-corporation/rsum.svg'
           link:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/ngnx"
-      - rsum:
-          name: "rsum"
+            'https://github.com/gahan-corporation/rsum'
+      - circleci:
+          name: "Circle Continuous Integration"
           image:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/rsum.svg?branch=master"
+            'https://circleci.com/gh/gahan-corporation/rsum.svg?style=svg'
           link:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/rsum"
-      - ngos:
-          name: "ngos"
+            'https://circleci.com/gh/gahan-corporation/rsum'
+      - travis:
+          name: "Travis Continuous Integration"
           image:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/ngos.svg?branch=master"
+            'https://travis-ci.org/gahan-corporation/rsum.svg?branch=master'
           link:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/ngos"
-      - psql:
-          name: "psql"
+            'https://travis-ci.org/gahan-corporation/rsum'
+      - codacy:
+          name: "Codacy Code Quality"
           image:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/psql.svg?branch=master"
+            'https://api.codacy.com/project/badge/Grade/6815cf5fa39f4bbf88ca1cd349eb2f79'
           link:
-            "https://travis-ci.org/executive-consultants-of-los-angeles/psql"
+            'https://app.codacy.com/app/gahancorpcfo/rsum/dashboard'
+      - codacy_coverage:
+          name: 'Codacy Test Coverage'
+          image:
+            'https://api.codacy.com/project/badge/Coverage/6815cf5fa39f4bbf88ca1cd349eb2f79'
+          link:
+            'https://app.codacy.com/app/gahancorpcfo/rsum/dashboard'
+      - code_climate:
+          name: "Code Climate Quality"
+          image:
+            'https://api.codeclimate.com/v1/badges/e6137a6c3bb11a5db1b3/maintainability'
+          link:
+            'https://codeclimate.com/github/gahan-corporation/rsum'
 - skills:
     start: 2000
-    infrastructure_automation:
-      name: "Infrastructure Automation and Administration"
+    operating_systems:
+      name: "Operating Systems"
       start: 2000
-      ansible:
-        name: "Ansible"
-        start: 2013
-      molecule:
-        name: "Molecule"
-        start: 2016
-      bash:
-        name: "Bourne Again SHell"
-        start: 2000
-      vim:
-        name: "Very IMproved Text Editor"
-        start: 2000
-    cloud_architecture:
-      name: "Cloud Computing Services"
-      start: 2008
-      amazon_web_services:
-        name: "Amazon Web Services"
-        start: 2008
-      microsoft_azure:
-        name: "Microsoft Azure"
-        start: 2016
-      google_cloud:
-        name: "Google Cloud"
-        start: 2016
-      digital_ocean:
-        name: "Digital Ocean"
-        start: 2014
-    software_development:
-      name: "Software Engineering"
-      start: 2004
-      agile:
-        name: "Agile Development"
-        start: 2014
-      sdlc:
-        name: "Software Development Life Cycle"
-        start: 2000
-      scm:
-        name: "Source Code Management"
-        start: 2006
-      git:
-        name: "git"
-        start: 2013
-      svn:
-        name: "SubVersion"
-        start: 2006
-    linux_unix:
-      name: "Linux Administration"
-      start: 2000
-      redhat:
-        name: "RedHat Enterprise Linux"
-        start: 2000
-      debian:
-        name: "Debian Linux"
+      rhel:
+        name: "Red Hat Enterprise Linux"
         start: 2000
       ubuntu:
         name: "Ubuntu Linux"
-        start: 2005
-      gentoo:
-        name: "Gentoo Linux"
-        start: 2004
+        start: 2006
+      freebsd:
+        name: "FreeBSD"
+        start: 2000
+      macos:
+        name: "MacOS"
+        start: 2000
+      alpine:
+        name: "Alpine Linux"
+        start: 2017
+      arch:
+        name: "ArchLinux"
+        start: 2016
     programming:
       name: "Programming Languages"
-      start: 2000
+      start: 2008
       python:
         name: "Python"
+        start: 2013
+      microsoft_azure:
+        name: "BASH"
+        start: 2000
+      google_cloud:
+        name: "YAML"
         start: 2014
       java:
         name: "Java"
         start: 2016
-      php:
-        name: "Personal Home Page"
-        start: 2000
       javascript:
         name: "JavaScript"
         start: 2000
+      jquery:
+        name: "jQuery"
+        start: 2009
+      xml:
+        name: "XML"
+        start: 2008
+      ruby:
+        name: "Ruby"
+        start: 2014
+      html:
+        name: "HTML"
+        start: 2000
+      css:
+        name: "CSS"
+        start: 2000
+      scala:
+        name: "Scala"
+        start: 2017
+      php:
+        name: "PHP"
+        start: 2000
     databases:
-      name: "Relational and Other Databases"
+      name: "Databases"
       start: 2000
-      postgresql:
+      postgres:
         name: "PostgreSQL"
-        start: 2007
+        start: 2008
       mysql:
         name: "MySQL"
         start: 2000
+      db2:
+        name: "DB2"
+        start: 2016
+      mssql:
+        name: "MSSQL"
+        start: 2013
+      nosql:
+        name: "NoSQL"
+        start: 2014
       mongodb:
         name: "MongoDB"
         start: 2014
+    develpment_tools:
+      name: "Development Tools"
+      start: 2000
+      maven:
+        name: "Maven"
+        start: 2014
+      sbt:
+        name: "Scala Build Tool"
+        start: 2015
+      django:
+        name: "Django"
+        start: 2014
+      web2py:
+        name: "Web2Py"
+        start: 2015
+      flask:
+        name: "Flask"
+        start: 2016
+      vim:
+        name: "VIM"
+        start: 2000
+      git:
+        name: "git"
+        start: 2013
+      documentation:
+        name: "Documentation"
+        start: 2000
+      sphinx:
+        name: "Sphinx"
+        start: 2015
+      encryption:
+        name: "Encryption"
+        start: 2015
+    distributed:
+      name: "Distributed Technology"
+      start: 2008
+      ansible:
+        name: "Ansible"
+        start: 2014
+      docker:
+        name: "Docker"
+        start: 2015
+      ec2:
+        name: "AWS EC2"
+        start: 2008
+      s3:
+        name: "AWS S3"
+        start: 2008
+      ecs:
+        name: "AWS ECS"
+        start: 2015
+      route53:
+        name: "AWS Route53"
+        start: 2015
+      vagrant:
+        name: "Vagrant"
+        start: 2013
+      spark:
+        name: "Spark"
+        start: 2015
+      hadoop:
+        name: "Hadoop"
+        start: 2015
+    server_technology:
+      name: "Server Technology"
+      start: 2000
+      nginx:
+        name: "NGINX"
+        start: 2013
+      apache2:
+        name: "Apache2"
+        start: 2000
+      uwsgi:
+        name: "uWSGI"
+        start: 2014
+      gunicorn:
+        name: "gunicorn"
+        start: 2014
+      postfix:
+        name: "Postfix"
+        start: 2014
+      dovecot:
+        name: "Dovecot"
+        start: 2015
+      courier:
+        name: "Courier (POP & IMAP)"
+        start: 2015
+      upstart:
+        name: "Upstart"
+        start: 2013
+      systemd:
+        name: "Systemd"
+        start: 2015
+      new_relic:
+        name: "New Relic"
+        start: 2015
+      smtp:
+        name: "SMTP"
+        start: 2015
+      imap:
+        name: "IMAP"
+        start: 2015
+      http:
+        name: "HTTP"
+        start: 2009
+    sdlc:
+      name: "Software Development Life Cycle"
+      start: 2008
+      agile:
+        name: "Agile"
+        start: 2008
+      scrum:
+        name: "SCRUM"
+        start: 2008
+      git:
+        name: "Git"
+        start: 2013
+      branching:
+        name: "Branching Models"
+        start: 2013
+      sprints:
+        name: "Sprint Planning and Review"
+        start: 2014
+      jira:
+        name: "JIRA"
+        start: 2014
+      commit_cycle:
+        name: "Commit Cycles"
+        start: 2013
+    qa:
+      name: "Quality Assurance"
+      start: 2000
+      code_review:
+        name: "Code Review"
+        start: 2008
+      automated_testing:
+        name: "Automated Testing"
+        start: 2014
+      jenkins:
+        name: "Jenkins"
+        start: 2014
+      sonar:
+        name: "Sonar"
+        start: 2014
+      bitbucket:
+        name: "Bitbucket"
+        start: 2014
+      github:
+        name: "GitHub"
+        start: 2013
+      pull_requests:
+        name: "Pull Requests"
+        start: 2013
 - values:
     - introduction:
         name: 'Introduction'
