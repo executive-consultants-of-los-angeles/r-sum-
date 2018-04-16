@@ -357,6 +357,57 @@
           - >
             Started the company as an LLC and shortly thereafter converted to a
             domestic stock corporation.
+        tools:
+          >
+          vim, BASH, AWS EC2, AWS S3, AWS Route53, AWS ECS, AWS CLI, AWS IAM,
+          Google Cloud Platform, Google Compute Engine, Google Big Table,
+          Google Container Registry, Ansible, Python, Jenkins, Docker,
+          Kubernetes, git, Nagios, Bitbucket, JIRA, Tomcat, Confluence
+    - abiogenix_incorporated:
+        duration: 08/2014 - Present
+        location: "Los Angeles, California"
+        company: "Abiogenix Incorporated"
+        position: DevOps Engineer
+        projects:
+          - >
+            Client of Gahan Corporation.
+          - >
+            Developed shopping cart for my uBox medication dispenser using
+            Django, Python, and JavaScript.
+          - >
+            Deployed, managed, and automated configuration of Atlassian suite
+            (JIRA, Bitbucket, Confluence) with Amazon EC2, Amazon ECS,
+            Ansible, Docker, and Ubuntu.
+          - >
+            Deployed and maintainted mail services for my-ubox.com with, Postfix
+            Courier (IMAP), Ansible, Amazon ECS, and Docker.
+          - >
+            Administered and automated maintenance of Odoo ERP servers
+            (development and production) with Ansible, Python, Docker,
+            Amazon ECS and PostgreSQL.
+          - >
+            Migrated my-ubox.com and abiogenix.com to Route53 DNS.
+          - >
+            Instructed team members on the use of Atlassian products such as
+            JIRA, Bitbucket, Confluence and SourceTree.
+          - >
+            Trained team members on proper use of git and gitflow to
+            manage branching and deployemnt to production.
+          - >
+            Implemented push-to-deploy on Abiogenix web repositories to
+            allow developers to deploy to production without using ssh.
+          - >
+            Developed HIPAA-compliant automated backup system using AWS S3,
+            Python, Ansible, BASH, and GPG.
+          - >
+            Reduced cost of ownership for all Abiogenix AWS resources by roughly
+            eighty per cent.
+        tools:
+          >
+          vim, BASH, AWS EC2, AWS S3, AWS Route53, AWS IAM, AWS ECS,
+          NGINX, Ubuntu, Ansible, Docker, Stripe, Python, Django, Odoo,
+          REST, Postfix, Courier (IMAP), Nagios, PHP, HTML, CSS, jQuery,
+          git, Bitbucket, JIRA, Confluence, Tomcat, Apache2
     - csi:
         duration: "September 2017 - January 2018"
         location: "Los Angeles, California"
@@ -374,15 +425,27 @@
             enabled automated testing of Python and PostgreSQL with py.test,
             Ansible, and Docker.
           - >
-            Ran the company help desk.
+            Created, then ran the company help desk.
           - >
-            Developed Odoo Enterprise Modules with Python, PostGreSQL, and
+            Developed Odoo Enterprise Modules with Python, PostgreSQL, and
             SQLAlchemy that required extreme reduction of cyclomatic complexity,
             complete rewrites to comply with PEP8, in addition to a far
             greater number of bug fixes than was ever accounted for.
           - >
             Wrote API documentation with Sphinx and improved documention for
             standardization and compliance.
+          - >
+            Discovered mission critical inconsistencies in accounting and
+            inventory data which was causing valuation errors in excess of one
+            million dollars using Odoo, PostgreSQL, Python, and SQLAlchemy.
+          - >
+            Trained team members on the use of PostgreSQL to query and analyze
+            accounting and inventory data.
+        tools:
+          >
+          vim, BASH, AWS EC2, AWS S3, NGINX, Jenkins, Ansible, Docker, HTML,
+          CSS, JavaScript, PostgreSQL, Sphinx, Odoo ERP, coveralls.io,
+          Nagios, GitHub, Bitbucket, git, Linode, patience
     - sigtec:
         duration: "December 2016 - March 2017"
         location: "Los Angeles, California"
@@ -393,10 +456,14 @@
             Client of Gahan Corporation.
           - >
             Developed website for management of patient data with Flask, Python,
-            SQLAlchemy, and PostgreSQL.
+            SQLAlchemy, PostgreSQL, and PokitDoc.
           - >
             Designed and automated deployment of development environments with
             Ansible and Docker.
+        tools:
+          >
+          vim, BASH, Ansible, Docker, NGINX, Python, PostgreSQL, Flask,
+          SQLAlchemy, HTML, CSS, jQuery, Ubuntu, REST
     - network_of_one:
         duration: 07/2016 - 08/2016
         location: Culver City, California
@@ -417,28 +484,10 @@
           - >
             Began work on software to export data from IBM DB2 into RDS using
             Ansible, Python, PostgreSQL, and IBM DB2.
-    - abiogenix_incorporated:
-        duration: "08/2014 - 08/2017"
-        location: "Los Angeles, California"
-        company: "Abiogenix Incorporated"
-        position: Cloud Architect and Python Developer
-        projects:
-          - >
-            Developed shopping cart for my uBox medication dispenser using
-            Django, Python, and JavaScript.
-          - >
-            Deployed, managed, and automated configuration of Atlassian suite
-            (JIRA, Bitbucket, Confluence) with Amazon EC2, Amazon ECS,
-            Ansible, Docker, and Ubuntu.
-          - >
-            Deployed and maintainted mail services for my-ubox.com with, Postfix
-            Courier (IMAP), Ansible, Amazon ECS, and Docker.
-          - >
-            Administered and automated maintenance of Odoo ERP servers
-            (development and production) with Ansible, Python, Docker,
-            Amazon ECS and PostgreSQL.
-          - >
-            Migrated my-ubox.com and abiogenix.com to Route53 DNS.
+        tools:
+          >
+          vim, BASH, Ansible, Python, AWS EC2, AWS IAM, NGINX, Docker, IBM DB2
+          AWS RDS, PostgreSQL
     - creative_artists_agency:
         duration: "September 2015  -  March 2016"
         location: "Los Angeles, California"
@@ -462,6 +511,11 @@
             schedule to enable the developers to deliver bug
             fixes and new features daily with Jenkins, Ansible, Python, Web2Py,
             and Ansible Tower.
+        tools:
+          >
+          vim, BASH, Ansible, Ansible Tower, Python, AWS EC2, NGINX, uWSGI,
+          Python, Web2Py, Jenkins, Docker, Ubuntu, CentOS, JupyterHub, git,
+          GitHub, MySQL, Slack
     - devops_tms:
         duration: 01/2014 - 07/2015
         company: Toyota Motor Sales
@@ -479,7 +533,11 @@
             Designed, deployed, and implemented automated tests and deployment
             of Customer 360 code written in Java, Scala, and Python with
             Ansible, BASH, Ant, Maven, and Jenkins.
-    - python_tms:
+        tools:
+          >
+          vim, BASH, Ansible, Jenkins, Python, Java, Ant, Maven, Scala,
+          Tomcat, SBT, git, AWS EC2, CentOS
+    - lead_python_developer_tms:
         duration: 12/2014 - 07/2015
         location: "Los Angeles, California"
         company: "Toyota Motor Sales"
@@ -498,6 +556,10 @@
             on compliance to team of remote Python developers.
           - >
             Ran daily SCRUMs for Customer 360 developers.
+        tools:
+          >
+          vim, BASH, Python, ScraPY, git, gitflow, SCRUM, REST, JIRA,
+          Bitbucket
     - mintspare:
         duration: 02/2014 - 01/2015
         location: "Alameda, California"
@@ -512,6 +574,11 @@
           - >
             Developed Mintspare websites using CakePHP, jQuery, HTML, CSS,
             Bitcoin, and MySQL.
+        tools:
+          >
+          vim, BASH, Bitcoin, PHP, CakePHP, HTML, CSS, JavaScript, jQuery,
+          Ubuntu, Digital Ocean Droplets, AWS EC2, Python, MySQL, git,
+          Bitbucket
     - vs_media:
         duration: 08/2013 - 12/2013
         location: "Los Angeles, California"
@@ -526,6 +593,9 @@
             Documented control flow of email system software with Dia.
           - >
             Responsible for daily marketing campaigns.
+        tools:
+          >
+          vim, BASH, PHP, HTML, CSS, CentOS, Subversion
     - thrive_marketing:
         duration: "April 2013  -  July 2013"
         location: "Nashville, Tennessee"
@@ -544,6 +614,10 @@
             using CentOS, Ubuntu, Gentoo, Windows Server, and BASH.
           - >
             Assisted with administration of office workstations with Windows 8.
+        tools:
+          >
+          vim, BASH, PHP, git, GitHub, CentOS, Ubuntu, Gentoo, Windows 8,
+          Windows Server 2008, REST, SOAP, HTML, CSS, JavaScript, jQuery
     - wishb:
         duration: 07/2010 - 09/2010
         location: "San Francisco, California"
@@ -556,6 +630,10 @@
           - >
             Deployed development and production environments with CentOS,
             Apache2, BASH and MySQL.
+        tools:
+          >
+          vim, BASH, PHP, HTML, MVC, jQuery, JavaScript, MySQL, Apahce 2,
+          CentOS, Subversion, SCRUM
 - education:
     name: "Broadmoor Elementary School"
     location: "Lafayette, Louisiana"
