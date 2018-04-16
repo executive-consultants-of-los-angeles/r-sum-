@@ -1,52 +1,33 @@
 ---
 - intro:
     name: 'Xander Harris'
-    position: "Cloud Architect / Python Engineer"
+    position: "Python Developer / Site Reliability Engineer"
     social_media_links:
-      facebook: 'https://www.facebook.com/gahancorpcfo'
-      twitter: 'https://twitter.com/gahancorpcfo'
-      linkedin: 'https://www.linkedin.com/in/gahancorpcfo'
-      github: 'https://github.com/gahancorpcfo'
+      facebook: 'https://www.facebook.com/eclacfo'
+      twitter: 'https://twitter.com/eclacfo'
+      linkedin: 'https://www.linkedin.com/in/eclacfo'
+      github: 'https://github.com/eclacfo'
 - summary:
     content: "Straight shooter with upper management written all over me."
     build_status:
-      - name: "Source Code Links"
-      - github:
-          name: 'GitHub Repository'
-          image:
-            'https://img.shields.io/github/tag/gahan-corporation/rsum.svg'
-          link:
-            'https://github.com/gahan-corporation/rsum'
-      - circleci:
-          name: "Circle Continuous Integration"
-          image:
-            'https://circleci.com/gh/gahan-corporation/rsum.svg?style=svg'
-          link:
-            'https://circleci.com/gh/gahan-corporation/rsum'
       - travis:
-          name: "Travis Continuous Integration"
+          name: 'travis'
           image:
-            'https://travis-ci.org/gahan-corporation/rsum.svg?branch=master'
+            'https://travis-ci.org/gahan-corporation/rsum.application.svg?branch=master'
           link:
-            'https://travis-ci.org/gahan-corporation/rsum'
+            'https://travis-ci.org/gahan-corporation/rsum.application'
       - codacy:
-          name: "Codacy Code Quality"
+          name: "codacy"
           image:
-            'https://api.codacy.com/project/badge/Grade/6815cf5fa39f4bbf88ca1cd349eb2f79'
+            "https://api.codacy.com/project/badge/Grade/e8ccc643c99147dca4fd98a8b2851451?isInternal=true"
           link:
-            'https://app.codacy.com/app/gahancorpcfo/rsum/dashboard'
-      - codacy_coverage:
-          name: 'Codacy Test Coverage'
+            "https://www.codacy.com/app/projectList/gahancorpcfo/rsum.application"
+      - ngos:
+          name: "codeclimate"
           image:
-            'https://api.codacy.com/project/badge/Coverage/6815cf5fa39f4bbf88ca1cd349eb2f79'
+            "https://api.codeclimate.com/v1/badges/174065f2c90869f99680/maintainability"
           link:
-            'https://app.codacy.com/app/gahancorpcfo/rsum/dashboard'
-      - code_climate:
-          name: "Code Climate Quality"
-          image:
-            'https://api.codeclimate.com/v1/badges/e6137a6c3bb11a5db1b3/maintainability'
-          link:
-            'https://codeclimate.com/github/gahan-corporation/rsum'
+            "https://codeclimate.com/github/gahan-corporation/rsum.application"
 - skills:
     start: 2000
     operating_systems:
@@ -101,7 +82,7 @@
         name: "HTML"
         start: 2000
       css:
-        name: "CSS"
+        name: "CSS`"
         start: 2000
       scala:
         name: "Scala"
@@ -293,7 +274,6 @@
           from left to right.
     - loyalty:
         col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
-        title: Loyalty
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon icon-badge"'
         text: >
@@ -302,23 +282,18 @@
           loyalty, and persistence. - Colin Powell
     - industry:
         col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
-        title: Industry
         service: >
           class="service bg-color-base wow zoomIn"
           data-height="height"
           data-wow-duration=".3"
           data-wow-delay=".1s"
-        icon: >
-          style="color: white;"
-          class="service-icon color-white icon-chemistry"
-          style="color: white;"
+        icon: ' class="service-icon color-white icon-chemistry"'
         text: >
           Concentration is my motto - first
           honesty, then industry,
           then concentration. - Andrew Carnegie
     - efficiency:
         col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
-        title: 'Efficiency'
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon icon-screen-tablet"'
         text: >
@@ -326,7 +301,6 @@
           efficiency. - Benjamin Disraeli
     - wealth:
         col: 'class="col-md-3 col-sm-6"'
-        title: Wealth
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon  icon-mustache"'
         text: >
@@ -659,23 +633,168 @@
           >
           vim, BASH, PHP, HTML, MVC, jQuery, JavaScript, MySQL, Apahce 2,
           CentOS, Subversion, SCRUM
+    - logitech:
+        duration: 04/2008 - 04/2010
+        location: "San Francisco, California"
+        company: "Logitech"
+        position: Web Engineer
+        projects:
+          - >
+            Developed video chat application with JavaScript, CSS, and Dojo.js.
+          - >
+            Created a custom Gentoo AMI to automate deployment of mission
+            critical systems to AWS EC2.
+          - >
+            Migrated more than twenty Gentoo and Ubuntu servers to a
+            new datacenter with minimal downtime.
+          - >
+            Deployed application servers during launch of Logitech Vid
+            application.
+          - >
+            Developed a multi-process media transcoding server with PHP,
+            BASH, AWS S3, ffmpeg, and SOAP.
+        tools:
+          >
+          vim, BASH, PHP, HTML, JavaScript, Dojo.js, AWS EC2, AWS S3,
+          Gentoo, Ubuntu, SOAP, ffmpeg, AMI
+    - blowtorch:
+        duration: 11/2007 - 03/2008
+        location: "Sausalito, California"
+        company: "Blowtorch Entertainment"
+        position: Web Engineer
+        projects:
+          - >
+            Developed custom Drupal modules with PHP and JavaScript.
+          - >
+            Created new tables in PostgreSQL database.
+          - >
+            Configured, managed, and deployed Apache on CentOS development
+            server.
+        tools:
+          >
+          vim, BASH, PHP, HTML, CSS, JavaScript, PostgreSQL, Apache 2, CentOS
+    - vinyl:
+        duration: 06/2007 - 11/2007
+        location: "San Francisco, California"
+        company: "Vinyl Interactive"
+        position: "Database Administrator"
+        projects:
+          - >
+            Developed BASH scripts to automate daily database imports from
+            CSV files to MSSQL and MySQL databases.
+          - >
+            Administered MSSQL and MySQL database servers.
+          - >
+            Configured and deployed a SAN running RedHat Linux with
+            a hardware RAID 5 setup.
+        tools:
+          >
+          vim, BASH, MySQL, MSSQL, SAN, RedHat, RAID
+    - fordela:
+        duration: 10/2006 - 05-2007
+        location: "San Francisco, California"
+        company: "Fordela"
+        position: "PHP Developer"
+        projects:
+          - >
+            Designed and implemented new database tables with MySQL.
+          - >
+            Converted existing PHP code to take advantage of the CakePHP
+            MVC.
+          - >
+            Developed Fordela Video Mill application using CakePHP, HTML,
+            CSS, and JavaScript.
+          - >
+            Implemented version control for Fordela Video Mill application
+            with Subversion.
+          - >
+            Administered servers running Apache 2 and MySQL on CentOS.
+        tools:
+          >
+          vim, BASH, PHP, MySQL, CakePHP, MVC, Apache 2, CentOS, HTML,
+          JavaScript, CSS, Subversion
+    - optyweb:
+        duration: 11/2005 - 05/2006
+        location: "San Francisco, California"
+        company: "Optyweb"
+        position: "Webmaster"
+        projects:
+          - >
+            Developed Optyweb websites with HTML and CSS.
+          - >
+            Responsible for resolving client issues for the help desk.
+          - >
+            Deployed numerous LAMP stack servers in two data centers.
+          - >
+            Automated installation and deployment of *nix distributions
+            such as FreeBSD, CentOS, Debian, Fedora, and Ubuntu.
+          - >
+            Migrated more than sixty servers from one datacenter to another
+            with minimal downtime for customers.
+        tools:
+          >
+          vim, BASH, HTML, CSS, LAMP, Apache 2, MySQL, FreeBSD, CentOS, Debian,
+          Fedora, Ubuntu
+    - payne_media:
+        duration: 03/2005 - 11/2005
+        location: "Seattle, Washington"
+        company: "Payne Media"
+        position: "PHP Developer / Database Administrator"
+        projects:
+          - >
+            Created and improved client websites with XHTML, CSS, PHP, and
+            MySQL.
+          - >
+            Deployed and administered Gentoo Linux servers providing web,
+            mail, and database services.
+        tools:
+          >
+          vim, BASH, PHP, CSS, XHTML, MySQL, Postfix, Courier, Gentoo
+    - forest_service:
+        duration: 04/2004 - 03/2005
+        location: "Seattle, Washington"
+        company: "United States Forest Service AirFIRE Team"
+        position: "Webmaster"
+        projects:
+          - >
+            Developed AirFIRE websites with PHP, CSS, and XHTML.
+          - >
+            Assisted in administration of AirFIRE team web server running
+            Debian.
+          - >
+            Upgraded web server from Apache 1.3 to Apache 2.
+        tools:
+          >
+          vim, BASH, PHP, CSS, XHTML, Apache, Apache 2, Debian
+    - saxotech:
+        duration: 03/2003 - 01/2004
+        location: "Washington, District of Columbia"
+        company: "SaXOTECH AS"
+        position: "Customer Fulfillment Specialist"
+        projects:
+          - >
+            Upgraded mission critical systems running RedHat Linux.
+          - >
+            Resolved client issues using CSS, HTML, JavaScript, and MySQL.
+          - >
+            Took part in on call rotation.
 - education:
     name: "Broadmoor Elementary School"
     location: "Lafayette, Louisiana"
     studies: "Kindergarten Diploma, General Studies, Kindergarten"
     duration: "1988 - 1989 (1 year)"
     projects:
-      "Testing":
-        - "I have always tested well."
-        - "That is how I graduated with a GPA in the 1.7 range."
-        - "It was a very prestigious kindergarten."
+      tests:
+        - "I have always tested well"
+        - "that is how I graduated with a GPA in the 1.7 range"
+        - "it was a very prestigious kindergarten"
 - contact:
-    title: "Get in Touch"
+    title: "Get in Touch with Xander"
     message:
-      "I'm usually available after noon on week days."
-    location: "Los Angeles, CA, United States of America"
-    phone: "(424) 242-9209"
-    email: "xander@gahancorporation.com"
-    web: "https://xander.gahan-corporation.com/"
+      "Xander is available most weekdays after noon Pacific Time."
+    location: "Los Angeles, California, United States of America"
+    phone: "(424) 209-2976"
+    email: "xander@ecla.solutions"
+    web: "http://xander.ecla.solutions/"
 ...
 # vim: ft=ansible:
