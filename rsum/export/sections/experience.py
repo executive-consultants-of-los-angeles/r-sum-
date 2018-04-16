@@ -157,6 +157,25 @@ class Experience(object):
         :return: Updated Projects table.
         :rtype: object
         """
+        if isinstance(self.projects, list):
+            for project in self.projects:
+                paragraph = table.cell(row, col).add_paragraph(
+                    project, style='List Bullet')
+                paragraph.paragraph_format.line_spacing = self.spacing
+                paragraph.paragraph_format.space_after = 0
+                paragraph.paragraph_format.tab_stops.add_tab_stop(self.cm(0.2))
+            return document
+        return self.add_detailed_projects(
+            document, table, row, col)
+
+    def add_detailed_documents(self, document, table, row, col):
+        """Returns list of projects with sub bullets.
+
+        :param document:
+        :param table:
+        :param row:
+        :param col:
+        """
         for project_name, project in self.projects.items():
             paragraph = table.cell(row, col).add_paragraph(
                 project_name.replace('_', ' ').title(),

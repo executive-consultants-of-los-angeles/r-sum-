@@ -29,7 +29,7 @@
                     <h5 style="color: #969696; font-variant: small-caps;">{{ content.company }}</h5>
                   </p>
                   <p>
-                    <h6>{{ content.location }}, {{ content.duration }}</h6>
+                    <h5>{{ content.location }}, {{ content.duration }}</h5>
                   </p>
                   <p>
                     <ul style="padding: 0px 0px 0px 20px; list-style-image: url('{% static 'profiles/'|add:dir|add:'/img/bigdot.png' %}');">
@@ -47,7 +47,7 @@
           {% else %}
             {% for project in content.projects %}
               <li>
-                <h5>{{ project }}</h5>
+                <h6>{{ project }}</h6>
               </li>
             {% endfor %}
           {% endif %}
