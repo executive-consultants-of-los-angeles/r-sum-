@@ -340,23 +340,36 @@
         paid for it about fifteen of those years.'
     - gahan:
         duration: 05/2016 - Present
-        location: "Los Angeles, California"
+        location: "Los Angeles, CA"
         company: "Gahan Corporation"
         position: Director of Technology
         projects:
           - >
             Manage cloud assets in Google Cloud Platform, AWS, Micorsoft Azure,
-            Digital Ocean, and Linode.
+            Digital Ocean, Heroku, and Linode with Ansible, Terraform, and BASH.
           - >
-            Use Ansible, Docker, AWS EC2, AWS ECS, AWS S3, AWS Route53,
-            Google Compute Engine, Google Container Registry, and others
-            to manage continuously shifting business requirements.
-          - >
-            Wrote several versions of the company website with Python and Django
-            the current version makes use of Odoo ERP.
+            Developed the company websites using Python, Django, PostgreSQL,
+            Bootstrap, jQuery, HTML, CSS and JavaScript.
           - >
             Started the company as an LLC and shortly thereafter converted to a
             domestic stock corporation.
+          - >
+            Worked closely with the CEO to find and develop new business.
+          - >
+            Deployed, managed, and automated configuration of Atlassian
+            suite (JIRA, Bitbucket, Confluence, Bamboo,
+            Crowd) to AWS EC2 using AWS ECS, Ansible, and Docker.
+          - >
+            Managed Odoo ERP services starting with version 8.0 and proceeding
+            through upgrades to 9.0 and 10.0 using Python, Ansible, Docker,
+            AWS EC2, AWS ECS, and PostgreSQL.
+          - >
+            Managed gahan-corporation.com mail services using Postfix with
+            Courier (IMAP) then migrating to Dovecot with Ansible, Docker,
+            AWS ECS, and AWS Route53.
+          - >
+            Drafted and filed Articles of Incorporation as well as the
+            contracts the corporation uses to interface with clients.
         tools:
           >
           vim, BASH, AWS EC2, AWS S3, AWS Route53, AWS ECS, AWS CLI, AWS IAM,
@@ -365,7 +378,7 @@
           Kubernetes, git, Nagios, Bitbucket, JIRA, Tomcat, Confluence
     - abiogenix_incorporated:
         duration: 08/2014 - Present
-        location: "Los Angeles, California"
+        location: "Los Angeles, CA"
         company: "Abiogenix Incorporated"
         position: DevOps Engineer
         projects:
@@ -396,12 +409,12 @@
           - >
             Implemented push-to-deploy on Abiogenix web repositories to
             allow developers to deploy to production without using ssh.
-          - >
-            Developed HIPAA-compliant automated backup system using AWS S3,
-            Python, Ansible, BASH, and GPG.
-          - >
-            Reduced cost of ownership for all Abiogenix AWS resources by roughly
-            eighty per cent.
+          # - >
+          #  Developed HIPAA-compliant automated backup system using AWS S3,
+          #  Python, Ansible, BASH, and GPG.
+          # - >
+          #  Reduced cost of ownership for all Abiogenix AWS resources by
+          #  roughly eighty per cent.
         tools:
           >
           vim, BASH, AWS EC2, AWS S3, AWS Route53, AWS IAM, AWS ECS,
@@ -410,7 +423,7 @@
           git, Bitbucket, JIRA, Confluence, Tomcat, Apache2
     - csi:
         duration: "September 2017 - January 2018"
-        location: "Los Angeles, California"
+        location: "Los Angeles, CA"
         company: "Collaboration Solutions Incorporated"
         position: DevOps Engineer
         projects:
@@ -448,7 +461,7 @@
           Nagios, GitHub, Bitbucket, git, Linode, patience
     - sigtec:
         duration: "December 2016 - March 2017"
-        location: "Los Angeles, California"
+        location: "Los Angeles, CA"
         company: "Signal Technologies LLC"
         position: Python Developer
         projects:
@@ -466,7 +479,7 @@
           SQLAlchemy, HTML, CSS, jQuery, Ubuntu, REST
     - network_of_one:
         duration: 07/2016 - 08/2016
-        location: Culver City, California
+        location: Culver City, CA
         company: Network of One
         position: DevOps Engineer
         projects:
@@ -489,28 +502,30 @@
           vim, BASH, Ansible, Python, AWS EC2, AWS IAM, NGINX, Docker, IBM DB2
           AWS RDS, PostgreSQL
     - creative_artists_agency:
-        duration: "September 2015  -  March 2016"
-        location: "Los Angeles, California"
+        duration: 09/2015 - 03/2016
+        location: Torrance, CA
         company: "Creative Artists Agency"
-        position: "Cloud Architect / Python Engineer"
+        position: DevOps Engineer
         projects:
-          - >
-            Automated JupyterHub deployment with Ansible, Python, BASH, and
-            Ansible Tower.
-          - >
-            Provided guidance and instruction in Python, Pandas, and JupyterHub
-            to the WorkDay migration team.
-          - >
-            Managed cloud infrastructure of roughly 30 EC2 instances using
-            Ansible, Ansible Tower, BASH, CentOS, and Ubuntu.
-          - >
-            Refactored an existing library of Ansible playbooks for scalability,
-            speed, and stability.
           - >
             Implemented CI/CD for an internal project which was a year behind
             schedule to enable the developers to deliver bug
             fixes and new features daily with Jenkins, Ansible, Python, Web2Py,
             and Ansible Tower.
+          - >
+            Alerted stakeholders to failing jobs in Ansible Tower or
+            non-functional infrastructure with New Relic, PagerDuty, Python,
+            and Ansible.
+          - >
+            Trained and guided WorkDay migration team in the use of Python,
+            Pandas and JupyterHub through completion of the project.
+          - >
+            Managed and monitored cloud infrastructure of roughly 30 EC2
+            instances using Ansible, Ansible Tower, BASH, CentOS, Ubuntu,
+            and New Relic.
+          - >
+            Refactored an existing library of Ansible playbooks for scalability,
+            speed, and stability.
         tools:
           >
           vim, BASH, Ansible, Ansible Tower, Python, AWS EC2, NGINX, uWSGI,
@@ -518,13 +533,14 @@
           GitHub, MySQL, Slack
     - devops_tms:
         duration: 01/2014 - 07/2015
+        location: Torrance, CA
         company: Toyota Motor Sales
         position: DevOps Engineer
         projects:
           - >
             Automated deployment of Customer 360 services to reduce time to
             deploy from several weeks to less than an hour with Ansible,
-            BASH, Java, Ant, Maven, and Scala Build Tool.
+            BASH, Java, Ant, Maven, Tomcat, and Scala Build Tool.
           - >
             Managed configuration and maintance of Customer 360 cloud
             infrastructure consisting of roughly 10 Red Hat Linux EC2
@@ -533,13 +549,16 @@
             Designed, deployed, and implemented automated tests and deployment
             of Customer 360 code written in Java, Scala, and Python with
             Ansible, BASH, Ant, Maven, and Jenkins.
+          - >
+            Supported a team of 25 developers with Jenkins CI, Bitbucket,
+            and Ansible to ensure they were able to release on time.
         tools:
           >
           vim, BASH, Ansible, Jenkins, Python, Java, Ant, Maven, Scala,
           Tomcat, SBT, git, AWS EC2, CentOS
     - lead_python_developer_tms:
         duration: 12/2014 - 07/2015
-        location: "Los Angeles, California"
+        location: "Los Angeles, CA"
         company: "Toyota Motor Sales"
         position: Lead Python Developer
         projects:
@@ -556,13 +575,16 @@
             on compliance to team of remote Python developers.
           - >
             Ran daily SCRUMs for Customer 360 developers.
+          - >
+            Participated in sprint planning and review cycle with Customer 360
+            team of 25 developers.
         tools:
           >
           vim, BASH, Python, ScraPY, git, gitflow, SCRUM, REST, JIRA,
           Bitbucket
     - mintspare:
         duration: 02/2014 - 01/2015
-        location: "Alameda, California"
+        location: "Alameda, CA"
         company: "Mintspare Incorporated"
         position: "Chief Technical Officer"
         projects:
@@ -574,6 +596,9 @@
           - >
             Developed Mintspare websites using CakePHP, jQuery, HTML, CSS,
             Bitcoin, and MySQL.
+          - >
+            Interacted with Bitcoin server using PHP to allow automatic
+            transactions for Mintspare customers.
         tools:
           >
           vim, BASH, Bitcoin, PHP, CakePHP, HTML, CSS, JavaScript, jQuery,
@@ -581,7 +606,7 @@
           Bitbucket
     - vs_media:
         duration: 08/2013 - 12/2013
-        location: "Los Angeles, California"
+        location: "Los Angeles, CA"
         company: "VS Media"
         position: Email Analyst
         projects:
@@ -597,10 +622,10 @@
           >
           vim, BASH, PHP, HTML, CSS, CentOS, Subversion
     - thrive_marketing:
-        duration: "April 2013  -  July 2013"
-        location: "Nashville, Tennessee"
+        duration: 04/2013 - 06/2013
+        location: "Nashville, TN"
         company: "Thrive Marketing"
-        position: Web Developer and System Administrator
+        position: Web Developer
         projects:
           - >
             Developed internal tool to allow non-technical call center staff
@@ -620,9 +645,9 @@
           Windows Server 2008, REST, SOAP, HTML, CSS, JavaScript, jQuery
     - wishb:
         duration: 07/2010 - 09/2010
-        location: "San Francisco, California"
+        location: "San Francisco, CA"
         company: "WishB LLC"
-        position: Web Developer and System Administrator
+        position: Web Developer
         projects:
           - >
             Developed WishB websites using PHP, HTML, MVC, jQuery,
@@ -648,7 +673,7 @@
     title: "Get in Touch"
     message:
       "I'm usually available after noon on week days."
-    location: "Los Angeles, California, United States of America"
+    location: "Los Angeles, CA, United States of America"
     phone: "(424) 242-9209"
     email: "xander@gahancorporation.com"
     web: "https://xander.gahan-corporation.com/"
