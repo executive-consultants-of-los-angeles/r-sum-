@@ -1,33 +1,52 @@
 ---
 - intro:
     name: 'Xander Harris'
-    position: "Python Developer / Site Reliability Engineer"
+    position: "Cloud Architect / Python Engineer"
     social_media_links:
-      facebook: 'https://www.facebook.com/eclacfo'
-      twitter: 'https://twitter.com/eclacfo'
-      linkedin: 'https://www.linkedin.com/in/eclacfo'
-      github: 'https://github.com/eclacfo'
+      facebook: 'https://www.facebook.com/gahancorpcfo'
+      twitter: 'https://twitter.com/gahancorpcfo'
+      linkedin: 'https://www.linkedin.com/in/gahancorpcfo'
+      github: 'https://github.com/gahancorpcfo'
 - summary:
     content: "Straight shooter with upper management written all over me."
     build_status:
+      - name: "Source Code Links"
+      - github:
+          name: 'GitHub Repository'
+          image:
+            'https://img.shields.io/github/tag/gahan-corporation/rsum.svg'
+          link:
+            'https://github.com/gahan-corporation/rsum'
+      - circleci:
+          name: "Circle Continuous Integration"
+          image:
+            'https://circleci.com/gh/gahan-corporation/rsum.svg?style=svg'
+          link:
+            'https://circleci.com/gh/gahan-corporation/rsum'
       - travis:
-          name: 'travis'
+          name: "Travis Continuous Integration"
           image:
-            'https://travis-ci.org/gahan-corporation/rsum.application.svg?branch=master'
+            'https://travis-ci.org/gahan-corporation/rsum.svg?branch=master'
           link:
-            'https://travis-ci.org/gahan-corporation/rsum.application'
+            'https://travis-ci.org/gahan-corporation/rsum'
       - codacy:
-          name: "codacy"
+          name: "Codacy Code Quality"
           image:
-            "https://api.codacy.com/project/badge/Grade/e8ccc643c99147dca4fd98a8b2851451?isInternal=true"
+            'https://api.codacy.com/project/badge/Grade/6815cf5fa39f4bbf88ca1cd349eb2f79'
           link:
-            "https://www.codacy.com/app/projectList/gahancorpcfo/rsum.application"
-      - ngos:
-          name: "codeclimate"
+            'https://app.codacy.com/app/gahancorpcfo/rsum/dashboard'
+      - codacy_coverage:
+          name: 'Codacy Test Coverage'
           image:
-            "https://api.codeclimate.com/v1/badges/174065f2c90869f99680/maintainability"
+            'https://api.codacy.com/project/badge/Coverage/6815cf5fa39f4bbf88ca1cd349eb2f79'
           link:
-            "https://codeclimate.com/github/gahan-corporation/rsum.application"
+            'https://app.codacy.com/app/gahancorpcfo/rsum/dashboard'
+      - code_climate:
+          name: "Code Climate Quality"
+          image:
+            'https://api.codeclimate.com/v1/badges/e6137a6c3bb11a5db1b3/maintainability'
+          link:
+            'https://codeclimate.com/github/gahan-corporation/rsum'
 - skills:
     start: 2000
     operating_systems:
@@ -82,7 +101,7 @@
         name: "HTML"
         start: 2000
       css:
-        name: "CSS`"
+        name: "CSS"
         start: 2000
       scala:
         name: "Scala"
