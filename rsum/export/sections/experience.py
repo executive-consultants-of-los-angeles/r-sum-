@@ -163,7 +163,7 @@ class Experience(object):
                     project, style='List Bullet')
                 paragraph.paragraph_format.line_spacing = self.spacing
                 paragraph.paragraph_format.space_after = 0
-                paragraph.paragraph_format.tab_stops.add_tab_stop(self.cm(0.2))
+                paragraph.paragraph_format.tab_stops.add_tab_stop(self.cm(0.1))
             return document
         return self.add_detailed_projects(
             document, table, row, col)
@@ -182,7 +182,7 @@ class Experience(object):
                 style='List Bullet')
             paragraph.paragraph_format.line_spacing = self.spacing
             paragraph.paragraph_format.space_after = 0
-            paragraph.paragraph_format.tab_stops.add_tab_stop(self.cm(0.2))
+            # paragraph.paragraph_format.tab_stops.add_tab_stop(self.cm(0.2))
             for item in project:
                 item_paragraph = table.cell(row, col).add_paragraph(
                     item,

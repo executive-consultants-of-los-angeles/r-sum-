@@ -2,9 +2,9 @@
 # pylint: disable=no-member
 from docx.shared import Pt
 from docx.enum.style import WD_STYLE_TYPE
-from docx.enum.text import WD_TAB_ALIGNMENT
-from docx.enum.text import WD_TAB_LEADER
-from docx.shared import Cm
+# from docx.enum.text import WD_TAB_ALIGNMENT
+# from docx.enum.text import WD_TAB_LEADER
+# from docx.shared import Cm
 
 
 def set_first_headings(document):
@@ -71,15 +71,6 @@ def set_list_bullets(document):
     font.name = 'Calibri'
     font.size = Pt(6.5)
 
-    style = document.styles['List Bullet 2']
-    font = style.font
-    font.size = Pt(5.5)
-    font.name = 'Calibri'
-    style.paragraph_format.tab_stops.add_tab_stop(
-        Cm(0.1),
-        alignment=WD_TAB_ALIGNMENT.LEFT,
-        leader=WD_TAB_LEADER.SPACES
-    )
     return document
 
 
