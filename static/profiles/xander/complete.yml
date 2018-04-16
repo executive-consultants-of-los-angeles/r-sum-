@@ -312,234 +312,332 @@
         of programming or computer administration type of
         effort for more than twenty years.  I have been getting
         paid for it about fifteen of those years.'
-    - cfo_at_gahan_corporation:
-        duration: "May 2016 - Present"
-        location: "Los Angeles, California"
+    - gahan:
+        duration: 05/2016 - Present
+        location: "Los Angeles, CA"
         company: "Gahan Corporation"
-        position: "Chief Financial Officer"
+        position: Director of Technology
         projects:
-          technology:
-            - "maintain multiple cloud services"
-            - "total cost of ownership < $100/mo"
-            - "pretty good uptime"
-            - "at least not terrible security"
-          legal:
-            - "converted from an LLC started May 2016"
-            - "wrote the filed Articles of Incorporation"
-            - "also have an author credit on the bylaws"
-            - "have written every agreement executed by the corporation so far"
-            - >
-              keep the corporation in good standing
-              with the State of California
-          finance:
-            - "aiming at issuing registered stock by 2020"
-            - "pretty depressing at the moment"
-            - "maintain books to GAAP standards"
-            - "keep us up to date with taxes and reporting"
+          - >
+            Manage cloud assets in Google Cloud Platform, AWS, Micorsoft Azure,
+            Digital Ocean, Heroku, and Linode with Ansible, Terraform, and BASH.
+          - >
+            Developed the company websites using Python, Django, PostgreSQL,
+            Bootstrap, jQuery, HTML, CSS and JavaScript.
+          - >
+            Started the company as an LLC and shortly thereafter converted to a
+            domestic stock corporation.
+          - >
+            Worked closely with the CEO to find and develop new business.
+          - >
+            Deployed, managed, and automated configuration of Atlassian
+            suite (JIRA, Bitbucket, Confluence, Bamboo,
+            Crowd) to AWS EC2 using AWS ECS, Ansible, and Docker.
+          - >
+            Managed Odoo ERP services starting with version 8.0 and proceeding
+            through upgrades to 9.0 and 10.0 using Python, Ansible, Docker,
+            AWS EC2, AWS ECS, and PostgreSQL.
+          - >
+            Managed gahan-corporation.com mail services using Postfix with
+            Courier (IMAP) then migrating to Dovecot with Ansible, Docker,
+            AWS ECS, and AWS Route53.
+          - >
+            Drafted and filed Articles of Incorporation as well as the
+            contracts the corporation uses to interface with clients.
+        tools:
+          >
+          vim, BASH, AWS EC2, AWS S3, AWS Route53, AWS ECS, AWS CLI, AWS IAM,
+          Google Cloud Platform, Google Compute Engine, Google Big Table,
+          Google Container Registry, Ansible, Python, Jenkins, Docker,
+          Kubernetes, git, Nagios, Bitbucket, JIRA, Tomcat, Confluence
     - abiogenix_incorporated:
-        duration: "August 2014 - May 2017"
-        location: "Los Angeles, California"
+        duration: 08/2014 - Present
+        location: "Los Angeles, CA"
         company: "Abiogenix Incorporated"
-        position: "Python Developer / Site Reliability Engineer"
+        position: DevOps Engineer
         projects:
-          enterprise_resource_planning:
-            - "automated deployment and maintenance of the Odoo ERP system"
-            - "installed Google SSO for better auditing"
-          buy_my_ubox_com:
-            - "designed and implemented the my-ubox.com web store"
-            - "makes use of the Django web framework"
-            - "some custom code that integrates the order system with Odoo"
-          atlassian:
-            - "deployed Atlassian suite to Abiogenix cloud assets"
-            - "maintain those same tools for uptime and performance"
-            - "very limited budget"
-          networking:
-            - "transfered my-ubox.com to Amazon's Route 53 service"
-            - "transfered abiogenix.com to Amazon's Route 53 service"
-    - caa:
-        duration: "September 2015  -  March 2016 (7 months)"
-        location: "Los Angeles, California"
+          - >
+            Client of Gahan Corporation.
+          - >
+            Developed shopping cart for my uBox medication dispenser using
+            Django, Python, and JavaScript.
+          - >
+            Deployed, managed, and automated configuration of Atlassian suite
+            (JIRA, Bitbucket, Confluence) with Amazon EC2, Amazon ECS,
+            Ansible, Docker, and Ubuntu.
+          - >
+            Deployed and maintainted mail services for my-ubox.com with, Postfix
+            Courier (IMAP), Ansible, Amazon ECS, and Docker.
+          - >
+            Administered and automated maintenance of Odoo ERP servers
+            (development and production) with Ansible, Python, Docker,
+            Amazon ECS and PostgreSQL.
+          - >
+            Migrated my-ubox.com and abiogenix.com to Route53 DNS.
+          - >
+            Instructed team members on the use of Atlassian products such as
+            JIRA, Bitbucket, Confluence and SourceTree.
+          - >
+            Trained team members on proper use of git and gitflow to
+            manage branching and deployemnt to production.
+          - >
+            Implemented push-to-deploy on Abiogenix web repositories to
+            allow developers to deploy to production without using ssh.
+          # - >
+          #  Developed HIPAA-compliant automated backup system using AWS S3,
+          #  Python, Ansible, BASH, and GPG.
+          # - >
+          #  Reduced cost of ownership for all Abiogenix AWS resources by
+          #  roughly eighty per cent.
+        tools:
+          >
+          vim, BASH, AWS EC2, AWS S3, AWS Route53, AWS IAM, AWS ECS,
+          NGINX, Ubuntu, Ansible, Docker, Stripe, Python, Django, Odoo,
+          REST, Postfix, Courier (IMAP), Nagios, PHP, HTML, CSS, jQuery,
+          git, Bitbucket, JIRA, Confluence, Tomcat, Apache2
+    - csi:
+        duration: "September 2017 - January 2018"
+        location: "Los Angeles, CA"
+        company: "Collaboration Solutions Incorporated"
+        position: DevOps Engineer
+        projects:
+          - >
+            Client of Gahan Corporation.
+          - >
+            Automated management of development, staging, and production Odoo
+            environments, as well as PostgreSQL servers and databases with
+            Ansible and Docker.
+          - >
+            Designed and deployed CI/CD system with Jenkins on Linode which
+            enabled automated testing of Python and PostgreSQL with py.test,
+            Ansible, and Docker.
+          - >
+            Created, then ran the company help desk.
+          - >
+            Developed Odoo Enterprise Modules with Python, PostgreSQL, and
+            SQLAlchemy that required extreme reduction of cyclomatic complexity,
+            complete rewrites to comply with PEP8, in addition to a far
+            greater number of bug fixes than was ever accounted for.
+          - >
+            Wrote API documentation with Sphinx and improved documention for
+            standardization and compliance.
+          - >
+            Discovered mission critical inconsistencies in accounting and
+            inventory data which was causing valuation errors in excess of one
+            million dollars using Odoo, PostgreSQL, Python, and SQLAlchemy.
+          - >
+            Trained team members on the use of PostgreSQL to query and analyze
+            accounting and inventory data.
+        tools:
+          >
+          vim, BASH, AWS EC2, AWS S3, NGINX, Jenkins, Ansible, Docker, HTML,
+          CSS, JavaScript, PostgreSQL, Sphinx, Odoo ERP, coveralls.io,
+          Nagios, GitHub, Bitbucket, git, Linode, patience
+    - sigtec:
+        duration: "December 2016 - March 2017"
+        location: "Los Angeles, CA"
+        company: "Signal Technologies LLC"
+        position: Python Developer
+        projects:
+          - >
+            Client of Gahan Corporation.
+          - >
+            Developed website for management of patient data with Flask, Python,
+            SQLAlchemy, PostgreSQL, and PokitDoc.
+          - >
+            Designed and automated deployment of development environments with
+            Ansible and Docker.
+        tools:
+          >
+          vim, BASH, Ansible, Docker, NGINX, Python, PostgreSQL, Flask,
+          SQLAlchemy, HTML, CSS, jQuery, Ubuntu, REST
+    - network_of_one:
+        duration: 07/2016 - 08/2016
+        location: Culver City, CA
+        company: Network of One
+        position: DevOps Engineer
+        projects:
+          - >
+            Client of Gahan Corporation.
+          - >
+            Configured, deployed, and provided instruction for a CRM system
+            using Ansible, BASH, and AWS EC2.
+          - >
+            Developed automated distribution of public keys to EC2 instances
+            based on user groups with AWS EC2, AWS IAM, Python, BASH and
+            Ansible.
+          - >
+            Automated configuration of EC2 instances with Ansible and BASH.
+          - >
+            Began work on software to export data from IBM DB2 into RDS using
+            Ansible, Python, PostgreSQL, and IBM DB2.
+        tools:
+          >
+          vim, BASH, Ansible, Python, AWS EC2, AWS IAM, NGINX, Docker, IBM DB2
+          AWS RDS, PostgreSQL
+    - creative_artists_agency:
+        duration: 09/2015 - 03/2016
+        location: Torrance, CA
         company: "Creative Artists Agency"
-        position: "Python Developer / Site Reliability Engineer"
+        position: DevOps Engineer
         projects:
-          jupyterhub:
-            - "automated deployment of JupyterHub with Ansible"
-            - "instructed analysts on the use of Python and JupyterHub"
-            - "enabled the quants to transfer data from Excel to WorkDay"
-          ansible_tower:
-            - "refactored existing Ansible playbooks for improved security"
-            - "implemented best practices in all Ansible playbooks"
-            - "managed more than one upgrade of Ansible Tower server"
-            - "enabled logging and monitoring with New Relic and Splunk"
-          continuous_integration:
-            - "project was a year late on delivery upon my assignment"
-            - "walked into an unfamiliar stack and uncooperative team"
-            - "within one quarter the project was delivering new features daily"
-            - "enabled Behave testing and eliminated failures due to process"
-            - "used Ansible Tower and Jenkins server for deployment"
-    - build_manager_toyota_motor_sales:
-        duration: "April 2015  -  July 2015 (4 months)"
-        location: "Los Angeles, California"
+          - >
+            Implemented CI/CD for an internal project which was a year behind
+            schedule to enable the developers to deliver bug
+            fixes and new features daily with Jenkins, Ansible, Python, Web2Py,
+            and Ansible Tower.
+          - >
+            Alerted stakeholders to failing jobs in Ansible Tower or
+            non-functional infrastructure with New Relic, PagerDuty, Python,
+            and Ansible.
+          - >
+            Trained and guided WorkDay migration team in the use of Python,
+            Pandas and JupyterHub through completion of the project.
+          - >
+            Managed and monitored cloud infrastructure of roughly 30 EC2
+            instances using Ansible, Ansible Tower, BASH, CentOS, Ubuntu,
+            and New Relic.
+          - >
+            Refactored an existing library of Ansible playbooks for scalability,
+            speed, and stability.
+        tools:
+          >
+          vim, BASH, Ansible, Ansible Tower, Python, AWS EC2, NGINX, uWSGI,
+          Python, Web2Py, Jenkins, Docker, Ubuntu, CentOS, JupyterHub, git,
+          GitHub, MySQL, Slack
+    - devops_tms:
+        duration: 01/2014 - 07/2015
+        location: Torrance, CA
+        company: Toyota Motor Sales
+        position: DevOps Engineer
+        projects:
+          - >
+            Automated deployment of Customer 360 services to reduce time to
+            deploy from several weeks to less than an hour with Ansible,
+            BASH, Java, Ant, Maven, Tomcat, and Scala Build Tool.
+          - >
+            Managed configuration and maintance of Customer 360 cloud
+            infrastructure consisting of roughly 10 Red Hat Linux EC2
+            instances using Ansible, BASH, and Python.
+          - >
+            Designed, deployed, and implemented automated tests and deployment
+            of Customer 360 code written in Java, Scala, and Python with
+            Ansible, BASH, Ant, Maven, and Jenkins.
+          - >
+            Supported a team of 25 developers with Jenkins CI, Bitbucket,
+            and Ansible to ensure they were able to release on time.
+        tools:
+          >
+          vim, BASH, Ansible, Jenkins, Python, Java, Ant, Maven, Scala,
+          Tomcat, SBT, git, AWS EC2, CentOS
+    - lead_python_developer_tms:
+        duration: 12/2014 - 07/2015
+        location: "Los Angeles, CA"
         company: "Toyota Motor Sales"
-        position: "Build Manager"
+        position: Lead Python Developer
         projects:
-          atlassian:
-            - "maintained project git repository"
-            - "managed branches, pull requests, and releases"
-            - "trained 22 developers on git flow branching model"
-            - "created process for documentation of development"
-            - "guided developers in resolution of merge conflicts"
-          continuous_delivery:
-            - "deployed spark and hadoop cluster for distributed processing"
-            - "automated builds of all projects within the git repository"
-            - "dployed and administered Jenkins server with Ansible"
-    - cloud_architect_toyota_motor_sales:
-        duration: "January 2015  -  July 2015 (7 months)"
-        location: "Los Angeles, California"
-        company: "Toyota Motor Sales"
-        position: "Site Reliability Engineer"
-        projects:
-          ansible:
-            - "reduced deployment time by a factor of 15 with Ansible"
-            - "automated deployment of all resources required by project"
-            - "managed Red Hat Enterprise Linux 7 servers"
-          amazon_web_services:
-            - "configured and deployed all infrastructure"
-            - "administered same"
-            - "managed budget for aws monthly spend"
-    - lead_python_developer_toyota_motor_sales:
-        duration: "December 2014  -  July 2015 (8 months)"
-        location: "Los Angeles, California"
-        company: "Toyota Motor Sales"
-        position: "Lead Python Developer"
-        projects:
-          training:
-            - "wrote Python style guide"
-            - "implemented smart commits for JIRA issues"
-            - "trained offshore developers in the use of gitflow"
-          scraping:
-            - "used Python, Scrapy, MongoDB, and BASH for project"
-            - "scraped web for information relevant to project"
-            - "identified and removed redundancies within the project"
-            - "ran daily scrum meetings and maintained a storyboard"
-          proposal:
-            - "authored A3 to streamline build process"
-    - chief_technical_officer_mintspare:
-        duration: "February 2014  -  January 2015 (1 year)"
-        location: "Alameda, California"
+          - >
+            Provided instruction on the use of git, gitflow, Bitbucket,
+            and best practices for commits and merges to Customer 360
+            developers after gaining consensus and approval of Customer 360
+            management with an A3 presentation.
+          - >
+            Refactored and developed web scraping software using ScraPY, Python,
+            and Ansible.
+          - >
+            Wrote and implemented a Python style guide and provided instruction
+            on compliance to team of remote Python developers.
+          - >
+            Ran daily SCRUMs for Customer 360 developers.
+          - >
+            Participated in sprint planning and review cycle with Customer 360
+            team of 25 developers.
+        tools:
+          >
+          vim, BASH, Python, ScraPY, git, gitflow, SCRUM, REST, JIRA,
+          Bitbucket
+    - mintspare:
+        duration: 02/2014 - 01/2015
+        location: "Alameda, CA"
         company: "Mintspare Incorporated"
         position: "Chief Technical Officer"
         projects:
-          webmaster:
-            - "developmed all Mintspare websites"
-            - "used CakePHP as well as jQuery"
-          systems_administrator:
-            - "administrated Mintspare databases"
-            - "prevented data loss and developed schemas"
-            - "responsible for all Mintspare IT infrastructure"
-            - "used Ansible to automate infrastructure deployment"
-            - "managed load balancing using HAProxy"
+          - >
+            Responsible for the development and maintenance of all Mintspare
+            software and computer infrastructure with Ansible, PHP, Python,
+            BASH, Bitcoin, HTML, CSS, JavaScript, Apache 2, Ubuntu,
+            Digital Ocean Droplets, AWS EC2, MySQL and HAProxy.
+          - >
+            Developed Mintspare websites using CakePHP, jQuery, HTML, CSS,
+            Bitcoin, and MySQL.
+          - >
+            Interacted with Bitcoin server using PHP to allow automatic
+            transactions for Mintspare customers.
+        tools:
+          >
+          vim, BASH, Bitcoin, PHP, CakePHP, HTML, CSS, JavaScript, jQuery,
+          Ubuntu, Digital Ocean Droplets, AWS EC2, Python, MySQL, git,
+          Bitbucket
     - vs_media:
-        duration: "August 2013  -  December 2013 (5 months)"
-        location: "Los Angeles, California"
+        duration: 08/2013 - 12/2013
+        location: "Los Angeles, CA"
         company: "VS Media"
-        position: "PHP Developer / Analyst"
+        position: Email Analyst
         projects:
-          analyst:
-            - "collected and analyzed data on email marketing"
-            - "improved performance of email servers and content"
-            - "documented control flow of complex scripts"
-            - "sent roughly 150,000 emails a day"
-          email_administrator:
-            - "implemented new elements of the email system"
-            - "created such as a centralized template store"
+          - >
+            Managed email marketing system which sent roughly one hundred
+            fifty thousand messages per day using PHP, BASH, Subversion,
+            and CentOS.
+          - >
+            Documented control flow of email system software with Dia.
+          - >
+            Responsible for daily marketing campaigns.
+        tools:
+          >
+          vim, BASH, PHP, HTML, CSS, CentOS, Subversion
     - thrive_marketing:
-        duration: "April 2013  -  July 2013 (4 months)"
-        location: "Nashville, Tennessee"
+        duration: 04/2013 - 06/2013
+        location: "Nashville, TN"
         company: "Thrive Marketing"
-        position: "PHP Developer / Systems Administrator"
+        position: Web Developer
         projects:
-          systems_administrator:
-            - "installed and configured several different Linux servers"
-            - "used distributions such as Ubuntu, CentOS, and Gentoo"
-            - "also maintained a number of Windows 7 workstations"
-          web_developer:
-            - "developed internal products for sales operations"
-            - "made use of PHP, JavaScript, jQuery, JSON, REST, and SOAP"
-            - "created data models for two internal software projects"
-            - "documented existing and new code"
-          source_code_management:
-            - "implemented git and gitflow for source code control"
-            - "provided training to other employees on their use"
-    - club_cirok:
-        duration: "December 2012  -  July 2013 (8 months)"
-        location: "Nashville, Tennessee"
-        company: "Club Cirok"
-        position: "Bartender"
-        projects:
-          bartender:
-            - "tended bar in a high volume nightclub setting"
-            - "served limited bottled beer, wine, and mixed drinks"
-            - "mixed classic cocktails for the enjoyment of club patrons"
-    - rodizio_brazilian_grill:
-        duration: "September 2012  -  January 2013 (5 months)"
-        location: "Nashville, Tennessee"
-        company: "Rodizio Brazilian Grill"
-        position: "Bartender"
-        projects:
-          bartender:
-            - "tended bar in a full-service restaurant setting"
-            - "served bottled beer, draught beer, wine, champagne"
-            - "learned menu of specialty cocktails"
-    - lipstick_lounge:
-        duration: "July 2012  -  September 2012 (3 months)"
-        location: "Nashville, Tennessee"
-        company: "Lipstick Lounge"
-        position: "Barback / Cook"
-        projects:
-          barback:
-            - "stocked beer, wine, and liquor for high volume bar"
-            - "cooked, and delivered food orders from bar"
-    - atlas_payment_processing:
-        duration: "September 2011  -  September 2012 (1 year 1 month)"
-        location: "San Francisco, California"
-        company: "Atlass Payment Processing"
-        position: "Account Executive"
-        projects:
-          account_manager:
-            - "met with merchants to explain rate structures"
-            - "managed accounts from beginning to end of service"
-            - "made 900 calls a week to potential clients"
-    - aflac:
-        duration: "December 2010  -  May 2011 (6 months)"
-        location: "San Francisco, California"
-        company: "AFLAC"
-        position: "Business Development"
-        projects:
-          business_development:
-            - "made 300 cold calls a week"
-            - "created and shared a basic crm using Google Calendar"
-            - "clearly and concisely explained Aflac products"
+          - >
+            Developed internal tool to allow non-technical call center staff
+            to properly qualify technical leads using PHP, MySQL, REST, SOAP,
+            HTML, CSS, and jQuery.
+          - >
+            Provided instruction on the use of git, gitflow, and GitHub to
+            other developers.
+          - >
+            Installed, configured and managed roughly 8 bare-metal servers
+            using CentOS, Ubuntu, Gentoo, Windows Server, and BASH.
+          - >
+            Assisted with administration of office workstations with Windows 8.
+        tools:
+          >
+          vim, BASH, PHP, git, GitHub, CentOS, Ubuntu, Gentoo, Windows 8,
+          Windows Server 2008, REST, SOAP, HTML, CSS, JavaScript, jQuery
     - wishb:
-        duration: "July 2010  -  September 2010 (3 months)"
-        location: "San Francisco, California"
+        duration: 07/2010 - 09/2010
+        location: "San Francisco, CA"
         company: "WishB LLC"
-        position: "PHP Developer / Systems Administrator"
+        position: Web Developer
         projects:
-          web_developer:
-            - "used a homebrew MVC to program a website"
-            - "dynamically loaded images with css and jquery"
-            - "used Subversion for version control of code"
-            - "coded user profiles for application"
-          system_administrator:
-            - "maintained and configured the webserver"
-            - "designed database schemas in MySQL"
-            - "contributed to daily SCRUM meetings"
+          - >
+            Developed WishB websites using PHP, HTML, MVC, jQuery,
+            Subversion, and MySQL.
+          - >
+            Deployed development and production environments with CentOS,
+            Apache2, BASH and MySQL.
+        tools:
+          >
+          vim, BASH, PHP, HTML, MVC, jQuery, JavaScript, MySQL, Apahce 2,
+          CentOS, Subversion, SCRUM
     - logitech:
-        duration: "April 2008 - April 2010 (2 years 1 month)"
+        duration: 04/2008 - 04/2010
         location: "San Francisco, California"
         company: "Logitech"
-        position: "PHP Developer / Systems Administrator"
+        position: Web Engineer
         projects:
           web_developer:
             - "used Dojo.js JavaScript to develop video chat application"
@@ -558,10 +656,10 @@
             - "upload transcoded content to S3"
             - "used SOAP to make content available to end users"
     - blowtorch:
-        duration: "November 2007  -  March 2008 (5 months)"
+        duration: 11/2007 - 03/2008
         location: "Sausalito, California"
         company: "Blowtorch Entertainment"
-        position: "Web Developer / Systems Administrator"
+        position: Web Engineer
         projects:
           web_developer:
             - "created custom Drupal modules"
@@ -572,7 +670,7 @@
             - "deployed server for use of other members of the team"
             - "ensured proper quality of data"
     - vinyl:
-        duration: "June 2007  -  November 2007 (6 months)"
+        duration: 06/2007 - 11/2007
         location: "San Francisco, California"
         company: "Vinyl Interactive"
         position: "Database Administrator"
@@ -583,7 +681,7 @@
             - "administered MSSQL and MySQL database servers"
             - "administered a Storage Area Network"
     - fordela:
-        duration: "October 2006  -  May 2007 (8 months)"
+        duration: 10/2006 - 05-2007
         location: "San Francisco, California"
         company: "Fordela"
         position: "PHP Developer"
@@ -596,17 +694,8 @@
             - "deployed subversion version control"
             - "administered servers running CentOS"
             - "configured and maintained Apache https and MySQL"
-    - radical_fusion:
-        duration: "September 2006  -  October 2006 (2 months)"
-        location: "San Francisco, California"
-        company: "Radical Fusion"
-        position: "JavaScript Developer"
-        projects:
-          web_developer:
-            - "added new features using PHP, MSSQL, and AJAX"
-            - "used design documents to update user interface"
     - optyweb:
-        duration: "November 2005  -  May 2006 (7 months)"
+        duration: 11/2005 - 05/2006
         location: "San Francisco, California"
         company: "Optyweb"
         position: "Webmaster"
@@ -622,7 +711,7 @@
             - "moved more than sixty web servers to new data center"
             - "configured switches in the new datacenter"
     - payne_media:
-        duration: "March 2005  -  November 2005 (9 months)"
+        duration: 03/2005 - 11/2005
         location: "Seattle, Washington"
         company: "Payne Media"
         position: "PHP Developer / Database Administrator"
@@ -632,7 +721,7 @@
           junior_systems_administrator:
             - "administered Gentoo Linux on mail, web, and database servers"
     - forest_service:
-        duration: "April 2004  -  March 2005 (1 year)"
+        duration: 04/2004 - 03/2005
         location: "Seattle, Washington"
         company: "United States Forest Service AirFIRE Team"
         position: "Webmaster"
@@ -642,14 +731,17 @@
             - "administered the AirFIRE Team web server"
             - "upgraded web server from Apache 1.3 to Apache 2"
     - saxotech:
-        duration: "March 2003  -  January 2004 (11 months)"
+        duration: 03/2003 - 01/2004
         location: "Washington, District of Columbia"
         company: "SaXOTECH AS"
         position: "Customer Fulfillment Specialist"
         projects:
-          customer_fulfillment_specialist:
-            - "provided customers with emergency technical support"
-            - "given charge of the entire support department"
+          - >
+            Upgraded mission critical systems running RedHat Linux.
+          - >
+            Resolved client issues using CSS, HTML, JavaScript, and MySQL.
+          - >
+            Took part in on call rotation.
 - education:
     name: "Broadmoor Elementary School"
     location: "Lafayette, Louisiana"
