@@ -3,17 +3,17 @@
     name: "Jessica Hartwell"
     position: "Consultant"
     social_media_links:
-      facebook: "https://www.facebook.com/jessica.hartwell.92"
+      facebook: "https://www.facebook.com/executiveconsultantsoflosangeles"
       twitter: "https://twitter.com/GahanCorpCEO"
       linkedin: "https://www.linkedin.com/in/jessicahartwell"
 - summary:
     content: >
-      A driven leader with over 14 years of experience
+      A driven leader with over 13 years of experience
       and a proven track record of outstanding performance.
 - skills:
     start: 2004
-    oligo_array_manufacturing:
-      name: "Oligo & Array Manufacturing"
+    biotech_manufacturing:
+      name: "Biotech Manufacturing"
       start: 2009
       dna_synthesis_with_abi_3900_dna_synthesizer:
         name: "DNA Synthesis with ABI 3900 DNA Synthesizer"
@@ -23,7 +23,7 @@
         start: 2015
       clevage_and_deprotection:
         name: >
-           Product Cleavage, Deprotection & SPE via chemical treatment with
+           Column Cleavage, Deprotection & SPE via Chemical Treatment with
            Elution Under Vacuum
         start: 2013
       dna_purification_via_ethanol_precipitation:
@@ -31,62 +31,72 @@
         start: 2013
       reverse_phase_hplc:
         name: >
-          Reverse Phase HPLC with Transgenomic Wave DNA Fragment Analysis
-          System
+          DNA Purification via Reverse Phase HPLC with Transgenomic Wave
+          DNA Fragment Analysis System
         start: 2013
       dna_quant_with_molecular_devices_spectramax_gemini_190:
         name: >
-          Spectrophotometric DNA Quantitation with Molecular Devices
+          Spectrophotometric DNA Quantification with Molecular Devices
           SpectraMax (Gemini & 190)
-        start: 2013
+        start: 2009
       dilut_sampling:
         name: >
           Dilution & Sampling with Hamilton MICROLAB STAR,
-          Agilent Technologies Bravo & Beckman Biomek FX
+          Agilent Technologies Bravo, & Beckman Biomek FX
         start: 2009
       aliquoting:
         name: >
-          Aliquoting & Formatting with Tecan Genesis, BioMicroLab XL20 &
+          Aliquoting & Formatting with Tecan Genesis, BioMicroLab XL20, &
           Beckman Biomek 2000
         start: 2009
-      finished_good_assembly_packaging:
-        name: "Finshed Good Assembly & Packaging"
+      finished_goods_assembly_packaging:
+        name: "Finshed Goods Assembly & Packaging"
         start: 2009
-    manufacturing_quality_control:
-      name: "Manufacturing Quality Control"
-      start: 2009
       sequence_identification_with_abi_voyager:
         name: >
-          Sequence Identification with ABI Voyager-DE PRO BioSpectrometry
-          Workstation
+          QC via Sequence Identification with ABI Voyager-DE PRO
+          BioSpectrometry Workstation
         start: 2009
-      ft_of_taqman:
+      qc_of_taqman:
         name: >
-          Functional Testing of TaqMan SNP & Gene Expression Assays
+          QC of TaqMan SNP & Gene Expression Assays
           with PE Thermal Cyclers & ABI 7900 HT SDS
         start: 2013
-      ft_of_taptac:
+      qc_of_taptac:
         name: >
-          Functional Testing of TaqMan Array Cards & Plates with
+          QC of TaqMan Array Cards & Plates with
           ABI 7900 HT SDS & 7500 Fast Real-Time PCR System
         start: 2015
-    snp_genotyping:
-      name: "Sample Handling & SNP Genotyping"
+      mes:
+        name: >
+          Manufacturing Execution Systems (MES): PrimerTrak, PrimerTrak West,
+          GOAST, OMS, XPO, CALC, Production Monitor, & Business Assay Tracker
+        start: 2009
+      erp:
+        name: "Enterprise Resource Planning Software: SAP"
+        start: 2009
+    cancer_research:
+      name: "Cancer Research"
       start: 2013
       taqman_snp_assays_with_bio_rad_thermal_cyclers_abi_7900_ht_sds:
         name: >
-          TaqMan SNP Genotyping Assays with Bio-Rad Thermal Cyclers &
+          TaqMan SNP Assays with Bio-Rad Thermal Cyclers &
           ABI 7900 HT SDS
         start: 2015
-      eclipse_probe_based_assays_with_abi_7900_ht_sds:
-        name: "Eclipse Probe Based Assays with ABI 7900 HT SDS"
+      eclipse_probe_based_snp_assays_with_abi_7900_ht_sds:
+        name: "Eclipse Probe Based SNP Assays with ABI 7900 HT SDS"
         start: 2015
       snplex_assays_with_applied_biosystems_3130xl_genetic_analyzer:
         name: "SNPlex Assays with ABI 3130xl Genetic Analyzer"
         start: 2016
+      hme_assays_with_pe_thermal_cyclers_and_sequenom_with_nanodispenser:
+        name: >
+          hME Assays with PE Thermal Cyclers & Sequenom MassARRAY System
+          with Nanodispenser
+        start: 2016
       taqman_real_time_pcr_assays_with_abi_7900_ht_sds:
         name: "TaqMan Real-Time PCR Assays with ABI 7900 HT SDS"
-        start: 2015
+        start: 2014
       identifiler_hid_assays_with_abi_prism_3100_genetic_analyzer:
         name: "Identifiler HID Assays with ABI PRISM 3100 Genetic Analyzer"
         start: 2014
@@ -95,43 +105,31 @@
           Di-deoxy Sequencing Reactions with PE Thermal Cyclers &
           ABI 3700 DNA Analyzer
         start: 2016
-      picogreen_dsdna_quantitation_reactions_with_beckman_du_600:
+      picogreen_dsdna_quant_reactions_with_beckman_du_600:
         name: "PicoGreen dsDNA Quantitation Reactions with Beckman DU 600"
         start: 2013
-      hme_assays_with_pe_thermal_cyclers_and_sequenom_with_nanodispenser:
-        name: >
-          hME Assays with PE Thermal Cyclers & Sequenom MassARRAY System
-          with Nanodispenser
-        start: 2016
       liquid_handling_with_hydra_96_384_beckman_multimek_and_hp_multiprobe:
         name: >
           Liquid Handling with Robbins Hydra 96, Matrix Hydra 384,
-          Beckman Multimek 96 & HP Multiprobe II EX
+          Beckman Multimek 96, & HP Multiprobe II EX
         start: 2013
-    meslims:
-      name: >
-        Manufacturing Execution Systems (MES) &
-        Labratory Information Management Systems (LIMS)
-      start: 2004
-      web_based_meslims_primertrak_primertrakwest_goast_sapphirelabvantage:
+      lims:
+        name: "Labratory Information Management System: Sapphire Labvantage"
+        start: 2015
+      software:
         name: >
-          Web based MES & LIMS: PrimerTrak MES, PrimerTrak West MES, GOAST MES,
-          & Sapphire LabVantage LIMS
-        start: 2004
-      oracle_based_mes_oms_xpo:
-        name: 'Oracle based MES: SAP, OMS & XPO'
+          Data Analysis & Instrument Operation Software:
+          ABI SDS, EPOCH Dynascore, Molecular Devices SoftMax Pro,
+          Bio-Rad Easy Engine, Gene Mapper, Sequence Navigator, GenBank
         start: 2013
-      microsoft_based_mes_calc_pm_bat:
-        name: >
-          Microsoft based MES: CALC, Production Monitor &
-          Business Assay Tracker
-        start: 2013
-    data_analysis_software:
-      name: 'Data Analysis Software'
-      start: 2004
-    business_applications:
-      name: 'Business Applications'
+    it_mgmt_consulting:
+      name: 'IT & Management Consulting'
       start: 2016
+      software:
+        name: >
+          Software: Odoo ERP, Quickbooks by Intuit, Toggl,
+          Atlassian Software Suite, Highrise CRM, Microsoft Office 365
+        start: 2016
 - values:
     - introduction:
         content: >
@@ -143,8 +141,8 @@
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon icon-badge"'
         text: >
-          Loyalty implies a faithfulness that is steadfast in the face of any
-          temptation to renounce, desert, or betray.
+          Definition of Loyalty
+          Move to position number 2.
     - ingenuity:
         name: "Ingenuity"
         col: 'class="col-md-3 col-sm-6 md-margin-b-4"'
@@ -155,28 +153,23 @@
             data-wow-delay=".1s"'
         icon: ' class="service-icon color-white icon-chemistry"'
         text: >
-          The tantalizing discomfort of perplexity is what inspires otherwise
-          ordinary men and women to extraordinary feats of ingenuity
-          and creativity; nothing quite focuses the mind like dissonant
-          details loyalty implies.  - Brian Greene
+          Definition of Ingenuity
+          Move to position number 4.
     - quality:
         name: "Quality"
         col: 'class="col-md-3 col-sm-6 sm-margin-b-4"'
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon icon-screen-tablet"'
         text: >
-          Be a yardstick of quality. Some people aren't used
-          to an environment where excellence is expected. - Steve Jobs
+          Definition of Quality
     - integrity:
         name: "Integrity"
         col: 'class="col-md-3 col-sm-6"'
         service: 'class="service" data-height="height"'
         icon: 'class="service-icon  icon-mustache"'
         text: >
-          The supreme quality for leadership is
-          unquestionably integrity. Without it, no real success is
-          possible no matter whether it is on a section gang,
-          a football field, in an army, or in an office. - Dwight D. Eisenhower
+          Definition of Integrity
+          Move to position number 1.
 - experience:
     - introduction: >
         I am fasinated by the inherent duality of nature.
