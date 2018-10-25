@@ -4,6 +4,6 @@ jobs:
   build:
     docker:
       - image: python:3-alpine3.8
-  steps:
-    - checkout
-    - run: pipenv install 
+    steps:
+      - checkout
+      - run: pipenv install
