@@ -16,7 +16,7 @@ aws = "*"
 django-extensions = "*"
 pylint = "*"
 "psycopg2-binary" = "*"
-python-docx = {git = "https://github.com/edwardtheharris/python-docx"}
+python-docx = {editable = true, git = "https://github.com/edwardtheharris/python-docx.git"}
 
 [requires]
 python_version = "3.7.0"
