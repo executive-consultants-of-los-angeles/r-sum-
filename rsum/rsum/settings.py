@@ -12,6 +12,9 @@ SECRET_KEY = 's7g+(@&fc-iycjd=yk)%t$_3@h3gx(!v$c9fh1pbj@zi6r6a(6'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'xander.gahancorporation.com',
+    'jess.gahancorporation.com',
+    'cody.local:8000',
     'localhost',
     '.gahan-corporation.com',
     '[::]',
